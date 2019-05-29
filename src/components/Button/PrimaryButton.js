@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import { ButtonSkeleton } from '.';
+import ButtonSkeleton, { buttonSkeletonPropTypes } from './Button.Skeleton';
 import { StyledBaseButton } from './BaseButton';
 
 let StyledPrimaryButton = styled(StyledBaseButton)`
@@ -10,7 +10,9 @@ let StyledPrimaryButton = styled(StyledBaseButton)`
 `;
 
 const PrimaryButton = props => (
-  <ButtonSkeleton {...props} StyledComponent={StyledPrimaryButton} />
+  <ButtonSkeleton StyledComponent={StyledPrimaryButton} {...props} />
 );
+
+PrimaryButton.propTypes = buttonSkeletonPropTypes;
 
 export default PrimaryButton;

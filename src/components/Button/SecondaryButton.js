@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import { ButtonSkeleton } from '.';
+import ButtonSkeleton, { buttonSkeletonPropTypes } from './Button.Skeleton';
 import { StyledBaseButton } from './BaseButton';
 
 let StyledSecondaryButton = styled(StyledBaseButton)`
@@ -12,7 +12,9 @@ let StyledSecondaryButton = styled(StyledBaseButton)`
 `;
 
 const SecondaryButton = props => (
-  <ButtonSkeleton {...props} StyledComponent={StyledSecondaryButton} />
+  <ButtonSkeleton StyledComponent={StyledSecondaryButton} {...props} />
 );
+
+SecondaryButton.propTypes = buttonSkeletonPropTypes;
 
 export default SecondaryButton;

@@ -7,10 +7,16 @@ import { linkTo } from '@storybook/addon-links';
 import {
   BaseButton,
   PrimaryButton,
-  SecondaryButton
+  SecondaryButton,
+  ButtonSkeleton
 } from '../src/components/Button';
 
 storiesOf('Button', module)
+  .add('ButtonSkeleton', () => (
+    <ButtonSkeleton onClick={action('clicked')}>
+      Hello ButtonSkeleton
+    </ButtonSkeleton>
+  ))
   .add('BaseButton', () => (
     <BaseButton onClick={action('clicked')}>Hello BaseButton</BaseButton>
   ))
@@ -23,4 +29,14 @@ storiesOf('Button', module)
     <SecondaryButton onClick={action('clicked')}>
       Hello SecondaryButton
     </SecondaryButton>
+  ))
+  .add('Button as external link', () => (
+    <div>
+      <SecondaryButton href="https://gatsbyjs.org" onClick={action('clicked')}>
+        Go to gatsbyjs.org
+      </SecondaryButton>
+      <PrimaryButton href="https://gatsbyjs.com" onClick={action('clicked')}>
+        Go to gatsbyjs.org
+      </PrimaryButton>
+    </div>
   ));

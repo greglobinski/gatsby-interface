@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'react-emotion';
+//import { Link } from 'gatsby';
 
-const DefaultComponent = props => <button {...props} />;
+export const SkeletonStyledComponent = styled(`button`)``;
 
-const ButtonBase = ({ children, StyledComponent }) => (
-  <StyledComponent>{children}</StyledComponent>
-);
-
-ButtonBase.propTypes = {
+export const buttonSkeletonPropTypes = {
   /**
    * Specify Emotion styled component
    */
-  StyledComponent: PropTypes.func,
+  Component: PropTypes.func,
 
   /**
    * Optionally specify an to for your Button to become an <Link> component
@@ -24,8 +22,32 @@ ButtonBase.propTypes = {
   href: PropTypes.string
 };
 
-ButtonBase.defaultProps = {
-  StyledComponent: DefaultComponent
+const ButtonSkeleton = ({ StyledComponent, children, href, to, ...rest }) => {
+  if (href) {
+    const ComponentAsExternalLink = StyledComponent.withComponent(`a`);
+    return (
+      <ComponentAsExternalLink href={href} {...rest}>
+        {children}
+      </ComponentAsExternalLink>
+    );
+  }
+
+  // if (to) {
+  //   const ComponentAsInternalLink = Component.withComponent(Link);
+  //   return (
+  //     <ComponentAsInternalLink to={href} {...rest}>
+  //       {children}
+  //     </ComponentAsInternalLink>
+  //   );
+  // }
+
+  return <StyledComponent {...rest}>{children}</StyledComponent>;
 };
 
-export default ButtonBase;
+ButtonSkeleton.propTypes = buttonSkeletonPropTypes;
+
+ButtonSkeleton.defaultProps = {
+  StyledComponent: SkeletonStyledComponent
+};
+
+export default ButtonSkeleton;
