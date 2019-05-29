@@ -10,20 +10,25 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "emotion": "^9.2.9",
+    "react-emotion": "^9.2.9"
+  },
   "peerDependencies": {
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.1",
+    "prop-types": "^15.6.1"
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.11",
+    "@babel/core": "^7.0.1",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@babel/core": "^7.0.1",
+    "@storybook/react": "^5.0.11",
     "babel-loader": "^8.0.4",
     "jest": "^22.4.3",
     "jest-dom": "^3.1.1",
+    "prop-types": "^15.6.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-testing-library": "^5.6.1"
