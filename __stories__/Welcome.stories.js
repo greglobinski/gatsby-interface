@@ -5,8 +5,4 @@ import { action } from '@storybook/addon-actions';
 
 import Welcome from '../src/utils/storybook/Welcome';
 
-storiesOf('Welcome', module).add('to Gatsby Inteface', () => (
-  <Fragment>
-    <Welcome />
-  </Fragment>
-));
+storiesOf('Welcome', module).add('to Gatsby Inteface', () => <Welcome />);

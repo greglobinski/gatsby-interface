@@ -5,22 +5,33 @@ import styled from 'react-emotion';
 
 export const SkeletonStyledComponent = styled(`button`)``;
 
-export const buttonSkeletonPropTypes = {
-  /**
-   * Specify Emotion styled component
-   */
-  Component: PropTypes.func,
-
-  /**
-   * Optionally specify an to for your Button to become an <Link> component
-   */
+export const buttonPropTypes = {
   to: PropTypes.string,
-
-  /**
-   * Optionally specify an href for your Button to become an <a> element
-   */
-  href: PropTypes.string
+  href: PropTypes.string,
+  size: PropTypes.string
 };
+
+const buttonSkeletonPropTypes = {
+  to: PropTypes.string,
+  href: PropTypes.string,
+  size: PropTypes.string,
+  StyledComponent: PropTypes.any
+};
+
+export const buttonDefaultPropTypes = {
+  size: 'L'
+};
+
+export const buttonSkeletonDefaultPropTypes = {
+  StyledComponent: SkeletonStyledComponent,
+  size: 'L'
+};
+
+const test = {
+  a: 1,
+  b: 2
+};
+//console.log('asdfads', ...test);
 
 const ButtonSkeleton = ({ StyledComponent, children, href, to, ...rest }) => {
   if (href) {
@@ -45,9 +56,6 @@ const ButtonSkeleton = ({ StyledComponent, children, href, to, ...rest }) => {
 };
 
 ButtonSkeleton.propTypes = buttonSkeletonPropTypes;
-
-ButtonSkeleton.defaultProps = {
-  StyledComponent: SkeletonStyledComponent
-};
+ButtonSkeleton.defaultProps = buttonSkeletonDefaultPropTypes;
 
 export default ButtonSkeleton;

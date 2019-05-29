@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "emotion": "^9.2.9",
-    "react-emotion": "^9.2.9"
+    "react-emotion": "^9.2.9",
+    "react-icons": "^3.7.0"
   },
   "peerDependencies": {
     "gatsby": "2.6.0",
