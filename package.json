@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
   "devDependencies": {
     "@storybook/react": "^5.0.11",
     "@storybook/addon-actions": "^5.0.11",
