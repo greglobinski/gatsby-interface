@@ -16,7 +16,7 @@ let StyledSecondaryButton = styled(StyledBaseButton)`
   color: ${colors.lilac};
 
   :focus,
-  :hover {
+  &:hover:not([disabled]) {
     border: 1px solid ${palette.purple[600]};
     color: ${palette.purple[600]};
   }

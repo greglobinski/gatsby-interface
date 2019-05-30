@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "NODE_ENV=development start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "author": "",
@@ -23,6 +23,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-info": "^5.0.11",
     "@storybook/addon-knobs": "^5.0.11",
@@ -31,6 +35,8 @@
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "babel-loader": "^8.0.4",
+    "babel-plugin-emotion": "9.2.11",
+    "dotenv": "^5.0.1",
     "gatsby": "2.6.0",
     "jest": "^22.4.3",
     "jest-dom": "^3.1.1",

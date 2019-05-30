@@ -86,8 +86,7 @@ export const StyledBaseButton = styled(SkeletonStyledComponent)`
   &[disabled],
   &[disabled]:hover {
     cursor: not-allowed;
-    background: ${palette.grey[400]};
-    border: 1px solid ${palette.grey[400]};
+    opacity: 0.5;
   }
 
   svg {
