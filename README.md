@@ -1,4 +1,4 @@
-### Gatsby Inteface
+### Gatsby Interface
 
 ![Storybook](assets/storybook.png)
 
