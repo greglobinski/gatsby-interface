@@ -1,31 +1,79 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'react-emotion';
+import { MdRefresh } from 'react-icons/md';
+import { Link } from 'gatsby';
 
-const DefaultComponent = props => <button {...props} />;
+export const SkeletonStyledComponent = styled(`button`)``;
 
-const ButtonBase = ({ children, StyledComponent }) => (
-  <StyledComponent>{children}</StyledComponent>
-);
-
-ButtonBase.propTypes = {
-  /**
-   * Specify Emotion styled component
-   */
-  StyledComponent: PropTypes.func,
-
-  /**
-   * Optionally specify an to for your Button to become an <Link> component
-   */
-  to: PropTypes.string,
-
-  /**
-   * Optionally specify an href for your Button to become an <a> element
-   */
-  href: PropTypes.string
+export const buttonPropTypes = {
+  disabled: PropTypes.bool,
+  loading: PropTypes.bool,
+  loadingLabel: PropTypes.string,
+  href: PropTypes.string,
+  size: PropTypes.string,
+  to: PropTypes.string
 };
 
-ButtonBase.defaultProps = {
-  StyledComponent: DefaultComponent
+const buttonSkeletonPropTypes = {
+  ...buttonPropTypes,
+  StyledComponent: PropTypes.any
 };
 
-export default ButtonBase;
+export const buttonDefaultPropTypes = {
+  disabled: false,
+  loading: false,
+  loadingLabel: 'Loading',
+  size: 'L'
+};
+
+export const buttonSkeletonDefaultPropTypes = {
+  ...buttonDefaultPropTypes,
+  StyledComponent: SkeletonStyledComponent
+};
+
+const ButtonSkeleton = ({
+  StyledComponent,
+  children,
+  disabled,
+  href,
+  loading,
+  loadingLabel,
+  to,
+  ...rest
+}) => {
+  if (href) {
+    const ComponentAsExternalLink = StyledComponent.withComponent(`a`);
+    return (
+      <ComponentAsExternalLink href={href} {...rest}>
+        {children}
+      </ComponentAsExternalLink>
+    );
+  }
+
+  if (to) {
+    const ComponentAsInternalLink = StyledComponent.withComponent(Link);
+    return (
+      <ComponentAsInternalLink to={to} {...rest}>
+        {children}
+      </ComponentAsInternalLink>
+    );
+  }
+
+  return (
+    <StyledComponent disabled={disabled} loading={loading} {...rest}>
+      {loading ? (
+        <Fragment>
+          {loadingLabel} <MdRefresh />
+        </Fragment>
+      ) : (
+        children
+      )}
+    </StyledComponent>
+  );
+};
+
+ButtonSkeleton.propTypes = buttonSkeletonPropTypes;
+ButtonSkeleton.defaultProps = buttonSkeletonDefaultPropTypes;
+
+export default ButtonSkeleton;
