@@ -1,0 +1,7 @@
+import { createSerializer } from "jest-emotion"
+import * as emotion from "emotion"
+import styled from "react-emotion"
+import "jest-dom/extend-expect"
+import "react-testing-library/cleanup-after-each"
+
+expect.addSnapshotSerializer(createSerializer(emotion))

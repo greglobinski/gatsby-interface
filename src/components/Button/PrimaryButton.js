@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'react-emotion';
+import React from "react"
+import styled from "react-emotion"
 
 import ButtonSkeleton, {
   buttonPropTypes,
-  buttonDefaultPropTypes
-} from './Button.Skeleton';
-import { StyledBaseButton } from './BaseButton';
+  buttonDefaultPropTypes,
+} from "./Button.Skeleton"
+import { StyledBaseButton } from "./BaseButton"
 
-import { colors, palette } from '../../utils/presets';
+import { colors, palette } from "../../utils/presets"
 
-let StyledPrimaryButton = styled(StyledBaseButton)`
+const StyledPrimaryButton = styled(StyledBaseButton)`
   background: ${colors.gatsby};
   border: 0;
   color: ${palette.white};
@@ -19,13 +19,13 @@ let StyledPrimaryButton = styled(StyledBaseButton)`
   :hover {
     background: ${palette.purple[700]};
   }
-`;
+`
 
 const PrimaryButton = props => (
   <ButtonSkeleton StyledComponent={StyledPrimaryButton} {...props} />
-);
+)
 
-PrimaryButton.propTypes = buttonPropTypes;
-PrimaryButton.defaultProps = buttonDefaultPropTypes;
+PrimaryButton.propTypes = buttonPropTypes
+PrimaryButton.defaultProps = buttonDefaultPropTypes
 
-export default PrimaryButton;
+export default PrimaryButton

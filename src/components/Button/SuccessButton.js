@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'react-emotion';
+import React from "react"
+import styled from "react-emotion"
 
 import ButtonSkeleton, {
   buttonPropTypes,
-  buttonDefaultPropTypes
-} from './Button.Skeleton';
-import { StyledBaseButton } from './BaseButton';
+  buttonDefaultPropTypes,
+} from "./Button.Skeleton"
+import { StyledBaseButton } from "./BaseButton"
 
-import { palette } from '../../utils/presets';
+import { palette } from "../../utils/presets"
 
 const StyledSuccessButton = styled(StyledBaseButton)`
   background: ${palette.green[600]};
@@ -20,13 +20,13 @@ const StyledSuccessButton = styled(StyledBaseButton)`
     background: ${palette.green[700]};
     border-color: ${palette.green[900]};
   }
-`;
+`
 
 const SuccessButton = props => (
   <ButtonSkeleton StyledComponent={StyledSuccessButton} {...props} />
-);
+)
 
-SuccessButton.propTypes = buttonPropTypes;
-SuccessButton.defaultProps = buttonDefaultPropTypes;
+SuccessButton.propTypes = buttonPropTypes
+SuccessButton.defaultProps = buttonDefaultPropTypes
 
-export default SuccessButton;
+export default SuccessButton

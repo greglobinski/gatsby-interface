@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'react-emotion';
+import React from "react"
+import styled from "react-emotion"
 
 import ButtonSkeleton, {
   buttonPropTypes,
-  buttonDefaultPropTypes
-} from './Button.Skeleton';
-import { StyledBaseButton } from './BaseButton';
+  buttonDefaultPropTypes,
+} from "./Button.Skeleton"
+import { StyledBaseButton } from "./BaseButton"
 
-import { palette } from '../../utils/presets';
+import { palette } from "../../utils/presets"
 
-let StyledSecondaryButton = styled(StyledBaseButton)`
+const StyledSecondaryButton = styled(StyledBaseButton)`
   background: ${palette.white};
   border: 1px solid ${palette.purple[200]};
   color: ${palette.purple[500]};
@@ -19,13 +19,13 @@ let StyledSecondaryButton = styled(StyledBaseButton)`
     border: 1px solid ${palette.purple[600]};
     color: ${palette.purple[600]};
   }
-`;
+`
 
 const SecondaryButton = ({ StyledComponent, ...rest }) => (
   <ButtonSkeleton StyledComponent={StyledSecondaryButton} {...rest} />
-);
+)
 
-SecondaryButton.propTypes = buttonPropTypes;
-SecondaryButton.defaultProps = buttonDefaultPropTypes;
+SecondaryButton.propTypes = buttonPropTypes
+SecondaryButton.defaultProps = buttonDefaultPropTypes
 
-export default SecondaryButton;
+export default SecondaryButton

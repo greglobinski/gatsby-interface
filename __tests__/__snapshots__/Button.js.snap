@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrimaryButton> renders unchanged 1`] = `
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: #635E69;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+  font-size: 1.125rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  min-height: 2.25rem;
+  padding: 0.55rem 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: #663399;
+  border: 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.emotion-0[disabled],
+.emotion-0[disabled]:hover {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transform: translateX(0.2em) scale(1);
+  -ms-transform: translateX(0.2em) scale(1);
+  transform: translateX(0.2em) scale(1);
+}
+
+.emotion-0:hover:not([disabled]) svg {
+  -webkit-animation: animation-1hbxf4 1s linear infinite;
+  animation: animation-1hbxf4 1s linear infinite;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  background: #542C85;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+  >
+    Click me!
+  </button>
+</div>
+`;
