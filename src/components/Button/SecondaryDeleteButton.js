@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import ButtonSkeleton, {
@@ -8,7 +7,7 @@ import ButtonSkeleton, {
 } from './Button.Skeleton';
 import { StyledBaseButton } from './BaseButton';
 
-import { colors, palette } from '../../utils/presets';
+import { palette } from '../../utils/presets';
 
 let StyledSecondaryDeleteButton = styled(StyledBaseButton)`
   background: ${palette.white};

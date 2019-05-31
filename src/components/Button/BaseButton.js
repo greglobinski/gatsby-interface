@@ -1,24 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled, { keyframes } from 'react-emotion';
 
-import {
-  colors,
-  fontFamilies,
-  radius,
-  palette,
-  fontSizes,
-  breakpoints,
-  spaces
-} from '../../utils/presets';
+import { fontFamilies, radius, palette } from '../../utils/presets';
 
 import ButtonSkeleton, {
   buttonPropTypes,
   buttonDefaultPropTypes,
   SkeletonStyledComponent
 } from './Button.Skeleton';
-
-import { MdRefresh } from 'react-icons/md';
 
 const loading = keyframes`
   0% {

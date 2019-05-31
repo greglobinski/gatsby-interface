@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import ButtonSkeleton, {
@@ -8,12 +7,12 @@ import ButtonSkeleton, {
 } from './Button.Skeleton';
 import { StyledBaseButton } from './BaseButton';
 
-import { colors, palette } from '../../utils/presets';
+import { palette } from '../../utils/presets';
 
 let StyledSecondaryButton = styled(StyledBaseButton)`
   background: ${palette.white};
   border: 1px solid ${palette.purple[200]};
-  color: ${colors.lilac};
+  color: ${palette.purple[500]};
 
   :focus,
   &:hover:not([disabled]) {
