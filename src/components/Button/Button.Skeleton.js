@@ -73,7 +73,7 @@ const ButtonSkeleton = ({
   )
 }
 
-ButtonSkeleton.propTypes = buttonSkeletonPropTypes
-ButtonSkeleton.defaultProps = buttonSkeletonDefaultPropTypes
+// ButtonSkeleton.propTypes = buttonSkeletonPropTypes
+// ButtonSkeleton.defaultProps = buttonSkeletonDefaultPropTypes
 
 export default ButtonSkeleton

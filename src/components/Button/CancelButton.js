@@ -25,7 +25,7 @@ const CancelButton = props => (
   <ButtonSkeleton StyledComponent={StyledCancelButton} {...props} />
 )
 
-CancelButton.propTypes = buttonPropTypes
-CancelButton.defaultProps = buttonDefaultPropTypes
+// CancelButton.propTypes = buttonPropTypes
+// CancelButton.defaultProps = buttonDefaultPropTypes
 
 export default CancelButton

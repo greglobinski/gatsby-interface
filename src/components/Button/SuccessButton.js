@@ -26,7 +26,7 @@ const SuccessButton = props => (
   <ButtonSkeleton StyledComponent={StyledSuccessButton} {...props} />
 )
 
-SuccessButton.propTypes = buttonPropTypes
-SuccessButton.defaultProps = buttonDefaultPropTypes
+// SuccessButton.propTypes = buttonPropTypes
+// SuccessButton.defaultProps = buttonDefaultPropTypes
 
 export default SuccessButton

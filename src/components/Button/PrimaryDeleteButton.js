@@ -26,7 +26,7 @@ const PrimaryDeleteButton = props => (
   <ButtonSkeleton StyledComponent={StyledPrimaryDeleteButton} {...props} />
 )
 
-PrimaryDeleteButton.propTypes = buttonPropTypes
-PrimaryDeleteButton.defaultProps = buttonDefaultPropTypes
+// PrimaryDeleteButton.propTypes = buttonPropTypes
+// PrimaryDeleteButton.defaultProps = buttonDefaultPropTypes
 
 export default PrimaryDeleteButton

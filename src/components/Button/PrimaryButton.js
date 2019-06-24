@@ -25,7 +25,7 @@ const PrimaryButton = props => (
   <ButtonSkeleton StyledComponent={StyledPrimaryButton} {...props} />
 )
 
-PrimaryButton.propTypes = buttonPropTypes
-PrimaryButton.defaultProps = buttonDefaultPropTypes
+// PrimaryButton.propTypes = buttonPropTypes
+// PrimaryButton.defaultProps = buttonDefaultPropTypes
 
 export default PrimaryButton

@@ -4,14 +4,14 @@
   "description": "",
   "source": "src/index.js",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.esm.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "microbundle",
-    "dev": "microbundle watch",
+    "build": "microbundle --jsx React.createElement",
+    "dev": "microbundle watch --jsx React.createElement",
     "stylelint": "stylelint './src/**/*.js'",
     "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
     "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write"

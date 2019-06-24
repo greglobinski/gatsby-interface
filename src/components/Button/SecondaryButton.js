@@ -25,7 +25,7 @@ const SecondaryButton = ({ StyledComponent, ...rest }) => (
   <ButtonSkeleton StyledComponent={StyledSecondaryButton} {...rest} />
 )
 
-SecondaryButton.propTypes = buttonPropTypes
-SecondaryButton.defaultProps = buttonDefaultPropTypes
+// SecondaryButton.propTypes = buttonPropTypes
+// SecondaryButton.defaultProps = buttonDefaultPropTypes
 
 export default SecondaryButton

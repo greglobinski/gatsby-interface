@@ -96,7 +96,7 @@ const BaseButton = props => (
   <ButtonSkeleton StyledComponent={StyledBaseButton} {...props} />
 )
 
-BaseButton.propTypes = buttonPropTypes
-BaseButton.defaultProps = buttonDefaultPropTypes
+// BaseButton.propTypes = buttonPropTypes
+// BaseButton.defaultProps = buttonDefaultPropTypes
 
 export default BaseButton
