@@ -25,7 +25,7 @@ const SecondaryDeleteButton = props => (
   <ButtonSkeleton StyledComponent={StyledSecondaryDeleteButton} {...props} />
 )
 
-// SecondaryDeleteButton.propTypes = buttonPropTypes
-// SecondaryDeleteButton.defaultProps = buttonDefaultPropTypes
+SecondaryDeleteButton.propTypes = buttonPropTypes
+SecondaryDeleteButton.defaultProps = buttonDefaultPropTypes
 
 export default SecondaryDeleteButton

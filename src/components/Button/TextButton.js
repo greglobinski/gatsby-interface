@@ -24,7 +24,7 @@ const TextButton = props => (
   <ButtonSkeleton StyledComponent={StyledTextButton} {...props} />
 )
 
-// TextButton.propTypes = buttonPropTypes
-// TextButton.defaultProps = buttonDefaultPropTypes
+TextButton.propTypes = buttonPropTypes
+TextButton.defaultProps = buttonDefaultPropTypes
 
 export default TextButton

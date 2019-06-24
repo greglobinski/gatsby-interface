@@ -10,23 +10,23 @@
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "microbundle --jsx React.createElement",
-    "dev": "microbundle watch --jsx React.createElement",
-    "stylelint": "stylelint './src/**/*.js'",
+    "build": "babel src -d dist",
     "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
     "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/cli": "^7.4.4"
+  },
   "peerDependencies": {
     "emotion": "^9.2.9",
     "gatsby": "2.6.0",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-emotion": "^9.2.9",
-    "react-icons": "^3.2.1",
-    "react-dom": "^16.8.1"
+    "react-icons": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
