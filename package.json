@@ -4,14 +4,13 @@
   "description": "",
   "source": "src/index.js",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.esm.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "microbundle",
-    "dev": "microbundle watch",
+    "build": "babel src -d dist",
     "stylelint": "stylelint './src/**/*.js'",
     "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
     "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write"
@@ -24,11 +23,12 @@
     "gatsby": "2.6.0",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-emotion": "^9.2.9",
-    "react-icons": "^3.2.1",
-    "react-dom": "^16.8.1"
+    "react-icons": "^3.2.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.0.1",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
