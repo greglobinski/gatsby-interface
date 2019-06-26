@@ -10,13 +10,4 @@ export {
   TextButton,
 } from "./components/Button"
 
-export {
-  InternalLinkSkeleton,
-  ExternalLinkSkeleton,
-  BaseInternalLink,
-  BaseExternalLink,
-  InternalLink,
-  ExternalLink,
-  SimpleInternalLink,
-  SimpleExternalLink,
-} from "./components/Link"
+export { LinkSkeleton, BaseLink, Link, SimpleLink } from "./components/Link"

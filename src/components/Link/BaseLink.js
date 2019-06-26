@@ -1,21 +1,22 @@
-import { fontSizes, fontFamilies, palette } from "../../utils/presets"
+import React from "react"
+import styled from "react-emotion"
 
-export const baseStyles = {
-    alignItems: 'center',
-    display: 'flex',
-    fontSize: `${fontSizes.xs}`,
-    fontFamily: `${fontFamilies.bodyFontFamily}`,
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    letterSpacing: '0.25px',
-}
+import LinkSkeleton, {
+  linkPropTypes,
+  SkeletonStyledComponent,
+} from "./Link.Skeleton"
 
-export const linkStyles = {
-    color: `${palette.purple[600]}`
-}
+export const StyledBaseLink = styled(SkeletonStyledComponent)`
+  align-items: center;
+  display: inline-flex;
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+`
 
-export const simpleLinkStyles = {
-    textDecoration: 'none',
-    altColor: `${palette.purple[400]}`,
-    altTextDecoration: 'underline',
-}
+const BaseLink = props => <LinkSkeleton StyledComponent={StyledBaseLink} {...props} />
+
+BaseLink.propTypes = linkPropTypes
+
+export default BaseLink
