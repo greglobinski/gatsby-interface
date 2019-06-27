@@ -1,7 +1,7 @@
 {
   "name": "gatsby-interface",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.11",
+  "description": "Component library for Gatsby projects",
   "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
