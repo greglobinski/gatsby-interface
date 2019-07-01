@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
@@ -17,10 +17,12 @@ const getLinkType = () => {
   else return { href: text(`Url`, `#`) }
 }
 
-const linkProps = () => {return {
-  ...getLinkType(),
-  onClick: action(`Link was clicked`),
-}}
+const linkProps = () => {
+  return {
+    ...getLinkType(),
+    onClick: action(`Link was clicked`),
+  }
+}
 
 storiesOf(`Link`, module)
   .add(
