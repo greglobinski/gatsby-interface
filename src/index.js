@@ -20,3 +20,17 @@ export {
   CardTitle,
   CardText,
 } from "./components/Card"
+
+export {
+  TabsSkeleton,
+  BaseTabs,
+  Tabs,
+  TabSkeleton,
+  BaseTab,
+  Tab,
+  TabsNav,
+  NumberedTabs,
+  NumberedTab,
+  NumberedTabFigure,
+  NumberedTabLabel,
+} from "./components/Tabs"
