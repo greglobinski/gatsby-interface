@@ -8,6 +8,7 @@ import { StyledBaseTab } from "./BaseTab"
 
 const StyledNumberedTab = styled(StyledBaseTab)`
   background: ${colors.secondaryBackground};
+  border: 1px solid ${colors.standardLine};
   color: ${palette.grey[400]};
 
   a {
@@ -16,6 +17,7 @@ const StyledNumberedTab = styled(StyledBaseTab)`
 
   &.active {
     background: ${colors.primaryBackground};
+    border-bottom-color: ${colors.secondaryBackground};
     color: ${palette.grey[900]};
   }
 `

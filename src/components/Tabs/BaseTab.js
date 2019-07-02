@@ -1,7 +1,15 @@
 import React from "react"
 import styled from "react-emotion"
 
-import { radius, spaces, breakpoints } from "../../utils/presets"
+import {
+  colors,
+  palette,
+  radius,
+  spaces,
+  breakpoints,
+  fontFamilies,
+  fontSizes,
+} from "../../utils/presets"
 
 import TabSkeleton, {
   tabPropTypes,
@@ -11,7 +19,11 @@ import TabSkeleton, {
 export const StyledBaseTab = styled(SkeletonStyledComponent)`
   align-items: center;
   border-radius: ${radius.default} ${radius.default} 0 0;
+  color: ${palette.purple[500]};
   display: inline-flex;
+  font-family: ${fontFamilies.headerFontFamily};
+  font-size: ${fontSizes.m};
+  font-weight: bold;
   height: 3.5rem;
   margin: 0 ${spaces[`2xs`]};
   padding: ${spaces[`3xs`]} ${spaces.m} 0;
@@ -22,6 +34,9 @@ export const StyledBaseTab = styled(SkeletonStyledComponent)`
     align-items: center;
     display: flex;
     text-decoration: none;
+    &:active {
+      color: inherit;
+    }
   }
 
   &.active {
@@ -29,6 +44,7 @@ export const StyledBaseTab = styled(SkeletonStyledComponent)`
 
     :before,
     :after {
+      border: 1px solid ${colors.standardLine};
       bottom: -1px;
       content: "";
       height: 6px;
