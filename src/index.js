@@ -34,3 +34,5 @@ export {
   NumberedTabFigure,
   NumberedTabLabel,
 } from "./components/Tabs"
+
+export { Radio, RadioSkeleton } from "./components/Radio"
