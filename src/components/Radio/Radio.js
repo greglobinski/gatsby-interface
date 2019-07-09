@@ -2,33 +2,51 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "react-emotion"
 
-import { colors, palette, radius, spaces, fontSizes } from "../../utils/presets"
+import {
+  colors,
+  palette,
+  radius,
+  spaces,
+  fontFamilies,
+  fontSizes,
+} from "../../utils/presets"
+
+const INPUT_BORDER_WIDTH = `2px`
+const INPUT_INNER_DIA = `18px`
+const INPUT_OUTER_DIA = `calc(${INPUT_INNER_DIA} + (2 * ${INPUT_BORDER_WIDTH}))`
 
 import RadioSkeleton, { radioSkeletonPropTypes } from "./Radio.Skeleton"
 
 const Label = styled(`label`)`
   align-items: center;
-  line-height: 1;
-  display: flex;
+  color: ${palette.grey[800]};
   cursor: pointer;
+  display: flex;
+  font-family: ${fontFamilies.bodyFontFamily};
+  font-size: ${fontSizes.s};
+  line-height: 1;
+  padding-left: calc(${INPUT_OUTER_DIA} + ${spaces.s});
   position: relative;
+  min-height: ${INPUT_OUTER_DIA};
 
   :after,
   :before {
     border-radius: 50%;
     content: "";
-    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
     left: 0;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     transition: 0.15s ease-in-out;
-    top: 0;
   }
 
   :before {
     background: ${colors.primaryBackground};
-    border: 2px solid ${palette.grey[300]};
-    height: 22px;
-    width: 22px;
+    border: ${INPUT_BORDER_WIDTH} solid ${palette.grey[300]};
+    height: ${INPUT_INNER_DIA};
+    width: ${INPUT_INNER_DIA};
   }
 
   :after {
@@ -36,7 +54,6 @@ const Label = styled(`label`)`
     height: 8px;
     left: 7px;
     opacity: 0;
-    top: 7px;
     width: 8px;
   }
 
@@ -48,12 +65,12 @@ const Label = styled(`label`)`
 `
 
 const RadioInput = styled(`input`)`
-  position: absolute;
+  cursor: pointer;
   left: 0;
-  width: 20px;
   height: 20px;
   opacity: 0;
-  cursor: pointer;
+  position: absolute;
+  width: 20px;
   z-index: 2;
 
   &:checked + label::before {
@@ -65,7 +82,7 @@ const RadioInput = styled(`input`)`
   }
 
   &:hover + label::before {
-    border-color: red;
+    border-color: ${palette.purple[400]};
   }
 
   &:focus + label::before {
@@ -75,34 +92,19 @@ const RadioInput = styled(`input`)`
 `
 
 const StandardContainer = styled(`div`)`
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-  margin: ${spaces.m} ${spaces[`2xs`]};
-  position: relative;
-
-  ${Label} {
-    padding-left: ${spaces.xl};
-
-    :before {
-      left: 0;
-    }
-
-    :after {
-      left: 7px;
-    }
-  }
+  margin-bottom: ${spaces.m};
 `
 
 const ColourfulContainer = styled(StandardContainer)`
   margin: 0;
+  position: relative;
 
   :before,
   :after {
     content: "";
     position: absolute;
-    z-index: -1;
     background: #eee;
+    z-index: -1;
   }
   :before {
     border-radius: ${radius.large};
@@ -113,25 +115,36 @@ const ColourfulContainer = styled(StandardContainer)`
     top: 0;
   }
   :after {
-    top: 2px;
-    left: 2px;
-    bottom: 2px;
-    right: 2px;
     background: ${palette.white};
     border-radius: 6px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    top: 2px;
   }
 
   :hover:not(.selected) {
     :before,
     :after {
-      opacity: 1;
       background: ${palette.purple[50]};
+      opacity: 1;
+    }
+  }
+
+  ${Label} {
+    padding: ${spaces.s} ${spaces.m} ${spaces.s}
+      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
+
+    :before {
+      left: ${spaces.m};
+    }
+    :after {
+      left: calc(${spaces.m} + 7px);
     }
   }
 
   &.selected {
     margin: ${spaces[`2xs`]} 0;
-    padding: ${spaces[`3xs`]} 0;
 
     :before {
       opacity: 1;
@@ -144,41 +157,28 @@ const ColourfulContainer = styled(StandardContainer)`
         #05f7f4 100%
       );
     }
-  }
 
-  ${Label} {
-    padding: ${spaces.m};
-    padding-left: ${spaces[`3xl`]};
-    width: 100%;
-
-    :before {
-      left: ${spaces.m};
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    :after {
-      left: calc(${spaces.m} + 7px);
-      top: 50%;
-      transform: translateY(-50%);
+    ${Label} {
+      padding: ${spaces.m} ${spaces.m} ${spaces.m}
+        calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
     }
   }
 `
 
 const Radio = ({ selectionStyle, ...rest }) => (
-    <RadioSkeleton
-      StyledContainer={
-        selectionStyle === `emphasized` ? ColourfulContainer : StandardContainer
-      }
-      StyledInput={RadioInput}
-      StyledLabel={Label}
-      {...rest}
-    />
-  )
+  <RadioSkeleton
+    StyledContainer={
+      selectionStyle === `emphasized` ? ColourfulContainer : StandardContainer
+    }
+    StyledInput={RadioInput}
+    StyledLabel={Label}
+    {...rest}
+  />
+)
 
 Radio.propTypes = {
   ...radioSkeletonPropTypes,
-  selectionStyle: PropTypes.oneOf([`standard`, `emphasize`]),
+  selectionStyle: PropTypes.oneOf([`standard`, `emphasized`]),
 }
 
 Radio.defaultProps = {

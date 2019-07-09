@@ -1,87 +1,133 @@
 import React, { Fragment, useState } from "react"
+import styled from "react-emotion"
 
 import { storiesOf } from "@storybook/react"
+import { radios, boolean } from "@storybook/addon-knobs"
 
 import { Radio, RadioSkeleton } from "../src/components/Radio"
+import { fontFamilies, fontSizes, palette, spaces } from "../src/utils/presets"
+
+const Form = styled(`form`)`
+  min-width: 20rem;
+`
+
+const InnerLabelTemplate = styled(`div`)`
+  strong {
+    font-size: ${fontSizes.l};
+    font-weight: 800;
+    font-family: ${fontFamilies.headerFontFamily};
+  }
+  p {
+    color: ${palette.grey[600]};
+    font-size: ${fontSizes.xs};
+    margin: 0;
+    margin-top: ${spaces[`2xs`]};
+  }
+`
+
+const selectionStyles = {
+  standard: `standard`,
+  emphasized: `emphasized`,
+}
+
+const innerLabelCompTemplate = label => props => (
+  <InnerLabelTemplate>
+    <strong>{label}</strong>
+    <p>This is React component</p>
+  </InnerLabelTemplate>
+)
+
+const options = [
+  {
+    value: 1,
+    label: `First Option`,
+  },
+  {
+    value: 2,
+    label: `Second Option`,
+  },
+  {
+    value: 3,
+    label: `Third Option`,
+  },
+]
 
 storiesOf(`Radio`, module)
   .add(
     `RadioSkeleton`,
-
     () =>
       React.createElement(() => {
-        const [optionValue, setOptionValue] = useState(`on`)
+        const [fieldValue, setFieldValue] = useState(1)
 
-        return (
-          <Fragment>
-            <div>
-              <RadioSkeleton
-                fieldName="name"
-                id="on"
-                label="This is radio label"
-                value="on"
-                optionValue={optionValue}
-                onChange={() => setOptionValue(`on`)}
-              />
-            </div>
-            <div>
-              <RadioSkeleton
-                fieldName="name"
-                id="off"
-                label="This is radio label"
-                value="off"
-                optionValue={optionValue}
-                onChange={() => setOptionValue(`off`)}
-              />
-            </div>
-          </Fragment>
-        )
+        return options.map(option => (
+          <RadioSkeleton
+            key={`field${option.value}`}
+            fieldName="field"
+            id={`field${option.value}`}
+            label={option.label}
+            value={option.value}
+            optionValue={fieldValue}
+            onChange={() => setFieldValue(option.value)}
+          />
+        ))
       }),
     {
       info: {
         text: `
-          It's a functional building block, on which Radio components are built on. 
+          It's a functional unstyled building block, on which Radio components is built on. 
         `,
       },
     }
   )
-  .add(
-    `Radio`,
+  .add(`Radio`, () =>
+    React.createElement(() => {
+      const [fieldValue, setFieldValue] = useState(1)
 
-    () =>
-      React.createElement(() => {
-        const [optionValue, setOptionValue] = useState(`on`)
-
-        return (
-          <Fragment>
-            <div>
-              <Radio
-                fieldName="name"
-                id="on"
-                label="This is radio label"
-                value="on"
-                optionValue={optionValue}
-                onChange={() => setOptionValue(`on`)}
-              />
-            </div>
-            <div>
-              <Radio
-                fieldName="name"
-                id="off"
-                label="This is radio label"
-                value="off"
-                optionValue={optionValue}
-                onChange={() => setOptionValue(`off`)}
-              />
-            </div>
-          </Fragment>
-        )
-      }),
-    {
-      info: {
-        text: `
-          It's a functional building block, on which Radio components are built on. 
-        `,
-      },
-    }
+      return (
+        <Form>
+          {options.map(option => (
+            <Radio
+              key={`field${option.value}`}
+              fieldName="field"
+              id={`field${option.value}`}
+              label={option.label}
+              value={option.value}
+              optionValue={fieldValue}
+              onChange={() => setFieldValue(option.value)}
+              selectionStyle={radios(
+                `selectionStyle`,
+                selectionStyles,
+                `standard`
+              )}
+            />
+          ))}
+        </Form>
+      )
+    })
   )
+
+storiesOf(`Radio/in use`, module).add(
+  `Radio with React component as a label content`,
+  () =>
+    React.createElement(() => {
+      const [fieldValue, setFieldValue] = useState(1)
+
+      return (
+        <Form>
+          {options.map(option => (
+            <Radio
+              key={`field${option.value}`}
+              fieldName="field"
+              id={`field${option.value}`}
+              label={option.label}
+              InnerLabelComponent={innerLabelCompTemplate(option.label)}
+              value={option.value}
+              optionValue={fieldValue}
+              onChange={() => setFieldValue(option.value)}
+              selectionStyle="emphasized"
+            />
+          ))}
+        </Form>
+      )
+    })
+)
