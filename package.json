@@ -11,6 +11,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "babel src -d dist",
+    "dev": "watch 'yarn run build' src",
     "stylelint": "stylelint './src/**/*.js'",
     "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
     "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write"
@@ -82,7 +83,8 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^2.0.0",
     "stylelint-processor-styled-components": "^1.5.1",
-    "unfetch": "^3.1.1"
+    "unfetch": "^3.1.1",
+    "watch": "^1.0.2"
   },
   "husky": {
     "hooks": {
