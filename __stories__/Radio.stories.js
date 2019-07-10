@@ -11,17 +11,63 @@ const Form = styled(`form`)`
   min-width: 20rem;
 `
 
-const InnerLabelTemplate = styled(`div`)`
-  strong {
-    font-size: ${fontSizes.l};
-    font-weight: 800;
-    font-family: ${fontFamilies.headerFontFamily};
+const CustomRadio1 = styled(Radio)`
+  & > label {
+    & > span {
+      display: flex;
+      flex-direction: column;
+
+      strong {
+        font-size: ${fontSizes.l};
+        font-weight: 800;
+        font-family: ${fontFamilies.headerFontFamily};
+      }
+
+      span {
+        color: ${palette.grey[600]};
+        font-size: ${fontSizes.xs};
+        margin: 0;
+        margin-top: ${spaces[`2xs`]};
+      }
+    }
   }
-  p {
-    color: ${palette.grey[600]};
-    font-size: ${fontSizes.xs};
-    margin: 0;
-    margin-top: ${spaces[`2xs`]};
+`
+
+const CustomRadio2 = styled(Radio)`
+  label {
+    &.emphasized {
+      padding: ${spaces.l} ${spaces.xl};
+
+      :after,
+      :before {
+        display: none;
+      }
+
+      & > span {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+          font-size: ${fontSizes.l};
+          font-weight: 800;
+          font-family: ${fontFamilies.headerFontFamily};
+        }
+
+        span {
+          color: ${palette.grey[600]};
+          font-size: ${fontSizes.xs};
+          margin: 0;
+          margin-top: ${spaces[`2xs`]};
+        }
+      }
+    }
+  }
+  &.selected {
+    label {
+      &.emphasized {
+        padding: ${spaces.l} ${spaces.xl};
+      }
+    }
   }
 `
 
@@ -29,13 +75,6 @@ const selectionStyles = {
   standard: `standard`,
   emphasized: `emphasized`,
 }
-
-const innerLabelCompTemplate = label => props => (
-  <InnerLabelTemplate>
-    <strong>{label}</strong>
-    <p>This is React component</p>
-  </InnerLabelTemplate>
-)
 
 const options = [
   {
@@ -106,21 +145,21 @@ storiesOf(`Radio`, module)
     })
   )
 
-storiesOf(`Radio/in use`, module).add(
-  `Radio with React component as a label content`,
-  () =>
+storiesOf(`Radio/in use`, module)
+  .add(`Radio with HTML content label`, () =>
     React.createElement(() => {
       const [fieldValue, setFieldValue] = useState(1)
 
       return (
         <Form>
           {options.map(option => (
-            <Radio
+            <CustomRadio1
               key={`field${option.value}`}
               fieldName="field"
               id={`field${option.value}`}
-              label={option.label}
-              InnerLabelComponent={innerLabelCompTemplate(option.label)}
+              label={`<span><strong>${
+                option.label
+              }</strong><span>This is label with HTML content</span></span>`}
               value={option.value}
               optionValue={fieldValue}
               onChange={() => setFieldValue(option.value)}
@@ -130,4 +169,28 @@ storiesOf(`Radio/in use`, module).add(
         </Form>
       )
     })
-)
+  )
+  .add(`Radio without input symbol`, () =>
+    React.createElement(() => {
+      const [fieldValue, setFieldValue] = useState(1)
+
+      return (
+        <Form>
+          {options.map(option => (
+            <CustomRadio2
+              key={`field${option.value}`}
+              fieldName="field"
+              id={`field${option.value}`}
+              label={`<span><strong>${
+                option.label
+              }</strong><span>This is label with HTML content</span></span>`}
+              value={option.value}
+              optionValue={fieldValue}
+              onChange={() => setFieldValue(option.value)}
+              selectionStyle="emphasized"
+            />
+          ))}
+        </Form>
+      )
+    })
+  )

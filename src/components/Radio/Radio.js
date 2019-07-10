@@ -12,10 +12,13 @@ import {
 } from "../../utils/presets"
 
 const INPUT_BORDER_WIDTH = `2px`
-const INPUT_INNER_DIA = `18px`
+const INPUT_INNER_DIA = `22px`
 const INPUT_OUTER_DIA = `calc(${INPUT_INNER_DIA} + (2 * ${INPUT_BORDER_WIDTH}))`
 
-import RadioSkeleton, { radioSkeletonPropTypes } from "./Radio.Skeleton"
+import RadioSkeleton, {
+  radioPropTypes,
+  radioDefaultPropTypes,
+} from "./Radio.Skeleton"
 
 const Label = styled(`label`)`
   align-items: center;
@@ -62,6 +65,23 @@ const Label = styled(`label`)`
     font-size: ${fontSizes.xs};
     line-height: 1.1;
   }
+
+  &.emphasized {
+    padding: ${spaces.s} ${spaces.m} ${spaces.s}
+      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
+
+    :before {
+      left: ${spaces.m};
+    }
+    :after {
+      left: calc(${spaces.m} + 7px);
+    }
+  }
+
+  .selected &.emphasized {
+    padding: ${spaces.m} ${spaces.m} ${spaces.m}
+      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
+  }
 `
 
 const RadioInput = styled(`input`)`
@@ -93,6 +113,7 @@ const RadioInput = styled(`input`)`
 
 const StandardContainer = styled(`div`)`
   margin-bottom: ${spaces.m};
+  position: relative;
 `
 
 const ColourfulContainer = styled(StandardContainer)`
@@ -131,18 +152,6 @@ const ColourfulContainer = styled(StandardContainer)`
     }
   }
 
-  ${Label} {
-    padding: ${spaces.s} ${spaces.m} ${spaces.s}
-      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
-
-    :before {
-      left: ${spaces.m};
-    }
-    :after {
-      left: calc(${spaces.m} + 7px);
-    }
-  }
-
   &.selected {
     margin: ${spaces[`2xs`]} 0;
 
@@ -157,32 +166,25 @@ const ColourfulContainer = styled(StandardContainer)`
         #05f7f4 100%
       );
     }
-
-    ${Label} {
-      padding: ${spaces.m} ${spaces.m} ${spaces.m}
-        calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
-    }
   }
 `
 
-const Radio = ({ selectionStyle, ...rest }) => (
-  <RadioSkeleton
-    StyledContainer={
-      selectionStyle === `emphasized` ? ColourfulContainer : StandardContainer
-    }
-    StyledInput={RadioInput}
-    StyledLabel={Label}
-    {...rest}
-  />
-)
+const Radio = props => {
+  const { selectionStyle } = props
 
-Radio.propTypes = {
-  ...radioSkeletonPropTypes,
-  selectionStyle: PropTypes.oneOf([`standard`, `emphasized`]),
+  return (
+    <RadioSkeleton
+      StyledContainer={
+        selectionStyle === `emphasized` ? ColourfulContainer : StandardContainer
+      }
+      StyledInput={RadioInput}
+      StyledLabel={Label}
+      {...props}
+    />
+  )
 }
 
-Radio.defaultProps = {
-  selectionStyle: `standard`,
-}
+Radio.propTypes = radioPropTypes
+Radio.defaultProps = radioDefaultPropTypes
 
 export default Radio

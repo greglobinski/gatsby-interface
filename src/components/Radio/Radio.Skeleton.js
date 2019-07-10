@@ -10,22 +10,27 @@ const SkeletonStyledLabel = styled(`label`)``
 
 export const radioPropTypes = {
   label: PropTypes.string,
-  InnerLabelComponent: PropTypes.func,
   htmlLabel: PropTypes.any,
   fieldName: PropTypes.string.isRequired,
   id: PropTypes.string,
   optionValue: PropTypes.any,
   value: PropTypes.any.isRequired,
+  selectionStyle: PropTypes.oneOf([`standard`, `emphasized`]),
 }
 
-export const radioSkeletonPropTypes = {
+const radioSkeletonPropTypes = {
   ...radioPropTypes,
   StyledContainer: PropTypes.any,
   StyledInput: PropTypes.any,
   StyledLabel: PropTypes.any,
 }
 
+export const radioDefaultPropTypes = {
+  selectionStyle: `standard`,
+}
+
 const radioSkeletonDefaultPropTypes = {
+  ...radioDefaultPropTypes,
   StyledContainer: SkeletonStyledContainer,
   StyledInput: SkeletonStyledInput,
   StyledLabel: SkeletonStyledLabel,
@@ -44,6 +49,8 @@ export function RadioSkeleton({
   className,
   children,
   onChange,
+  type,
+  selectionStyle,
   ...rest
 }) {
   return (
@@ -59,11 +66,12 @@ export function RadioSkeleton({
         onChange={onChange}
         {...rest}
       />
-      {(label || InnerLabelComponent) && (
-        <StyledLabel htmlFor={id}>
-          {InnerLabelComponent ? <InnerLabelComponent /> : label}
-        </StyledLabel>
-      )}
+      <StyledLabel
+        selectionStyle={selectionStyle}
+        className={`${selectionStyle}`}
+        htmlFor={id}
+        dangerouslySetInnerHTML={{ __html: label }}
+      />
       {children}
     </StyledContainer>
   )
