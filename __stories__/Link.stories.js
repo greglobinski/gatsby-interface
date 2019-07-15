@@ -21,6 +21,7 @@ const linkProps = () => {
   return {
     ...getLinkType(),
     onClick: action(`Link was clicked`),
+    target: `_blank`,
   }
 }
 

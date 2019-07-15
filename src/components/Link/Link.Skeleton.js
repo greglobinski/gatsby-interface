@@ -8,6 +8,7 @@ export const SkeletonStyledComponent = styled(Link)``
 export const linkPropTypes = {
   href: PropTypes.string,
   to: PropTypes.string,
+  target: PropTypes.string,
 }
 
 const linkSkeletonPropTypes = {
@@ -19,11 +20,20 @@ const linkSkeletonDefaultPropTypes = {
   StyledComponent: SkeletonStyledComponent,
 }
 
-const LinkSkeleton = ({ StyledComponent, children, href, to, ...rest }) => {
+const LinkSkeleton = ({
+  StyledComponent,
+  children,
+  href,
+  target,
+  to,
+  ...rest
+}) => {
   if (href) {
     const ComponentAsExternalLink = StyledComponent.withComponent(`a`)
     return (
-      <ComponentAsExternalLink href={href}>{children}</ComponentAsExternalLink>
+      <ComponentAsExternalLink href={href} target={target}>
+        {children}
+      </ComponentAsExternalLink>
     )
   }
 
