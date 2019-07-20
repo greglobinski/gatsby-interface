@@ -80,7 +80,7 @@ const Indicator = ({ status, label, expanded }) => {
   return (
     <span
       key={status}
-      css={{
+      className={css({
         alignItems: `center`,
         borderRadius: `50%`,
         display: `flex`,
@@ -114,16 +114,16 @@ const Indicator = ({ status, label, expanded }) => {
           marginRight: spaces.xs,
         },
         ...styles[status],
-      }}
+      })}
     >
       <span
-        css={{
+        className={css({
           alignItems: `center`,
           display: `flex`,
           justifyContent: `center`,
           height: `100%`,
           width: `100%`,
-        }}
+        })}
       >
         {Icon && <Icon />}
       </span>
@@ -138,14 +138,14 @@ Indicator.propTypes = {
 
 const Label = ({ children, expanded = false }) => (
   <span
-    css={{
+    className={css({
       fontFamily: fontFamilies.bodyFontFamily,
       fontSize: fontSizes.m,
       paddingLeft: spaces.m,
       position: expanded ? `absolute` : `static`,
       left: expanded ? spaces.xl : 0,
       whiteSpace: `nowrap`,
-    }}
+    })}
   >
     {children}
   </span>
@@ -163,21 +163,21 @@ const StepsIndicator = ({ steps, expanded = false }) => {
 
   return (
     <div
-      css={{
+      className={css({
         alignItems: `center`,
         display: `flex`,
         flexWrap: `wrap`,
-      }}
+      })}
     >
       <div
-        css={{
+        className={css({
           alignItems: `center`,
           background: palette.grey[100],
           borderRadius: `9999px`,
           display: `inline-flex`,
           flexDirection: expanded ? `column` : `row`,
           zIndex: `-1`,
-        }}
+        })}
       >
         {steps.map((step, index) => (
           <Indicator
