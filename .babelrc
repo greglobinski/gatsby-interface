@@ -15,7 +15,7 @@
         ]
     ],
     "plugins": [
-        "emotion",
+        ["emotion", { "hoist": true }],
         [
             "@babel/plugin-proposal-class-properties",
             {
