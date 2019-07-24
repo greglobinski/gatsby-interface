@@ -5,12 +5,7 @@ import { action } from "@storybook/addon-actions"
 import { text, boolean } from "@storybook/addon-knobs"
 import { MdArrowForward } from "react-icons/md"
 
-import {
-  LinkSkeleton,
-  BaseLink,
-  Link,
-  SimpleLink,
-} from "../src/components/Link"
+import { Link } from "../src/components/Link"
 
 const getLinkType = () => {
   if (boolean(`Internal link`, true)) return { to: text(`Url`, `/`) }
@@ -26,30 +21,21 @@ const linkProps = () => {
 }
 
 storiesOf(`Link`, module)
-  .add(
-    `LinkSkeleton`,
-    () => <LinkSkeleton {...linkProps()}>LinkSkeleton</LinkSkeleton>,
-    {
-      info: {
-        text: `
-          It's a functional building block, on which all other Link components are built on. 
-          **Never used directly** in the codebase.
-        `,
-      },
-    }
-  )
-  .add(`BaseLink`, () => <BaseLink {...linkProps()}>BaseLink</BaseLink>)
-  .add(`Link`, () => <Link {...linkProps()}>Link</Link>)
-  .add(`SimpleLink`, () => <SimpleLink {...linkProps()}>SimpleLink</SimpleLink>)
+  .add(`Default`, () => <Link {...linkProps()}>Default Link</Link>)
+  .add(`Simple`, () => (
+    <Link {...linkProps()} simple>
+      Simple Link
+    </Link>
+  ))
 
 storiesOf(`Link/in use`, module)
-  .add(`Link with icon`, () => (
+  .add(`Default Link with icon`, () => (
     <Link {...linkProps()}>
       LinkWithIcon <MdArrowForward />
     </Link>
   ))
-  .add(`SimpleLink with icon`, () => (
-    <SimpleLink {...linkProps()}>
+  .add(`Simple Link with icon`, () => (
+    <Link {...linkProps()} simple>
       LinkWithIcon <MdArrowForward />
-    </SimpleLink>
+    </Link>
   ))

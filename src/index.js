@@ -10,7 +10,7 @@ export {
   TextButton,
 } from "./components/Button"
 
-export { LinkSkeleton, BaseLink, Link, SimpleLink } from "./components/Link"
+export { Link } from "./components/Link"
 
 export {
   CardSkeleton,
