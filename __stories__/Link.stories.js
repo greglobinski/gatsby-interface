@@ -23,7 +23,7 @@ const linkProps = () => {
 storiesOf(`Link`, module)
   .add(`Default`, () => <Link {...linkProps()}>Default Link</Link>)
   .add(`Simple`, () => (
-    <Link {...linkProps()} simple>
+    <Link {...linkProps()} variant={`SIMPLE`}>
       Simple Link
     </Link>
   ))
@@ -35,7 +35,7 @@ storiesOf(`Link/in use`, module)
     </Link>
   ))
   .add(`Simple Link with icon`, () => (
-    <Link {...linkProps()} simple>
+    <Link {...linkProps()} variant={`SIMPLE`}>
       LinkWithIcon <MdArrowForward />
     </Link>
   ))

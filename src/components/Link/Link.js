@@ -4,8 +4,7 @@ import { Link as GatsbyLink } from "gatsby"
 
 import { palette } from "../../utils/presets"
 
-const Link = ({ children, href, target, to, simple = false }) => {
-  const styleIndicator = simple ? `SIMPLE` : `DEFAULT`
+const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
   const baseStyles = {
     alignItems: `center`,
     color: palette.purple[600],
@@ -33,9 +32,10 @@ const Link = ({ children, href, target, to, simple = false }) => {
     <a
       href={href}
       target={target}
+      rel={target === `_blank` ? `noopener noreferrer` : ``}
       css={{
         ...baseStyles,
-        ...styles[styleIndicator],
+        ...styles[variant],
       }}
     >
       {children}
@@ -45,7 +45,7 @@ const Link = ({ children, href, target, to, simple = false }) => {
       to={to}
       css={{
         ...baseStyles,
-        ...styles[styleIndicator],
+        ...styles[variant],
       }}
     >
       {children}
@@ -58,6 +58,7 @@ Link.propTypes = {
   href: PropTypes.string,
   target: PropTypes.string,
   to: PropTypes.string,
+  variant: PropTypes.oneOf([`DEFAULT`, `SIMPLE`]),
 }
 
 export default Link
