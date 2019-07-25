@@ -1,14 +1,4 @@
-export {
-  ButtonSkeleton,
-  BaseButton,
-  PrimaryButton,
-  SecondaryButton,
-  CancelButton,
-  PrimaryDeleteButton,
-  SecondaryDeleteButton,
-  SuccessButton,
-  TextButton,
-} from "./components/Button"
+export { Button } from "./components/Button"
 
 export { Link } from "./components/Link"
 
@@ -21,19 +11,7 @@ export {
   CardText,
 } from "./components/Card"
 
-export {
-  TabsSkeleton,
-  BaseTabs,
-  Tabs,
-  TabSkeleton,
-  BaseTab,
-  Tab,
-  TabsNav,
-  NumberedTabs,
-  NumberedTab,
-  NumberedTabFigure,
-  NumberedTabLabel,
-} from "./components/Tabs"
+export { Tabs, Tab, TabsNav, TabFigure, TabLabel } from "./components/Tabs"
 
 export { RadioSkeleton, Radio } from "./components/Radio"
 

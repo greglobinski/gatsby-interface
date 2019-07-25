@@ -22,11 +22,21 @@ const linkProps = () => {
 
 storiesOf(`Link`, module)
   .add(`Default`, () => <Link {...linkProps()}>Default Link</Link>)
-  .add(`Simple`, () => (
-    <Link {...linkProps()} variant={`SIMPLE`}>
-      Simple Link
-    </Link>
-  ))
+  .add(
+    `Simple`,
+    () => (
+      <Link {...linkProps()} variant="SIMPLE">
+        Simple Link
+      </Link>
+    ),
+    {
+      info: {
+        text: `
+      Links are used as a form of navigation within the application or to an external source.
+    `,
+      },
+    }
+  )
 
 storiesOf(`Link/in use`, module)
   .add(`Default Link with icon`, () => (
@@ -35,7 +45,7 @@ storiesOf(`Link/in use`, module)
     </Link>
   ))
   .add(`Simple Link with icon`, () => (
-    <Link {...linkProps()} variant={`SIMPLE`}>
+    <Link {...linkProps()} variant="SIMPLE">
       LinkWithIcon <MdArrowForward />
     </Link>
   ))
