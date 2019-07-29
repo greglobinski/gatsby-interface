@@ -8,6 +8,8 @@ import { withA11y } from "@storybook/addon-a11y"
 import { action } from "@storybook/addon-actions"
 import "@storybook/addon-console"
 
+import { fontFamilies } from "../src/utils/presets"
+
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
 }
@@ -30,7 +32,7 @@ addDecorator(
 
 addDecorator(withKnobs)
 
-const Space = storyFn => (
+const withGlobal = storyFn => (
   <Fragment>
     <Global
       styles={css`
@@ -39,23 +41,32 @@ const Space = storyFn => (
         *:after {
           box-sizing: border-box;
         }
+        html {
+          font-size: 1rem;
+        }
+        body {
+          align-items: center;
+          display: flex;
+          font-family: ${fontFamilies.bodyFontFamily};
+          height: 100vh;
+          justify-content: center;
+          margin: 0;
+          width: 100%;
+        }
+
+        @media (min-width: 1200px) {
+          html {
+            font-size: 1.125rem;
+          }
+        }
       `}
     />
-    <div
-      style={{
-        margin: "30px 0",
-        display: "flex",
-        minHeight: "68vh",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "10vh 20vh",
-      }}
-    >
-      {storyFn()}
-    </div>
+
+    {storyFn()}
   </Fragment>
 )
-addDecorator(Space)
+
+addDecorator(withGlobal)
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
