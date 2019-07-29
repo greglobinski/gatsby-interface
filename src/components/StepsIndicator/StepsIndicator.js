@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, keyframes, css } from "@emotion/core"
-import React from "react"
+import { jsx, keyframes } from "@emotion/core"
 import PropTypes from "prop-types"
 import { MdCheck, MdClose, MdRefresh } from "react-icons/md"
 import { palette, spaces, fontFamilies, fontSizes } from "../../utils/presets"
@@ -196,6 +195,7 @@ const StepsIndicator = ({ steps, expanded = false }) => {
 
 StepsIndicator.propTypes = {
   steps: PropTypes.array,
+  expanded: PropTypes.bool,
 }
 
 export default StepsIndicator

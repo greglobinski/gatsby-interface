@@ -1,20 +1,29 @@
-import styled from "@emotion/styled"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import PropTypes from "prop-types"
 
 import { breakpoints, dimensions } from "../../utils/presets"
 
-export const TabsNav = styled(`nav`)`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto -1px auto;
-  padding: 0 ${dimensions.pagePadding.mobile};
-  width: 100%;
+const TabsNav = ({ children }) => (
+  <nav
+    css={{
+      display: `flex`,
+      flexDirection: `column`,
+      margin: `0 auto -1px auto`,
+      padding: `0 ${dimensions.pagePadding.mobile}`,
+      width: `100%`,
+      [`@media (min-width: ${breakpoints.tablet}px)`]: {
+        flexDirection: `row`,
+        padding: `0 ${dimensions.pagePadding.tablet}`,
+      },
+    }}
+  >
+    {children}
+  </nav>
+)
 
-  @media (min-width: ${breakpoints.tablet}px) {
-    flex-direction: row;
-    padding: 0 ${dimensions.pagePadding.tablet};
-  }
+TabsNav.propTypes = {
+  children: PropTypes.node,
+}
 
-  @media (min-width: ${breakpoints.tablet}px) {
-    padding: 0 ${dimensions.pagePadding.tablet};
-  }
-`
+export default TabsNav
