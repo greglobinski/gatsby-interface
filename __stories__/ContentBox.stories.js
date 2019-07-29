@@ -28,7 +28,7 @@ storiesOf(`ContentBox`, module)
       </ContentBox.Content>
     </ContentBox>
   ))
-  .add(`UNFOLD behaviour with  with a static button`, () => (
+  .add(`UNFOLD behaviour with  a static button`, () => (
     <ContentBox behaviour="UNFOLD">
       <ContentBox.Content>
         This is a PRIMARY content of this ContentBox
@@ -49,5 +49,13 @@ storiesOf(`ContentBox`, module)
         This is a SECONDARY content of this ContentBox
         <ContentBox.Button>Fold</ContentBox.Button>
       </ContentBox.Content>
+    </ContentBox>
+  ))
+  .add(`UNFOLD behaviour with no PRIMARY content`, () => (
+    <ContentBox behaviour="UNFOLD">
+      <ContentBox.Content variant="SECONDARY">
+        This is a SECONDARY content of this ContentBox
+      </ContentBox.Content>
+      <ContentBox.Button>Toggle</ContentBox.Button>
     </ContentBox>
   ))

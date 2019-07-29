@@ -1,1 +1,1 @@
-export { default as ContentBox } from "./ContentBox"
+export { ContentBox } from "./ContentBox"

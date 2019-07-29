@@ -21,10 +21,9 @@ function ContentBox({ children, as, behaviour = `TOGGLE`, ...props }) {
   const Component = as || `div`
   const [on, setOn] = useState(false)
   const changeContent = useCallback(() => setOn(oldOn => !oldOn), [])
-  const value = useMemo(
-    () => {return { on, boxBehaviour: behaviour, changeContent }},
-    [on]
-  )
+  const value = useMemo(() => {
+    return { on, boxBehaviour: behaviour, changeContent }
+  }, [on])
 
   return (
     <ContentBoxContext.Provider value={value}>
