@@ -1,5 +1,5 @@
-import React from "react"
-import { injectGlobal } from "emotion"
+import React, { Fragment } from "react"
+import { Global, css } from "@emotion/core"
 import { configure, addDecorator } from "@storybook/react"
 import { withInfo } from "@storybook/addon-info"
 import { withKnobs } from "@storybook/addon-knobs"
@@ -7,12 +7,6 @@ import { withConsole } from "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
 import { action } from "@storybook/addon-actions"
 import "@storybook/addon-console"
-
-injectGlobal`
-  *, *:before, *:after {
-    box-sizing: border-box;
-  } 
-`
 
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
@@ -37,18 +31,29 @@ addDecorator(
 addDecorator(withKnobs)
 
 const Space = storyFn => (
-  <div
-    style={{
-      margin: "30px 0",
-      display: "flex",
-      minHeight: "68vh",
-      justifyContent: "center",
-      alignItems: "center",
-      padding: "10vh 20vh",
-    }}
-  >
-    {storyFn()}
-  </div>
+  <Fragment>
+    <Global
+      styles={css`
+        *,
+        *:before,
+        *:after {
+          box-sizing: border-box;
+        }
+      `}
+    />
+    <div
+      style={{
+        margin: "30px 0",
+        display: "flex",
+        minHeight: "68vh",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "10vh 20vh",
+      }}
+    >
+      {storyFn()}
+    </div>
+  </Fragment>
 )
 addDecorator(Space)
 
