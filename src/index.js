@@ -1,4 +1,4 @@
-export { ContentBox } from "./components/Skeletons"
+export { ContentBox } from "./components/Skeletons/ContentBox"
 
 export {
   ButtonSkeleton,
@@ -40,3 +40,5 @@ export {
 export { RadioSkeleton, Radio } from "./components/Radio"
 
 export { StepsIndicator } from "./components/StepsIndicator"
+
+export { SettingsCard } from "./components/SettingsCard"

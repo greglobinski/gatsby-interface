@@ -64,12 +64,19 @@ ContentBox.Content.propTypes = {
   variant: PropTypes.oneOf(CONTENT_VARIANTS),
 }
 
-ContentBox.Button = ({ children, behaviour = `SHOW`, as = `button` }) => {
+ContentBox.Button = ({
+  children,
+  behaviour = `SHOW`,
+  as = `button`,
+  ...props
+}) => {
   const Component = as || `button`
   const { on, changeContent } = useContentBoxContext()
 
   return on && behaviour === `HIDE` ? null : (
-    <Component onClick={changeContent}>{children}</Component>
+    <Component onClick={changeContent} {...props}>
+      {children}
+    </Component>
   )
 }
 
