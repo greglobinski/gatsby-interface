@@ -17,7 +17,7 @@ storiesOf(`TextInput`, module).add(
     <TextInput
       variant={radios(`variant`, variants, `DEFAULT`)}
       placeholder={text(`Placeholder`, `Placeholder text`)}
-      type="input"
+      type="text"
       disabled={boolean(`Disabled`, false)}
     />
   ),
