@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "react-emotion"
+import styled from "@emotion/styled"
 
 const Welcome = styled(`div`)`
   font-family: sans-serif;

@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "react-emotion"
+import styled from "@emotion/styled"
 
 import LinkSkeleton, {
   linkPropTypes,
@@ -15,7 +15,9 @@ export const StyledBaseLink = styled(SkeletonStyledComponent)`
   font-weight: inherit;
 `
 
-const BaseLink = props => <LinkSkeleton StyledComponent={StyledBaseLink} {...props} />
+const BaseLink = props => (
+  <LinkSkeleton StyledComponent={StyledBaseLink} {...props} />
+)
 
 BaseLink.propTypes = linkPropTypes
 

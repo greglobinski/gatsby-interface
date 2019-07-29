@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react"
-import styled from "react-emotion"
+import styled from "@emotion/styled"
 
 import { storiesOf } from "@storybook/react"
 import { radios, boolean } from "@storybook/addon-knobs"
@@ -157,9 +157,7 @@ storiesOf(`Radio/in use`, module)
               key={`field${option.value}`}
               fieldName="field"
               id={`field${option.value}`}
-              label={`<span><strong>${
-                option.label
-              }</strong><span>This is label with HTML content</span></span>`}
+              label={`<span><strong>${option.label}</strong><span>This is label with HTML content</span></span>`}
               value={option.value}
               optionValue={fieldValue}
               onChange={() => setFieldValue(option.value)}
@@ -181,9 +179,7 @@ storiesOf(`Radio/in use`, module)
               key={`field${option.value}`}
               fieldName="field"
               id={`field${option.value}`}
-              label={`<span><strong>${
-                option.label
-              }</strong><span>This is label with HTML content</span></span>`}
+              label={`<span><strong>${option.label}</strong><span>This is label with HTML content</span></span>`}
               value={option.value}
               optionValue={fieldValue}
               onChange={() => setFieldValue(option.value)}

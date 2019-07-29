@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "react-emotion"
+import styled from "@emotion/styled"
 
 import CardSkeleton, { SkeletonStyledComponent } from "./Card.Skeleton"
 import { spaces, breakpoints } from "../../utils/presets"
