@@ -1,3 +1,5 @@
+export { ContentBox } from "./components/Skeletons"
+
 export {
   ButtonSkeleton,
   BaseButton,

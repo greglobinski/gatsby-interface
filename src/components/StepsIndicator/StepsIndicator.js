@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, keyframes, css } from "@emotion/core"
+import { jsx, css, keyframes } from "@emotion/core"
 import React from "react"
 import PropTypes from "prop-types"
 import { MdCheck, MdClose, MdRefresh } from "react-icons/md"
 import { palette, spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const loading = keyframes`
+const loading = keyframes` 
   0% {
     transform: rotate(0);
   }
