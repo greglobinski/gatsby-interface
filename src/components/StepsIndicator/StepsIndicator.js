@@ -1,5 +1,5 @@
-import React from "react"
-import { keyframes } from "emotion"
+/** @jsx jsx */
+import { jsx, keyframes } from "@emotion/core"
 import PropTypes from "prop-types"
 import { MdCheck, MdClose, MdRefresh } from "react-icons/md"
 import { palette, spaces, fontFamilies, fontSizes } from "../../utils/presets"

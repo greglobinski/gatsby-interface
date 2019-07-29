@@ -1,6 +1,7 @@
-import React, { Fragment } from "react"
+/** @jsx jsx */
+import { jsx, keyframes } from "@emotion/core"
+import { Fragment } from "react"
 import PropTypes from "prop-types"
-import { keyframes } from "react-emotion"
 import { Link } from "gatsby"
 import { MdRefresh } from "react-icons/md"
 

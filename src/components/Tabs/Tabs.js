@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
 import { colors, dimensions, breakpoints, spaces } from "../../utils/presets"
