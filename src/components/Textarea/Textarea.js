@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { spaces, theme } from "../../utils/presets"
+import { spaces, styles } from "../../utils/presets"
 
 const Textarea = ({
   id,
@@ -20,7 +20,7 @@ const Textarea = ({
     disabled={disabled}
     onChange={onChange}
     css={{
-      ...theme.input,
+      ...styles.input,
       display: `block`,
       minHeight: `4rem`,
       resize: `vertical`,

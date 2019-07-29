@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { theme, spaces } from "../../utils/presets"
+import { styles, spaces } from "../../utils/presets"
 import searchInputBg from "../../assets/searchInputBg.svg"
 
 const TextInput = ({
   id,
   placeholder,
-  type = `input`,
+  type = `text`,
   defaultValue,
   value,
   disabled,
@@ -26,7 +26,7 @@ const TextInput = ({
   }
   return (
     <input
-      type="text"
+      type={type}
       id={id}
       placeholder={placeholder}
       type={type}
@@ -35,7 +35,7 @@ const TextInput = ({
       onChange={onChange}
       disabled={disabled}
       css={{
-        ...theme.input,
+        ...styles.input,
         ...inputStyles[variant],
       }}
     />

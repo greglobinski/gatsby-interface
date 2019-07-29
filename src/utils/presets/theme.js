@@ -3,7 +3,7 @@ import { radius } from "./sizes"
 import { fontSizes } from "./typography"
 import { spaces } from "./spaces"
 
-export const theme = {
+export const styles = {
   input: {
     border: `1px solid ${palette.grey[300]}`,
     borderRadius: radius.default,
