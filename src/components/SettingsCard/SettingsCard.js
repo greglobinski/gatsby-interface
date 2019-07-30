@@ -1,9 +1,15 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import React from "react"
+import { jsx, css, keyframes } from "@emotion/core"
+import React, { Fragment } from "react"
 import PropTypes from "prop-types"
+import { MdEdit, MdArrowForward } from "react-icons/md"
 
-import { ContentBox, SecondaryButton } from "../../"
+import {
+  ContentBox,
+  SecondaryButton,
+  CancelButton,
+  PrimaryButton,
+} from "../../"
 import {
   breakpoints,
   fontFamilies,
@@ -19,10 +25,12 @@ function SettingsCard({ children }) {
       css={{
         ...styles.card.frame,
         display: `grid`,
+        gridGap: spaces.m,
         gridTemplateColumns: `1fr auto`,
         gridTemplateRows: `auto auto`,
-        gridGap: spaces.m,
+
         padding: `${spaces.m} ${spaces.l} ${spaces.l}`,
+        transition: `height 0.5s`,
 
         [`@media(min-width: ${breakpoints.desktop}px)`]: {
           padding: `${spaces.l} ${spaces.xl} ${spaces.xl}`,
@@ -41,16 +49,8 @@ SettingsCard.propTypes = {
 SettingsCard.Title = ({ children, className, ...props }) => (
   <h3
     css={{
-      alignItems: `center`,
-      color: palette.grey[900],
-      display: `flex`,
-      fontFamily: fontFamilies.headerFontFamily,
-      fontSize: fontSizes.l,
-      lineHeight: 1,
-      margin: 0,
+      ...styles.card.title,
     }}
-    className={className}
-    {...props}
   >
     {children}
   </h3>
@@ -75,33 +75,81 @@ SettingsCard.Description = ({ children }) => (
   </p>
 )
 
-SettingsCard.ToggleButton = ({ children }) => (
-    <ContentBox.Button
-      as={SecondaryButton}
-      css={{
-        gridColumn: `2 / 3`,
-        gridRow: `1 / 2`,
-      }}
-    >
-      {children}
-    </ContentBox.Button>
-  )
+SettingsCard.EditButton = ({ children }) => (
+  <ContentBox.Button
+    as={SecondaryButton}
+    behaviour="HIDE"
+    css={{
+      gridColumn: `2 / 3`,
+      gridRow: `1 / 2`,
+    }}
+  >
+    {children ? (
+      children
+    ) : (
+      <Fragment>
+        Edit <MdEdit />
+      </Fragment>
+    )}
+  </ContentBox.Button>
+)
 
-SettingsCard.Content = ContentBox.Content
+SettingsCard.ActionButton = ({ children, onClick }) => (
+  <SecondaryButton onClick={onClick}>{children}</SecondaryButton>
+)
 
-// SettingsCard.ToggleButton = ({ children, mode }) => {
-//   const Button = mode === `danger` ? SecondaryDeleteButton : SecondaryButton
+const entry = keyframes`
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
 
-//   return (
-//     <Button
-//       css={{
-//         gridColumn: `2 / 3`,
-//         gridRow: `1 / 2`,
-//       }}
-//     >
-//       {children}
-//     </Button>
-//   )
-// }
+SettingsCard.Actions = ({ children }) => (
+  <div
+    css={{
+      animation: `${entry} 0.5s 0.2s ease forwards`,
+      display: `flex`,
+      justifyContent: `space-between`,
+      marginTop: spaces.m,
+      opacity: 0,
+      transform: `translateY(.5rem)`,
+    }}
+  >
+    {children}
+  </div>
+)
+
+SettingsCard.CancelButton = ({ children }) => (
+  <ContentBox.Button as={CancelButton} css={{}}>
+    {children ? children : `Cancel`}
+  </ContentBox.Button>
+)
+
+SettingsCard.SubmitButton = ({ children }) => (
+  <PrimaryButton>
+    {children ? (
+      children
+    ) : (
+      <Fragment>
+        Save <MdArrowForward />
+      </Fragment>
+    )}
+  </PrimaryButton>
+)
+
+SettingsCard.Content = ({ children, ...props }) => (
+  <ContentBox.Content
+    css={{
+      animation: `${entry} 0.5s 0.1s ease forwards`,
+      gridColumn: `1 / 3`,
+      opacity: 0,
+      transform: `translateY(.5rem)`,
+    }}
+    {...props}
+  >
+    {children}
+  </ContentBox.Content>
+)
 
 export default SettingsCard
