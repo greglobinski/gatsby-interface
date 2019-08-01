@@ -3,7 +3,7 @@ import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
 import {
-  palette,
+  colors,
   fontFamilies,
   fontSizes,
   breakpoints,
@@ -14,9 +14,9 @@ const TabFigure = ({ children }) => (
   <span
     css={{
       alignItems: `center`,
-      background: palette.grey[300],
+      background: colors.grey[30],
       borderRadius: `50%`,
-      color: palette.white,
+      color: colors.white,
       display: `flex`,
       fontFamily: fontFamilies.bodyFontFamily,
       fontSize: fontSizes[`3xs`],
@@ -26,11 +26,11 @@ const TabFigure = ({ children }) => (
       lineHeight: `1`,
       width: `20px`,
       ".active &": {
-        background: palette.purple[400],
+        background: colors.purple[40],
         marginRight: spaces.s,
       },
       ".done &": {
-        background: palette.purple[300],
+        background: colors.purple[30],
       },
       [`@media (min-width: ${breakpoints.tablet}px)`]: {
         marginRight: spaces.s,

@@ -5,7 +5,7 @@ import { storiesOf } from "@storybook/react"
 import { radios, boolean } from "@storybook/addon-knobs"
 
 import { Radio, RadioSkeleton } from "../src/components/Radio"
-import { fontFamilies, fontSizes, palette, spaces } from "../src/utils/presets"
+import { fontFamilies, fontSizes, colors, spaces } from "../src/utils/presets"
 
 const Form = styled(`form`)`
   min-width: 20rem;
@@ -24,7 +24,7 @@ const CustomRadio1 = styled(Radio)`
       }
 
       span {
-        color: ${palette.grey[600]};
+        color: ${colors.grey[60]};
         font-size: ${fontSizes.xs};
         margin: 0;
         margin-top: ${spaces[`2xs`]};
@@ -54,7 +54,7 @@ const CustomRadio2 = styled(Radio)`
         }
 
         span {
-          color: ${palette.grey[600]};
+          color: ${colors.grey[60]};
           font-size: ${fontSizes.xs};
           margin: 0;
           margin-top: ${spaces[`2xs`]};

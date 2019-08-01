@@ -3,12 +3,12 @@ import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
 
-import { palette } from "../../utils/presets"
+import { colors } from "../../utils/presets"
 
 const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
   const baseStyles = {
     alignItems: `center`,
-    color: palette.purple[600],
+    color: colors.purple[60],
     display: `inline-flex`,
   }
 
@@ -16,14 +16,14 @@ const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
     SIMPLE: {
       textDecoration: `none`,
       ":focus, :hover": {
-        color: palette.purple[400],
+        color: colors.purple[40],
         textDecoration: `underline`,
       },
     },
     DEFAULT: {
       textDecoration: `underline`,
       ":focus, :hover": {
-        color: palette.purple[600],
+        color: colors.purple[60],
         textDecoration: `underline`,
       },
     },

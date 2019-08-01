@@ -18,7 +18,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "gatsby-design-tokens": "^1.0.0"
+  },
   "peerDependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",

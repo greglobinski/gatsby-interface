@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { MdRefresh } from "react-icons/md"
 
-import { fontFamilies, radius, palette, colors } from "../../utils/presets"
+import { fontFamilies, radius, colors } from "../../utils/presets"
 
 const loadingStyle = keyframes`
   0% {
@@ -27,7 +27,7 @@ const pulse = keyframes`
 
 const baseStyles = {
   alignItems: `center`,
-  border: palette.grey[600],
+  border: colors.grey[60],
   borderRadius: radius.default,
   boxSizing: `border-box`,
   cursor: `pointer`,
@@ -81,68 +81,68 @@ const sizes = {
 
 const variantStyles = {
   DEFAULT: {
-    background: palette.white,
-    border: `1px solid ${palette.grey[300]}`,
-    color: palette.grey[600],
+    background: colors.white,
+    border: `1px solid ${colors.grey[30]}`,
+    color: colors.grey[60],
     ":focus, :hover": {
-      border: `1px solid ${palette.grey[600]}`,
-      color: palette.grey[900],
+      border: `1px solid ${colors.grey[60]}`,
+      color: colors.grey[90],
     },
   },
   PRIMARY: {
     background: colors.gatsby,
     border: `0`,
-    color: palette.white,
+    color: colors.white,
     fontWeight: `bold`,
     ":focus,:hover": {
-      background: palette.purple[700],
+      background: colors.purple[70],
     },
   },
   SECONDARY: {
-    background: palette.white,
-    border: `1px solid ${palette.purple[200]}`,
-    color: palette.purple[500],
+    background: colors.white,
+    border: `1px solid ${colors.purple[20]}`,
+    color: colors.purple[50],
     fontWeight: `bold`,
     ":focus, &:hover:not([disabled])": {
-      border: `1px solid ${palette.purple[600]}`,
-      color: palette.purple[600],
+      border: `1px solid ${colors.purple[60]}`,
+      color: colors.purple[60],
     },
   },
   SUCCESS: {
-    background: palette.green[600],
-    border: `1px solid ${palette.green[600]}`,
-    color: palette.white,
+    background: colors.green[60],
+    border: `1px solid ${colors.green[60]}`,
+    color: colors.white,
     fontWeight: `bold`,
     ":focus, :hover": {
-      background: `1px solid ${palette.green[700]}`,
-      borderColor: palette.green[900],
+      background: `1px solid ${colors.green[70]}`,
+      borderColor: colors.green[90],
     },
   },
   TEXT: {
-    background: palette.white,
-    border: `1px solid ${palette.white}`,
+    background: colors.white,
+    border: `1px solid ${colors.white}`,
     color: colors.lilac,
     ":focus, :hover": {
       color: colors.gatsby,
     },
   },
   DANGER: {
-    background: palette.red[600],
-    border: `1px solid ${palette.red[600]}`,
-    color: palette.white,
+    background: colors.red[60],
+    border: `1px solid ${colors.red[60]}`,
+    color: colors.white,
     fontWeight: `bold`,
     ":focus, :hover": {
-      background: `1px solid ${palette.red[700]}`,
-      borderColor: palette.red[900],
+      background: `1px solid ${colors.red[70]}`,
+      borderColor: colors.red[90],
     },
   },
   SECONDARY_DANGER: {
-    background: palette.white,
-    border: `1px solid ${palette.red[200]}`,
-    color: palette.red[500],
+    background: colors.white,
+    border: `1px solid ${colors.red[20]}`,
+    color: colors.red[50],
     ":focus, :hover": {
-      borderColor: palette.red[600],
-      color: palette.red[600],
+      borderColor: colors.red[60],
+      color: colors.red[60],
     },
   },
 }

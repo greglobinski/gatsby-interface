@@ -6915,6 +6915,11 @@ gatsby-cli@^2.6.0:
     ink "^2.3.0"
     ink-spinner "^3.0.1"
 
+gatsby-design-tokens@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-design-tokens/-/gatsby-design-tokens-1.0.0.tgz#520930f77f1ce8a031a351548218eafa87efa880"
+  integrity sha512-R8wwQ9tETXkeTbht+UAodu1s55FAZEfO8L8+YG7dqsU4yVbFN9t/HNlJeRI7s08RMbKQDMTDWfDttYWaDX0/gA==
+
 gatsby-link@^2.1.1:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.3.tgz#2477c0093a0183014ce8012758db94e06d0cf43d"

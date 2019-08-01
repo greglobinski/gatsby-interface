@@ -4,7 +4,6 @@ import styled from "@emotion/styled"
 
 import {
   colors,
-  palette,
   radius,
   spaces,
   fontFamilies,
@@ -22,7 +21,7 @@ import RadioSkeleton, {
 
 const Label = styled(`label`)`
   align-items: center;
-  color: ${palette.grey[800]};
+  color: ${colors.grey[80]};
   cursor: pointer;
   display: flex;
   font-family: ${fontFamilies.bodyFontFamily};
@@ -47,13 +46,13 @@ const Label = styled(`label`)`
 
   :before {
     background: ${colors.primaryBackground};
-    border: ${INPUT_BORDER_WIDTH} solid ${palette.grey[300]};
+    border: ${INPUT_BORDER_WIDTH} solid ${colors.grey[30]};
     height: ${INPUT_INNER_DIA};
     width: ${INPUT_INNER_DIA};
   }
 
   :after {
-    background: ${palette.purple[600]};
+    background: ${colors.purple[60]};
     height: 8px;
     left: 7px;
     opacity: 0;
@@ -61,7 +60,7 @@ const Label = styled(`label`)`
   }
 
   small {
-    color: ${palette.grey[500]};
+    color: ${colors.grey[50]};
     font-size: ${fontSizes.xs};
     line-height: 1.1;
   }
@@ -94,7 +93,7 @@ const RadioInput = styled(`input`)`
   z-index: 2;
 
   &:checked + label::before {
-    border-color: ${palette.purple[600]};
+    border-color: ${colors.purple[60]};
   }
 
   &:checked + label::after {
@@ -102,12 +101,12 @@ const RadioInput = styled(`input`)`
   }
 
   &:hover + label::before {
-    border-color: ${palette.purple[400]};
+    border-color: ${colors.purple[40]};
   }
 
   &:focus + label::before {
-    border-color: ${palette.purple[600]};
-    box-shadow: 0 0 0 3px ${palette.purple[200]};
+    border-color: ${colors.purple[60]};
+    box-shadow: 0 0 0 3px ${colors.purple[20]};
   }
 `
 
@@ -136,7 +135,7 @@ const ColourfulContainer = styled(StandardContainer)`
     top: 0;
   }
   :after {
-    background: ${palette.white};
+    background: ${colors.white};
     border-radius: 6px;
     bottom: 2px;
     left: 2px;
@@ -147,7 +146,7 @@ const ColourfulContainer = styled(StandardContainer)`
   :hover:not(.selected) {
     :before,
     :after {
-      background: ${palette.purple[50]};
+      background: ${colors.purple[5]};
       opacity: 1;
     }
   }
