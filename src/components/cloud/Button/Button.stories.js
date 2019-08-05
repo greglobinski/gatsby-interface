@@ -148,9 +148,25 @@ storiesOf(`Button`, module)
     </div>
   ))
   .add(`in 'loading' state`, () => (
-    <Button onClick={action(`Button was clicked`)} loading={true}>
-      Button in loading state
-    </Button>
+    <div
+      css={{
+        display: `flex`,
+        flexDirection: `column`,
+        alignItems: `flex-start`,
+        "& > button": { margin: `20px` },
+      }}
+    >
+      <Button onClick={action(`Button was clicked`)} loading={true}>
+        Button in loading state
+      </Button>
+      <Button
+        onClick={action(`Button was clicked`)}
+        loading={true}
+        loadingLabel={`Custom loading label`}
+      >
+        Button in loading state
+      </Button>
+    </div>
   ))
   .add(
     `with icons`,

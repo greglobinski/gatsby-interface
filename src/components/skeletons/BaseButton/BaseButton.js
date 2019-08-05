@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import { secureTargetBlankLink } from "../../../utils/helpers"
 
 function BaseButton(props) {
-  console.log(`props`, props)
   const {
     children,
     disabled = false,
@@ -23,7 +22,6 @@ function BaseButton(props) {
     ...rest
   } = props
 
-  console.log(`+++++++DefaultIcon`, DefaultIcon)
   if (href) {
     return (
       <a
@@ -45,7 +43,7 @@ function BaseButton(props) {
           children
         ) : (
           <Fragment>
-            {label} 444 {DefaultIcon && <DefaultIcon />}
+            {label} {DefaultIcon && <DefaultIcon />}
           </Fragment>
         )}
       </Link>
@@ -53,16 +51,19 @@ function BaseButton(props) {
   }
 
   return (
-    <button disabled={disabled} type={type} {...rest}>
+    <button disabled={loading ? true : disabled} type={type} {...rest}>
       {loading ? (
         <Fragment>
-          {loadingLabel && <span>{loadingLabel}</span>}{` `}
+          {loadingLabel && <span>{loadingLabel}</span>}
+          {` `}
           {LoadingIcon && <LoadingIcon />}
         </Fragment>
       ) : (
         <Fragment>
           {children ? (
-            React.Children.map(children, child => typeof child === `string` ? <span>{child}</span> : child)
+            React.Children.map(children, child =>
+              typeof child === `string` ? <span>{child}</span> : child
+            )
           ) : (
             <Fragment>
               {<span>{label}</span>} {DefaultIcon && <DefaultIcon />}

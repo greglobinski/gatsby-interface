@@ -1,7 +1,24 @@
-import { colors } from "./colors"
-import { radius } from "./sizes"
-import { fontSizes } from "./typography"
-import { spaces } from "./spaces"
+import { keyframes } from "@emotion/core"
+import { colors, fontFamilies, fontSizes, radius, spaces } from "./"
+
+const animations = {
+  iconLoadingAnim: keyframes`
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`,
+  iconHoverAnim: keyframes`
+  33% {
+    transform:  scale(1);
+    }
+  66% {
+    transform: scale(0.8);
+  }
+`,
+}
 
 const elements = {
   input: {
@@ -21,6 +38,48 @@ const elements = {
     },
   },
   button: {
+    base: props => {
+      return {
+        alignItems: `center`,
+        border: colors.grey[60],
+        borderRadius: radius.default,
+        boxSizing: `border-box`,
+        cursor: `pointer`,
+        display: `inline-flex`,
+        fontFamily: fontFamilies.headerFontFamily,
+        justifyContent: `center`,
+        transition: `background 0.5s, border 0.5s, color 0.5s`,
+        lineHeight: `1`,
+        textDecoration: `none`,
+
+        "&[disabled], &[disabled]:hover": {
+          cursor: `not-allowed`,
+          opacity: !props.loading ? 0.5 : 0.9,
+        },
+        svg: {
+          animation: props.loading
+            ? `${animations.iconLoadingAnim} 1s linear infinite`
+            : ``,
+          flexShrink: `0`,
+          margin: `0 ${spaces[`2xs`]}`,
+          transform: `scale(1)`,
+
+          "&:last-child": {
+            marginRight: `-0.25em`,
+          },
+          "&:first-child": {
+            marginLeft: `-0.30em`,
+          },
+        },
+        "&:hover:not([disabled])": {
+          svg: {
+            animation: !props.loading
+              ? `${animations.iconHoverAnim} 1s linear infinite`
+              : ``,
+          },
+        },
+      }
+    },
     sizes: {
       S: {
         fontSize: `0.875rem`,
@@ -44,34 +103,40 @@ const elements = {
       },
     },
     variants: {
-      PRIMARY: toneColors => {return {
-        background: toneColors[3],
-        border: `1px solid ${toneColors[3]}`,
-        color: colors.white,
-        fontWeight: `bold`,
-        ":hover": {
-          background: toneColors[4],
-          border: `1px solid ${toneColors[4]}`,
-        },
-      }},
-      SECONDARY: toneColors => {return {
-        background: `transparent`,
-        border: `1px solid ${toneColors[1]}`,
-        color: toneColors[2],
-        ":hover": {
-          borderColor: toneColors[3],
-          color: toneColors[3],
-        },
-      }},
-      GHOST: toneColors => {return {
-        background: `transparent`,
-        border: `1px solid transparent`,
-        color: toneColors[2],
-        ":hover": {
-          background: toneColors[0],
-          color: toneColors[3],
-        },
-      }},
+      PRIMARY: toneColors => {
+        return {
+          background: toneColors[3],
+          border: `1px solid ${toneColors[3]}`,
+          color: colors.white,
+          fontWeight: `bold`,
+          ":hover": {
+            background: toneColors[4],
+            border: `1px solid ${toneColors[4]}`,
+          },
+        }
+      },
+      SECONDARY: toneColors => {
+        return {
+          background: `transparent`,
+          border: `1px solid ${toneColors[1]}`,
+          color: toneColors[2],
+          ":hover": {
+            borderColor: toneColors[3],
+            color: toneColors[3],
+          },
+        }
+      },
+      GHOST: toneColors => {
+        return {
+          background: `transparent`,
+          border: `1px solid transparent`,
+          color: toneColors[2],
+          ":hover": {
+            background: toneColors[0],
+            color: toneColors[3],
+          },
+        }
+      },
     },
   },
 }

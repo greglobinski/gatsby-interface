@@ -1,6 +1,4 @@
-## Custom Button
-
-### Override/extend styles
+## Override / extend Button's styles
 
 Use `emotion` `css` prop.
 
