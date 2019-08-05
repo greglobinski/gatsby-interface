@@ -39,7 +39,7 @@ const elements = {
   },
   button: {
     base: props => {
-      const loading = false
+      const { loading = false } = props || {}
 
       return {
         alignItems: `center`,

@@ -4,6 +4,22 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { secureTargetBlankLink } from "../../../utils/helpers"
 
+function RewriteChildren({ children, label, DefaultIcon }) {
+  return (
+    <Fragment>
+      {children ? (
+        React.Children.map(children, child =>
+          typeof child === `string` ? <span>{child}</span> : child
+        )
+      ) : (
+        <Fragment>
+          {<span>{label}</span>} {DefaultIcon && <DefaultIcon />}
+        </Fragment>
+      )}
+    </Fragment>
+  )
+}
+
 function BaseButton(props) {
   const {
     children,
@@ -31,7 +47,11 @@ function BaseButton(props) {
         rel={secureTargetBlankLink({ rel, target })}
         {...rest}
       >
-        {children}
+        <RewriteChildren
+          children={children}
+          label={label}
+          DefaultIcon={DefaultIcon}
+        />
       </a>
     )
   }
@@ -39,13 +59,11 @@ function BaseButton(props) {
   if (to) {
     return (
       <Link to={to} role={role} {...rest}>
-        {children ? (
-          children
-        ) : (
-          <Fragment>
-            {label} {DefaultIcon && <DefaultIcon />}
-          </Fragment>
-        )}
+        <RewriteChildren
+          children={children}
+          label={label}
+          DefaultIcon={DefaultIcon}
+        />
       </Link>
     )
   }
@@ -59,17 +77,11 @@ function BaseButton(props) {
           {LoadingIcon && <LoadingIcon />}
         </Fragment>
       ) : (
-        <Fragment>
-          {children ? (
-            React.Children.map(children, child =>
-              typeof child === `string` ? <span>{child}</span> : child
-            )
-          ) : (
-            <Fragment>
-              {<span>{label}</span>} {DefaultIcon && <DefaultIcon />}
-            </Fragment>
-          )}
-        </Fragment>
+        <RewriteChildren
+          children={children}
+          label={label}
+          DefaultIcon={DefaultIcon}
+        />
       )}
     </button>
   )
