@@ -233,7 +233,7 @@ storiesOf(`Button`, module)
           ...styles.button.variants[`PRIMARY`](styles.tones[`STANDARD`]),
         }}
       >
-        I'm a &lt;button&gt; but I look like the Button
+        I'm a &lt;button&gt; but I look like the &lt;Button&gt;
       </button>
     ),
     {
