@@ -13,10 +13,11 @@ import {
   BUTTON_VARIANTS,
 } from "../../../utils/options"
 import Button from "./Button"
-import README from "./README.md"
+import README_MAIN from "./README_MAIN.md"
 import README_ICONS from "./README_ICONS.md"
-import README_STYLE from "./README_STYLE.md"
-import { colors } from "../../../utils/presets"
+import README_CUSTOM_STYLING from "./README_CUSTOM_STYLING.md"
+import README_MANUAL_STYLING from "./README_MANUAL_STYLING.md"
+import { colors, styles } from "../../../utils/presets"
 
 storiesOf(`Button`, module)
   .addParameters({
@@ -24,7 +25,7 @@ storiesOf(`Button`, module)
       showPanel: true,
     },
     readme: {
-      sidebar: README,
+      sidebar: README_MAIN,
       includePropTables: [Button],
     },
   })
@@ -200,7 +201,7 @@ storiesOf(`Button`, module)
     }
   )
   .add(
-    `customize styling`,
+    `override/extend styles`,
     () => (
       <Button
         onClick={action(`Button was clicked`)}
@@ -218,7 +219,26 @@ storiesOf(`Button`, module)
     ),
     {
       readme: {
-        sidebar: README_STYLE,
+        sidebar: README_CUSTOM_STYLING,
+      },
+    }
+  )
+  .add(
+    `manually applied styles`,
+    () => (
+      <button
+        css={{
+          ...styles.button.base(),
+          ...styles.button.sizes[`L`],
+          ...styles.button.variants[`PRIMARY`](styles.tones[`STANDARD`]),
+        }}
+      >
+        I'm a &lt;button&gt; but I look like the Button
+      </button>
+    ),
+    {
+      readme: {
+        sidebar: README_MANUAL_STYLING,
       },
     }
   )

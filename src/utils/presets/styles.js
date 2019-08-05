@@ -39,6 +39,8 @@ const elements = {
   },
   button: {
     base: props => {
+      const loading = false
+
       return {
         alignItems: `center`,
         border: colors.grey[60],
@@ -54,10 +56,10 @@ const elements = {
 
         "&[disabled], &[disabled]:hover": {
           cursor: `not-allowed`,
-          opacity: !props.loading ? 0.5 : 0.9,
+          opacity: !loading ? 0.5 : 0.9,
         },
         svg: {
-          animation: props.loading
+          animation: loading
             ? `${animations.iconLoadingAnim} 1s linear infinite`
             : ``,
           flexShrink: `0`,
@@ -73,7 +75,7 @@ const elements = {
         },
         "&:hover:not([disabled])": {
           svg: {
-            animation: !props.loading
+            animation: !loading
               ? `${animations.iconHoverAnim} 1s linear infinite`
               : ``,
           },
