@@ -1,4 +1,4 @@
-## Override / extend Button's styles
+## Manual styling
 
 Use directly imported and applied `styles` object to style HTML tag or third party components
 
