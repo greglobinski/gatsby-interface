@@ -32,7 +32,7 @@ storiesOf(`Button`, module).add(
       size={radios(`size`, sizes, `L`)}
       variant={radios(`variant`, variants, `DEFAULT`)}
     >
-      Button
+      Button@@
     </Button>
   ),
   {

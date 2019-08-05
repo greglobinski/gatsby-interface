@@ -1,8 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react"
+import { storiesOf } from "@storybook/react"
+import { action } from "@storybook/addon-actions"
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import Welcome from "../src/utils/storybook/Welcome"
+import Readme from "./README.md"
 
-import Welcome from '../src/utils/storybook/Welcome';
-
-storiesOf('Welcome', module).add('to Gatsby Inteface', () => <Welcome />);
+storiesOf(`Welcome`, module)
+  .addParameters({
+    options: {
+      showPanel: false,
+    },
+    readme: {
+      content: Readme,
+    },
+  })
+  .add(`to Gatsby Inteface`, () => null)
