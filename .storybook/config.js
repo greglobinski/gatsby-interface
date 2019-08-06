@@ -1,12 +1,17 @@
 import React, { Fragment } from "react"
 import { Global, css } from "@emotion/core"
-import { configure, addDecorator } from "@storybook/react"
-import { withInfo } from "@storybook/addon-info"
+import {
+  configure,
+  addDecorator,
+  addParameters,
+  setAddon,
+} from "@storybook/react"
+import { addReadme } from "storybook-readme"
+
 import { withKnobs } from "@storybook/addon-knobs"
 import { withConsole } from "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
 import { action } from "@storybook/addon-actions"
-import "@storybook/addon-console"
 
 import { fontFamilies } from "../src/utils/presets"
 
@@ -19,16 +24,19 @@ global.___loader = {
   hovering: () => {},
 }
 
+addParameters({
+  options: {
+    addonPanelInRight: true,
+  },
+  readme: {},
+})
+
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
 global.__PATH_PREFIX__ = ""
 
 // add decorators
-addDecorator(
-  withInfo({
-    inline: false,
-    header: true,
-  })
-)
+
+addDecorator(addReadme)
 
 addDecorator(withKnobs)
 
@@ -61,8 +69,17 @@ const withGlobal = storyFn => (
         }
       `}
     />
-
-    {storyFn()}
+    <div
+      style={{
+        margin: "30px",
+        height: `90vh`,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {storyFn()}
+    </div>
   </Fragment>
 )
 
@@ -72,7 +89,8 @@ addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addDecorator(withA11y)
 
-const req = require.context("../__stories__", true, /\.stories\.js$/)
+//const req = require.context("../__stories__", true, /\.stories\.js$/)
+const req = require.context("../src/components/../", true, /\.stories\.js$/)
 
 require("../__stories__/Welcome.stories")
 

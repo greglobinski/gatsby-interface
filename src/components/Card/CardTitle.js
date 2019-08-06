@@ -3,14 +3,14 @@ import styled from "@emotion/styled"
 import {
   spaces,
   breakpoints,
-  palette,
+  colors,
   fontFamilies,
   fontSizes,
 } from "../../utils/presets"
 
 export const CardTitle = styled(`h2`)`
   align-items: center;
-  color: ${palette.grey[900]};
+  color: ${colors.grey[90]};
   display: flex;
   font-family: ${fontFamilies.headerFontFamily};
   font-size: ${fontSizes.l};

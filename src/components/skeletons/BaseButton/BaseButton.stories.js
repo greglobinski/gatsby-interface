@@ -1,0 +1,41 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import React from "react"
+
+import { storiesOf } from "@storybook/react"
+import { hrefTo } from "@storybook/addon-links"
+import { action } from "@storybook/addon-actions"
+import { MdArrowForward } from "react-icons/md"
+import { radios, boolean } from "@storybook/addon-knobs"
+
+import BaseButton from "./BaseButton"
+import Readme from "./README.md"
+
+storiesOf(`BaseButton`, module)
+  .addParameters({
+    options: {
+      showPanel: true,
+    },
+    readme: {
+      sidebar: Readme,
+      includePropTables: [BaseButton],
+    },
+  })
+  .add(`tags/components`, () => {
+    hrefTo(`Href`, `log`).then(action(`URL of this story`))
+
+    return (
+      <div
+        css={{
+          display: `flex`,
+          flexDirection: `column`,
+          alignItems: `flex-start`,
+          "& > *": { margin: `20px` },
+        }}
+      >
+        <BaseButton>Button</BaseButton>
+        <BaseButton href="https://gatsbyjs.com">&lt;a&gt; tag</BaseButton>
+        <BaseButton to="/">Gatsby &lt;Link&gt; component</BaseButton>
+      </div>
+    )
+  })

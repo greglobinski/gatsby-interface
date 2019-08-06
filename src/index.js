@@ -1,18 +1,18 @@
 export { ContentBox } from "./components/Skeletons/ContentBox"
 
 export {
-  ButtonSkeleton,
-  BaseButton,
+  Button,
+  // deprecated, legacy exports
   PrimaryButton,
   SecondaryButton,
   CancelButton,
-  PrimaryDeleteButton,
-  SecondaryDeleteButton,
   SuccessButton,
   TextButton,
-} from "./components/Button"
+  PrimaryDeleteButton,
+  SecondaryDeleteButton,
+} from "./components/core/Button"
 
-export { LinkSkeleton, BaseLink, Link, SimpleLink } from "./components/Link"
+export { Link } from "./components/Link"
 
 export {
   CardSkeleton,
@@ -23,22 +23,18 @@ export {
   CardText,
 } from "./components/Card"
 
-export {
-  TabsSkeleton,
-  BaseTabs,
-  Tabs,
-  TabSkeleton,
-  BaseTab,
-  Tab,
-  TabsNav,
-  NumberedTabs,
-  NumberedTab,
-  NumberedTabFigure,
-  NumberedTabLabel,
-} from "./components/Tabs"
+export { Tabs, Tab, TabsNav, TabFigure, TabLabel } from "./components/Tabs"
 
 export { RadioSkeleton, Radio } from "./components/Radio"
 
 export { StepsIndicator } from "./components/StepsIndicator"
 
 export { SettingsCard } from "./components/SettingsCard"
+
+export { TextInput } from "./components/TextInput"
+
+export { Textarea } from "./components/Textarea"
+
+export { Label } from "./components/Label"
+
+export { InputError } from "./components/InputError"
