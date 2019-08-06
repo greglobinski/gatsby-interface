@@ -8,7 +8,7 @@ export {
   TextButton,
   PrimaryDeleteButton,
   SecondaryDeleteButton,
-} from "./components/Button"
+} from "./components/core/Button"
 
 export { Link } from "./components/Link"
 
