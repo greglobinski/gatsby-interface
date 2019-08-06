@@ -1,4 +1,14 @@
-export { Button } from "./components/Button"
+export {
+  Button,
+  // deprecated, legacy exports
+  PrimaryButton,
+  SecondaryButton,
+  CancelButton,
+  SuccessButton,
+  TextButton,
+  PrimaryDeleteButton,
+  SecondaryDeleteButton,
+} from "./components/Button"
 
 export { Link } from "./components/Link"
 

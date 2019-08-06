@@ -13,10 +13,20 @@ import {
   BUTTON_VARIANTS,
 } from "../../../utils/options"
 import Button from "./Button"
+import {
+  PrimaryButton,
+  SecondaryButton,
+  CancelButton,
+  SuccessButton,
+  TextButton,
+  PrimaryDeleteButton,
+  SecondaryDeleteButton,
+} from "./Buttons"
 import README_MAIN from "./README_MAIN.md"
 import README_ICONS from "./README_ICONS.md"
 import README_CUSTOM_STYLING from "./README_CUSTOM_STYLING.md"
 import README_MANUAL_STYLING from "./README_MANUAL_STYLING.md"
+import README_LEGACY from "./README_LEGACY.md"
 import { colors, styles } from "../../../utils/presets"
 
 storiesOf(`Button`, module)
@@ -239,6 +249,32 @@ storiesOf(`Button`, module)
     {
       readme: {
         sidebar: README_MANUAL_STYLING,
+      },
+    }
+  )
+  .add(
+    `legacy Buttons`,
+    () => (
+      <div
+        css={{
+          display: `flex`,
+          flexDirection: `column`,
+          alignItems: `flex-start`,
+          "& > button": { margin: `20px` },
+        }}
+      >
+        <PrimaryButton>PrimaryButton</PrimaryButton>
+        <SecondaryButton>SecondaryButton</SecondaryButton>
+        <CancelButton>CancelButton</CancelButton>
+        <SuccessButton>SuccessButton</SuccessButton>
+        <TextButton>TextButton</TextButton>
+        <PrimaryDeleteButton>PrimaryDeleteButton</PrimaryDeleteButton>
+        <SecondaryDeleteButton>SecondaryDeleteButton</SecondaryDeleteButton>
+      </div>
+    ),
+    {
+      readme: {
+        sidebar: README_LEGACY,
       },
     }
   )
