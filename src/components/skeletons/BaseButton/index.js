@@ -1,1 +1,1 @@
-export { default as BaseButton, baseButtonPropTypes } from "./BaseButton"
+export { default as BaseButton } from "./BaseButton"

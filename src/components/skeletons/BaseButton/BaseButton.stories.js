@@ -18,7 +18,6 @@ storiesOf(`BaseButton`, module)
     },
     readme: {
       sidebar: Readme,
-      includePropTables: [BaseButton],
     },
   })
   .add(`tags/components`, () => {

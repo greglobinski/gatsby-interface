@@ -4,12 +4,9 @@ import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { MdEdit, MdArrowForward } from "react-icons/md"
 
-import {
-  ContentBox,
-  SecondaryButton,
-  CancelButton,
-  PrimaryButton,
-} from "../../"
+import { ContentBox } from "../../skeletons/ContentBox"
+
+import { Button, SecondaryButton } from "../Button"
 import {
   breakpoints,
   fontFamilies,
@@ -17,7 +14,7 @@ import {
   palette,
   spaces,
   styles,
-} from "../../utils/presets"
+} from "../../../utils/presets"
 
 function SettingsCard({ children }) {
   return (
@@ -77,12 +74,14 @@ SettingsCard.Description = ({ children }) => (
 
 SettingsCard.EditButton = ({ children }) => (
   <ContentBox.Button
-    as={SecondaryButton}
+    as={Button}
     behaviour="HIDE"
-    css={{
-      gridColumn: `2 / 3`,
-      gridRow: `1 / 2`,
-    }}
+    css={
+      {
+        // gridColumn: `2 / 3`,
+        // gridRow: `1 / 2`,
+      }
+    }
   >
     {children ? (
       children
