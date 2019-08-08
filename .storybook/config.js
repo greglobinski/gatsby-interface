@@ -7,6 +7,7 @@ import { withConsole } from "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
 import { action } from "@storybook/addon-actions"
 import "@storybook/addon-console"
+import "storybook-chromatic"
 
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
