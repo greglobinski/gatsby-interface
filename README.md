@@ -8,8 +8,6 @@ yarn storybook
 
 ## Chromatic testing
 
-To run the visual testing tool, run `yarn test --app-code="<insert_app_code>"`
+To run the visual testing tool, run `CHROMATIC_APP_CODE=<insert_app_code> yarn chromatic`
 
-You can find the app code in the Chromatic dashboard.
-
-When we integrate this with CI, we can use the environment variable `CHROMATIC_APP_CODE`
+You can find the app code in the Chromatic dashboard - https://www.chromaticqa.com
