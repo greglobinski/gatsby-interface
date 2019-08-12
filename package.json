@@ -14,7 +14,8 @@
     "dev": "watch 'yarn run build' src",
     "stylelint": "stylelint './src/**/*.js'",
     "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
-    "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write"
+    "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write",
+    "chromatic": "chromatic test"
   },
   "author": "",
   "license": "ISC",
@@ -85,6 +86,7 @@
     "react-testing-library": "^5.6.1",
     "storybook-host": "^5.1.0",
     "storybook-readme": "^5.0.6",
+    "storybook-chromatic": "^2.1.1",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-config-styled-components": "^0.1.1",

@@ -14,6 +14,8 @@ import { withA11y } from "@storybook/addon-a11y"
 import { action } from "@storybook/addon-actions"
 
 import { fontFamilies } from "../src/utils/presets"
+import "@storybook/addon-console"
+import "storybook-chromatic"
 
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
