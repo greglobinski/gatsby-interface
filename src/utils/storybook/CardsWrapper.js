@@ -3,13 +3,13 @@ import { jsx } from "@emotion/core"
 import React from "react"
 import { colors } from "../presets"
 
-const CardsWrapper = ({ children, width = `25rem` }) => (
+const CardsWrapper = ({ children, width = `45rem` }) => (
   <div
     css={{
       alignItems: `center`,
       background: colors.secondaryBackground,
       display: `flex`,
-      height: `100vh`,
+      minHeight: `100vh`,
       justifyContent: `center`,
       width: `100vw`,
     }}

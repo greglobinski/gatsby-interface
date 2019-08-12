@@ -69,17 +69,7 @@ const withGlobal = storyFn => (
         }
       `}
     />
-    <div
-      style={{
-        margin: "30px",
-        height: `90vh`,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {storyFn()}
-    </div>
+    {storyFn()}
   </Fragment>
 )
 

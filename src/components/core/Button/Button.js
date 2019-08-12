@@ -6,7 +6,9 @@ import { Link } from "gatsby"
 import { MdRefresh, MdArrowForward } from "react-icons/md"
 
 import { BaseButton } from "../../skeletons/BaseButton"
-import { styles } from "../../../utils/presets"
+import styles from "../../../theme/styles/button"
+import tones from "../../../theme/tones"
+
 import {
   BUTTON_SIZES,
   BUTTON_TONES,
@@ -16,29 +18,32 @@ import {
 const Button = ({
   children,
   css,
-  DefaultIcon = MdArrowForward,
   loading,
   LoadingIcon = MdRefresh,
   size = `L`,
   tone = `STANDARD`,
   variant = `PRIMARY`,
   ...rest
-}) => (
-  <BaseButton
-    css={{
-      ...styles.button.base({ loading }),
-      ...styles.button.sizes[size],
-      ...styles.button.variants[variant](styles.tones[tone]),
-      ...css,
-    }}
-    DefaultIcon={DefaultIcon}
-    loading={loading}
-    LoadingIcon={LoadingIcon}
-    {...rest}
-  >
-    {children}
-  </BaseButton>
-)
+}) => {
+  const DefaultIcon = variant === `PRIMARY` && MdArrowForward
+
+  return (
+    <BaseButton
+      css={{
+        ...styles.base({ loading }),
+        ...styles.sizes[size],
+        ...styles.variants[variant](tones[tone]),
+        ...css,
+      }}
+      DefaultIcon={DefaultIcon}
+      loading={loading}
+      LoadingIcon={LoadingIcon}
+      {...rest}
+    >
+      {children}
+    </BaseButton>
+  )
+}
 
 Button.propTypes = {
   size: PropTypes.oneOf([`L`, `M`, `XL`, `S`]),

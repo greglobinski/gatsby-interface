@@ -12,6 +12,10 @@ export {
   SecondaryDeleteButton,
 } from "./components/core/Button"
 
+export { SettingsCard } from "./components/core/SettingsCard"
+
+export { IntegrationCard } from "./components/core/IntegrationCard"
+
 export { Link } from "./components/Link"
 
 export {
@@ -28,8 +32,6 @@ export { Tabs, Tab, TabsNav, TabFigure, TabLabel } from "./components/Tabs"
 export { RadioSkeleton, Radio } from "./components/Radio"
 
 export { StepsIndicator } from "./components/StepsIndicator"
-
-export { SettingsCard } from "./components/SettingsCard"
 
 export { TextInput } from "./components/TextInput"
 

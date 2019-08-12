@@ -6,33 +6,32 @@ import { MdEdit, MdArrowForward } from "react-icons/md"
 
 import { ContentBox } from "../../skeletons/ContentBox"
 
-import { Button, SecondaryButton } from "../Button"
+import { Button } from "../Button"
 import {
   breakpoints,
   fontFamilies,
   fontSizes,
   palette,
   spaces,
-  styles,
 } from "../../../utils/presets"
+import cardStyles from "../../../theme/styles/card"
 
-function SettingsCard({ children }) {
+function SettingsCard({ children, ...rest }) {
   return (
     <ContentBox
       css={{
-        ...styles.card.frame,
+        ...cardStyles.frame,
         display: `grid`,
         gridGap: spaces.m,
         gridTemplateColumns: `1fr auto`,
         gridTemplateRows: `auto auto`,
-
         padding: `${spaces.m} ${spaces.l} ${spaces.l}`,
-        transition: `height 0.5s`,
 
         [`@media(min-width: ${breakpoints.desktop}px)`]: {
           padding: `${spaces.l} ${spaces.xl} ${spaces.xl}`,
         },
       }}
+      {...rest}
     >
       {children}
     </ContentBox>
@@ -46,7 +45,7 @@ SettingsCard.propTypes = {
 SettingsCard.Title = ({ children, className, ...props }) => (
   <h3
     css={{
-      ...styles.card.title,
+      ...cardStyles.title,
     }}
   >
     {children}
@@ -59,9 +58,12 @@ SettingsCard.Description = ({ children }) => (
       color: palette.grey[500],
       fontSize: fontSizes.xs,
       fontFamily: fontFamilies.bodyFontFamily,
-      gridColumn: `1 / 3`,
       lineHeight: 1.4,
       margin: 0,
+
+      "&:not(:last-child)": {
+        marginBottom: spaces.m,
+      },
 
       [`@media(min-width: ${breakpoints.desktop}px)`]: {
         gridColumn: `1 / 2`,
@@ -72,22 +74,14 @@ SettingsCard.Description = ({ children }) => (
   </p>
 )
 
-SettingsCard.EditButton = ({ children }) => (
-  <ContentBox.Button
-    as={Button}
-    behaviour="HIDE"
-    css={
-      {
-        // gridColumn: `2 / 3`,
-        // gridRow: `1 / 2`,
-      }
-    }
-  >
+SettingsCard.EditButton = ({ children, label = `Edit`, ...rest }) => (
+  <ContentBox.Button as={Button} variant={`SECONDARY`} css={{}} {...rest}>
     {children ? (
       children
     ) : (
       <Fragment>
-        Edit <MdEdit />
+        {label}
+        <MdEdit />
       </Fragment>
     )}
   </ContentBox.Button>
@@ -97,22 +91,12 @@ SettingsCard.ActionButton = ({ children, onClick }) => (
   <SecondaryButton onClick={onClick}>{children}</SecondaryButton>
 )
 
-const entry = keyframes`
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`
-
 SettingsCard.Actions = ({ children }) => (
   <div
     css={{
-      animation: `${entry} 0.5s 0.2s ease forwards`,
       display: `flex`,
       justifyContent: `space-between`,
       marginTop: spaces.m,
-      opacity: 0,
-      transform: `translateY(.5rem)`,
     }}
   >
     {children}
@@ -120,13 +104,18 @@ SettingsCard.Actions = ({ children }) => (
 )
 
 SettingsCard.CancelButton = ({ children }) => (
-  <ContentBox.Button as={CancelButton} css={{}}>
+  <ContentBox.Button
+    as={Button}
+    variant={`SECONDARY`}
+    tone={`NEUTRAL`}
+    css={{}}
+  >
     {children ? children : `Cancel`}
   </ContentBox.Button>
 )
 
 SettingsCard.SubmitButton = ({ children }) => (
-  <PrimaryButton>
+  <Button>
     {children ? (
       children
     ) : (
@@ -134,16 +123,13 @@ SettingsCard.SubmitButton = ({ children }) => (
         Save <MdArrowForward />
       </Fragment>
     )}
-  </PrimaryButton>
+  </Button>
 )
 
 SettingsCard.Content = ({ children, ...props }) => (
   <ContentBox.Content
     css={{
-      animation: `${entry} 0.5s 0.1s ease forwards`,
       gridColumn: `1 / 3`,
-      opacity: 0,
-      transform: `translateY(.5rem)`,
     }}
     {...props}
   >

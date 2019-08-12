@@ -59,8 +59,8 @@ storiesOf(`ContentBox`, module)
     <ContentBox behaviour="UNFOLD">
       <ContentBox.Content>
         This is a PRIMARY content of this ContentBox
-        <ContentBox.Button behaviour="HIDE">Unfold</ContentBox.Button>
       </ContentBox.Content>
+      <ContentBox.Button hiddenIf="OPEN">Unfold</ContentBox.Button>
       <ContentBox.Content variant="SECONDARY">
         This is a SECONDARY content of this ContentBox
         <ContentBox.Button>Fold</ContentBox.Button>

@@ -27,7 +27,9 @@ import README_ICONS from "./README_ICONS.md"
 import README_CUSTOM_STYLING from "./README_CUSTOM_STYLING.md"
 import README_MANUAL_STYLING from "./README_MANUAL_STYLING.md"
 import README_LEGACY from "./README_LEGACY.md"
-import { colors, styles } from "../../../utils/presets"
+import colors from "../../../theme/colors"
+import styles from "../../../theme/styles/button"
+import tones from "../../../theme/tones"
 
 storiesOf(`Button`, module)
   .addParameters({
@@ -238,9 +240,9 @@ storiesOf(`Button`, module)
     () => (
       <button
         css={{
-          ...styles.button.base(),
-          ...styles.button.sizes[`L`],
-          ...styles.button.variants[`PRIMARY`](styles.tones[`STANDARD`]),
+          ...styles.base(),
+          ...styles.sizes[`L`],
+          ...styles.variants[`PRIMARY`](tones[`STANDARD`]),
         }}
       >
         I'm a &lt;button&gt; but I look like the &lt;Button&gt;

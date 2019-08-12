@@ -4,20 +4,36 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { secureTargetBlankLink } from "../../../utils/helpers"
 
-function RewriteChildren({ children, label, DefaultIcon }) {
-  return (
-    <Fragment>
-      {children ? (
-        React.Children.map(children, child =>
-          typeof child === `string` ? <span>{child}</span> : child
-        )
-      ) : (
-        <Fragment>
-          {<span>{label}</span>} {DefaultIcon && <DefaultIcon />}
-        </Fragment>
-      )}
-    </Fragment>
-  )
+function textIntoSpan(text) {
+  return <span>{text}</span>
+}
+
+function Content({ children, label, DefaultIcon }) {
+  if (label) {
+    return (
+      <Fragment>
+        <span>{label}</span> {DefaultIcon && <DefaultIcon />}
+      </Fragment>
+    )
+  }
+
+  if (children && children.type && children.type === React.Fragment) {
+    return (
+      <Fragment>
+        {React.Children.map(children.props.children, child =>
+          typeof child === `string` ? textIntoSpan(child) : child
+        )}
+      </Fragment>
+    )
+  }
+
+  if (children && children.length > 1) {
+    return React.Children.map(children, child =>
+      typeof child === `string` ? textIntoSpan(child) : child
+    )
+  }
+
+  return null
 }
 
 function BaseButton(props) {
@@ -47,11 +63,7 @@ function BaseButton(props) {
         rel={secureTargetBlankLink({ rel, target })}
         {...rest}
       >
-        <RewriteChildren
-          children={children}
-          label={label}
-          DefaultIcon={DefaultIcon}
-        />
+        <Content children={children} label={label} DefaultIcon={DefaultIcon} />
       </a>
     )
   }
@@ -59,11 +71,7 @@ function BaseButton(props) {
   if (to) {
     return (
       <Link to={to} role={role} {...rest}>
-        <RewriteChildren
-          children={children}
-          label={label}
-          DefaultIcon={DefaultIcon}
-        />
+        <Content children={children} label={label} DefaultIcon={DefaultIcon} />
       </Link>
     )
   }
@@ -77,11 +85,7 @@ function BaseButton(props) {
           {LoadingIcon && <LoadingIcon />}
         </Fragment>
       ) : (
-        <RewriteChildren
-          children={children}
-          label={label}
-          DefaultIcon={DefaultIcon}
-        />
+        <Content children={children} label={label} DefaultIcon={DefaultIcon} />
       )}
     </button>
   )

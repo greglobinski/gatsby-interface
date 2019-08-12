@@ -1,37 +1,32 @@
 import React, { useState, useCallback, useMemo } from "react"
 import PropTypes from "prop-types"
 
-const BOX_STATES = [`OPEN`, `CLOSED`]
+const BOX_STATUSES = [`OPEN`, `CLOSED`]
 const BOX_BEHAVIOURS = [`TOGGLE`, `UNFOLD`]
 const CONTENT_VARIANTS = [`PRIMARY`, `SECONDARY`]
 
 const ContentBoxContext = React.createContext()
 
-function useContentBoxContext() {
-  const context = React.useContext(ContentBoxContext)
-  if (!context) {
-    throw new Error(
-      `ContentBox compound components cannot be rendered outside the ContentBox component`
-    )
-  }
-  return context
-}
-
 function ContentBox({
-  state = `CLOSED`,
+  state = { status: `CLOSED` },
   children,
   as,
   behaviour = `TOGGLE`,
+  tone = `STANDARD`,
   ...rest
 }) {
   const Component = as || `div`
-  const [boxState, setBoxState] = useState(state)
+  const [boxState, setBoxState] = useState({ status: `CLOSED`, ...state })
   const changeContent = useCallback(
-    () => setBoxState(oldState => (oldState === `OPEN` ? `CLOSED` : `OPEN`)),
+    () =>
+      setBoxState(oldState => {return {
+        ...oldState,
+        status: oldState.status === `OPEN` ? `CLOSED` : `OPEN`,
+      }}),
     []
   )
   const value = useMemo(() => {
-    return { boxState, boxBehaviour: behaviour, changeContent }
+    return { boxState, boxBehaviour: behaviour, changeContent, boxTone: tone }
   }, [boxState])
 
   return (
@@ -44,23 +39,23 @@ function ContentBox({
 ContentBox.propTypes = {
   children: PropTypes.any.isRequired,
   behaviour: PropTypes.oneOf(BOX_BEHAVIOURS),
-  state: PropTypes.oneOf(BOX_STATES),
+  state: PropTypes.object, // PropTypes.oneOf(BOX_STATES),
 }
 
 ContentBox.Content = ({ children, as, variant = `PRIMARY`, ...rest }) => {
   const Component = as || `div`
-  const { boxState, boxBehaviour } = useContentBoxContext()
+  const { boxState, boxBehaviour } = ContentBox.useContentBoxContext()
   const componentToReturn = <Component {...rest}>{children}</Component>
 
-  if (boxState === `OPEN` && boxBehaviour === `TOGGLE`) {
+  if (boxState.status === `OPEN` && boxBehaviour === `TOGGLE`) {
     if (variant === `SECONDARY`) {
       return componentToReturn
     }
-  } else if (boxState === `OPEN` && boxBehaviour === `UNFOLD`) {
+  } else if (boxState.status === `OPEN` && boxBehaviour === `UNFOLD`) {
     if (variant === `PRIMARY` || variant === `SECONDARY`) {
       return componentToReturn
     }
-  } else if (boxState === `CLOSED`) {
+  } else if (boxState.status === `CLOSED`) {
     if (variant === `PRIMARY`) {
       return componentToReturn
     }
@@ -74,12 +69,16 @@ ContentBox.Content.propTypes = {
   variant: PropTypes.oneOf(CONTENT_VARIANTS),
 }
 
-ContentBox.Button = ({ children, belongsTo, as = `button`, ...props }) => {
+ContentBox.Button = ({ children, hiddenIf, as = `button`, ...props }) => {
   const Component = as || `button`
-  const { boxState, changeContent } = useContentBoxContext()
+  const { boxState, changeContent, boxTone } = ContentBox.useContentBoxContext()
+
+  if (hiddenIf === boxState.status) {
+    return null
+  }
 
   return (
-    <Component onClick={changeContent} {...props}>
+    <Component onClick={changeContent} tone={boxTone} {...props}>
       {children}
     </Component>
   )
@@ -87,7 +86,17 @@ ContentBox.Button = ({ children, belongsTo, as = `button`, ...props }) => {
 
 ContentBox.Button.propTypes = {
   children: PropTypes.any.isRequired,
-  belongsTo: PropTypes.oneOf(CONTENT_VARIANTS),
+  hiddenIf: PropTypes.oneOf(BOX_STATUSES),
+}
+
+ContentBox.useContentBoxContext = () => {
+  const context = React.useContext(ContentBoxContext)
+  if (!context) {
+    throw new Error(
+      `ContentBox compound components cannot be rendered outside the ContentBox component`
+    )
+  }
+  return context
 }
 
 export default ContentBox
