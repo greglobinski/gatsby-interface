@@ -1,11 +1,19 @@
 import React, { Fragment } from "react"
 import { Global, css } from "@emotion/core"
-import { configure, addDecorator } from "@storybook/react"
-import { withInfo } from "@storybook/addon-info"
+import {
+  configure,
+  addDecorator,
+  addParameters,
+  setAddon,
+} from "@storybook/react"
+import { addReadme } from "storybook-readme"
+
 import { withKnobs } from "@storybook/addon-knobs"
 import { withConsole } from "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
 import { action } from "@storybook/addon-actions"
+
+import { fontFamilies } from "../src/utils/presets"
 import "@storybook/addon-console"
 import "storybook-chromatic"
 
@@ -18,20 +26,23 @@ global.___loader = {
   hovering: () => {},
 }
 
+addParameters({
+  options: {
+    addonPanelInRight: true,
+  },
+  readme: {},
+})
+
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
 global.__PATH_PREFIX__ = ""
 
 // add decorators
-addDecorator(
-  withInfo({
-    inline: false,
-    header: true,
-  })
-)
+
+addDecorator(addReadme)
 
 addDecorator(withKnobs)
 
-const Space = storyFn => (
+const withGlobal = storyFn => (
   <Fragment>
     <Global
       styles={css`
@@ -40,29 +51,38 @@ const Space = storyFn => (
         *:after {
           box-sizing: border-box;
         }
+        html {
+          font-size: 1rem;
+        }
+        body {
+          align-items: center;
+          display: flex;
+          font-family: ${fontFamilies.bodyFontFamily};
+          height: 100vh;
+          justify-content: center;
+          margin: 0;
+          width: 100%;
+        }
+
+        @media (min-width: 1200px) {
+          html {
+            font-size: 1.125rem;
+          }
+        }
       `}
     />
-    <div
-      style={{
-        margin: "30px 0",
-        display: "flex",
-        minHeight: "68vh",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "10vh 20vh",
-      }}
-    >
-      {storyFn()}
-    </div>
+    {storyFn()}
   </Fragment>
 )
-addDecorator(Space)
+
+addDecorator(withGlobal)
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addDecorator(withA11y)
 
-const req = require.context("../__stories__", true, /\.stories\.js$/)
+//const req = require.context("../__stories__", true, /\.stories\.js$/)
+const req = require.context("../src/components/../", true, /\.stories\.js$/)
 
 require("../__stories__/Welcome.stories")
 

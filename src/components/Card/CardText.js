@@ -3,13 +3,13 @@ import styled from "@emotion/styled"
 import {
   spaces,
   breakpoints,
-  palette,
+  colors,
   fontFamilies,
   fontSizes,
 } from "../../utils/presets"
 
 export const CardText = styled(`p`)`
-  color: ${palette.grey[500]};
+  color: ${colors.grey[50]};
   font-family: ${fontFamilies.bodyFontFamily};
   font-size: ${fontSizes.xs};
   line-height: 1.3125rem;

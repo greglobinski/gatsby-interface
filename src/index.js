@@ -1,4 +1,20 @@
-export { Button } from "./components/Button"
+export { ContentBox } from "./components/Skeletons/ContentBox"
+
+export {
+  Button,
+  // deprecated, legacy exports
+  PrimaryButton,
+  SecondaryButton,
+  CancelButton,
+  SuccessButton,
+  TextButton,
+  PrimaryDeleteButton,
+  SecondaryDeleteButton,
+} from "./components/core/Button"
+
+export { SettingsCard } from "./components/core/SettingsCard"
+
+export { IntegrationCard } from "./components/core/IntegrationCard"
 
 export { Link } from "./components/Link"
 

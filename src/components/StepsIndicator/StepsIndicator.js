@@ -2,9 +2,9 @@
 import { jsx, keyframes } from "@emotion/core"
 import PropTypes from "prop-types"
 import { MdCheck, MdClose, MdRefresh } from "react-icons/md"
-import { palette, spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import { colors, spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const loading = keyframes`
+const loading = keyframes` 
   0% {
     transform: rotate(0);
   }
@@ -22,20 +22,20 @@ const Indicator = ({ status, label, expanded }) => {
   }
   const styles = {
     SUCCESS: {
-      background: palette.green[500],
+      background: colors.green[50],
       width: `1.5rem`,
       height: `1.5rem`,
       svg: {
-        color: palette.white,
+        color: colors.white,
       },
     },
     IN_PROGRESS: {
-      background: palette.yellow[600],
+      background: colors.yellow[60],
       width: `2rem`,
       height: `2rem`,
       ":after": {
         content: `""`,
-        background: palette.yellow[600],
+        background: colors.yellow[60],
         width: `100%`,
         height: `100%`,
         position: `absolute`,
@@ -44,7 +44,7 @@ const Indicator = ({ status, label, expanded }) => {
         zIndex: `-1`,
       },
       svg: {
-        color: palette.grey[900],
+        color: colors.grey[90],
         fontSize: `1.5rem`,
         animation: `${loading} 1s linear infinite`,
       },
@@ -64,14 +64,14 @@ const Indicator = ({ status, label, expanded }) => {
       },
     },
     FAILED: {
-      background: palette.red[500],
+      background: colors.red[50],
       "& > span": {
-        background: palette.red[500],
+        background: colors.red[50],
         borderRadius: `50%`,
         transform: `scale(1.3)`,
       },
       svg: {
-        color: palette.white,
+        color: colors.white,
         fontSize: `1.2rem`,
       },
     },
@@ -100,7 +100,7 @@ const Indicator = ({ status, label, expanded }) => {
           transform: expanded
             ? `translate(-50%, -100%)`
             : `translate(-100%, -50%)`,
-          background: palette.green[500],
+          background: colors.green[50],
           zIndex: `-1`,
         },
         ":first-of-type": {
@@ -172,7 +172,7 @@ const StepsIndicator = ({ steps, expanded = false }) => {
       <div
         css={{
           alignItems: `center`,
-          background: palette.grey[100],
+          background: colors.grey[10],
           borderRadius: `9999px`,
           display: `inline-flex`,
           flexDirection: expanded ? `column` : `row`,

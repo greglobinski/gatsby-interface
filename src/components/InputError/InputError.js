@@ -2,12 +2,12 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
-import { spaces, palette, fontSizes } from "../../utils/presets"
+import { spaces, colors, fontSizes } from "../../utils/presets"
 
 const InputError = ({ children }) => (
   <p
     css={{
-      color: palette.red[600],
+      color: colors.red[60],
       fontSize: fontSizes.xs,
       lineHeight: `1`,
       padding: `0`,

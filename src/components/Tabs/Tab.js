@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 
 import {
   colors,
-  palette,
   radius,
   spaces,
   breakpoints,
@@ -16,7 +15,7 @@ import {
 export const baseStyles = {
   alignItems: `center`,
   borderRadius: `${radius.default} ${radius.default} 0 0`,
-  color: palette.purple[500],
+  color: colors.purple[50],
   display: `inline-flex`,
   fontFamily: fontFamilies.headerFontFamily,
   fontSize: fontSizes.m,
@@ -66,24 +65,24 @@ const Tab = ({ className, to, onClick, children, variant = `DEFAULT` }) => {
   const tabStyles = {
     DEFAULT: {
       border: `1px solid ${colors.standardLine}`,
-      color: palette.purple[500],
+      color: colors.purple[50],
       "&.active": {
         background: colors.secondaryBackground,
         borderBottomColor: colors.secondaryBackground,
-        color: palette.grey[900],
+        color: colors.grey[90],
       },
     },
     NUMBERED: {
       background: colors.secondaryBackground,
       border: `1px solid ${colors.standardLine}`,
-      color: palette.grey[400],
+      color: colors.grey[40],
       a: {
-        color: palette.purple[400],
+        color: colors.purple[40],
       },
       "&.active": {
         background: colors.primaryBackground,
         borderBottomColor: colors.secondaryBackground,
-        color: palette.grey[900],
+        color: colors.grey[90],
       },
     },
   }
