@@ -1,11 +1,17 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
-import { Link as GatsbyLink } from "gatsby"
 
 import { colors } from "../../utils/presets"
 
-const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
+const Link = ({
+  children,
+  href,
+  target,
+  to,
+  variant = `DEFAULT`,
+  LinkComponent,
+}) => {
   const baseStyles = {
     alignItems: `center`,
     color: colors.purple[60],
@@ -42,7 +48,7 @@ const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
       {children}
     </a>
   ) : (
-    <GatsbyLink
+    <LinkComponent
       to={to}
       css={{
         ...baseStyles,
@@ -50,7 +56,7 @@ const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
       }}
     >
       {children}
-    </GatsbyLink>
+    </LinkComponent>
   )
 }
 

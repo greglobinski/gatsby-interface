@@ -83,10 +83,6 @@ Notification.Content.propTypes = {
   tone: PropTypes.oneOf(NOTIFICATION_TONES),
 }
 
-Notification.Link = ({ children, to, onClick, ...rest }) => (
-    <Link to={to} onClick={onClick} {...rest}>
-      {children}
-    </Link>
-  )
+Notification.Link = props => <Link {...props} />
 
 export default Notification

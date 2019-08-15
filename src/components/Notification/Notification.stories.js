@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import { MdCheck, MdArrowForward } from "react-icons/md"
+import { Link } from "gatsby"
 
 import { storiesOf } from "@storybook/react"
 import { radios } from "@storybook/addon-knobs"
@@ -24,7 +25,7 @@ storiesOf(`Notification`, module).add(`default`, () => (
       >
         <MdCheck /> Notification variant 'PRIMARY'
       </Notification.Content>
-      <Notification.Link>
+      <Notification.Link to="/" LinkComponent={Link}>
         Link
         <MdArrowForward />
       </Notification.Link>
@@ -35,7 +36,7 @@ storiesOf(`Notification`, module).add(`default`, () => (
       variant="SECONDARY"
       tone={radios(`tone`, NOTIFICATION_TONES, `STANDARD`)}
     >
-      <Notification.Content tone="NEUTRAL">
+      <Notification.Content>
         <MdCheck /> Notification variant 'SECONDARY'
       </Notification.Content>
     </Notification>

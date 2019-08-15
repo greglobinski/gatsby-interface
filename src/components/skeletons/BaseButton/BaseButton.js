@@ -1,7 +1,5 @@
 import React, { Fragment } from "react"
-import { jsx, keyframes } from "@emotion/core"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import { secureTargetBlankLink } from "../../../utils/helpers"
 
 function textIntoSpan(text) {
@@ -50,6 +48,7 @@ function BaseButton(props) {
     role = `button`,
     target = `_blank`,
     to,
+    LinkComponent,
     type = `button`,
     ...rest
   } = props
@@ -70,9 +69,9 @@ function BaseButton(props) {
 
   if (to) {
     return (
-      <Link to={to} role={role} {...rest}>
+      <LinkComponent to={to} role={role} {...rest}>
         <Content children={children} label={label} DefaultIcon={DefaultIcon} />
-      </Link>
+      </LinkComponent>
     )
   }
 
