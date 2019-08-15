@@ -40,3 +40,5 @@ export { Textarea } from "./components/Textarea"
 export { Label } from "./components/Label"
 
 export { InputError } from "./components/InputError"
+
+export { Notification } from "./components/Notification"
