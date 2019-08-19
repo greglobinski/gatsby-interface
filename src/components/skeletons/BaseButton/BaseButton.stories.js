@@ -11,7 +11,7 @@ import { radios, boolean } from "@storybook/addon-knobs"
 import BaseButton from "./BaseButton"
 import Readme from "./README.md"
 
-storiesOf(`BaseButton`, module)
+storiesOf(`skeletons/BaseButton`, module)
   .addParameters({
     options: {
       showPanel: true,

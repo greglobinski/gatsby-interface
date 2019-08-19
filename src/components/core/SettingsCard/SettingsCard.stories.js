@@ -7,7 +7,7 @@ import CardsWrapper from "../../../utils/storybook/CardsWrapper"
 import SpacePlaceholder from "../../../utils/storybook/SpacePlaceholder"
 import SettingsCard from "./SettingsCard"
 
-storiesOf(`SettingsCard`, module)
+storiesOf(`core/SettingsCard`, module)
   .add(`default usage`, () => (
     <CardsWrapper>
       <SettingsCard>

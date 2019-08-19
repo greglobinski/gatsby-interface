@@ -21,7 +21,7 @@ const Button = ({
   loading,
   LoadingIcon = MdRefresh,
   size = `L`,
-  tone = `STANDARD`,
+  tone = `BRAND`,
   variant = `PRIMARY`,
   ...rest
 }) => {

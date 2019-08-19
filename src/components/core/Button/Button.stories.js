@@ -24,14 +24,14 @@ import {
 } from "./Buttons"
 import README_MAIN from "./README_MAIN.md"
 import README_ICONS from "./README_ICONS.md"
-import README_CUSTOM_STYLING from "./README_CUSTOM_STYLING.md"
+import customStyling from "./README_customStyling.md"
 import README_MANUAL_STYLING from "./README_MANUAL_STYLING.md"
 import README_LEGACY from "./README_LEGACY.md"
 import colors from "../../../theme/colors"
 import styles from "../../../theme/styles/button"
 import tones from "../../../theme/tones"
 
-storiesOf(`Button`, module)
+storiesOf(`core/Button`, module)
   .addParameters({
     options: {
       showPanel: true,
@@ -53,7 +53,7 @@ storiesOf(`Button`, module)
       <Button
         onClick={action(`Button was clicked`)}
         size={radios(`size`, BUTTON_SIZES, `L`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button variant 'PRIMARY'
       </Button>
@@ -61,7 +61,7 @@ storiesOf(`Button`, module)
         onClick={action(`Button was clicked`)}
         variant={`SECONDARY`}
         size={radios(`size`, BUTTON_SIZES, `L`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button variant 'SECONDARY'
       </Button>
@@ -69,7 +69,7 @@ storiesOf(`Button`, module)
         onClick={action(`Button was clicked`)}
         variant={`GHOST`}
         size={radios(`size`, BUTTON_SIZES, `L`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button variant 'GHOST'
       </Button>
@@ -88,14 +88,14 @@ storiesOf(`Button`, module)
         onClick={action(`Button was clicked`)}
         size={`XL`}
         variant={radios(`variant`, BUTTON_VARIANTS, `PRIMARY`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button size 'XL'
       </Button>
       <Button
         onClick={action(`Button was clicked`)}
         variant={radios(`variant`, BUTTON_VARIANTS, `PRIMARY`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button size 'L'
       </Button>
@@ -103,7 +103,7 @@ storiesOf(`Button`, module)
         onClick={action(`Button was clicked`)}
         size={`M`}
         variant={radios(`variant`, BUTTON_VARIANTS, `PRIMARY`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button size 'M'
       </Button>
@@ -111,7 +111,7 @@ storiesOf(`Button`, module)
         onClick={action(`Button was clicked`)}
         size={`S`}
         variant={radios(`variant`, BUTTON_VARIANTS, `PRIMARY`)}
-        tone={radios(`tone`, BUTTON_TONES, `STANDARD`)}
+        tone={radios(`tone`, BUTTON_TONES, `BRAND`)}
       >
         Button size 'S'
       </Button>
@@ -128,11 +128,11 @@ storiesOf(`Button`, module)
     >
       <Button
         onClick={action(`Button was clicked`)}
-        tone={`STANDARD`}
+        tone={`BRAND`}
         variant={radios(`variant`, BUTTON_VARIANTS, `PRIMARY`)}
         size={radios(`size`, BUTTON_SIZES, `L`)}
       >
-        Button tone 'STANDARD'
+        Button tone 'BRAND'
       </Button>
       <Button
         onClick={action(`Button was clicked`)}
@@ -231,7 +231,7 @@ storiesOf(`Button`, module)
     ),
     {
       readme: {
-        sidebar: README_CUSTOM_STYLING,
+        sidebar: customStyling,
       },
     }
   )
@@ -242,7 +242,7 @@ storiesOf(`Button`, module)
         css={{
           ...styles.base(),
           ...styles.sizes[`L`],
-          ...styles.variants[`PRIMARY`](tones[`STANDARD`]),
+          ...styles.variants[`PRIMARY`](tones[`BRAND`]),
         }}
       >
         I'm a &lt;button&gt; but I look like the &lt;Button&gt;

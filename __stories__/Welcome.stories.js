@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions"
 import Welcome from "../src/utils/storybook/Welcome"
 import Readme from "./README.md"
 
-storiesOf(`Welcome`, module)
+storiesOf(`Introduction/`, module)
   .addParameters({
     options: {
       showPanel: false,
@@ -14,4 +14,4 @@ storiesOf(`Welcome`, module)
       content: Readme,
     },
   })
-  .add(`to Gatsby Inteface`, () => null)
+  .add(`Welcome to Gatsby Inteface`, () => null)
