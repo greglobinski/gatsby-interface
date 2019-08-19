@@ -28,7 +28,7 @@ storiesOf(`core/SettingsCard`, module)
             greens nori. Grape wattle seed kombu beetroot horseradish carrot
             squash brussels sprout chard.
           </SettingsCard.Description>
-          <SpacePlaceholder hint="SECONDARY CONTENT" />
+          <SpacePlaceholder hint="This is a Secondary Content" />
           <SettingsCard.Actions>
             <SettingsCard.CancelButton />
             <SettingsCard.SubmitButton />

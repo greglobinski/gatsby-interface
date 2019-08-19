@@ -242,7 +242,7 @@ storiesOf(`core/Button`, module)
         css={{
           ...styles.base(),
           ...styles.sizes[`L`],
-          ...styles.variants[`PRIMARY`](tones[`BRAND`]),
+          ...styles.variants[`PRIMARY`]({ tone: `BRAND` }),
         }}
       >
         I'm a &lt;button&gt; but I look like the &lt;Button&gt;

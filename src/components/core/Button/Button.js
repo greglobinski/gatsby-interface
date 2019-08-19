@@ -7,7 +7,6 @@ import { MdRefresh, MdArrowForward } from "react-icons/md"
 
 import { BaseButton } from "../../skeletons/BaseButton"
 import styles from "../../../theme/styles/button"
-import tones from "../../../theme/tones"
 
 import {
   BUTTON_SIZES,
@@ -32,7 +31,7 @@ const Button = ({
       css={{
         ...styles.base({ loading }),
         ...styles.sizes[size],
-        ...styles.variants[variant](tones[tone]),
+        ...styles.variants[variant]({ tone }),
         ...css,
       }}
       DefaultIcon={DefaultIcon}

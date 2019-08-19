@@ -5,15 +5,15 @@ import PropTypes from "prop-types"
 import { MdEdit, MdArrowForward } from "react-icons/md"
 
 import { ContentBox } from "../../skeletons/ContentBox"
-
 import { Button } from "../Button"
+import { Heading } from "../Heading"
 import {
   breakpoints,
   fontFamilies,
-  fontSizes,
   palette,
   spaces,
 } from "../../../utils/presets"
+import fontSizes from "../../../theme/fontSizes"
 import cardStyles from "../../../theme/styles/card"
 
 function SettingsCard({ children, ...rest }) {
@@ -28,7 +28,7 @@ function SettingsCard({ children, ...rest }) {
         padding: `${spaces.m} ${spaces.l} ${spaces.l}`,
 
         [`@media(min-width: ${breakpoints.desktop}px)`]: {
-          padding: `${spaces.l} ${spaces.xl} ${spaces.xl}`,
+          padding: `${spaces.l} ${spaces[`xl`]} ${spaces[`xl`]}`,
         },
       }}
       {...rest}
@@ -43,13 +43,17 @@ SettingsCard.propTypes = {
 }
 
 SettingsCard.Title = ({ children, className, ...props }) => (
-  <h3
+  <Heading
+    as={`h3`}
     css={{
-      ...cardStyles.title,
+      alignItems: `center`,
+      display: `flex`,
+      fontSize: fontSizes[4],
+      minHeight: `2.25rem`,
     }}
   >
     {children}
-  </h3>
+  </Heading>
 )
 
 SettingsCard.Description = ({ children }) => (
@@ -75,7 +79,7 @@ SettingsCard.Description = ({ children }) => (
 )
 
 SettingsCard.EditButton = ({ children, label = `Edit`, ...rest }) => (
-  <ContentBox.Button as={Button} variant={`SECONDARY`} css={{}} {...rest}>
+  <ContentBox.Button as={Button} variant={`GHOST`} {...rest}>
     {children ? (
       children
     ) : (

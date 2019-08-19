@@ -61,6 +61,7 @@ const withGlobal = storyFn => (
           font-size: 1rem;
         }
         body {
+          background: blue;
           align-items: center;
           display: flex;
           font-family: ${fontFamilies.bodyFontFamily};
@@ -73,9 +74,9 @@ const withGlobal = storyFn => (
         #root {
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1000px) {
           html {
-            font-size: 1.125rem;
+            font-size: 112.5%;
           }
         }
       `}
