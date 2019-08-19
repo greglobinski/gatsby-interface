@@ -42,26 +42,3 @@ export const options = {
   VARIANTS,
   TONES,
 }
-
-// const sizes = {
-//   S: {
-//     fontSize: `0.875rem`,
-//     minHeight: `1.6rem`,
-//     padding: `0.3rem 0.5rem`,
-//   },
-//   M: {
-//     fontSize: `1rem`,
-//     minHeight: `2rem`,
-//     padding: `0.45rem 0.75rem`,
-//   },
-//   L: {
-//     fontSize: `1.125rem`,
-//     minHeight: `2.4rem`,
-//     padding: `0.55rem 1rem`,
-//   },
-//   XL: {
-//     fontSize: `1.5rem`,
-//     minHeight: `3.25rem`,
-//     padding: `0.65rem 1.25rem`,
-//   },
-// }
