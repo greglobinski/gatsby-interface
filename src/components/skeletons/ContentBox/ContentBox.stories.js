@@ -11,7 +11,7 @@ import { radios, boolean } from "@storybook/addon-knobs"
 import ContentBox from "./ContentBox"
 import Readme from "./README.md"
 
-storiesOf(`ContentBox`, module)
+storiesOf(`skeletons/ContentBox`, module)
   .addParameters({
     options: {
       showPanel: true,

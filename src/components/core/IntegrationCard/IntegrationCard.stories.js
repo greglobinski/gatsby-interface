@@ -7,7 +7,7 @@ import CardsWrapper from "../../../utils/storybook/CardsWrapper"
 import SpacePlaceholder from "../../../utils/storybook/SpacePlaceholder"
 import IntegrationCard from "./IntegrationCard"
 
-storiesOf(`IntegrationCard`, module)
+storiesOf(`core/IntegrationCard`, module)
   .add(`shortcut usage`, () => (
     <CardsWrapper>
       <IntegrationCard

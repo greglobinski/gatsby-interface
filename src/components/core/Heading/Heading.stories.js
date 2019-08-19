@@ -7,38 +7,42 @@ import { action } from "@storybook/addon-actions"
 import { MdArrowForward } from "react-icons/md"
 import { boolean, radios } from "@storybook/addon-knobs"
 
-// import {
-//   BUTTON_SIZES,
-//   BUTTON_TONES,
-//   BUTTON_VARIANTS,
-// } from "../../../utils/options"
+import { StoryUtils } from "../../../utils/storybook"
 import Heading from "./Heading"
 
-// import README_MAIN from "./README_MAIN.md"
-// import README_ICONS from "./README_ICONS.md"
-// import README_CUSTOM_STYLING from "./README_CUSTOM_STYLING.md"
-// import README_MANUAL_STYLING from "./README_MANUAL_STYLING.md"
-// import README_LEGACY from "./README_LEGACY.md"
-// import colors from "../../../theme/colors"
-// import styles from "../../../theme/styles/button"
-// import tones from "../../../theme/tones"
-
-storiesOf(`Heading`, module)
+storiesOf(`core/Heading`, module)
   .addParameters({
     options: {
       showPanel: true,
     },
   })
+  .add(`redered 'as'`, () => (
+    <StoryUtils.Stack>
+      <Heading as={`h1`}>Heading rendered as &lt;h1&gt; tag</Heading>
+      <Heading>
+        Heading rendered as &lt;h2&gt; tag <StoryUtils.Default />
+      </Heading>
+      <Heading as={`h3`}>Heading rendered as &lt;h3&gt; tag</Heading>
+      <Heading as={`h4`}>Heading rendered as &lt;h4&gt; tag</Heading>
+      <Heading as={`h5`}>Heading rendered as &lt;h5&gt; tag</Heading>
+    </StoryUtils.Stack>
+  ))
   .add(`variants`, () => (
-    <div
-      css={{
-        display: `flex`,
-        flexDirection: `column`,
-        alignItems: `flex-start`,
-        "& > button": { margin: `20px` },
-      }}
-    >
-      <Heading>That's a Heading h2</Heading>
-      <Heading as={`h1`}>That's a Heading h1</Heading>
-    </div>
+    <StoryUtils.Stack>
+      <Heading>
+        Heading variant - PRIMARY <StoryUtils.Default />
+      </Heading>
+      <Heading variant={`EMPHASIZED`}>Heading variant - EMPHESIZED</Heading>
+      <Heading variant={`LIGHT`}>Heading variant - LIGHT</Heading>
+    </StoryUtils.Stack>
+  ))
+  .add(`tones`, () => (
+    <StoryUtils.Stack>
+      <Heading tone={`NEUTRAL`}>
+        Heading tone - NEUTRAL <StoryUtils.Default />
+      </Heading>
+      <Heading tone={`BRAND`}>Heading variant - BRAND</Heading>
+      <Heading tone={`DANGER`}>Heading variant - DANGER</Heading>
+      <Heading tone={`SUCCESS`}>Heading variant - SUCCESS</Heading>
+    </StoryUtils.Stack>
   ))

@@ -1,34 +1,46 @@
 import colors from "../colors"
 import animations from "../animations"
+import tones from "../tones"
+import fontSizes from "../fontSizes"
+import fonts from "../fonts"
 
-import {
-  breakpoints,
-  fontFamilies,
-  fontSizes,
-  radius,
-  spaces,
-} from "../../utils/presets"
+import { breakpoints, radius, spaces } from "../../utils/presets"
 
-const base = toneColors => {
+const VARIANTS = [`PRIMARY`, `EMPHASIZED`, `LIGHT`]
+const TONES = [`BRAND`, `SUCCESS`, `DANGER`, `NEUTRAL`]
+
+const baseStyle = ({ tone }) => {
   return {
-    fontFamily: fontFamilies.headerFontFamily,
+    fontFamily: fonts.header.join(`,`),
     margin: `0`,
-    color: toneColors.dark,
+    color: tones[tone].superDark,
   }
 }
 
-const variants = {
-  PRIMARY: toneColors => {
-    return {
-      fontWeight: `bold`,
-    }
+const variantStyles = {
+  PRIMARY: {
+    fontWeight: `bold`,
   },
 
-  EMPHASIZED: toneColors => {
-    return {
-      fontWeight: `800`,
-    }
+  EMPHASIZED: {
+    fontWeight: 800,
   },
+
+  LIGHT: {
+    fontWeight: 100,
+    textTransform: `uppercase`,
+  },
+}
+
+export const styles = {
+  baseStyle,
+  variantStyles,
+  // sizes,
+}
+
+export const options = {
+  VARIANTS,
+  TONES,
 }
 
 // const sizes = {
@@ -53,48 +65,3 @@ const variants = {
 //     padding: `0.65rem 1.25rem`,
 //   },
 // }
-
-// const variants = {
-//   PRIMARY: toneColors => {
-//     return {
-//       background: toneColors.dark,
-//       border: `1px solid ${toneColors.dark}`,
-//       color: colors.white,
-//       fontWeight: `bold`,
-//       ":hover": {
-//         background: toneColors.darker,
-//         border: `1px solid ${toneColors.darker}`,
-//       },
-//     }
-//   },
-//   SECONDARY: toneColors => {
-//     return {
-//       background: `transparent`,
-//       border: `1px solid ${toneColors.light}`,
-//       color: toneColors.medium,
-//       ":hover": {
-//         borderColor: toneColors.dark,
-//         color: toneColors.dark,
-//       },
-//     }
-//   },
-//   GHOST: toneColors => {
-//     return {
-//       background: `transparent`,
-//       border: `1px solid transparent`,
-//       color: toneColors.medium,
-//       ":hover": {
-//         background: toneColors.superLight,
-//         color: toneColors.dark,
-//       },
-//     }
-//   },
-// }
-
-const heading = {
-  base,
-  // sizes,
-  // variants,
-}
-
-export default heading

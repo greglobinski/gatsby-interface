@@ -3,10 +3,12 @@ import { jsx } from "@emotion/core"
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 
-import styles from "../../../theme/styles/heading"
+import { BaseHeading } from "../../skeletons/BaseHeading"
+import { styles, options } from "../../../theme/styles/heading"
 import tones from "../../../theme/tones"
 
-import { HEADING_TONES, HEADING_VARIANTS } from "../../../utils/options"
+const { baseStyle, variantStyles } = styles
+const { VARIANTS, TONES } = options
 
 const asOptions = {
   h1: `h1`,
@@ -25,27 +27,22 @@ const Heading = ({
   variant = `PRIMARY`,
   as = `h2`,
   ...rest
-}) => {
-  const Component = asOptions[as]
-
-  return (
-    <Component
+}) => (
+    <BaseHeading
+      as={as}
       css={{
-        ...styles.base,
-        ...styles.variants[variant](tones[tone]),
+        ...baseStyle({ tone }),
+        ...variantStyles[variant],
       }}
       {...rest}
     >
       {children}
-    </Component>
+    </BaseHeading>
   )
-}
 
 Heading.propTypes = {
-  // /size: PropTypes.oneOf([`L`, `M`, `XL`, `S`]),
-  as: PropTypes.oneOf([`h1`, `h2`, `h3`, `h4`, `h5`]),
-  variant: PropTypes.oneOf(HEADING_VARIANTS),
-  tone: PropTypes.oneOf(HEADING_TONES),
+  variant: PropTypes.oneOf(VARIANTS),
+  tone: PropTypes.oneOf(TONES),
 }
 
 export default Heading

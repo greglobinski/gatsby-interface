@@ -17,6 +17,12 @@ import { fontFamilies } from "../src/utils/presets"
 import "@storybook/addon-console"
 import "storybook-chromatic"
 
+import "../assets/fonts/futura-pt/Webfonts/futurapt_book_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_bookitalic_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_demi_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_bold/MyFontsWebfontsKit.css"
+
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
 }
@@ -62,6 +68,9 @@ const withGlobal = storyFn => (
           justify-content: center;
           margin: 0;
           width: 100%;
+        }
+
+        #root {
         }
 
         @media (min-width: 1200px) {

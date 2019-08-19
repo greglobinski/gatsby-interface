@@ -24,7 +24,7 @@ function Component() => (
 
 #### `tone`
 
-- type: **enum** ['STANDARD', 'SUCCESS', 'DANGER', 'NEUTRAL']
+- type: **enum** ['BRAND', 'SUCCESS', 'DANGER', 'NEUTRAL']
 - default: 'STANDARD'
 
 #### and all [`BaseButton`](?path=/story/basebutton--tags-components) `props`
