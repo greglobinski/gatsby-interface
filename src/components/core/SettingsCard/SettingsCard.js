@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css, keyframes } from "@emotion/core"
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { MdEdit, MdArrowForward } from "react-icons/md"
 
@@ -16,9 +16,19 @@ import {
 import fontSizes from "../../../theme/fontSizes"
 import cardStyles from "../../../theme/styles/card"
 
-function SettingsCard({ children, ...rest }) {
+const MODES = [`PRESENTER`, `EDITOR`]
+
+function SettingsCard({ children, mode = `PRESENTER`, ...rest }) {
+  const [modeState, setModeState] = useState(mode)
+  useEffect(() => {
+    if (mode !== modeState) {
+      setModeState(mode)
+    }
+  }, [mode])
+
   return (
     <ContentBox
+      state={{ boxState: modeState === `PRESENTER` ? `CLOSED` : `OPEN` }}
       css={{
         ...cardStyles.frame,
         display: `grid`,
@@ -40,21 +50,27 @@ function SettingsCard({ children, ...rest }) {
 
 SettingsCard.propTypes = {
   children: PropTypes.any,
+  mode: PropTypes.oneOf(MODES),
 }
 
-SettingsCard.Title = ({ children, className, ...props }) => (
-  <Heading
-    as={`h3`}
-    css={{
-      alignItems: `center`,
-      display: `flex`,
-      fontSize: fontSizes[4],
-      minHeight: `2.25rem`,
-    }}
-  >
-    {children}
-  </Heading>
-)
+SettingsCard.Title = ({ children, className, ...props }) => {
+  const { boxTone } = ContentBox.useContentBoxContext()
+
+  return (
+    <Heading
+      as={`h3`}
+      tone={boxTone}
+      css={{
+        alignItems: `center`,
+        display: `flex`,
+        fontSize: fontSizes[4],
+        minHeight: `2.25rem`,
+      }}
+    >
+      {children}
+    </Heading>
+  )
+}
 
 SettingsCard.Description = ({ children }) => (
   <p
@@ -67,10 +83,6 @@ SettingsCard.Description = ({ children }) => (
 
       "&:not(:last-child)": {
         marginBottom: spaces.m,
-      },
-
-      [`@media(min-width: ${breakpoints.desktop}px)`]: {
-        gridColumn: `1 / 2`,
       },
     }}
   >
