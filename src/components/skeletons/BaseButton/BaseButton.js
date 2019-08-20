@@ -9,6 +9,7 @@ function textIntoSpan(text) {
 }
 
 function Content({ children, label, DefaultIcon }) {
+  console.log(`children`, children)
   if (label) {
     return (
       <Fragment>
@@ -33,7 +34,7 @@ function Content({ children, label, DefaultIcon }) {
     )
   }
 
-  return null
+  return children
 }
 
 function BaseButton(props) {

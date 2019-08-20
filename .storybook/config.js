@@ -32,11 +32,22 @@ global.___loader = {
   hovering: () => {},
 }
 
+const viewports = {
+  mobile360x640: {
+    name: "Mobile 360 x 640",
+    styles: {
+      width: "360px",
+      height: "640px",
+    },
+  },
+}
+
 addParameters({
   options: {
     addonPanelInRight: true,
   },
   readme: {},
+  viewport: { viewports: viewports },
 })
 
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment

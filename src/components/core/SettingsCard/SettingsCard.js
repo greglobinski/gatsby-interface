@@ -64,6 +64,7 @@ SettingsCard.Title = ({ children, className, ...props }) => {
         alignItems: `center`,
         display: `flex`,
         fontSize: fontSizes[4],
+        lineHeight: 1,
         minHeight: `2.25rem`,
       }}
     >

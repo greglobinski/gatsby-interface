@@ -29,7 +29,7 @@ StoryUtils.Container = ({ children, secondaryBg = false }) => (
       minHeight: `100vh`,
       justifyContent: `center`,
       width: `100%`,
-      padding: `50px 0`,
+      padding: `20px`,
     }}
   >
     {children}

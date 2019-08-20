@@ -17,7 +17,7 @@ import fontSizes from "../../../theme/fontSizes"
 import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
 
-function SettingsBlock({ children, ...rest }) {
+function SettingsBlock({ children, title, description, doclink, ...rest }) {
   return (
     <ContentBox
       css={{
@@ -26,6 +26,19 @@ function SettingsBlock({ children, ...rest }) {
       }}
       {...rest}
     >
+      {title && (
+        <SettingsBlock.Header>
+          {title && (
+            <SettingsBlock.Title>
+              {title} {doclink && <SettingsBlock.Doclink to={doclink} />}
+            </SettingsBlock.Title>
+          )}
+          {description && (
+            <SettingsBlock.Description>{description}</SettingsBlock.Description>
+          )}
+        </SettingsBlock.Header>
+      )}
+
       {children}
     </ContentBox>
   )
@@ -40,10 +53,10 @@ SettingsBlock.Header = ({ children, ...rest }) => (
     css={{
       borderBottom: `1px solid ${colors.standardLine}`,
       fontSize: fontSizes[4],
-      padding: `${spaces.l} ${spaces.l}`,
+      padding: `${spaces.m} ${spaces.xl} ${spaces.l}`,
 
       [`@media(min-width: ${breakpoints.desktop}px)`]: {
-        padding: `${spaces.xl} ${spaces[`2xl`]}`,
+        padding: `${spaces.l} ${spaces[`2xl`]} ${spaces.xl}`,
       },
     }}
     {...rest}
@@ -56,7 +69,15 @@ SettingsBlock.Title = ({ children, ...rest }) => (
   <Heading
     as={`h3`}
     css={{
+      alignItems: `center`,
+      display: `flex`,
       fontSize: fontSizes[4],
+      lineHeight: 1,
+      minHeight: `2.25rem`,
+
+      [`&:last-child`]: {
+        marginBottom: `-.5rem`,
+      },
     }}
     {...rest}
   >
@@ -64,8 +85,15 @@ SettingsBlock.Title = ({ children, ...rest }) => (
   </Heading>
 )
 
-SettingsBlock.Infolink = ({ children, ...rest }) => (
-  <Button variant={`GHOST`} {...rest}>
+SettingsBlock.Doclink = ({ children, ...rest }) => (
+  <Button
+    variant={`GHOST`}
+    tone={`NEUTRAL`}
+    css={{
+      marginLeft: spaces[`2xs`],
+    }}
+    {...rest}
+  >
     <MdHelpOutline />
   </Button>
 )
