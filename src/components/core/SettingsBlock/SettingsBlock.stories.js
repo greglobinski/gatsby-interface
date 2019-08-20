@@ -72,7 +72,7 @@ storiesOf(`core/SettingsBlock`, module)
       </StoryUtils.Stack>
     </StoryUtils.Container>
   ))
-  .add(`with content`, () => (
+  .add(`with Announcement`, () => (
     <StoryUtils.Container secondaryBg={true}>
       <StoryUtils.Stack width={`35em`}>
         <SettingsBlock
