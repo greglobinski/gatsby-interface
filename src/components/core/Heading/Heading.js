@@ -19,15 +19,15 @@ const asOptions = {
   h6: `h6`,
 }
 
-const Heading = ({
+function Heading({
   children,
   css,
-  // / size = `L`,
   tone = `NEUTRAL`,
   variant = `PRIMARY`,
   as = `h2`,
   ...rest
-}) => (
+}) {
+  return (
     <BaseHeading
       as={as}
       css={{
@@ -39,6 +39,7 @@ const Heading = ({
       {children}
     </BaseHeading>
   )
+}
 
 Heading.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),

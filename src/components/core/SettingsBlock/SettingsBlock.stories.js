@@ -4,8 +4,8 @@ import { storiesOf } from "@storybook/react"
 import { MdEdit, MdArrowForward, MdAdd, MdDelete } from "react-icons/md"
 
 import { StoryUtils } from "../../../utils/storybook"
-import SpacePlaceholder from "../../../utils/storybook/SpacePlaceholder"
-import SettingsBlock from "./SettingsBlock"
+import { SettingsBlock } from "./"
+import { Announcement } from "../Announcement"
 
 storiesOf(`core/SettingsBlock`, module)
   .add(`default usage`, () => (
@@ -67,6 +67,26 @@ storiesOf(`core/SettingsBlock`, module)
         >
           <SettingsBlock.Content>
             <StoryUtils.Content hint="This is the Block's content section" />
+          </SettingsBlock.Content>
+        </SettingsBlock>
+      </StoryUtils.Stack>
+    </StoryUtils.Container>
+  ))
+  .add(`with content`, () => (
+    <StoryUtils.Container secondaryBg={true}>
+      <StoryUtils.Stack width={`35em`}>
+        <SettingsBlock
+          title="Automated Integrations"
+          doclink="/"
+          description=" Gatsby Cloud can automatically deploy each site build to one or more
+              CDN hosts of your choice—just connect and you are good to go!"
+        >
+          <SettingsBlock.Content>
+            <StoryUtils.Content hint="This is the Block's content section" />
+            <Announcement>
+              We are working on adding more integrations all the time—watch your
+              inbox!
+            </Announcement>
           </SettingsBlock.Content>
         </SettingsBlock>
       </StoryUtils.Stack>

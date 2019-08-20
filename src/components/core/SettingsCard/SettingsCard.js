@@ -13,8 +13,9 @@ import {
   palette,
   spaces,
 } from "../../../utils/presets"
-import fontSizes from "../../../theme/fontSizes"
 import cardStyles from "../../../theme/styles/card"
+import fontSizes from "../../../theme/fontSizes"
+import colors from "../../../theme/colors"
 
 const MODES = [`PRESENTER`, `EDITOR`]
 
@@ -73,11 +74,11 @@ SettingsCard.Title = ({ children, className, ...props }) => {
   )
 }
 
-SettingsCard.Description = ({ children }) => (
+SettingsCard.Description = ({ children, ...rest }) => (
   <p
     css={{
-      color: palette.grey[500],
-      fontSize: fontSizes.xs,
+      color: colors.grey[50],
+      fontSize: fontSizes[1],
       fontFamily: fontFamilies.bodyFontFamily,
       lineHeight: 1.4,
       margin: 0,
@@ -86,6 +87,7 @@ SettingsCard.Description = ({ children }) => (
         marginBottom: spaces.m,
       },
     }}
+    {...rest}
   >
     {children}
   </p>

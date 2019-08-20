@@ -9,7 +9,6 @@ function textIntoSpan(text) {
 }
 
 function Content({ children, label, DefaultIcon }) {
-  console.log(`children`, children)
   if (label) {
     return (
       <Fragment>

@@ -13,8 +13,8 @@ import {
   palette,
   spaces,
 } from "../../../utils/presets"
-import fontSizes from "../../../theme/fontSizes"
 import cardStyles from "../../../theme/styles/card"
+import fontSizes from "../../../theme/fontSizes"
 import colors from "../../../theme/colors"
 
 function SettingsBlock({ children, title, description, doclink, ...rest }) {
@@ -51,7 +51,6 @@ SettingsBlock.propTypes = {
 SettingsBlock.Header = ({ children, ...rest }) => (
   <header
     css={{
-      borderBottom: `1px solid ${colors.standardLine}`,
       fontSize: fontSizes[4],
       padding: `${spaces.m} ${spaces.xl} ${spaces.l}`,
 
@@ -101,7 +100,7 @@ SettingsBlock.Doclink = ({ children, ...rest }) => (
 SettingsBlock.Description = ({ children, ...rest }) => (
   <p
     css={{
-      color: palette.grey[500],
+      color: colors.grey[50],
       fontSize: fontSizes[1],
       fontFamily: fontFamilies.bodyFontFamily,
       lineHeight: 1.4,
