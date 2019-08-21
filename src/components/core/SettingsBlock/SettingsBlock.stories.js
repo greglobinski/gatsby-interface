@@ -6,6 +6,9 @@ import { MdEdit, MdArrowForward, MdAdd, MdDelete } from "react-icons/md"
 import { StoryUtils } from "../../../utils/storybook"
 import { SettingsBlock } from "./"
 import { Announcement } from "../Announcement"
+import { IntegrationRow } from "../IntegrationRow"
+import netlifyLogo from "../../../assets/netlifyLogo.svg"
+import contentfulLogo from "../../../assets/contentfulLogo.png"
 
 storiesOf(`core/SettingsBlock`, module)
   .add(`default usage`, () => (
@@ -39,7 +42,7 @@ storiesOf(`core/SettingsBlock`, module)
         <SettingsBlock>
           <SettingsBlock.Header>
             <SettingsBlock.Title>
-              Deploy Targets <SettingsBlock.Doclink to="/" />
+              Automated Integrations <SettingsBlock.Doclink to="/" />
             </SettingsBlock.Title>
             <SettingsBlock.Description>
               Gatsby Cloud can automatically deploy each site build to one or
@@ -72,6 +75,35 @@ storiesOf(`core/SettingsBlock`, module)
       </StoryUtils.Stack>
     </StoryUtils.Container>
   ))
+  .add(`with items`, () => (
+    <StoryUtils.Container secondaryBg={true}>
+      <StoryUtils.Stack width={`35em`}>
+        <SettingsBlock
+          title="Automated Integrations"
+          doclink="/"
+          description=" Gatsby Cloud can automatically deploy each site build to one or more
+              CDN hosts of your choice—just connect and you are good to go!"
+        >
+          <SettingsBlock.Content>
+            <IntegrationRow
+              title="Contentful"
+              logoUrl={contentfulLogo}
+              onClickEdit={() => alert(`onClickEdit()`)}
+              isConnected={false}
+              details={null}
+            />
+            <IntegrationRow
+              title="Netlify"
+              logoUrl={netlifyLogo}
+              onClickEdit={() => alert(`onClickEdit()`)}
+              isConnected={false}
+              details={null}
+            />
+          </SettingsBlock.Content>
+        </SettingsBlock>
+      </StoryUtils.Stack>
+    </StoryUtils.Container>
+  ))
   .add(`with Announcement`, () => (
     <StoryUtils.Container secondaryBg={true}>
       <StoryUtils.Stack width={`35em`}>
@@ -82,7 +114,20 @@ storiesOf(`core/SettingsBlock`, module)
               CDN hosts of your choice—just connect and you are good to go!"
         >
           <SettingsBlock.Content>
-            <StoryUtils.Content hint="This is the Block's content section" />
+            <IntegrationRow
+              title="Contentful"
+              logoUrl={contentfulLogo}
+              onClickEdit={() => alert(`onClickEdit()`)}
+              isConnected={false}
+              details={null}
+            />
+            <IntegrationRow
+              title="Netlify"
+              logoUrl={netlifyLogo}
+              onClickEdit={() => alert(`onClickEdit()`)}
+              isConnected={false}
+              details={null}
+            />
             <Announcement>
               We are working on adding more integrations all the time—watch your
               inbox!

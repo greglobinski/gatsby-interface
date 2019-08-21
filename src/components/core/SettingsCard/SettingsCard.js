@@ -54,7 +54,7 @@ SettingsCard.propTypes = {
   mode: PropTypes.oneOf(MODES),
 }
 
-SettingsCard.Title = ({ children, className, ...props }) => {
+SettingsCard.Title = ({ children, ...rest }) => {
   const { boxTone } = ContentBox.useContentBoxContext()
 
   return (
@@ -68,6 +68,7 @@ SettingsCard.Title = ({ children, className, ...props }) => {
         lineHeight: 1,
         minHeight: `2.25rem`,
       }}
+      {...rest}
     >
       {children}
     </Heading>

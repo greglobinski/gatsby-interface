@@ -10,15 +10,6 @@ import tones from "../../../theme/tones"
 const { baseStyle, variantStyles } = styles
 const { VARIANTS, TONES } = options
 
-const asOptions = {
-  h1: `h1`,
-  h2: `h2`,
-  h3: `h3`,
-  h4: `h4`,
-  h5: `h5`,
-  h6: `h6`,
-}
-
 function Heading({
   children,
   css,
@@ -32,7 +23,7 @@ function Heading({
       as={as}
       css={{
         ...baseStyle({ tone }),
-        ...variantStyles[variant],
+        ...variantStyles({ tone })[variant],
       }}
       {...rest}
     >

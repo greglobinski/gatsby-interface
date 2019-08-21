@@ -26,6 +26,7 @@ storiesOf(`core/Heading`, module)
         <Heading as={`h3`}>Heading rendered as &lt;h3&gt; tag</Heading>
         <Heading as={`h4`}>Heading rendered as &lt;h4&gt; tag</Heading>
         <Heading as={`h5`}>Heading rendered as &lt;h5&gt; tag</Heading>
+        <Heading as={`span`}>Heading rendered as &lt;span&gt; tag</Heading>
       </StoryUtils.Stack>
     </StoryUtils.Container>
   ))

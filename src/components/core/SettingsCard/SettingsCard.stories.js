@@ -3,8 +3,7 @@ import React from "react"
 import { storiesOf } from "@storybook/react"
 import { MdEdit, MdArrowForward, MdAdd, MdDelete } from "react-icons/md"
 
-import SpacePlaceholder from "../../../utils/storybook/SpacePlaceholder"
-import SettingsCard from "./SettingsCard"
+import { SettingsCard } from "./"
 import { StoryUtils } from "../../../utils/storybook"
 
 storiesOf(`core/SettingsCard`, module)
@@ -29,14 +28,14 @@ storiesOf(`core/SettingsCard`, module)
               greens nori. Grape wattle seed kombu beetroot horseradish carrot
               squash brussels sprout chard.
             </SettingsCard.Description>
-            <SpacePlaceholder hint="This is a Secondary Content" />
+            <StoryUtils.Content hint="This is a Secondary Content" />
             <SettingsCard.Actions>
               <SettingsCard.CancelButton />
               <SettingsCard.SubmitButton />
             </SettingsCard.Actions>
           </SettingsCard.Content>
         </SettingsCard>
-      </StoryUtils.Stack>{` `}
+      </StoryUtils.Stack>
     </StoryUtils.Container>
   ))
   .add(`no secondary conent`, () => (
@@ -77,10 +76,11 @@ storiesOf(`core/SettingsCard`, module)
             <SettingsCard.Description>
               Amaranth tatsoi tomatillo melon azuki bean garlic.
             </SettingsCard.Description>
-            <SpacePlaceholder hint="PRIMARY CONTENT" />
+            <StoryUtils.Content hint="PRIMARY CONTENT" />
           </SettingsCard.Content>
         </SettingsCard>
-      </StoryUtils.Stack>{` `}
+      </StoryUtils.Stack>
+      {` `}
     </StoryUtils.Container>
   ))
   .add(`custom EditButton`, () => (
@@ -123,7 +123,8 @@ storiesOf(`core/SettingsCard`, module)
             </SettingsCard.Description>
           </SettingsCard.Content>
         </SettingsCard>
-      </StoryUtils.Stack>{` `}
+      </StoryUtils.Stack>
+      {` `}
     </StoryUtils.Container>
   ))
   .add(`with custom tone`, () => (

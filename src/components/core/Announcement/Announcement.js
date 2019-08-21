@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 import { spaces } from "../../../utils/presets"
 import fontSizes from "../../../theme/fontSizes"
 import colors from "../../../theme/colors"
-import background from "./background.svg"
+import background from "./assets/background.svg"
 
 function Announcement({ children, ...rest }) {
   return (

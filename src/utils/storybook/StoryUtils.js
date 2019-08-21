@@ -20,6 +20,17 @@ StoryUtils.Stack = ({ children, width }) => (
   </div>
 )
 
+StoryUtils.StackItem = ({ children, width }) => (
+  <div
+    css={{
+      alignItems: `center`,
+      display: `flex`,
+    }}
+  >
+    {children}
+  </div>
+)
+
 StoryUtils.Container = ({ children, secondaryBg = false }) => (
   <div
     css={{
@@ -65,7 +76,7 @@ StoryUtils.Default = () => (
       display: `inline-flex`,
       fontSize: `.9rem`,
       fontWeight: `normal`,
-      marginLeft: `1em`,
+      marginLeft: `2em`,
       padding: `.3em .6em`,
       verticalAlign: `text-bottom`,
 
