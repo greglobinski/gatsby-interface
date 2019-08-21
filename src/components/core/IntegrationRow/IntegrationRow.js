@@ -21,6 +21,7 @@ function IntegrationRow({
   title,
   logoUrl,
   onClickEdit,
+  editLabel,
   details,
   children,
   ...rest
@@ -55,7 +56,9 @@ function IntegrationRow({
           <img src={logoUrl} alt={title} />
         </IntegrationRow.Logo>
       )}
-      {onClickEdit && <IntegrationRow.EditButton onClick={onClickEdit} />}
+      {onClickEdit && (
+        <IntegrationRow.EditButton label={editLabel} onClick={onClickEdit} />
+      )}
 
       {details && <IntegrationRow.Content details={details} />}
 
@@ -164,7 +167,8 @@ IntegrationRow.Content = ({
   details,
   variant = `SECONDARY`,
   ...rest
-}) => details || children ? (
+}) =>
+  details || children ? (
     <ContentBox.Content
       variant={variant}
       css={{
