@@ -1,4 +1,4 @@
-export { ContentBox } from "./components/Skeletons/ContentBox"
+export { ContentBox } from "./components/skeletons/ContentBox"
 
 export {
   Button,
@@ -14,7 +14,7 @@ export {
 
 export { SettingsCard } from "./components/core/SettingsCard"
 
-export { IntegrationCard } from "./components/core/IntegrationCard"
+export { IntegrationRow } from "./components/core/IntegrationRow"
 
 export { Link } from "./components/Link"
 
@@ -40,3 +40,5 @@ export { Textarea } from "./components/Textarea"
 export { Label } from "./components/Label"
 
 export { InputError } from "./components/InputError"
+
+export { FileUpload } from "./components/FileUpload"
