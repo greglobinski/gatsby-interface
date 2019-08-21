@@ -1,33 +1,37 @@
 import React, { useState, useCallback, useMemo } from "react"
 import PropTypes from "prop-types"
 
-const BOX_STATUSES = [`OPEN`, `CLOSED`]
+const BOX_STATES = [`OPEN`, `CLOSED`]
 const BOX_BEHAVIOURS = [`TOGGLE`, `UNFOLD`]
 const CONTENT_VARIANTS = [`PRIMARY`, `SECONDARY`]
 
 const ContentBoxContext = React.createContext()
 
 function ContentBox({
-  state = { status: `CLOSED` },
+  state: propState,
   children,
   as,
   behaviour = `TOGGLE`,
-  tone = `STANDARD`,
+  tone = `NEUTRAL`,
   ...rest
 }) {
   const Component = as || `div`
-  const [boxState, setBoxState] = useState({ status: `CLOSED`, ...state })
+  const [state, setState] = useState({ boxState: `CLOSED`, ...propState })
+
   const changeContent = useCallback(
     () =>
-      setBoxState(oldState => {return {
-        ...oldState,
-        status: oldState.status === `OPEN` ? `CLOSED` : `OPEN`,
-      }}),
+      setState(oldState => {
+        return {
+          ...oldState,
+          boxState: oldState.boxState === `OPEN` ? `CLOSED` : `OPEN`,
+        }
+      }),
     []
   )
+
   const value = useMemo(() => {
-    return { boxState, boxBehaviour: behaviour, changeContent, boxTone: tone }
-  }, [boxState])
+    return { state, boxBehaviour: behaviour, changeContent, boxTone: tone }
+  }, [state])
 
   return (
     <ContentBoxContext.Provider value={value}>
@@ -44,18 +48,18 @@ ContentBox.propTypes = {
 
 ContentBox.Content = ({ children, as, variant = `PRIMARY`, ...rest }) => {
   const Component = as || `div`
-  const { boxState, boxBehaviour } = ContentBox.useContentBoxContext()
+  const { state, boxBehaviour } = ContentBox.useContentBoxContext()
   const componentToReturn = <Component {...rest}>{children}</Component>
 
-  if (boxState.status === `OPEN` && boxBehaviour === `TOGGLE`) {
+  if (state.boxState === `OPEN` && boxBehaviour === `TOGGLE`) {
     if (variant === `SECONDARY`) {
       return componentToReturn
     }
-  } else if (boxState.status === `OPEN` && boxBehaviour === `UNFOLD`) {
+  } else if (state.boxState === `OPEN` && boxBehaviour === `UNFOLD`) {
     if (variant === `PRIMARY` || variant === `SECONDARY`) {
       return componentToReturn
     }
-  } else if (boxState.status === `CLOSED`) {
+  } else if (state.boxState === `CLOSED`) {
     if (variant === `PRIMARY`) {
       return componentToReturn
     }
@@ -71,9 +75,9 @@ ContentBox.Content.propTypes = {
 
 ContentBox.Button = ({ children, hiddenIf, as = `button`, ...props }) => {
   const Component = as || `button`
-  const { boxState, changeContent, boxTone } = ContentBox.useContentBoxContext()
+  const { state, changeContent, boxTone } = ContentBox.useContentBoxContext()
 
-  if (hiddenIf === boxState.status) {
+  if (hiddenIf === state.boxState) {
     return null
   }
 
@@ -86,7 +90,7 @@ ContentBox.Button = ({ children, hiddenIf, as = `button`, ...props }) => {
 
 ContentBox.Button.propTypes = {
   children: PropTypes.any.isRequired,
-  hiddenIf: PropTypes.oneOf(BOX_STATUSES),
+  hiddenIf: PropTypes.oneOf(BOX_STATES),
 }
 
 ContentBox.useContentBoxContext = () => {

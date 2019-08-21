@@ -33,7 +33,7 @@ function Content({ children, label, DefaultIcon }) {
     )
   }
 
-  return null
+  return children
 }
 
 function BaseButton(props) {

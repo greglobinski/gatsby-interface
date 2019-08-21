@@ -32,11 +32,22 @@ global.___loader = {
   hovering: () => {},
 }
 
+const viewports = {
+  mobile360x640: {
+    name: "Mobile 360 x 640",
+    styles: {
+      width: "360px",
+      height: "640px",
+    },
+  },
+}
+
 addParameters({
   options: {
     addonPanelInRight: true,
   },
   readme: {},
+  viewport: { viewports: viewports },
 })
 
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
@@ -61,11 +72,8 @@ const withGlobal = storyFn => (
           font-size: 1rem;
         }
         body {
-          align-items: center;
-          display: flex;
           font-family: ${fontFamilies.bodyFontFamily};
           height: 100vh;
-          justify-content: center;
           margin: 0;
           width: 100%;
         }
@@ -73,9 +81,9 @@ const withGlobal = storyFn => (
         #root {
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1000px) {
           html {
-            font-size: 1.125rem;
+            font-size: 112.5%;
           }
         }
       `}
