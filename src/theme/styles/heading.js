@@ -1,5 +1,4 @@
 import colors from "../colors"
-import animations from "../animations"
 import tones from "../tones"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
@@ -17,7 +16,7 @@ const baseStyle = ({ tone }) => {
   }
 }
 
-const variantStyles = {
+const variantStyles = ({ tone }) => {return {
   PRIMARY: {
     fontWeight: `bold`,
   },
@@ -29,8 +28,9 @@ const variantStyles = {
   LIGHT: {
     fontWeight: 100,
     textTransform: `uppercase`,
+    color: tones[tone].dark,
   },
-}
+}}
 
 export const styles = {
   baseStyle,

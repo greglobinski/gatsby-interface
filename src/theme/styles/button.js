@@ -2,6 +2,7 @@ import colors from "../colors"
 import animations from "../animations"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
+import tones from "../tones"
 
 import { breakpoints, radius, spaces } from "../../utils/presets"
 
@@ -74,37 +75,37 @@ const sizes = {
 }
 
 const variants = {
-  PRIMARY: toneColors => {
+  PRIMARY: ({ tone }) => {
     return {
-      background: toneColors.dark,
-      border: `1px solid ${toneColors.dark}`,
+      background: tones[tone].dark,
+      border: `1px solid ${tones[tone].dark}`,
       color: colors.white,
       fontWeight: `bold`,
       ":hover": {
-        background: toneColors.darker,
-        border: `1px solid ${toneColors.darker}`,
+        background: tones[tone].darker,
+        border: `1px solid ${tones[tone].darker}`,
       },
     }
   },
-  SECONDARY: toneColors => {
+  SECONDARY: ({ tone }) => {
     return {
       background: `transparent`,
-      border: `1px solid ${toneColors.light}`,
-      color: toneColors.medium,
+      border: `1px solid ${tones[tone].light}`,
+      color: tones[tone].medium,
       ":hover": {
-        borderColor: toneColors.dark,
-        color: toneColors.dark,
+        borderColor: tones[tone].dark,
+        color: tones[tone].dark,
       },
     }
   },
-  GHOST: toneColors => {
+  GHOST: ({ tone }) => {
     return {
       background: `transparent`,
       border: `1px solid transparent`,
-      color: toneColors.medium,
+      color: tones[tone].medium,
       ":hover": {
-        background: toneColors.superLight,
-        color: toneColors.dark,
+        background: tones[tone].superLight,
+        color: tones[tone].dark,
       },
     }
   },
