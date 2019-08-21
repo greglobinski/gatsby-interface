@@ -1,109 +1,100 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { useState, Fragment } from "react"
-import { MdCheck } from "react-icons/md"
+import { useState } from "react"
 
 import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import { MdArrowForward } from "react-icons/md"
-import { radios, boolean } from "@storybook/addon-knobs"
 
 import Navigation from "./Navigation"
 
 const Icon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <circle cx="13" cy="13" r="4" transform="rotate(45 13 13)" fill="#8954A8" />
-    <circle cx="13" cy="5" r="1" transform="rotate(90 13 5)" fill="#B17ACC" />
-    <circle cx="5" cy="13" r="1" transform="rotate(90 5 13)" fill="#232129" />
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="4" r="1" transform="rotate(90 12 4)" fill="#B17ACC" />
+    <circle cx="12" cy="12" r="4" transform="rotate(45 12 12)" fill="#8954A8" />
+    <circle cx="4" cy="12" r="1" transform="rotate(90 4 12)" fill="#232129" />
     <circle
-      cx="7.34302"
-      cy="7.34317"
+      cx="6.34302"
+      cy="6.34317"
       r="1"
-      transform="rotate(45 7.34302 7.34317)"
+      transform="rotate(45 6.34302 6.34317)"
       fill="#232129"
     />
     <circle
-      cx="7.34302"
-      cy="18.6568"
+      cx="6.34302"
+      cy="17.6568"
       r="1"
-      transform="rotate(45 7.34302 18.6568)"
+      transform="rotate(45 6.34302 17.6568)"
       fill="#B17ACC"
     />
     <path
-      d="M13 4.99994C17.4183 4.99994 21 8.58166 21 12.9999C21 17.4182 17.4183 20.9999 13 20.9999C10.8696 20.9999 8.93366 20.1672 7.5 18.8094"
+      d="M12 3.99994C16.4183 3.99994 20 7.58166 20 11.9999C20 16.4182 16.4183 19.9999 12 19.9999C9.86958 19.9999 7.93366 19.1672 6.5 17.8094"
       stroke="#B17ACC"
     />
   </svg>
 )
 
+// The active prop should be managed by path rather than component state. This use case is for storybook only
 const Component = () => {
   const [activeNav, setNav] = useState(`general`)
   const [subNav, setSubNav] = useState(`site`)
-  return (
-    <Fragment>
-      <Navigation>
-        <Navigation.List>
-          <Navigation.Item
-            to="/"
-            active={activeNav === `general`}
-            onClick={() => setNav(`general`)}
-          >
-            {activeNav === `general` && <Icon />}
-            General
-          </Navigation.Item>
-          {activeNav === `general` && (
-            <Navigation.List>
-              <Navigation.SubItem
-                to="#"
-                active={subNav === `site`}
-                onClick={() => setSubNav(`site`)}
-              >
-                Site Details
-              </Navigation.SubItem>
-              <Navigation.SubItem
-                to="#"
-                active={subNav === `contributors`}
-                onClick={() => setSubNav(`contributors`)}
-              >
-                Contributors
-              </Navigation.SubItem>
-              <Navigation.SubItem
-                to="#"
-                active={subNav === `envVars`}
-                onClick={() => setSubNav(`envVars`)}
-              >
-                Environment Variables
-              </Navigation.SubItem>
-            </Navigation.List>
-          )}
-          <Navigation.Item
-            to="/"
-            active={activeNav === `integrations`}
-            onClick={() => setNav(`integrations`)}
-          >
-            {activeNav === `integrations` && <Icon />}
-            Integrations
-          </Navigation.Item>
-          <Navigation.Item
-            to="/"
-            active={activeNav === `preview`}
-            onClick={() => setNav(`preview`)}
-          >
-            {activeNav === `preview` && <Icon />}
-            Preview
-          </Navigation.Item>
-          <Navigation.Item
-            to="/"
-            active={activeNav === `danger`}
-            onClick={() => setNav(`danger`)}
-          >
-            {activeNav === `danger` && <Icon />}
-            Danger Zone
-          </Navigation.Item>
-        </Navigation.List>
-      </Navigation>
-    </Fragment>
-  )
+
+  const options = [
+    {
+      label: `General`,
+      svg: Icon,
+      onClick: () => setNav(`general`),
+      active: activeNav === `general`,
+      to: `/`,
+      subItems: [
+        {
+          label: `Site Details`,
+          onClick: () => setSubNav(`site`),
+          active: subNav === `site`,
+          to: `#`,
+        },
+        {
+          label: `Contributors`,
+          onClick: () => setSubNav(`contributors`),
+          active: subNav === `contributors`,
+          to: `#`,
+        },
+        {
+          label: `Environment Variables`,
+          onClick: () => setSubNav(`envVars`),
+          active: subNav === `envVars`,
+          to: `#`,
+        },
+      ],
+    },
+    {
+      label: `Integrations`,
+      svg: Icon,
+      onClick: () => setNav(`integrations`),
+      active: activeNav === `integrations`,
+      to: `/`,
+    },
+    {
+      label: `Preview`,
+      svg: Icon,
+      onClick: () => setNav(`preview`),
+      active: activeNav === `preview`,
+      to: `/`,
+    },
+    {
+      label: `Danger Zone`,
+      svg: Icon,
+      onClick: () => setNav(`danger`),
+      active: activeNav === `danger`,
+      to: `/`,
+    },
+  ]
+
+  return <Navigation options={options} />
 }
 
 storiesOf(`Navigation`, module).add(`default`, () => (
