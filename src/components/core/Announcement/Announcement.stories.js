@@ -13,7 +13,7 @@ storiesOf(`core/Announcement`, module)
       showPanel: true,
     },
   })
-  .add(`redered 'as'`, () => (
+  .add(`default usage`, () => (
     <StoryUtils.Container>
       <StoryUtils.Stack>
         <Announcement>

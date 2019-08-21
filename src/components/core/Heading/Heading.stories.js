@@ -36,7 +36,7 @@ storiesOf(`core/Heading`, module)
         <Heading>
           Heading variant - PRIMARY <StoryUtils.Default />
         </Heading>
-        <Heading variant={`EMPHASIZED`}>Heading variant - EMPHESIZED</Heading>
+        <Heading variant={`EMPHASIZED`}>Heading variant - EMPHASIZED</Heading>
         <Heading variant={`LIGHT`}>Heading variant - LIGHT</Heading>
       </StoryUtils.Stack>
     </StoryUtils.Container>
@@ -47,9 +47,9 @@ storiesOf(`core/Heading`, module)
         <Heading tone={`NEUTRAL`}>
           Heading tone - NEUTRAL <StoryUtils.Default />
         </Heading>
-        <Heading tone={`BRAND`}>Heading variant - BRAND</Heading>
-        <Heading tone={`DANGER`}>Heading variant - DANGER</Heading>
-        <Heading tone={`SUCCESS`}>Heading variant - SUCCESS</Heading>
+        <Heading tone={`BRAND`}>Heading tone - BRAND</Heading>
+        <Heading tone={`DANGER`}>Heading tone - DANGER</Heading>
+        <Heading tone={`SUCCESS`}>Heading tone - SUCCESS</Heading>
       </StoryUtils.Stack>
     </StoryUtils.Container>
   ))

@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 
 import { spaces } from "../../../utils/presets"
 import fontSizes from "../../../theme/fontSizes"
+import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
 import background from "./assets/background.svg"
 
@@ -17,6 +18,7 @@ function Announcement({ children, ...rest }) {
         color: colors.teal[90],
         display: `flex`,
         fontSize: fontSizes[1],
+        fontFamily: fonts.system.join(`,`),
         padding: `${spaces.m} ${spaces.l}`,
         backgroundImage: `url(${background})`,
         backgroundPosition: `right center`,
