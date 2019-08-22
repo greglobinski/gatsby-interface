@@ -1,3 +1,5 @@
+export { General, Integrations, Preview, Skull } from "./assets"
+
 export { ContentBox } from "./components/skeletons/ContentBox"
 
 export {
@@ -43,4 +45,4 @@ export { Label } from "./components/Label"
 
 export { InputError } from "./components/InputError"
 
-export { Navigation } from "./components/Navigation"
+export { SidebarNav } from "./components/SidebarNav"

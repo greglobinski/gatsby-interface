@@ -1,12 +1,6 @@
 import colors from "../colors"
 
-import {
-  breakpoints,
-  fontFamilies,
-  fontSizes,
-  radius,
-  spaces,
-} from "../../utils/presets"
+import { fontSizes, radius, spaces } from "../../utils/presets"
 
 const input = {
   border: `1px solid ${colors.grey[30]}`,

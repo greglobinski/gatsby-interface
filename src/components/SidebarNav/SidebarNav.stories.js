@@ -1,42 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core"
+import { jsx, css } from "@emotion/core"
 import React, { useState } from "react"
 
 import { storiesOf } from "@storybook/react"
+import { StoryUtils } from "../../utils/storybook"
 
-import Navigation from "./Navigation"
-
-const Icon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="12" cy="4" r="1" transform="rotate(90 12 4)" fill="#B17ACC" />
-    <circle cx="12" cy="12" r="4" transform="rotate(45 12 12)" fill="#8954A8" />
-    <circle cx="4" cy="12" r="1" transform="rotate(90 4 12)" fill="#232129" />
-    <circle
-      cx="6.34302"
-      cy="6.34317"
-      r="1"
-      transform="rotate(45 6.34302 6.34317)"
-      fill="#232129"
-    />
-    <circle
-      cx="6.34302"
-      cy="17.6568"
-      r="1"
-      transform="rotate(45 6.34302 17.6568)"
-      fill="#B17ACC"
-    />
-    <path
-      d="M12 3.99994C16.4183 3.99994 20 7.58166 20 11.9999C20 16.4182 16.4183 19.9999 12 19.9999C9.86958 19.9999 7.93366 19.1672 6.5 17.8094"
-      stroke="#B17ACC"
-    />
-  </svg>
-)
+import SidebarNav from "./SidebarNav"
+import { General, Integrations, Preview, Skull } from "../../assets"
 
 // The active prop should be managed by path rather than component state. This use case is for storybook only
 const Component = () => {
@@ -46,7 +16,7 @@ const Component = () => {
   const options = [
     {
       label: `General`,
-      svg: Icon,
+      svg: General,
       onClick: () => setNav(`general`),
       active: activeNav === `general`,
       to: `/`,
@@ -73,38 +43,42 @@ const Component = () => {
     },
     {
       label: `Integrations`,
-      svg: Icon,
+      svg: Integrations,
       onClick: () => setNav(`integrations`),
       active: activeNav === `integrations`,
       to: `/`,
     },
     {
       label: `Preview`,
-      svg: Icon,
+      svg: Preview,
       onClick: () => setNav(`preview`),
       active: activeNav === `preview`,
       to: `/`,
     },
     {
       label: `Danger Zone`,
-      svg: Icon,
+      svg: Skull,
       onClick: () => setNav(`danger`),
       active: activeNav === `danger`,
       to: `/`,
     },
   ]
 
-  return <Navigation options={options} />
+  return (
+    <SidebarNav
+      options={options}
+      style={{
+        display: `flex`,
+        justifyContent: `center`,
+        alignItems: `center`,
+        paddingLeft: `2rem`,
+      }}
+    />
+  )
 }
 
-storiesOf(`Navigation`, module).add(`default`, () => (
-  <div
-    css={{
-      width: `800px`,
-      marginTop: `1rem`,
-      marginLeft: `1rem`,
-    }}
-  >
+storiesOf(`SidebarNav`, module).add(`usage example`, () => (
+  <StoryUtils.Container>
     <Component />
-  </div>
+  </StoryUtils.Container>
 ))

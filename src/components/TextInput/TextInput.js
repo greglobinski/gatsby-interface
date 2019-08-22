@@ -2,8 +2,9 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
-import { styles, spaces } from "../../utils/presets"
-// import searchInputBg from "./assets/searchInputBg.svg"
+import { spaces } from "../../utils/presets"
+import input from "../../theme/styles/input"
+import searchInputBg from "./assets/searchInputBg.svg"
 
 const TextInput = ({
   id,
@@ -16,8 +17,8 @@ const TextInput = ({
   variant = `DEFAULT`,
 }) => {
   const inputStyles = {
-    SEARCH: {
-      // backgroundImage: `url(${searchInputBg})`,
+    SECONDARY: {
+      backgroundImage: `url(${searchInputBg})`,
       backgroundPosition: `left 0.4rem center`,
       backgroundRepeat: `no-repeat`,
       backgroundSize: `1.3rem 1.3rem`,
@@ -36,7 +37,7 @@ const TextInput = ({
       onChange={onChange}
       disabled={disabled}
       css={{
-        ...styles.input,
+        ...input,
         ...inputStyles[variant],
       }}
     />
@@ -51,7 +52,7 @@ TextInput.propTypes = {
   value: PropTypes.string,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
-  variant: PropTypes.oneOf([`DEFAULT`, `SEARCH`]),
+  variant: PropTypes.oneOf([`DEFAULT`, `SECONDARY`]),
 }
 
 export default TextInput
