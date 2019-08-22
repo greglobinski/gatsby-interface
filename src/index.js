@@ -1,4 +1,4 @@
-export { ContentBox } from "./components/Skeletons/ContentBox"
+export { ContentBox } from "./components/skeletons/ContentBox"
 
 export {
   Button,
