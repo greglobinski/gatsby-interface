@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, keyframes } from "@emotion/core"
-import { Fragment } from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
@@ -28,7 +28,7 @@ function Navigation({ children, options }) {
           {options.map(option => {
             const Icon = option.svg && option.svg
             return (
-              <Fragment>
+              <Fragment key={option.label}>
                 <Navigation.Item
                   active={option.active && option.active}
                   onClick={option.onClick && option.onClick}
@@ -37,7 +37,7 @@ function Navigation({ children, options }) {
                   {Icon && option.active && <Icon />}
                   {option.label && option.label}
                 </Navigation.Item>
-                {option.subItems && (
+                {option.subItems && option.active && (
                   <Navigation.List
                     variant="SUB"
                     open={option.active}
@@ -45,6 +45,7 @@ function Navigation({ children, options }) {
                   >
                     {option.subItems.map(subItem => (
                       <Navigation.SubItem
+                        key={subItem.label}
                         active={subItem.active && subItem.active}
                         onClick={subItem.onClick && subItem.onClick}
                         to={subItem.to && subItem.to}
@@ -80,7 +81,8 @@ Navigation.List = ({
     SUB: {
       transition: `all 0.5s ease-in-out`,
       overflow: `hidden`,
-      height: open ? `calc(${totalOptions} * 2.5rem)` : `0`,
+      padding: `${spaces.xs} 0`,
+      // height: open ? `calc(${totalOptions} * 2.5rem)` : `0`,
     },
   }
 
@@ -88,6 +90,7 @@ Navigation.List = ({
     <ul
       css={{
         paddingInlineStart: `0`,
+        margin: `0`,
         ...variantStyles[variant],
       }}
     >
@@ -117,7 +120,8 @@ Navigation.Item = ({ active, onClick, to, children }) => (
     css={{
       ...baseItemStyles(active),
       lineHeight: `1.375rem`,
-      padding: `${spaces.m} 0`,
+      marginBottom: `0`,
+      padding: `${spaces.xs} 0`,
       "first-of-type": {
         paddingTop: `0`,
       },
@@ -127,7 +131,7 @@ Navigation.Item = ({ active, onClick, to, children }) => (
       svg: {
         verticalAlign: `middle`,
         position: `absolute`,
-        left: `30%`,
+        left: `15.5%`,
         animation: `${iconAnimation} 0.6s linear`,
       },
     }}
@@ -137,6 +141,7 @@ Navigation.Item = ({ active, onClick, to, children }) => (
         to={to}
         onClick={onClick}
         css={{
+          lineHeight: `1.375rem`,
           color: `inherit`,
           textDecoration: `none`,
         }}
@@ -160,8 +165,8 @@ Navigation.SubItem = ({ active, onClick, to, children }) => (
   <li
     css={{
       ...baseItemStyles(active),
-      lineHeight: `2.5rem`,
-      padding: `0 ${spaces.m}`,
+      padding: `0.25rem ${spaces.m}`,
+      marginBottom: `0`,
       borderLeft: active
         ? `1px solid ${colors.purple[50]}`
         : `1px solid ${colors.grey[30]}`,
@@ -176,6 +181,13 @@ Navigation.SubItem = ({ active, onClick, to, children }) => (
           lineHeight: `1.375rem`,
           textDecoration: `none`,
           listStyle: `none`,
+          padding: `${spaces.xs} 0`,
+          "first-of-type": {
+            paddingTop: `0`,
+          },
+          "last-of-type": {
+            paddingBottom: `0`,
+          },
         }}
       >
         {children}

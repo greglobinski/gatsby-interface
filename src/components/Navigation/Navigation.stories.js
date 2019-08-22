@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { useState } from "react"
+import React, { useState } from "react"
 
 import { storiesOf } from "@storybook/react"
 
@@ -100,10 +100,8 @@ const Component = () => {
 storiesOf(`Navigation`, module).add(`default`, () => (
   <div
     css={{
-      display: `flex`,
-      flexDirection: `column`,
-      alignItems: `flex-start`,
-      width: `500px`,
+      width: `800px`,
+      marginTop: `1rem`,
     }}
   >
     <Component />

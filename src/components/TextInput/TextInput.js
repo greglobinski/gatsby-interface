@@ -3,7 +3,7 @@ import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
 import { styles, spaces } from "../../utils/presets"
-import searchInputBg from "../../assets/searchInputBg.svg"
+// import searchInputBg from "./assets/searchInputBg.svg"
 
 const TextInput = ({
   id,
@@ -17,7 +17,7 @@ const TextInput = ({
 }) => {
   const inputStyles = {
     SEARCH: {
-      backgroundImage: `url(${searchInputBg})`,
+      // backgroundImage: `url(${searchInputBg})`,
       backgroundPosition: `left 0.4rem center`,
       backgroundRepeat: `no-repeat`,
       backgroundSize: `1.3rem 1.3rem`,
