@@ -119,7 +119,6 @@ Navigation.Item = ({ active, onClick, to, children }) => (
   <li
     css={{
       ...baseItemStyles(active),
-      lineHeight: `1.375rem`,
       marginBottom: `0`,
       padding: `${spaces.xs} 0`,
       "first-of-type": {

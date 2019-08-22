@@ -102,6 +102,7 @@ storiesOf(`Navigation`, module).add(`default`, () => (
     css={{
       width: `800px`,
       marginTop: `1rem`,
+      marginLeft: `1rem`,
     }}
   >
     <Component />
