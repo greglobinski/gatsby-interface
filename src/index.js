@@ -12,9 +12,11 @@ export {
   SecondaryDeleteButton,
 } from "./components/core/Button"
 
+export { SettingsBlock } from "./components/core/SettingsBlock"
+
 export { SettingsCard } from "./components/core/SettingsCard"
 
-export { IntegrationCard } from "./components/core/IntegrationCard"
+export { IntegrationRow } from "./components/core/IntegrationRow"
 
 export { Link } from "./components/Link"
 
