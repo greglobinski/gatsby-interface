@@ -136,8 +136,9 @@ IntegrationRow.EditButton = ({ children, label = `Connect`, ...rest }) => {
 
 function renderData(data = []) {
   if (data.length > 0) {
-    return data.map(item => (
+    return data.map((item, idx) => (
       <div
+        key={`data-${item.name}`}
         css={{
           display: `flex`,
           flexDirection: `column`,
