@@ -20,12 +20,15 @@ function IntegrationRow({
   isConnected = false,
   title,
   logoUrl,
-  onClickEdit,
-  editLabel,
+  button = {},
+  link = {},
   details,
   children,
   ...rest
 }) {
+  const { label: linkLabel, ...linkRest } = link
+  const { label: buttonLabel, onClick: buttonOnClick, ...buttonRest } = button
+
   return (
     <ContentBox
       state={{ boxState: isConnected ? `OPEN` : `CLOSED` }}
@@ -56,8 +59,15 @@ function IntegrationRow({
           <img src={logoUrl} alt={title} />
         </IntegrationRow.Logo>
       )}
-      {onClickEdit && (
-        <IntegrationRow.EditButton label={editLabel} onClick={onClickEdit} />
+      {buttonOnClick && (
+        <IntegrationRow.EditButton
+          label={buttonLabel}
+          onClick={buttonOnClick}
+          {...buttonRest}
+        />
+      )}
+      {linkLabel && (
+        <IntegrationRow.EditButton label={linkLabel} {...linkRest} />
       )}
 
       {details && <IntegrationRow.Content details={details} />}
@@ -80,12 +90,14 @@ IntegrationRow.propTypes = {
 IntegrationRow.Logo = ({ children, ...rest }) => (
   <span
     css={{
+      display: `flex`,
       gridColumn: `1 / 2`,
       gridRow: `1 / 2`,
 
       [`img, svg`]: {
-        height: `28px`,
+        height: `24px`,
         width: `auto`,
+        margin: 0,
       },
     }}
   >

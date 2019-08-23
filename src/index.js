@@ -57,4 +57,6 @@ export {
   useShowToast,
 } from "./components/Toast"
 
+export { Announcement } from "./components/core/Announcement"
+
 export * from "./utils/presets"

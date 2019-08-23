@@ -47,14 +47,14 @@ storiesOf(`core/IntegrationRow`, module)
         <IntegrationRow
           title="Netlify"
           logoUrl={netlifyLogo}
-          onClickEdit={() => alert(`onClickEdit()`)}
+          button={{ onClick: () => alert(`onClickEdit()`) }}
           isConnected={false}
           details={null}
         />
         <IntegrationRow
           title="Netlify"
           logoUrl={netlifyLogo}
-          onClickEdit={() => alert(`onClickEdit()`)}
+          button={{ onClick: () => alert(`onClickEdit()`) }}
           isConnected={true}
           details={[
             {
@@ -67,6 +67,13 @@ storiesOf(`core/IntegrationRow`, module)
               value: `shannonb_ux`,
             },
           ]}
+        />
+        <IntegrationRow
+          title="Netlify"
+          logoUrl={netlifyLogo}
+          link={{ href: `/`, label: `Setup instructions`, target: `_blank` }}
+          isConnected={false}
+          details={null}
         />
       </StoryUtils.Stack>
     </StoryUtils.Container>
