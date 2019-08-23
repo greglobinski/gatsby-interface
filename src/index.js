@@ -47,4 +47,6 @@ export { InputError } from "./components/InputError"
 
 export { SidebarNav } from "./components/SidebarNav"
 
+export { Announcement } from "./components/core/Announcement"
+
 export * from "./utils/presets"
