@@ -78,11 +78,15 @@ const Tab = ({ className, to, onClick, children, variant = `DEFAULT` }) => {
       color: colors.grey[40],
       a: {
         color: colors.purple[40],
+        textDecoration: `none`,
+        alignItems: `center`,
+        display: `flex`,
       },
       "&.active": {
         background: colors.primaryBackground,
         borderBottomColor: colors.secondaryBackground,
         color: colors.grey[90],
+        zIndex: `2`,
       },
     },
   }

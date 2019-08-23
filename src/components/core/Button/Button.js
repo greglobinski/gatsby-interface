@@ -16,7 +16,7 @@ import {
 
 const Button = ({
   children,
-  css,
+  styles: cssStyles,
   loading,
   LoadingIcon = MdRefresh,
   size = `L`,
@@ -32,7 +32,7 @@ const Button = ({
         ...styles.base({ loading }),
         ...styles.sizes[size],
         ...styles.variants[variant]({ tone }),
-        ...css,
+        ...cssStyles,
       }}
       DefaultIcon={DefaultIcon}
       loading={loading}
