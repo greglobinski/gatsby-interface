@@ -108,7 +108,9 @@ SettingsCard.EditButton = ({ children, label = `Edit`, ...rest }) => (
 )
 
 SettingsCard.ActionButton = ({ children, onClick }) => (
-  <SecondaryButton onClick={onClick}>{children}</SecondaryButton>
+  <Button variant="SECONDARY" onClick={onClick}>
+    {children}
+  </Button>
 )
 
 SettingsCard.Actions = ({ children }) => (
