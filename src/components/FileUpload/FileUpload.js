@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import ReactFilestack from "filestack-react"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 
 import { Button } from "../core/Button"
 import UploadPreview from "./UploadPreview"
@@ -15,6 +17,7 @@ const FileUpload = ({
   actionOptions,
   CustomButtonComponent,
   CustomPreviewComponent,
+  defaultFile,
   fileTypes,
   multi = false,
   name,
@@ -39,86 +42,53 @@ const FileUpload = ({
   }
 
   const addFiles = uploadedFiles => {
-    if (multi) {
-      // set multiple files to state
-      const allFiles = [...files, ...uploadedFiles]
-      setFiles([...allFiles])
-      const fileUrls = allFiles.map(file => file.url)
-      setFieldValue(name, [...fileUrls])
-    } else {
-      // overwrite a single file in state
-      setFiles([...uploadedFiles])
-      setFieldValue(name, uploadedFiles[0] && [uploadedFiles[0].url])
-    }
+    let filesToSet = multi
+      ? [...files, ...uploadedFiles]
+      : (filesToSet = [uploadedFiles[0]])
+    setFiles([...filesToSet])
+    setFieldValue(name, filesToSet.map(file => file && file.url))
   }
 
-  const mock = {
-    filename: `corgi.jpg`,
-    handle: `i2bdWIuCS6i0DNSqG0ih`,
-    mimetype: `image/jpeg`,
-    originalPath: `corgi.jpg`,
-    size: 146993,
-    source: `local_file_system`,
-    url: `https://cdn.filestackcontent.com/i2bdWIuCS6i0DNSqG0ih`,
-    uploadId: `K0T75S35q5b1iV4c`,
-    originalFile: {
-      name: `corgi.jpg`,
-      type: `image/jpeg`,
-      size: 146993,
-    },
-    status: `Stored`,
-  }
   useEffect(() => {
-    addFiles([{ ...mock }])
+    if (defaultFile) addFiles([{ ...defaultFile }])
   }, [])
 
   const isEmpty = !!files.length
 
-  const buttonText = (() => {
-    if (isEmpty) {
-      return `Choose ${multi ? `another` : `a different`} file`
-    } else {
-      return `Pick file${multi ? `s` : ``}`
-    }
-  })()
+  const buttonText = isEmpty
+    ? `Choose ${multi ? `another` : `a different`} file`
+    : `Pick file${multi ? `s` : ``}`
 
-  const renderButton = onPick => {
+  const renderButton = ({ onPick, ...rest }) => {
     // use custom component if provided
     if (CustomButtonComponent) {
       return (
-        <CustomButtonComponent onPick={onPick}>
+        <CustomButtonComponent onPick={onPick} {...rest}>
           {buttonText}
         </CustomButtonComponent>
       )
-    } else {
-      return (
-        <Button variant="SECONDARY" size="M" onClick={onPick}>
-          {buttonText}
-        </Button>
-      )
     }
+
+    return (
+      <Button variant="SECONDARY" size="M" onClick={onPick} {...rest}>
+        {buttonText}
+      </Button>
+    )
   }
 
   const renderPreview = (file, index) => {
+    if (!file) return null
+    const previewProps = {
+      key: file.uploadId,
+      file,
+      index,
+      removeFile,
+    }
     // use custom file preview component if provided
     if (CustomPreviewComponent) {
-      return (
-        <CustomPreviewComponent
-          key={file.uploadId}
-          file={file}
-          index={index}
-          removeFile={removeFile}
-        />
-      )
+      return <CustomPreviewComponent {...previewProps} />
     } else {
-      return (
-        <UploadPreview
-          key={file.uploadId}
-          file={file}
-          index={index}
-          removeFile={removeFile}
-        />
-      )
+      return <UploadPreview {...previewProps} />
     }
   }
 
@@ -144,10 +114,10 @@ const FileUpload = ({
         onSuccess={result => {
           addFiles(result.filesUploaded)
         }}
-        customRender={({ onPick }) => renderButton(onPick)}
+        customRender={renderButton}
         {...rest}
       />
-      {isEmpty && files.map((file, index) => renderPreview(file, index))}
+      {isEmpty && files.map(renderPreview)}
     </>
   )
 }

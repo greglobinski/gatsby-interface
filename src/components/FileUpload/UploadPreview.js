@@ -1,21 +1,22 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 
 import { Button } from "../core/Button"
 
-const UploadPreview = ({ file, removeFile, index }) => (
+const UploadPreview = ({ file: { url, filename }, removeFile, index }) => (
   <div style={{ display: `flex`, alignItems: `center` }}>
     <img
-      style={{
+      css={{
         height: 100,
         width: 100,
         margin: 0,
         objectFit: `contain`,
       }}
-      src={file.url}
-      alt={`An uploaded file preview called ${file.filename}`}
+      src={url}
+      alt={`An uploaded file preview called ${filename}`}
     />
     <div>
-      <div>{file.filename}</div>
+      <div>{filename}</div>
       <div>
         <Button
           variant="GHOST"
