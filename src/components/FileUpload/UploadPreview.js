@@ -4,7 +4,7 @@ import { jsx } from "@emotion/core"
 import { Button } from "../core/Button"
 
 const UploadPreview = ({ file: { url, filename }, removeFile, index }) => (
-  <div style={{ display: `flex`, alignItems: `center` }}>
+  <div css={{ display: `flex`, alignItems: `center` }}>
     <img
       css={{
         height: 100,
