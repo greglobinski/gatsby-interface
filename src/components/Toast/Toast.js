@@ -1,0 +1,132 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import React from "react"
+import PropTypes from "prop-types"
+
+import Alert from "@reach/alert"
+import { keyframes, css } from "@emotion/core"
+import { MdDone, MdClose, MdWarning } from "react-icons/md"
+
+import {
+  fontSizes,
+  dimensions,
+  palette,
+  radius,
+  spaces,
+} from "../../utils/presets"
+import { ToastType } from "./constants"
+
+const toastEntryAnimation = keyframes`
+  100% {
+     transform: perspective(1000px) rotateX(0);
+  }
+`
+
+const toastCss = css`
+  align-items: center;
+  animation: ${toastEntryAnimation} 0.5s 0.25s ease forwards;
+  background: ${palette.grey[900]};
+  border-left: 8px solid ${palette.green[500]};
+  border-radius: ${radius.default} ${radius.default} 0 0;
+  color: ${palette.green[50]};
+  display: flex;
+  font-size: ${fontSizes.xs};
+  min-height: ${dimensions.toast.minHeight};
+  max-width: calc(100% - (${spaces.l} * 2));
+  padding-left: ${spaces.s};
+  transform: perspective(1000px) rotateX(90deg);
+  transform-origin: bottom center;
+
+  svg {
+    height: auto;
+    width: calc(${dimensions.toast.minHeight} * 0.4);
+  }
+
+  &:not(:first-of-type) {
+    border-radius: ${radius.default};
+    margin-bottom: ${spaces[`3xs`]};
+  }
+`
+
+const messageCss = css`
+  line-height: 1;
+  margin: 0 ${spaces[`2xs`]} 0 ${spaces.xs};
+`
+
+const statusCss = css`
+  align-items: center;
+  color: ${palette.green[500]};
+  display: flex;
+`
+
+const closeButtonCss = css`
+  align-items: center;
+  background: none;
+  border: none;
+  color: ${palette.grey[400]};
+  cursor: pointer;
+  display: flex;
+  height: ${dimensions.toast.minHeight};
+  justify-content: center;
+  width: ${dimensions.toast.minHeight};
+`
+
+const toastColorByType = {
+  [ToastType.SUCCESS]: palette.green[500],
+  [ToastType.ERROR]: palette.red[600],
+}
+
+const ToastIconByType = {
+  [ToastType.SUCCESS]: MdDone,
+  [ToastType.ERROR]: MdWarning,
+}
+
+export default function Toast({
+  id,
+  message,
+  type,
+  onRemove,
+  closeButtonLabel,
+}) {
+  const IconComponent = ToastIconByType[type]
+
+  return (
+    <Alert
+      css={[
+        toastCss,
+        css({
+          borderLeftColor: toastColorByType[type],
+        }),
+      ]}
+      data-testid="toast"
+      type={type === ToastType.ERROR ? `assertive` : `polite`}
+    >
+      <span
+        css={[
+          statusCss,
+          css({
+            color: toastColorByType[type],
+          }),
+        ]}
+      >
+        <IconComponent />
+      </span>
+      <div css={messageCss}>{message}</div>
+      <button
+        css={closeButtonCss}
+        type="button"
+        onClick={() => onRemove(id)}
+        aria-label={closeButtonLabel}
+      >
+        <MdClose />
+      </button>
+    </Alert>
+  )
+}
+
+Toast.propTypes = {
+  id: PropTypes.number.isRequired,
+  message: PropTypes.node.isRequired,
+  onRemove: PropTypes.func.isRequired,
+  closeButtonLabel: PropTypes.string.isRequired,
+}

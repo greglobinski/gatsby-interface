@@ -22,6 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reach/alert": "^0.1.5",
     "gatsby-design-tokens": "^1.0.0"
   },
   "peerDependencies": {
