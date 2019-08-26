@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from "react"
+import React, { useState, useCallback, useMemo, useEffect } from "react"
 import PropTypes from "prop-types"
 
 const BOX_STATES = [`OPEN`, `CLOSED`]
@@ -17,6 +17,12 @@ function ContentBox({
 }) {
   const Component = as || `div`
   const [state, setState] = useState({ boxState: `CLOSED`, ...propState })
+
+  useEffect(() => {
+    if (propState !== state) {
+      setState(propState)
+    }
+  }, [propState])
 
   const changeContent = useCallback(
     () =>
