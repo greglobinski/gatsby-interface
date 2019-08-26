@@ -4,7 +4,9 @@ import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
-import { colors, spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import colors from "../../theme/colors"
+
+import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
 const SidebarNav = ({ children, options, style }) => (
   <nav

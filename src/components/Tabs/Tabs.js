@@ -2,7 +2,9 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
-import { colors, dimensions, breakpoints, spaces } from "../../utils/presets"
+import colors from "../../theme/colors"
+
+import { dimensions, breakpoints, spaces } from "../../utils/presets"
 
 const baseStyles = {
   listStyle: `none`,
