@@ -52,11 +52,7 @@ SettingsBlock.Header = ({ children, ...rest }) => (
   <header
     css={{
       fontSize: fontSizes[4],
-      padding: `${spaces.m} ${spaces.xl} ${spaces.l}`,
-
-      [`@media(min-width: ${breakpoints.desktop}px)`]: {
-        padding: `${spaces.l} ${spaces[`2xl`]} ${spaces.xl}`,
-      },
+      ...cardStyles.space.header,
     }}
     {...rest}
   >
