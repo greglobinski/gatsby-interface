@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 import colors from "../../theme/colors"
 import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const SidebarNav = ({ children, options, style, className, ...rest }) => (
+const SidebarNav = ({ children, options, style, ...rest }) => (
   <nav
     css={{
       paddingLeft: spaces.xl,
