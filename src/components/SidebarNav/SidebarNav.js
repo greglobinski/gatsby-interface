@@ -5,16 +5,14 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
-
 import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const SidebarNav = ({ children, options, style }) => (
+const SidebarNav = ({ children, options, style, className }) => (
   <nav
     css={{
-      width: `100%`,
-      height: `100%`,
-      ...style,
+      paddingLeft: spaces.xl,
     }}
+    className={className}
   >
     {options ? (
       <SidebarNav.List>
@@ -66,7 +64,6 @@ SidebarNav.List = ({ children, variant = `FULL` }) => {
       padding: `${spaces.xs} 0`,
     },
     FULL: {
-      position: `fixed`,
       maxWidth: `8rem`,
     },
   }
