@@ -27,13 +27,8 @@ const Tabs = ({ children, variant = `DEFAULT` }) => {
         content: `""`,
         left: `0`,
         position: `absolute`,
-        width: `calc(100% + (2 * ${dimensions.pagePadding.mobile}))`,
-        marginLeft: `-${dimensions.pagePadding.mobile}`,
+        width: `100%`,
         zIndex: `1`,
-        [`@media (min-width: ${breakpoints.tablet}px)`]: {
-          width: `calc(100% + (2 * ${dimensions.pagePadding.tablet}))`,
-          marginLeft: `-${dimensions.pagePadding.tablet}`,
-        },
       },
     },
   }
