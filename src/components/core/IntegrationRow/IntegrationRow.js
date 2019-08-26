@@ -39,17 +39,11 @@ function IntegrationRow({
         display: `grid`,
         gridGap: spaces.m,
         gridTemplateColumns: `auto auto 1fr`,
-        padding: isConnected
-          ? `${spaces.xl} ${spaces.xl} ${spaces[`2xl`]}`
-          : `${spaces.m} ${spaces.xl}`,
         width: `100%`,
+        ...cardStyles.space[isConnected ? `activeRow` : `row`],
 
         "&:last-of-type": {
           marginBottom: 0,
-        },
-
-        [`@media(min-width: ${breakpoints.desktop}px)`]: {
-          // padding: `${spaces.m} ${spaces.xl}`,
         },
       }}
       {...rest}
