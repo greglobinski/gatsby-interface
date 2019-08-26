@@ -3,7 +3,7 @@ import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
 
-import { colors } from "../../utils/presets"
+import colors from "../../theme/colors"
 
 const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
   const baseStyles = {

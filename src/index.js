@@ -49,4 +49,8 @@ export { SidebarNav } from "./components/SidebarNav"
 
 export { Announcement } from "./components/core/Announcement"
 
-export * from "./utils/presets"
+export { colors, palette } from "./utils/presets/colors"
+export { fontFamilies, fontSizes } from "./utils/presets/typography"
+export { spaces } from "./utils/presets/spaces"
+export { breakpoints } from "./utils/presets/breakpoints"
+export { dimensions, radius } from "./utils/presets/sizes"

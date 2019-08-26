@@ -1,28 +1,3 @@
-import { colors as baseColors } from "gatsby-design-tokens"
-
-let colors = {
-  ...baseColors,
-}
-
-const elementColors = {
-  primaryBackground: colors.white,
-  secondaryBackground: colors.grey[5],
-  standardLine: colors.grey[20],
-}
-
-colors = {
-  ...colors,
-  ...elementColors,
-}
-
-export { colors }
-
-/** 
-  the following palette object is maintained and exported only for old code in cloud app
-  in the future the codebase should be updated to use new colors tokens
-  instead colors.purle[50] now we use color.purlpe[5]
-*/
-
 export const palette = {
   purple: {
     900: `#362066`,
@@ -134,4 +109,15 @@ export const palette = {
   },
   white: `#ffffff`,
   black: `#000000`,
+}
+
+export const colors = {
+  gatsby: palette.purple[600],
+  lilac: palette.purple[500],
+  accent: palette.orange[500],
+  lemon: palette.yellow[400],
+  /* color tokens */
+  primaryBackground: palette.white,
+  secondaryBackground: palette.grey[50],
+  standardLine: palette.grey[200],
 }
