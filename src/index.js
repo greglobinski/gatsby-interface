@@ -50,7 +50,6 @@ export { SidebarNav } from "./components/SidebarNav"
 export {
   ToastProvider,
   ToastConsumer,
-  ToastType,
   useShowSuccessToast,
   useShowErrorToast,
   useShowErrorAlert,
