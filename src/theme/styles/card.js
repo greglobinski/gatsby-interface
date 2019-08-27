@@ -18,6 +18,15 @@ const card = {
     activeRow: {
       padding: `${spaces.xl} ${spaces[`2xl`]} ${spaces[`2xl`]}`,
     },
+    M: {
+      padding: `${spaces.m} ${spaces[`2xl`]}`,
+    },
+    L: {
+      padding: `${spaces.l} ${spaces[`2xl`]} ${spaces.xl}`,
+    },
+    XL: {
+      padding: `${spaces.xl} ${spaces[`2xl`]} ${spaces[`2xl`]}`,
+    },
   },
 }
 

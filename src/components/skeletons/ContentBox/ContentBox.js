@@ -12,7 +12,7 @@ function ContentBox({
   children,
   as,
   behaviour = `TOGGLE`,
-  tone = `NEUTRAL`,
+  tone = `BRAND`,
   ...rest
 }) {
   const Component = as || `div`
