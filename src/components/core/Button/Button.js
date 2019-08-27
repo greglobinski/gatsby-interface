@@ -18,7 +18,6 @@ const Button = props => {
   const {
     children,
     loading,
-    customCss,
     LoadingIcon = MdRefresh,
     size = `L`,
     tone = `BRAND`,
@@ -34,7 +33,6 @@ const Button = props => {
         ...styles.base({ loading }),
         ...styles.sizes[size],
         ...styles.variants[variant]({ tone }),
-        ...customCss,
       }}
       DefaultIcon={DefaultIcon}
       loading={loading}

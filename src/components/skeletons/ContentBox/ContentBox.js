@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from "react"
+import React, { useState, useCallback, useMemo, useEffect } from "react"
 import PropTypes from "prop-types"
 
 const BOX_STATES = [`OPEN`, `CLOSED`]
@@ -12,15 +12,22 @@ function ContentBox({
   children,
   as,
   behaviour = `TOGGLE`,
-  tone = `NEUTRAL`,
+  tone = `BRAND`,
   ...rest
 }) {
   const Component = as || `div`
   const [state, setState] = useState({ boxState: `CLOSED`, ...propState })
 
+  useEffect(() => {
+    if (propState && propState !== state) {
+      setState(propState)
+    }
+  }, [propState])
+
   const changeContent = useCallback(
     () =>
       setState(oldState => {
+        console.log(`asdfadsfa`)
         return {
           ...oldState,
           boxState: oldState.boxState === `OPEN` ? `CLOSED` : `OPEN`,
