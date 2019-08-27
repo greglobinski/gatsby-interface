@@ -19,7 +19,7 @@ function ContentBox({
   const [state, setState] = useState({ boxState: `CLOSED`, ...propState })
 
   useEffect(() => {
-    if (propState !== state) {
+    if (propState && propState !== state) {
       setState(propState)
     }
   }, [propState])
@@ -27,6 +27,7 @@ function ContentBox({
   const changeContent = useCallback(
     () =>
       setState(oldState => {
+        console.log(`asdfadsfa`)
         return {
           ...oldState,
           boxState: oldState.boxState === `OPEN` ? `CLOSED` : `OPEN`,

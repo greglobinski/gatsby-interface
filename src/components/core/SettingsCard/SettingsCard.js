@@ -121,13 +121,12 @@ SettingsCard.Actions = ({ children }) => (
   </div>
 )
 
-SettingsCard.CancelButton = ({ children, onClick }) => (
+SettingsCard.CancelButton = ({ children }) => (
   <ContentBox.Button
     as={Button}
     variant={`SECONDARY`}
     tone={`NEUTRAL`}
     css={{}}
-    onClick={onClick}
   >
     {children ? children : `Cancel`}
   </ContentBox.Button>
