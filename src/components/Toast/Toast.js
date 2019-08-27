@@ -14,7 +14,7 @@ import {
   radius,
   spaces,
 } from "../../utils/presets"
-import { ToastType } from "./constants"
+import { ToastTones } from "./constants"
 
 const toastEntryAnimation = keyframes`
   100% {
@@ -71,41 +71,41 @@ const closeButtonCss = css`
   width: ${dimensions.toast.minHeight};
 `
 
-const toastColorByType = {
-  [ToastType.SUCCESS]: palette.green[500],
-  [ToastType.ERROR]: palette.red[600],
+const toastColorByTone = {
+  SUCCESS: palette.green[500],
+  DANGER: palette.red[600],
 }
 
-const ToastIconByType = {
-  [ToastType.SUCCESS]: MdDone,
-  [ToastType.ERROR]: MdWarning,
+const ToastIconByTone = {
+  SUCCESS: MdDone,
+  DANGER: MdWarning,
 }
 
 export default function Toast({
   id,
   message,
-  type,
+  tone,
   onRemove,
   closeButtonLabel,
 }) {
-  const IconComponent = ToastIconByType[type]
+  const IconComponent = ToastIconByTone[tone]
 
   return (
     <Alert
       css={[
         toastCss,
         css({
-          borderLeftColor: toastColorByType[type],
+          borderLeftColor: toastColorByTone[tone],
         }),
       ]}
       data-testid="toast"
-      type={type === ToastType.ERROR ? `assertive` : `polite`}
+      type={tone === `DANGER` ? `assertive` : `polite`}
     >
       <span
         css={[
           statusCss,
           css({
-            color: toastColorByType[type],
+            color: toastColorByTone[tone],
           }),
         ]}
       >
@@ -127,6 +127,7 @@ export default function Toast({
 Toast.propTypes = {
   id: PropTypes.number.isRequired,
   message: PropTypes.node.isRequired,
+  tone: PropTypes.oneOf(ToastTones),
   onRemove: PropTypes.func.isRequired,
   closeButtonLabel: PropTypes.string.isRequired,
 }

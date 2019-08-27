@@ -1,4 +1,1 @@
-export const ToastType = {
-  SUCCESS: `success`,
-  ERROR: `error`,
-}
+export const ToastTones = [`SUCCESS`, `DANGER`]

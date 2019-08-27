@@ -4,7 +4,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import Toast from "./Toast"
-import { ToastType } from "./constants"
 
 export const ToastContext = React.createContext()
 export const ToastConsumer = ToastContext.Consumer
@@ -22,7 +21,7 @@ const containerCss = css`
 `
 
 const DEFAULT_TIMEOUT = 5000
-const DEFAULT_TYPE = ToastType.SUCCESS
+const DEFAULT_TONE = `SUCCESS`
 
 export function ToastProvider({ children, closeButtonLabel = `Close` }) {
   const [toasts, setToasts] = React.useState([])
@@ -36,9 +35,9 @@ export function ToastProvider({ children, closeButtonLabel = `Close` }) {
   }, [])
 
   const showToast = React.useCallback(
-    (message, { type = DEFAULT_TYPE, timeout = DEFAULT_TIMEOUT } = {}) => {
+    (message, { tone = DEFAULT_TONE, timeout = DEFAULT_TIMEOUT } = {}) => {
       const toastId = Math.random()
-      setToasts(prevToasts => [...prevToasts, { id: toastId, message, type }])
+      setToasts(prevToasts => [...prevToasts, { id: toastId, message, tone }])
 
       if (timeout > 0) {
         timeoutsRef.current[toastId] = setTimeout(() => {
@@ -60,13 +59,13 @@ export function ToastProvider({ children, closeButtonLabel = `Close` }) {
       {children}
       <div css={containerCss}>
         {toasts.map(toast => (
-            <Toast
-              key={toast.id}
-              {...toast}
-              onRemove={removeToast}
-              closeButtonLabel={closeButtonLabel}
-            />
-          ))}
+          <Toast
+            key={toast.id}
+            {...toast}
+            onRemove={removeToast}
+            closeButtonLabel={closeButtonLabel}
+          />
+        ))}
       </div>
     </ToastContext.Provider>
   )

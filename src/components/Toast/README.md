@@ -60,14 +60,14 @@ function App({ children }) {
 Use this component to get access to `showToast` function if you can't use hooks for some reason.
 
 ```javascript
-import { ToastConsumer, ToastType } from "gatsby-interface"
+import { ToastConsumer } from "gatsby-interface"
 
 function Component() {
   return (
     <ToastConsumer>
       {({ showToast }) => (
         <button
-          onClick={() => showToast(`Your action was successful`, { type: ToastType.SUCCESS })}
+          onClick={() => showToast(`Your action was successful`, { tone: 'SUCCESS' })}
         >
           Show toast
         </Button>
@@ -116,12 +116,39 @@ function Component() {
 }
 ```
 
+#### useShowErrorAlert
+
+Allows to show an error toast similar to `useShowErrorToast`; the only difference is that you can provide a link to be displayed in the toast message.
+
+```javascript
+import { useShowErrorAlert } from "gatsby-interface"
+
+function Component() {
+  const showErrorAlert = useShowErrorAlert()
+
+  return (
+    <button
+      onClick={() =>
+        showErrorAlert("An error occured!", {
+          to: "/some-path",
+          linkLabel: "See details",
+        })
+      }
+    >
+      Show error toast
+    </button>
+  )
+}
+```
+
+Similar to [Link](../Link), you can pass either `to` or `href` prop as well as `target`.
+
 #### useShowToast
 
 This is a low-level hook and generally should not be used if you can use one of the previous hooks.
 
 ```javascript
-import { useShowToast, ToastType } from "gatsby-interface"
+import { useShowToast } from "gatsby-interface"
 
 function Component() {
   const showToast = useShowToast()
@@ -130,14 +157,14 @@ function Component() {
     <>
       <button
         onClick={() =>
-          showToast("Your action was successful!", { type: ToastType.SUCCESS })
+          showToast("Your action was successful!", { tone: "SUCCESS" })
         }
       >
         Show success toast
       </button>
       <button
         onClick={() =>
-          showToast("An error occured!", { type: ToastType.ERROR, timeout: 0 })
+          showToast("An error occured!", { tone: "DANGER", timeout: 0 })
         }
       >
         Show error toast

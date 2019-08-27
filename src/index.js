@@ -53,6 +53,7 @@ export {
   ToastType,
   useShowSuccessToast,
   useShowErrorToast,
+  useShowErrorAlert,
   useShowToast,
 } from "./components/Toast"
 

@@ -10,6 +10,7 @@ import {
   ToastConsumer,
   useShowErrorToast,
   useShowSuccessToast,
+  useShowErrorAlert,
   useShowToast,
 } from "./"
 import README from "./README.md"
@@ -30,6 +31,23 @@ storiesOf(`Toast`, module)
       return (
         <Button onClick={() => showErrorToast(`An error occured`)}>
           Show error toast
+        </Button>
+      )
+    }
+    function ErrorAlertExample() {
+      const showErrorAlert = useShowErrorAlert()
+
+      return (
+        <Button
+          onClick={() =>
+            showErrorAlert(`An error occured`, {
+              href: `https://google.com`,
+              linkLabel: `See details`,
+              target: `_blank`,
+            })
+          }
+        >
+          Show error alert
         </Button>
       )
     }
@@ -65,6 +83,7 @@ storiesOf(`Toast`, module)
             </ToastConsumer>
             <NoTimeoutExample />
             <ErrorToastExample />
+            <ErrorAlertExample />
           </ToastProvider>
         </StoryUtils.Stack>
       </StoryUtils.Container>

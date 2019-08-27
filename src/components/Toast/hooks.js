@@ -1,6 +1,6 @@
 import React from "react"
-import { ToastType } from "./constants"
 import { useToastContext } from "./ToastContext"
+import MessageWithLink from "./MessageWithLink"
 
 export function useShowToast() {
   const { showToast } = useToastContext()
@@ -11,7 +11,7 @@ export function useShowSuccessToast() {
   const showToast = useShowToast()
   return React.useCallback(
     (message, options = {}) => {
-      showToast(message, { ...options, type: ToastType.SUCCESS })
+      showToast(message, { ...options, tone: `SUCCESS` })
     },
     [showToast]
   )
@@ -21,7 +21,21 @@ export function useShowErrorToast() {
   const showToast = useShowToast()
   return React.useCallback(
     (message, options = {}) => {
-      showToast(message, { ...options, type: ToastType.ERROR, timeout: 0 })
+      showToast(message, { ...options, tone: `DANGER`, timeout: 0 })
+    },
+    [showToast]
+  )
+}
+
+export function useShowErrorAlert() {
+  const showToast = useShowErrorToast()
+
+  return React.useCallback(
+    (message, linkProps, options = {}) => {
+      showToast(
+        <MessageWithLink {...linkProps}>{message}</MessageWithLink>,
+        options
+      )
     },
     [showToast]
   )
