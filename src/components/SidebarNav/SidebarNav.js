@@ -9,6 +9,7 @@ import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
 const SidebarNav = ({ children, options, style, ...rest }) => (
   <nav
+    aria-label="sidebar-nav"
     css={{
       paddingLeft: spaces.xl,
     }}
