@@ -1,12 +1,12 @@
-### Gatsby Interface
+## Gatsby Interface
 
-![Storybook](assets/storybook.png)
+![Storybook](https://user-images.githubusercontent.com/18426780/63871208-b9aea600-c978-11e9-9107-79679b699c6f.png)
 
 ```
 yarn storybook
 ```
 
-## Chromatic testing
+### Chromatic testing
 
 To run the visual testing tool, run `CHROMATIC_APP_CODE=<insert_app_code> yarn chromatic`
 
