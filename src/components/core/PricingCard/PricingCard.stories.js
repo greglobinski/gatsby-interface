@@ -13,6 +13,7 @@ import PricingCard from "./PricingCard"
 import freePlanPic from "./assets/freePlan.svg"
 import professionalPlanPic from "./assets/professionalPlan.svg"
 import businessPlanPic from "./assets/businessPlan.svg"
+import enterprisePlanPic from "./assets/enterprisePlan.svg"
 
 const plansA = [
   {
@@ -35,8 +36,8 @@ const plansA = [
 
 const plansB = [
   {
-    name: `Enterprice`,
-    icon: freePlanPic,
+    name: `Enterprise`,
+    icon: enterprisePlanPic,
     intro: `Custom packages designed for your company`,
     details: `
                 <ul>
@@ -48,6 +49,10 @@ const plansB = [
               <li>Onboarding traning</li>
             </ul>
             `,
+    cta: {
+      to: `/`,
+      label: `Contact sales`,
+    },
   },
 ]
 
@@ -103,9 +108,7 @@ const plansC = [
   },
 ]
 
-// addDecorator(withA11y({ disable: true }))
-
-storiesOf(`core/PlansCard`, module)
+storiesOf(`core/PricingCard`, module)
   .addParameters({
     options: {
       showPanel: true,
@@ -136,7 +139,7 @@ storiesOf(`core/PlansCard`, module)
       </StoryUtils.Container>
     </div>
   ))
-  .add(`multi plans card`, () => (
+  .add(`multiplan card`, () => (
     <div
       css={{
         width: `880px`,

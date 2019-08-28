@@ -7,59 +7,65 @@ import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
 import fonts from "../../../theme/fonts"
 import fontSizes from "../../../theme/fontSizes"
-import { spaces, breakpoints } from "../../../utils/presets"
+import { spaces, breakpoints, radius } from "../../../utils/presets"
 import { Heading } from "../Heading"
 import { Button } from "../Button"
-import checkIcon from "./assets/checkIcon.svg"
+import checkIconGray from "./assets/checkIconGray.svg"
+import checkIconPurple from "./assets/checkIconPurple.svg"
 
-function PlansCard({ children, plans, cta, ...rest }) {
+const VARIANTS = [`PRIMARY`, `SECONDARY`]
+
+function PricingCard({ children, plans, cta, variant = `PRIMARY`, ...rest }) {
   const itemsNumber = plans.length
 
   return (
-    <PlansCard.Frame {...rest}>
+    <PricingCard.Frame variant={variant} {...rest}>
       {plans && (
-        <PlansCard.Plans>
+        <PricingCard.Plans>
           {plans.map((plan, idx) => (
-            <PlansCard.Plan
+            <PricingCard.Plan
               key={plan.name}
               idx={idx}
               plan={plan}
               itemsNumber={itemsNumber}
             >
-              <PlansCard.Icon plan={plan} />
-              <PlansCard.Heading title={plan.name} idx={idx} />
-              <PlansCard.Intro html={plan.intro} />
-              <PlansCard.PriceTag price={plan.price} />
-              <PlansCard.Details html={plan.details} />
-            </PlansCard.Plan>
+              <PricingCard.Icon plan={plan} />
+              <PricingCard.Heading
+                title={plan.name}
+                idx={idx}
+                variant={variant}
+              />
+              <PricingCard.Intro html={plan.intro} variant={variant} />
+              <PricingCard.PriceTag price={plan.price} variant={variant} />
+              <PricingCard.Details html={plan.details} variant={variant} />
+              <PricingCard.Cta cta={plan.cta} />
+            </PricingCard.Plan>
           ))}
-        </PlansCard.Plans>
+        </PricingCard.Plans>
       )}
-      {cta && (
-        <PlansCard.UnifiedCta
-          label={cta.label}
-          to={cta.to}
-          comment={cta.comment}
-        />
-      )}
+      {cta && <PricingCard.UnifiedCta cta={cta} />}
       {children}
-    </PlansCard.Frame>
+    </PricingCard.Frame>
   )
 }
 
-PlansCard.propTypes = {
+PricingCard.propTypes = {
   plans: PropTypes.array.isRequired,
+  variant: PropTypes.oneOf(VARIANTS),
 }
 
-PlansCard.Frame = ({ children, ...rest }) => (
+PricingCard.Frame = ({ variant, children, ...rest }) => (
   <div
     css={{
       boxShadow: `0px 2px 4px rgba(46, 41, 51, 0.08), 0px 4px 8px rgba(71, 63, 79, 0.16)`,
+      backgroundColor:
+        variant === `SECONDARY` ? colors.purple[90] : colors.white,
       display: `flex`,
       position: `relative`,
       width: `100%`,
       flexDirection: `column`,
       paddingBottom: spaces.l,
+      borderRadius: radius.large,
 
       [`@media(min-width: ${breakpoints.tablet}px)`]: {},
     }}
@@ -69,7 +75,7 @@ PlansCard.Frame = ({ children, ...rest }) => (
   </div>
 )
 
-PlansCard.Plans = ({ children, ...rest }) => (
+PricingCard.Plans = ({ children, ...rest }) => (
   <div
     css={{
       display: `flex`,
@@ -83,10 +89,9 @@ PlansCard.Plans = ({ children, ...rest }) => (
   </div>
 )
 
-PlansCard.Plan = ({ idx, children, plan, itemsNumber, ...rest }) => (
+PricingCard.Plan = ({ idx, children, plan, itemsNumber, ...rest }) => (
   <div
     css={{
-      backgroundColor: colors.white,
       padding: `${spaces.l} ${spaces.xl} 0`,
       display: `flex`,
       flexDirection: `column`,
@@ -109,10 +114,11 @@ PlansCard.Plan = ({ idx, children, plan, itemsNumber, ...rest }) => (
   </div>
 )
 
-PlansCard.Heading = ({ title, idx, ...rest }) => (
+PricingCard.Heading = ({ title, variant, idx, ...rest }) => (
   <Heading
     css={{
-      color: colors.purple[40 + idx * 10],
+      color:
+        variant === `SECONDARY` ? colors.white : colors.purple[40 + idx * 10],
       fontSize: fontSizes[4],
     }}
   >
@@ -120,7 +126,7 @@ PlansCard.Heading = ({ title, idx, ...rest }) => (
   </Heading>
 )
 
-PlansCard.Icon = ({ plan, ...rest }) => (
+PricingCard.Icon = ({ plan, ...rest }) => (
   <div
     css={{
       alignItems: `center`,
@@ -136,7 +142,7 @@ PlansCard.Icon = ({ plan, ...rest }) => (
   </div>
 )
 
-PlansCard.Intro = ({ html, ...rest }) => (
+PricingCard.Intro = ({ html, variant, ...rest }) => (
   <div
     dangerouslySetInnerHTML={{ __html: html }}
     css={{
@@ -144,13 +150,13 @@ PlansCard.Intro = ({ html, ...rest }) => (
       fontFamily: fonts.system.join(`,`),
       marginTop: spaces.m,
       fontSize: fontSizes[1],
-      color: colors.grey[60],
+      color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[60],
       lineHeight: 1.4,
     }}
   />
 )
 
-PlansCard.PriceTag = ({ children, price }) => {
+PricingCard.PriceTag = ({ children, price }) => {
   if (!price) {
     return null
   }
@@ -195,12 +201,12 @@ PlansCard.PriceTag = ({ children, price }) => {
   )
 }
 
-PlansCard.Details = ({ html, ...rest }) => (
+PricingCard.Details = ({ html, variant, ...rest }) => (
   <div
     dangerouslySetInnerHTML={{ __html: html }}
     css={{
       fontSize: fontSizes[1],
-      color: colors.grey[50],
+      color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[50],
       width: `100%`,
       marginTop: spaces.l,
       display: `flex`,
@@ -227,46 +233,82 @@ PlansCard.Details = ({ html, ...rest }) => (
           width: `1.5em`,
           height: `1.5em`,
           marginRight: spaces.xs,
-          background: `url("${checkIcon}")  center center no-repeat`,
-          transform: `translateX(-2em)`,
+          background: `url("${
+            variant === `SECONDARY` ? checkIconPurple : checkIconGray
+          }")  center center no-repeat`,
+          transform: `translate(-2em, -0.1em)`,
         },
       },
     }}
   />
 )
 
-PlansCard.UnifiedCta = ({ to, label, comment, children, ...rest }) => (
-  <div
-    css={{
-      flexDirection: `column`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `center`,
-      padding: `${spaces.l} ${spaces.l} ${spaces.xs}`,
-    }}
-    {...rest}
-  >
-    {label && to && (
-      <Button to={to} tone={`SUCCESS`} css={{ minWidth: `45%` }}>
-        {label}
-      </Button>
-    )}
-    {comment && (
-      <p
-        css={{
-          fontFamily: fonts.header.join(`,`),
-          color: colors.grey[50],
-          fontSize: fontSizes[2],
-          margin: 0,
-          marginTop: spaces.xs,
-          textAlign: `center`,
-        }}
-      >
-        {comment}
-      </p>
-    )}
-    {children}
-  </div>
-)
+PricingCard.Cta = ({ children, cta, ...rest }) => {
+  if (!cta) {
+    return null
+  }
 
-export default PlansCard
+  const { label, to, comment } = cta
+
+  return (
+    <div
+      css={{
+        width: `100%`,
+        marginTop: spaces[`2xl`],
+        marginBottom: spaces.l,
+      }}
+      {...rest}
+    >
+      {label && to && (
+        <Button to={to} css={{ width: `100%`, background: colors.purple[50] }}>
+          {label}
+        </Button>
+      )}
+      {children}
+    </div>
+  )
+}
+
+PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
+  if (!cta) {
+    return null
+  }
+
+  const { label, to, comment } = cta
+
+  return (
+    <div
+      css={{
+        flexDirection: `column`,
+        display: `flex`,
+        alignItems: `center`,
+        justifyContent: `center`,
+        padding: `${spaces.l} ${spaces.l} ${spaces.xs}`,
+      }}
+      {...rest}
+    >
+      {label && to && (
+        <Button to={to} tone={`SUCCESS`} css={{ minWidth: `45%` }}>
+          {label}
+        </Button>
+      )}
+      {comment && (
+        <p
+          css={{
+            fontFamily: fonts.header.join(`,`),
+            color: colors.grey[50],
+            fontSize: fontSizes[2],
+            margin: 0,
+            marginTop: spaces.xs,
+            textAlign: `center`,
+          }}
+        >
+          {comment}
+        </p>
+      )}
+      {children}
+    </div>
+  )
+}
+
+export default PricingCard
