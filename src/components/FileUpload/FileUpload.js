@@ -99,6 +99,8 @@ const FileUpload = ({
     console.error(
       `Using the <FileUpload /> component without setting the GATSBY_FILESTACK_API_KEY will fail`
     )
+
+    return <p>Please provide an API key to render the component</p>
   }
 
   return (

@@ -29,6 +29,7 @@
   "peerDependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
+    "filestack-react": "^3.1.0",
     "gatsby": "2.6.0",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",

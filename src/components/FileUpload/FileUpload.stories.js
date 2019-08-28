@@ -1,8 +1,10 @@
 import React from "react"
 
 import { storiesOf } from "@storybook/react"
+import { text } from "@storybook/addon-knobs"
 
 import FileUpload from "./FileUpload"
+import { StoryUtils } from "../../utils/storybook"
 
 // sample of data that filestack returns upon successful upload
 const mockedFile = {
@@ -24,75 +26,96 @@ const mockedFile = {
 
 storiesOf(`File Upload`, module)
   .add(`Single File Upload`, () => (
-      <>
-        <FileUpload name="file" setFieldValue={() => {}} />
-        <hr />
-        <FileUpload
-          name="file"
-          setFieldValue={() => {}}
-          defaultFile={mockedFile}
-        />
-      </>
-    ))
+    <StoryUtils.Container>
+      {process.env.GATSBY_FILESTACK_API_KEY ||
+      process.env.STORYBOOK_FILESTACK_API_KEY ? (
+        <>
+          <FileUpload name="file" setFieldValue={() => {}} />
+          <hr />
+          <FileUpload
+            name="file"
+            setFieldValue={() => {}}
+            defaultFile={mockedFile}
+          />
+        </>
+      ) : (
+        <p>Please enter API key to render component</p>
+      )}
+    </StoryUtils.Container>
+  ))
   .add(`Multi File Upload`, () => (
-      <>
-        <FileUpload
-          multi={true}
-          name="file"
-          setFieldValue={() => {}}
-          fileTypes={[`image/jpeg`]}
-        />
-        <hr />
-        <FileUpload
-          multi={true}
-          name="file"
-          setFieldValue={() => {}}
-          fileTypes={[`image/jpeg`]}
-          defaultFile={mockedFile}
-        />
-      </>
-    ))
+    <StoryUtils.Container>
+      {process.env.GATSBY_FILESTACK_API_KEY ||
+      process.env.STORYBOOK_FILESTACK_API_KEY ? (
+        <>
+          <FileUpload
+            multi={true}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+          />
+          <hr />
+          <FileUpload
+            multi={true}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+            defaultFile={mockedFile}
+          />
+        </>
+      ) : (
+        <p>Please enter API key to render component</p>
+      )}
+    </StoryUtils.Container>
+  ))
   .add(`File Upload with Custom Components`, () => (
-      <>
-        <FileUpload
-          multi={false}
-          name="file"
-          setFieldValue={() => {}}
-          fileTypes={[`image/jpeg`]}
-          CustomButtonComponent={({ onPick }) => (
-            <button type="button" onClick={onPick}>
-              Custom Button
-            </button>
-          )}
-          CustomPreviewComponent={({ file, index, removeFile }) => (
-            <div>
-              <span>{file.filename}</span>
-              <button type="button" onClick={() => removeFile(index)}>
-                X
+    <StoryUtils.Container>
+      {process.env.GATSBY_FILESTACK_API_KEY ||
+      process.env.STORYBOOK_FILESTACK_API_KEY ? (
+        <>
+          <FileUpload
+            multi={false}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+            CustomButtonComponent={({ onPick }) => (
+              <button type="button" onClick={onPick}>
+                Custom Button
               </button>
-            </div>
-          )}
-        />
-        <hr />
-        <FileUpload
-          multi={false}
-          name="file"
-          setFieldValue={() => {}}
-          fileTypes={[`image/jpeg`]}
-          CustomButtonComponent={({ onPick }) => (
-            <button type="button" onClick={onPick}>
-              Custom Button
-            </button>
-          )}
-          CustomPreviewComponent={({ file, index, removeFile }) => (
-            <div>
-              <span>{file.filename}</span>
-              <button type="button" onClick={() => removeFile(index)}>
-                X
+            )}
+            CustomPreviewComponent={({ file, index, removeFile }) => (
+              <div>
+                <span>{file.filename}</span>
+                <button type="button" onClick={() => removeFile(index)}>
+                  X
+                </button>
+              </div>
+            )}
+          />
+          <hr />
+          <FileUpload
+            multi={false}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+            CustomButtonComponent={({ onPick }) => (
+              <button type="button" onClick={onPick}>
+                Custom Button
               </button>
-            </div>
-          )}
-          defaultFile={mockedFile}
-        />
-      </>
-    ))
+            )}
+            CustomPreviewComponent={({ file, index, removeFile }) => (
+              <div>
+                <span>{file.filename}</span>
+                <button type="button" onClick={() => removeFile(index)}>
+                  X
+                </button>
+              </div>
+            )}
+            defaultFile={mockedFile}
+          />
+        </>
+      ) : (
+        <p>Please enter API key to render component</p>
+      )}
+    </StoryUtils.Container>
+  ))
