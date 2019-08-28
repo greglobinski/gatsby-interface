@@ -25,7 +25,6 @@ const Button = props => {
     ...rest
   } = props
   const DefaultIcon = variant === `PRIMARY` && MdArrowForward
-  console.log(`*****`, props)
 
   return (
     <BaseButton

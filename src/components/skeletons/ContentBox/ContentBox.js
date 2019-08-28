@@ -27,7 +27,6 @@ function ContentBox({
   const changeContent = useCallback(
     () =>
       setState(oldState => {
-        console.log(`asdfadsfa`)
         return {
           ...oldState,
           boxState: oldState.boxState === `OPEN` ? `CLOSED` : `OPEN`,
