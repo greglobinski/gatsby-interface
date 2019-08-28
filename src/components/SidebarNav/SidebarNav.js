@@ -4,15 +4,16 @@ import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
-import { colors, spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import colors from "../../theme/colors"
+import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const SidebarNav = ({ children, options, style }) => (
+const SidebarNav = ({ children, options, style, ...rest }) => (
   <nav
+    aria-label="sidebar-nav"
     css={{
-      width: `100%`,
-      height: `100%`,
-      ...style,
+      paddingLeft: spaces.xl,
     }}
+    {...rest}
   >
     {options ? (
       <SidebarNav.List>
@@ -64,7 +65,6 @@ SidebarNav.List = ({ children, variant = `FULL` }) => {
       padding: `${spaces.xs} 0`,
     },
     FULL: {
-      position: `fixed`,
       maxWidth: `8rem`,
     },
   }

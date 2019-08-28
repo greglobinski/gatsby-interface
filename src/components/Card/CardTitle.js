@@ -1,9 +1,10 @@
 import styled from "@emotion/styled"
 
+import colors from "../../theme/colors"
+
 import {
   spaces,
   breakpoints,
-  colors,
   fontFamilies,
   fontSizes,
 } from "../../utils/presets"

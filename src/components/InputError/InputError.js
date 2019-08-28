@@ -2,7 +2,9 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
-import { spaces, colors, fontSizes } from "../../utils/presets"
+import colors from "../../theme/colors"
+
+import { spaces, fontSizes } from "../../utils/presets"
 
 const InputError = ({ children }) => (
   <p

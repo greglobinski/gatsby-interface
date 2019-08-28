@@ -14,16 +14,16 @@ import {
   BUTTON_VARIANTS,
 } from "../../../utils/options"
 
-const Button = ({
-  children,
-  styles: cssStyles,
-  loading,
-  LoadingIcon = MdRefresh,
-  size = `L`,
-  tone = `BRAND`,
-  variant = `PRIMARY`,
-  ...rest
-}) => {
+const Button = props => {
+  const {
+    children,
+    loading,
+    LoadingIcon = MdRefresh,
+    size = `L`,
+    tone = `BRAND`,
+    variant = `PRIMARY`,
+    ...rest
+  } = props
   const DefaultIcon = variant === `PRIMARY` && MdArrowForward
 
   return (
@@ -32,7 +32,6 @@ const Button = ({
         ...styles.base({ loading }),
         ...styles.sizes[size],
         ...styles.variants[variant]({ tone }),
-        ...cssStyles,
       }}
       DefaultIcon={DefaultIcon}
       loading={loading}

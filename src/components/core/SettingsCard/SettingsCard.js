@@ -32,15 +32,11 @@ function SettingsCard({ children, mode = `PRESENTER`, ...rest }) {
       state={{ boxState: modeState === `PRESENTER` ? `CLOSED` : `OPEN` }}
       css={{
         ...cardStyles.frame,
+        ...cardStyles.space.L,
         display: `grid`,
         gridGap: spaces.m,
         gridTemplateColumns: `1fr auto`,
         gridTemplateRows: `auto auto`,
-        padding: `${spaces.m} ${spaces.l} ${spaces.l}`,
-
-        [`@media(min-width: ${breakpoints.desktop}px)`]: {
-          padding: `${spaces.l} ${spaces[`xl`]} ${spaces[`xl`]}`,
-        },
       }}
       {...rest}
     >

@@ -17,7 +17,7 @@ import cardStyles from "../../../theme/styles/card"
 import fontSizes from "../../../theme/fontSizes"
 import colors from "../../../theme/colors"
 
-function SettingsBlock({ children, title, description, doclink, ...rest }) {
+function SettingsBlock({ children, title, description, docUrl, ...rest }) {
   return (
     <ContentBox
       css={{
@@ -30,7 +30,7 @@ function SettingsBlock({ children, title, description, doclink, ...rest }) {
         <SettingsBlock.Header>
           {title && (
             <SettingsBlock.Title>
-              {title} {doclink && <SettingsBlock.Doclink to={doclink} />}
+              {title} {docUrl && <SettingsBlock.Doclink to={docUrl} />}
             </SettingsBlock.Title>
           )}
           {description && (
@@ -52,11 +52,7 @@ SettingsBlock.Header = ({ children, ...rest }) => (
   <header
     css={{
       fontSize: fontSizes[4],
-      padding: `${spaces.m} ${spaces.xl} ${spaces.l}`,
-
-      [`@media(min-width: ${breakpoints.desktop}px)`]: {
-        padding: `${spaces.l} ${spaces[`2xl`]} ${spaces.xl}`,
-      },
+      ...cardStyles.space.header,
     }}
     {...rest}
   >

@@ -3,8 +3,9 @@ import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
+import colors from "../../theme/colors"
+
 import {
-  colors,
   radius,
   spaces,
   breakpoints,

@@ -91,7 +91,7 @@ const variants = {
     return {
       background: `transparent`,
       border: `1px solid ${tones[tone].light}`,
-      color: tones[tone].medium,
+      color: tones[tone].dark,
       ":hover": {
         borderColor: tones[tone].dark,
         color: tones[tone].dark,
@@ -102,7 +102,7 @@ const variants = {
     return {
       background: `transparent`,
       border: `1px solid transparent`,
-      color: tones[tone].medium,
+      color: tones[tone].dark,
       ":hover": {
         background: tones[tone].superLight,
         color: tones[tone].dark,
