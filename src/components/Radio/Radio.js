@@ -112,7 +112,7 @@ const StandardContainer = styled(`div`)`
 `
 
 const ColourfulContainer = styled(StandardContainer)`
-  margin: 0;
+  margin: ${spaces[`2xs`]} 0;
   position: relative;
 
   :before,
@@ -148,8 +148,6 @@ const ColourfulContainer = styled(StandardContainer)`
   }
 
   &.selected {
-    margin: ${spaces[`2xs`]} 0;
-
     :before {
       opacity: 1;
       background-image: linear-gradient(
