@@ -2,7 +2,9 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
-import { colors, dimensions, breakpoints, spaces } from "../../utils/presets"
+import colors from "../../theme/colors"
+
+import { dimensions, breakpoints, spaces } from "../../utils/presets"
 
 const baseStyles = {
   listStyle: `none`,
@@ -25,13 +27,8 @@ const Tabs = ({ children, variant = `DEFAULT` }) => {
         content: `""`,
         left: `0`,
         position: `absolute`,
-        width: `calc(100% + (2 * ${dimensions.pagePadding.mobile}))`,
-        marginLeft: `-${dimensions.pagePadding.mobile}`,
+        width: `100%`,
         zIndex: `1`,
-        [`@media (min-width: ${breakpoints.tablet}px)`]: {
-          width: `calc(100% + (2 * ${dimensions.pagePadding.tablet}))`,
-          marginLeft: `-${dimensions.pagePadding.tablet}`,
-        },
       },
     },
   }

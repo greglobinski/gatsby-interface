@@ -2,8 +2,9 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
+import colors from "../../theme/colors"
+
 import {
-  colors,
   fontFamilies,
   fontSizes,
   breakpoints,

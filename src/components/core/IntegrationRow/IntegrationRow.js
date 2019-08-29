@@ -20,12 +20,15 @@ function IntegrationRow({
   isConnected = false,
   title,
   logoUrl,
-  onClickEdit,
-  editLabel,
+  button = {},
+  link = {},
   details,
   children,
   ...rest
 }) {
+  const { label: linkLabel, ...linkRest } = link
+  const { label: buttonLabel, onClick: buttonOnClick, ...buttonRest } = button
+
   return (
     <ContentBox
       state={{ boxState: isConnected ? `OPEN` : `CLOSED` }}
@@ -36,17 +39,11 @@ function IntegrationRow({
         display: `grid`,
         gridGap: spaces.m,
         gridTemplateColumns: `auto auto 1fr`,
-        padding: isConnected
-          ? `${spaces.xl} ${spaces.xl} ${spaces[`2xl`]}`
-          : `${spaces.m} ${spaces.xl}`,
         width: `100%`,
+        ...cardStyles.space[isConnected ? `activeRow` : `row`],
 
         "&:last-of-type": {
           marginBottom: 0,
-        },
-
-        [`@media(min-width: ${breakpoints.desktop}px)`]: {
-          // padding: `${spaces.m} ${spaces.xl}`,
         },
       }}
       {...rest}
@@ -56,8 +53,15 @@ function IntegrationRow({
           <img src={logoUrl} alt={title} />
         </IntegrationRow.Logo>
       )}
-      {onClickEdit && (
-        <IntegrationRow.EditButton label={editLabel} onClick={onClickEdit} />
+      {buttonOnClick && (
+        <IntegrationRow.EditButton
+          label={buttonLabel}
+          onClick={buttonOnClick}
+          {...buttonRest}
+        />
+      )}
+      {linkLabel && (
+        <IntegrationRow.EditButton label={linkLabel} {...linkRest} />
       )}
 
       {details && <IntegrationRow.Content details={details} />}
@@ -80,12 +84,14 @@ IntegrationRow.propTypes = {
 IntegrationRow.Logo = ({ children, ...rest }) => (
   <span
     css={{
+      display: `flex`,
       gridColumn: `1 / 2`,
       gridRow: `1 / 2`,
 
       [`img, svg`]: {
-        height: `28px`,
+        height: `24px`,
         width: `auto`,
+        margin: 0,
       },
     }}
   >
