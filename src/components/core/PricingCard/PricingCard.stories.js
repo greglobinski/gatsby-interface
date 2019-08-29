@@ -21,8 +21,8 @@ const plansA = [
     icon: freePlanPic,
     intro: `For personal projects and single-purpose sites`,
     price: {
-      monthly: 0,
-      yearly: 0,
+      MONTHLY: 0,
+      YEARLY: 0,
     },
     details: `
                 <ul>
@@ -62,8 +62,8 @@ const plansC = [
     icon: freePlanPic,
     intro: `For personal projects and single-purpose sites`,
     price: {
-      monthly: 0,
-      yearly: 0,
+      MONTHLY: 0,
+      YEARLY: 0,
     },
     details: `
                 <ul>
@@ -78,8 +78,8 @@ const plansC = [
     icon: professionalPlanPic,
     intro: `For personal projects and single-purpose sites`,
     price: {
-      monthly: 42,
-      yearly: 0,
+      MONTHLY: 42,
+      YEARLY: 0,
     },
     details: `
                 <ul>
@@ -94,8 +94,8 @@ const plansC = [
     icon: businessPlanPic,
     intro: `For personal projects and single-purpose sites`,
     price: {
-      monthly: 722,
-      yearly: 0,
+      MONTHLY: 722,
+      YEARLY: 0,
     },
     details: `
                 <ul>

@@ -18,7 +18,7 @@ const VARIANTS = [`PRIMARY`, `SECONDARY`]
 function PricingCard({
   children,
   plans,
-  interval,
+  interval = `MONTHLY`,
   cta,
   variant = `PRIMARY`,
   ...rest
@@ -197,6 +197,7 @@ PricingCard.PriceTag = ({ children, price, interval }) => {
       >
         {price[interval]}
       </strong>
+
       <span
         css={{
           fontFamily: fonts.system.join(`,`),
@@ -206,7 +207,7 @@ PricingCard.PriceTag = ({ children, price, interval }) => {
           transform: `translateX(.2rem)`,
         }}
       >
-        /month
+        / month
       </span>
     </div>
   )
