@@ -1,3 +1,5 @@
+import { from } from "rxjs"
+
 export { General, Integrations, Preview, Skull } from "./assets"
 
 export { ContentBox } from "./components/skeletons/ContentBox"
@@ -46,6 +48,10 @@ export { Label } from "./components/Label"
 export { InputError } from "./components/InputError"
 
 export { SidebarNav } from "./components/SidebarNav"
+
+export { PricingCard } from "./components/core/PricingCard"
+
+export { Heading } from "./components/core/Heading"
 
 export {
   ToastProvider,

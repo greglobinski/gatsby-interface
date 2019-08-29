@@ -15,7 +15,14 @@ import checkIconPurple from "./assets/checkIconPurple.svg"
 
 const VARIANTS = [`PRIMARY`, `SECONDARY`]
 
-function PricingCard({ children, plans, cta, variant = `PRIMARY`, ...rest }) {
+function PricingCard({
+  children,
+  plans,
+  interval,
+  cta,
+  variant = `PRIMARY`,
+  ...rest
+}) {
   const itemsNumber = plans.length
 
   return (
@@ -36,7 +43,11 @@ function PricingCard({ children, plans, cta, variant = `PRIMARY`, ...rest }) {
                 variant={variant}
               />
               <PricingCard.Intro html={plan.intro} variant={variant} />
-              <PricingCard.PriceTag price={plan.price} variant={variant} />
+              <PricingCard.PriceTag
+                price={plan.price}
+                variant={variant}
+                interval={interval}
+              />
               <PricingCard.Details html={plan.details} variant={variant} />
               <PricingCard.Cta cta={plan.cta} />
             </PricingCard.Plan>
@@ -156,7 +167,7 @@ PricingCard.Intro = ({ html, variant, ...rest }) => (
   />
 )
 
-PricingCard.PriceTag = ({ children, price }) => {
+PricingCard.PriceTag = ({ children, price, interval }) => {
   if (!price) {
     return null
   }
@@ -184,7 +195,7 @@ PricingCard.PriceTag = ({ children, price }) => {
           fontSize: fontSizes[8],
         }}
       >
-        {price.monthly}
+        {price[interval]}
       </strong>
       <span
         css={{
@@ -283,7 +294,7 @@ PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
         display: `flex`,
         alignItems: `center`,
         justifyContent: `center`,
-        padding: `${spaces.l} ${spaces.l} ${spaces.xs}`,
+        padding: `${spaces.xl} ${spaces.l} ${spaces.xs}`,
       }}
       {...rest}
     >
