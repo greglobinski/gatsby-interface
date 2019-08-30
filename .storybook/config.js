@@ -90,6 +90,8 @@ addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addDecorator(withA11y)
 
+addDecorator(Story => <Story />)
+
 addParameters({
   options: {
     addonPanelInRight: true,
