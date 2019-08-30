@@ -47,7 +47,6 @@ function Switch({ fieldName, fieldValue, options = [], onChange }) {
           }}
         >
           <input
-            tabIndex="-1"
             type="radio"
             name={fieldName}
             value={option.value}

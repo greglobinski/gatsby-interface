@@ -13,7 +13,7 @@ storiesOf(`core/Switch`, module)
       showPanel: true,
     },
   })
-  .add(`variants`, () => {
+  .add(`usage`, () => {
     const [interval, setInterval] = useState(`MONTHLY`)
 
     return (
