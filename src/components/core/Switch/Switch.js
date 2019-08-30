@@ -31,44 +31,55 @@ function Switch({ fieldName, fieldValue, options = [], onChange }) {
   return (
     <div
       css={{
-        alignItems: `center`,
-        display: `flex`,
+        position: `relative`,
       }}
     >
-      {options.map((option, idx) => (
-        <label
-          key={`switcher-${fieldName}-${option.value}`}
-          css={{
-            cursor: `pointer`,
-            fontFamily: fonts.header.join(`,`),
-            order: idx + 1,
-            color: getLabelColor({ fieldValue, option, idx }),
-            letterSpacing: `0.03em`,
-          }}
-        >
-          <input
-            type="radio"
-            name={fieldName}
-            value={option.value}
-            checked={option.value === fieldValue}
-            onChange={onChange}
+      <div
+        role="group"
+        aria-label={fieldName}
+        css={{
+          display: `grid`,
+          gridTemplateColumns: `1fr 1fr`,
+          gridGap: `80px`,
+        }}
+      >
+        {options.map((option, idx) => (
+          <label
+            key={`switcher-${fieldName}-${option.value}`}
             css={{
-              ...hiddenStyles,
+              cursor: `pointer`,
+              fontFamily: fonts.header.join(`,`),
+              order: idx + 1,
+              color: getLabelColor({ fieldValue, option, idx }),
+              letterSpacing: `0.03em`,
             }}
-          />
-          {option.label ? option.label : option.value}
-        </label>
-      ))}
+          >
+            <input
+              type="radio"
+              name={fieldName}
+              value={option.value}
+              checked={option.value === fieldValue}
+              onChange={onChange}
+              css={{
+                ...hiddenStyles,
+              }}
+            />
+            {option.label ? option.label : option.value}
+          </label>
+        ))}
+      </div>
       <button
         aria-hidden
         onClick={onClick}
         css={{
-          order: 1,
+          position: `absolute`,
+          left: `50%`,
+          transform: `translate(-50%, -50%)`,
+          top: `50%`,
           display: `inline-block`,
           outline: 0,
           width: `48px`,
           height: `24px`,
-          position: `relative`,
           cursor: `pointer`,
           userSelect: `none`,
           background: on ? colors.green[50] : colors.grey[30],
@@ -76,7 +87,6 @@ function Switch({ fieldName, fieldValue, options = [], onChange }) {
           padding: `3px`,
           transition: `all 0.3s ease`,
           border: `none`,
-          margin: `0 ${spaces.m}`,
 
           ":focus, :hover": {
             borderColor: colors.purple[40],
