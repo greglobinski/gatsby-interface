@@ -8,7 +8,7 @@ import colors from "../../../theme/colors"
 import hiddenStyles from "../../../theme/styles/hidden"
 import { spaces } from "../../../utils/presets"
 
-function Switch({ fieldName, fieldValue, options = [], onChange }) {
+function Switch({ fieldName, fieldValue, options = [], onChange, ...rest }) {
   const on = fieldValue === options[1].value
 
   function onClick() {
@@ -32,7 +32,9 @@ function Switch({ fieldName, fieldValue, options = [], onChange }) {
     <div
       css={{
         position: `relative`,
+        display: `inline-block`,
       }}
+      {...rest}
     >
       <div
         role="group"

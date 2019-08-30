@@ -39,7 +39,7 @@ function PricingCard({
               <PricingCard.Icon plan={plan} />
               <PricingCard.Heading
                 title={plan.name}
-                idx={idx}
+                color={plan.color}
                 variant={variant}
               />
               <PricingCard.Intro html={plan.intro} variant={variant} />
@@ -125,11 +125,14 @@ PricingCard.Plan = ({ idx, children, plan, itemsNumber, ...rest }) => (
   </div>
 )
 
-PricingCard.Heading = ({ title, variant, idx, ...rest }) => (
+PricingCard.Heading = ({ title, variant, color, ...rest }) => (
   <Heading
     css={{
-      color:
-        variant === `SECONDARY` ? colors.white : colors.purple[40 + idx * 10],
+      color: color
+        ? color
+        : variant === `SECONDARY`
+        ? colors.white
+        : colors.purple[40],
       fontSize: fontSizes[4],
     }}
   >
