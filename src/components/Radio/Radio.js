@@ -72,11 +72,6 @@ const Label = styled(`label`)`
       left: calc(${spaces.m} + 7px);
     }
   }
-
-  .selected &.emphasized {
-    padding: ${spaces.m} ${spaces.m} ${spaces.m}
-      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
-  }
 `
 
 const RadioInput = styled(`input`)`
