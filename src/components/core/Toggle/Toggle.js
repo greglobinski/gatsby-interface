@@ -65,10 +65,10 @@ function Toggle({
         {children ? (
           children
         ) : (
-          <Toggle.Label>
+          <Toggle.Wrapper>
             <Toggle.Input />
             <Toggle.Mark />
-          </Toggle.Label>
+          </Toggle.Wrapper>
         )}
       </ToggleContext.Provider>
     </div>
@@ -170,7 +170,7 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
   )
 }
 
-Toggle.Label = ({ children, customCss = {}, ...rest }) => {
+Toggle.Wrapper = ({ children, customCss = {}, ...rest }) => {
   const { fieldName, label, inOnPosition } = Toggle.useToggleContext()
 
   return (
@@ -198,7 +198,7 @@ Toggle.Label = ({ children, customCss = {}, ...rest }) => {
   )
 }
 
-Toggle.Label.Content = ({ children, customCss = {}, ...rest }) => {
+Toggle.Label = ({ children, customCss = {}, ...rest }) => {
   const { label } = Toggle.useToggleContext()
 
   return (

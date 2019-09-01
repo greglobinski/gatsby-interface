@@ -126,7 +126,7 @@ storiesOf(`core/Toggle`, module)
               alignItems: `flex-start`,
             }}
           >
-            <Toggle.Label
+            <Toggle.Wrapper
               customCss={{
                 marginLeft: spaces.s,
                 display: `flex`,
@@ -134,7 +134,7 @@ storiesOf(`core/Toggle`, module)
             >
               <Toggle.Input />
               <Toggle.Mark />
-              <Toggle.Label.Content
+              <Toggle.Label
                 customCss={{
                   marginLeft: spaces.xs,
                 }}
@@ -156,8 +156,8 @@ storiesOf(`core/Toggle`, module)
                 >
                   This is label with HTML
                 </p>
-              </Toggle.Label.Content>
-            </Toggle.Label>
+              </Toggle.Label>
+            </Toggle.Wrapper>
           </Toggle>
         </StoryUtils.Stack>
       </StoryUtils.Container>
