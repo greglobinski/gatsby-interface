@@ -77,73 +77,41 @@ storiesOf(`core/Toggle`, module)
   })
 
   .add(`with Formik`, () => (
-      <StoryUtils.Container>
-        <Formik
-          initialValues={{
-            subscriptionInterval: false,
-            automaticalRenew: false,
-          }}
-        >
-          {({ values, handleChange }) => (
-            <form
-              css={{
-                display: `grid`,
-                justifyItems: `start`,
-                gridGap: `2rem`,
-              }}
-            >
-              <Toggle
-                fieldName="subscriptionInterval"
-                fieldValue={values.subscriptionInterval}
-                label="Yearly payment"
-                onChange={handleChange}
-              />
-              <Toggle
-                fieldName="automaticalRenew"
-                fieldValue={values.automaticalRenew}
-                label="Automaticaly renew"
-                onChange={handleChange}
-              />
-              <Debug />
-            </form>
-          )}
-        </Formik>
-      </StoryUtils.Container>
-    ))
+    <StoryUtils.Container>
+      <Formik
+        initialValues={{
+          subscriptionInterval: false,
+          automaticalRenew: false,
+        }}
+      >
+        {({ values, handleChange }) => (
+          <form
+            css={{
+              display: `grid`,
+              justifyItems: `start`,
+              gridGap: `2rem`,
+            }}
+          >
+            <Toggle
+              fieldName="subscriptionInterval"
+              fieldValue={values.subscriptionInterval}
+              label="Yearly payment"
+              onChange={handleChange}
+            />
+            <Toggle
+              fieldName="automaticalRenew"
+              fieldValue={values.automaticalRenew}
+              label="Automaticaly renew"
+              onChange={handleChange}
+            />
+            <Debug />
+          </form>
+        )}
+      </Formik>
+    </StoryUtils.Container>
+  ))
   .add(`with a rich label`, () => {
     const [subInterval, setSubInterval] = useState(false)
-
-    Toggle.CustomLabel = () => {
-      const { checked } = Toggle.useToggleContext()
-
-      return (
-        <Toggle.Label
-          customCss={{
-            marginLeft: spaces.s,
-            paddingBottom: spaces[`2xs`],
-            borderBottom: `1px dotted ${colors.grey[30]}`,
-          }}
-        >
-          <strong
-            css={{
-              margin: 0,
-              color: checked ? colors.purple[60] : colors.grey[50],
-            }}
-          >
-            Yearly payment
-          </strong>
-          <p
-            css={{
-              margin: `${spaces[`2xs`]} 0 0 0`,
-              fontSize: fontSizes[1],
-              color: colors.grey[50],
-            }}
-          >
-            This is label with HTML
-          </p>
-        </Toggle.Label>
-      )
-    }
 
     return (
       <StoryUtils.Container>
@@ -158,7 +126,38 @@ storiesOf(`core/Toggle`, module)
               alignItems: `flex-start`,
             }}
           >
-            <Toggle.CustomLabel />
+            <Toggle.Label
+              customCss={{
+                marginLeft: spaces.s,
+                display: `flex`,
+              }}
+            >
+              <Toggle.Input />
+              <Toggle.Mark />
+              <Toggle.Label.Content
+                customCss={{
+                  marginLeft: spaces.xs,
+                }}
+              >
+                <strong
+                  css={{
+                    margin: 0,
+                    color: colors.grey[50],
+                  }}
+                >
+                  Yearly payment
+                </strong>
+                <p
+                  css={{
+                    margin: `${spaces[`2xs`]} 0 0 0`,
+                    fontSize: fontSizes[1],
+                    color: colors.grey[50],
+                  }}
+                >
+                  This is label with HTML
+                </p>
+              </Toggle.Label.Content>
+            </Toggle.Label>
           </Toggle>
         </StoryUtils.Stack>
       </StoryUtils.Container>

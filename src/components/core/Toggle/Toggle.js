@@ -54,67 +54,22 @@ function Toggle({
     <div
       css={deepmerge(
         {
-          alignItems: `center`,
-          display: `inline-flex`,
+          // alignItems: `center`,
+          // display: `inline-flex`,
         },
         customCss
       )}
       {...rest}
     >
       <ToggleContext.Provider value={value}>
-        <input
-          type="checkbox"
-          name={fieldName}
-          id={fieldName}
-          value={true}
-          checked={checked}
-          onChange={onChange}
-          css={deepmerge(
-            {
-              appearance: `none`,
-              background: checked ? colors.purple[50] : colors.grey[30],
-              border: `none`,
-              borderRadius: `999px`,
-              cursor: `pointer`,
-              display: `inline-block`,
-              height: `24px`,
-              margin: 0,
-              order: 1,
-              padding: `3px`,
-              transition: `all 0.3s ease`,
-              userSelect: `none`,
-              width: `48px`,
-
-              ":after": {
-                background: colors.white,
-                left: getLeftValue({ checked, active: false, inOnPosition }),
-                position: `relative`,
-                display: `block`,
-                content: `""`,
-                width: `18px`,
-                height: `18px`,
-                borderRadius: `999px`,
-                transition: `all 0.1s ease`,
-              },
-
-              ":focus": {
-                boxShadow: `0 0 0 3px ${colors.purple[20]}`,
-                outline: `0`,
-              },
-
-              ":active": {
-                ":after": {
-                  left: getLeftValue({ checked, active: true, inOnPosition }),
-                  width: `24px`,
-                },
-              },
-            },
-            customCss
-          )}
-          {...rest}
-        />
-        {label && <Toggle.Label />}
-        {children}
+        {children ? (
+          children
+        ) : (
+          <Toggle.Label>
+            <Toggle.Input />
+            <Toggle.Mark />
+          </Toggle.Label>
+        )}
       </ToggleContext.Provider>
     </div>
   )
@@ -125,6 +80,96 @@ Toggle.propTypes = {
   inOnPosition: PropTypes.oneOf(IN_ON_POSITIONS),
 }
 
+Toggle.Input = ({ customCss = {}, ...rest }) => {
+  const {
+    fieldName,
+    checked,
+    onChange,
+    inOnPosition,
+  } = Toggle.useToggleContext()
+
+  return (
+    <input
+      type="checkbox"
+      name={fieldName}
+      id={fieldName}
+      value={true}
+      checked={checked}
+      onChange={onChange}
+      css={{
+        ...hiddenStyles,
+      }}
+      {...rest}
+    />
+  )
+}
+
+Toggle.Mark = ({ customCss = {}, ...rest }) => {
+  const {
+    fieldName,
+    checked,
+    onChange,
+    inOnPosition,
+  } = Toggle.useToggleContext()
+
+  return (
+    <span
+      aria-hidden
+      css={deepmerge(
+        {
+          background: checked ? colors.purple[50] : colors.grey[30],
+          borderRadius: `999px`,
+          cursor: `pointer`,
+          display: `inline-block`,
+          height: `24px`,
+          marginRight: spaces.xs,
+          order: 1,
+          padding: `3px`,
+          transition: `all 0.3s ease`,
+          userSelect: `none`,
+          width: `48px`,
+          marginLeft: inOnPosition === `RIGHT` ? 0 : spaces.xs,
+          marginRight: inOnPosition === `LEFT` ? 0 : spaces.xs,
+
+          ":after": {
+            background: colors.white,
+            left: getLeftValue({
+              checked,
+              active: false,
+              inOnPosition,
+            }),
+            position: `relative`,
+            display: `block`,
+            content: `""`,
+            width: `18px`,
+            height: `18px`,
+            borderRadius: `999px`,
+            transition: `all 0.1s ease`,
+          },
+
+          ":focus": {
+            boxShadow: `0 0 0 3px ${colors.purple[20]}`,
+            outline: `0`,
+          },
+
+          ":active": {
+            ":after": {
+              left: getLeftValue({
+                checked,
+                active: true,
+                inOnPosition,
+              }),
+              width: `24px`,
+            },
+          },
+        },
+        customCss
+      )}
+      {...rest}
+    />
+  )
+}
+
 Toggle.Label = ({ children, customCss = {}, ...rest }) => {
   const { fieldName, label, inOnPosition } = Toggle.useToggleContext()
 
@@ -132,20 +177,32 @@ Toggle.Label = ({ children, customCss = {}, ...rest }) => {
     <label
       css={deepmerge(
         {
+          alignItems: `center`,
+          display: `flex`,
           color: colors.grey[90],
           cursor: `pointer`,
           fontFamily: fonts.system.join(`,`),
-          marginLeft: inOnPosition === `RIGHT` ? spaces.xs : 0,
-          marginRight: inOnPosition === `LEFT` ? spaces.xs : 0,
-          order: inOnPosition === `RIGHT` ? 2 : 0,
+
+          "span:last-child": {
+            order: inOnPosition === `RIGHT` ? 2 : 0,
+          },
         },
         customCss
       )}
       htmlFor={fieldName}
       {...rest}
     >
-      {label ? label : children}
+      {children}
+      {label && <Toggle.Label.Content>{label}</Toggle.Label.Content>}
     </label>
+  )
+}
+
+Toggle.Label.Content = ({ children, customCss = {}, ...rest }) => {
+  const { label } = Toggle.useToggleContext()
+
+  return (
+    <span css={deepmerge({}, customCss)}>{children ? children : label}</span>
   )
 }
 
