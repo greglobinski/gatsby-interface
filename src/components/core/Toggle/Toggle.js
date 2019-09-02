@@ -5,11 +5,13 @@ import PropTypes from "prop-types"
 
 import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
+import tones from "../../../theme/tones"
 import hiddenStyles from "../../../theme/styles/hidden"
 import { spaces } from "../../../utils/presets"
 import deepmerge from "deepmerge"
 
 const IN_ON_POSITIONS = [`LEFT`, `RIGHT`]
+const TONES = [`BRAND`, `SUCCESS`]
 
 const ToggleContext = React.createContext()
 
@@ -30,6 +32,7 @@ function Toggle({
   label,
   onChange,
   inOnPosition = `RIGHT`,
+  tone = `BRAND`,
   customCss = {},
   ...rest
 }) {
@@ -42,6 +45,7 @@ function Toggle({
     onChange,
     inOnPosition,
     checked,
+    tone,
   })
 
   useEffect(() => {
@@ -80,6 +84,34 @@ Toggle.propTypes = {
   inOnPosition: PropTypes.oneOf(IN_ON_POSITIONS),
 }
 
+Toggle.Wrapper = ({ children, customCss = {}, ...rest }) => {
+  const { fieldName, label, inOnPosition } = Toggle.useToggleContext()
+
+  return (
+    <label
+      css={deepmerge(
+        {
+          alignItems: `center`,
+          display: `flex`,
+          color: colors.grey[90],
+          cursor: `pointer`,
+          fontFamily: fonts.system.join(`,`),
+
+          "span:last-child": {
+            order: inOnPosition === `RIGHT` ? 2 : 0,
+          },
+        },
+        customCss
+      )}
+      htmlFor={fieldName}
+      {...rest}
+    >
+      {children}
+      {label && <Toggle.Label>{label}</Toggle.Label>}
+    </label>
+  )
+}
+
 Toggle.Input = ({ customCss = {}, ...rest }) => {
   const {
     fieldName,
@@ -110,6 +142,7 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
     checked,
     onChange,
     inOnPosition,
+    tone,
   } = Toggle.useToggleContext()
 
   return (
@@ -117,7 +150,7 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
       aria-hidden
       css={deepmerge(
         {
-          background: checked ? colors.purple[50] : colors.grey[30],
+          background: checked ? tones[tone].medium : colors.grey[30],
           borderRadius: `999px`,
           cursor: `pointer`,
           display: `inline-block`,
@@ -130,6 +163,11 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
           width: `48px`,
           marginLeft: inOnPosition === `RIGHT` ? 0 : spaces.xs,
           marginRight: inOnPosition === `LEFT` ? 0 : spaces.xs,
+
+          "label:focus-within > &": {
+            boxShadow: `0 0 0 3px ${colors.purple[20]}`,
+            outline: `0`,
+          },
 
           ":after": {
             background: colors.white,
@@ -145,11 +183,6 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
             height: `18px`,
             borderRadius: `999px`,
             transition: `all 0.1s ease`,
-          },
-
-          ":focus": {
-            boxShadow: `0 0 0 3px ${colors.purple[20]}`,
-            outline: `0`,
           },
 
           ":active": {
@@ -170,39 +203,13 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
   )
 }
 
-Toggle.Wrapper = ({ children, customCss = {}, ...rest }) => {
-  const { fieldName, label, inOnPosition } = Toggle.useToggleContext()
-
-  return (
-    <label
-      css={deepmerge(
-        {
-          alignItems: `center`,
-          display: `flex`,
-          color: colors.grey[90],
-          cursor: `pointer`,
-          fontFamily: fonts.system.join(`,`),
-
-          "span:last-child": {
-            order: inOnPosition === `RIGHT` ? 2 : 0,
-          },
-        },
-        customCss
-      )}
-      htmlFor={fieldName}
-      {...rest}
-    >
-      {children}
-      {label && <Toggle.Label.Content>{label}</Toggle.Label.Content>}
-    </label>
-  )
-}
-
 Toggle.Label = ({ children, customCss = {}, ...rest }) => {
   const { label } = Toggle.useToggleContext()
 
   return (
-    <span css={deepmerge({}, customCss)}>{children ? children : label}</span>
+    <span css={deepmerge({}, customCss)} {...rest}>
+      {children ? children : label}
+    </span>
   )
 }
 

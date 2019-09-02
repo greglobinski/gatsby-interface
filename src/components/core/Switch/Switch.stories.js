@@ -14,18 +14,24 @@ storiesOf(`core/Switch`, module)
     },
   })
   .add(`usage`, () => {
-    const [interval, setInterval] = useState(`MONTHLY`)
+    const [subInterval, setSubInterval] = useState(`MONTHLY`)
 
     return (
       <StoryUtils.Container>
         <Switch
           fieldName="interval"
-          fieldValue={interval}
-          onChange={e => setInterval(e.target.value)}
-          options={[
-            { value: `MONTHLY`, label: `MONTHLY`, checked: true },
-            { value: `YEARLY`, label: `YEARLY` },
-          ]}
+          fieldValue={subInterval}
+          onChange={e => {
+            setSubInterval(e.target.value)
+          }}
+          options={{
+            primary: {
+              value: `YEARLY`,
+              label: `YEARLY`,
+              ariaLabel: `YEARLY PAYMENT`,
+            },
+            secondary: { value: `MONTHLY`, label: `MONTHLY` },
+          }}
         />
       </StoryUtils.Container>
     )
