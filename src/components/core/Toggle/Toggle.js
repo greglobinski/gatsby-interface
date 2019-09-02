@@ -36,15 +36,13 @@ function Toggle({
   customCss = {},
   ...rest
 }) {
-  const checked = fieldValue === true
-
   const [state, setState] = useState({
     fieldName,
     fieldValue,
     label,
     onChange,
     inOnPosition,
-    checked,
+    checked: fieldValue === true,
     tone,
   })
 
