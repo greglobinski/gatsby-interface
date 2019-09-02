@@ -55,27 +55,16 @@ function Toggle({
   const value = useMemo(() => state, [state])
 
   return (
-    <div
-      css={deepmerge(
-        {
-          // alignItems: `center`,
-          // display: `inline-flex`,
-        },
-        customCss
+    <ToggleContext.Provider value={value}>
+      {children ? (
+        children
+      ) : (
+        <Toggle.Wrapper customCss={customCss} {...rest}>
+          <Toggle.Input />
+          <Toggle.Mark />
+        </Toggle.Wrapper>
       )}
-      {...rest}
-    >
-      <ToggleContext.Provider value={value}>
-        {children ? (
-          children
-        ) : (
-          <Toggle.Wrapper>
-            <Toggle.Input />
-            <Toggle.Mark />
-          </Toggle.Wrapper>
-        )}
-      </ToggleContext.Provider>
-    </div>
+    </ToggleContext.Provider>
   )
 }
 
@@ -158,7 +147,7 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
           marginRight: spaces.xs,
           order: 1,
           padding: `3px`,
-          transition: `all 0.3s ease`,
+          transition: `all .3s ease, background .5s`,
           userSelect: `none`,
           width: `48px`,
           marginLeft: inOnPosition === `RIGHT` ? 0 : spaces.xs,
