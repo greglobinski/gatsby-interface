@@ -18,15 +18,15 @@ storiesOf(`core/ToggleTip`, module)
     },
   })
   .add(`shortcut usage`, () => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>
-          <p>
-            This is a text with ToggleTip{` `}
-            <ToggleTip
-              tip="Toggletips are like tooltips in the sense that they can provide
+    <StoryUtils.Container>
+      <StoryUtils.Stack>
+        <p>
+          This is a text with ToggleTip{` `}
+          <ToggleTip
+            tip="Toggletips are like tooltips in the <a href='https://gatsbyjs.com'>sense</a> that they can provide
             supplementary or clarifying information."
-            />
-          </p>
-        </StoryUtils.Stack>
-      </StoryUtils.Container>
-    ))
+          />
+        </p>
+      </StoryUtils.Stack>
+    </StoryUtils.Container>
+  ))
