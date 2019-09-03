@@ -15,8 +15,7 @@ import { Button } from "../Button"
 import toggleTipIcon from "./assets/toggleTipIcon.svg"
 import { capitalizeString } from "../../../utils/helpers/"
 import { CheckIcon } from "../../icons"
-
-console.log(toggleTipIcon)
+import { ToggleTip } from "../ToggleTip"
 
 const VARIANTS = [`PRIMARY`, `SECONDARY`]
 
@@ -282,12 +281,6 @@ PricingCard.Details = ({ details, variant, ...rest }) => {
                 }}
               />
               <div
-                // ref={detailsRef.current[idx]}
-                role={item.tip && `button`}
-                aria-label={item.tip && `more info`}
-                tabIndex={item.tip && 0}
-                onClick={item.tip && showTip}
-                onKeyDown={item.tip && showTip}
                 dangerouslySetInnerHTML={{ __html: item.text }}
                 css={{
                   position: `relative`,
@@ -295,47 +288,14 @@ PricingCard.Details = ({ details, variant, ...rest }) => {
                   p: {
                     display: `inline`,
                   },
-                  ":after": {
-                    content: item.tip ? `""` : null,
-                    display: `inline-block`,
-                    width: `1.1em`,
-                    height: `1.1em`,
-                    verticalAlign: `text-bottom`,
-                    background: `url("${toggleTipIcon}") center center no-repeat`,
-                    border: 0,
-                    backgroundSize: `100% 100%`,
-                    marginLeft: spaces[`2xs`],
-                    borderRadius: `50%`,
-                  },
-
-                  ":focus": {
-                    ":after": {
-                      boxShadow: `0 0 0 3px ${colors.purple[20]}`,
-                    },
-                  },
                 }}
               />
-              <div role="status" css={{}}>
-                {tipVisible && item.tip && (
-                  <div
-                    dangerouslySetInnerHTML={{ __html: item.tip }}
-                    css={{
-                      background: colors.grey[90],
-                      color: colors.white,
-                      padding: spaces.xs,
-                      borderRadius: radius.default,
-                      position: `absolute`,
-                      bottom: `100%`,
-                      right: 0,
-
-                      p: {
-                        display: `inline`,
-                        margin: 0,
-                      },
-                    }}
-                  />
-                )}
-              </div>
+              {item.tip && (
+                <ToggleTip
+                  tip={item.tip}
+                  customCss={{ marginLeft: spaces.xs }}
+                />
+              )}
             </li>
           ))}
         </ul>

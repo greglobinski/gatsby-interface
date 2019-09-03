@@ -96,7 +96,7 @@ const plansC = [
     details: [
       { text: `Builds and Preview` },
       {
-        text: `1000 real-time edits/day`,
+        text: `<p>1000 real-time edits/day adsfadsf asdfadsfas</p>`,
         tip: `<p>Definition of real time edit</p>`,
       },
       { text: `Online documentation` },

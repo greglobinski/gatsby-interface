@@ -26,8 +26,6 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
   useEventListener(`click`, checkClick)
   useEventListener(`keydown`, checkKeydown)
 
-  // window.addEventListener("keydown", checkKeydown)
-
   function checkClick(e) {
     if (visible && e.target !== tipRef.current) {
       hideTip()
@@ -54,9 +52,12 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
 
   return (
     <span
-      css={{
-        position: `relative`,
-      }}
+      css={deepmerge(
+        {
+          position: `relative`,
+        },
+        customCss
+      )}
     >
       {children ? (
         children
@@ -72,6 +73,7 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
 
 ToggleTip.Button = ({ children, customCss = {}, ...rest }) => (
   <button
+    aria-label={`more info`}
     css={deepmerge(
       {
         background: `transparent`,
@@ -106,58 +108,57 @@ ToggleTip.Button = ({ children, customCss = {}, ...rest }) => (
 const tipEntry = keyframes({
   "100%": {
     opacity: 1,
-    transform: ` translate(-50%, 0) perspective(200px) scale(1) rotateX(0)`,
   },
 })
 
 ToggleTip.Tip = forwardRef(
-  ({ tip, visible, width = `14rem`, customCss = {}, ...rest }, ref) => (
-      <span
-        ref={ref}
-        role="status"
-        dangerouslySetInnerHTML={{ __html: visible && tip ? tip : null }}
-        css={
-          visible
-            ? deepmerge(
-                {
-                  animation: `${tipEntry} .5s ease forwards`,
+  ({ tip, visible, width = `12rem`, customCss = {}, ...rest }, ref) => (
+    <span
+      ref={ref}
+      role="status"
+      dangerouslySetInnerHTML={{ __html: visible && tip ? tip : null }}
+      css={
+        visible
+          ? deepmerge(
+              {
+                animation: `${tipEntry} .5s ease forwards`,
+                background: colors.grey[80],
+                borderRadius: radius.default,
+                bottom: `calc(100% + .75rem)`,
+                color: colors.white,
+                fontSize: fontSizes[1],
+                right: `-1rem`,
+                lineHeight: 1.4,
+                opacity: 0.25,
+                padding: `${spaces.xs} ${spaces.s}`,
+                position: `absolute`,
+                transformOrigin: `right bottom`,
+                width: width,
+                zIndex: 10,
+
+                ":after": {
+                  content: `""`,
                   background: colors.grey[80],
-                  borderRadius: radius.default,
-                  bottom: `calc(100% + .75rem)`,
-                  color: colors.white,
-                  fontSize: fontSizes[1],
-                  left: `50%`,
-                  lineHeight: 1.4,
-                  opacity: 0.25,
-                  padding: `${spaces.s} ${spaces.m}`,
+                  bottom: 0,
+                  height: `.5rem`,
+                  right: `1.25rem`,
                   position: `absolute`,
-                  transform: ` translate(-50%, 10%) perspective(200px)  scale(.5) rotateX(-60deg)`,
-                  transformOrigin: `center bottom`,
-                  width: width,
-
-                  ":before": {
-                    content: `""`,
-                    background: colors.grey[80],
-                    bottom: 0,
-                    height: `.5rem`,
-                    left: `50%`,
-                    position: `absolute`,
-                    transform: `translate(-50%,50%) rotate(45deg)`,
-                    transformOrigin: `center center`,
-                    width: `.5rem`,
-                    zIndes: -1,
-                  },
-
-                  "p:not(:last-of-type)": {
-                    margin: 0,
-                  },
+                  transform: `translate(0,50%) rotate(45deg)`,
+                  transformOrigin: `center center`,
+                  width: `.5rem`,
+                  zIndes: -1,
                 },
-                customCss
-              )
-            : null
-        }
-      />
-    )
+
+                "p:last-of-type": {
+                  margin: 0,
+                },
+              },
+              customCss
+            )
+          : null
+      }
+    />
+  )
 )
 
 ToggleTip.propTypes = {}
