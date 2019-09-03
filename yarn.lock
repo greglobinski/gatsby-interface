@@ -9584,9 +9584,9 @@ isurl@^1.0.0-alpha5:
     is-object "^1.0.1"
 
 isutf8@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/isutf8/-/isutf8-2.0.4.tgz#1c93bf3552f8e531748c40c60fafc1d038c44e0d"
-  integrity sha512-4DvnF8CTx4QYN5UD7VtScvQEJq910d09V2yArkAvc62BUxnuFTnVhkq3iPR802ruiibPG4lQm/I8FNAxPYx5fw==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/isutf8/-/isutf8-2.1.0.tgz#b6d08a02d4ce43bf3b4be39b9b60231b88dfeb2b"
+  integrity sha512-rEMU6f82evtJNtYMrtVODUbf+C654mos4l+9noOueesUMipSWK6x3tpt8DiXhcZh/ZOBWYzJ9h9cNAlcQQnMiQ==
 
 iterall@^1.2.2:
   version "1.2.2"
