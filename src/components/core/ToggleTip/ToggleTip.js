@@ -63,7 +63,7 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
         children
       ) : (
         <Fragment>
-          <ToggleTip.Button onClick={showTip} />
+          <ToggleTip.Button onClick={showTip} visible={visible} />
           <ToggleTip.Tip tip={tip} visible={visible} ref={tipRef} />
         </Fragment>
       )}
@@ -71,8 +71,10 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
   )
 }
 
-ToggleTip.Button = ({ children, customCss = {}, ...rest }) => (
+ToggleTip.Button = ({ children, visible, customCss = {}, ...rest }) => (
   <button
+    aria-expanded={visible}
+    aria-haspopup="true"
     aria-label={`more info`}
     css={deepmerge(
       {

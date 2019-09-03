@@ -16,6 +16,7 @@ import toggleTipIcon from "./assets/toggleTipIcon.svg"
 import { capitalizeString } from "../../../utils/helpers/"
 import { CheckIcon } from "../../icons"
 import { ToggleTip } from "../ToggleTip"
+console.log(fonts)
 
 const VARIANTS = [`PRIMARY`, `SECONDARY`]
 
@@ -27,36 +28,41 @@ function PricingCard({
   variant = `PRIMARY`,
   ...rest
 }) {
+  const [visibleOnMobile, setVisibleOnMobile] = useState(0)
   const itemsNumber = plans.length
 
   return (
     <PricingCard.Frame variant={variant} {...rest}>
       {plans && (
-        <PricingCard.Plans>
-          {plans.map((plan, idx) => (
-            <PricingCard.Plan
-              key={plan.name}
-              idx={idx}
-              plan={plan}
-              itemsNumber={itemsNumber}
-            >
-              <PricingCard.Icon plan={plan} />
-              <PricingCard.Heading
-                title={plan.name}
-                color={plan.color}
-                variant={variant}
-              />
-              <PricingCard.Intro html={plan.intro} variant={variant} />
-              <PricingCard.PriceTag
-                price={plan.price}
-                variant={variant}
-                interval={interval}
-              />
-              <PricingCard.Details details={plan.details} variant={variant} />
-              <PricingCard.Cta cta={plan.cta} />
-            </PricingCard.Plan>
-          ))}
-        </PricingCard.Plans>
+        <Fragment>
+          {itemsNumber > 1 && <PricingCard.Nav plans={plans} />}
+          <PricingCard.Plans>
+            {plans.map((plan, idx) => (
+              <PricingCard.Plan
+                key={plan.name}
+                idx={idx}
+                plan={plan}
+                itemsNumber={itemsNumber}
+                visibleOnMobile={visibleOnMobile === idx}
+              >
+                <PricingCard.Icon plan={plan} />
+                <PricingCard.Heading
+                  title={plan.name}
+                  color={plan.color}
+                  variant={variant}
+                />
+                <PricingCard.Intro html={plan.intro} variant={variant} />
+                <PricingCard.PriceTag
+                  price={plan.price}
+                  variant={variant}
+                  interval={interval}
+                />
+                <PricingCard.Details details={plan.details} variant={variant} />
+                <PricingCard.Cta cta={plan.cta} />
+              </PricingCard.Plan>
+            ))}
+          </PricingCard.Plans>
+        </Fragment>
       )}
       {cta && <PricingCard.UnifiedCta cta={cta} />}
       {children}
@@ -79,7 +85,6 @@ PricingCard.Frame = ({ variant, children, ...rest }) => (
       position: `relative`,
       width: `100%`,
       flexDirection: `column`,
-      paddingBottom: spaces.l,
       borderRadius: radius.large,
 
       [`@media(min-width: ${breakpoints.tablet}px)`]: {},
@@ -90,6 +95,36 @@ PricingCard.Frame = ({ variant, children, ...rest }) => (
   </div>
 )
 
+PricingCard.Nav = ({ plans, ...rest }) => (
+  <nav
+    css={{
+      display: `flex`,
+      width: `100%`,
+      justifyContent: `space-around`,
+      borderBottom: `1px solid ${colors.standardLine}`,
+
+      [`@media(min-width: ${breakpoints.tablet}px)`]: {
+        display: `none`,
+      },
+    }}
+  >
+    {plans.map((plan, idx) => (
+        <button
+          css={{
+            background: `transparent`,
+            border: `none`,
+            fontFamily: fonts.header.join(`,`),
+            fontSize: fontSizes[2],
+            color: colors.grey[70],
+            padding: `${spaces.m} ${spaces.s} ${spaces.s}`,
+          }}
+        >
+          {capitalizeString({ str: plan.name })}
+        </button>
+      ))}
+  </nav>
+)
+
 PricingCard.Plans = ({ children, ...rest }) => (
   <div
     css={{
@@ -97,6 +132,7 @@ PricingCard.Plans = ({ children, ...rest }) => (
       position: `relative`,
       width: `100%`,
       overflow: `hidden`,
+      height: `100%`,
     }}
     {...rest}
   >
@@ -104,11 +140,18 @@ PricingCard.Plans = ({ children, ...rest }) => (
   </div>
 )
 
-PricingCard.Plan = ({ idx, children, plan, itemsNumber, ...rest }) => (
+PricingCard.Plan = ({
+  idx,
+  visibleOnMobile,
+  children,
+  plan,
+  itemsNumber,
+  ...rest
+}) => (
   <div
     css={{
-      padding: `${spaces.l} ${spaces.l} 0 ${spaces.m}`,
-      display: `flex`,
+      padding: `${spaces.l} ${spaces.l} 0 `,
+      display: visibleOnMobile ? `flex` : `none`,
       flexDirection: `column`,
       alignItems: `center`,
       flexShrink: 0,
@@ -315,8 +358,12 @@ PricingCard.Cta = ({ children, cta, ...rest }) => {
     <div
       css={{
         width: `100%`,
+        display: `flex`,
+        flexDirection: `column`,
+        justifyContent: `flex-end`,
         marginTop: spaces[`2xl`],
-        marginBottom: spaces.l,
+        flexGrow: 1,
+        paddingBottom: spaces[`4xl`],
       }}
       {...rest}
     >
@@ -344,7 +391,7 @@ PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
         display: `flex`,
         alignItems: `center`,
         justifyContent: `center`,
-        padding: `${spaces.xl} ${spaces.l} ${spaces.xs}`,
+        padding: `${spaces.xl} ${spaces.l} ${spaces.l}`,
       }}
       {...rest}
     >
@@ -373,49 +420,3 @@ PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
 }
 
 export default PricingCard
-
-/*
-
-
-    <div
-      dangerouslySetInnerHTML={{ __html: html }}
-      css={{
-        fontSize: fontSizes[1],
-        color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[50],
-        width: `100%`,
-        marginTop: spaces.l,
-        display: `flex`,
-        flexDirection: `column`,
-        alignItems: `center`,
-
-        ul: {
-          listStyle: `none`,
-          padding: 0,
-          margin: 0,
-          width: `auto`,
-        },
-
-        li: {
-          margin: `${spaces.xs} 0`,
-          position: `relative`,
-          paddingLeft: spaces.l,
-          lineHeight: 1.3,
-
-          [`&:before`]: {
-            content: `""`,
-            display: `inline-block`,
-            position: `absolute`,
-            width: `1.5em`,
-            height: `1.5em`,
-            marginRight: spaces.xs,
-            background: `url("${
-              variant === `SECONDARY` ? checkIconPurple : checkIconGray
-            }")  center center no-repeat`,
-            transform: `translate(-2em, -0.1em)`,
-          },
-        },
-      }}
-    />
-
-
-    */
