@@ -24,13 +24,11 @@ const plansA = [
       MONTHLY: 0,
       YEARLY: 0,
     },
-    details: `
-                <ul>
-              <li>Builds and Preview</li>
-              <li>10 real-time edits/day</li>
-              <li>Online documentation</li>
-            </ul>
-            `,
+    details: [
+      { text: `Builds and Preview` },
+      { text: `10 real-time edits/day` },
+      { text: `nline documentation` },
+    ],
   },
 ]
 
@@ -39,16 +37,12 @@ const plansB = [
     name: `Enterprise`,
     icon: enterprisePlanPic,
     intro: `Custom packages designed for your company`,
-    details: `
-                <ul>
-              <li>Builds and Preview</li>
-              <li>10 real-time edits/day</li>
-              <li>Online documentation</li>
-              <li>Dedicated Slack channel</li>
-              <li>Uptime and response SLA</li>
-              <li>Onboarding traning</li>
-            </ul>
-            `,
+    details: [
+      { text: `Builds and Preview` },
+      { text: `1000 real-time edits/day` },
+      { text: `Online documentation` },
+      { text: `Dedicated account manager` },
+    ],
     cta: {
       to: `/`,
       label: `Contact sales`,
@@ -65,13 +59,14 @@ const plansC = [
       MONTHLY: 0,
       YEARLY: 0,
     },
-    details: `
-                <ul>
-              <li>Builds and Preview</li>
-              <li>10 real-time edits/day</li>
-              <li>Online documentation</li>
-            </ul>
-            `,
+    details: [
+      { text: `Builds and Preview` },
+      {
+        text: `10 real-time edits/day`,
+        tip: `<p>Definition of real time edit</p>`,
+      },
+      { text: `Online documentation` },
+    ],
   },
   {
     name: `Professional`,
@@ -81,13 +76,14 @@ const plansC = [
       MONTHLY: 42,
       YEARLY: 0,
     },
-    details: `
-                <ul>
-              <li>Builds and Preview</li>
-              <li>20 real-time edits/day</li>
-              <li>Online documentation</li>
-            </ul>
-            `,
+    details: [
+      { text: `Builds and Preview` },
+      {
+        text: `100 real-time edits/day`,
+        tip: `<p>Definition of real time edit</p>`,
+      },
+      { text: `Online documentation` },
+    ],
   },
   {
     name: `Bussines`,
@@ -97,14 +93,14 @@ const plansC = [
       MONTHLY: 722,
       YEARLY: 0,
     },
-    details: `
-                <ul>
-              <li>Builds and Preview</li>
-              <li>100 real-time edits/day</li>
-              <li>Online documentation</li>
-               <li>Dedicated account manager</li>
-            </ul>
-            `,
+    details: [
+      { text: `Builds and Preview` },
+      {
+        text: `1000 real-time edits/day`,
+        tip: `<p>Definition of real time edit</p>`,
+      },
+      { text: `Online documentation` },
+    ],
   },
 ]
 

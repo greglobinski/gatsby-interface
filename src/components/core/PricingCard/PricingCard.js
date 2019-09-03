@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { Fragment } from "react"
+import React, { Fragment, useState, useRef, createRef } from "react"
 import PropTypes from "prop-types"
+
+import { MdInfo, MdAirlineSeatLegroomExtra } from "react-icons/md"
 
 import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
@@ -10,8 +12,11 @@ import fontSizes from "../../../theme/fontSizes"
 import { spaces, breakpoints, radius } from "../../../utils/presets"
 import { Heading } from "../Heading"
 import { Button } from "../Button"
-import checkIconGray from "./assets/checkIconGray.svg"
-import checkIconPurple from "./assets/checkIconPurple.svg"
+import toggleTipIcon from "./assets/toggleTipIcon.svg"
+import { capitalizeString } from "../../../utils/helpers/"
+import { CheckIcon } from "../../icons"
+
+console.log(toggleTipIcon)
 
 const VARIANTS = [`PRIMARY`, `SECONDARY`]
 
@@ -48,7 +53,7 @@ function PricingCard({
                 variant={variant}
                 interval={interval}
               />
-              <PricingCard.Details html={plan.details} variant={variant} />
+              <PricingCard.Details details={plan.details} variant={variant} />
               <PricingCard.Cta cta={plan.cta} />
             </PricingCard.Plan>
           ))}
@@ -103,7 +108,7 @@ PricingCard.Plans = ({ children, ...rest }) => (
 PricingCard.Plan = ({ idx, children, plan, itemsNumber, ...rest }) => (
   <div
     css={{
-      padding: `${spaces.l} ${spaces.xl} 0`,
+      padding: `${spaces.l} ${spaces.l} 0 ${spaces.m}`,
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,
@@ -136,7 +141,7 @@ PricingCard.Heading = ({ title, variant, color, ...rest }) => (
       fontSize: fontSizes[4],
     }}
   >
-    {title}
+    {capitalizeString({ str: title })}
   </Heading>
 )
 
@@ -166,6 +171,10 @@ PricingCard.Intro = ({ html, variant, ...rest }) => (
       fontSize: fontSizes[1],
       color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[60],
       lineHeight: 1.4,
+
+      p: {
+        margin: 0,
+      },
     }}
   />
 )
@@ -216,47 +225,124 @@ PricingCard.PriceTag = ({ children, price, interval }) => {
   )
 }
 
-PricingCard.Details = ({ html, variant, ...rest }) => (
-  <div
-    dangerouslySetInnerHTML={{ __html: html }}
-    css={{
-      fontSize: fontSizes[1],
-      color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[50],
-      width: `100%`,
-      marginTop: spaces.l,
-      display: `flex`,
-      flexDirection: `column`,
-      alignItems: `center`,
+PricingCard.Details = ({ details, variant, ...rest }) => {
+  const [tipVisible, setTipVisible] = useState(false)
+  // const detailsRef = useRef(details.map(() => createRef()))
 
-      ul: {
-        listStyle: `none`,
-        padding: 0,
-        margin: 0,
-        width: `auto`,
-      },
+  const showTip = e => {
+    if (
+      e.type === `click` ||
+      (e.type === `keydown` && (e.keyCode === 32 || e.keyCode === 13))
+    )
+      setTipVisible(true)
+  }
+  return (
+    details && (
+      <div
+        css={{
+          fontSize: fontSizes[1],
+          color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[50],
+          width: `100%`,
+          marginTop: spaces.l,
+          display: `flex`,
+          flexDirection: `column`,
+          alignItems: `center`,
+        }}
+      >
+        <ul
+          css={{
+            listStyle: `none`,
+            padding: 0,
+            margin: 0,
+            width: `auto`,
+          }}
+        >
+          {details.map((item, idx) => (
+            <li
+              key={`detail${idx}`}
+              css={{
+                display: `flex`,
+                margin: `${spaces.xs} 0`,
+                position: `relative`,
+                lineHeight: 1.3,
+              }}
+            >
+              <CheckIcon
+                css={{
+                  width: `1.5em`,
+                  height: `1.5em`,
+                  fill:
+                    variant === `SECONDARY`
+                      ? colors.purple[50]
+                      : colors.grey[30],
+                  marginRight: spaces.xs,
+                  flexShrink: 0,
+                  flexGrow: 0,
+                  transform: `translateY(-.2em)`,
+                }}
+              />
+              <div
+                // ref={detailsRef.current[idx]}
+                role={item.tip && `button`}
+                aria-label={item.tip && `more info`}
+                tabIndex={item.tip && 0}
+                onClick={item.tip && showTip}
+                onKeyDown={item.tip && showTip}
+                dangerouslySetInnerHTML={{ __html: item.text }}
+                css={{
+                  position: `relative`,
+                  outline: `none`,
+                  p: {
+                    display: `inline`,
+                  },
+                  ":after": {
+                    content: item.tip ? `""` : null,
+                    display: `inline-block`,
+                    width: `1.1em`,
+                    height: `1.1em`,
+                    verticalAlign: `text-bottom`,
+                    background: `url("${toggleTipIcon}") center center no-repeat`,
+                    border: 0,
+                    backgroundSize: `100% 100%`,
+                    marginLeft: spaces[`2xs`],
+                    borderRadius: `50%`,
+                  },
 
-      li: {
-        margin: `${spaces.xs} 0`,
-        position: `relative`,
-        paddingLeft: spaces.l,
-        lineHeight: 1.3,
+                  ":focus": {
+                    ":after": {
+                      boxShadow: `0 0 0 3px ${colors.purple[20]}`,
+                    },
+                  },
+                }}
+              />
+              <div role="status" css={{}}>
+                {tipVisible && item.tip && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.tip }}
+                    css={{
+                      background: colors.grey[90],
+                      color: colors.white,
+                      padding: spaces.xs,
+                      borderRadius: radius.default,
+                      position: `absolute`,
+                      bottom: `100%`,
+                      right: 0,
 
-        [`&:before`]: {
-          content: `""`,
-          display: `inline-block`,
-          position: `absolute`,
-          width: `1.5em`,
-          height: `1.5em`,
-          marginRight: spaces.xs,
-          background: `url("${
-            variant === `SECONDARY` ? checkIconPurple : checkIconGray
-          }")  center center no-repeat`,
-          transform: `translate(-2em, -0.1em)`,
-        },
-      },
-    }}
-  />
-)
+                      p: {
+                        display: `inline`,
+                        margin: 0,
+                      },
+                    }}
+                  />
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  )
+}
 
 PricingCard.Cta = ({ children, cta, ...rest }) => {
   if (!cta) {
@@ -327,3 +413,49 @@ PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
 }
 
 export default PricingCard
+
+/*
+
+
+    <div
+      dangerouslySetInnerHTML={{ __html: html }}
+      css={{
+        fontSize: fontSizes[1],
+        color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[50],
+        width: `100%`,
+        marginTop: spaces.l,
+        display: `flex`,
+        flexDirection: `column`,
+        alignItems: `center`,
+
+        ul: {
+          listStyle: `none`,
+          padding: 0,
+          margin: 0,
+          width: `auto`,
+        },
+
+        li: {
+          margin: `${spaces.xs} 0`,
+          position: `relative`,
+          paddingLeft: spaces.l,
+          lineHeight: 1.3,
+
+          [`&:before`]: {
+            content: `""`,
+            display: `inline-block`,
+            position: `absolute`,
+            width: `1.5em`,
+            height: `1.5em`,
+            marginRight: spaces.xs,
+            background: `url("${
+              variant === `SECONDARY` ? checkIconPurple : checkIconGray
+            }")  center center no-repeat`,
+            transform: `translate(-2em, -0.1em)`,
+          },
+        },
+      }}
+    />
+
+
+    */
