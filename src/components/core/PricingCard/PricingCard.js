@@ -160,7 +160,8 @@ PricingCard.Nav = ({ ...rest }) => {
 
             ":after": {
               background: plan.color,
-              content: visibleOnMobile === idx && `""`,
+              content: `""`,
+              display: visibleOnMobile === idx ? `block` : `none`,
               width: `100%`,
               height: `2px`,
               position: `absolute`,
@@ -476,7 +477,8 @@ PricingCard.UnifiedCta = ({ children, ...rest }) => {
         </Button>
       )}
       {comment && (
-        <p
+        <span
+          dangerouslySetInnerHTML={{ __html: comment }}
           css={{
             fontFamily: fonts.header.join(`,`),
             color: colors.grey[50],
@@ -485,9 +487,7 @@ PricingCard.UnifiedCta = ({ children, ...rest }) => {
             marginTop: spaces.xs,
             textAlign: `center`,
           }}
-        >
-          {comment}
-        </p>
+        />
       )}
       {children}
     </div>
