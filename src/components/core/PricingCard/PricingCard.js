@@ -1,6 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { Fragment, useState, useRef, createRef } from "react"
+import React, {
+  Fragment,
+  useState,
+  useRef,
+  createContext,
+  useMemo,
+  useCallback,
+} from "react"
 import PropTypes from "prop-types"
 
 import { MdInfo, MdAirlineSeatLegroomExtra } from "react-icons/md"
@@ -16,9 +23,10 @@ import toggleTipIcon from "./assets/toggleTipIcon.svg"
 import { capitalizeString } from "../../../utils/helpers/"
 import { CheckIcon } from "../../icons"
 import { ToggleTip } from "../ToggleTip"
-console.log(fonts)
 
 const VARIANTS = [`PRIMARY`, `SECONDARY`]
+
+const PricingCardContext = createContext()
 
 function PricingCard({
   children,
@@ -26,47 +34,57 @@ function PricingCard({
   interval = `MONTHLY`,
   cta,
   variant = `PRIMARY`,
+  visibleOnMobile = 0,
   ...rest
 }) {
-  const [visibleOnMobile, setVisibleOnMobile] = useState(0)
-  const itemsNumber = plans.length
+  const [state, setState] = useState({
+    plans,
+    interval,
+    cta,
+    variant,
+    visibleOnMobile,
+  })
+
+  const makeVisibleOnMobile = useCallback(
+    item =>
+      setState(oldState => {
+        return {
+          ...oldState,
+          visibleOnMobile: item,
+        }
+      }),
+    []
+  )
+
+  const value = useMemo(() => {return { ...state, makeVisibleOnMobile }}, [state])
 
   return (
-    <PricingCard.Frame variant={variant} {...rest}>
-      {plans && (
-        <Fragment>
-          {itemsNumber > 1 && <PricingCard.Nav plans={plans} />}
-          <PricingCard.Plans>
-            {plans.map((plan, idx) => (
-              <PricingCard.Plan
-                key={plan.name}
-                idx={idx}
-                plan={plan}
-                itemsNumber={itemsNumber}
-                visibleOnMobile={visibleOnMobile === idx}
-              >
-                <PricingCard.Icon plan={plan} />
-                <PricingCard.Heading
-                  title={plan.name}
-                  color={plan.color}
-                  variant={variant}
-                />
-                <PricingCard.Intro html={plan.intro} variant={variant} />
-                <PricingCard.PriceTag
-                  price={plan.price}
-                  variant={variant}
-                  interval={interval}
-                />
-                <PricingCard.Details details={plan.details} variant={variant} />
-                <PricingCard.Cta cta={plan.cta} />
-              </PricingCard.Plan>
-            ))}
-          </PricingCard.Plans>
-        </Fragment>
+    <PricingCardContext.Provider value={value}>
+      {children ? (
+        children
+      ) : (
+        <PricingCard.Frame {...rest}>
+          {plans && (
+            <Fragment>
+              <PricingCard.Nav />
+              <PricingCard.Plans>
+                {plans.map((plan, idx) => (
+                  <PricingCard.Plan key={plan.name} idx={idx}>
+                    <PricingCard.Icon plan={plan} />
+                    <PricingCard.Heading plan={plan} />
+                    <PricingCard.Intro plan={plan} />
+                    <PricingCard.PriceTag plan={plan} />
+                    <PricingCard.Details plan={plan} />
+                    <PricingCard.Cta plan={plan} />
+                  </PricingCard.Plan>
+                ))}
+              </PricingCard.Plans>
+            </Fragment>
+          )}
+          {cta && <PricingCard.UnifiedCta />}
+        </PricingCard.Frame>
       )}
-      {cta && <PricingCard.UnifiedCta cta={cta} />}
-      {children}
-    </PricingCard.Frame>
+    </PricingCardContext.Provider>
   )
 }
 
@@ -75,55 +93,66 @@ PricingCard.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
 }
 
-PricingCard.Frame = ({ variant, children, ...rest }) => (
-  <div
-    css={{
-      boxShadow: `0px 2px 4px rgba(46, 41, 51, 0.08), 0px 4px 8px rgba(71, 63, 79, 0.16)`,
-      backgroundColor:
-        variant === `SECONDARY` ? colors.purple[90] : colors.white,
-      display: `flex`,
-      position: `relative`,
-      width: `100%`,
-      flexDirection: `column`,
-      borderRadius: radius.large,
+PricingCard.Frame = ({ children, ...rest }) => {
+  const { variant } = PricingCard.useContext()
 
-      [`@media(min-width: ${breakpoints.tablet}px)`]: {},
-    }}
-    {...rest}
-  >
-    {children}
-  </div>
-)
+  return (
+    <div
+      css={{
+        boxShadow: `0px 2px 4px rgba(46, 41, 51, 0.08), 0px 4px 8px rgba(71, 63, 79, 0.16)`,
+        backgroundColor:
+          variant === `SECONDARY` ? colors.purple[90] : colors.white,
+        display: `flex`,
+        position: `relative`,
+        width: `100%`,
+        flexDirection: `column`,
+        borderRadius: radius.large,
 
-PricingCard.Nav = ({ plans, ...rest }) => (
-  <nav
-    css={{
-      display: `flex`,
-      width: `100%`,
-      justifyContent: `space-around`,
-      borderBottom: `1px solid ${colors.standardLine}`,
+        [`@media(min-width: ${breakpoints.tablet}px)`]: {},
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  )
+}
 
-      [`@media(min-width: ${breakpoints.tablet}px)`]: {
-        display: `none`,
-      },
-    }}
-  >
-    {plans.map((plan, idx) => (
+PricingCard.Nav = ({ ...rest }) => {
+  const { plans, makeVisibleOnMobile } = PricingCard.useContext()
+
+  return plans.length > 1 ? (
+    <nav
+      css={{
+        display: `flex`,
+        width: `100%`,
+        justifyContent: `space-around`,
+        borderBottom: `1px solid ${colors.standardLine}`,
+
+        [`@media(min-width: ${breakpoints.tablet}px)`]: {
+          display: `none`,
+        },
+      }}
+    >
+      {plans.map((plan, idx) => (
         <button
+          key={idx}
+          onClick={() => makeVisibleOnMobile(idx)}
           css={{
             background: `transparent`,
             border: `none`,
+            color: colors.grey[70],
+            cursor: `pointer`,
             fontFamily: fonts.header.join(`,`),
             fontSize: fontSizes[2],
-            color: colors.grey[70],
             padding: `${spaces.m} ${spaces.s} ${spaces.s}`,
           }}
         >
           {capitalizeString({ str: plan.name })}
         </button>
       ))}
-  </nav>
-)
+    </nav>
+  ) : null
+}
 
 PricingCard.Plans = ({ children, ...rest }) => (
   <div
@@ -140,88 +169,103 @@ PricingCard.Plans = ({ children, ...rest }) => (
   </div>
 )
 
-PricingCard.Plan = ({
-  idx,
-  visibleOnMobile,
-  children,
-  plan,
-  itemsNumber,
-  ...rest
-}) => (
-  <div
-    css={{
-      padding: `${spaces.l} ${spaces.l} 0 `,
-      display: visibleOnMobile ? `flex` : `none`,
-      flexDirection: `column`,
-      alignItems: `center`,
-      flexShrink: 0,
-      width: `100%`,
+PricingCard.Plan = ({ children, idx, ...rest }) => {
+  const { visibleOnMobile, plans } = PricingCard.useContext()
 
-      [`&:not(:first-child)`]: {
-        borderLeft: `1px solid ${colors.standardLine}`,
-      },
+  return (
+    <div
+      css={{
+        padding: `${spaces.l} ${spaces.l} 0 `,
+        display: visibleOnMobile === idx ? `flex` : `none`,
+        flexDirection: `column`,
+        alignItems: `center`,
+        flexShrink: 0,
+        width: `100%`,
 
-      [`@media(min-width: ${breakpoints.tablet}px)`]: {
-        flexShrink: 1,
-        flexBasis: `calc(100% / ${itemsNumber})`,
-      },
-    }}
-    {...rest}
-  >
-    {children}
-  </div>
-)
+        [`&:not(:first-child)`]: {
+          borderLeft: `1px solid ${colors.standardLine}`,
+        },
 
-PricingCard.Heading = ({ title, variant, color, ...rest }) => (
-  <Heading
-    css={{
-      color: color
-        ? color
-        : variant === `SECONDARY`
-        ? colors.white
-        : colors.purple[40],
-      fontSize: fontSizes[4],
-    }}
-  >
-    {capitalizeString({ str: title })}
-  </Heading>
-)
+        [`@media(min-width: ${breakpoints.tablet}px)`]: {
+          display: `flex`,
+          flexShrink: 1,
+          flexBasis: `calc(100% / ${plans.length})`,
+        },
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  )
+}
 
-PricingCard.Icon = ({ plan, ...rest }) => (
-  <div
-    css={{
-      alignItems: `center`,
-      display: `flex`,
-      height: `50px`,
-      justifyContent: `center`,
-      marginBottom: spaces.xs,
-      width: `50px`,
-    }}
-    {...rest}
-  >
-    <img src={plan.icon} alt={plan.name} css={{ margin: 0 }} />
-  </div>
-)
+PricingCard.Heading = ({ plan, ...rest }) => {
+  const { variant } = PricingCard.useContext()
+  const { name, color } = plan
 
-PricingCard.Intro = ({ html, variant, ...rest }) => (
-  <div
-    dangerouslySetInnerHTML={{ __html: html }}
-    css={{
-      textAlign: `center`,
-      fontFamily: fonts.system.join(`,`),
-      marginTop: spaces.m,
-      fontSize: fontSizes[1],
-      color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[60],
-      lineHeight: 1.4,
+  return (
+    <Heading
+      css={{
+        color: color
+          ? color
+          : variant === `SECONDARY`
+          ? colors.white
+          : colors.purple[40],
+        fontSize: fontSizes[4],
+      }}
+    >
+      {capitalizeString({ str: name })}
+    </Heading>
+  )
+}
 
-      p: {
-        margin: 0,
-      },
-    }}
-  />
-)
+PricingCard.Icon = ({ plan, ...rest }) => {
+  const { name, icon } = plan
 
-PricingCard.PriceTag = ({ children, price, interval }) => {
+  return (
+    <div
+      css={{
+        alignItems: `center`,
+        display: `flex`,
+        height: `50px`,
+        justifyContent: `center`,
+        marginBottom: spaces.xs,
+        width: `50px`,
+      }}
+      {...rest}
+    >
+      <img src={icon} alt={name} css={{ margin: 0 }} />
+    </div>
+  )
+}
+
+PricingCard.Intro = ({ plan, ...rest }) => {
+  const { variant } = PricingCard.useContext()
+  const { intro } = plan
+
+  return (
+    <div
+      dangerouslySetInnerHTML={{ __html: intro }}
+      css={{
+        textAlign: `center`,
+        fontFamily: fonts.system.join(`,`),
+        marginTop: spaces.m,
+        fontSize: fontSizes[1],
+        color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[60],
+        lineHeight: 1.4,
+
+        p: {
+          margin: 0,
+        },
+      }}
+    />
+  )
+}
+
+PricingCard.PriceTag = ({ plan, children, ...rest }) => {
+  const { interval } = PricingCard.useContext()
+  const { price } = plan
+
   if (!price) {
     return null
   }
@@ -267,9 +311,10 @@ PricingCard.PriceTag = ({ children, price, interval }) => {
   )
 }
 
-PricingCard.Details = ({ details, variant, ...rest }) => {
+PricingCard.Details = ({ plan, ...rest }) => {
+  const { variant } = PricingCard.useContext()
+  const { details } = plan
   const [tipVisible, setTipVisible] = useState(false)
-  // const detailsRef = useRef(details.map(() => createRef()))
 
   const showTip = e => {
     if (
@@ -347,12 +392,14 @@ PricingCard.Details = ({ details, variant, ...rest }) => {
   )
 }
 
-PricingCard.Cta = ({ children, cta, ...rest }) => {
+PricingCard.Cta = ({ children, plan, ...rest }) => {
+  const { cta } = plan
+
   if (!cta) {
     return null
   }
 
-  const { label, to, comment } = cta
+  const { label, to, onClick, comment } = cta
 
   return (
     <div
@@ -367,8 +414,12 @@ PricingCard.Cta = ({ children, cta, ...rest }) => {
       }}
       {...rest}
     >
-      {label && to && (
-        <Button to={to} css={{ width: `100%`, background: colors.purple[50] }}>
+      {label && (to || onClick) && (
+        <Button
+          to={to}
+          onClick={onClick}
+          css={{ width: `100%`, background: colors.purple[50] }}
+        >
           {label}
         </Button>
       )}
@@ -377,7 +428,9 @@ PricingCard.Cta = ({ children, cta, ...rest }) => {
   )
 }
 
-PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
+PricingCard.UnifiedCta = ({ children, ...rest }) => {
+  const { cta } = PricingCard.useContext()
+
   if (!cta) {
     return null
   }
@@ -417,6 +470,16 @@ PricingCard.UnifiedCta = ({ cta, children, ...rest }) => {
       {children}
     </div>
   )
+}
+
+PricingCard.useContext = () => {
+  const context = React.useContext(PricingCardContext)
+  if (!context) {
+    throw new Error(
+      `PricingCard compound components cannot be rendered outside the main component`
+    )
+  }
+  return context
 }
 
 export default PricingCard

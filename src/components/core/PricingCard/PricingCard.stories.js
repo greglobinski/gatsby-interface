@@ -29,6 +29,10 @@ const plansA = [
       { text: `10 real-time edits/day` },
       { text: `nline documentation` },
     ],
+    cta: {
+      to: `/`,
+      label: `Subscribe`,
+    },
   },
 ]
 
@@ -96,7 +100,7 @@ const plansC = [
     details: [
       { text: `Builds and Preview` },
       {
-        text: `<p>1000 real-time edits/day adsfadsf asdfadsfas</p>`,
+        text: `<p>1000 real-time edits/day</p>`,
         tip: `<p>Definition of real time edit</p>`,
       },
       { text: `Online documentation` },
