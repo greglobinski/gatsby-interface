@@ -6,6 +6,7 @@ import { addDecorator } from "@storybook/react"
 import { withA11y } from "@storybook/addon-a11y"
 import { storiesOf } from "@storybook/react"
 import { boolean, radios } from "@storybook/addon-knobs"
+import colors from "../../../theme/colors"
 
 import { StoryUtils } from "../../../utils/storybook"
 import PricingCard from "./PricingCard"
@@ -58,6 +59,7 @@ const plansC = [
   {
     name: `Free`,
     icon: freePlanPic,
+    color: colors.orange[70],
     intro: `For personal projects and single-purpose sites`,
     price: {
       MONTHLY: 0,
@@ -75,6 +77,7 @@ const plansC = [
   {
     name: `Professional`,
     icon: professionalPlanPic,
+    color: colors.blue[70],
     intro: `For personal projects and single-purpose sites`,
     price: {
       MONTHLY: 42,
@@ -92,6 +95,7 @@ const plansC = [
   {
     name: `Bussines`,
     icon: businessPlanPic,
+    color: colors.purple[60],
     intro: `For personal projects and single-purpose sites`,
     price: {
       MONTHLY: 722,

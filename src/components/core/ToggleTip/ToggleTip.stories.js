@@ -23,7 +23,7 @@ storiesOf(`core/ToggleTip`, module)
         <p>
           This is a text with ToggleTip{` `}
           <ToggleTip
-            tip="Toggletips are like tooltips in the sense</a> that they can provide
+            tip="Toggletips are like tooltips in the sense that they can provide
             supplementary or clarifying information."
           />
         </p>

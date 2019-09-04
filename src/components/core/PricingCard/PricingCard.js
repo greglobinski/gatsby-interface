@@ -7,6 +7,7 @@ import React, {
   createContext,
   useMemo,
   useCallback,
+  useEffect,
 } from "react"
 import PropTypes from "prop-types"
 
@@ -45,6 +46,10 @@ function PricingCard({
     visibleOnMobile,
   })
 
+  useEffect(() => {
+    setState({ ...state, interval })
+  }, [interval])
+
   const makeVisibleOnMobile = useCallback(
     item =>
       setState(oldState => {
@@ -56,7 +61,9 @@ function PricingCard({
     []
   )
 
-  const value = useMemo(() => {return { ...state, makeVisibleOnMobile }}, [state])
+  const value = useMemo(() => {
+    return { ...state, makeVisibleOnMobile }
+  }, [state])
 
   return (
     <PricingCardContext.Provider value={value}>
@@ -118,7 +125,11 @@ PricingCard.Frame = ({ children, ...rest }) => {
 }
 
 PricingCard.Nav = ({ ...rest }) => {
-  const { plans, makeVisibleOnMobile } = PricingCard.useContext()
+  const {
+    plans,
+    visibleOnMobile,
+    makeVisibleOnMobile,
+  } = PricingCard.useContext()
 
   return plans.length > 1 ? (
     <nav
@@ -140,11 +151,22 @@ PricingCard.Nav = ({ ...rest }) => {
           css={{
             background: `transparent`,
             border: `none`,
-            color: colors.grey[70],
+            color: visibleOnMobile === idx ? plan.color : colors.grey[70],
             cursor: `pointer`,
             fontFamily: fonts.header.join(`,`),
             fontSize: fontSizes[2],
             padding: `${spaces.m} ${spaces.s} ${spaces.s}`,
+            position: `relative`,
+
+            ":after": {
+              background: plan.color,
+              content: visibleOnMobile === idx && `""`,
+              width: `100%`,
+              height: `2px`,
+              position: `absolute`,
+              bottom: 0,
+              left: 0,
+            },
           }}
         >
           {capitalizeString({ str: plan.name })}
