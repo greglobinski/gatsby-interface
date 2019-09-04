@@ -17,11 +17,11 @@ import { fontFamilies } from "../src/utils/presets"
 import "@storybook/addon-console"
 import "storybook-chromatic"
 
-import "../assets/fonts/futura-pt/Webfonts/futurapt_book_macroman/stylesheet.css"
-import "../assets/fonts/futura-pt/Webfonts/futurapt_bookitalic_macroman/stylesheet.css"
-import "../assets/fonts/futura-pt/Webfonts/futurapt_demi_macroman/stylesheet.css"
-import "../assets/fonts/futura-pt/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
-import "../assets/fonts/futura-pt/Webfonts/futurapt_bold/MyFontsWebfontsKit.css"
+// import "../assets/fonts/futura-pt/Webfonts/futurapt_book_macroman/stylesheet.css"
+// import "../assets/fonts/futura-pt/Webfonts/futurapt_bookitalic_macroman/stylesheet.css"
+// import "../assets/fonts/futura-pt/Webfonts/futurapt_demi_macroman/stylesheet.css"
+// import "../assets/fonts/futura-pt/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
+// import "../assets/fonts/futura-pt/Webfonts/futurapt_bold/MyFontsWebfontsKit.css"
 
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
@@ -99,7 +99,11 @@ addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 addDecorator(withA11y)
 
 //const req = require.context("../__stories__", true, /\.stories\.js$/)
-const req = require.context("../src/components/../", true, /\.stories\.js$/)
+const req = require.context(
+  "../src/components/../",
+  true,
+  /\.stories\.(js|tsx)$/
+)
 
 require("../__stories__/Welcome.stories")
 

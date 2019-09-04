@@ -44,6 +44,9 @@ const Button = props => {
 }
 
 Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  variant: PropTypes.oneOf(BUTTON_VARIANTS),
   size: PropTypes.oneOf([`L`, `M`, `XL`, `S`]),
 }
 

@@ -62,6 +62,8 @@ export { Badge } from "./components/core/Badge"
 
 export { Breadcrumb } from "./components/Breadcrumb"
 
+export * from "./components/CopyButton"
+
 export { colors, palette } from "./utils/presets/colors"
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
