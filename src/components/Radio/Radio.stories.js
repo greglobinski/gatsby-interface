@@ -18,16 +18,16 @@ function ControlledRadio({ name = `radioExample`, options = [] }) {
   return (
     <div>
       {options.map(({ value: optionValue, label }) => (
-          <Radio
-            key={optionValue}
-            label={label}
-            selectionStyle={selectionStyle}
-            fieldName={name}
-            optionValue={optionValue}
-            value={value}
-            onChange={e => setValue(e.target.value)}
-          />
-        ))}
+        <Radio
+          key={optionValue}
+          label={label}
+          selectionStyle={selectionStyle}
+          fieldName={name}
+          optionValue={optionValue}
+          value={value}
+          onChange={e => setValue(e.target.value)}
+        />
+      ))}
     </div>
   )
 }

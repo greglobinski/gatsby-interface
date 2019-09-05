@@ -13,24 +13,27 @@ const baseStyle = ({ tone }) => {
     fontFamily: fonts.header.join(`,`),
     margin: `0`,
     color: tones[tone].superDark,
+    lineHeight: 1.125,
   }
 }
 
-const variantStyles = ({ tone }) => {return {
-  PRIMARY: {
-    fontWeight: `bold`,
-  },
+const variantStyles = ({ tone }) => {
+  return {
+    PRIMARY: {
+      fontWeight: `bold`,
+    },
 
-  EMPHASIZED: {
-    fontWeight: 800,
-  },
+    EMPHASIZED: {
+      fontWeight: 800,
+    },
 
-  LIGHT: {
-    fontWeight: 100,
-    textTransform: `uppercase`,
-    color: tones[tone].dark,
-  },
-}}
+    LIGHT: {
+      fontWeight: 100,
+      textTransform: `uppercase`,
+      color: tones[tone].dark,
+    },
+  }
+}
 
 export const styles = {
   baseStyle,
