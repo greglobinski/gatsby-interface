@@ -112,6 +112,53 @@ const plansC = [
   },
 ]
 
+const plansD = [
+  {
+    name: `Free`,
+    icon: freePlanPic,
+    color: colors.orange[70],
+    intro: `For personal projects and single-purpose sites`,
+    price: {
+      MONTHLY: 0,
+      YEARLY: 0,
+    },
+    details: [
+      { text: `Builds and Preview` },
+      {
+        text: `10 real-time edits/day`,
+        tip: `<p>Definition of real time edit</p>`,
+      },
+      { text: `Online documentation` },
+    ],
+    cta: {
+      to: `/`,
+      label: `Pick`,
+    },
+  },
+  {
+    name: `Professional`,
+    icon: professionalPlanPic,
+    color: colors.blue[70],
+    intro: `For personal projects and single-purpose sites`,
+    price: {
+      MONTHLY: 42,
+      YEARLY: 0,
+    },
+    details: [
+      { text: `Builds and Preview` },
+      {
+        text: `100 real-time edits/day`,
+        tip: `<p>Definition of real time edit</p>`,
+      },
+      { text: `Online documentation` },
+    ],
+    cta: {
+      to: `/`,
+      label: `Pick`,
+    },
+  },
+]
+
 storiesOf(`core/PricingCard`, module)
   .addParameters({
     options: {
@@ -160,6 +207,19 @@ storiesOf(`core/PricingCard`, module)
             comment: `No commitment, no credit card required. All you need is a Github account.`,
           }}
         />
+      </StoryUtils.Container>
+    </div>
+  ))
+  .add(`individaul multiplan card`, () => (
+    <div
+      css={{
+        width: `880px`,
+        maxWidth: `94%`,
+        margin: `0 auto`,
+      }}
+    >
+      <StoryUtils.Container>
+        <PricingCard selectedPlan="Free" plans={plansD} />
       </StoryUtils.Container>
     </div>
   ))

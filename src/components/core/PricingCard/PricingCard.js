@@ -11,8 +11,6 @@ import React, {
 } from "react"
 import PropTypes from "prop-types"
 
-import { MdInfo, MdAirlineSeatLegroomExtra } from "react-icons/md"
-
 import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
 import fonts from "../../../theme/fonts"
@@ -32,6 +30,7 @@ const PricingCardContext = createContext()
 function PricingCard({
   children,
   plans,
+  selectedPlan,
   interval = `MONTHLY`,
   cta,
   variant = `PRIMARY`,
@@ -40,6 +39,7 @@ function PricingCard({
 }) {
   const [state, setState] = useState({
     plans,
+    selectedPlan,
     interval,
     cta,
     variant,
@@ -47,8 +47,13 @@ function PricingCard({
   })
 
   useEffect(() => {
-    setState({ ...state, interval })
-  }, [interval])
+    if (interval !== state.interval) {
+      setState({ ...state, interval })
+    }
+    if (selectedPlan !== state.selectedPlan) {
+      setState({ ...state, selectedPlan })
+    }
+  }, [interval, selectedPlan])
 
   const makeVisibleOnMobile = useCallback(
     item =>
@@ -170,7 +175,7 @@ PricingCard.Nav = ({ ...rest }) => {
             },
           }}
         >
-          {capitalizeString({ str: plan.name })}
+          {plan.name && capitalizeString({ str: plan.name })}
         </button>
       ))}
     </nav>
@@ -226,6 +231,9 @@ PricingCard.Heading = ({ plan, ...rest }) => {
   const { variant } = PricingCard.useContext()
   const { name, color } = plan
 
+  if (!name) {
+    return null
+  }
   return (
     <Heading
       css={{
@@ -244,6 +252,10 @@ PricingCard.Heading = ({ plan, ...rest }) => {
 
 PricingCard.Icon = ({ plan, ...rest }) => {
   const { name, icon } = plan
+
+  if (!icon) {
+    return null
+  }
 
   return (
     <div
@@ -265,6 +277,10 @@ PricingCard.Icon = ({ plan, ...rest }) => {
 PricingCard.Intro = ({ plan, ...rest }) => {
   const { variant } = PricingCard.useContext()
   const { intro } = plan
+
+  if (!intro) {
+    return null
+  }
 
   return (
     <div
@@ -338,6 +354,10 @@ PricingCard.Details = ({ plan, ...rest }) => {
   const { variant } = PricingCard.useContext()
   const { details } = plan
   const [tipVisible, setTipVisible] = useState(false)
+
+  if (!details) {
+    return null
+  }
 
   const showTip = e => {
     if (
@@ -416,7 +436,8 @@ PricingCard.Details = ({ plan, ...rest }) => {
 }
 
 PricingCard.Cta = ({ children, plan, ...rest }) => {
-  const { cta } = plan
+  const { selectedPlan } = PricingCard.useContext()
+  const { cta, color, name } = plan
 
   if (!cta) {
     return null
@@ -424,7 +445,7 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
 
   const { label, to, onClick, comment } = cta
 
-  return (
+  return selectedPlan !== name ? (
     <div
       css={{
         width: `100%`,
@@ -435,18 +456,53 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
         flexGrow: 1,
         paddingBottom: spaces[`4xl`],
       }}
-      {...rest}
     >
       {label && (to || onClick) && (
         <Button
           to={to}
-          onClick={onClick}
-          css={{ width: `100%`, background: colors.purple[50] }}
+          onClick={() => onClick(name)}
+          css={{
+            width: `100%`,
+            background: color ? colors.white : colors.purple[50],
+            color: color ? color : colors.white,
+            borderColor: color ? color : colors.purple[50],
+            ":hover": {
+              color: colors.white,
+              background: color ? color : colors.purple[50],
+              borderColor: color ? color : colors.purple[50],
+            },
+          }}
         >
           {label}
         </Button>
       )}
       {children}
+    </div>
+  ) : (
+    <div
+      css={{
+        width: `100%`,
+        display: `flex`,
+        alignItems: `flex-end`,
+        justifyContent: `center`,
+        marginTop: spaces[`2xl`],
+        flexGrow: 1,
+        paddingBottom: spaces[`4xl`],
+      }}
+    >
+      <div
+        css={{
+          width: `3rem`,
+          height: `3rem`,
+          display: `flex`,
+          alignItems: `center`,
+          justifyContent: `center`,
+          background: colors.green[50],
+          borderRadius: `50%`,
+        }}
+      >
+        <CheckIcon css={{ fill: colors.white, width: `70%`, height: `70%` }} />
+      </div>
     </div>
   )
 }
