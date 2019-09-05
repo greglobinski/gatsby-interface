@@ -1,6 +1,6 @@
 {
   "name": "gatsby-interface",
-  "version": "0.0.33",
+  "version": "0.0.37",
   "description": "Component library for Gatsby projects",
   "source": "src/index.js",
   "main": "dist/index.js",
@@ -22,6 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "filestack-react": "^3.1.0",
     "@reach/alert": "^0.1.5",
     "gatsby-design-tokens": "^1.0.0"
   },

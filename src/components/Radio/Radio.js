@@ -72,11 +72,6 @@ const Label = styled(`label`)`
       left: calc(${spaces.m} + 7px);
     }
   }
-
-  .selected &.emphasized {
-    padding: ${spaces.m} ${spaces.m} ${spaces.m}
-      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
-  }
 `
 
 const RadioInput = styled(`input`)`
@@ -112,7 +107,7 @@ const StandardContainer = styled(`div`)`
 `
 
 const ColourfulContainer = styled(StandardContainer)`
-  margin: 0;
+  margin: ${spaces[`2xs`]} 0;
   position: relative;
 
   :before,
@@ -148,8 +143,6 @@ const ColourfulContainer = styled(StandardContainer)`
   }
 
   &.selected {
-    margin: ${spaces[`2xs`]} 0;
-
     :before {
       opacity: 1;
       background-image: linear-gradient(
