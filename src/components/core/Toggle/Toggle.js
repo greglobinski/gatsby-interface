@@ -50,10 +50,10 @@ function Toggle({
     setState({ ...state, fieldValue, checked: fieldValue === true })
   }, [fieldValue])
 
-  const value = useMemo(() => state, [state])
+  const value = useMemo(() => state, [state, fieldValue])
 
   return (
-    <ToggleContext.Provider value={value}>
+    <ToggleContext.Provider value={state}>
       {children ? (
         children
       ) : (

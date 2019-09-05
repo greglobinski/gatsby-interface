@@ -47,13 +47,12 @@ function PricingCard({
   })
 
   useEffect(() => {
-    if (interval !== state.interval) {
-      setState({ ...state, interval })
-    }
-    if (selectedPlan !== state.selectedPlan) {
-      setState({ ...state, selectedPlan })
-    }
-  }, [interval, selectedPlan])
+    setState({ ...state, interval })
+  }, [interval])
+
+  useEffect(() => {
+    setState({ ...state, selectedPlan })
+  }, [selectedPlan])
 
   const makeVisibleOnMobile = useCallback(
     item =>

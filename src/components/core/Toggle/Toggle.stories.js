@@ -98,12 +98,7 @@ storiesOf(`core/Toggle`, module)
               label="Yearly payment"
               onChange={handleChange}
             />
-            <Toggle
-              fieldName="automaticalRenew"
-              fieldValue={values.automaticalRenew}
-              label="Automaticaly renew"
-              onChange={handleChange}
-            />
+
             <Debug />
           </form>
         )}
