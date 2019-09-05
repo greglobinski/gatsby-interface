@@ -23,8 +23,10 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
 
   const tipRef = createRef()
 
-  useEventListener(`click`, checkClick)
-  useEventListener(`keydown`, checkKeydown)
+  if (typeof window !== `undefined`) {
+    useEventListener(`click`, checkClick)
+    useEventListener(`keydown`, checkKeydown)
+  }
 
   function checkClick(e) {
     if (visible && e.target !== tipRef.current) {
