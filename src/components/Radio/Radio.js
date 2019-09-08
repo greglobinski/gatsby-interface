@@ -76,11 +76,13 @@ const Label = styled(`label`)`
 
 const RadioInput = styled(`input`)`
   cursor: pointer;
+  margin: 0;
+  padding: 0;
   left: 0;
-  height: 20px;
+  height: 100%;
   opacity: 0;
   position: absolute;
-  width: 20px;
+  width: ${INPUT_INNER_DIA};
   z-index: 2;
 
   &:checked + label::before {
