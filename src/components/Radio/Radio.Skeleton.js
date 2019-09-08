@@ -9,7 +9,7 @@ const SkeletonStyledInput = styled(`input`)``
 const SkeletonStyledLabel = styled(`label`)``
 
 export const radioPropTypes = {
-  label: PropTypes.string,
+  label: PropTypes.node,
   htmlLabel: PropTypes.any,
   fieldName: PropTypes.string.isRequired,
   id: PropTypes.string,
@@ -70,8 +70,9 @@ export function RadioSkeleton({
         selectionStyle={selectionStyle}
         className={`${selectionStyle}`}
         htmlFor={id}
-        dangerouslySetInnerHTML={{ __html: label }}
-      />
+      >
+        {label}
+      </StyledLabel>
       {children}
     </StyledContainer>
   )
