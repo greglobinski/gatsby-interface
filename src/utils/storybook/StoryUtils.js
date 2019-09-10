@@ -7,25 +7,26 @@ import { hidden } from "ansi-colors"
 
 const StoryUtils = {}
 
-StoryUtils.Stack = ({ children, width }) => (
+StoryUtils.Stack = ({ children, ...rest }) => (
   <div
     css={{
       display: `grid`,
       justifyItems: `start`,
       gridGap: `2rem`,
-      width: width,
     }}
+    {...rest}
   >
     {children}
   </div>
 )
 
-StoryUtils.StackItem = ({ children, width }) => (
+StoryUtils.StackItem = ({ children, ...rest }) => (
   <div
     css={{
       alignItems: `center`,
       display: `flex`,
     }}
+    {...rest}
   >
     {children}
   </div>

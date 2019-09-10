@@ -42,14 +42,6 @@ const viewports = {
   },
 }
 
-addParameters({
-  options: {
-    addonPanelInRight: true,
-  },
-  readme: {},
-  viewport: { viewports: viewports },
-})
-
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
 global.__PATH_PREFIX__ = ""
 
@@ -97,6 +89,16 @@ addDecorator(withGlobal)
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addDecorator(withA11y)
+
+addDecorator(Story => <Story />)
+
+addParameters({
+  options: {
+    addonPanelInRight: true,
+  },
+  readme: {},
+  viewport: { viewports: viewports },
+})
 
 //const req = require.context("../__stories__", true, /\.stories\.js$/)
 const req = require.context(

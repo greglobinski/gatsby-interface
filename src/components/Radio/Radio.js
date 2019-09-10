@@ -72,20 +72,17 @@ const Label = styled(`label`)`
       left: calc(${spaces.m} + 7px);
     }
   }
-
-  .selected &.emphasized {
-    padding: ${spaces.m} ${spaces.m} ${spaces.m}
-      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
-  }
 `
 
 const RadioInput = styled(`input`)`
   cursor: pointer;
+  margin: 0;
+  padding: 0;
   left: 0;
-  height: 20px;
+  height: 100%;
   opacity: 0;
   position: absolute;
-  width: 20px;
+  width: ${INPUT_INNER_DIA};
   z-index: 2;
 
   &:checked + label::before {

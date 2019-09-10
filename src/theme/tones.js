@@ -13,8 +13,8 @@ const tones = {
     superLight: colors.green[5],
     light: colors.green[20],
     medium: colors.green[50],
-    dark: colors.green[80],
-    darker: colors.green[90],
+    dark: colors.green[60],
+    darker: colors.green[70],
     superDark: colors.green[90],
   },
   DANGER: {

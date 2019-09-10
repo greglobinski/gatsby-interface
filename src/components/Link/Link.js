@@ -5,7 +5,15 @@ import { Link as GatsbyLink } from "gatsby"
 
 import colors from "../../theme/colors"
 
-const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
+const Link = ({
+  children,
+  href,
+  target,
+  to,
+  customCss,
+  variant = `DEFAULT`,
+  ...rest
+}) => {
   const baseStyles = {
     alignItems: `center`,
     color: colors.purple[60],
@@ -37,7 +45,9 @@ const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
       css={{
         ...baseStyles,
         ...styles[variant],
+        ...customCss,
       }}
+      {...rest}
     >
       {children}
     </a>
@@ -47,7 +57,9 @@ const Link = ({ children, href, target, to, variant = `DEFAULT` }) => {
       css={{
         ...baseStyles,
         ...styles[variant],
+        ...customCss,
       }}
+      {...rest}
     >
       {children}
     </GatsbyLink>
