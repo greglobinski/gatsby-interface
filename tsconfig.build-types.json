@@ -4,5 +4,10 @@
     "allowJs": false,
     "declaration": true
   },
-  "exclude": ["./src/index.ts", "node_modules", "./src/**/*.stories.*"]
+  "exclude": [
+    "./src/index.ts",
+    "node_modules",
+    "./src/**/*.stories.*",
+    "./src/**/__tests__/*"
+  ]
 }

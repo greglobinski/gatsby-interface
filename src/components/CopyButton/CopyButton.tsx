@@ -40,7 +40,7 @@ function CopyButton({
   ...props
 }: CopyButtonProps) {
   const timeoutRef = React.useRef<number | undefined>(undefined)
-  const [copied, setCopied] = React.useState(false)
+  const [copied, setCopied] = React.useState<boolean>(false)
 
   const copyOnClick: React.MouseEventHandler<HTMLButtonElement> = async e => {
     if (onClick) {
