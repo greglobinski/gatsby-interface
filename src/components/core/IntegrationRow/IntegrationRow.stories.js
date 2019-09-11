@@ -1,12 +1,15 @@
 import React from "react"
 
 import { storiesOf } from "@storybook/react"
+import { radios } from "@storybook/addon-knobs"
 
 import { IntegrationRow } from "./"
 import { StoryUtils } from "../../../utils/storybook"
 import NetlifyLogo from "../../../assets/NetlifyLogo"
 import contentfulLogo from "../../../assets/contentfulLogo.png"
 import netlifyLogo from "../../../assets/netlifyLogo.svg"
+
+const DETAILS_VARIANT = [`PRIMARY`, `SECONDARY`]
 
 storiesOf(`core/IntegrationRow`, module)
   .add(`default usage`, () => (
@@ -25,6 +28,11 @@ storiesOf(`core/IntegrationRow`, module)
           </IntegrationRow.Logo>
           <IntegrationRow.EditButton />
           <IntegrationRow.Content
+            detailsVariant={radios(
+              `details variant`,
+              DETAILS_VARIANT,
+              `PRIMARY`
+            )}
             details={[
               {
                 name: `space name`,
@@ -56,6 +64,7 @@ storiesOf(`core/IntegrationRow`, module)
           logoUrl={netlifyLogo}
           button={{ onClick: () => alert(`onClickEdit()`) }}
           isConnected={true}
+          detailsVariant={radios(`details variant`, DETAILS_VARIANT, `PRIMARY`)}
           details={[
             {
               name: `site`,
