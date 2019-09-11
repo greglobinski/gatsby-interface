@@ -70,6 +70,8 @@ export { Breadcrumb } from "./components/Breadcrumb"
 
 export { Switch } from "./components/core/Switch"
 
+export { Avatar } from "./components/core/Avatar"
+
 export { colors, palette } from "./utils/presets/colors"
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
