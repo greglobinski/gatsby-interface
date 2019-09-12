@@ -30,7 +30,7 @@ const Label = styled(`label`)`
   :after,
   :before {
     border-radius: 50%;
-    qcontent: "";
+    content: "";
     flex-grow: 0;
     flex-shrink: 0;
     left: 0;
