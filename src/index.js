@@ -72,6 +72,12 @@ export { Switch } from "./components/core/Switch"
 
 export { Avatar } from "./components/core/Avatar"
 
+export { Person } from "./components/core/Person"
+
+export { CtaBlock } from "./components/core/CtaBlock"
+
+export { Carousel } from "./components/core/Carousel"
+
 export { colors, palette } from "./utils/presets/colors"
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
