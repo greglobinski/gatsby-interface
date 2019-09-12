@@ -8,11 +8,10 @@ import { MdArrowForward } from "react-icons/md"
 import { boolean, radios } from "@storybook/addon-knobs"
 
 import { StoryUtils } from "../../../utils/storybook"
-import Person from "./Person"
-import person from "./assets/20190908_164140.jpg"
+import CtaBlock from "./CtaBlock"
 import README from "./README.md"
 
-storiesOf(`core/Person`, module)
+storiesOf(`core/CtaBlock`, module)
   .addParameters({
     options: {
       showPanel: true,
@@ -24,10 +23,13 @@ storiesOf(`core/Person`, module)
   .add(`variants`, () => (
     <StoryUtils.Container>
       <StoryUtils.Stack>
-        <Person
-          photo={{ src: person }}
-          name="Greg Lobinski"
-          position="front-end developer at Gatsby"
+        <CtaBlock
+          title="This is a CtaBlock component"
+          cta={{
+            label: `Click me!`,
+            to: `/`,
+          }}
+          note="And this is a CtaBlock' component's note"
         />
       </StoryUtils.Stack>
     </StoryUtils.Container>
