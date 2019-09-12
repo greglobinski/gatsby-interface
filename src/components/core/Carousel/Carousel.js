@@ -145,12 +145,30 @@ Carousel.Nav = ({ children }) => {
 }
 
 Carousel.Button = ({ children, direction = `NEXT` }) => {
+  const { numberOfItems, activeIndex } = Carousel.useContext()
   const { nextItem, previousItem } = Carousel.useContext()
   const onClick = direction === `NEXT` ? nextItem : previousItem
   const icon = direction === `NEXT` ? <MdChevronRight /> : <MdChevronLeft />
 
+  function disableButton({ direction, numberOfItems, activeIndex }) {
+    if (direction === `NEXT` && activeIndex === numberOfItems - 1) {
+      return true
+    }
+
+    if (direction === `PREV` && activeIndex === 0) {
+      return true
+    }
+
+    return false
+  }
+
   return (
-    <Button variant="GHOST" size="XL" onClick={onClick}>
+    <Button
+      variant="GHOST"
+      size="XL"
+      onClick={onClick}
+      disabled={disableButton({ direction, activeIndex, numberOfItems })}
+    >
       {children ? children : icon}
     </Button>
   )
