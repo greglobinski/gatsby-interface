@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import deepmerge from "deepmerge"
 import Img from "gatsby-image"
 
-import { palette } from "../../../utils/presets"
+import colors from "../../../theme/colors"
 
 const SIZES = {
   S: {
@@ -32,7 +32,7 @@ function Avatar({
     <div
       css={deepmerge(
         {
-          background: palette.grey[100],
+          background: colors.grey[100],
           borderRadius: `50%`,
           boxShadow: ` 0 0 5px 0 rgba(0, 0, 0, 0.3) inset;`,
           overflow: `hidden`,
@@ -58,13 +58,6 @@ function Avatar({
   )
 }
 
-Avatar.Image = ({ src, fixed, alt, ...rest }) =>
-  fixed ? (
-    <Img fixed={fixed} {...rest} />
-  ) : (
-    <img src={src} alt={alt} {...rest} />
-  )
-
 Avatar.propTypes = {
   size: PropTypes.oneOf(Object.keys(SIZES)),
   src: PropTypes.string,
@@ -72,5 +65,12 @@ Avatar.propTypes = {
   alt: PropTypes.string,
   customCss: PropTypes.object,
 }
+
+Avatar.Image = ({ src, fixed, alt, ...rest }) =>
+  fixed ? (
+    <Img fixed={fixed} {...rest} />
+  ) : (
+    <img src={src} alt={alt} {...rest} />
+  )
 
 export default Avatar
