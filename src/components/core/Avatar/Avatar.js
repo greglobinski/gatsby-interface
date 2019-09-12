@@ -32,7 +32,7 @@ function Avatar({
     <div
       css={deepmerge(
         {
-          background: colors.grey[100],
+          background: colors.grey[10],
           borderRadius: `50%`,
           boxShadow: ` 0 0 5px 0 rgba(0, 0, 0, 0.3) inset;`,
           overflow: `hidden`,
