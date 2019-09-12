@@ -21,7 +21,7 @@ const SIZES = {
 
 function Avatar({
   children,
-  size = `M`,
+  size = `S`,
   src,
   fixed,
   alt = ``,
