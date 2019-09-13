@@ -82,6 +82,8 @@ export { Main } from "./components/core/Main"
 
 export { MainHeader } from "./components/core/MainHeader"
 
+export { DecoratedBlock } from "./components/core/DecoratedBlock"
+
 export { colors, palette } from "./utils/presets/colors"
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
