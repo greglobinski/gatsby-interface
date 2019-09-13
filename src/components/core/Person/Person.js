@@ -42,8 +42,11 @@ function Person({ children, photo, name, position, customCss = {}, ...rest }) {
   )
 }
 
-Avatar.propTypes = {
+Person.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
+  name: PropTypes.string,
+  photo: PropTypes.object,
+  position: PropTypes.string,
   customCss: PropTypes.object,
 }
 
@@ -73,7 +76,7 @@ Person.Details = ({ children, customCss = {}, ...rest }) => (
         display: `flex`,
         color: colors.grey[60],
         flexDirection: `column`,
-        flexShrink: 0,
+        flexShrink: 1,
         fontFamily: fonts.header.join(`,`),
         fontSize: fontSizes[3],
         lineHeight: 1.25,
@@ -93,6 +96,8 @@ Person.Attr = ({ children, html, customCss = {}, ...rest }) => {
   const style = deepmerge(
     {
       fontSize: fontSizes[2],
+      lineHeight: 1,
+      marginTop: spaces[`2xs`],
 
       p: {
         margin: 0,
