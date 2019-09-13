@@ -52,6 +52,7 @@ StoryUtils.Content = ({
   hint = `content placeholder`,
   width = `100%`,
   height = `6rem`,
+  ...rest
 }) => (
   <div
     css={{
@@ -63,6 +64,7 @@ StoryUtils.Content = ({
       justifyContent: `center`,
       width: width,
     }}
+    {...rest}
   >
     {hint}
   </div>

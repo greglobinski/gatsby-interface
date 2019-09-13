@@ -8,22 +8,13 @@ import { action } from "@storybook/addon-actions"
 import { boolean, radios } from "@storybook/addon-knobs"
 
 import { StoryUtils } from "../../../utils/storybook"
-import PageHeader from "./PageHeader"
+import MainHeader from "./MainHeader"
 import README from "./README.md"
 import OrnamentA from "./assets/OrnamentA"
 import OrnamentB from "./assets/OrnamentB"
 import { breakpoints } from "../../../utils/presets"
 
-storiesOf(`core/Page`, module).addParameters({
-  options: {
-    showPanel: true,
-  },
-  readme: {
-    sidebar: README,
-  },
-})
-
-storiesOf(`core/Page/PageHeader`, module)
+storiesOf(`core/MainHeader`, module)
   .addParameters({
     options: {
       showPanel: true,
@@ -34,12 +25,12 @@ storiesOf(`core/Page/PageHeader`, module)
   })
   .add(`a heading alone`, () => (
     <StoryUtils.Container>
-      <PageHeader heading="Celery quandong swiss chard chicory earthnut pea potato" />
+      <MainHeader heading="Celery quandong swiss chard chicory earthnut pea potato" />
     </StoryUtils.Container>
   ))
   .add(`with a subheading`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
       />
@@ -47,7 +38,7 @@ storiesOf(`core/Page/PageHeader`, module)
   ))
   .add(`with a lede`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
         lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
@@ -56,7 +47,7 @@ storiesOf(`core/Page/PageHeader`, module)
   ))
   .add(`with an action`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
         lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
@@ -66,20 +57,20 @@ storiesOf(`core/Page/PageHeader`, module)
   ))
   .add(`with two actions`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
         lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
         actions={[
           { label: `Click me`, to: `/` },
-          { label: `Me to!`, to: `/`, variant: `GHOST` },
+          { label: `Me too!`, to: `/`, variant: `GHOST` },
         ]}
       />
     </StoryUtils.Container>
   ))
   .add(`with a note`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
         lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
@@ -90,7 +81,7 @@ storiesOf(`core/Page/PageHeader`, module)
   ))
   .add(`with an ornament`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
         lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
@@ -117,7 +108,7 @@ storiesOf(`core/Page/PageHeader`, module)
   ))
   .add(`with more ornaments`, () => (
     <StoryUtils.Container>
-      <PageHeader
+      <MainHeader
         subheading="Veggies es bonus vobis"
         heading="Celery quandong swiss chard chicory earthnut pea potato."
         lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "

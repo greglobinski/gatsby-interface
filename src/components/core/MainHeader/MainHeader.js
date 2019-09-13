@@ -10,7 +10,7 @@ import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
 import { breakpoints, spaces } from "../../../utils/presets"
 
-import PageContent from "./PageContent"
+import { Main } from "../Main"
 
 function PageHeader({
   children,
@@ -23,7 +23,7 @@ function PageHeader({
   ...rest
 }) {
   return (
-    <PageContent.Positioner
+    <Main.Positioner
       customCss={{
         padding: `${spaces[`3xl`]} 0 ${spaces[`2xl`]}`,
       }}
@@ -37,7 +37,7 @@ function PageHeader({
       {actions && <PageHeader.Actions actions={actions} />}
       {note && <PageHeader.Note html={note} />}
       {children}
-    </PageContent.Positioner>
+    </Main.Positioner>
   )
 }
 

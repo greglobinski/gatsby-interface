@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import React from "react"
+import PropTypes from "prop-types"
 import deepmerge from "deepmerge"
 
 import fontSizes from "../../../theme/fontSizes"
 import { breakpoints, spaces } from "../../../utils/presets"
 
-function PageContent({ children, customCss = {}, ...rest }) {
+function Main({ children, customCss = {}, ...rest }) {
   return (
     <main css={deepmerge({}, customCss)} {...rest}>
       {children}
@@ -14,7 +15,12 @@ function PageContent({ children, customCss = {}, ...rest }) {
   )
 }
 
-PageContent.Positioner = ({ children, customCss = {}, ...rest }) => (
+Main.Positioner = ({
+  children,
+  variant = `STANDARD`,
+  customCss = {},
+  ...rest
+}) => (
   <div
     css={deepmerge(
       {
@@ -31,7 +37,7 @@ PageContent.Positioner = ({ children, customCss = {}, ...rest }) => (
         maxWidth: `90rem`,
         padding: `0 ${spaces.xl}`,
         [`@media (min-width: ${breakpoints.phablet}px)`]: {
-          width: `90%`,
+          width: `${variant === `BROADEN` ? `98%` : `90%`}`,
         },
       }}
     >
@@ -40,4 +46,8 @@ PageContent.Positioner = ({ children, customCss = {}, ...rest }) => (
   </div>
 )
 
-export default PageContent
+Main.Positioner.propTypes = {
+  variant: PropTypes.oneOf([`STANDARD`, `BROADEN`]),
+}
+
+export default Main
