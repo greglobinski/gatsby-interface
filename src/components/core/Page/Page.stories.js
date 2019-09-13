@@ -1,0 +1,157 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import React from "react"
+
+import { MdArrowForward } from "react-icons/md"
+import { storiesOf } from "@storybook/react"
+import { action } from "@storybook/addon-actions"
+import { boolean, radios } from "@storybook/addon-knobs"
+
+import { StoryUtils } from "../../../utils/storybook"
+import PageHeader from "./PageHeader"
+import README from "./README.md"
+import OrnamentA from "./assets/OrnamentA"
+import OrnamentB from "./assets/OrnamentB"
+import { breakpoints } from "../../../utils/presets"
+
+storiesOf(`core/Page`, module).addParameters({
+  options: {
+    showPanel: true,
+  },
+  readme: {
+    sidebar: README,
+  },
+})
+
+storiesOf(`core/Page/PageHeader`, module)
+  .addParameters({
+    options: {
+      showPanel: true,
+    },
+    readme: {
+      sidebar: README,
+    },
+  })
+  .add(`a heading alone`, () => (
+    <StoryUtils.Container>
+      <PageHeader heading="Celery quandong swiss chard chicory earthnut pea potato" />
+    </StoryUtils.Container>
+  ))
+  .add(`with a subheading`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+      />
+    </StoryUtils.Container>
+  ))
+  .add(`with a lede`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+        lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
+      />
+    </StoryUtils.Container>
+  ))
+  .add(`with an action`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+        lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
+        actions={[{ label: `Click me`, to: `/`, icon: MdArrowForward }]}
+      />
+    </StoryUtils.Container>
+  ))
+  .add(`with two actions`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+        lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
+        actions={[
+          { label: `Click me`, to: `/` },
+          { label: `Me to!`, to: `/`, variant: `GHOST` },
+        ]}
+      />
+    </StoryUtils.Container>
+  ))
+  .add(`with a note`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+        lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
+        actions={[{ label: `Click me`, to: `/`, icon: MdArrowForward }]}
+        note="Sea lettuce water spinach gram fava bean leek  silver eggplant."
+      />
+    </StoryUtils.Container>
+  ))
+  .add(`with an ornament`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+        lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
+        actions={[{ label: `Click me`, to: `/`, icon: MdArrowForward }]}
+        ornaments={[
+          <OrnamentA
+            key="ornamentA"
+            css={{
+              position: `absolute`,
+              top: `60%`,
+              right: 0,
+              width: `50%`,
+              height: `auto`,
+
+              [`@media (min-width: ${breakpoints.desktop}px)`]: {
+                top: `10%`,
+                width: `40%`,
+              },
+            }}
+          />,
+        ]}
+      />
+    </StoryUtils.Container>
+  ))
+  .add(`with more ornaments`, () => (
+    <StoryUtils.Container>
+      <PageHeader
+        subheading="Veggies es bonus vobis"
+        heading="Celery quandong swiss chard chicory earthnut pea potato."
+        lede="Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. "
+        actions={[{ label: `Click me`, to: `/`, icon: MdArrowForward }]}
+        ornaments={[
+          <OrnamentA
+            key="ornamentA"
+            css={{
+              position: `absolute`,
+              top: `60%`,
+              right: 0,
+              width: `50%`,
+              height: `auto`,
+
+              [`@media (min-width: ${breakpoints.desktop}px)`]: {
+                top: `10%`,
+                width: `40%`,
+              },
+            }}
+          />,
+          <OrnamentB
+            key="ornamentB"
+            css={{
+              bottom: `3rem`,
+              display: `none`,
+              left: 0,
+              position: `absolute`,
+
+              [`@media (min-width: ${breakpoints.desktop}px)`]: {
+                display: `block`,
+              },
+            }}
+          />,
+        ]}
+      />
+    </StoryUtils.Container>
+  ))
