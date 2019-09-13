@@ -3,6 +3,8 @@ import { jsx, keyframes } from "@emotion/core"
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import deepmerge from "deepmerge"
+
 import { MdRefresh, MdArrowForward } from "react-icons/md"
 
 import { BaseButton } from "../../skeletons/BaseButton"
@@ -22,17 +24,21 @@ const Button = props => {
     size = `L`,
     tone = `BRAND`,
     variant = `PRIMARY`,
+    customCss = {},
     ...rest
   } = props
   const DefaultIcon = variant === `PRIMARY` && MdArrowForward
 
   return (
     <BaseButton
-      css={{
-        ...styles.base({ loading }),
-        ...styles.sizes[size],
-        ...styles.variants[variant]({ tone }),
-      }}
+      css={deepmerge(
+        {
+          ...styles.base({ loading }),
+          ...styles.sizes[size],
+          ...styles.variants[variant]({ tone }),
+        },
+        customCss
+      )}
       DefaultIcon={DefaultIcon}
       loading={loading}
       LoadingIcon={LoadingIcon}
