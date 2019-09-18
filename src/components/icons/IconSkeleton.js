@@ -37,6 +37,7 @@ export default function IconSkeleton({
         verticalAlign: `middle`,
         ...(style || {}),
       }}
+      aria-hidden
       {...rest}
     />
   )
