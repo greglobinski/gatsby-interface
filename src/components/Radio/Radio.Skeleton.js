@@ -36,47 +36,51 @@ const radioSkeletonDefaultPropTypes = {
   StyledLabel: SkeletonStyledLabel,
 }
 
-export function RadioSkeleton({
-  StyledContainer,
-  StyledInput,
-  StyledLabel,
-  label,
-  InnerLabelComponent,
-  fieldName,
-  id,
-  optionValue,
-  value,
-  className,
-  children,
-  onChange,
-  type,
-  selectionStyle,
-  ...rest
-}) {
-  return (
-    <StyledContainer
-      className={`${optionValue === value ? `selected` : ``} ${className}`}
-    >
-      <StyledInput
-        type="radio"
-        name={fieldName}
-        id={id}
-        value={optionValue}
-        checked={optionValue === value}
-        onChange={onChange}
-        {...rest}
-      />
-      <StyledLabel
-        selectionStyle={selectionStyle}
-        className={`${selectionStyle}`}
-        htmlFor={id}
+export const RadioSkeleton = React.forwardRef(
+  (
+    {
+      StyledContainer,
+      StyledInput,
+      StyledLabel,
+      label,
+      InnerLabelComponent,
+      fieldName,
+      id,
+      optionValue,
+      value,
+      className,
+      children,
+      onChange,
+      type,
+      selectionStyle,
+      ...rest
+    },
+    ref
+  ) => (
+      <StyledContainer
+        className={`${optionValue === value ? `selected` : ``} ${className}`}
       >
-        {label}
-      </StyledLabel>
-      {children}
-    </StyledContainer>
-  )
-}
+        <StyledInput
+          ref={ref}
+          type="radio"
+          name={fieldName}
+          id={id}
+          value={optionValue}
+          checked={optionValue === value}
+          onChange={onChange}
+          {...rest}
+        />
+        <StyledLabel
+          selectionStyle={selectionStyle}
+          className={`${selectionStyle}`}
+          htmlFor={id}
+        >
+          {label}
+        </StyledLabel>
+        {children}
+      </StyledContainer>
+    )
+)
 
 RadioSkeleton.propTypes = radioSkeletonPropTypes
 RadioSkeleton.defaultProps = radioSkeletonDefaultPropTypes
