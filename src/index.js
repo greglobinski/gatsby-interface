@@ -1,3 +1,5 @@
+import { from } from "rxjs"
+
 export { General, Integrations, Preview, Skull } from "./assets"
 
 export { ContentBox } from "./components/skeletons/ContentBox"
@@ -47,6 +49,10 @@ export { InputError } from "./components/InputError"
 
 export { SidebarNav } from "./components/SidebarNav"
 
+export { PricingCard } from "./components/core/PricingCard"
+
+export { Heading } from "./components/core/Heading"
+
 export {
   ToastProvider,
   ToastConsumer,
@@ -62,9 +68,13 @@ export { Badge } from "./components/core/Badge"
 
 export { Breadcrumb } from "./components/Breadcrumb"
 
+export { Switch } from "./components/core/Switch"
+
 export { colors, palette } from "./utils/presets/colors"
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
 export { breakpoints } from "./utils/presets/breakpoints"
 export { dimensions, radius } from "./utils/presets/sizes"
 export { default as cardStyles } from "./theme/styles/card"
+
+export * from "./components/icons"
