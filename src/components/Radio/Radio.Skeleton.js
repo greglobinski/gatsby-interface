@@ -7,7 +7,7 @@ const SkeletonStyledInput = styled(`input`)``
 const SkeletonStyledLabel = styled(`label`)``
 
 export const radioPropTypes = {
-  label: PropTypes.string,
+  label: PropTypes.node,
   htmlLabel: PropTypes.any,
   fieldName: PropTypes.string.isRequired,
   id: PropTypes.string,
@@ -34,28 +34,32 @@ const radioSkeletonDefaultPropTypes = {
   StyledLabel: SkeletonStyledLabel,
 }
 
-export function RadioSkeleton({
-  StyledContainer,
-  StyledInput,
-  StyledLabel,
-  label,
-  InnerLabelComponent,
-  fieldName,
-  id,
-  optionValue,
-  value,
-  className,
-  children,
-  onChange,
-  type,
-  selectionStyle,
-  ...rest
-}) {
-  return (
+export const RadioSkeleton = React.forwardRef(
+  (
+    {
+      StyledContainer,
+      StyledInput,
+      StyledLabel,
+      label,
+      InnerLabelComponent,
+      fieldName,
+      id,
+      optionValue,
+      value,
+      className,
+      children,
+      onChange,
+      type,
+      selectionStyle,
+      ...rest
+    },
+    ref
+  ) => (
     <StyledContainer
       className={`${optionValue === value ? `selected` : ``} ${className}`}
     >
       <StyledInput
+        ref={ref}
         type="radio"
         name={fieldName}
         id={id}
@@ -68,12 +72,13 @@ export function RadioSkeleton({
         selectionStyle={selectionStyle}
         className={`${selectionStyle}`}
         htmlFor={id}
-        dangerouslySetInnerHTML={{ __html: label }}
-      />
+      >
+        {label}
+      </StyledLabel>
       {children}
     </StyledContainer>
   )
-}
+)
 
 RadioSkeleton.propTypes = radioSkeletonPropTypes
 RadioSkeleton.defaultProps = radioSkeletonDefaultPropTypes

@@ -6,7 +6,6 @@ import { MdRefresh, MdArrowForward } from "react-icons/md"
 
 import { BaseButton } from "../../skeletons/BaseButton"
 import styles from "../../../theme/styles/button"
-import tones from "../../../theme/tones"
 
 import {
   BUTTON_SIZES,
@@ -14,16 +13,16 @@ import {
   BUTTON_VARIANTS,
 } from "../../../utils/options"
 
-const Button = ({
-  children,
-  css,
-  loading,
-  LoadingIcon = MdRefresh,
-  size = `L`,
-  tone = `STANDARD`,
-  variant = `PRIMARY`,
-  ...rest
-}) => {
+const Button = props => {
+  const {
+    children,
+    loading,
+    LoadingIcon = MdRefresh,
+    size = `L`,
+    tone = `BRAND`,
+    variant = `PRIMARY`,
+    ...rest
+  } = props
   const DefaultIcon = variant === `PRIMARY` && MdArrowForward
 
   return (
@@ -31,8 +30,7 @@ const Button = ({
       css={{
         ...styles.base({ loading }),
         ...styles.sizes[size],
-        ...styles.variants[variant](tones[tone]),
-        ...css,
+        ...styles.variants[variant]({ tone }),
       }}
       DefaultIcon={DefaultIcon}
       loading={loading}

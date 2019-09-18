@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
+
+import colors from "../../theme/colors"
 
 import {
-  colors,
   radius,
   spaces,
   breakpoints,
@@ -60,14 +62,7 @@ export const baseStyles = {
   },
 }
 
-const Tab = ({
-  className,
-  to,
-  onClick,
-  children,
-  variant = `DEFAULT`,
-  LinkComponent,
-}) => {
+const Tab = ({ className, to, onClick, children, variant = `DEFAULT` }) => {
   const tabStyles = {
     DEFAULT: {
       border: `1px solid ${colors.standardLine}`,
@@ -84,11 +79,15 @@ const Tab = ({
       color: colors.grey[40],
       a: {
         color: colors.purple[40],
+        textDecoration: `none`,
+        alignItems: `center`,
+        display: `flex`,
       },
       "&.active": {
         background: colors.primaryBackground,
         borderBottomColor: colors.secondaryBackground,
         color: colors.grey[90],
+        zIndex: `2`,
       },
     },
   }
@@ -101,9 +100,9 @@ const Tab = ({
       }}
     >
       {to ? (
-        <LinkComponent to={to} onClick={onClick}>
+        <Link to={to} onClick={onClick}>
           {children}
-        </LinkComponent>
+        </Link>
       ) : (
         children
       )}

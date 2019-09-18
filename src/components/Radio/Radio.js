@@ -2,13 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 
-import {
-  colors,
-  radius,
-  spaces,
-  fontFamilies,
-  fontSizes,
-} from "../../utils/presets"
+import colors from "../../theme/colors"
+
+import { radius, spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
 const INPUT_BORDER_WIDTH = `2px`
 const INPUT_INNER_DIA = `22px`
@@ -76,20 +72,17 @@ const Label = styled(`label`)`
       left: calc(${spaces.m} + 7px);
     }
   }
-
-  .selected &.emphasized {
-    padding: ${spaces.m} ${spaces.m} ${spaces.m}
-      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
-  }
 `
 
 const RadioInput = styled(`input`)`
   cursor: pointer;
+  margin: 0;
+  padding: 0;
   left: 0;
-  height: 20px;
+  height: 100%;
   opacity: 0;
   position: absolute;
-  width: 20px;
+  width: ${INPUT_INNER_DIA};
   z-index: 2;
 
   &:checked + label::before {
@@ -116,7 +109,7 @@ const StandardContainer = styled(`div`)`
 `
 
 const ColourfulContainer = styled(StandardContainer)`
-  margin: 0;
+  margin: ${spaces[`2xs`]} 0;
   position: relative;
 
   :before,
@@ -152,8 +145,6 @@ const ColourfulContainer = styled(StandardContainer)`
   }
 
   &.selected {
-    margin: ${spaces[`2xs`]} 0;
-
     :before {
       opacity: 1;
       background-image: linear-gradient(
@@ -168,11 +159,12 @@ const ColourfulContainer = styled(StandardContainer)`
   }
 `
 
-const Radio = props => {
+const Radio = React.forwardRef((props, ref) => {
   const { selectionStyle } = props
 
   return (
     <RadioSkeleton
+      ref={ref}
       StyledContainer={
         selectionStyle === `emphasized` ? ColourfulContainer : StandardContainer
       }
@@ -181,7 +173,7 @@ const Radio = props => {
       {...props}
     />
   )
-}
+})
 
 Radio.propTypes = radioPropTypes
 Radio.defaultProps = radioDefaultPropTypes

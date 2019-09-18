@@ -2,7 +2,10 @@
 import { jsx, keyframes } from "@emotion/core"
 import PropTypes from "prop-types"
 import { MdCheck, MdClose, MdRefresh } from "react-icons/md"
-import { colors, spaces, fontFamilies, fontSizes } from "../../utils/presets"
+
+import colors from "../../theme/colors"
+
+import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
 const loading = keyframes` 
   0% {

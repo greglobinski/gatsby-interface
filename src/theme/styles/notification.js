@@ -14,6 +14,7 @@ const variants = {
   PRIMARY: toneColors => {
     return {
       ...card.frame,
+      alignItems: `center`,
       background: colors.white,
       borderLeft: `10px solid ${toneColors.dark}`,
       padding: `${spaces.m} ${spaces.l} ${spaces.m} ${spaces.m}`,

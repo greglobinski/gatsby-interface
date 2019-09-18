@@ -17,6 +17,12 @@ import { fontFamilies } from "../src/utils/presets"
 import "@storybook/addon-console"
 import "storybook-chromatic"
 
+import "../assets/fonts/futura-pt/Webfonts/futurapt_book_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_bookitalic_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_demi_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_demiitalic_macroman/stylesheet.css"
+import "../assets/fonts/futura-pt/Webfonts/futurapt_bold/MyFontsWebfontsKit.css"
+
 if (process.env.NODE_ENV === "test") {
   require(`babel-plugin-require-context-hook/register`)()
 }
@@ -26,12 +32,15 @@ global.___loader = {
   hovering: () => {},
 }
 
-addParameters({
-  options: {
-    addonPanelInRight: true,
+const viewports = {
+  mobile360x640: {
+    name: "Mobile 360 x 640",
+    styles: {
+      width: "360px",
+      height: "640px",
+    },
   },
-  readme: {},
-})
+}
 
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
 global.__PATH_PREFIX__ = ""
@@ -55,18 +64,18 @@ const withGlobal = storyFn => (
           font-size: 1rem;
         }
         body {
-          align-items: center;
-          display: flex;
           font-family: ${fontFamilies.bodyFontFamily};
           height: 100vh;
-          justify-content: center;
           margin: 0;
           width: 100%;
         }
 
-        @media (min-width: 1200px) {
+        #root {
+        }
+
+        @media (min-width: 1000px) {
           html {
-            font-size: 1.125rem;
+            font-size: 112.5%;
           }
         }
       `}
@@ -80,6 +89,16 @@ addDecorator(withGlobal)
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 addDecorator(withA11y)
+
+addDecorator(Story => <Story />)
+
+addParameters({
+  options: {
+    addonPanelInRight: true,
+  },
+  readme: {},
+  viewport: { viewports: viewports },
+})
 
 //const req = require.context("../__stories__", true, /\.stories\.js$/)
 const req = require.context("../src/components/../", true, /\.stories\.js$/)
