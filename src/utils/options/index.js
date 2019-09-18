@@ -7,4 +7,5 @@ export {
 export {
   VARIANTS as NOTIFICATION_VARIANTS,
   TONES as NOTIFICATION_TONES,
+  ICONS as NOTIFICATION_ICONS,
 } from "./notification"

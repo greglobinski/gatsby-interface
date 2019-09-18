@@ -10,7 +10,11 @@ import { spaces, palette } from "../../utils/presets"
 import { Link } from "../Link"
 import { Button } from "../core/Button"
 
-import { NOTIFICATION_TONES, NOTIFICATION_VARIANTS } from "../../utils/options"
+import {
+  NOTIFICATION_TONES,
+  NOTIFICATION_VARIANTS,
+  NOTIFICATION_ICONS,
+} from "../../utils/options"
 
 const asOptions = {
   div: `div`,
@@ -22,7 +26,6 @@ function Notification({
   as = `div`,
   tone = `BRAND`,
   variant = `PRIMARY`,
-  icon: Icon,
   content,
   contentAs = `span`,
   linkUrl,
@@ -35,6 +38,8 @@ function Notification({
     showNotification
   )
   const Component = asOptions[as]
+
+  const Icon = content && NOTIFICATION_ICONS[tone]
 
   if (!showNotificationState) return null
 
