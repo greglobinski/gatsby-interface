@@ -12,7 +12,7 @@ const { VARIANTS, TONES } = options
 
 function Heading({
   children,
-  css,
+  customCss,
   tone = `NEUTRAL`,
   variant = `PRIMARY`,
   as = `h2`,
@@ -24,6 +24,7 @@ function Heading({
       css={{
         ...baseStyle({ tone }),
         ...variantStyles({ tone })[variant],
+        ...customCss,
       }}
       {...rest}
     >

@@ -13,8 +13,8 @@ const tones = {
     superLight: colors.green[5],
     light: colors.green[20],
     medium: colors.green[50],
-    dark: colors.green[80],
-    darker: colors.green[90],
+    dark: colors.green[60],
+    darker: colors.green[70],
     superDark: colors.green[90],
   },
   DANGER: {
@@ -32,6 +32,13 @@ const tones = {
     dark: colors.grey[50],
     darker: colors.grey[60],
     superDark: colors.grey[90],
+  },
+  WARNING: {
+    superLight: colors.yellow[5],
+    light: colors.yellow[20],
+    medium: colors.yellow[40],
+    dark: colors.yellow[50],
+    darker: colors.yellow[60],
   },
 }
 

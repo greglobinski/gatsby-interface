@@ -5,7 +5,7 @@ import React from "react"
 import { storiesOf } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import { MdArrowForward } from "react-icons/md"
-import { boolean, radios } from "@storybook/addon-knobs"
+import { radios } from "@storybook/addon-knobs"
 
 import {
   BUTTON_SIZES,
@@ -29,7 +29,6 @@ import README_MANUAL_STYLING from "./README_MANUAL_STYLING.md"
 import README_LEGACY from "./README_LEGACY.md"
 import colors from "../../../theme/colors"
 import styles from "../../../theme/styles/button"
-import tones from "../../../theme/tones"
 import { StoryUtils } from "../../../utils/storybook"
 
 storiesOf(`core/Button`, module)
