@@ -2,6 +2,7 @@
 import { jsx } from "@emotion/core"
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
+import deepmerge from "deepmerge"
 import { MdClose, MdArrowForward } from "react-icons/md"
 
 import styles from "../../theme/styles/notification"
@@ -21,7 +22,7 @@ const asOptions = {
   section: `section`,
 }
 function Notification({
-  css,
+  customCss = {},
   children,
   as = `div`,
   tone = `BRAND`,
@@ -45,11 +46,13 @@ function Notification({
 
   return (
     <Component
-      css={{
-        ...styles.base,
-        ...styles.variants[variant](tones[tone]),
-        ...css,
-      }}
+      css={deepmerge(
+        {
+          ...styles.base,
+          ...styles.variants[variant](tones[tone]),
+        },
+        customCss
+      )}
       {...rest}
     >
       {content && (
