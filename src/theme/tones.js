@@ -33,6 +33,13 @@ const tones = {
     darker: colors.grey[60],
     superDark: colors.grey[90],
   },
+  WARNING: {
+    superLight: colors.yellow[5],
+    light: colors.yellow[20],
+    medium: colors.yellow[40],
+    dark: colors.yellow[50],
+    darker: colors.yellow[60],
+  },
 }
 
 export default tones
