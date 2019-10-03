@@ -21,7 +21,11 @@ export {
   TextButton,
   PrimaryDeleteButton,
   SecondaryDeleteButton,
+  getButtonStyles,
 } from "./components/core/Button"
+
+export { AnchorButton } from "./components/core/AnchorButton"
+export { LinkButton } from "./components/core/LinkButton"
 
 export { SettingsBlock } from "./components/core/SettingsBlock"
 

@@ -4,7 +4,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import { Button } from "../core/Button"
+import { Button, ButtonProps } from "../core/Button"
 import copyToClipboard from "../../utils/helpers/copyToClipboard"
 
 const baseCss = css`
@@ -21,8 +21,7 @@ const baseCss = css`
 
 export type GetLabelFn = (copied: boolean) => string
 
-// TODO extend Button props instead of JSX.IntrinsicElements
-export type CopyButtonProps = JSX.IntrinsicElements["button"] & {
+export type CopyButtonProps = ButtonProps & {
   content: string
   getButtonLabel?: GetLabelFn
   getButtonTitle?: GetLabelFn

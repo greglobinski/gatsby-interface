@@ -13,11 +13,34 @@ function Component() => (
         css={{
           ...styles.button.base(),
           ...styles.button.sizes["L"],
-          ...styles.button.variants["PRIMARY"](styles.tones["STANDARD"]),
+          ...styles.button.variants["PRIMARY"](styles.tones["NEUTRAL"]),
         }}
       >
        Directly applied styles
       </button>
   </div>
 )
+```
+
+OR you can use `getButtonStyles` helper:
+
+```javascript
+import { Button, getButtonStyles } from "gatsby-interface"
+
+function Component() {
+  return (
+    <div>
+      <button
+        {...getButtonStyles({
+          loading: false,
+          size: "L",
+          variant: "PRIMARY",
+          tone: "NEUTRAL",
+        })}
+      >
+        Directly applied styles
+      </button>
+    </div>
+  )
+}
 ```
