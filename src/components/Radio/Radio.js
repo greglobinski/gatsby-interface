@@ -159,11 +159,12 @@ const ColourfulContainer = styled(StandardContainer)`
   }
 `
 
-const Radio = props => {
+const Radio = React.forwardRef((props, ref) => {
   const { selectionStyle } = props
 
   return (
     <RadioSkeleton
+      ref={ref}
       StyledContainer={
         selectionStyle === `emphasized` ? ColourfulContainer : StandardContainer
       }
@@ -172,7 +173,7 @@ const Radio = props => {
       {...props}
     />
   )
-}
+})
 
 Radio.propTypes = radioPropTypes
 Radio.defaultProps = radioDefaultPropTypes

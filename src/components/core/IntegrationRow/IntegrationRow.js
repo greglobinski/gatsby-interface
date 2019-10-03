@@ -9,13 +9,10 @@ import { Link } from "../../Link"
 import { Button } from "../Button"
 import { Heading } from "../Heading"
 import { Badge } from "../Badge"
-import { breakpoints, spaces } from "../../../utils/presets"
+import { spaces, fontFamilies } from "../../../utils/presets"
 import fontSizes from "../../../theme/fontSizes"
-import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
 import cardStyles from "../../../theme/styles/card"
-import { styles as headingStyles } from "../../../theme/styles/heading"
-
 function IntegrationRow({
   isConnected = false,
   title,
@@ -23,6 +20,7 @@ function IntegrationRow({
   button = {},
   link = {},
   details,
+  detailsVariant = `PRIMARY`,
   children,
   ...rest
 }) {
@@ -64,7 +62,12 @@ function IntegrationRow({
         <IntegrationRow.EditButton label={linkLabel} {...linkRest} />
       )}
 
-      {details && <IntegrationRow.Content details={details} />}
+      {details && (
+        <IntegrationRow.Content
+          details={details}
+          detailsVariant={detailsVariant}
+        />
+      )}
 
       {isConnected && (
         <IntegrationRow.Badge>
@@ -140,23 +143,37 @@ IntegrationRow.EditButton = ({ children, label = `Connect`, ...rest }) => {
   )
 }
 
-function renderData(data = []) {
+function renderData(data = [], primaryStyling) {
   if (data.length > 0) {
     return data.map((item, idx) => (
       <div
         key={`data-${item.name}`}
         css={{
-          display: `flex`,
-          flexDirection: `column`,
+          display: primaryStyling ? `flex` : `grid`,
+          flexDirection: primaryStyling ? `column` : `row`,
           fontSize: fontSizes[1],
+          gridTemplateColumns: primaryStyling ? `0` : `0.35fr 1fr`,
+          marginTop: primaryStyling ? `inherit` : spaces.s,
+          "&:first-of-type": {
+            marginTop: primaryStyling ? `inherit` : `0`,
+          },
         }}
       >
-        <Heading as="span" variant="LIGHT">
+        <Heading
+          as="span"
+          variant="LIGHT"
+          css={{
+            fontFamily: primaryStyling
+              ? fontFamilies.headerFontFamily
+              : fontFamilies.bodyFontFamily,
+            textTransform: primaryStyling ? `uppercase` : `capitalize`,
+          }}
+        >
           {item.name}
         </Heading>
         <span
           css={{
-            marginTop: spaces[`2xs`],
+            marginTop: primaryStyling ? spaces[`2xs`] : `0`,
             color: colors.grey[90],
           }}
         >
@@ -172,21 +189,24 @@ function renderData(data = []) {
 IntegrationRow.Content = ({
   children,
   details,
+  detailsVariant = `PRIMARY`,
   variant = `SECONDARY`,
   ...rest
-}) =>
-  details || children ? (
+}) => {
+  const primaryStyling = detailsVariant === `PRIMARY`
+  return details || children ? (
     <ContentBox.Content
       variant={variant}
       css={{
         gridColumn: `1 / 4`,
         display: `grid`,
-        gridTemplateColumns: `1.5fr 1fr`,
+        gridTemplateColumns: primaryStyling ? `1.5fr 1fr` : `1.5fr`,
       }}
       {...rest}
     >
-      {!details ? children : renderData(details)}
+      {!details ? children : renderData(details, primaryStyling)}
     </ContentBox.Content>
   ) : null
+}
 
 export default IntegrationRow
