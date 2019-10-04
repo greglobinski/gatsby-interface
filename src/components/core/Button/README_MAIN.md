@@ -5,36 +5,37 @@ Built on the basis of [`BaseButton`](??path=/story/basebutton--tags-components)
 ```javascript
 import { Button } from "gatsby-interface"
 
-function Component() => (
-  <Button>Label</Button>
-)
+function Component() {
+  return <Button>Label</Button>
+}
 ```
 
 ### Props
 
-#### `variant`
+`BaseButton` accepts all props accepted by `BaseButton` component (including HTML's `<button>` attributes) as well as [`ButtonStyleProps`](#buttonstyleprops):
 
-- type: **enum** ['PRIMARY', 'SECONDARY', 'GHOST']
-- default: 'PRIMARY'
+#### ButtonStyleProps
 
-#### `size`
+| Prop    | Type                              | Default value | Description                                                                            |
+| ------- | --------------------------------- | ------------- | -------------------------------------------------------------------------------------- |
+| variant | [`ButtonVariant`](#buttonvariant) | `PRIMARY`     | Variants correspond to a button's role &mdash; primary, secondary or outline ("ghost") |
+| size    | [`ButtonSize`](#buttonsize)       | `L`           | Button size                                                                            |
+| tone    | [`ButtonTone`](#buttontone)       | `BRAND`       | Button tone                                                                            |
 
-- type: **enum** ['S', 'M', 'L', 'XL']
-- default: 'L'
+##### ButtonVariant
 
-#### `tone`
+```typescript
+type ButtonVariant = "PRIMARY" | "SECONDARY" | "GHOST"
+```
 
-- type: **enum** ['BRAND', 'SUCCESS', 'DANGER', 'NEUTRAL']
-- default: 'STANDARD'
+##### ButtonSize
 
-#### and all [`BaseButton`](?path=/story/basebutton--tags-components) `props`
+```typescript
+type ButtonSize = "XL" | "L" | "M" | "S"
+```
 
-- `to`
-- `href`
-- `disabled`
-- `label`
-- `loading`
-- `loadingLabel`
-- `rel`
-- `target`
-- `type`
+##### ButtonTone
+
+```typescript
+type ButtonTone = "BRAND" | "SUCCESS" | "DANGER" | "NEUTRAL"
+```

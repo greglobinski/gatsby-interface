@@ -11,7 +11,6 @@ const BaseAnchor = React.forwardRef<HTMLAnchorElement, BaseAnchorProps>(
   (
     {
       label,
-      // role = `button`,
       role,
       target = `_blank`,
       rel,

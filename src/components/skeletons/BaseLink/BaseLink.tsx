@@ -9,7 +9,6 @@ export type BaseLinkProps<TState> = Omit<GatsbyLinkProps<TState>, "ref"> &
 
 export default function BaseLink({
   to,
-  // role = `button`,
   role,
   children,
   label,
