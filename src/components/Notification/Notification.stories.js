@@ -22,7 +22,6 @@ storiesOf(`Notification`, module).add(`default`, () => (
     >
       <Notification
         tone={radios(`tone`, NOTIFICATION_TONES, `BRAND`)}
-        icon={MdCheck}
         content={`Notification variant 'PRIMARY'`}
         linkUrl="/"
         linkText="Link"
@@ -30,7 +29,6 @@ storiesOf(`Notification`, module).add(`default`, () => (
       <Notification
         css={{ marginTop: `1rem` }}
         tone={radios(`tone`, NOTIFICATION_TONES, `BRAND`)}
-        icon={MdCheck}
         content={`Notification variant 'PRIMARY' with close`}
         closeNotificationButton
       />
@@ -39,7 +37,6 @@ storiesOf(`Notification`, module).add(`default`, () => (
         as="section"
         variant="SECONDARY"
         tone={radios(`tone`, NOTIFICATION_TONES, `BRAND`)}
-        icon={MdCheck}
         content={`Notification variant 'SECONDARY'`}
       />
     </div>

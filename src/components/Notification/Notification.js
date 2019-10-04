@@ -11,6 +11,8 @@ import { spaces, palette } from "../../utils/presets"
 import { Link } from "../Link"
 import { Button } from "../core/Button"
 
+const NotificationContext = React.createContext()
+
 import {
   NOTIFICATION_TONES,
   NOTIFICATION_VARIANTS,
@@ -45,50 +47,54 @@ function Notification({
   if (!showNotificationState) return null
 
   return (
-    <Component
-      css={deepmerge(
-        {
-          ...styles.base,
-          ...styles.variants[variant](tones[tone]),
-        },
-        customCss
-      )}
-      {...rest}
+    <NotificationContext.Provider
+      value={{ showNotificationState, setNotificationState }}
     >
-      {content && (
-        <Notification.Content tone={tone} as={contentAs}>
-          {Icon && <Icon />}
-          {content}
-        </Notification.Content>
-      )}
+      <Component
+        css={deepmerge(
+          {
+            ...styles.base,
+            ...styles.variants[variant](tones[tone]),
+          },
+          customCss
+        )}
+        {...rest}
+      >
+        {content && (
+          <Notification.Content tone={tone} as={contentAs}>
+            {Icon && <Icon />}
+            {content}
+          </Notification.Content>
+        )}
 
-      {linkUrl && (
-        <Notification.Link to={linkUrl}>
-          {linkText && (
-            <Fragment>
-              {linkText} <MdArrowForward />
-            </Fragment>
-          )}
-        </Notification.Link>
-      )}
+        {linkUrl && (
+          <Notification.Link to={linkUrl}>
+            {linkText && (
+              <Fragment>
+                {linkText} <MdArrowForward />
+              </Fragment>
+            )}
+          </Notification.Link>
+        )}
 
-      {closeNotificationButton && (
-        <Button
-          css={{
-            padding: `0`,
-            minHeight: `auto`,
-            svg: { fill: palette.grey[`400`] },
-            width: spaces.m,
-          }}
-          type="button"
-          onClick={() => setNotificationState(!showNotificationState)}
-          variant="GHOST"
-        >
-          <MdClose />
-        </Button>
-      )}
-      {children}
-    </Component>
+        {closeNotificationButton && (
+          <Button
+            css={{
+              padding: `0`,
+              minHeight: `auto`,
+              svg: { fill: palette.grey[`400`] },
+              width: spaces.m,
+            }}
+            type="button"
+            onClick={() => setNotificationState(!showNotificationState)}
+            variant="GHOST"
+          >
+            <MdClose />
+          </Button>
+        )}
+        {children}
+      </Component>
+    </NotificationContext.Provider>
   )
 }
 
@@ -143,5 +149,37 @@ Notification.Content.propTypes = {
 }
 
 Notification.Link = props => <Link {...props} />
+
+Notification.CloseButton = () => {
+  const {
+    showNotificationState,
+    setNotificationState,
+  } = Notification.useNotificationContext()
+  return (
+    <Button
+      css={{
+        padding: `0`,
+        minHeight: `auto`,
+        svg: { fill: palette.grey[`400`] },
+        width: spaces.m,
+      }}
+      type="button"
+      onClick={() => setNotificationState(!showNotificationState)}
+      variant="GHOST"
+    >
+      <MdClose />
+    </Button>
+  )
+}
+
+Notification.useNotificationContext = () => {
+  const context = React.useContext(NotificationContext)
+  if (!context) {
+    throw new Error(
+      `Notification compound components cannot be rendered outside the main component`
+    )
+  }
+  return context
+}
 
 export default Notification

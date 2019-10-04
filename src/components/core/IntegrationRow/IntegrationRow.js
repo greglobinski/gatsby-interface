@@ -2,7 +2,7 @@
 import { jsx, css, keyframes } from "@emotion/core"
 import React, { Fragment, useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import { MdEdit, MdArrowForward, MdFlashOn } from "react-icons/md"
+import { MdEdit, MdArrowForward, MdFlashOn, MdLaunch } from "react-icons/md"
 
 import { ContentBox } from "../../skeletons/ContentBox"
 import { Link } from "../../Link"
@@ -164,8 +164,8 @@ function renderData(data = [], primaryStyling) {
           variant="LIGHT"
           css={{
             fontFamily: primaryStyling
-              ? fontFamilies.headerFontFamily
-              : fontFamilies.bodyFontFamily,
+              ? fonts.header.join(`,`)
+              : fontFamilies.system.join(`,`),
             textTransform: primaryStyling ? `uppercase` : `capitalize`,
           }}
         >
@@ -177,7 +177,14 @@ function renderData(data = [], primaryStyling) {
             color: colors.grey[90],
           }}
         >
-          {item.url ? <Link href={item.url}>{item.value}</Link> : item.value}
+          {item.url ? (
+            <Link href={item.url}>
+              {item.value}
+              <MdLaunch />
+            </Link>
+          ) : (
+            item.value
+          )}
         </span>
       </div>
     ))
