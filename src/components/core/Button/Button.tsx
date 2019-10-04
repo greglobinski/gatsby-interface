@@ -31,7 +31,6 @@ export function getButtonStyles({
   variant?: ButtonVariant
 }): {
   css: ReturnType<typeof css>
-  DefaultIcon: BaseElementContentProps["DefaultIcon"]
 } {
   return {
     css: {
@@ -39,7 +38,6 @@ export function getButtonStyles({
       ...styles.sizes[size],
       ...styles.variants[variant]({ tone }),
     },
-    DefaultIcon: variant === `PRIMARY` ? MdArrowForward : undefined,
   }
 }
 

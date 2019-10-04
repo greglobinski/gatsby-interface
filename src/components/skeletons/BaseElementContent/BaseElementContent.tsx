@@ -10,23 +10,11 @@ function wrapStringChild(child: React.ReactNode) {
 
 export type BaseElementContentProps = {
   children?: React.ReactNode
-  label?: React.ReactNode
-  DefaultIcon?: React.ComponentType<any> // TODO replace any with something more strict
 }
 
 function BaseElementContent({
   children,
-  label,
-  DefaultIcon,
 }: BaseElementContentProps): JSX.Element {
-  if (label) {
-    return (
-      <React.Fragment>
-        <span>{label}</span> {DefaultIcon && <DefaultIcon />}
-      </React.Fragment>
-    )
-  }
-
   if (
     children &&
     (children as any).type &&

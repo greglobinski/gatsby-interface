@@ -15,8 +15,6 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
     const {
       children,
       disabled = false,
-      label,
-      DefaultIcon,
       loading = false,
       loadingLabel = `Loading`,
       LoadingIcon,
@@ -39,11 +37,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
             {LoadingIcon && <LoadingIcon />}
           </React.Fragment>
         ) : (
-          <BaseElementContent
-            children={children}
-            label={label}
-            DefaultIcon={DefaultIcon}
-          />
+          <BaseElementContent children={children} />
         )}
       </button>
     )

@@ -8,7 +8,6 @@ import { Button } from "gatsby-interface"
 function Component() => (
   <div>
     <Button
-      label={`Button with custom style`}
       css={{
         color: colors.purple[60],
         background: colors.yellow[60],
@@ -18,7 +17,9 @@ function Component() => (
           color: colors.white,
         },
       }}
-    />
+    >
+      Button with custom style
+    </Button>
   </div>
 )
 ```

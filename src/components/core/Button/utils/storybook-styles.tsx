@@ -155,25 +155,26 @@ export function showcaseCustomStyles<P>(
   return [
     `override/extend styles`,
     () => (
-        <StoryUtils.Container>
-          <StoryUtils.Stack>
-            <Component
-              {...defaultProps}
-              onClick={action(`Button was clicked`)}
-              label={`Button with custom style`}
-              css={{
-                color: colors.purple[60],
-                background: colors.yellow[60],
-                borderColor: colors.yellow[60],
+      <StoryUtils.Container>
+        <StoryUtils.Stack>
+          <Component
+            {...defaultProps}
+            onClick={action(`Button was clicked`)}
+            css={{
+              color: colors.purple[60],
+              background: colors.yellow[60],
+              borderColor: colors.yellow[60],
 
-                "&:hover:not([disabled])": {
-                  color: colors.white,
-                },
-              }}
-            />
-          </StoryUtils.Stack>
-        </StoryUtils.Container>
-      ),
+              "&:hover:not([disabled])": {
+                color: colors.white,
+              },
+            }}
+          >
+            Button with custom style
+          </Component>
+        </StoryUtils.Stack>
+      </StoryUtils.Container>
+    ),
     readme
       ? {
           readme: {

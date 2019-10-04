@@ -11,15 +11,11 @@ export default function BaseLink({
   to,
   role,
   children,
-  label,
-  DefaultIcon,
   ...rest
 }: BaseLinkProps<any>) {
   return (
     <Link to={to} role={role} {...rest}>
-      <BaseElementContent label={label} DefaultIcon={DefaultIcon}>
-        {children}
-      </BaseElementContent>
+      <BaseElementContent>{children}</BaseElementContent>
     </Link>
   )
 }

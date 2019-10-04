@@ -9,15 +9,7 @@ export type BaseAnchorProps = Omit<JSX.IntrinsicElements["a"], "ref"> &
 
 const BaseAnchor = React.forwardRef<HTMLAnchorElement, BaseAnchorProps>(
   (
-    {
-      label,
-      role,
-      target = `_blank`,
-      rel,
-      DefaultIcon,
-      children,
-      ...rest
-    }: BaseAnchorProps,
+    { role, target = `_blank`, rel, children, ...rest }: BaseAnchorProps,
     ref
   ) => (
     <a
@@ -27,9 +19,7 @@ const BaseAnchor = React.forwardRef<HTMLAnchorElement, BaseAnchorProps>(
       {...rest}
       ref={ref}
     >
-      <BaseElementContent label={label} DefaultIcon={DefaultIcon}>
-        {children}
-      </BaseElementContent>
+      <BaseElementContent>{children}</BaseElementContent>
     </a>
   )
 )

@@ -18,18 +18,3 @@ function Component() => (
   </div>
 )
 ```
-
-#### A shortcut
-
-```javascript
-import { Button } from "gatsby-interface"
-
-function Component() => (
-  /*
-    * Set a 'label' prop, the 'MdArrowForward' icon
-    * on the right will be added automaticaly
-  */
-  <Button label="With default icon" />
-
-)
-```
