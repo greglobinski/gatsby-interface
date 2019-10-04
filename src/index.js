@@ -1,6 +1,13 @@
 import { from } from "rxjs"
 
-export { General, Integrations, Preview, Skull } from "./assets"
+export {
+  General,
+  Integrations,
+  Preview,
+  Skull,
+  Danger,
+  Success,
+} from "./assets"
 
 export { ContentBox } from "./components/skeletons/ContentBox"
 
@@ -46,6 +53,8 @@ export { Textarea } from "./components/Textarea"
 export { Label } from "./components/Label"
 
 export { InputError } from "./components/InputError"
+
+export { FileUpload } from "./components/FileUpload"
 
 export { Notification } from "./components/Notification"
 

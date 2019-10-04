@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react"
-import PropTypes from "prop-types"
-import ReactFilestack from "filestack-react"
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-
+import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
+import loadable from "@loadable/component"
 import { Button } from "../core/Button"
 import UploadPreview from "./UploadPreview"
+const ReactFilestack = loadable(() => import(`filestack-react`), { ssr: false })
 
 const defaultFilestackOptions = {
   accept: [`image/jpeg`, `image/png`],
@@ -99,6 +99,7 @@ const FileUpload = ({
     console.error(
       `Using the <FileUpload /> component without setting the GATSBY_FILESTACK_API_KEY will fail`
     )
+    return
   }
 
   return (
