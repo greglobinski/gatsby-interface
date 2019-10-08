@@ -16,11 +16,13 @@ function Component() {
 
 #### ButtonStyleProps
 
-| Prop    | Type                              | Default value | Description                                                                            |
-| ------- | --------------------------------- | ------------- | -------------------------------------------------------------------------------------- |
-| variant | [`ButtonVariant`](#buttonvariant) | `PRIMARY`     | Variants correspond to a button's role &mdash; primary, secondary or outline ("ghost") |
-| size    | [`ButtonSize`](#buttonsize)       | `L`           | Button size                                                                            |
-| tone    | [`ButtonTone`](#buttontone)       | `BRAND`       | Button tone                                                                            |
+| Prop      | Type                              | Default value | Description                                                                            |
+| --------- | --------------------------------- | ------------- | -------------------------------------------------------------------------------------- |
+| variant   | [`ButtonVariant`](#buttonvariant) | `PRIMARY`     | Variants correspond to a button's role &mdash; primary, secondary or outline ("ghost") |
+| size      | [`ButtonSize`](#buttonsize)       | `L`           | Button size                                                                            |
+| tone      | [`ButtonTone`](#buttontone)       | `BRAND`       | Button tone                                                                            |
+| leftIcon  | `React.ReactNode`                 |               | An icon to be displayed before button's children                                       |
+| rightIcon | `React.ReactNode`                 |               | An icon to be displayed after button's children                                        |
 
 ##### ButtonVariant
 

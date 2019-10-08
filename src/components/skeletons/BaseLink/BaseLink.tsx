@@ -1,11 +1,7 @@
 import React from "react"
 import { GatsbyLinkProps, Link } from "gatsby"
-import BaseElementContent, {
-  BaseElementContentProps,
-} from "../BaseElementContent/BaseElementContent"
 
-export type BaseLinkProps<TState> = Omit<GatsbyLinkProps<TState>, "ref"> &
-  BaseElementContentProps
+export type BaseLinkProps<TState> = Omit<GatsbyLinkProps<TState>, "ref">
 
 export default function BaseLink({
   to,
@@ -15,7 +11,7 @@ export default function BaseLink({
 }: BaseLinkProps<any>) {
   return (
     <Link to={to} role={role} {...rest}>
-      <BaseElementContent>{children}</BaseElementContent>
+      {children}
     </Link>
   )
 }

@@ -1,14 +1,10 @@
 import React from "react"
-import BaseElementContent, {
-  BaseElementContentProps,
-} from "../BaseElementContent/BaseElementContent"
 
-export type BaseButtonProps = Omit<JSX.IntrinsicElements["button"], "ref"> &
-  BaseElementContentProps & {
-    loading?: boolean
-    loadingLabel?: React.ReactNode
-    LoadingIcon?: React.ComponentType<any> // TODO replace any with something more strict
-  }
+export type BaseButtonProps = Omit<JSX.IntrinsicElements["button"], "ref"> & {
+  loading?: boolean
+  loadingLabel?: React.ReactNode
+  LoadingIcon?: React.ComponentType<any> // TODO replace any with something more strict
+}
 
 export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
   (props, ref) => {
@@ -37,7 +33,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
             {LoadingIcon && <LoadingIcon />}
           </React.Fragment>
         ) : (
-          <BaseElementContent children={children} />
+          children
         )}
       </button>
     )

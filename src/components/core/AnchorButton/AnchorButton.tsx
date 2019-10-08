@@ -9,20 +9,29 @@ export type AnchorButtonProps = BaseAnchorProps & ButtonStyleProps
 
 const AnchorButton = React.forwardRef<HTMLAnchorElement, AnchorButtonProps>(
   (props, ref) => {
-    const { children, size, tone, variant, ...rest } = props
+    const {
+      children,
+      size,
+      tone,
+      variant,
+      leftIcon,
+      rightIcon,
+      ...rest
+    } = props
 
     return (
       <BaseAnchor
         {...getButtonStyles({
+          children,
           size,
           tone,
           variant,
+          leftIcon,
+          rightIcon,
         })}
         {...rest}
         ref={ref}
-      >
-        {children}
-      </BaseAnchor>
+      />
     )
   }
 )

@@ -2,19 +2,17 @@
 
 #### A standard way to add an icon
 
-```javascript
+```jsx
 import { Button } from "gatsby-interface"
 import { MdArrowForward } from "react-icons/md"
 
-function Component() => (
-  <div>
-    <Button>
-      On the right <MdArrowForward />
-    </Button>
+function Component() {
+  return (
+    <div>
+      <Button rightIcon={<MdArrowForward />}>On the right</Button>
 
-    <Button>
-      <MdArrowForward /> On the left
-    </Button>
-  </div>
-)
+      <Button leftIcon={<MdArrowForward />}>On the left</Button>
+    </div>
+  )
+}
 ```

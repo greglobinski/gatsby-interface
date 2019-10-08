@@ -195,19 +195,20 @@ export function showcaseIcons<P>(
     () => (
       <StoryUtils.Container>
         <StoryUtils.Stack>
-          <Component {...defaultProps} onClick={action(`Button was clicked`)}>
-            On the right
-            <MdArrowForward />
-          </Component>
-          <Component {...defaultProps} onClick={action(`Button was clicked`)}>
-            <MdArrowForward /> On the left
-          </Component>
-
           <Component
             {...defaultProps}
             onClick={action(`Button was clicked`)}
-            label="With default icon"
-          />
+            rightIcon={<MdArrowForward />}
+          >
+            On the right
+          </Component>
+          <Component
+            {...defaultProps}
+            onClick={action(`Button was clicked`)}
+            leftIcon={<MdArrowForward />}
+          >
+            On the left
+          </Component>
         </StoryUtils.Stack>
       </StoryUtils.Container>
     ),

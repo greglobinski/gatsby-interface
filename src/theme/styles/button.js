@@ -7,7 +7,7 @@ import tones from "../tones"
 import { breakpoints, radius, spaces } from "../../utils/presets"
 
 const base = props => {
-  const { loading = false } = props || {}
+  const { loading = false, leftIcon, rightIcon } = props || {}
 
   return {
     alignItems: `center`,
@@ -34,12 +34,16 @@ const base = props => {
       margin: `0 ${spaces[`2xs`]}`,
       transform: `scale(1)`,
 
-      "&:last-child": {
-        marginRight: `-0.25em`,
-      },
-      "&:first-child": {
-        marginLeft: `-0.30em`,
-      },
+      "&:last-child": rightIcon
+        ? {
+            marginRight: `-0.25em`,
+          }
+        : {},
+      "&:first-child": leftIcon
+        ? {
+            marginLeft: `-0.30em`,
+          }
+        : {},
     },
     "&:hover:not([disabled])": {
       svg: {

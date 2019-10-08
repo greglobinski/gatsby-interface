@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core"
 import React from "react"
-import { MdRefresh, MdArrowForward } from "react-icons/md"
+import { MdRefresh } from "react-icons/md"
 
 import { BaseButton, BaseButtonProps } from "../../skeletons/BaseButton"
 import styles from "../../../theme/styles/button"
-import { BaseElementContentProps } from "../../skeletons/BaseElementContent/BaseElementContent"
 
 export type ButtonSize = "XL" | "L" | "M" | "S"
 export type ButtonTone = "BRAND" | "SUCCESS" | "DANGER" | "NEUTRAL"
@@ -15,29 +14,43 @@ export type ButtonStyleProps = {
   size?: ButtonSize
   tone?: ButtonTone
   variant?: ButtonVariant
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
 }
 
 export type ButtonProps = BaseButtonProps & ButtonStyleProps
 
 export function getButtonStyles({
-  loading,
+  children,
   size = `L`,
   tone = `BRAND`,
   variant = `PRIMARY`,
+  loading,
+  leftIcon,
+  rightIcon,
 }: {
+  children: React.ReactNode
   loading?: boolean
-  size?: ButtonSize
-  tone?: ButtonTone
-  variant?: ButtonVariant
-}): {
+} & ButtonStyleProps): {
   css: ReturnType<typeof css>
+  children: React.ReactNode
 } {
   return {
     css: {
-      ...styles.base({ loading }),
+      ...styles.base({ loading, leftIcon, rightIcon }),
       ...styles.sizes[size],
       ...styles.variants[variant]({ tone }),
     },
+    children:
+      leftIcon || rightIcon ? (
+        <React.Fragment>
+          {leftIcon}
+          {children}
+          {rightIcon}
+        </React.Fragment>
+      ) : (
+        children
+      ),
   }
 }
 
@@ -50,24 +63,27 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size,
       tone,
       variant,
+      leftIcon,
+      rightIcon,
       ...rest
     } = props
 
     return (
       <BaseButton
         {...getButtonStyles({
+          children,
           loading,
           size,
           tone,
           variant,
+          leftIcon,
+          rightIcon,
         })}
         loading={loading}
         LoadingIcon={LoadingIcon}
         {...rest}
         ref={ref}
-      >
-        {children}
-      </BaseButton>
+      />
     )
   }
 )
