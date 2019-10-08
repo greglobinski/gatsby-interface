@@ -33,17 +33,8 @@ const base = props => {
       flexShrink: `0`,
       margin: `0 ${spaces[`2xs`]}`,
       transform: `scale(1)`,
-
-      "&:last-child": rightIcon
-        ? {
-            marginRight: `-0.25em`,
-          }
-        : {},
-      "&:first-child": leftIcon
-        ? {
-            marginLeft: `-0.30em`,
-          }
-        : {},
+      marginRight: rightIcon || loading ? `-0.25em` : undefined,
+      marginLeft: leftIcon ? `-0.30em` : undefined,
     },
     "&:hover:not([disabled])": {
       svg: {
