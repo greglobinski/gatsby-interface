@@ -421,10 +421,7 @@ PricingCard.Details = ({ plan, ...rest }) => {
                 }}
               />
               {item.tip && (
-                <ToggleTip
-                  tip={item.tip}
-                  customCss={{ marginLeft: spaces.xs }}
-                />
+                <ToggleTip tip={item.tip} css={{ marginLeft: spaces.xs }} />
               )}
             </li>
           ))}

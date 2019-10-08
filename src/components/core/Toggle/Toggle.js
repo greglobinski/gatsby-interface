@@ -8,7 +8,7 @@ import colors from "../../../theme/colors"
 import tones from "../../../theme/tones"
 import hiddenStyles from "../../../theme/styles/hidden"
 import { spaces } from "../../../utils/presets"
-import deepmerge from "deepmerge"
+import { showCustomCssDeprecationMessage } from "../../../utils/maintenance/deprecationMessages"
 
 const IN_ON_POSITIONS = [`LEFT`, `RIGHT`]
 const TONES = [`BRAND`, `SUCCESS`]
@@ -33,9 +33,10 @@ function Toggle({
   onChange,
   inOnPosition = `RIGHT`,
   tone = `BRAND`,
-  customCss = {},
+  customCss,
   ...rest
 }) {
+  showCustomCssDeprecationMessage(customCss)
   const [state, setState] = useState({
     fieldName,
     fieldValue,
@@ -71,12 +72,13 @@ Toggle.propTypes = {
   inOnPosition: PropTypes.oneOf(IN_ON_POSITIONS),
 }
 
-Toggle.Wrapper = ({ children, customCss = {}, ...rest }) => {
+Toggle.Wrapper = ({ children, customCss, ...rest }) => {
+  showCustomCssDeprecationMessage(customCss)
   const { fieldName, label, inOnPosition } = Toggle.useToggleContext()
 
   return (
     <label
-      css={deepmerge(
+      css={[
         {
           alignItems: `center`,
           display: `flex`,
@@ -88,8 +90,8 @@ Toggle.Wrapper = ({ children, customCss = {}, ...rest }) => {
             order: inOnPosition === `RIGHT` ? 2 : 0,
           },
         },
-        customCss
-      )}
+        customCss,
+      ]}
       htmlFor={fieldName}
       {...rest}
     >
@@ -99,7 +101,8 @@ Toggle.Wrapper = ({ children, customCss = {}, ...rest }) => {
   )
 }
 
-Toggle.Input = ({ customCss = {}, ...rest }) => {
+Toggle.Input = ({ customCss, ...rest }) => {
+  showCustomCssDeprecationMessage(customCss)
   const {
     fieldName,
     checked,
@@ -123,7 +126,8 @@ Toggle.Input = ({ customCss = {}, ...rest }) => {
   )
 }
 
-Toggle.Mark = ({ customCss = {}, ...rest }) => {
+Toggle.Mark = ({ customCss, ...rest }) => {
+  showCustomCssDeprecationMessage(customCss)
   const {
     fieldName,
     checked,
@@ -135,14 +139,13 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
   return (
     <span
       aria-hidden
-      css={deepmerge(
+      css={[
         {
           background: checked ? tones[tone].medium : colors.grey[30],
           borderRadius: `999px`,
           cursor: `pointer`,
           display: `inline-block`,
           height: `24px`,
-          marginRight: spaces.xs,
           order: 1,
           padding: `3px`,
           transition: `all .3s ease, background .5s`,
@@ -183,18 +186,19 @@ Toggle.Mark = ({ customCss = {}, ...rest }) => {
             },
           },
         },
-        customCss
-      )}
+        customCss,
+      ]}
       {...rest}
     />
   )
 }
 
-Toggle.Label = ({ children, customCss = {}, ...rest }) => {
+Toggle.Label = ({ children, customCss, ...rest }) => {
+  showCustomCssDeprecationMessage(customCss)
   const { label } = Toggle.useToggleContext()
 
   return (
-    <span css={deepmerge({}, customCss)} {...rest}>
+    <span css={customCss} {...rest}>
       {children ? children : label}
     </span>
   )

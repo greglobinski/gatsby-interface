@@ -117,12 +117,12 @@ storiesOf(`core/Toggle`, module)
             onChange={e => {
               setSubInterval(e.target.checked)
             }}
-            customCss={{
+            css={{
               alignItems: `flex-start`,
             }}
           >
             <Toggle.Wrapper
-              customCss={{
+              css={{
                 marginLeft: spaces.s,
                 display: `flex`,
               }}
@@ -130,7 +130,7 @@ storiesOf(`core/Toggle`, module)
               <Toggle.Input />
               <Toggle.Mark />
               <Toggle.Label
-                customCss={{
+                css={{
                   marginLeft: spaces.xs,
                 }}
               >

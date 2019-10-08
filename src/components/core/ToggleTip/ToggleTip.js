@@ -9,7 +9,6 @@ import React, {
   useMemo,
 } from "react"
 import PropTypes from "prop-types"
-import deepmerge from "deepmerge"
 
 import { MdInfo } from "react-icons/md"
 
@@ -17,8 +16,10 @@ import { useEventListener } from "../../../utils/hooks"
 import colors from "../../../theme/colors"
 import fontSizes from "../../../theme/fontSizes"
 import { spaces, radius } from "../../../utils/presets"
+import { showCustomCssDeprecationMessage } from "../../../utils/maintenance/deprecationMessages"
 
-function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
+function ToggleTip({ children, tip, customCss, width, className, ...rest }) {
+  showCustomCssDeprecationMessage(customCss)
   const [visible, setVisible] = useState(false)
 
   const tipRef = createRef()
@@ -54,12 +55,13 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
 
   return (
     <span
-      css={deepmerge(
+      css={[
         {
           position: `relative`,
         },
-        customCss
-      )}
+        customCss,
+      ]}
+      className={className}
     >
       {children ? (
         children
@@ -73,41 +75,44 @@ function ToggleTip({ children, tip, customCss = {}, width, ...rest }) {
   )
 }
 
-ToggleTip.Button = ({ children, visible, customCss = {}, ...rest }) => (
-  <button
-    aria-expanded={visible}
-    aria-haspopup="true"
-    aria-label={`more info`}
-    css={deepmerge(
-      {
-        background: `transparent`,
-        cursor: `pointer`,
-        border: `0`,
-        display: `inline-flex`,
-        height: `1.4em`,
-        padding: 0,
-        verticalAlign: `text-bottom`,
-        width: `1.4em`,
-        borderRadius: `50%`,
+ToggleTip.Button = ({ children, visible, customCss, ...rest }) => {
+  showCustomCssDeprecationMessage(customCss)
+  return (
+    <button
+      aria-expanded={visible}
+      aria-haspopup="true"
+      aria-label={`more info`}
+      css={[
+        {
+          background: `transparent`,
+          cursor: `pointer`,
+          border: `0`,
+          display: `inline-flex`,
+          height: `1.4em`,
+          padding: 0,
+          verticalAlign: `text-bottom`,
+          width: `1.4em`,
+          borderRadius: `50%`,
 
-        ":focus": {
-          boxShadow: `0 0 0 3px ${colors.purple[30]}`,
-          outline: `none`,
-        },
+          ":focus": {
+            boxShadow: `0 0 0 3px ${colors.purple[30]}`,
+            outline: `none`,
+          },
 
-        svg: {
-          height: `100%`,
-          color: colors.grey[50],
-          width: `100%`,
+          svg: {
+            height: `100%`,
+            color: colors.grey[50],
+            width: `100%`,
+          },
         },
-      },
-      customCss
-    )}
-    {...rest}
-  >
-    {children ? children : <MdInfo />}
-  </button>
-)
+        customCss,
+      ]}
+      {...rest}
+    >
+      {children ? children : <MdInfo />}
+    </button>
+  )
+}
 
 const tipEntry = keyframes({
   "100%": {
@@ -116,53 +121,56 @@ const tipEntry = keyframes({
 })
 
 ToggleTip.Tip = forwardRef(
-  ({ tip, visible, width = `12rem`, customCss = {}, ...rest }, ref) => (
-    <span
-      ref={ref}
-      role="status"
-      dangerouslySetInnerHTML={{ __html: visible && tip ? tip : null }}
-      css={
-        visible
-          ? deepmerge(
-              {
-                animation: `${tipEntry} .5s ease forwards`,
-                background: colors.grey[80],
-                borderRadius: radius.default,
-                bottom: `calc(100% + .75rem)`,
-                color: colors.white,
-                fontSize: fontSizes[1],
-                right: `-1rem`,
-                lineHeight: 1.4,
-                opacity: 0.25,
-                padding: `${spaces.xs} ${spaces.s}`,
-                position: `absolute`,
-                transformOrigin: `right bottom`,
-                width: width,
-                zIndex: 10,
-
-                ":after": {
-                  content: `""`,
+  ({ tip, visible, width = `12rem`, customCss, ...rest }, ref) => {
+    showCustomCssDeprecationMessage(customCss)
+    return (
+      <span
+        ref={ref}
+        role="status"
+        dangerouslySetInnerHTML={{ __html: visible && tip ? tip : null }}
+        css={
+          visible
+            ? [
+                {
+                  animation: `${tipEntry} .5s ease forwards`,
                   background: colors.grey[80],
-                  bottom: 0,
-                  height: `.5rem`,
-                  right: `1.25rem`,
+                  borderRadius: radius.default,
+                  bottom: `calc(100% + .75rem)`,
+                  color: colors.white,
+                  fontSize: fontSizes[1],
+                  right: `-1rem`,
+                  lineHeight: 1.4,
+                  opacity: 0.25,
+                  padding: `${spaces.xs} ${spaces.s}`,
                   position: `absolute`,
-                  transform: `translate(0,50%) rotate(45deg)`,
-                  transformOrigin: `center center`,
-                  width: `.5rem`,
-                  zIndes: -1,
-                },
+                  transformOrigin: `right bottom`,
+                  width: width,
+                  zIndex: 10,
 
-                "p:last-of-type": {
-                  margin: 0,
+                  ":after": {
+                    content: `""`,
+                    background: colors.grey[80],
+                    bottom: 0,
+                    height: `.5rem`,
+                    right: `1.25rem`,
+                    position: `absolute`,
+                    transform: `translate(0,50%) rotate(45deg)`,
+                    transformOrigin: `center center`,
+                    width: `.5rem`,
+                    zIndes: -1,
+                  },
+
+                  "p:last-of-type": {
+                    margin: 0,
+                  },
                 },
-              },
-              customCss
-            )
-          : null
-      }
-    />
-  )
+                customCss,
+              ]
+            : null
+        }
+      />
+    )
+  }
 )
 
 ToggleTip.propTypes = {}
