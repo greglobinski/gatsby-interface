@@ -3,6 +3,7 @@ import React from "react"
 import { storiesOf } from "@storybook/react"
 
 import FileUpload from "./FileUpload"
+import { StoryUtils } from "../../utils/storybook"
 
 // sample of data that filestack returns upon successful upload
 const mockedFile = {
@@ -22,77 +23,106 @@ const mockedFile = {
   status: `Stored`,
 }
 
+const API_KEY =
+  process.env.GATSBY_FILESTACK_API_KEY ||
+  process.env.STORYBOOK_FILESTACK_API_KEY
+
+const APIKeyMissing = () => (
+  <p>
+    Using the FileUpload component without setting the GATSBY_FILESTACK_API_KEY
+    will fail
+  </p>
+)
+
 storiesOf(`File Upload`, module)
   .add(`Single File Upload`, () => (
-    <>
-      <FileUpload name="file" setFieldValue={() => {}} />
-      <hr />
-      <FileUpload
-        name="file"
-        setFieldValue={() => {}}
-        defaultFile={mockedFile}
-      />
-    </>
+    <StoryUtils.Container>
+      {!API_KEY ? (
+        <APIKeyMissing />
+      ) : (
+        <>
+          <FileUpload name="file" setFieldValue={() => {}} />
+          <hr />
+          <FileUpload
+            name="file"
+            setFieldValue={() => {}}
+            defaultFile={mockedFile}
+          />
+        </>
+      )}
+    </StoryUtils.Container>
   ))
   .add(`Multi File Upload`, () => (
-    <>
-      <FileUpload
-        multi={true}
-        name="file"
-        setFieldValue={() => {}}
-        fileTypes={[`image/jpeg`]}
-      />
-      <hr />
-      <FileUpload
-        multi={true}
-        name="file"
-        setFieldValue={() => {}}
-        fileTypes={[`image/jpeg`]}
-        defaultFile={mockedFile}
-      />
-    </>
+    <StoryUtils.Container>
+      {!API_KEY ? (
+        <APIKeyMissing />
+      ) : (
+        <>
+          <FileUpload
+            multi={true}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+          />
+          <hr />
+          <FileUpload
+            multi={true}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+            defaultFile={mockedFile}
+          />
+        </>
+      )}
+    </StoryUtils.Container>
   ))
   .add(`File Upload with Custom Components`, () => (
-    <>
-      <FileUpload
-        multi={false}
-        name="file"
-        setFieldValue={() => {}}
-        fileTypes={[`image/jpeg`]}
-        CustomButtonComponent={({ onPick }) => (
-          <button type="button" onClick={onPick}>
-            Custom Button
-          </button>
-        )}
-        CustomPreviewComponent={({ file, index, removeFile }) => (
-          <div>
-            <span>{file.filename}</span>
-            <button type="button" onClick={() => removeFile(index)}>
-              X
-            </button>
-          </div>
-        )}
-      />
-      <hr />
-      <FileUpload
-        multi={false}
-        name="file"
-        setFieldValue={() => {}}
-        fileTypes={[`image/jpeg`]}
-        CustomButtonComponent={({ onPick }) => (
-          <button type="button" onClick={onPick}>
-            Custom Button
-          </button>
-        )}
-        CustomPreviewComponent={({ file, index, removeFile }) => (
-          <div>
-            <span>{file.filename}</span>
-            <button type="button" onClick={() => removeFile(index)}>
-              X
-            </button>
-          </div>
-        )}
-        defaultFile={mockedFile}
-      />
-    </>
+    <StoryUtils.Container>
+      {!API_KEY ? (
+        <APIKeyMissing />
+      ) : (
+        <>
+          <FileUpload
+            multi={false}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+            CustomButtonComponent={({ onPick }) => (
+              <button type="button" onClick={onPick}>
+                Custom Button
+              </button>
+            )}
+            CustomPreviewComponent={({ file, index, removeFile }) => (
+              <div>
+                <span>{file.filename}</span>
+                <button type="button" onClick={() => removeFile(index)}>
+                  X
+                </button>
+              </div>
+            )}
+          />
+          <hr />
+          <FileUpload
+            multi={false}
+            name="file"
+            setFieldValue={() => {}}
+            fileTypes={[`image/jpeg`]}
+            CustomButtonComponent={({ onPick }) => (
+              <button type="button" onClick={onPick}>
+                Custom Button
+              </button>
+            )}
+            CustomPreviewComponent={({ file, index, removeFile }) => (
+              <div>
+                <span>{file.filename}</span>
+                <button type="button" onClick={() => removeFile(index)}>
+                  X
+                </button>
+              </div>
+            )}
+            defaultFile={mockedFile}
+          />
+        </>
+      )}
+    </StoryUtils.Container>
   ))
