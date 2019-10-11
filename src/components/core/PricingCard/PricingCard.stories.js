@@ -210,7 +210,7 @@ storiesOf(`core/PricingCard`, module)
       </StoryUtils.Container>
     </div>
   ))
-  .add(`individaul multiplan card`, () => (
+  .add(`individual multiplan card`, () => (
     <div
       css={{
         width: `880px`,
