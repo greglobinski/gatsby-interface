@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 module.exports = async ({ config, mode }) => {
   // console.dir(config.plugins, { depth: null }) || config;
 
