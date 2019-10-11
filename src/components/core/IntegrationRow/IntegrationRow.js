@@ -11,6 +11,7 @@ import { Heading } from "../Heading"
 import { Badge } from "../Badge"
 import { spaces, fontFamilies } from "../../../utils/presets"
 import fontSizes from "../../../theme/fontSizes"
+import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
 import cardStyles from "../../../theme/styles/card"
 function IntegrationRow({
