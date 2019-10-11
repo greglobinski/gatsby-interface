@@ -54,6 +54,8 @@ export { Label } from "./components/Label"
 
 export { InputError } from "./components/InputError"
 
+export { FileUpload } from "./components/FileUpload"
+
 export { Notification } from "./components/Notification"
 
 export { SidebarNav } from "./components/SidebarNav"

@@ -23,6 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@loadable/component": "^5.10.2",
     "@reach/alert": "^0.1.5",
     "filestack-react": "^3.1.0",
     "gatsby-design-tokens": "^1.0.0"
@@ -30,6 +31,7 @@
   "peerDependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
+    "filestack-react": "^3.1.0",
     "gatsby": "2.6.0",
     "prop-types": "^15.6.1",
     "react": "^16.8.1",
@@ -94,6 +96,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "filestack-react": "^3.1.0",
     "formik": "^1.5.8",
     "fs": "^0.0.1-security",
     "gatsby": "2.6.0",
