@@ -7,7 +7,7 @@ import {
   useShowSuccessToast,
   useShowErrorToast,
   useShowErrorAlert,
-} from "../src"
+} from "../src/components/Toast"
 import Toast from "../src/components/Toast/Toast"
 
 describe(`Toast`, () => {

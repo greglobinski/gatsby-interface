@@ -2,53 +2,22 @@
 
 A skeleton component on which styled [Button](?path=/story/button--variants) is built.
 
-It's main jog is to render proper `tag`/`component` depending on passed `props`.
-
-- `to` - the Gatsby `<Link>`
-- `href` - a `<a>` tag
-- in other case a `<button />` tag
+This is just a wrapper for HTML `<button />` element.
 
 ```javascript
-import { Button } from "gatsby-interface"
+import { BaseButton } from "gatsby-interface"
 
-function Component() => (
-  <BaseButton>Label</BaseButton>
-)
+function Component() {
+  return <BaseButton>Label</BaseButton>
+}
 ```
 
 ## Props
 
-#### `disabled`
+`BaseButton` accepts all props accepted by HTML's `<button>` element as well as these:
 
-- type: **boolean**
-- default: false
-
-#### `to`
-
-- type: **string**
-
-#### `href`
-
-- type: **string**
-
-#### `loading`
-
-- type: **boolean**
-- default: false
-
-#### `loadingLabel`
-
-- type: **string**
-
-#### `rel`
-
-- type: **string**
-
-#### `target`
-
-- type: **enum** ['_blank', '_self', '_parent', '_top']
-
-#### `type`
-
-- type: **enum** ['button', 'reset' , 'submit']
-- default: 'button'
+| Prop         | Type                  | Default value | Description                                           |
+| ------------ | --------------------- | ------------- | ----------------------------------------------------- |
+| loading      | `boolean`             | `false`       | Whether the button is in a loading state              |
+| loadingLabel | `React.ReactNode`     |               | Button label to be displayed when `loading` is `true` |
+| LoadingIcon  | `React.ComponentType` |               | An icon to be displayed when `loading` is `true`      |

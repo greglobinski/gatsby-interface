@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, css, keyframes } from "@emotion/core"
-import React, { Fragment, useEffect, useState } from "react"
+import { jsx, css } from "@emotion/core"
+import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { MdEdit, MdArrowForward, MdFlashOn, MdLaunch } from "react-icons/md"
 
@@ -14,6 +14,8 @@ import fontSizes from "../../../theme/fontSizes"
 import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
 import cardStyles from "../../../theme/styles/card"
+import { AnchorButton } from "../AnchorButton"
+
 function IntegrationRow({
   isConnected = false,
   title,
@@ -60,7 +62,11 @@ function IntegrationRow({
         />
       )}
       {linkLabel && (
-        <IntegrationRow.EditButton label={linkLabel} {...linkRest} />
+        <IntegrationRow.EditButton
+          Component={AnchorButton}
+          label={linkLabel}
+          {...linkRest}
+        />
       )}
 
       {details && (
@@ -113,7 +119,12 @@ IntegrationRow.Badge = props => (
   />
 )
 
-IntegrationRow.EditButton = ({ children, label = `Connect`, ...rest }) => {
+IntegrationRow.EditButton = ({
+  Component = Button,
+  children,
+  label = `Connect`,
+  ...rest
+}) => {
   const {
     state: { boxState },
     boxTone,
@@ -122,7 +133,7 @@ IntegrationRow.EditButton = ({ children, label = `Connect`, ...rest }) => {
   const isConnected = boxState === `OPEN`
 
   return (
-    <Button
+    <Component
       variant={`GHOST`}
       tone={boxTone !== `NEUTRAL` ? boxTone : undefined}
       css={{
@@ -140,7 +151,7 @@ IntegrationRow.EditButton = ({ children, label = `Connect`, ...rest }) => {
           {!isConnected ? <MdArrowForward /> : <MdEdit />}
         </Fragment>
       )}
-    </Button>
+    </Component>
   )
 }
 

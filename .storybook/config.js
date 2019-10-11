@@ -101,7 +101,11 @@ addParameters({
 })
 
 //const req = require.context("../__stories__", true, /\.stories\.js$/)
-const req = require.context("../src/components/../", true, /\.stories\.js$/)
+const req = require.context(
+  "../src/components/../",
+  true,
+  /\.stories\.(js|tsx)$/
+)
 
 require("../__stories__/Welcome.stories")
 

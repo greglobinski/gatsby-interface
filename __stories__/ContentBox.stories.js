@@ -2,7 +2,7 @@ import React from "react"
 
 import { storiesOf } from "@storybook/react"
 
-import { ContentBox } from "../src"
+import { ContentBox } from "../src/components/skeletons/ContentBox"
 
 storiesOf(`ContentBox`, module)
   .add(`TOGGLE (default) behaviour with a static button`, () => (
