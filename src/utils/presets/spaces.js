@@ -4,6 +4,7 @@ export const spaces = {
   xs: `0.5rem`,
   s: `0.75rem`,
   m: `1rem`,
+  "2m": `1.25rem`,
   l: `1.5rem`,
   xl: `2rem`,
   "2xl": `2.5rem`,

@@ -1,3 +1,5 @@
+import gray from "gray-percentage"
+
 export const palette = {
   purple: {
     900: `#362066`,
@@ -106,6 +108,13 @@ export const palette = {
     200: `#f0f0f2`,
     100: `#f5f5f5`,
     50: `#fbfbfb`,
+    dark: gray(8, 270),
+    copy: gray(12, 270),
+    neutral: gray(28, 270),
+    calm: gray(46, 270),
+    bright: gray(76, 270),
+    light: gray(86, 270),
+    faint: gray(96, 270),
   },
   white: `#ffffff`,
   black: `#000000`,

@@ -26,7 +26,9 @@
     "@loadable/component": "^5.10.2",
     "@reach/alert": "^0.1.5",
     "filestack-react": "^3.1.0",
-    "gatsby-design-tokens": "^1.0.0"
+    "gatsby-design-tokens": "^1.0.0",
+    "gray-percentage": "^2.0.0",
+    "hex2rgba": "^0.0.1"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.14",
