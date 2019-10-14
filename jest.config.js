@@ -1,6 +1,11 @@
+const { defaults } = require(`jest-config`)
+
 module.exports = {
+  roots: [`<rootDir>/__tests__`, `<rootDir>/src`],
+  testMatch: [...defaults.testMatch, `**/__tests__/*.test.(ts|js)?(x)`],
+  moduleFileExtensions: [`ts`, `tsx`, `js`, `json`],
   transform: {
-    "^.+\\.jsx?$": `<rootDir>/jest-preprocess.js`,
+    "^.+\\.(j|t)sx?$": `<rootDir>/jest-preprocess.js`,
   },
   moduleNameMapper: {
     ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
@@ -13,5 +18,5 @@ module.exports = {
   },
   testURL: `http://localhost`,
   setupFiles: [`<rootDir>/jest-setup.js`],
-  setupTestFrameworkScriptFile: `<rootDir>/setup-test-env.js`,
+  setupFilesAfterEnv: [`<rootDir>/setup-test-env.js`],
 }

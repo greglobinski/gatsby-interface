@@ -11,6 +11,7 @@ extends:
   - plugin:react/recommended
   - prettier
   - prettier/react
+  - plugin:@typescript-eslint/eslint-recommended
 globals:
   graphql: true
 parser: babel-eslint
@@ -73,5 +74,16 @@ rules:
     - off
     - ignore:
         - children
-
-
+overrides:
+  - parser: "@typescript-eslint/parser"
+    files:
+      - "*.ts"
+      - "*.tsx"
+    plugins:
+      - "@typescript-eslint"
+    rules:
+      quotes: off
+      "@typescript-eslint/quotes":
+        - error
+        - backtick
+        - allowTemplateLiterals: true

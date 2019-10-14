@@ -17,11 +17,11 @@ import fonts from "../../../theme/fonts"
 import fontSizes from "../../../theme/fontSizes"
 import { spaces, breakpoints, radius } from "../../../utils/presets"
 import { Heading } from "../Heading"
-import { Button } from "../Button"
 import toggleTipIcon from "./assets/toggleTipIcon.svg"
 import { capitalizeString } from "../../../utils/helpers/"
 import { CheckIcon } from "../../icons"
 import { ToggleTip } from "../ToggleTip"
+import { LinkButton } from "../LinkButton"
 
 const VARIANTS = [`PRIMARY`, `SECONDARY`]
 
@@ -454,7 +454,7 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
       }}
     >
       {label && (to || onClick) && (
-        <Button
+        <LinkButton
           to={to}
           onClick={() => onClick(name)}
           css={{
@@ -470,7 +470,7 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
           }}
         >
           {label}
-        </Button>
+        </LinkButton>
       )}
       {children}
     </div>
@@ -524,9 +524,9 @@ PricingCard.UnifiedCta = ({ children, ...rest }) => {
       {...rest}
     >
       {label && to && (
-        <Button to={to} tone={`SUCCESS`} css={{ minWidth: `45%` }}>
+        <LinkButton to={to} tone={`SUCCESS`} css={{ minWidth: `45%` }}>
           {label}
-        </Button>
+        </LinkButton>
       )}
       {comment && (
         <span
