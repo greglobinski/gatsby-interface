@@ -27,7 +27,7 @@ function Switch({ fieldName, fieldValue, options = {}, onChange, ...rest }) {
       tone={`SUCCESS`}
     >
       <Toggle.Wrapper
-        customCss={{
+        css={{
           fontFamily: fonts.header.join(`,`),
           letterSpacing: `0.03em`,
         }}
@@ -38,7 +38,7 @@ function Switch({ fieldName, fieldValue, options = {}, onChange, ...rest }) {
         <Toggle.Input />
         <Toggle.Mark />
         <Toggle.Label
-          customCss={{
+          css={{
             textTransform: `uppercase`,
           }}
         >

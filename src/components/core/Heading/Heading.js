@@ -6,6 +6,7 @@ import PropTypes from "prop-types"
 import { BaseHeading } from "../../skeletons/BaseHeading"
 import { styles, options } from "../../../theme/styles/heading"
 import tones from "../../../theme/tones"
+import { showCustomCssDeprecationMessage } from "../../../utils/maintenance/deprecationMessages"
 
 const { baseStyle, variantStyles } = styles
 const { VARIANTS, TONES } = options
@@ -18,14 +19,18 @@ function Heading({
   as = `h2`,
   ...rest
 }) {
+  showCustomCssDeprecationMessage(customCss)
+
   return (
     <BaseHeading
       as={as}
-      css={{
-        ...baseStyle({ tone }),
-        ...variantStyles({ tone })[variant],
-        ...customCss,
-      }}
+      css={[
+        {
+          ...baseStyle({ tone }),
+          ...variantStyles({ tone })[variant],
+        },
+        customCss,
+      ]}
       {...rest}
     >
       {children}

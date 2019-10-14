@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
 
 import colors from "../../theme/colors"
+import { showCustomCssDeprecationMessage } from "../../utils/maintenance/deprecationMessages"
 
 const Link = ({
   children,
@@ -14,6 +15,8 @@ const Link = ({
   variant = `DEFAULT`,
   ...rest
 }) => {
+  showCustomCssDeprecationMessage(customCss)
+
   const baseStyles = {
     alignItems: `center`,
     color: colors.purple[60],
@@ -37,30 +40,28 @@ const Link = ({
     },
   }
 
+  const commonProps = {
+    css: [
+      {
+        ...baseStyles,
+        ...styles[variant],
+      },
+      customCss,
+    ],
+    ...rest,
+  }
+
   return href ? (
     <a
       href={href}
       target={target}
       rel={target === `_blank` ? `noopener noreferrer` : ``}
-      css={{
-        ...baseStyles,
-        ...styles[variant],
-        ...customCss,
-      }}
-      {...rest}
+      {...commonProps}
     >
       {children}
     </a>
   ) : (
-    <GatsbyLink
-      to={to}
-      css={{
-        ...baseStyles,
-        ...styles[variant],
-        ...customCss,
-      }}
-      {...rest}
-    >
+    <GatsbyLink to={to} {...rest}>
       {children}
     </GatsbyLink>
   )
