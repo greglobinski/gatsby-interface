@@ -2,7 +2,6 @@
 import { jsx } from "@emotion/core"
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
-import deepmerge from "deepmerge"
 import { MdClose, MdArrowForward } from "react-icons/md"
 
 import styles from "../../theme/styles/notification"
@@ -18,13 +17,14 @@ import {
   NOTIFICATION_VARIANTS,
   NOTIFICATION_ICONS,
 } from "../../utils/options"
+import { showCustomCssDeprecationMessage } from "../../utils/maintenance/deprecationMessages"
 
 const asOptions = {
   div: `div`,
   section: `section`,
 }
 function Notification({
-  customCss = {},
+  customCss,
   children,
   as = `div`,
   tone = `BRAND`,
@@ -37,6 +37,7 @@ function Notification({
   closeNotificationButton,
   ...rest
 }) {
+  showCustomCssDeprecationMessage(customCss)
   const [showNotificationState, setNotificationState] = useState(
     showNotification
   )
@@ -51,13 +52,13 @@ function Notification({
       value={{ showNotificationState, setNotificationState }}
     >
       <Component
-        css={deepmerge(
+        css={[
           {
             ...styles.base,
             ...styles.variants[variant](tones[tone]),
           },
-          customCss
-        )}
+          customCss,
+        ]}
         {...rest}
       >
         {content && (

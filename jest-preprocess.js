@@ -1,5 +1,5 @@
 const babelOptions = {
-  presets: [`babel-preset-gatsby`],
+  presets: [`babel-preset-gatsby`, `@babel/typescript`],
   plugins: [
     `emotion`,
     `@babel/plugin-proposal-optional-chaining`,
