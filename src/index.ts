@@ -19,7 +19,11 @@ export {
   TextButton,
   PrimaryDeleteButton,
   SecondaryDeleteButton,
+  getButtonStyles,
 } from "./components/core/Button"
+
+export { AnchorButton } from "./components/core/AnchorButton"
+export { LinkButton } from "./components/core/LinkButton"
 
 export { SettingsBlock } from "./components/core/SettingsBlock"
 
@@ -78,6 +82,8 @@ export { Badge } from "./components/core/Badge"
 export { Breadcrumb } from "./components/Breadcrumb"
 
 export { Switch } from "./components/core/Switch"
+
+export * from "./components/CopyButton"
 
 export { colors, palette } from "./utils/presets/colors"
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
