@@ -7,7 +7,7 @@ import Radio from "./Radio"
 import { StoryUtils } from "../../utils/storybook"
 
 function ControlledRadio({ name = `radioExample`, options = [] }) {
-  const [value, setValue] = React.useState()
+  const [value, setValue] = React.useState(``)
 
   const selectionStyle = radios(
     `selectionStyle`,
