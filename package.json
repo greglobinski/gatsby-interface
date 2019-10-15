@@ -2,7 +2,7 @@
   "name": "gatsby-interface",
   "version": "0.0.45",
   "description": "Component library for Gatsby projects",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

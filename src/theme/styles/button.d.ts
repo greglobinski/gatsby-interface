@@ -2,10 +2,8 @@
 import { Interpolation } from '@emotion/serialize'
 import { ButtonSize, ButtonVariant, ButtonTone } from '../../components/core/Button'
 
-const buttonThemeStyles: {
+export const buttonThemeStyles: {
     base: (props: { loading?: boolean }) => Interpolation,
     sizes: Record<ButtonSize, Interpolation>,
     variants: Record<ButtonVariant, (props: { tone: ButtonTone }) => Interpolation>
 }
-
-export = ButtonThemeStyles
