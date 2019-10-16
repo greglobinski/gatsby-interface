@@ -13,7 +13,7 @@ These are some patterns and best practices we use when contributing to `gatsby-i
 - Use React hooks and functional components - https://reactjs.org/docs/hooks-intro.html
 - Use CSS props for styling - https://emotion.sh/docs/css-prop
 - Use `gatsby-design-tokens` for styling constants - https://www.gatsbyjs.org/guidelines/design-tokens/
-- Use compound components to make components more composable and flexible - https://kentcdodds.com/blog/how-to-optimize-your-context-value
+- Use compound components to make components more composable and flexible - https://kentcdodds.com/blog/compound-components-with-react-hooks
 - Make all PRs against the `dev` branch
 - Use `TONE` and `VARIANT` prop (when appropriate) to determine color styles and version of a component - see Button as an example
 - Make the component as generic as possible so it can be used anywhere by anything
