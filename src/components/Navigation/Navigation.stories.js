@@ -137,8 +137,9 @@ const navItems = [
     },
   },
 ]
-const toggleNavigation = 1065
-const bpToggleNavigation = `@media (min-width: ${toggleNavigation}px)`
+
+const mobileNavBreakpoint = 1065
+const mobileNavMediaQuery = `@media (min-width: ${mobileNavBreakpoint}px)`
 
 storiesOf(`Navigation`, module)
   .add(`default`, () => (
@@ -149,7 +150,7 @@ storiesOf(`Navigation`, module)
           isMobileNavOpen={false}
           navItems={navItems}
           updateParentState={() => {}}
-          bpToggleNavigation={bpToggleNavigation}
+          mobileNavMediaQuery={mobileNavMediaQuery}
         />
       </div>
     </StoryUtils.Container>
@@ -167,7 +168,7 @@ storiesOf(`Navigation`, module)
           isMobileNavOpen={false}
           navItems={navItems}
           updateParentState={() => {}}
-          bpToggleNavigation={bpToggleNavigation}
+          mobileNavMediaQuery={mobileNavMediaQuery}
         />
       </div>
     </StoryUtils.Container>
