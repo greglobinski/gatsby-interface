@@ -90,7 +90,7 @@ const dropdownItemStyles = {
     "& .nav-link-sub": {
       color: palette.grey.copy,
       textDecoration: `none`,
-      padding: `${spaces[`s`]} ${spaces[`l`]}`,
+      padding: `${spaces.s} ${spaces.l}`,
       display: `block`,
       transition: `all ${transition.speed.default}`,
       "&:hover": {

@@ -64,17 +64,17 @@ const navListStyles = {
   default: {
     listStyle: `none`,
     margin: `0 0 0 auto`,
-    padding: `0 ${spaces[`m`]}`,
+    padding: `0 ${spaces.m}`,
     position: `relative`,
     zIndex: 1,
     margin: `0 auto`,
     width: `100%`,
     maxWidth: `${dimensions.layout.width}rem`,
-    paddingLeft: spaces[`xl`],
-    paddingRight: spaces[`xl`],
+    paddingLeft: spaces.xl,
+    paddingRight: spaces.xl,
     [mediaQueries.tablet]: {
-      paddingLeft: spaces[`xl`],
-      paddingRight: spaces[`xl`],
+      paddingLeft: spaces.xl,
+      paddingRight: spaces.xl,
     },
     [mediaQueries.phablet]: {
       width: `90%`,
@@ -114,7 +114,7 @@ const Navigation = ({
           @keyframes slideFade {
             0% {
               opacity: 0;
-              transform: translate(-${spaces[`2m`]});
+              transform: translate(-${spaces.m});
             }
             50% {
               opacity: 1;
@@ -231,7 +231,7 @@ const navItemStyles = {
       textAlign: `left`,
       display: isLast ? `flex` : `inline-block`,
       margin: 0,
-      padding: `0 ${spaces[`s`]}`,
+      padding: `0 ${spaces.s}`,
       paddingRight: isLast ? 0 : false,
       color: isInverted ? `rgba(255,255,255,0.8)` : false,
       position: `relative`,
