@@ -3,6 +3,9 @@
   "version": "0.0.46",
   "description": "Component library for Gatsby projects",
   "source": "src/index.js",
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
