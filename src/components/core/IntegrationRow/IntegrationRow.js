@@ -190,7 +190,7 @@ function renderData(data = [], primaryStyling) {
           }}
         >
           {item.url ? (
-            <Link href={item.url}>
+            <Link href={item.url} target="_blank">
               {item.value}
               <MdLaunch />
             </Link>
