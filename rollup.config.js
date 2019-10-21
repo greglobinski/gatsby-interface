@@ -33,6 +33,7 @@ export default {
       exclude: `node_modules/**`,
       plugins: [`@babel/external-helpers`],
       extensions,
+      runtimeHelpers: true,
     }),
     resolve({ extensions }),
     commonjs(),
