@@ -1,36 +1,46 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core"
-import React, { useState } from "react"
 
 import { storiesOf } from "@storybook/react"
 import { StoryUtils } from "../../../utils/storybook"
 
 import BaseNavigation from "./BaseNavigation"
 
-const navItems = [
+const items = [
   {
-    name: `About`,
-    linkTo: `/about`,
-    subItems: [
+    name: `Alpha`,
+    linkTo: `/alpha`,
+    items: [
       {
-        name: `Resume`,
-        linkTo: `/about/resume`,
+        name: `Delta`,
+        linkTo: `/alpha/delta`,
       },
       {
-        name: `History`,
-        linkTo: `/about/history`,
+        name: `Echo`,
+        linkTo: `/alpha/echo`,
       },
     ],
   },
   {
-    name: `Contact`,
-    linkTo: `/Contact`,
+    name: `Bravo`,
+    linkTo: `/bravo`,
+  },
+  {
+    name: `Charlie`,
+    linkTo: `/charlie`,
   },
 ]
 
-storiesOf(`BaseNavigation`, module).add(`usage example`, () => (
-  <StoryUtils.Container>
-    <BaseNavigation navItems={navItems} />
-    {/* <BaseNavigation /> */}
-  </StoryUtils.Container>
-))
+storiesOf(`BaseNavigation`, module)
+  .add(`usage example`, () => (
+    <StoryUtils.Container>
+      <BaseNavigation items={items} />
+    </StoryUtils.Container>
+  ))
+  .add(`BaseNavigation.Hamburger`, () => (
+    <StoryUtils.Container>
+      <BaseNavigation>
+        <BaseNavigation.Hamburger />
+      </BaseNavigation>
+    </StoryUtils.Container>
+  ))
