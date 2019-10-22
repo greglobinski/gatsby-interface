@@ -23,8 +23,12 @@ const navItems = [
     ],
   },
   {
+    name: `Projects`,
+    linkTo: `/projects`,
+  },
+  {
     name: `Contact`,
-    linkTo: `/Contact`,
+    linkTo: `/contact`,
   },
 ]
 
