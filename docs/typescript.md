@@ -6,6 +6,7 @@ This document's goal is to provide some guidelines and suggestions on using Type
 
 - [Prop Types](#prop-types)
   - [Naming](#naming)
+  - [Optional props](#optional-props)
   - [Always export prop types](#always-export-prop-types)
   - [ReactNode](#reactnode)
   - [Be strict](#be-strict)
@@ -19,6 +20,9 @@ This document's goal is to provide some guidelines and suggestions on using Type
   - [React.FC](#reactfc)
   - [React.forwardRef](#reactforwardRef)
   - [Event handlers](#event-handlers)
+  - [Context](#context)
+- [Emotion](#emotion)
+- [Typing Third-party Libraries](#typing-third-party-libraries)
 
 ## Prop Types
 
@@ -36,6 +40,18 @@ Here are some general rules for writing a type for component props:
 ### Naming
 
 A TypeScript type for a component should be name `[componentName]Props`, e.g. `MyComponent` should have props named `MyComponentProps`.
+
+### Optional props
+
+If some prop is not considered required for your component, you can use `?` to [mark it as optional](https://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties) in prop types. This approach is different to `prop-types` library where you mark props as required.
+
+```typescript
+type MyDateSelectorProps = {
+  value: string // required
+  onChange: (value: string) => void // required
+  mode?: "input" | "widget" // optional, same as "input" | "widget" | undefined
+}
+```
 
 ### Always export prop types
 
@@ -76,9 +92,27 @@ export default function PageTitle({ title, subtitle }) {
 }
 ```
 
+The reason for this is components can be used not only to style and/or compose elements, but also to render a transformed value. Take [react-intl](https://github.com/formatjs/react-intl/), for example: it exposes a [FormattedMessage](https://github.com/formatjs/react-intl/blob/master/docs/Components.md#formattedmessage) component which is used to display translated text. If our example above only allowed `title` and `subtitle` as strings, a consumer application would not be able to use `PageTitle` like this:
+
+```jsx
+import { PageTitle } from "gatsby-interface"
+import { FormattedMessage } from "react-intl"
+
+export default function HomePageTitle({ title, subtitle }) {
+  return (
+    <h1>
+      <PageTitle
+        title={<FormattedMessage id="homePage.title" />}
+        subtitle={<FormattedMessage id="homePage.subtitle" />}
+      />
+    </h1>
+  )
+}
+```
+
 ### Be strict
 
-Try to be as strict as possible when declaring types for your props. Avoid using `any` or `unknown` types as well as `Function` or `object`. If your component renders a button which calls `handleButtonClick` prop when clicked, then it should have either of these type declarations:
+Try to be as strict as possible when declaring types for your props. Avoid using `any` or `unknown` types as well as `Function` or `object` anywhere but development-related code (i.e. tests, stories and WIP code). If your component renders a button which calls `handleButtonClick` prop when clicked, then it should have either of these type declarations:
 
 ```tsx
 export type MyComponentWithButtonProps = {
@@ -118,7 +152,7 @@ export default function MyLogButton({ onClick, ...rest }: MyLogButtonProps) {
 
 ### Avoid conditional prop types
 
-In some cases it is tempting to create a component that renders different components with different props based on some subset of its own props. Naturally, a component like this will have to either calculate relevenat props itself or allow passing them from a parent component. Here are examples to illustrate both cases:
+In some cases it is tempting to create a component that renders different components with different props based on some subset of its own props. Naturally, a component like this will have to either calculate relevant props itself or allow passing them from a parent component. Here are examples to illustrate both cases:
 
 ```tsx
 type MyDateSelectorProps = {
@@ -164,7 +198,7 @@ function MyButtonLookalike({ href, ...rest }: MyButtonLookalikeProps) {
 ```
 
 The second case won't even compile since `rest` may contain attributes not recognized by `<button />` such as `rel` and `target`.
-It is possible to have conditional prop types with TypeScript; however, it usualy makes more sense to see if the component actually needs that. In our example above, a `MyButtonLookalike` is used to render either an anchor link or a button, and both of them should look like a button. Yet this makes the component more ambigous since we'd have to look at the props to see what will be actually rendered:
+It is possible to have conditional prop types with TypeScript; however, it usually makes more sense to see if the component actually needs that. In our example above, a `MyButtonLookalike` is used to render either an anchor link or a button, and both of them should look like a button. Yet this makes the component more ambiguous since we'd have to look at the props to see what will be actually rendered:
 
 ```jsx
 // In this case we can't even know what gets rendered - is it always a button? an anchor?
@@ -253,7 +287,7 @@ return <button ref={ref}>Click me!</button>
 
 ### React.FC
 
-If you're a fan of declaring components as arrow functions, you can use a shortcut `React.FC<T>` &mdash; it injects `children: React.ReactNode` into the type `T` that you provide. So, instead of writing
+If you're a fan of declaring components as arrow functions, you can use a shortcut `React.FC<T>` &mdash; it injects `children: React.ReactNode` into the type `T` that you provide and provides a return type. So, instead of writing
 
 ```typescript
 export type MyComponentProps = {
@@ -322,3 +356,98 @@ React has type aliases for basically all `onX` props that can be used on native 
 - `onSubmit` &mdash; `React.FormEventHandler<T>`
 
 You can use these aliases in your prop types for props.
+
+### Context
+
+Typing React context is pretty straightforward: `React.createContext` is a generic function in TypeScript that accepts a type for the context value. Just provide that type and it will be inferred by context provider and consumers. For example, this is how a `ToastContext` would be defined in TS:
+
+```typescript
+// Type for the context value
+export type ToastContextValue = {
+  showToast: (message: React.ReactNode, options?: ToastOptions) => void
+}
+
+export type ToastOptions = {
+  tone?: "SUCCESS" | "DANGER"
+  timeout?: number
+}
+
+// Pass ToastContextValue to generic React.createContext
+export const ToastContext = React.createContext<ToastContextValue>({
+  showToast: () => {}, // default context value must respect the type
+})
+
+/*
+ * TypeScript will infer the props types ("value") for ToastContext.Provider from ToastContext
+ */
+export const ToastProvider = ToastContext.Provider
+
+/*
+ * TypeScript will infer the type for ToastContext.Consumer render function from ToastContext
+ */
+export const ToastConsumer = ToastContext.Consumer
+
+/*
+ * TypeScript will infer the return type for from React.useContext
+ * which in turn infers it from ToastContext
+ */
+export function useToast() {
+  return React.useContext(ToastContext)
+}
+```
+
+## Emotion
+
+It is possible to provide prop types for your `styled` components:
+
+```typescript
+export const MorpheusPill = styled("div")<{ isMatrixPill: boolean }>`
+  color: ${props => (props.isMatrixPill ? "red" : "blue")};
+`
+```
+
+However, it might be better to extract those types in the same way as we do for other prop types:
+
+```typescript
+export type MorpheusPillProps = {
+  isMatrixPill: boolean
+}
+
+export const MorpheusPill = styled("div")<MorpheusPillProps>`
+  color: ${props => (props.isMatrixPill ? "red" : "blue")};
+`
+```
+
+This approach is also helpful if you're using VSCode and [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) plugin since it only works if the template string starts on the same line as the `styled`/`css` call.
+If we would leave the type declaration in the generic, our code might be prettified into something like this:
+
+```typescript
+export const MorpheusPill = styled("div")<{
+  isMatrixPill: boolean // this would break vscode-styled-components
+}>`
+  color: ${props => (props.isMatrixPill ? "red" : "blue")};
+`
+```
+
+## Typing Third-party Libraries
+
+Many of JavaScript libraries out there do provide typings either as part of the package itself or available as [@types/library-name](https://github.com/DefinitelyTyped/DefinitelyTyped). However, some libraries still have no types exposed. The lack of type definitions for third-party libraries must never stop us from using those libraries, but luckily there is a workaround for this: just add a broad type definition in the [/src/typings.d.ts](/src/typings.d.ts) file, e.g.:
+
+```typescript
+declare module "@xstyled/system"
+```
+
+If the library is used extensively in our code then we could try to provide our own typings if it is not too difficult or time-consuming. For example:
+
+```typescript
+declare module "@xstyled/styled-components" {
+  import styled, {
+    css as styledCss,
+    createGlobalStyle as styledCreateGlobalStyle,
+  } from "styled-components"
+
+  export default styled
+  export const css: typeof styledCss
+  export const createGlobalStyle: typeof styledCreateGlobalStyle
+}
+```
