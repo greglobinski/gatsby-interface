@@ -10,6 +10,7 @@ import React, {
   useEffect,
 } from "react"
 import PropTypes from "prop-types"
+import { MdDone } from "react-icons/md"
 
 import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
@@ -80,7 +81,7 @@ function PricingCard({
               <PricingCard.Nav />
               <PricingCard.Plans>
                 {plans.map((plan, idx) => (
-                  <PricingCard.Plan key={plan.name} idx={idx}>
+                  <PricingCard.Plan key={plan.name} plan={plan} idx={idx}>
                     <PricingCard.Icon plan={plan} />
                     <PricingCard.Heading plan={plan} />
                     <PricingCard.Intro plan={plan} />
@@ -196,12 +197,15 @@ PricingCard.Plans = ({ children, ...rest }) => (
   </div>
 )
 
-PricingCard.Plan = ({ children, idx, ...rest }) => {
-  const { visibleOnMobile, plans } = PricingCard.useContext()
+PricingCard.Plan = ({ children, plan, idx, ...rest }) => {
+  const { visibleOnMobile, plans, selectedPlan } = PricingCard.useContext()
+  const { color, name } = plan
 
   return (
     <div
       css={{
+        border: selectedPlan === name ? `2px solid ${color}` : `0`,
+        borderRadius: radius.large,
         padding: `${spaces.l} ${spaces.l} 0 `,
         display: visibleOnMobile === idx ? `flex` : `none`,
         flexDirection: `column`,
@@ -440,10 +444,23 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
   }
 
   const { label, to, onClick, comment } = cta
+  const isSelected = selectedPlan === name
+  const selectedStyle = isSelected =>
+    isSelected
+      ? {
+          background: color ? color : undefined,
+          borderColor: color ? color : undefined,
+          ":hover": {
+            background: color ? color : undefined,
+            borderColor: color ? color : undefined,
+          },
+        }
+      : {}
 
-  return selectedPlan !== name ? (
+  return (
     <div
       css={{
+        alignItems: `center`,
         width: `100%`,
         display: `flex`,
         flexDirection: `column`,
@@ -457,48 +474,16 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
         <LinkButton
           to={to}
           onClick={e => onClick(e, { plan: name })}
+          variant={isSelected ? `PRIMARY` : `SECONDARY`}
           css={{
-            width: `100%`,
-            background: color ? colors.white : colors.purple[50],
-            color: color ? color : colors.white,
-            borderColor: color ? color : colors.purple[50],
-            ":hover": {
-              color: colors.white,
-              background: color ? color : colors.purple[50],
-              borderColor: color ? color : colors.purple[50],
-            },
+            ...selectedStyle(isSelected, color),
           }}
+          rightIcon={isSelected ? <MdDone /> : null}
         >
           {label}
         </LinkButton>
       )}
       {children}
-    </div>
-  ) : (
-    <div
-      css={{
-        width: `100%`,
-        display: `flex`,
-        alignItems: `flex-end`,
-        justifyContent: `center`,
-        marginTop: spaces[`2xl`],
-        flexGrow: 1,
-        paddingBottom: spaces[`4xl`],
-      }}
-    >
-      <div
-        css={{
-          width: `3rem`,
-          height: `3rem`,
-          display: `flex`,
-          alignItems: `center`,
-          justifyContent: `center`,
-          background: colors.green[50],
-          borderRadius: `50%`,
-        }}
-      >
-        <CheckIcon css={{ fill: colors.white, width: `70%`, height: `70%` }} />
-      </div>
     </div>
   )
 }
