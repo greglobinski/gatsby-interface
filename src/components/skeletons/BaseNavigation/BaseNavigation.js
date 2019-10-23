@@ -38,11 +38,17 @@ export const BaseNavigationListStyles = {
   padding: 0,
 }
 
-const BaseNavigation = ({ navItems }) => (
+const BaseNavigation = ({
+  navItems,
+  Item = BaseNavigation.Item,
+  Dropdown = BaseNavigation.Dropdown,
+  ...rest
+}) => (
   <nav
     css={{
       ...BaseNavigationStyles,
     }}
+    {...rest}
   >
     <ul
       css={{
@@ -50,9 +56,9 @@ const BaseNavigation = ({ navItems }) => (
       }}
     >
       {navItems.map((navItem, i) => (
-        <BaseNavigation.Item navItem={navItem}>
+        <Item navItem={navItem} Dropdown={Dropdown}>
           {navItem.name}
-        </BaseNavigation.Item>
+        </Item>
       ))}
     </ul>
   </nav>
@@ -87,6 +93,8 @@ export const BaseNavigationItemStyles = {
 BaseNavigation.Item = ({
   children: itemContent,
   navItem: { linkTo, subItems = [] },
+  Dropdown = BaseNavigation.Dropdown,
+  ...rest
 }) => {
   const [isDropdownOpen, toggleDropdown] = useState(false)
 
@@ -106,6 +114,7 @@ BaseNavigation.Item = ({
       css={{
         ...BaseNavigationItemStyles,
       }}
+      {...rest}
     >
       <Link to={linkTo}>{itemContent}</Link>
       {itemHasDropdown && (
@@ -119,7 +128,7 @@ BaseNavigation.Item = ({
         </button>
       )}
       {itemHasDropdown && (
-        <BaseNavigation.Dropdown
+        <Dropdown
           isDropdownOpen={isDropdownOpen}
           toggleDropdown={toggleDropdown}
           itemContent={itemContent}
@@ -135,6 +144,7 @@ BaseNavigation.Dropdown = ({
   toggleDropdown,
   itemContent,
   items,
+  ...rest
 }) => (
   <ul
     css={{
@@ -150,6 +160,7 @@ BaseNavigation.Dropdown = ({
       }
       return
     }}
+    {...rest}
   >
     {items.map(item => (
       <BaseNavigation.DropdownItem item={item}>

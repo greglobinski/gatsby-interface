@@ -33,6 +33,6 @@ const items = [
 
 storiesOf(`BaseNavigation`, module).add(`usage example`, () => (
   <StoryUtils.Container>
-    <BaseNavigation navItems={navItems} />
+    <BaseNavigation navItems={items} />
   </StoryUtils.Container>
 ))

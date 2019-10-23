@@ -14,21 +14,39 @@ import {
 } from "../skeletons/BaseNavigation"
 
 const Navigation = ({ navItems, ...rest }) => (
-    <BaseNavigation
-      navItems={navItems}
-      css={
-        {
-          //   real styles
-        }
-      }
-      {...rest}
-    ></BaseNavigation>
-  )
+  <BaseNavigation
+    navItems={navItems}
+    Item={Navigation.Item}
+    Dropdown={Navigation.Dropdown}
+    css={{
+      border: `5px solid red`,
+    }}
+    {...rest}
+  />
+)
 
-Navigation.Item = ({ ...rest }) => <BaseNavigation.Item {...rest}></BaseNavigation.Item>
+Navigation.Item = ({ ...rest }) => (
+  <BaseNavigation.Item
+    css={{
+      border: `5px solid green`,
+      button: {
+        background: `orange`,
+        color: `white`,
+      },
+    }}
+    {...rest}
+  ></BaseNavigation.Item>
+)
 
-Navigation.Dropdown = ({ ...rest }) => <BaseNavigation.Dropdown {...rest}></BaseNavigation.Dropdown>
+Navigation.Dropdown = ({ ...rest }) => (
+  <BaseNavigation.Dropdown
+    css={{ border: `5px solid orange` }}
+    {...rest}
+  ></BaseNavigation.Dropdown>
+)
 
-Navigation.DropdownItem = ({ ...rest }) => <BaseNavigation.DropdownItem {...rest}></BaseNavigation.DropdownItem>
+Navigation.DropdownItem = ({ ...rest }) => (
+  <BaseNavigation.DropdownItem {...rest}></BaseNavigation.DropdownItem>
+)
 
 export default Navigation
