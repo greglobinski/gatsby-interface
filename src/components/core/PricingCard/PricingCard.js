@@ -456,7 +456,7 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
       {label && (to || onClick) && (
         <LinkButton
           to={to}
-          onClick={() => onClick(name)}
+          onClick={e => onClick(e, { plan: name })}
           css={{
             width: `100%`,
             background: color ? colors.white : colors.purple[50],
