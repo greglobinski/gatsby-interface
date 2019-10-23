@@ -200,21 +200,26 @@ PricingCard.Plans = ({ children, ...rest }) => (
 PricingCard.Plan = ({ children, plan, idx, ...rest }) => {
   const { visibleOnMobile, plans, selectedPlan } = PricingCard.useContext()
   const { color, name } = plan
+  const isSelected = selectedPlan === name
 
   return (
     <div
       css={{
-        border: selectedPlan === name ? `2px solid ${color}` : `0`,
+        border: isSelected ? `2px solid ${color}` : `0`,
         borderRadius: radius.large,
         padding: `${spaces.l} ${spaces.l} 0 `,
         display: visibleOnMobile === idx ? `flex` : `none`,
+        position: `relative`,
         flexDirection: `column`,
         alignItems: `center`,
         flexShrink: 0,
         width: `100%`,
+        zIndex: isSelected ? 1 : 0,
 
         [`&:not(:first-child)`]: {
-          borderLeft: `1px solid ${colors.standardLine}`,
+          borderLeft: isSelected
+            ? undefined
+            : `1px solid ${colors.standardLine}`,
         },
 
         [`@media(min-width: ${breakpoints.tablet}px)`]: {
@@ -240,11 +245,12 @@ PricingCard.Heading = ({ plan, ...rest }) => {
   return (
     <Heading
       css={{
-        color: color
-          ? color
-          : variant === `SECONDARY`
-          ? colors.white
-          : colors.purple[40],
+        color:
+          variant === `SECONDARY`
+            ? colors.white
+            : color
+            ? color
+            : colors.purple[40],
         fontSize: fontSizes[4],
       }}
     >
@@ -436,7 +442,7 @@ PricingCard.Details = ({ plan, ...rest }) => {
 }
 
 PricingCard.Cta = ({ children, plan, ...rest }) => {
-  const { selectedPlan } = PricingCard.useContext()
+  const { selectedPlan, variant } = PricingCard.useContext()
   const { cta, color, name } = plan
 
   if (!cta) {
@@ -445,17 +451,29 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
 
   const { label, to, onClick, comment } = cta
   const isSelected = selectedPlan === name
-  const selectedStyle = isSelected =>
+  const customStyle = (isSelected, color, variant) =>
     isSelected
       ? {
           background: color ? color : undefined,
           borderColor: color ? color : undefined,
+          color: colors.white,
           ":hover": {
             background: color ? color : undefined,
             borderColor: color ? color : undefined,
           },
         }
-      : {}
+      : {
+          background: variant === `SECONDARY` ? colors.purple[90] : undefined,
+          borderColor: variant === `SECONDARY` ? colors.purple[50] : undefined,
+          color: variant === `SECONDARY` ? colors.purple[20] : undefined,
+
+          ":hover": {
+            background: variant === `SECONDARY` ? colors.purple[90] : undefined,
+            borderColor:
+              variant === `SECONDARY` ? colors.purple[20] : undefined,
+            color: variant === `SECONDARY` ? colors.purple[5] : undefined,
+          },
+        }
 
   return (
     <div
@@ -476,7 +494,7 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
           onClick={e => onClick(e, { plan: name })}
           variant={isSelected ? `PRIMARY` : `SECONDARY`}
           css={{
-            ...selectedStyle(isSelected, color),
+            ...customStyle(isSelected, color, variant),
           }}
           rightIcon={isSelected ? <MdDone /> : null}
         >
