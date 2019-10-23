@@ -3,6 +3,7 @@
 exports[`icons <BlogIcon /> renders unchanged 1`] = `
 <div>
   <svg
+    aria-hidden="true"
     data-testid="icon-blog"
     fill="none"
     fill-rule="evenodd"
@@ -41,6 +42,7 @@ exports[`icons <BlogIcon /> renders unchanged 1`] = `
 exports[`icons <CheckIcon /> renders unchanged 1`] = `
 <div>
   <svg
+    aria-hidden="true"
     data-testid="icon-check"
     fill="currentColor"
     fill-rule="evenodd"
@@ -68,6 +70,7 @@ exports[`icons <CheckIcon /> renders unchanged 1`] = `
 exports[`icons <EcommerceIcon /> renders unchanged 1`] = `
 <div>
   <svg
+    aria-hidden="true"
     data-testid="icon-ecommerce"
     fill="none"
     fill-rule="evenodd"
@@ -116,6 +119,7 @@ exports[`icons <EcommerceIcon /> renders unchanged 1`] = `
 exports[`icons <PortfolioIcon /> renders unchanged 1`] = `
 <div>
   <svg
+    aria-hidden="true"
     data-testid="icon-portfolio"
     fill="none"
     fill-rule="evenodd"
