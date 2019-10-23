@@ -20,6 +20,7 @@ const plansA = [
   {
     name: `Free`,
     icon: freePlanPic,
+    color: colors.green[50],
     intro: `For personal projects and single-purpose sites`,
     price: {
       MONTHLY: 0,

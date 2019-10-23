@@ -10,7 +10,7 @@ import React, {
   useEffect,
 } from "react"
 import PropTypes from "prop-types"
-import { MdDone } from "react-icons/md"
+import { MdArrowDownward } from "react-icons/md"
 
 import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
@@ -460,29 +460,6 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
 
   const { label, to, onClick, comment } = cta
   const isSelected = selectedPlan === name
-  const customStyle = (isSelected, color, variant) =>
-    isSelected
-      ? {
-          background: color ? color : undefined,
-          borderColor: color ? color : undefined,
-          color: colors.white,
-          ":hover": {
-            background: color ? color : undefined,
-            borderColor: color ? color : undefined,
-          },
-        }
-      : {
-          background: variant === `SECONDARY` ? colors.purple[90] : undefined,
-          borderColor: variant === `SECONDARY` ? colors.purple[50] : undefined,
-          color: variant === `SECONDARY` ? colors.purple[20] : undefined,
-
-          ":hover": {
-            background: variant === `SECONDARY` ? colors.purple[90] : undefined,
-            borderColor:
-              variant === `SECONDARY` ? colors.purple[20] : undefined,
-            color: variant === `SECONDARY` ? colors.purple[5] : undefined,
-          },
-        }
 
   return (
     <div
@@ -501,11 +478,14 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
         <LinkButton
           to={to}
           onClick={e => onClick(e, { plan: name })}
-          variant={isSelected ? `PRIMARY` : `SECONDARY`}
-          css={{
-            ...customStyle(isSelected, color, variant),
-          }}
-          rightIcon={isSelected ? <MdDone /> : null}
+          variant={variant === `SECONDARY` ? `PRIMARY` : `SECONDARY`}
+          css={() => [
+            { fontWeight: isSelected ? `800` : `normal` },
+            isSelected && color
+              ? { background: color, borderColor: color, color: colors.white }
+              : {},
+          ]}
+          rightIcon={isSelected ? <MdArrowDownward /> : null}
         >
           {label}
         </LinkButton>
