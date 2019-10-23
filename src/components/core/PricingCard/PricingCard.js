@@ -198,14 +198,23 @@ PricingCard.Plans = ({ children, ...rest }) => (
 )
 
 PricingCard.Plan = ({ children, plan, idx, ...rest }) => {
-  const { visibleOnMobile, plans, selectedPlan } = PricingCard.useContext()
+  const {
+    visibleOnMobile,
+    plans,
+    selectedPlan,
+    variant,
+  } = PricingCard.useContext()
   const { color, name } = plan
   const isSelected = selectedPlan === name
 
   return (
     <div
       css={{
-        border: isSelected ? `2px solid ${color}` : `0`,
+        border: isSelected
+          ? `2px solid ${color}`
+          : `2px solid ${
+              variant === `SECONDARY` ? colors.purple[90] : colors.white
+            }`,
         borderRadius: radius.large,
         padding: `${spaces.l} ${spaces.l} 0 `,
         display: visibleOnMobile === idx ? `flex` : `none`,
