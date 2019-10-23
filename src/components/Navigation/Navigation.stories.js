@@ -2,15 +2,15 @@
 import { jsx, css } from "@emotion/core"
 
 import { storiesOf } from "@storybook/react"
-import { StoryUtils } from "../../../utils/storybook"
+import { StoryUtils } from "../../utils/storybook"
 
-import BaseNavigation from "./BaseNavigation"
+import Navigation from "./Navigation"
 
-const items = [
+const navItems = [
   {
     name: `Alpha`,
     linkTo: `/alpha`,
-    items: [
+    subItems: [
       {
         name: `Delta`,
         linkTo: `/alpha/delta`,
@@ -31,8 +31,8 @@ const items = [
   },
 ]
 
-storiesOf(`BaseNavigation`, module).add(`usage example`, () => (
+storiesOf(`Navigation`, module).add(`usage example`, () => (
   <StoryUtils.Container>
-    <BaseNavigation navItems={navItems} />
+    <Navigation navItems={navItems} />
   </StoryUtils.Container>
 ))

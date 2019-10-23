@@ -2,7 +2,11 @@
 import { jsx } from "@emotion/core"
 import { useState, useRef, useEffect } from "react"
 import { Link } from "gatsby"
-// import { visuallyHidden } from "../../../utils/helpers"
+import { visuallyHidden } from "../../../utils/helpers"
+
+// The idea here is to use the minimum possible styling for a
+// recognizeable, functional, horizontal dropdown nav.
+// This is why this skeleton contains styles
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -26,9 +30,9 @@ const useOnClickOutside = (ref, handler) => {
   }, [ref, handler])
 }
 
-const BaseNavigationStyles = {}
+export const BaseNavigationStyles = {}
 
-const BaseNavigationListStyles = {
+export const BaseNavigationListStyles = {
   listStyle: `none`,
   margin: 0,
   padding: 0,
@@ -54,7 +58,7 @@ const BaseNavigation = ({ navItems }) => (
   </nav>
 )
 
-const DropdownListStyles = {
+export const BaseNavigationDropdownOpenStyles = {
   display: `inline-block`,
   position: `absolute`,
   top: `95%`,
@@ -64,21 +68,27 @@ const DropdownListStyles = {
   padding: `0.5rem 0`,
 }
 
-const BaseNavigationItemStyles = {
+export const BaseNavigationDropdownClosedStyles = {
+  listStyle: `none`,
+  margin: 0,
+  padding: 0,
+  display: `none`,
+}
+
+export const BaseNavigationItemStyles = {
   display: `inline-block`,
   position: `relative`,
   // Show dropdown menu on hover, if exists
-  // "&:hover > ul": {
-  //   ...DropdownListStyles,
-  // },
-  // ":focus-within > ul": {
-  //   ...DropdownListStyles,
-  // },
+  "&:hover > ul": {
+    ...BaseNavigationDropdownOpenStyles,
+  },
 }
 
-BaseNavigation.Item = ({ children, navItem: { linkTo, subItems = [] } }) => {
+BaseNavigation.Item = ({
+  children: itemContent,
+  navItem: { linkTo, subItems = [] },
+}) => {
   const [isDropdownOpen, toggleDropdown] = useState(false)
-  console.log({ isDropdownOpen })
 
   const itemHasDropdown = subItems.length > 0
   let ref
@@ -86,7 +96,6 @@ BaseNavigation.Item = ({ children, navItem: { linkTo, subItems = [] } }) => {
     ref = useRef()
     // Call hook passing in the ref and a function to call on outside click
     useOnClickOutside(ref, () => {
-      console.log(`running click outside`)
       toggleDropdown(false)
     })
   }
@@ -98,20 +107,22 @@ BaseNavigation.Item = ({ children, navItem: { linkTo, subItems = [] } }) => {
         ...BaseNavigationItemStyles,
       }}
     >
-      <Link to={linkTo}>{children}</Link>
+      <Link to={linkTo}>{itemContent}</Link>
       {itemHasDropdown && (
         <button
-          onClick={() => {
-            console.log(`running onClick`)
-            toggleDropdown(!isDropdownOpen)
-          }}
+          aria-expanded={!!isDropdownOpen}
+          aria-controls={`${itemContent}-dropdown`}
+          onClick={() => toggleDropdown(!isDropdownOpen)}
         >
-          &or;
+          <span aria-hidden="true">&or;</span>
+          <span css={{ ...visuallyHidden }}>{`${itemContent}`}</span>
         </button>
       )}
-      {itemHasDropdown && isDropdownOpen && (
+      {itemHasDropdown && (
         <BaseNavigation.Dropdown
           isDropdownOpen={isDropdownOpen}
+          toggleDropdown={toggleDropdown}
+          itemContent={itemContent}
           items={subItems}
         />
       )}
@@ -119,18 +130,25 @@ BaseNavigation.Item = ({ children, navItem: { linkTo, subItems = [] } }) => {
   )
 }
 
-const BaseNavigationDropdownStyles = {
-  listStyle: `none`,
-  margin: 0,
-  padding: 0,
-  display: `none`,
-}
-
-BaseNavigation.Dropdown = ({ items, isDropdownOpen }) => (
+BaseNavigation.Dropdown = ({
+  isDropdownOpen,
+  toggleDropdown,
+  itemContent,
+  items,
+}) => (
   <ul
     css={{
-      ...BaseNavigationDropdownStyles,
-      ...(isDropdownOpen && DropdownListStyles),
+      ...BaseNavigationDropdownClosedStyles,
+      ...(isDropdownOpen && BaseNavigationDropdownOpenStyles),
+    }}
+    // id to associate with aria-controls on BaseNavigation.Item
+    id={`${itemContent}-dropdown`}
+    onKeyDown={e => {
+      // handle closing dropdown on `esc`
+      if (e.keyCode === 27) {
+        toggleDropdown(false)
+      }
+      return
     }}
   >
     {items.map(item => (
