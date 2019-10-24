@@ -111,7 +111,7 @@ PricingCard.Frame = ({ children, ...rest }) => {
   return (
     <div
       css={{
-        boxShadow: `0px 2px 4px rgba(46, 41, 51, 0.08), 0px 4px 8px rgba(71, 63, 79, 0.16)`,
+        boxShadow: `0px 1px 2px rgba(46, 41, 51, 0.08), 0px 2px 4px rgba(71, 63, 79, 0.08)`,
         backgroundColor:
           variant === `SECONDARY` ? colors.purple[90] : colors.white,
         display: `flex`,
