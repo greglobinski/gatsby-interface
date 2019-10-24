@@ -482,7 +482,16 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
           css={() => [
             { fontWeight: isSelected ? `800` : `normal` },
             isSelected && color
-              ? { background: color, borderColor: color, color: colors.white }
+              ? {
+                  background: color,
+                  borderColor: color,
+                  color: colors.white,
+                  ":hover": {
+                    color: colors.white,
+                    background: color,
+                    borderColor: color,
+                  },
+                }
               : {},
           ]}
           rightIcon={isSelected ? <MdArrowDownward /> : null}
