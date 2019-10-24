@@ -1,6 +1,6 @@
 {
   "name": "gatsby-interface",
-  "version": "0.0.46-pricingCard.5",
+  "version": "0.0.46-pricingCard.6",
   "description": "Component library for Gatsby projects",
   "source": "src/index.js",
   "main": "dist/index.js",
