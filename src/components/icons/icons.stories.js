@@ -70,7 +70,10 @@ const iconBlockCss = css`
   margin: 1rem 0;
 `
 
-const sortedIconComponentNames = Object.keys(icons).sort()
+const sortedIconComponentNames = Object.keys(icons)
+  // filter out __esModule
+  .filter(componentName => typeof icons[componentName] !== `boolean`)
+  .sort()
 
 storiesOf(`icons`, module)
   .addDecorator(withKnobs)
@@ -78,7 +81,7 @@ storiesOf(`icons`, module)
     <StoryUtils.Container>
       <div css={allIconsCss}>
         <h2>{sortedIconComponentNames.length} icon(s):</h2>
-        <div css={[iconBlockCss]}>
+        <div css={iconBlockCss}>
           {sortedIconComponentNames.map(componentName => {
             const Component = icons[componentName]
 
@@ -102,7 +105,7 @@ sortedIconComponentNames.forEach(componentName => {
 
     return (
       <StoryUtils.Container>
-        <div key={componentName} className={iconBlockCss}>
+        <div key={componentName} css={iconBlockCss}>
           <h1>{`<${componentName} />`}</h1>
           <h2>Size:</h2>
           {sizes.map(size => (
