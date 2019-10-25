@@ -20,6 +20,7 @@ const plansA = [
   {
     name: `Free`,
     icon: freePlanPic,
+    color: colors.green[50],
     intro: `For personal projects and single-purpose sites`,
     price: {
       MONTHLY: 0,
@@ -41,6 +42,7 @@ const plansB = [
   {
     name: `Enterprise`,
     icon: enterprisePlanPic,
+    color: colors.purple[50],
     intro: `Custom packages designed for your company`,
     details: [
       { text: `Builds and Preview` },
@@ -185,7 +187,13 @@ storiesOf(`core/PricingCard`, module)
           }}
         >
           <PricingCard plans={plansA} />
+          <PricingCard plans={plansA} selectedPlan="Free" />
           <PricingCard plans={plansB} variant={`SECONDARY`} />
+          <PricingCard
+            plans={plansB}
+            variant={`SECONDARY`}
+            selectedPlan="Enterprise"
+          />
         </div>
       </StoryUtils.Container>
     </div>
@@ -219,7 +227,7 @@ storiesOf(`core/PricingCard`, module)
       }}
     >
       <StoryUtils.Container>
-        <PricingCard selectedPlan="Free" plans={plansD} />
+        <PricingCard selectedPlan="Professional" plans={plansD} />
       </StoryUtils.Container>
     </div>
   ))
