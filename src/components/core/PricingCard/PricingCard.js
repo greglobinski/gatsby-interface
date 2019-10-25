@@ -16,6 +16,7 @@ import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
 import fonts from "../../../theme/fonts"
 import fontSizes from "../../../theme/fontSizes"
+import fontWeights from "../../../theme/fontWeights"
 import { spaces, breakpoints, radius } from "../../../utils/presets"
 import { Heading } from "../Heading"
 import toggleTipIcon from "./assets/toggleTipIcon.svg"
@@ -479,10 +480,11 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
           to={to}
           onClick={e => onClick(e, { plan: name })}
           variant={variant === `SECONDARY` ? `PRIMARY` : `SECONDARY`}
-          css={() => [
-            { fontWeight: isSelected ? `800` : `normal` },
+          css={[
+            { fontWeight: isSelected ? fontWeights[2] : fontWeights[0] },
             isSelected && color
               ? {
+                  cursor: `default`,
                   background: color,
                   borderColor: color,
                   color: colors.white,
