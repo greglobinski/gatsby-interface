@@ -63,6 +63,10 @@ By default, the module exposes three modal wrapper or shapes: `ModalCard`, `Moda
 ## TODO
 
 - [] Close modal on navigation
-- [] Animation on closing things (can be tricky :x)
-- [] (Applying custom animations)
+- [] Animation on closing modals
+- [] Applying custom animations: What is the preferred way
+  - additional classes?
+  - Surounding component holding the animation stuff?
+  - additional props for custom animations?
+  - other?
 - [] Animate from/to the origin on open/close
