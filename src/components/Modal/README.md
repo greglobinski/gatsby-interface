@@ -44,7 +44,7 @@ export interface ModalActions {
   /** Create a modal with a unique name, a Component to render in the modal and some adition options */
   showModal: (
     modalName: string,
-    Component: React.FC<ModalProps & ModalOptions>,
+    Component: React.FC<ModalProps>,
     options?: ModalOptions
   ) => void
   /** Hide a modal based on its unique name */

@@ -4,7 +4,7 @@ import { ModalOptions, ModalProps } from "./sharedTypes"
 export const ModalContext = React.createContext<ModalProps>({
   showModal: (
     modalName: string,
-    Component: React.FC<ModalProps & ModalOptions>,
+    Component: React.FC<ModalProps>,
     options?: ModalOptions
   ) => undefined,
   hideModal: (modalName: string) => undefined,

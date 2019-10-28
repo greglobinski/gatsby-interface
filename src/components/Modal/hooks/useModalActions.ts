@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ModalProps, ModalOptions } from ".."
+import { ModalProps, ModalOptions } from "../sharedTypes"
 
 interface IModal {
   name: string
