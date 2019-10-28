@@ -66,7 +66,9 @@ export const useModalActions = (
     }
   }
 
-  return { showModal, hideModal, isOpened, hideTopOfStack, modals }
+  const clearStack = () => setModals([])
+
+  return { showModal, hideModal, isOpened, hideTopOfStack, clearStack, modals }
 }
 
 const createModalElement = (

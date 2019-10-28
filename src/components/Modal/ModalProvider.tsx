@@ -21,6 +21,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     hideModal,
     isOpened,
     hideTopOfStack,
+    clearStack,
     modals,
   } = useModalActions(rootRef)
 
@@ -40,6 +41,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
               hideModal={hideModal}
               showModal={showModal}
               hideTopOfStack={hideTopOfStack}
+              clearStack={clearStack}
               isOpened={isOpened}
               {...currentModal.opts}
             />

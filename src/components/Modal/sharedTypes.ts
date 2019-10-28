@@ -13,6 +13,8 @@ export interface ModalActions {
   isOpened: (modalName: string) => boolean
   /** Hide the last element in the stack */
   hideTopOfStack: () => void
+  /* Completely clear the stack */
+  clearStack: () => void
 }
 
 export interface ModalOptions {

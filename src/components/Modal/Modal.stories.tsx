@@ -25,17 +25,13 @@ const ExampleFullScreenModal: React.FC<ModalProps> = ({
   </ModalFullScreen>
 )
 
-const ExampleModal: React.FC<ModalProps> = ({ hideModal, type }) => {
-  const hideTest = () => hideModal(`test`)
-
-  return (
-    <ModalCard type={type}>
-      <div>This is an example modal</div>
-      <button>Hello world</button>
-      <button onClick={hideTest}>Close me</button>
-    </ModalCard>
-  )
-}
+const ExampleModal: React.FC<ModalProps> = ({ clearStack, type }) => (
+  <ModalCard type={type}>
+    <div>This is an example modal</div>
+    <button>Hello world</button>
+    <button onClick={clearStack}>Close everything</button>
+  </ModalCard>
+)
 
 const ExamplePanelModal: React.FC<ModalProps> = ({ hideModal, position }) => (
   <ModalPanel position={position}>
