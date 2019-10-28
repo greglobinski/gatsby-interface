@@ -4,7 +4,7 @@ import { keyframes } from "@emotion/core"
 import { Keyframes } from "@emotion/serialize"
 import { palette, spaces } from "../../../utils/presets"
 import { Overlay } from "./Overlay"
-import { ModalOptions } from "../sharedTypes"
+import { ModalType, ModalPosition } from "../sharedTypes"
 
 const buildTranslation = (position: ModalPanelProps["position"]) => keyframes`
   0% {
@@ -32,8 +32,8 @@ const translateRight = buildTranslation(`right`)
 
 export interface ModalPanelProps extends HTMLProps<HTMLDivElement> {
   maxWidth?: string
-  position?: "left" | "right"
-  type?: ModalOptions["type"]
+  position?: ModalPosition
+  type?: ModalType
 }
 
 export const ModalPanel: React.FC<ModalPanelProps> = ({

@@ -9,5 +9,6 @@ export const ModalContext = React.createContext<ModalProps>({
   ) => undefined,
   hideModal: (modalName: string) => undefined,
   isOpened: (modalName: string) => false,
-  hideTopOfStack: () => undefined,
+  hideCurrentModal: () => undefined,
+  hideAll: () => undefined,
 })

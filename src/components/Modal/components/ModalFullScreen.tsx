@@ -3,7 +3,7 @@ import { palette } from "../../../utils/presets"
 import React, { HTMLProps } from "react"
 import { Overlay } from "./Overlay"
 import { keyframes } from "@emotion/core"
-import { ModalOptions } from "../sharedTypes"
+import { ModalOptions, ModalType } from "../sharedTypes"
 
 const rotationIncoming = keyframes`
   100% {
@@ -25,7 +25,7 @@ export const ContentFullScreen = styled.div`
 `
 
 export interface ModalFullScreenProps extends HTMLProps<HTMLDivElement> {
-  type?: ModalOptions["type"]
+  type?: ModalType
 }
 
 export const ModalFullScreen: React.FC<ModalFullScreenProps> = ({

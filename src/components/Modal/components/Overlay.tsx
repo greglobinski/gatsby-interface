@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
 import { Keyframes } from "@emotion/serialize"
 import { palette } from "../../../utils/presets"
-import { ModalOptions } from "../sharedTypes"
+import { ModalOptions, ModalType } from "../sharedTypes"
 
 const buildFadeIn = (color: string) =>
   keyframes`
@@ -21,7 +21,7 @@ const errorFade = buildFadeIn(`rgba(184, 0, 0, 0.75)`)
 const infoFade = buildFadeIn(`rgba(102, 51, 153, 0.75)`)
 const warnFade = buildFadeIn(palette.orange[`500`])
 
-const getAnimation = (type: ModalOptions["type"]) => {
+const getAnimation = (type: ModalType) => {
   if (type === `success`) return successFade
   if (type === `error`) return errorFade
   if (type === `warn`) return warnFade
@@ -41,9 +41,11 @@ const OverlayWrapper = styled.div<{ animation: Keyframes }>`
 `
 
 export interface OverlayProps {
-  type?: ModalOptions["type"]
+  type?: ModalType
 }
 
 export const Overlay: React.FC<OverlayProps> = ({ children, type }) => (
-  <OverlayWrapper animation={getAnimation(type)}>{children}</OverlayWrapper>
+  <OverlayWrapper animation={getAnimation(type || `info`)}>
+    {children}
+  </OverlayWrapper>
 )

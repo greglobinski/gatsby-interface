@@ -1,7 +1,7 @@
 import React, { HTMLProps } from "react"
 import styled from "@emotion/styled"
 import { palette, spaces, radius, breakpoints } from "../../../utils/presets"
-import { ModalOptions } from "../sharedTypes"
+import { ModalType } from "../sharedTypes"
 import { Overlay } from "./Overlay"
 import { keyframes } from "@emotion/core"
 
@@ -34,7 +34,7 @@ export const Card = styled.div`
 `
 
 export interface ModalCardProps extends HTMLProps<HTMLDivElement> {
-  type?: ModalOptions["type"]
+  type?: ModalType
 }
 
 export const ModalCard: React.FC<ModalCardProps> = ({

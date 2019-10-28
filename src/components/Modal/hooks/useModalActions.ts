@@ -9,7 +9,7 @@ interface IModal {
 }
 
 export const useModalActions = (
-  rootRef: React.MutableRefObject<HTMLDivElement>
+  rootRef: React.MutableRefObject<HTMLDivElement | undefined>
 ) => {
   const [modals, setModals] = useState<IModal[]>([])
 
@@ -43,8 +43,6 @@ export const useModalActions = (
     )
 
     if (indexToRemove >= 0 && rootRef.current) {
-      rootRef.current.removeChild(modals[indexToRemove].el)
-
       setModals([
         ...modals.slice(0, indexToRemove),
         ...modals.slice(indexToRemove + 1),
@@ -58,7 +56,7 @@ export const useModalActions = (
     return Boolean(modal)
   }
 
-  const hideTopOfStack = () => {
+  const hideCurrentModal = () => {
     const lastModal = modals[modals.length - 1]
 
     if (lastModal) {
@@ -66,9 +64,9 @@ export const useModalActions = (
     }
   }
 
-  const clearStack = () => setModals([])
+  const hideAll = () => setModals([])
 
-  return { showModal, hideModal, isOpened, hideTopOfStack, clearStack, modals }
+  return { showModal, hideModal, isOpened, hideCurrentModal, hideAll, modals }
 }
 
 const createModalElement = (

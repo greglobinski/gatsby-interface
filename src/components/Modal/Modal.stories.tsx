@@ -6,12 +6,12 @@ import {
   ModalCard,
   ModalFullScreen,
   ModalProps,
-  ModalOptions,
   ModalPanel,
 } from "./"
+import { ModalType, ModalPosition } from "./sharedTypes"
 
 const ExampleFullScreenModal: React.FC<ModalProps> = ({
-  hideTopOfStack,
+  hideCurrentModal,
   showModal,
 }) => (
   <ModalFullScreen>
@@ -19,17 +19,17 @@ const ExampleFullScreenModal: React.FC<ModalProps> = ({
     <button onClick={() => showModal(`test`, ExampleModal)}>
       Open a nested one
     </button>
-    <button onClick={hideTopOfStack}>
+    <button onClick={hideCurrentModal}>
       Close the <strong>"fullscreen"</strong> modal
     </button>
   </ModalFullScreen>
 )
 
-const ExampleModal: React.FC<ModalProps> = ({ clearStack, type }) => (
+const ExampleModal: React.FC<ModalProps> = ({ hideAll, type }) => (
   <ModalCard type={type}>
     <div>This is an example modal</div>
     <button>Hello world</button>
-    <button onClick={clearStack}>Close everything</button>
+    <button onClick={hideAll}>Close everything</button>
   </ModalCard>
 )
 
@@ -45,11 +45,11 @@ const ExamplePanelModal: React.FC<ModalProps> = ({ hideModal, position }) => (
 
 const ModalStory = () => {
   const { showModal } = useModal()
-  const [type, setType] = useState<ModalOptions["type"]>(`success`)
-  const [position, setPosition] = useState<"left" | "right">(`left`)
+  const [type, setType] = useState<ModalType>(`success`)
+  const [position, setPosition] = useState<ModalPosition>(`left`)
 
   const handleChange = (ev: React.ChangeEvent<HTMLSelectElement>) =>
-    setType(ev.target.value as ModalOptions["type"])
+    setType(ev.target.value as ModalType)
 
   return (
     <div style={{ height: `1000px` }}>

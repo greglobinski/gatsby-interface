@@ -1,5 +1,9 @@
 export interface ModalProps extends ModalActions, ModalOptions {}
 
+export type ModalType = "success" | "error" | "info" | "warn"
+
+export type ModalPosition = "left" | "right"
+
 export interface ModalActions {
   /** Create a modal with a unique name, a Component to render in the modal and some adition options */
   showModal: (
@@ -12,14 +16,14 @@ export interface ModalActions {
   /** Check if a specific modal is opened */
   isOpened: (modalName: string) => boolean
   /** Hide the last element in the stack */
-  hideTopOfStack: () => void
+  hideCurrentModal: () => void
   /* Completely clear the stack */
-  clearStack: () => void
+  hideAll: () => void
 }
 
 export interface ModalOptions {
-  type?: "success" | "error" | "info" | "warn"
-  position?: "left" | "right"
+  type?: ModalType
+  position?: ModalPosition
   /**
    * this allows to add unknown properties while calling showModal without TS errors
    * example: showModal('name', Component, { type: "success", unknown: 'something })
