@@ -14,13 +14,13 @@ const ExamplePanelModal: React.FC<ModalProps> = ({ hideModal }) => (
   </ModalPanel>
 )
 
-const ExampleModal: React.FC<ModalProps> = ({ closeTopOfStack }) => (
+const ExampleModal: React.FC<ModalProps> = ({ hideTopOfStack }) => (
   <ModalCard>
     <div>This is an example modal</div>
     <button onClick={() => showModal("panel", ExamplePanelModal)}>
       Open a panel modal
     </button>
-    <button onClick={closeTopOfStack}>Close me</button>
+    <button onClick={hideTopOfStack}>Close me</button>
   </ModalCard>
 )
 
@@ -52,7 +52,7 @@ export interface ModalActions {
   /** Check if a specific modal is opened */
   isOpened: (modalName: string) => boolean
   /** Close the last element in the stack */
-  closeTopOfStack: () => void
+  hideTopOfStack: () => void
 }
 ```
 

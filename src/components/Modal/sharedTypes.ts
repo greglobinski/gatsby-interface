@@ -11,8 +11,8 @@ export interface ModalActions {
   hideModal: (modalName: string) => void
   /** Check if a specific modal is opened */
   isOpened: (modalName: string) => boolean
-  /** Close the last element in the stack */
-  closeTopOfStack: () => void
+  /** Hide the last element in the stack */
+  hideTopOfStack: () => void
 }
 
 export interface ModalOptions {

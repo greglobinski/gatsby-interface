@@ -11,7 +11,7 @@ import {
 } from "./"
 
 const ExampleFullScreenModal: React.FC<ModalProps> = ({
-  closeTopOfStack,
+  hideTopOfStack,
   showModal,
 }) => (
   <ModalFullScreen>
@@ -19,7 +19,7 @@ const ExampleFullScreenModal: React.FC<ModalProps> = ({
     <button onClick={() => showModal(`test`, ExampleModal)}>
       Open a nested one
     </button>
-    <button onClick={closeTopOfStack}>
+    <button onClick={hideTopOfStack}>
       Close the <strong>"fullscreen"</strong> modal
     </button>
   </ModalFullScreen>

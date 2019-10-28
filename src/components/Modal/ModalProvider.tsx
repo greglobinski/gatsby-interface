@@ -19,16 +19,16 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     showModal,
     hideModal,
     isOpened,
-    closeTopOfStack,
+    hideTopOfStack,
     modals,
   } = useModalActions(rootRef)
 
   useLockScroll(Boolean(modals.length))
-  useEscapePress(closeTopOfStack)
+  useEscapePress(hideTopOfStack)
 
   return (
     <ModalContext.Provider
-      value={{ showModal, hideModal, isOpened, closeTopOfStack }}
+      value={{ showModal, hideModal, isOpened, hideTopOfStack }}
     >
       {children}
 
@@ -37,7 +37,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
           <currentModal.Component
             hideModal={hideModal}
             showModal={showModal}
-            closeTopOfStack={closeTopOfStack}
+            hideTopOfStack={hideTopOfStack}
             isOpened={isOpened}
             {...currentModal.opts}
           />,

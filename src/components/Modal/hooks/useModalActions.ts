@@ -58,7 +58,7 @@ export const useModalActions = (
     return Boolean(modal)
   }
 
-  const closeTopOfStack = () => {
+  const hideTopOfStack = () => {
     const lastModal = modals[modals.length - 1]
 
     if (lastModal) {
@@ -66,7 +66,7 @@ export const useModalActions = (
     }
   }
 
-  return { showModal, hideModal, isOpened, closeTopOfStack, modals }
+  return { showModal, hideModal, isOpened, hideTopOfStack, modals }
 }
 
 const createModalElement = (
