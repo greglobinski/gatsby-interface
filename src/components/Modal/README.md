@@ -53,6 +53,8 @@ export interface ModalActions {
   isOpened: (modalName: string) => boolean
   /** Close the last element in the stack */
   hideTopOfStack: () => void
+  /** Clearing the state */
+  clearStack: () => void
 }
 ```
 
@@ -64,6 +66,7 @@ By default, the module exposes three modal wrapper or shapes: `ModalCard`, `Moda
 
 - [] Close modal on navigation
 - [] Animation on closing modals
+  - How should it work for nested modals?
 - [] Applying custom animations: What is the preferred way
   - additional classes?
   - Surounding component holding the animation stuff?
