@@ -1,11 +1,11 @@
-import { useRef, useLayoutEffect } from "react"
+import { useRef, useEffect } from "react"
 
 export const useCreateDOMElement = (id: string) => {
   const domElRef = useRef<HTMLDivElement>(document.createElement(`div`))
 
   domElRef.current.id = id
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     document.body.appendChild(domElRef.current)
   }, [])
 
