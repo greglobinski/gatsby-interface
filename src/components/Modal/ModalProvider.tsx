@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import FocusLock from "react-focus-lock"
 import { ModalContext } from "./ModalContext"
 import { useLockScroll } from "./hooks/useLockScroll"
 import { useEscapePress } from "./hooks/useEscapePress"
@@ -34,13 +35,15 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
 
       {modals.map(currentModal =>
         ReactDOM.createPortal(
-          <currentModal.Component
-            hideModal={hideModal}
-            showModal={showModal}
-            hideTopOfStack={hideTopOfStack}
-            isOpened={isOpened}
-            {...currentModal.opts}
-          />,
+          <FocusLock>
+            <currentModal.Component
+              hideModal={hideModal}
+              showModal={showModal}
+              hideTopOfStack={hideTopOfStack}
+              isOpened={isOpened}
+              {...currentModal.opts}
+            />
+          </FocusLock>,
           currentModal.el
         )
       )}

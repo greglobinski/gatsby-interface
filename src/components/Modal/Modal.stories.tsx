@@ -31,6 +31,7 @@ const ExampleModal: React.FC<ModalProps> = ({ hideModal, type }) => {
   return (
     <ModalCard type={type}>
       <div>This is an example modal</div>
+      <button>Hello world</button>
       <button onClick={hideTest}>Close me</button>
     </ModalCard>
   )
