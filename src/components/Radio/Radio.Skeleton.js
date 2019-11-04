@@ -41,7 +41,7 @@ export const RadioSkeleton = React.forwardRef(
       StyledInput,
       StyledLabel,
       label,
-      InnerLabelComponent,
+
       fieldName,
       id,
       optionValue,
@@ -49,7 +49,7 @@ export const RadioSkeleton = React.forwardRef(
       className,
       children,
       onChange,
-      type,
+
       selectionStyle,
       ...rest
     },

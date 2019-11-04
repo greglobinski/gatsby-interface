@@ -4,7 +4,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import { Button, ButtonProps } from "../core/Button"
+import { Button } from "../core/Button"
 import copyToClipboard from "../../utils/helpers/copyToClipboard"
 
 const baseCss = css`

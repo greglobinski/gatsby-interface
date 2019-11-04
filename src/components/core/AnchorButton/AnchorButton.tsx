@@ -2,8 +2,8 @@
 import { jsx } from "@emotion/core"
 import React from "react"
 
-import { BaseAnchor, BaseAnchorProps } from "../../skeletons/BaseAnchor"
-import { ButtonStyleProps, getButtonStyles } from "../Button"
+import { BaseAnchor } from "../../skeletons/BaseAnchor"
+import { getButtonStyles } from "../Button"
 
 export type AnchorButtonProps = BaseAnchorProps & ButtonStyleProps
 

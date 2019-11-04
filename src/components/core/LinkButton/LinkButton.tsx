@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
 
-import { ButtonStyleProps, getButtonStyles } from "../Button"
-import { BaseLink, BaseLinkProps } from "../../skeletons/BaseLink"
+import { getButtonStyles } from "../Button"
+import { BaseLink } from "../../skeletons/BaseLink"
 
 export type LinkButtonProps<TState = any> = BaseLinkProps<TState> &
   ButtonStyleProps

@@ -3,7 +3,6 @@ import { jsx } from "@emotion/core"
 import React, {
   Fragment,
   useState,
-  useRef,
   createContext,
   useMemo,
   useCallback,
@@ -12,14 +11,13 @@ import React, {
 import PropTypes from "prop-types"
 import { MdArrowDownward } from "react-icons/md"
 
-import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
 import fonts from "../../../theme/fonts"
 import fontSizes from "../../../theme/fontSizes"
 import fontWeights from "../../../theme/fontWeights"
 import { spaces, breakpoints, radius } from "../../../utils/presets"
 import { Heading } from "../Heading"
-import toggleTipIcon from "./assets/toggleTipIcon.svg"
+
 import { capitalizeString } from "../../../utils/helpers/"
 import { CheckIcon } from "../../icons"
 import { ToggleTip } from "../ToggleTip"
@@ -320,7 +318,7 @@ PricingCard.Intro = ({ plan, ...rest }) => {
   )
 }
 
-PricingCard.PriceTag = ({ plan, children, ...rest }) => {
+PricingCard.PriceTag = ({ plan, ...rest }) => {
   const { interval } = PricingCard.useContext()
   const { price } = plan
 
@@ -372,19 +370,11 @@ PricingCard.PriceTag = ({ plan, children, ...rest }) => {
 PricingCard.Details = ({ plan, ...rest }) => {
   const { variant } = PricingCard.useContext()
   const { details } = plan
-  const [tipVisible, setTipVisible] = useState(false)
 
   if (!details) {
     return null
   }
 
-  const showTip = e => {
-    if (
-      e.type === `click` ||
-      (e.type === `keydown` && (e.keyCode === 32 || e.keyCode === 13))
-    )
-      setTipVisible(true)
-  }
   return (
     details && (
       <div
@@ -459,7 +449,7 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
     return null
   }
 
-  const { label, to, onClick, comment } = cta
+  const { label, to, onClick } = cta
   const isSelected = selectedPlan === name
 
   return (

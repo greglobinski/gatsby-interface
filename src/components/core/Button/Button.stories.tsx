@@ -1,6 +1,6 @@
 /** @jsx jsx */
+/* eslint-disable react/no-unescaped-entities */
 import { jsx } from "@emotion/core"
-import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { action } from "@storybook/addon-actions"

@@ -1,31 +1,14 @@
 /** @jsx jsx */
+/* eslint-disable react/no-unescaped-entities */
 import { jsx } from "@emotion/core"
 import React from "react"
 
-import {
-  storiesOf,
-  Story,
-  DecoratorParameters,
-  RenderFunction,
-} from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import { MdArrowForward } from "react-icons/md"
 import { radios } from "@storybook/addon-knobs"
 
-import Button, {
-  ButtonSize,
-  ButtonTone,
-  ButtonVariant,
-  ButtonProps,
-  ButtonStyleProps,
-} from "../Button"
 import { StoryUtils } from "../../../../utils/storybook"
-import styled from "@emotion/styled"
 import colors from "../../../../theme/colors"
-
-const StoryStack = styled(StoryUtils.Stack)`
-  margin: 0 1rem;
-`
 
 function enumToOptions<T extends string>(
   memo: { [k: string]: string },
