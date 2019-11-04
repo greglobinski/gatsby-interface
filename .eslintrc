@@ -25,6 +25,7 @@ plugins:
   - cypress
   - jsx-a11y
   - react
+reportUnusedDisableDirectives: true
 rules:
   arrow-body-style:
     - error
