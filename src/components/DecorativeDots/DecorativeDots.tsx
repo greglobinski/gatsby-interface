@@ -1,6 +1,8 @@
 import * as React from "react"
 import sample from "lodash.sample"
 
+import { palette } from "../../utils/presets"
+
 import { getLikelihoodOfBeingBlank } from "./DecorativeDots.helpers"
 import Dot, { DotProps } from "./Dot"
 
@@ -12,21 +14,26 @@ interface DecorativeDotsProps {
   fadeStrength?: number
 }
 
+// These colors were chosen somewhat haphazardly from previous assets.
+// For now, this is not customizable, colors are meant to be semi-randomly
+// drawn from our design palette.
 const COLORS = [
-  `#FFDF37`,
-  `#BC027F`,
-  `#159BF3`,
-  `#B17ACC`,
-  `#59C156`,
-  `#663399`,
-  `#05F7F4`,
-  `#FFD280`,
-  `#00BDB6`,
-  `#F2C4E3`,
-  `#FF5A54`,
-  `#A1DA9E`,
-  `#CCFFFC`,
-  `#FB8400`,
+  palette.red[400],
+  palette.red[600],
+  palette.orange[400],
+  palette.orange[600],
+  palette.yellow[400],
+  palette.green[200],
+  palette.green[400],
+  palette.blue[200],
+  palette.blue[400],
+  palette.magenta[200],
+  palette.magenta[500],
+  palette.purple[400],
+  palette.purple[600],
+  palette.teal[200],
+  palette.teal[500],
+  palette.teal[700],
 ]
 
 // Every circle is given a random opacity, but it's weighted so that outliers
@@ -92,7 +99,7 @@ const DecorativeDots: React.FC<DecorativeDotsProps> = ({
   const dots = generateDotData(numRows, numCols, angle, dotSize, fadeStrength)
 
   return (
-    <svg width={width} height={height} style={dotSvgStyles}>
+    <svg width={width} height={height} style={dotSvgStyles} aria-hidden={true}>
       {dots.map((dot, i) => (
         <Dot
           key={i}

@@ -8,6 +8,8 @@ export interface DotProps {
   size: number
 }
 
-const Dot: React.FC<DotProps> = ({ x, y, color, opacity, size }) => <circle r={size / 2} cx={x} cy={y} opacity={opacity} fill={color} />
+const Dot: React.FC<DotProps> = ({ x, y, color, opacity, size }) => (
+  <circle r={size / 2} cx={x} cy={y} opacity={opacity} fill={color} />
+)
 
 export default Dot
