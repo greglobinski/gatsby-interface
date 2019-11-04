@@ -32,6 +32,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.2",
     "@reach/alert": "^0.1.5",
+    "@reach/dialog": "^0.4.0",
     "filestack-react": "^3.1.0",
     "gatsby-design-tokens": "^1.0.0"
   },
