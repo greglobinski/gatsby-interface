@@ -22,8 +22,9 @@
     "build:rollup": "yarn build:types && rollup -c",
     "dev": "watch 'yarn run build' src",
     "stylelint": "stylelint './src/**/*.js'",
-    "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
-    "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint ./src --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
+    "lint:fix": "yarn lint --fix",
     "chromatic": "chromatic test",
     "scaffold:icon": "babel-node --presets @babel/env scripts/scaffold-icon/scaffold-icon.js"
   },
@@ -160,8 +161,13 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,md,yml,yaml}": [
-      "yarn lint:commit",
+    "*.{ts,tsx,js,jsx}": [
+      "yarn lint",
+      "yarn format",
+      "git add"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "yarn format",
       "git add"
     ]
   }
