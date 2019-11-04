@@ -24,7 +24,6 @@
     "stylelint": "stylelint './src/**/*.js'",
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "eslint ./src --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
-    "lint:fix": "yarn lint --fix",
     "chromatic": "chromatic test",
     "scaffold:icon": "babel-node --presets @babel/env scripts/scaffold-icon/scaffold-icon.js"
   },
@@ -161,7 +160,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
+    "**/*.{ts,tsx,js,jsx}": [
       "yarn lint",
       "yarn format",
       "git add"
