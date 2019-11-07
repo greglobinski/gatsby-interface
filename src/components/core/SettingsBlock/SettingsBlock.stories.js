@@ -1,7 +1,6 @@
 import React from "react"
 
 import { storiesOf } from "@storybook/react"
-import { MdEdit, MdArrowForward, MdAdd, MdDelete } from "react-icons/md"
 
 import { StoryUtils } from "../../../utils/storybook"
 import { SettingsBlock } from "./"
