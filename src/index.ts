@@ -96,3 +96,4 @@ export { default as cardStyles } from "./theme/styles/card"
 export { default as buttonStyles } from "./theme/styles/button"
 
 export * from "./components/icons"
+export * from "./components/form"

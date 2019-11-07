@@ -1,6 +1,7 @@
 import React from "react"
 import FormField, { FormFieldProps, FormFieldLabelProps } from "./FormField"
 import { getFinalAriaDescribedBy } from "../utils"
+import { OmitControlProps } from "../sharedTypes"
 
 export type FormGroupFieldProps = FormFieldProps &
   Pick<JSX.IntrinsicElements["fieldset"], "className" | "style">
@@ -27,12 +28,15 @@ export type FormGroupFieldLabelProps = Omit<
   "ref"
 >
 
-const FormGroupFieldLabel: React.FC<FormGroupFieldLabelProps> = props => <legend {...props} />
+const FormGroupFieldLabel: React.FC<FormGroupFieldLabelProps> = props => (
+  <legend {...props} />
+)
 
 export type FormGroupOptionProps = Omit<
-  JSX.IntrinsicElements["input"],
-  "id" | "aria-invalid" | "value"
+  OmitControlProps<JSX.IntrinsicElements["input"]>,
+  "value" | "name"
 > & {
+  name: string // Force require "name" attribute
   value: string // Force require "value" attribute
 }
 

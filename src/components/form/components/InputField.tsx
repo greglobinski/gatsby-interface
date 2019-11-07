@@ -1,14 +1,14 @@
 import React from "react"
 import FormField, { FormFieldProps } from "./FormField"
 import { getFinalAriaDescribedBy } from "../utils"
+import { OmitControlProps } from "../sharedTypes"
 
 function InputField(props: FormFieldProps) {
   return <FormField {...props} />
 }
 
-export type InputFieldControlProps = Omit<
-  JSX.IntrinsicElements["input"],
-  "id" | "aria-invalid"
+export type InputFieldControlProps = OmitControlProps<
+  JSX.IntrinsicElements["input"]
 >
 
 InputField.Control = React.forwardRef<HTMLInputElement, InputFieldControlProps>(

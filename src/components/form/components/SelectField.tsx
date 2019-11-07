@@ -1,6 +1,7 @@
 import React from "react"
 import FormField, { FormFieldProps } from "./FormField"
 import { getFinalAriaDescribedBy } from "../utils"
+import { OmitControlProps } from "../sharedTypes"
 
 function SelectField(props: FormFieldProps) {
   return <FormField {...props} />
@@ -11,9 +12,8 @@ export type SelectFieldControlOption = {
   label: string
 }
 
-export type SelectFieldControlProps = Omit<
-  JSX.IntrinsicElements["select"],
-  "id" | "aria-invalid"
+export type SelectFieldControlProps = OmitControlProps<
+  JSX.IntrinsicElements["select"]
 > & {
   options: SelectFieldControlOption[]
 }

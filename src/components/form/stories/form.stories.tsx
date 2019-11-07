@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react"
 import { text, boolean, radios } from "@storybook/addon-knobs"
 
 import { StoryUtils } from "../../../utils/storybook"
-// import README from "./README.md"
+import README from "../README.md"
 import { action } from "@storybook/addon-actions"
 import InputField from "../components/InputField"
 import SingleCheckboxField from "../components/SingleCheckboxField"
@@ -13,14 +13,13 @@ import CheckboxGroupField from "../components/CheckboxGroupField"
 import RadioButtonField from "../components/RadioButtonField"
 import SelectField from "../components/SelectField"
 
-storiesOf(`form/InputField`, module)
+storiesOf(`form`, module)
   .addParameters({
     options: {
       showPanel: true,
     },
     readme: {
-      // sidebar: README,
-      // includePropTables: [CopyButton],
+      sidebar: README,
     },
   })
   .add(`Default`, () => {
@@ -38,10 +37,12 @@ storiesOf(`form/InputField`, module)
       `Sheala de Tancarville`,
       `Triss Merigold`,
       `Yennefer of Vengerberg`,
-    ].map(name => {return {
-      label: name,
-      value: name.toLowerCase().replace(/\s/g, `-`),
-    }})
+    ].map(name => {
+      return {
+        label: name,
+        value: name.toLowerCase().replace(/\s/g, `-`),
+      }
+    })
 
     return (
       <StoryUtils.Container>
@@ -104,16 +105,16 @@ storiesOf(`form/InputField`, module)
           >
             <CheckboxGroupField.Label>Checkbox group</CheckboxGroupField.Label>
             {options.map(({ label, value }) => (
-                <React.Fragment key={value}>
-                  <CheckboxGroupField.Option
-                    value={value}
-                    name="checkbox-group"
-                  />
-                  <CheckboxGroupField.OptionLabel optionValue={value}>
-                    {label}
-                  </CheckboxGroupField.OptionLabel>
-                </React.Fragment>
-              ))}
+              <React.Fragment key={value}>
+                <CheckboxGroupField.Option
+                  value={value}
+                  name="checkbox-group"
+                />
+                <CheckboxGroupField.OptionLabel optionValue={value}>
+                  {label}
+                </CheckboxGroupField.OptionLabel>
+              </React.Fragment>
+            ))}
             <CheckboxGroupField.Error>{error}</CheckboxGroupField.Error>
             <CheckboxGroupField.Hint>{hint}</CheckboxGroupField.Hint>
           </CheckboxGroupField>
@@ -125,16 +126,13 @@ storiesOf(`form/InputField`, module)
           >
             <RadioButtonField.Label>Radio button</RadioButtonField.Label>
             {options.map(({ label, value }) => (
-                <React.Fragment key={value}>
-                  <RadioButtonField.Option
-                    value={value}
-                    name="checkbox-group"
-                  />
-                  <RadioButtonField.OptionLabel optionValue={value}>
-                    {label}
-                  </RadioButtonField.OptionLabel>
-                </React.Fragment>
-              ))}
+              <React.Fragment key={value}>
+                <RadioButtonField.Option value={value} name="radio-button" />
+                <RadioButtonField.OptionLabel optionValue={value}>
+                  {label}
+                </RadioButtonField.OptionLabel>
+              </React.Fragment>
+            ))}
             <RadioButtonField.Error>{error}</RadioButtonField.Error>
             <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
           </RadioButtonField>

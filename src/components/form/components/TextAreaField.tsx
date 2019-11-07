@@ -1,14 +1,14 @@
 import React from "react"
 import FormField, { FormFieldProps } from "./FormField"
 import { getFinalAriaDescribedBy } from "../utils"
+import { OmitControlProps } from "../sharedTypes"
 
 function TextAreaField(props: FormFieldProps) {
   return <FormField {...props} />
 }
 
-type TextAreaFieldControlProps = Omit<
-  JSX.IntrinsicElements["textarea"],
-  "id" | "aria-invalid"
+type TextAreaFieldControlProps = OmitControlProps<
+  JSX.IntrinsicElements["textarea"]
 >
 
 TextAreaField.Control = React.forwardRef<

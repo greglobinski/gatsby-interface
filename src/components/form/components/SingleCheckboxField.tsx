@@ -1,14 +1,15 @@
 import React from "react"
 import FormField, { FormFieldProps } from "./FormField"
 import { getFinalAriaDescribedBy } from "../utils"
+import { OmitControlProps } from "../sharedTypes"
 
 function SingleCheckboxField(props: FormFieldProps) {
   return <FormField {...props} />
 }
 
 export type SingleCheckboxFieldControlProps = Omit<
-  JSX.IntrinsicElements["input"],
-  "id" | "aria-invalid" | "type"
+  OmitControlProps<JSX.IntrinsicElements["input"]>,
+  "type"
 >
 
 SingleCheckboxField.Control = React.forwardRef<

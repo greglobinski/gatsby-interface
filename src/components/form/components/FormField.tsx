@@ -79,31 +79,38 @@ export type FormFieldHintProps = Omit<
   "ref" | "id"
 >
 
-const FormFieldHint: React.FC<FormFieldHintProps> = props => {
+const FormFieldHint: React.FC<FormFieldHintProps> = ({ children, ...rest }) => {
   const { hasHint, meta } = useFormField()
 
-  return hasHint ? <div id={meta.hintId} {...props} /> : null
+  return (
+    <div id={meta.hintId} {...rest}>
+      {hasHint ? children : null}
+    </div>
+  )
 }
 
-export type ErrorValidationMode = "FOCUS" | "CHANGE" | "SUBMIT"
+export type ErrorValidationMode = "focus" | "change" | "submit"
 export type FormFieldErrorProps = Omit<
   JSX.IntrinsicElements["div"],
   "ref" | "id"
 > & { validationMode?: ErrorValidationMode }
 
 const FormFieldError: React.FC<FormFieldErrorProps> = ({
+  children,
   validationMode,
   ...rest
 }) => {
   const { hasError, meta } = useFormField()
 
-  return hasError ? (
+  return (
     <div
       id={meta.errorId}
       aria-live={getErrorAriaLiveAttribute(validationMode)}
       {...rest}
-    />
-  ) : null
+    >
+      {hasError ? children : null}
+    </div>
+  )
 }
 
 function FormField(props: FormFieldProps) {
@@ -128,10 +135,10 @@ function useFormField() {
 function getErrorAriaLiveAttribute(
   validationMode?: ErrorValidationMode
 ): React.HTMLAttributes<HTMLDivElement>["aria-live"] {
-  if (validationMode === `FOCUS`) {
+  if (validationMode === `focus`) {
     return `assertive`
   }
-  if (validationMode === `CHANGE`) {
+  if (validationMode === `change`) {
     return `polite`
   }
   return undefined
