@@ -11,8 +11,6 @@ const baseStyle = ({ tone }) => {
   return {
     color: tones[tone].darker,
     fontFamily: fonts.system.join(`,`),
-    fontSize: fontSizes[2],
-    lineHeight: 1.5,
     fontWeight: `normal`,
   }
 }
