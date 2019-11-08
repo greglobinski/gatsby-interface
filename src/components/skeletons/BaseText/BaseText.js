@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 const AS_OPTIONS = {
   p: `p`,
-  div: `div`,
   span: `span`,
 }
 
