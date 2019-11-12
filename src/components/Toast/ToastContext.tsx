@@ -1,11 +1,19 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core"
-import React from "react"
-import PropTypes from "prop-types"
 import { css } from "@emotion/core"
+import React, { useState, useRef } from "react"
 import Toast from "./Toast"
+import { ToastTones } from "./constants"
 
-export const ToastContext = React.createContext()
+export interface ToastContextDefinition {
+  showToast: (
+    message: string,
+    { tone, timeout }?: { tone: ToastTones; timeout: NodeJS.Timeout }
+  ) => void
+}
+
+export const ToastContext = React.createContext<ToastContextDefinition>({
+  showToast: () => undefined,
+})
+
 export const ToastConsumer = ToastContext.Consumer
 
 const containerCss = css`
@@ -23,10 +31,26 @@ const containerCss = css`
 const DEFAULT_TIMEOUT = 5000
 const DEFAULT_TONE = `SUCCESS`
 
-export function ToastProvider({ children, closeButtonLabel = `Close` }) {
-  const [toasts, setToasts] = React.useState([])
+export interface ToastProviderProps {
+  closeButtonLabel?: string
+}
 
-  const timeoutsRef = React.useRef({})
+export interface ToastI {
+  id: number
+  message: string
+  tone: ToastTones
+}
+
+export type ToastInterval = {
+  [key: number]: NodeJS.Timeout
+}
+
+export const ToastProvider: React.FC<ToastProviderProps> = ({
+  children,
+  closeButtonLabel = `Close`,
+}) => {
+  const [toasts, setToasts] = useState<ToastI[]>([])
+  const timeoutsRef = useRef<ToastInterval>({})
 
   const removeToast = React.useCallback(toastId => {
     setToasts(prevToasts => prevToasts.filter(({ id }) => id !== toastId))
@@ -69,11 +93,6 @@ export function ToastProvider({ children, closeButtonLabel = `Close` }) {
       </div>
     </ToastContext.Provider>
   )
-}
-
-ToastProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-  closeButtonLabel: PropTypes.string,
 }
 
 export function useToastContext() {

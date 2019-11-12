@@ -1,8 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core"
-
+import React from "react"
 import PropTypes from "prop-types"
-
 import Alert from "@reach/alert"
 import { keyframes, css } from "@emotion/core"
 import { MdDone, MdClose, MdWarning } from "react-icons/md"

@@ -1,6 +1,6 @@
 import React from "react"
 import { useToastContext } from "./ToastContext"
-import MessageWithLink from "./MessageWithLink"
+import { MessageWithLink } from "./MessageWithLink"
 
 export function useShowToast() {
   const { showToast } = useToastContext()

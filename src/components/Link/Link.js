@@ -73,6 +73,7 @@ Link.propTypes = {
   target: PropTypes.string,
   to: PropTypes.string,
   variant: PropTypes.oneOf([`DEFAULT`, `SIMPLE`]),
+  customCss: PropTypes.any,
 }
 
 export default Link
