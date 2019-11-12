@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React from "react"
-import { css } from "@emotion/core"
+import { css, jsx } from "@emotion/core"
 import { Link } from "../Link"
 
 const messageCss = css`
@@ -8,9 +9,9 @@ const messageCss = css`
 
 export interface MessageWithLinkProps {
   linkLabel: JSX.Element
-  href?: string
-  target?: string
-  to?: string
+  href: string
+  target: string
+  to: string
 }
 
 export const MessageWithLink: React.FC<MessageWithLinkProps> = ({

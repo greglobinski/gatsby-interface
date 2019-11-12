@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from "react"
 import Alert from "@reach/alert"
-import { keyframes, css } from "@emotion/core"
+import { keyframes, css, jsx } from "@emotion/core"
 import { MdDone, MdClose, MdWarning } from "react-icons/md"
 
 import {
