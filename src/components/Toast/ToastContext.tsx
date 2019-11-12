@@ -1,13 +1,15 @@
 import { css } from "@emotion/core"
 import React, { useState, useRef } from "react"
-import Toast from "./Toast"
+import { Toast } from "./Toast"
 import { ToastTones } from "./constants"
 
+export interface ShowToastArg {
+  tone?: ToastTones
+  timeout: NodeJS.Timeout
+}
+
 export interface ToastContextDefinition {
-  showToast: (
-    message: string,
-    { tone, timeout }?: { tone: ToastTones; timeout: NodeJS.Timeout }
-  ) => void
+  showToast: (message: string, toastArg?: ShowToastArg) => void
 }
 
 export const ToastContext = React.createContext<ToastContextDefinition>({
@@ -52,7 +54,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
   const [toasts, setToasts] = useState<ToastI[]>([])
   const timeoutsRef = useRef<ToastInterval>({})
 
-  const removeToast = React.useCallback(toastId => {
+  const removeToast = React.useCallback((toastId: number) => {
     setToasts(prevToasts => prevToasts.filter(({ id }) => id !== toastId))
     clearTimeout(timeoutsRef.current[toastId])
     delete timeoutsRef.current[toastId]

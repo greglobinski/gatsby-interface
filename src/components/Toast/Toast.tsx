@@ -79,7 +79,7 @@ const ToastIconByTone = {
 
 export interface ToastProps {
   id: number
-  message: JSX.Element
+  message: string
   onRemove: (id: number) => void
   closeButtonLabel: string
   tone?: ToastTones
