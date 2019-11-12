@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Alert from "@reach/alert"
 import { keyframes, css } from "@emotion/core"
 import { MdDone, MdClose, MdWarning } from "react-icons/md"
@@ -78,21 +77,30 @@ const ToastIconByTone = {
   DANGER: MdWarning,
 }
 
-export default function Toast({
+export interface ToastProps {
+  id: number
+  message: JSX.Element
+  onRemove: (id: number) => void
+  closeButtonLabel: string
+  tone?: ToastTones
+}
+
+export const Toast: React.FC<ToastProps> = ({
   id,
   message,
   tone,
   onRemove,
   closeButtonLabel,
-}) {
-  const IconComponent = ToastIconByTone[tone]
+}) => {
+  const safeTone = tone || `SUCCESS`
+  const IconComponent = ToastIconByTone[safeTone]
 
   return (
     <Alert
       css={[
         toastCss,
         css({
-          borderLeftColor: toastColorByTone[tone],
+          borderLeftColor: toastColorByTone[safeTone],
         }),
       ]}
       data-testid="toast"
@@ -102,7 +110,7 @@ export default function Toast({
         css={[
           statusCss,
           css({
-            color: toastColorByTone[tone],
+            color: toastColorByTone[safeTone],
           }),
         ]}
       >
@@ -119,12 +127,4 @@ export default function Toast({
       </button>
     </Alert>
   )
-}
-
-Toast.propTypes = {
-  id: PropTypes.number.isRequired,
-  message: PropTypes.node.isRequired,
-  tone: PropTypes.oneOf(ToastTones),
-  onRemove: PropTypes.func.isRequired,
-  closeButtonLabel: PropTypes.string.isRequired,
 }
