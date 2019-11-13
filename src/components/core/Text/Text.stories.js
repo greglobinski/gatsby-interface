@@ -34,6 +34,22 @@ storiesOf(`core/Text`, module)
         <Text variant={`ERROR`}>
           <MdWarning /> Text variant - ERROR
         </Text>
+        <Text variant={`LEDE`}>
+          Text variant - LEDE: Doggo ipsum mlem snoot adorable doggo you are
+          doing me the shock doge, mlem puggo boofers. Blep shoober heckin good
+          boys smol, ruff thicc, dat tungg tho shooberino.
+        </Text>
+        <Text variant={`EMPHASIZED_LEDE`}>
+          Text variant - EMPHASIZED_LEDE: Doggo ipsum mlem snoot adorable doggo
+          you are doing me the shock doge, mlem puggo boofers. Blep shoober
+          heckin good boys smol, ruff thicc, dat tungg tho shooberino.
+        </Text>
+        <Text variant={`EMPHASIZED_LEDE`} tone={`BRAND`}>
+          Text variant - EMPHASIZED_LEDE with BRAND tone: Doggo ipsum mlem snoot
+          adorable doggo you are doing me the shock doge, mlem puggo boofers.
+          Blep shoober heckin good boys smol, ruff thicc, dat tungg tho
+          shooberino.
+        </Text>
       </StoryUtils.Stack>
     </StoryUtils.Container>
   ))

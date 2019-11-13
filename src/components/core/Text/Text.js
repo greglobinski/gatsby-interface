@@ -22,8 +22,8 @@ function Text({
       css={[
         {
           ...baseStyle({ tone }),
-          ...variantStyles()[variant],
           ...sizeStyles()[size],
+          ...variantStyles()[variant],
         },
       ]}
       {...rest}
