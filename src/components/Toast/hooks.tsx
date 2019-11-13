@@ -45,27 +45,27 @@ export const useShowErrorAlert = () => {
   )
 }
 
-export interface IToast {
+export interface Toast {
   id: number
   message: string
   tone: ToastTones
 }
 
 export type ToastInterval = {
-  [key: number]: NodeJS.Timeout
+  [key: number]: number
 }
 
 // Side effect to generate a unique toast id and not relying on Math.random
 let TOAST_ID = 0
 
 export const useToastActions = () => {
-  const [toasts, setToasts] = useState<IToast[]>([])
+  const [toasts, setToasts] = useState<Toast[]>([])
   const timeoutsRef = useRef<ToastInterval>({})
 
   const removeToast = useCallback((toastId: number) => {
     setToasts(prevToasts => prevToasts.filter(({ id }) => id !== toastId))
 
-    clearTimeout(timeoutsRef.current[toastId])
+    window.clearTimeout(timeoutsRef.current[toastId])
 
     delete timeoutsRef.current[toastId]
   }, [])
@@ -77,7 +77,7 @@ export const useToastActions = () => {
       setToasts(prevToasts => [...prevToasts, { id: toastId, message, tone }])
 
       if (timeout > 0) {
-        timeoutsRef.current[toastId] = setTimeout(() => {
+        timeoutsRef.current[toastId] = window.setTimeout(() => {
           removeToast(toastId)
         }, timeout)
       }

@@ -3,7 +3,7 @@ import { ToastTones } from "./constants"
 
 export interface ShowToastArg {
   tone?: ToastTones
-  timeout: NodeJS.Timeout
+  timeout: number
 }
 
 export interface ToastContextDefinition {

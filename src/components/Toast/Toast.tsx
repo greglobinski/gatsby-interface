@@ -83,7 +83,7 @@ export interface ToastProps {
   message: string
   onRemove: (id: number) => void
   closeButtonLabel: string
-  tone?: ToastTones
+  tone: ToastTones
 }
 
 export const Toast: React.FC<ToastProps> = ({
@@ -93,15 +93,14 @@ export const Toast: React.FC<ToastProps> = ({
   onRemove,
   closeButtonLabel,
 }) => {
-  const safeTone = tone || `SUCCESS`
-  const IconComponent = ToastIconByTone[safeTone]
+  const IconComponent = ToastIconByTone[tone]
 
   return (
     <Alert
       css={[
         toastCss,
         css({
-          borderLeftColor: toastColorByTone[safeTone],
+          borderLeftColor: toastColorByTone[tone],
         }),
       ]}
       data-testid="toast"
@@ -111,7 +110,7 @@ export const Toast: React.FC<ToastProps> = ({
         css={[
           statusCss,
           css({
-            color: toastColorByTone[safeTone],
+            color: toastColorByTone[tone],
           }),
         ]}
       >

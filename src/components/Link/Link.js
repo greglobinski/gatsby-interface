@@ -2,13 +2,9 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
-
 import colors from "../../theme/colors"
-import { showCustomCssDeprecationMessage } from "../../utils/maintenance/deprecationMessages"
 
 const Link = ({ children, href, target, to, variant = `DEFAULT`, ...rest }) => {
-  showCustomCssDeprecationMessage(rest.customCss)
-
   const baseStyles = {
     alignItems: `center`,
     color: colors.purple[60],
@@ -38,7 +34,6 @@ const Link = ({ children, href, target, to, variant = `DEFAULT`, ...rest }) => {
         ...baseStyles,
         ...styles[variant],
       },
-      rest.customCss,
     ],
     ...rest,
   }
@@ -65,7 +60,6 @@ Link.propTypes = {
   target: PropTypes.string,
   to: PropTypes.string,
   variant: PropTypes.oneOf([`DEFAULT`, `SIMPLE`]),
-  customCss: PropTypes.any,
 }
 
 export default Link
