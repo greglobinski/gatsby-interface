@@ -1,14 +1,14 @@
 import colors from "../colors"
-import tones from "../tones"
+
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
 
-import { breakpoints, radius, spaces } from "../../utils/presets"
+import { radius, spaces } from "../../utils/presets"
 
 const VARIANTS = [`PILL`, `STATUS`]
 const TONES = [`BRAND`, `SUCCESS`, `DANGER`, `NEUTRAL`]
 
-const baseStyle = ({ tone }) => {
+const baseStyle = () => {
   return {
     borderRadius: radius.default,
     fontFamily: fonts.header.join(`,`),

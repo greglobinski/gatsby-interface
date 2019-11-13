@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { Fragment } from "react"
+import { Fragment } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
 import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const SidebarNav = ({ children, options, style, ...rest }) => (
+const SidebarNav = ({ children, options, ...rest }) => (
   <nav
     aria-label="sidebar-nav"
     css={{

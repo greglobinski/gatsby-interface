@@ -1,8 +1,10 @@
 import React from "react"
-import Button, { ButtonProps } from "./Button"
+import { Button, ButtonProps } from "./Button"
 
 function createButtonVariant(defaultProps: Partial<ButtonProps> = {}) {
-  return React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => <Button {...defaultProps} {...props} ref={ref} />)
+  return React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => (
+    <Button {...defaultProps} {...props} ref={ref} />
+  ))
 }
 
 export const PrimaryButton = createButtonVariant()

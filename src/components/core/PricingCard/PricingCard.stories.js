@@ -1,11 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
 
-import { addDecorator } from "@storybook/react"
-import { withA11y } from "@storybook/addon-a11y"
 import { storiesOf } from "@storybook/react"
-import { boolean, radios } from "@storybook/addon-knobs"
+
 import colors from "../../../theme/colors"
 
 import { StoryUtils } from "../../../utils/storybook"

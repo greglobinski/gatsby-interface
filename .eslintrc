@@ -25,6 +25,7 @@ plugins:
   - cypress
   - jsx-a11y
   - react
+reportUnusedDisableDirectives: true
 rules:
   arrow-body-style:
     - error
@@ -87,3 +88,7 @@ overrides:
         - error
         - backtick
         - allowTemplateLiterals: true
+      "@typescript-eslint/no-unused-vars":
+        - warn
+        - args: "none"
+        

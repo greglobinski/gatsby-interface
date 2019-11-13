@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import React, { Fragment } from "react"
+import { jsx } from "@emotion/core"
+import { Fragment } from "react"
 import PropTypes from "prop-types"
 import { MdEdit, MdArrowForward, MdFlashOn, MdLaunch } from "react-icons/md"
 
@@ -157,7 +157,7 @@ IntegrationRow.EditButton = ({
 
 function renderData(data = [], primaryStyling) {
   if (data.length > 0) {
-    return data.map((item, idx) => (
+    return data.map(item => (
       <div
         key={`data-${item.name}`}
         css={{

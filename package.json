@@ -22,8 +22,8 @@
     "build:rollup": "yarn build:types && rollup -c",
     "dev": "watch 'yarn run build' src",
     "stylelint": "stylelint './src/**/*.js'",
-    "format": "prettier-eslint --write \"src/**/*.js\" && eslint src --fix --color --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives",
-    "lint:commit": "prettier-eslint --eslint-config-path=.eslintrc --write",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint ./src --fix --color --ext .js,.jsx,.ts,.tsx",
     "chromatic": "chromatic test",
     "scaffold:icon": "babel-node --presets @babel/env scripts/scaffold-icon/scaffold-icon.js"
   },
@@ -51,7 +51,6 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.6.1",
-    "@babel/plugin-external-helpers": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -139,7 +138,7 @@
     "rollup-plugin-delete": "^1.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-url": "^1.4.0",
     "storybook-chromatic": "^2.1.1",
@@ -160,8 +159,13 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,md,yml,yaml}": [
-      "yarn lint:commit",
+    "*.{ts,tsx,js,jsx}": [
+      "yarn lint",
+      "yarn format",
+      "git add"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "yarn format",
       "git add"
     ]
   }
