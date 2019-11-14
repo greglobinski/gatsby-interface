@@ -15,3 +15,24 @@ jobs:
           name: Install yarn
           command: |
             curl -o- -L https://yarnpkg.com/install.sh
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - run:
+          name: Build types
+          command: yarn build:types
+      - run:
+          name: Build rollup
+          command: yarn build:rollup
+      - run:
+          name: Test
+          command: yarn test
+      - run:
+          name: Type check
+          command: yarn type-check
+      - run:
+          name: Eslint
+          command: yarn lint
+      - run:
+          name: Prettier
+          command: yarn prettier-eslint
