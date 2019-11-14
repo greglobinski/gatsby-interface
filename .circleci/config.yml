@@ -23,17 +23,9 @@ jobs:
       - checkout
       - run:
           name: Build rollup
-          command: yarn build:rollup
+          command: yarn rollup -c
 
     # TODO: fix tests locally and add them to circleci
-    test:
-      docker:
-        - image: circleci/node:10
-      steps:
-        - checkout
-        - run:
-            name: Type check
-            command: yarn type-check
 
     lint:
       docker:
