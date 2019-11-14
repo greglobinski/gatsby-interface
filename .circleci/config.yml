@@ -1,9 +1,7 @@
 version: 2
 
-commands:
-
 jobs:
-  install:
+  gatsby-interface:
     docker:
       - image: circleci/node:10
     steps:
@@ -15,26 +13,16 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install
-
-  build:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
       - run:
           name: Build rollup
-          command: yarn rollup -c
-
-    # TODO: fix tests locally and add them to circleci
-
-    lint:
-      docker:
-        - image: circleci/node:10
-      steps:
-        - checkout
-        - run:
-            name: Eslint
-            command: yarn lint
-        - run:
-            name: Prettier
-            command: yarn prettier-eslint
+          command: yarn build:rollup
+      # TODO: fix tests locally and add them to circleci
+      - run:
+          name: Type check
+          command: yarn type-check
+      - run:
+          name: Eslint
+          command: yarn lint
+      - run:
+          name: Prettier
+          command: yarn prettier-eslint

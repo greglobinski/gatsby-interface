@@ -15,6 +15,7 @@
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "tsc": "tsc",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check --watch",
     "build:types": "tsc --emitDeclarationOnly -p tsconfig.build-types.json",
