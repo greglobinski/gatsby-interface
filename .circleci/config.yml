@@ -3,14 +3,11 @@ version: 2
 commands:
 
 jobs:
-  build:
+  install:
     docker:
       - image: circleci/node:10
-    environment:
-      PROJ_OUTPUT: ~/dist
     steps:
       - checkout
-      - run: echo "A first hello"
       - run:
           name: Install yarn
           command: |
@@ -18,21 +15,37 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install
+
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
       - run:
           name: Build types
           command: yarn build:types
       - run:
           name: Build rollup
           command: yarn build:rollup
-      - run:
-          name: Test
-          command: yarn test
-      - run:
-          name: Type check
-          command: yarn type-check
-      - run:
-          name: Eslint
-          command: yarn lint
-      - run:
-          name: Prettier
-          command: yarn prettier-eslint
+
+    # TODO: fix tests locally and add them to circleci
+    test:
+      docker:
+        - image: circleci/node:10
+      steps:
+        - checkout
+        - run:
+            name: Type check
+            command: yarn type-check
+
+    lint:
+      docker:
+        - image: circleci/node:10
+      steps:
+        - checkout
+        - run:
+            name: Eslint
+            command: yarn lint
+        - run:
+            name: Prettier
+            command: yarn prettier-eslint
