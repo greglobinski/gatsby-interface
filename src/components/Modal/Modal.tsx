@@ -33,7 +33,7 @@ const warnFade = buildFadeIn(hexToRGBA(palette.orange[`500`], 0.75))
 export interface ModalProps
   extends Omit<DialogOverlayProps, "ref">,
     Omit<DialogContentProps, "ref"> {
-  type?: ModalType
+  type?: ModalType;
 }
 
 const getBackgroundAnimation = (type?: ModalType) => {

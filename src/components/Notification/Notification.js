@@ -10,14 +10,14 @@ import { spaces, palette } from "../../utils/presets"
 import { Link } from "../Link"
 import { Button } from "../core/Button"
 
-const NotificationContext = React.createContext()
-
 import {
   NOTIFICATION_TONES,
   NOTIFICATION_VARIANTS,
   NOTIFICATION_ICONS,
 } from "../../utils/options"
 import { showCustomCssDeprecationMessage } from "../../utils/maintenance/deprecationMessages"
+
+const NotificationContext = React.createContext()
 
 const asOptions = {
   div: `div`,

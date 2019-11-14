@@ -1,21 +1,3 @@
-export default function copyToClipboard(content: string): Promise<void> {
-  if (!window || !window.navigator) {
-    return Promise.resolve()
-  }
-  const clipboard = window.navigator.clipboard
-  /*
-   * fallback to older browsers (including Safari)
-   * if clipboard API not supported
-   */
-  if (!clipboard || typeof clipboard.writeText !== `function`) {
-    clipboardWriteTextFallback(content)
-
-    return Promise.resolve()
-  }
-
-  return clipboard.writeText(content)
-}
-
 function clipboardWriteTextFallback(content: string): void {
   const textarea = document.createElement(`textarea`)
   textarea.value = content
@@ -40,4 +22,22 @@ function clipboardWriteTextFallback(content: string): void {
   document.execCommand(`copy`)
 
   document.body.removeChild(textarea)
+}
+
+export default function copyToClipboard(content: string): Promise<void> {
+  if (!window || !window.navigator) {
+    return Promise.resolve()
+  }
+  const clipboard = window.navigator.clipboard
+  /*
+   * fallback to older browsers (including Safari)
+   * if clipboard API not supported
+   */
+  if (!clipboard || typeof clipboard.writeText !== `function`) {
+    clipboardWriteTextFallback(content)
+
+    return Promise.resolve()
+  }
+
+  return clipboard.writeText(content)
 }

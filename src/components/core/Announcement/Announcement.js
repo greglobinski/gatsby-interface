@@ -10,7 +10,7 @@ import fonts from "../../../theme/fonts"
 import colors from "../../../theme/colors"
 import background from "./assets/background.svg"
 
-function Announcement({ children, ...rest }) {
+function Announcement({ children }) {
   return (
     <div
       css={{

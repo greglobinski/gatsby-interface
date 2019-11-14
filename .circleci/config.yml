@@ -1,0 +1,17 @@
+version: 2
+
+commands:
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    environment:
+      PROJ_OUTPUT: ~/dist
+    steps:
+      - checkout
+      - run: echo "A first hello"
+      - run:
+          name: Install yarn
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh
