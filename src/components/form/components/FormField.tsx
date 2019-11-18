@@ -40,7 +40,7 @@ function FormFieldProvider({
     const hintId = getHintId(id)
     const errorId = getErrorId(id)
     const controlDescribedBy =
-      [hasError && getErrorId(id), hasHint && getHintId(id)]
+      [hasError && errorId, hasHint && hintId]
         .filter(describedBy => describedBy)
         .join(` `) || undefined
 
