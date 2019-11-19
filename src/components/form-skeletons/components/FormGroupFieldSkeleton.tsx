@@ -1,36 +1,39 @@
 import React from "react"
-import FormField, { FormFieldProps, FormFieldLabelProps } from "./FormField"
+import FormFieldSkeleton, {
+  FormFieldSkeletonProps,
+  FormFieldSkeletonLabelProps,
+} from "./FormFieldSkeleton"
 import { getFinalAriaDescribedBy } from "../utils"
 import { OmitControlProps } from "../sharedTypes"
 
-export type FormGroupFieldProps = FormFieldProps &
+export type FormGroupFieldSkeletonProps = FormFieldSkeletonProps &
   Pick<JSX.IntrinsicElements["fieldset"], "className" | "style">
 
-function FormGroupField({
+function FormGroupFieldSkeleton({
   id,
   hasError,
   hasHint,
   children,
   className,
   style,
-}: FormGroupFieldProps) {
+}: FormGroupFieldSkeletonProps) {
   return (
-    <FormField id={id} hasError={hasError} hasHint={hasHint}>
+    <FormFieldSkeleton id={id} hasError={hasError} hasHint={hasHint}>
       <fieldset id={id} className={className} style={style}>
         {children}
       </fieldset>
-    </FormField>
+    </FormFieldSkeleton>
   )
 }
 
-export type FormGroupFieldLabelProps = Omit<
+export type FormGroupFieldSkeletonLabelProps = Omit<
   JSX.IntrinsicElements["legend"],
   "ref"
 >
 
-const FormGroupFieldLabel: React.FC<FormGroupFieldLabelProps> = props => (
-  <legend {...props} />
-)
+const FormGroupFieldSkeletonLabel: React.FC<
+  FormGroupFieldSkeletonLabelProps
+> = props => <legend {...props} />
 
 export type FormGroupOptionProps = Omit<
   OmitControlProps<JSX.IntrinsicElements["input"]>,
@@ -44,7 +47,7 @@ const GroupFieldOption = React.forwardRef<
   HTMLInputElement,
   FormGroupOptionProps
 >((props, ref) => {
-  const { id, hasError, meta } = FormField.useFormField()
+  const { id, hasError, meta } = FormFieldSkeleton.useFormFieldSkeleton()
 
   // We have to set aria-describedby for EACH option (see https://russmaxdesign.github.io/accessible-error-fieldset/)
   return (
@@ -61,25 +64,27 @@ const GroupFieldOption = React.forwardRef<
   )
 })
 
-type GroupFieldOptionLabelProps = FormFieldLabelProps & { optionValue: string }
+type GroupFieldOptionLabelProps = FormFieldSkeletonLabelProps & {
+  optionValue: string
+}
 
 const GroupFieldOptionLabel: React.FC<GroupFieldOptionLabelProps> = ({
   optionValue,
   ...rest
 }) => {
-  const { id } = FormField.useFormField()
+  const { id } = FormFieldSkeleton.useFormFieldSkeleton()
 
   return <label htmlFor={getGroupOptionId(id, optionValue)} {...rest} />
 }
 
-FormGroupField.Label = FormGroupFieldLabel
-FormGroupField.Label.displayName = `FormGroupField.Label`
-FormGroupField.Option = GroupFieldOption
-FormGroupField.Option.displayName = `FormGroupField.Option`
-FormGroupField.OptionLabel = GroupFieldOptionLabel
-FormGroupField.OptionLabel.displayName = `FormGroupField.OptionLabel`
+FormGroupFieldSkeleton.Label = FormGroupFieldSkeletonLabel
+FormGroupFieldSkeleton.Label.displayName = `FormGroupFieldSkeleton.Label`
+FormGroupFieldSkeleton.Option = GroupFieldOption
+FormGroupFieldSkeleton.Option.displayName = `FormGroupFieldSkeleton.Option`
+FormGroupFieldSkeleton.OptionLabel = GroupFieldOptionLabel
+FormGroupFieldSkeleton.OptionLabel.displayName = `FormGroupFieldSkeleton.OptionLabel`
 
-export default FormGroupField
+export default FormGroupFieldSkeleton
 
 function getGroupOptionId(fieldId: string, optionValue: string) {
   return `${fieldId}__option--${optionValue}`

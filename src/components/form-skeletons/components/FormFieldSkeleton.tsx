@@ -1,7 +1,7 @@
 import React from "react"
 import { getHintId, getErrorId } from "../utils"
 
-export type FormFieldContextValue = {
+export type FormFieldSkeletonContextValue = {
   id: string
   hasHint?: boolean
   hasError?: boolean
@@ -12,7 +12,9 @@ export type FormFieldContextValue = {
   }
 }
 
-const FormFieldContext = React.createContext<FormFieldContextValue>({
+const FormFieldSkeletonContext = React.createContext<
+  FormFieldSkeletonContextValue
+>({
   id: ``,
   hasHint: undefined,
   hasError: undefined,
@@ -23,20 +25,20 @@ const FormFieldContext = React.createContext<FormFieldContextValue>({
   },
 })
 
-export type FormFieldProps = {
+export type FormFieldSkeletonProps = {
   id: string
   hasHint?: boolean
   hasError?: boolean
   children?: React.ReactNode
 }
 
-function FormFieldProvider({
+function FormFieldSkeletonProvider({
   id,
   hasError,
   hasHint,
   children,
-}: FormFieldProps) {
-  const fieldContext = React.useMemo<FormFieldContextValue>(() => {
+}: FormFieldSkeletonProps) {
+  const fieldContext = React.useMemo<FormFieldSkeletonContextValue>(() => {
     const hintId = getHintId(id)
     const errorId = getErrorId(id)
     const controlDescribedBy =
@@ -57,30 +59,33 @@ function FormFieldProvider({
   }, [id, hasError, hasHint])
 
   return (
-    <FormFieldContext.Provider value={fieldContext}>
+    <FormFieldSkeletonContext.Provider value={fieldContext}>
       {children}
-    </FormFieldContext.Provider>
+    </FormFieldSkeletonContext.Provider>
   )
 }
 
-export type FormFieldLabelProps = Omit<
+export type FormFieldSkeletonLabelProps = Omit<
   JSX.IntrinsicElements["label"],
   "ref" | "htmlFor"
 >
 
-const FormFieldLabel: React.FC<FormFieldLabelProps> = props => {
-  const { id } = useFormField()
+const FormFieldSkeletonLabel: React.FC<FormFieldSkeletonLabelProps> = props => {
+  const { id } = useFormFieldSkeleton()
 
   return <label htmlFor={id} {...props} />
 }
 
-export type FormFieldHintProps = Omit<
+export type FormFieldSkeletonHintProps = Omit<
   JSX.IntrinsicElements["div"],
   "ref" | "id"
 >
 
-const FormFieldHint: React.FC<FormFieldHintProps> = ({ children, ...rest }) => {
-  const { hasHint, meta } = useFormField()
+const FormFieldSkeletonHint: React.FC<FormFieldSkeletonHintProps> = ({
+  children,
+  ...rest
+}) => {
+  const { hasHint, meta } = useFormFieldSkeleton()
 
   return (
     <div id={meta.hintId} {...rest}>
@@ -90,17 +95,17 @@ const FormFieldHint: React.FC<FormFieldHintProps> = ({ children, ...rest }) => {
 }
 
 export type ErrorValidationMode = "focus" | "change" | "submit"
-export type FormFieldErrorProps = Omit<
+export type FormFieldSkeletonErrorProps = Omit<
   JSX.IntrinsicElements["div"],
   "ref" | "id"
 > & { validationMode?: ErrorValidationMode }
 
-const FormFieldError: React.FC<FormFieldErrorProps> = ({
+const FormFieldSkeletonError: React.FC<FormFieldSkeletonErrorProps> = ({
   children,
   validationMode,
   ...rest
 }) => {
-  const { hasError, meta } = useFormField()
+  const { hasError, meta } = useFormFieldSkeleton()
 
   return (
     <div
@@ -113,23 +118,23 @@ const FormFieldError: React.FC<FormFieldErrorProps> = ({
   )
 }
 
-function FormField(props: FormFieldProps) {
-  return <FormFieldProvider {...props} />
+function FormFieldSkeleton(props: FormFieldSkeletonProps) {
+  return <FormFieldSkeletonProvider {...props} />
 }
 
-FormField.displayName = `FormField`
-FormField.Label = FormFieldLabel
-FormField.Label.displayName = `FormField.Label`
-FormField.Hint = FormFieldHint
-FormField.Hint.displayName = `FormField.Hint`
-FormField.Error = FormFieldError
-FormField.Error.displayName = `FormField.Error`
-FormField.useFormField = useFormField
+FormFieldSkeleton.displayName = `FormFieldSkeleton`
+FormFieldSkeleton.Label = FormFieldSkeletonLabel
+FormFieldSkeleton.Label.displayName = `FormFieldSkeleton.Label`
+FormFieldSkeleton.Hint = FormFieldSkeletonHint
+FormFieldSkeleton.Hint.displayName = `FormFieldSkeleton.Hint`
+FormFieldSkeleton.Error = FormFieldSkeletonError
+FormFieldSkeleton.Error.displayName = `FormFieldSkeleton.Error`
+FormFieldSkeleton.useFormFieldSkeleton = useFormFieldSkeleton
 
-export default FormField
+export default FormFieldSkeleton
 
-function useFormField() {
-  return React.useContext(FormFieldContext)
+function useFormFieldSkeleton() {
+  return React.useContext(FormFieldSkeletonContext)
 }
 
 function getErrorAriaLiveAttribute(
