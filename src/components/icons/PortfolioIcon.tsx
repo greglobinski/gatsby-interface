@@ -1,10 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import IconSkeleton from "./IconSkeleton"
+import { IconProps } from "./types"
 
-export default function PortfolioIcon(props) {
+export default function PortfolioIcon(props: IconProps) {
   return (
-    <IconSkeleton {...props} iconName="portfolio">
+    <IconSkeleton {...props} iconName="PortfolioIcon">
       <path
         d="M6.43308 15.749C6.06531 14.8383 5.92674 13.8512 6.02954 12.8744C6.13233 11.8976 6.47335 10.961 7.02265 10.1468C7.57196 9.33253 8.31275 8.66561 9.17999 8.20454C10.0472 7.74347 11.0144 7.50235 11.9966 7.50235C12.9788 7.50235 13.9459 7.74347 14.8132 8.20454C15.6804 8.66561 16.4212 9.33253 16.9705 10.1468C17.5198 10.961 17.8608 11.8976 17.9636 12.8744C18.0664 13.8512 17.9279 14.8383 17.5601 15.749"
         strokeLinecap="round"
@@ -47,10 +47,4 @@ export default function PortfolioIcon(props) {
       />
     </IconSkeleton>
   )
-}
-
-PortfolioIcon.propTypes = {
-  size: IconSkeleton.propTypes.size,
-  width: PropTypes.string,
-  height: PropTypes.string,
 }

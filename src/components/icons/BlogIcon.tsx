@@ -1,10 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import IconSkeleton from "./IconSkeleton"
+import { IconProps } from "./types"
 
-export default function BlogIcon(props) {
+export default function BlogIcon(props: IconProps) {
   return (
-    <IconSkeleton {...props} iconName="blog">
+    <IconSkeleton {...props} iconName="BlogIcon">
       <path
         d="M8.49188 11.265L7.43188 15.508L11.6739 14.447L18.0379 8.083L14.8559 4.901L8.49188 11.265Z"
         strokeLinecap="round"
@@ -27,10 +27,4 @@ export default function BlogIcon(props) {
       />
     </IconSkeleton>
   )
-}
-
-BlogIcon.propTypes = {
-  size: IconSkeleton.propTypes.size,
-  width: PropTypes.string,
-  height: PropTypes.string,
 }
