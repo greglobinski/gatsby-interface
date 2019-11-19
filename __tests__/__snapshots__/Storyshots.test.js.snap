@@ -22992,6 +22992,462 @@ exports[`Storyshots core/ToggleTip shortcut usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots form-skeletons Default 1`] = `
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-0"
+        >
+          <div>
+            <div>
+              <label
+                for="input-example"
+              >
+                Input
+              </label>
+              <input
+                aria-invalid="false"
+                id="input-example"
+              />
+              <div
+                id="input-example__error"
+              />
+              <div
+                id="input-example__hint"
+              />
+            </div>
+            <br />
+            <div>
+              <label
+                for="textarea-example"
+              >
+                Text Area
+              </label>
+              <textarea
+                aria-invalid="false"
+                id="textarea-example"
+              />
+              <div
+                id="textarea-example__error"
+              />
+              <div
+                id="textarea-example__hint"
+              />
+            </div>
+            <br />
+            <div>
+              <label
+                for="select-example"
+              >
+                Select
+              </label>
+              <select
+                aria-invalid="false"
+                id="select-example"
+              >
+                <option
+                  value="assire-var-anahid"
+                >
+                  Assire var Anahid
+                </option>
+                <option
+                  value="francesca-findabair"
+                >
+                  Francesca Findabair
+                </option>
+                <option
+                  value="fringilla-vigo"
+                >
+                  Fringilla Vigo
+                </option>
+                <option
+                  value="ida-emean-aep-sivney"
+                >
+                  Ida Emean aep Sivney
+                </option>
+                <option
+                  value="keira-metz"
+                >
+                  Keira Metz
+                </option>
+                <option
+                  value="margarita-laux-antille"
+                >
+                  Margarita Laux-Antille
+                </option>
+                <option
+                  value="philippa-eilhart"
+                >
+                  Philippa Eilhart
+                </option>
+                <option
+                  value="sabrina-glevissig"
+                >
+                  Sabrina Glevissig
+                </option>
+                <option
+                  value="sheala-de-tancarville"
+                >
+                  Sheala de Tancarville
+                </option>
+                <option
+                  value="triss-merigold"
+                >
+                  Triss Merigold
+                </option>
+                <option
+                  value="yennefer-of-vengerberg"
+                >
+                  Yennefer of Vengerberg
+                </option>
+              </select>
+              <div
+                id="select-example__error"
+              />
+              <div
+                id="select-example__hint"
+              />
+            </div>
+            <br />
+            <div>
+              <input
+                id="checkbox-example"
+                type="checkbox"
+              />
+              <label
+                for="checkbox-example"
+              >
+                Single checkbox
+              </label>
+              <div
+                id="checkbox-example__error"
+              />
+              <div
+                id="checkbox-example__hint"
+              />
+            </div>
+            <br />
+            <fieldset
+              id="checkbox-group-example"
+            >
+              <legend>
+                Checkbox group
+              </legend>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--assire-var-anahid"
+                name="checkbox-group"
+                type="checkbox"
+                value="assire-var-anahid"
+              />
+              <label
+                for="checkbox-group-example__option--assire-var-anahid"
+              >
+                Assire var Anahid
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--francesca-findabair"
+                name="checkbox-group"
+                type="checkbox"
+                value="francesca-findabair"
+              />
+              <label
+                for="checkbox-group-example__option--francesca-findabair"
+              >
+                Francesca Findabair
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--fringilla-vigo"
+                name="checkbox-group"
+                type="checkbox"
+                value="fringilla-vigo"
+              />
+              <label
+                for="checkbox-group-example__option--fringilla-vigo"
+              >
+                Fringilla Vigo
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--ida-emean-aep-sivney"
+                name="checkbox-group"
+                type="checkbox"
+                value="ida-emean-aep-sivney"
+              />
+              <label
+                for="checkbox-group-example__option--ida-emean-aep-sivney"
+              >
+                Ida Emean aep Sivney
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--keira-metz"
+                name="checkbox-group"
+                type="checkbox"
+                value="keira-metz"
+              />
+              <label
+                for="checkbox-group-example__option--keira-metz"
+              >
+                Keira Metz
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--margarita-laux-antille"
+                name="checkbox-group"
+                type="checkbox"
+                value="margarita-laux-antille"
+              />
+              <label
+                for="checkbox-group-example__option--margarita-laux-antille"
+              >
+                Margarita Laux-Antille
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--philippa-eilhart"
+                name="checkbox-group"
+                type="checkbox"
+                value="philippa-eilhart"
+              />
+              <label
+                for="checkbox-group-example__option--philippa-eilhart"
+              >
+                Philippa Eilhart
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--sabrina-glevissig"
+                name="checkbox-group"
+                type="checkbox"
+                value="sabrina-glevissig"
+              />
+              <label
+                for="checkbox-group-example__option--sabrina-glevissig"
+              >
+                Sabrina Glevissig
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--sheala-de-tancarville"
+                name="checkbox-group"
+                type="checkbox"
+                value="sheala-de-tancarville"
+              />
+              <label
+                for="checkbox-group-example__option--sheala-de-tancarville"
+              >
+                Sheala de Tancarville
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--triss-merigold"
+                name="checkbox-group"
+                type="checkbox"
+                value="triss-merigold"
+              />
+              <label
+                for="checkbox-group-example__option--triss-merigold"
+              >
+                Triss Merigold
+              </label>
+              <input
+                aria-invalid="false"
+                id="checkbox-group-example__option--yennefer-of-vengerberg"
+                name="checkbox-group"
+                type="checkbox"
+                value="yennefer-of-vengerberg"
+              />
+              <label
+                for="checkbox-group-example__option--yennefer-of-vengerberg"
+              >
+                Yennefer of Vengerberg
+              </label>
+              <div
+                id="checkbox-group-example__error"
+              />
+              <div
+                id="checkbox-group-example__hint"
+              />
+            </fieldset>
+            <br />
+            <fieldset
+              id="radio-group-example"
+            >
+              <legend>
+                Radio button
+              </legend>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--assire-var-anahid"
+                name="radio-button"
+                type="radio"
+                value="assire-var-anahid"
+              />
+              <label
+                for="radio-group-example__option--assire-var-anahid"
+              >
+                Assire var Anahid
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--francesca-findabair"
+                name="radio-button"
+                type="radio"
+                value="francesca-findabair"
+              />
+              <label
+                for="radio-group-example__option--francesca-findabair"
+              >
+                Francesca Findabair
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--fringilla-vigo"
+                name="radio-button"
+                type="radio"
+                value="fringilla-vigo"
+              />
+              <label
+                for="radio-group-example__option--fringilla-vigo"
+              >
+                Fringilla Vigo
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--ida-emean-aep-sivney"
+                name="radio-button"
+                type="radio"
+                value="ida-emean-aep-sivney"
+              />
+              <label
+                for="radio-group-example__option--ida-emean-aep-sivney"
+              >
+                Ida Emean aep Sivney
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--keira-metz"
+                name="radio-button"
+                type="radio"
+                value="keira-metz"
+              />
+              <label
+                for="radio-group-example__option--keira-metz"
+              >
+                Keira Metz
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--margarita-laux-antille"
+                name="radio-button"
+                type="radio"
+                value="margarita-laux-antille"
+              />
+              <label
+                for="radio-group-example__option--margarita-laux-antille"
+              >
+                Margarita Laux-Antille
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--philippa-eilhart"
+                name="radio-button"
+                type="radio"
+                value="philippa-eilhart"
+              />
+              <label
+                for="radio-group-example__option--philippa-eilhart"
+              >
+                Philippa Eilhart
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--sabrina-glevissig"
+                name="radio-button"
+                type="radio"
+                value="sabrina-glevissig"
+              />
+              <label
+                for="radio-group-example__option--sabrina-glevissig"
+              >
+                Sabrina Glevissig
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--sheala-de-tancarville"
+                name="radio-button"
+                type="radio"
+                value="sheala-de-tancarville"
+              />
+              <label
+                for="radio-group-example__option--sheala-de-tancarville"
+              >
+                Sheala de Tancarville
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--triss-merigold"
+                name="radio-button"
+                type="radio"
+                value="triss-merigold"
+              />
+              <label
+                for="radio-group-example__option--triss-merigold"
+              >
+                Triss Merigold
+              </label>
+              <input
+                aria-invalid="false"
+                id="radio-group-example__option--yennefer-of-vengerberg"
+                name="radio-button"
+                type="radio"
+                value="yennefer-of-vengerberg"
+              />
+              <label
+                for="radio-group-example__option--yennefer-of-vengerberg"
+              >
+                Yennefer of Vengerberg
+              </label>
+              <div
+                id="radio-group-example__error"
+              />
+              <div
+                id="radio-group-example__hint"
+              />
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots icons All icons 1`] = `
 .emotion-26 {
   -webkit-align-items: center;

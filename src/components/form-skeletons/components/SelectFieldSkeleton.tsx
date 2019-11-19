@@ -8,14 +8,14 @@ function SelectFieldSkeleton(props: FormFieldSkeletonProps) {
 }
 
 export type SelectFieldSkeletonControlOption = {
-  value: string
-  label: string
+  value: string;
+  label: string;
 }
 
 export type SelectFieldSkeletonControlProps = OmitControlProps<
   JSX.IntrinsicElements["select"]
 > & {
-  options: SelectFieldSkeletonControlOption[]
+  options: SelectFieldSkeletonControlOption[];
 }
 
 SelectFieldSkeleton.Control = React.forwardRef<

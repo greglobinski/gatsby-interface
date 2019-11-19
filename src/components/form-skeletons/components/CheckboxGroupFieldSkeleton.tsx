@@ -5,33 +5,30 @@ import FormGroupFieldSkeleton, {
   FormGroupOptionProps,
 } from "./FormGroupFieldSkeleton"
 
-function CheckboxGroupFieldSkeletonSkeleton(
-  props: FormGroupFieldSkeletonProps
-) {
+function CheckboxGroupFieldSkeleton(props: FormGroupFieldSkeletonProps) {
   return <FormGroupFieldSkeleton {...props} />
 }
 
-CheckboxGroupFieldSkeletonSkeleton.Label = FormGroupFieldSkeleton.Label
-CheckboxGroupFieldSkeletonSkeleton.Label.displayName = `CheckboxGroupFieldSkeletonSkeleton.Label`
+CheckboxGroupFieldSkeleton.Label = FormGroupFieldSkeleton.Label
+CheckboxGroupFieldSkeleton.Label.displayName = `CheckboxGroupFieldSkeleton.Label`
 
-export type CheckboxGroupFieldSkeletonSkeletonOptionProps = Omit<
+export type CheckboxGroupFieldSkeletonOptionProps = Omit<
   FormGroupOptionProps,
   "type" | "ref"
 >
 
-CheckboxGroupFieldSkeletonSkeleton.Option = React.forwardRef<
+CheckboxGroupFieldSkeleton.Option = React.forwardRef<
   HTMLInputElement,
-  CheckboxGroupFieldSkeletonSkeletonOptionProps
+  CheckboxGroupFieldSkeletonOptionProps
 >((props, ref) => (
   <FormGroupFieldSkeleton.Option ref={ref} type="checkbox" {...props} />
 ))
 
-CheckboxGroupFieldSkeletonSkeleton.OptionLabel =
-  FormGroupFieldSkeleton.OptionLabel
-CheckboxGroupFieldSkeletonSkeleton.OptionLabel.displayName = `CheckboxGroupFieldSkeletonSkeleton.OptionLabel`
-CheckboxGroupFieldSkeletonSkeleton.Hint = FormFieldSkeleton.Hint
-CheckboxGroupFieldSkeletonSkeleton.Hint.displayName = `CheckboxGroupFieldSkeletonSkeleton.Hint`
-CheckboxGroupFieldSkeletonSkeleton.Error = FormFieldSkeleton.Error
-CheckboxGroupFieldSkeletonSkeleton.Error.displayName = `CheckboxGroupFieldSkeletonSkeleton.Error`
+CheckboxGroupFieldSkeleton.OptionLabel = FormGroupFieldSkeleton.OptionLabel
+CheckboxGroupFieldSkeleton.OptionLabel.displayName = `CheckboxGroupFieldSkeleton.OptionLabel`
+CheckboxGroupFieldSkeleton.Hint = FormFieldSkeleton.Hint
+CheckboxGroupFieldSkeleton.Hint.displayName = `CheckboxGroupFieldSkeleton.Hint`
+CheckboxGroupFieldSkeleton.Error = FormFieldSkeleton.Error
+CheckboxGroupFieldSkeleton.Error.displayName = `CheckboxGroupFieldSkeleton.Error`
 
-export default CheckboxGroupFieldSkeletonSkeleton
+export default CheckboxGroupFieldSkeleton
