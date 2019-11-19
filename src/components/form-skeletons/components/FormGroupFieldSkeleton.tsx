@@ -39,8 +39,8 @@ export type FormGroupOptionProps = Omit<
   OmitControlProps<JSX.IntrinsicElements["input"]>,
   "value" | "name"
 > & {
-  name: string // Force require "name" attribute
-  value: string // Force require "value" attribute
+  name: string; // Force require "name" attribute
+  value: string; // Force require "value" attribute
 }
 
 const GroupFieldOption = React.forwardRef<
@@ -65,7 +65,7 @@ const GroupFieldOption = React.forwardRef<
 })
 
 type GroupFieldOptionLabelProps = FormFieldSkeletonLabelProps & {
-  optionValue: string
+  optionValue: string;
 }
 
 const GroupFieldOptionLabel: React.FC<GroupFieldOptionLabelProps> = ({
