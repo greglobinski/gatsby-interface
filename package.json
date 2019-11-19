@@ -102,6 +102,8 @@
     "babel-preset-gatsby": "^0.1.11",
     "chalk": "^2.4.2",
     "commander": "^3.0.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "3.0.2",
     "deepmerge": "^4.0.0",
     "dotenv": "^5.0.1",
     "ejs": "^2.7.1",
@@ -155,6 +157,7 @@
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
       "pre-commit": "lint-staged"
     }
   },
@@ -168,5 +171,10 @@
       "yarn format",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
