@@ -6,14 +6,14 @@ import colors from "../../theme/colors"
 
 import { radius, spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const INPUT_BORDER_WIDTH = `2px`
-const INPUT_INNER_DIA = `22px`
-const INPUT_OUTER_DIA = `calc(${INPUT_INNER_DIA} + (2 * ${INPUT_BORDER_WIDTH}))`
-
 import RadioSkeleton, {
   radioPropTypes,
   radioDefaultPropTypes,
 } from "./Radio.Skeleton"
+
+const INPUT_BORDER_WIDTH = `2px`
+const INPUT_INNER_DIA = `22px`
+const INPUT_OUTER_DIA = `calc(${INPUT_INNER_DIA} + (2 * ${INPUT_BORDER_WIDTH}))`
 
 const Label = styled(`label`)`
   align-items: center;

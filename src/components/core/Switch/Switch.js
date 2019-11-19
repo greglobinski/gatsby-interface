@@ -8,7 +8,7 @@ import hiddenStyles from "../../../theme/styles/hidden"
 import { spaces } from "../../../utils/presets"
 import { Toggle } from "../Toggle"
 
-function Switch({ fieldName, fieldValue, options = {}, onChange, ...rest }) {
+function Switch({ fieldName, fieldValue, options = {}, onChange }) {
   const onToggleChange = e => {
     onChange({
       target: {

@@ -82,7 +82,7 @@ describe(`<PrimaryButton>`, () => {
 
     fireEvent.click(button)
 
-    let copiedText: string = ``
+    let copiedText = ``
     await window.navigator.clipboard
       .readText()
       .then((text: string) => (copiedText = text))

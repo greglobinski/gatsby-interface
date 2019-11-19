@@ -1,9 +1,9 @@
 import React from "react"
 
 export type BaseButtonProps = Omit<JSX.IntrinsicElements["button"], "ref"> & {
-  loading?: boolean
-  loadingLabel?: React.ReactNode
-  LoadingIcon?: React.ComponentType<any> // TODO replace any with something more strict
+  loading?: boolean;
+  loadingLabel?: React.ReactNode;
+  LoadingIcon?: React.ComponentType<any>; // TODO replace any with something more strict
 }
 
 export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(

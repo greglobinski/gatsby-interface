@@ -1,5 +1,5 @@
-import React from 'react'
-import IconSkeleton from './IconSkeleton'
+import React from "react"
+import IconSkeleton from "./IconSkeleton"
 import { IconProps } from "./types"
 
 export default function EllipsisIcon(props: IconProps) {
@@ -10,7 +10,12 @@ export default function EllipsisIcon(props: IconProps) {
           <feFuncA type="linear" slope="0.1"></feFuncA>
         </feComponentTransfer>
       </filter>
-      <circle cx="12" cy="12" r="10" style={{ filter: `url(#EllipsisIcon__filter)` }} />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        style={{ filter: `url(#EllipsisIcon__filter)` }}
+      />
       <circle cx="6.5" cy="12" r="2" />
       <circle cx="12" cy="12" r="2" />
       <circle cx="17.5" cy="12" r="2" />

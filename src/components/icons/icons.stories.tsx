@@ -42,10 +42,14 @@ const storyCaseDisplayCss = css`
   justify-content: space-around;
 `
 
-function StoryCase({ info, children, className }: {
-  info: React.ReactNode;
-  children: React.ReactNode;
-  className?: string;
+function StoryCase({
+  info,
+  children,
+  className,
+}: {
+  info: React.ReactNode
+  children: React.ReactNode
+  className?: string
 }) {
   return (
     <div css={baseCss} className={className}>
@@ -88,7 +92,9 @@ storiesOf(`icons`, module)
         <h2>{sortedIconComponentNames.length} icon(s):</h2>
         <div css={iconBlockCss}>
           {sortedIconComponentNames.map(componentName => {
-            const Component: React.ComponentType<IconProps> = (icons as any)[componentName]
+            const Component: React.ComponentType<IconProps> = (icons as any)[
+              componentName
+            ]
 
             return (
               <StoryCase info={componentName} key={componentName}>
