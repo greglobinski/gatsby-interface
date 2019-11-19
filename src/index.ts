@@ -1,5 +1,3 @@
-import { from } from "rxjs"
-
 export {
   General,
   Integrations,
@@ -92,8 +90,13 @@ export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
 export { breakpoints } from "./utils/presets/breakpoints"
 export { dimensions, radius } from "./utils/presets/sizes"
+export { zIndices } from "./utils/presets/zIndices"
+
 export { default as cardStyles } from "./theme/styles/card"
 export { default as buttonStyles } from "./theme/styles/button"
+export { default as fontWeights } from "./theme/fontWeights"
 
 export * from "./components/icons"
 export * from "./components/form"
+export * from "./components/DecorativeDots"
+export * from "./components/Modal"

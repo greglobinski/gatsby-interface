@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { MdCheck } from "react-icons/md"
 
 import { storiesOf } from "@storybook/react"
 import { radios } from "@storybook/addon-knobs"

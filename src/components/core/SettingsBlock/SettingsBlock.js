@@ -1,18 +1,13 @@
 /** @jsx jsx */
-import { jsx, css, keyframes } from "@emotion/core"
-import React, { Fragment } from "react"
+import { jsx } from "@emotion/core"
+
 import PropTypes from "prop-types"
 import { MdHelpOutline } from "react-icons/md"
 
 import { ContentBox } from "../../skeletons/ContentBox"
-import { Button } from "../Button"
+import { LinkButton } from "../LinkButton"
 import { Heading } from "../Heading"
-import {
-  breakpoints,
-  fontFamilies,
-  palette,
-  spaces,
-} from "../../../utils/presets"
+import { breakpoints, fontFamilies, spaces } from "../../../utils/presets"
 import cardStyles from "../../../theme/styles/card"
 import fontSizes from "../../../theme/fontSizes"
 import colors from "../../../theme/colors"
@@ -80,8 +75,8 @@ SettingsBlock.Title = ({ children, ...rest }) => (
   </Heading>
 )
 
-SettingsBlock.Doclink = ({ children, ...rest }) => (
-  <Button
+SettingsBlock.Doclink = ({ ...rest }) => (
+  <LinkButton
     variant={`GHOST`}
     tone={`NEUTRAL`}
     css={{
@@ -90,7 +85,7 @@ SettingsBlock.Doclink = ({ children, ...rest }) => (
     {...rest}
   >
     <MdHelpOutline />
-  </Button>
+  </LinkButton>
 )
 
 SettingsBlock.Description = ({ children, ...rest }) => (

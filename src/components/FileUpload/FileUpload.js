@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import loadable from "@loadable/component"
 import { Button } from "../core/Button"

@@ -44,26 +44,20 @@ In addition to using `size` prop it is possible to set an icon's size to a diffe
 
 Suppose we want to add a `MyAwesomeIcon` component:
 
-1. Run `yarn scaffold:icon my-awesome-icon` from the root directory of this repo. It will add a `MyAwesomeIcon.js` file in this directory and export this component in [`icons.js`](./icons.js) file.
+1. Run `yarn scaffold:icon MyAwesomeIcon` (`MyAwesome` or `my-awesome` also work) from the root directory of this repo. It will add a `MyAwesomeIcon.js` file in this directory and export this component in [`icons.js`](./icons.js) file.
 1. Open `MyAwesomeIcon.js` in your IDE. It should look something like this:
 
-   ```jsx
+   ```typescript jsx
    import React from "react"
-   import PropTypes from "prop-types"
    import IconSkeleton from "./IconSkeleton"
+   import { IconProps } from "./types"
 
-   export default function MyAwesomeIcon(props) {
+   export default function MyAwesomeIcon(props: IconProps) {
      return (
-       <IconSkeleton {...props} iconName="my-awesome-icon">
+       <IconSkeleton {...props} iconName="MyAwesomeIcon">
          {/* insert inner SVG code here */}
        </IconSkeleton>
      )
-   }
-
-   MyAwesomeIcon.propTypes = {
-     size: IconSkeleton.propTypes.size,
-     width: PropTypes.string,
-     height: PropTypes.string,
    }
    ```
 

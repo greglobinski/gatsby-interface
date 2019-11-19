@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react"
 
 import { storiesOf } from "@storybook/react"
-import { MdEdit, MdArrowForward, MdAdd, MdDelete } from "react-icons/md"
+import { MdAdd, MdDelete } from "react-icons/md"
 
 import { SettingsCard } from "./"
 import { StoryUtils } from "../../../utils/storybook"

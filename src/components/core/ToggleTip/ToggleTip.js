@@ -1,14 +1,6 @@
 /** @jsx jsx */
 import { jsx, keyframes } from "@emotion/core"
-import React, {
-  Fragment,
-  useState,
-  useEffect,
-  createRef,
-  forwardRef,
-  useMemo,
-} from "react"
-import PropTypes from "prop-types"
+import { Fragment, useState, createRef, forwardRef } from "react"
 
 import { MdInfo } from "react-icons/md"
 
@@ -18,7 +10,7 @@ import fontSizes from "../../../theme/fontSizes"
 import { spaces, radius } from "../../../utils/presets"
 import { showCustomCssDeprecationMessage } from "../../../utils/maintenance/deprecationMessages"
 
-function ToggleTip({ children, tip, customCss, width, className, ...rest }) {
+function ToggleTip({ children, tip, customCss, className, ...rest }) {
   showCustomCssDeprecationMessage(customCss)
   const [visible, setVisible] = useState(false)
 

@@ -1,27 +1,21 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { IconSize, IconSkeletonProps } from "./types"
 
-const ICON_SIZES = {
-  xsmall: `xsmall`,
-  small: `small`,
-  medium: `medium`,
-  large: `large`,
-}
-
-const iconHeightBySize = {
-  [ICON_SIZES.xsmall]: `16px`,
-  [ICON_SIZES.small]: `24px`,
-  [ICON_SIZES.medium]: `32px`,
-  [ICON_SIZES.large]: `40px`,
+const iconHeightBySize: Record<IconSize, string> = {
+  xxsmall: `16px`,
+  xsmall: `20px`,
+  small: `24px`,
+  medium: `32px`,
+  large: `40px`,
 }
 
 export default function IconSkeleton({
   iconName,
-  size = ICON_SIZES.small,
+  size = `small`,
   style,
   applyColorToStroke = true,
   ...rest
-}) {
+}: IconSkeletonProps) {
   return (
     <svg
       preserveAspectRatio="xMidYMid meet"
@@ -41,10 +35,4 @@ export default function IconSkeleton({
       {...rest}
     />
   )
-}
-
-IconSkeleton.propTypes = {
-  iconName: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(Object.values(ICON_SIZES)),
-  applyColorToStroke: PropTypes.bool,
 }

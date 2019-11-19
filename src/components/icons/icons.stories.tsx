@@ -8,8 +8,9 @@ import { css } from "@emotion/core"
 import { StoryUtils } from "../../utils/storybook"
 import * as icons from "./icons"
 import { colors as presetColors, palette } from "../../utils/presets"
+import { IconSize, IconProps } from "./types"
 
-const sizes = [`xsmall`, `small`, `medium`, `large`]
+const sizes: IconSize[] = [`xxsmall`, `xsmall`, `small`, `medium`, `large`]
 const customSizes = [`1em`, `16px`, `24px`, `32px`, `40px`, `64px`]
 const colors = [
   presetColors.gatsby,
@@ -41,7 +42,11 @@ const storyCaseDisplayCss = css`
   justify-content: space-around;
 `
 
-function StoryCase({ info, children, className }) {
+function StoryCase({ info, children, className }: {
+  info: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <div css={baseCss} className={className}>
       <div css={storyCaseInfoCss}>{info}</div>
@@ -50,7 +55,7 @@ function StoryCase({ info, children, className }) {
   )
 }
 
-function CustomSizeInfo({ size }) {
+function CustomSizeInfo({ size }: { size: string }) {
   return (
     <React.Fragment>
       {`height=${size}`}
@@ -72,7 +77,7 @@ const iconBlockCss = css`
 
 const sortedIconComponentNames = Object.keys(icons)
   // filter out __esModule
-  .filter(componentName => typeof icons[componentName] !== `boolean`)
+  .filter(componentName => typeof (icons as any)[componentName] !== `boolean`)
   .sort()
 
 storiesOf(`icons`, module)
@@ -83,7 +88,7 @@ storiesOf(`icons`, module)
         <h2>{sortedIconComponentNames.length} icon(s):</h2>
         <div css={iconBlockCss}>
           {sortedIconComponentNames.map(componentName => {
-            const Component = icons[componentName]
+            const Component: React.ComponentType<IconProps> = (icons as any)[componentName]
 
             return (
               <StoryCase info={componentName} key={componentName}>
@@ -101,7 +106,7 @@ storiesOf(`icons`, module)
 
 sortedIconComponentNames.forEach(componentName => {
   storiesOf(`icons/Single icons`, module).add(componentName, () => {
-    const Component = icons[componentName]
+    const Component = (icons as any)[componentName]
 
     return (
       <StoryUtils.Container>

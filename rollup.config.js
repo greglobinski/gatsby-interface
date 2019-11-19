@@ -5,6 +5,7 @@ import resolve from "rollup-plugin-node-resolve"
 import svg from "rollup-plugin-svg"
 import copy from "rollup-plugin-copy"
 import del from "rollup-plugin-delete"
+import postcss from "rollup-plugin-postcss"
 
 import pkg from "./package.json"
 
@@ -31,11 +32,13 @@ export default {
     }),
     babel({
       exclude: `node_modules/**`,
-      plugins: [`@babel/external-helpers`],
       extensions,
     }),
     resolve({ extensions }),
     commonjs(),
+    postcss({
+      extensions: [`.css`],
+    }),
     // TODO The following two plugins should be removed once all src is using TypeScript
     copy({
       targets: [

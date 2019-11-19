@@ -14,7 +14,6 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
       loading = false,
       loadingLabel = `Loading`,
       LoadingIcon,
-      role = `button`,
       type = `button`,
       ...rest
     } = props
@@ -39,5 +38,3 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
     )
   }
 )
-
-export default BaseButton

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { Fragment, useState, useEffect, useMemo } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import fonts from "../../../theme/fonts"
@@ -11,7 +11,6 @@ import { spaces } from "../../../utils/presets"
 import { showCustomCssDeprecationMessage } from "../../../utils/maintenance/deprecationMessages"
 
 const IN_ON_POSITIONS = [`LEFT`, `RIGHT`]
-const TONES = [`BRAND`, `SUCCESS`]
 
 const ToggleContext = React.createContext()
 
@@ -50,8 +49,6 @@ function Toggle({
   useEffect(() => {
     setState({ ...state, fieldValue, checked: fieldValue === true })
   }, [fieldValue])
-
-  const value = useMemo(() => state, [state, fieldValue])
 
   return (
     <ToggleContext.Provider value={state}>
@@ -103,12 +100,7 @@ Toggle.Wrapper = ({ children, customCss, ...rest }) => {
 
 Toggle.Input = ({ customCss, ...rest }) => {
   showCustomCssDeprecationMessage(customCss)
-  const {
-    fieldName,
-    checked,
-    onChange,
-    inOnPosition,
-  } = Toggle.useToggleContext()
+  const { fieldName, checked, onChange } = Toggle.useToggleContext()
 
   return (
     <input
@@ -129,9 +121,8 @@ Toggle.Input = ({ customCss, ...rest }) => {
 Toggle.Mark = ({ customCss, ...rest }) => {
   showCustomCssDeprecationMessage(customCss)
   const {
-    fieldName,
     checked,
-    onChange,
+
     inOnPosition,
     tone,
   } = Toggle.useToggleContext()

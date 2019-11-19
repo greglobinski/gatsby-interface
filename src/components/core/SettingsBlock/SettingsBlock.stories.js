@@ -1,7 +1,6 @@
 import React from "react"
 
 import { storiesOf } from "@storybook/react"
-import { MdEdit, MdArrowForward, MdAdd, MdDelete } from "react-icons/md"
 
 import { StoryUtils } from "../../../utils/storybook"
 import { SettingsBlock } from "./"
@@ -18,7 +17,7 @@ storiesOf(`core/SettingsBlock`, module)
           <SettingsBlock.Header>
             <SettingsBlock.Title>
               Automated Integrations
-              <SettingsBlock.Doclink to="/" />
+              <SettingsBlock.Doclink to="/some-where" />
             </SettingsBlock.Title>
           </SettingsBlock.Header>
           <SettingsBlock.Content>

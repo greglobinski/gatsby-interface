@@ -4,8 +4,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import { Button, ButtonProps } from "../core/Button"
 import copyToClipboard from "../../utils/helpers/copyToClipboard"
+import { ButtonProps, Button } from "../core/Button/Button"
 
 const baseCss = css`
   html:not([dir="rtl"]) & {
@@ -41,17 +41,18 @@ function CopyButton({
   const timeoutRef = React.useRef<number | undefined>(undefined)
   const [copied, setCopied] = React.useState<boolean>(false)
 
-  const copyOnClick: React.MouseEventHandler<HTMLButtonElement> = async e => {
+  const copyOnClick: React.MouseEventHandler<HTMLButtonElement> = e => {
     if (onClick) {
       onClick(e)
     }
-    await copyToClipboard(content)
 
-    setCopied(true)
+    copyToClipboard(content).then(() => {
+      setCopied(true)
 
-    timeoutRef.current = window.setTimeout(() => {
-      setCopied(false)
-    }, delay)
+      timeoutRef.current = window.setTimeout(() => {
+        setCopied(false)
+      }, delay)
+    })
   }
 
   React.useEffect(

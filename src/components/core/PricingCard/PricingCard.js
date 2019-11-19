@@ -3,21 +3,21 @@ import { jsx } from "@emotion/core"
 import React, {
   Fragment,
   useState,
-  useRef,
   createContext,
   useMemo,
   useCallback,
   useEffect,
 } from "react"
 import PropTypes from "prop-types"
+import { MdArrowDownward } from "react-icons/md"
 
-import cardStyles from "../../../theme/styles/card"
 import colors from "../../../theme/colors"
 import fonts from "../../../theme/fonts"
 import fontSizes from "../../../theme/fontSizes"
+import fontWeights from "../../../theme/fontWeights"
 import { spaces, breakpoints, radius } from "../../../utils/presets"
 import { Heading } from "../Heading"
-import toggleTipIcon from "./assets/toggleTipIcon.svg"
+
 import { capitalizeString } from "../../../utils/helpers/"
 import { CheckIcon } from "../../icons"
 import { ToggleTip } from "../ToggleTip"
@@ -80,7 +80,7 @@ function PricingCard({
               <PricingCard.Nav />
               <PricingCard.Plans>
                 {plans.map((plan, idx) => (
-                  <PricingCard.Plan key={plan.name} idx={idx}>
+                  <PricingCard.Plan key={plan.name} plan={plan} idx={idx}>
                     <PricingCard.Icon plan={plan} />
                     <PricingCard.Heading plan={plan} />
                     <PricingCard.Intro plan={plan} />
@@ -110,7 +110,7 @@ PricingCard.Frame = ({ children, ...rest }) => {
   return (
     <div
       css={{
-        boxShadow: `0px 2px 4px rgba(46, 41, 51, 0.08), 0px 4px 8px rgba(71, 63, 79, 0.16)`,
+        boxShadow: `0px 1px 2px rgba(46, 41, 51, 0.08), 0px 2px 4px rgba(71, 63, 79, 0.08)`,
         backgroundColor:
           variant === `SECONDARY` ? colors.purple[90] : colors.white,
         display: `flex`,
@@ -196,21 +196,38 @@ PricingCard.Plans = ({ children, ...rest }) => (
   </div>
 )
 
-PricingCard.Plan = ({ children, idx, ...rest }) => {
-  const { visibleOnMobile, plans } = PricingCard.useContext()
+PricingCard.Plan = ({ children, plan, idx, ...rest }) => {
+  const {
+    visibleOnMobile,
+    plans,
+    selectedPlan,
+    variant,
+  } = PricingCard.useContext()
+  const { color, name } = plan
+  const isSelected = selectedPlan === name
 
   return (
     <div
       css={{
+        border: isSelected
+          ? `2px solid ${color}`
+          : `2px solid ${
+              variant === `SECONDARY` ? colors.purple[90] : colors.white
+            }`,
+        borderRadius: radius.large,
         padding: `${spaces.l} ${spaces.l} 0 `,
         display: visibleOnMobile === idx ? `flex` : `none`,
+        position: `relative`,
         flexDirection: `column`,
         alignItems: `center`,
         flexShrink: 0,
         width: `100%`,
+        zIndex: isSelected ? 1 : 0,
 
         [`&:not(:first-child)`]: {
-          borderLeft: `1px solid ${colors.standardLine}`,
+          borderLeft: isSelected
+            ? undefined
+            : `1px solid ${colors.standardLine}`,
         },
 
         [`@media(min-width: ${breakpoints.tablet}px)`]: {
@@ -236,11 +253,12 @@ PricingCard.Heading = ({ plan, ...rest }) => {
   return (
     <Heading
       css={{
-        color: color
-          ? color
-          : variant === `SECONDARY`
-          ? colors.white
-          : colors.purple[40],
+        color:
+          variant === `SECONDARY`
+            ? colors.white
+            : color
+            ? color
+            : colors.purple[40],
         fontSize: fontSizes[4],
       }}
     >
@@ -300,7 +318,7 @@ PricingCard.Intro = ({ plan, ...rest }) => {
   )
 }
 
-PricingCard.PriceTag = ({ plan, children, ...rest }) => {
+PricingCard.PriceTag = ({ plan, ...rest }) => {
   const { interval } = PricingCard.useContext()
   const { price } = plan
 
@@ -352,19 +370,11 @@ PricingCard.PriceTag = ({ plan, children, ...rest }) => {
 PricingCard.Details = ({ plan, ...rest }) => {
   const { variant } = PricingCard.useContext()
   const { details } = plan
-  const [tipVisible, setTipVisible] = useState(false)
 
   if (!details) {
     return null
   }
 
-  const showTip = e => {
-    if (
-      e.type === `click` ||
-      (e.type === `keydown` && (e.keyCode === 32 || e.keyCode === 13))
-    )
-      setTipVisible(true)
-  }
   return (
     details && (
       <div
@@ -432,18 +442,20 @@ PricingCard.Details = ({ plan, ...rest }) => {
 }
 
 PricingCard.Cta = ({ children, plan, ...rest }) => {
-  const { selectedPlan } = PricingCard.useContext()
+  const { selectedPlan, variant } = PricingCard.useContext()
   const { cta, color, name } = plan
 
   if (!cta) {
     return null
   }
 
-  const { label, to, onClick, comment } = cta
+  const { label, to, onClick } = cta
+  const isSelected = selectedPlan === name
 
-  return selectedPlan !== name ? (
+  return (
     <div
       css={{
+        alignItems: `center`,
         width: `100%`,
         display: `flex`,
         flexDirection: `column`,
@@ -456,49 +468,30 @@ PricingCard.Cta = ({ children, plan, ...rest }) => {
       {label && (to || onClick) && (
         <LinkButton
           to={to}
-          onClick={() => onClick(name)}
-          css={{
-            width: `100%`,
-            background: color ? colors.white : colors.purple[50],
-            color: color ? color : colors.white,
-            borderColor: color ? color : colors.purple[50],
-            ":hover": {
-              color: colors.white,
-              background: color ? color : colors.purple[50],
-              borderColor: color ? color : colors.purple[50],
-            },
-          }}
+          onClick={e => onClick(e, { plan: name })}
+          variant={variant === `SECONDARY` ? `PRIMARY` : `SECONDARY`}
+          css={[
+            { fontWeight: isSelected ? fontWeights[2] : fontWeights[0] },
+            isSelected && color
+              ? {
+                  cursor: `default`,
+                  background: color,
+                  borderColor: color,
+                  color: colors.white,
+                  ":hover": {
+                    color: colors.white,
+                    background: color,
+                    borderColor: color,
+                  },
+                }
+              : {},
+          ]}
+          rightIcon={isSelected ? <MdArrowDownward /> : null}
         >
           {label}
         </LinkButton>
       )}
       {children}
-    </div>
-  ) : (
-    <div
-      css={{
-        width: `100%`,
-        display: `flex`,
-        alignItems: `flex-end`,
-        justifyContent: `center`,
-        marginTop: spaces[`2xl`],
-        flexGrow: 1,
-        paddingBottom: spaces[`4xl`],
-      }}
-    >
-      <div
-        css={{
-          width: `3rem`,
-          height: `3rem`,
-          display: `flex`,
-          alignItems: `center`,
-          justifyContent: `center`,
-          background: colors.green[50],
-          borderRadius: `50%`,
-        }}
-      >
-        <CheckIcon css={{ fill: colors.white, width: `70%`, height: `70%` }} />
-      </div>
     </div>
   )
 }
