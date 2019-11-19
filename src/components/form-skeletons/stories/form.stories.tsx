@@ -13,7 +13,7 @@ import CheckboxGroupFieldSkeleton from "../components/CheckboxGroupFieldSkeleton
 import RadioButtonFieldSkeleton from "../components/RadioButtonFieldSkeleton"
 import SelectFieldSkeleton from "../components/SelectFieldSkeleton"
 
-storiesOf(`form`, module)
+storiesOf(`form-skeletons`, module)
   .addParameters({
     options: {
       showPanel: true,
