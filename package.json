@@ -131,7 +131,6 @@
     "react-icons": "^3.2.1",
     "react-storybook-addon-chapters": "^3.1.5",
     "react-test-renderer": "^16.8.6",
-    "react-testing-library": "^5.6.1",
     "rollup": "^0.64.1",
     "rollup-plugin-babel": "^4.0.1",
     "rollup-plugin-commonjs": "^9.1.3",
