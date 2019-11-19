@@ -1,6 +1,8 @@
 export type IconSize = `xxsmall` | `xsmall` | `small` | `medium` | `large`
 
-export type IconSkeletonProps = Omit<JSX.IntrinsicElements['svg'], 'ref'> & {
+type IconSvgProps = Omit<JSX.IntrinsicElements['svg'], 'ref'>
+
+export type IconSkeletonProps = IconSvgProps & {
   iconName: string;
   size?: IconSize;
   applyColorToStroke?: boolean;
