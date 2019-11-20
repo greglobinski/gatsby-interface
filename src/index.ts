@@ -88,6 +88,7 @@ export { default as buttonStyles } from "./theme/styles/button"
 export { default as fontWeights } from "./theme/fontWeights"
 
 export * from "./components/icons"
+export * from "./components/form-skeletons"
 export * from "./components/DecorativeDots"
 export * from "./components/Modal"
 export * from "./components/Toast"

@@ -78,11 +78,11 @@ const ToastIconByTone = {
 }
 
 export interface ToastProps {
-  id: Symbol
-  message: string
-  onRemove: (id: Symbol) => void
-  closeButtonLabel: string
-  tone: ToastTone
+  id: symbol;
+  message: string;
+  onRemove: (id: symbol) => void;
+  closeButtonLabel: string;
+  tone: ToastTone;
 }
 
 export const Toast: React.FC<ToastProps> = ({

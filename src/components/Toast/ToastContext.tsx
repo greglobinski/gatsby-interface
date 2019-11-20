@@ -2,12 +2,12 @@ import React from "react"
 import { ToastTone } from "./types"
 
 export interface ToastOptions {
-  tone?: ToastTone
-  timeout: number
+  tone?: ToastTone;
+  timeout: number;
 }
 
 export interface ToastContextDefinition {
-  showToast: (message: string, toastArg?: ToastOptions) => void
+  showToast: (message: string, toastArg?: ToastOptions) => void;
 }
 
 export const ToastContext = React.createContext<ToastContextDefinition>({

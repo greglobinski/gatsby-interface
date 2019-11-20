@@ -11,11 +11,11 @@ export type ButtonTone = "BRAND" | "SUCCESS" | "DANGER" | "NEUTRAL"
 export type ButtonVariant = "PRIMARY" | "SECONDARY" | "GHOST"
 
 export type ButtonStyleProps = {
-  size?: ButtonSize
-  tone?: ButtonTone
-  variant?: ButtonVariant
-  leftIcon?: React.ReactNode
-  rightIcon?: React.ReactNode
+  size?: ButtonSize;
+  tone?: ButtonTone;
+  variant?: ButtonVariant;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 export type ButtonProps = BaseButtonProps & ButtonStyleProps
@@ -29,11 +29,11 @@ export function getButtonStyles({
   leftIcon,
   rightIcon,
 }: {
-  children: React.ReactNode
-  loading?: boolean
+  children: React.ReactNode;
+  loading?: boolean;
 } & ButtonStyleProps): {
-  css: ReturnType<typeof css>
-  children: React.ReactNode
+  css: ReturnType<typeof css>;
+  children: React.ReactNode;
 } {
   return {
     css: {

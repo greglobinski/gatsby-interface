@@ -2,8 +2,8 @@ export default function secureTargetBlankLink({
   rel = ``,
   target,
 }: {
-  rel?: string
-  target?: string
+  rel?: string;
+  target?: string;
 }) {
   const NOOPENER_NOREFERRER = `noopener noreferrer`
 

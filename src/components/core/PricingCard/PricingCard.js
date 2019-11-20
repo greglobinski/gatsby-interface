@@ -128,7 +128,7 @@ PricingCard.Frame = ({ children, ...rest }) => {
   )
 }
 
-PricingCard.Nav = ({ ...rest }) => {
+PricingCard.Nav = () => {
   const {
     plans,
     visibleOnMobile,
@@ -243,7 +243,7 @@ PricingCard.Plan = ({ children, plan, idx, ...rest }) => {
   )
 }
 
-PricingCard.Heading = ({ plan, ...rest }) => {
+PricingCard.Heading = ({ plan }) => {
   const { variant } = PricingCard.useContext()
   const { name, color } = plan
 
@@ -291,7 +291,7 @@ PricingCard.Icon = ({ plan, ...rest }) => {
   )
 }
 
-PricingCard.Intro = ({ plan, ...rest }) => {
+PricingCard.Intro = ({ plan }) => {
   const { variant } = PricingCard.useContext()
   const { intro } = plan
 
@@ -318,7 +318,7 @@ PricingCard.Intro = ({ plan, ...rest }) => {
   )
 }
 
-PricingCard.PriceTag = ({ plan, ...rest }) => {
+PricingCard.PriceTag = ({ plan }) => {
   const { interval } = PricingCard.useContext()
   const { price } = plan
 
@@ -367,7 +367,7 @@ PricingCard.PriceTag = ({ plan, ...rest }) => {
   )
 }
 
-PricingCard.Details = ({ plan, ...rest }) => {
+PricingCard.Details = ({ plan }) => {
   const { variant } = PricingCard.useContext()
   const { details } = plan
 
@@ -441,7 +441,7 @@ PricingCard.Details = ({ plan, ...rest }) => {
   )
 }
 
-PricingCard.Cta = ({ children, plan, ...rest }) => {
+PricingCard.Cta = ({ children, plan }) => {
   const { selectedPlan, variant } = PricingCard.useContext()
   const { cta, color, name } = plan
 

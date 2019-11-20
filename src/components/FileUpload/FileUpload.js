@@ -42,9 +42,7 @@ const FileUpload = ({
   }
 
   const addFiles = uploadedFiles => {
-    let filesToSet = multi
-      ? [...files, ...uploadedFiles]
-      : (filesToSet = [uploadedFiles[0]])
+    const filesToSet = multi ? [...files, ...uploadedFiles] : [uploadedFiles[0]]
     setFiles([...filesToSet])
     setFieldValue(name, filesToSet.map(file => file && file.url))
   }

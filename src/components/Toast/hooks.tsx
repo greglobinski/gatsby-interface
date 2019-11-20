@@ -47,16 +47,16 @@ export const useShowErrorAlert = () => {
 }
 
 export interface Toast {
-  id: Symbol
-  message: string
-  tone: ToastTone
+  id: symbol;
+  message: string;
+  tone: ToastTone;
 }
 
 export const useToastActions = () => {
   const [toasts, setToasts] = useState<Toast[]>([])
-  const timeoutsRef = useRef<Map<Symbol, number>>(new Map())
+  const timeoutsRef = useRef<Map<symbol, number>>(new Map())
 
-  const removeToast = useCallback((toastId: Symbol) => {
+  const removeToast = useCallback((toastId: symbol) => {
     setToasts(prevToasts => prevToasts.filter(({ id }) => id !== toastId))
 
     window.clearTimeout(timeoutsRef.current.get(toastId))

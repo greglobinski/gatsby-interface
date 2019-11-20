@@ -61,14 +61,6 @@ exports[`<PrimaryButton> renders unchanged 1`] = `
   transform: scale(1);
 }
 
-.emotion-0 svg:last-child {
-  margin-right: -0.25em;
-}
-
-.emotion-0 svg:first-child {
-  margin-left: -0.30em;
-}
-
 .emotion-0:hover:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
@@ -95,9 +87,7 @@ html[dir="rtl"] .emotion-0 {
     title="Copy to clipboard"
     type="button"
   >
-    <span>
-      Copy
-    </span>
+    Copy
   </button>
 </div>
 `;

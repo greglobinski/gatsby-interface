@@ -20,7 +20,7 @@ const containerCss = css`
 `
 
 export interface ToastProviderProps {
-  closeButtonLabel?: string
+  closeButtonLabel?: string;
 }
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({

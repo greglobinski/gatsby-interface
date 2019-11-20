@@ -91,7 +91,7 @@ IntegrationRow.propTypes = {
   isConnected: PropTypes.bool,
 }
 
-IntegrationRow.Logo = ({ children, ...rest }) => (
+IntegrationRow.Logo = ({ children }) => (
   <span
     css={{
       display: `flex`,
