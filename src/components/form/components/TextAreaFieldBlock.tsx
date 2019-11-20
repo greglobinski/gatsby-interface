@@ -1,0 +1,51 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import React from "react"
+
+import TextAreaField, { TextAreaFieldControlProps } from "./TextAreaField"
+import { FormFieldLabelSize } from "./FormField.helpers"
+import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSkeleton"
+
+export type TextAreaFieldBlockProps = {
+  id: string;
+  label: string;
+  labelSize?: FormFieldLabelSize;
+  error?: string;
+  hint?: string;
+  validationMode?: ErrorValidationMode;
+} & TextAreaFieldControlProps
+
+const TextAreaFieldBlock = React.forwardRef<
+  HTMLTextAreaElement,
+  TextAreaFieldBlockProps
+>((props, ref) => {
+  const {
+    id,
+    label,
+    labelSize,
+    error,
+    hint,
+    className,
+    validationMode,
+    ...rest
+  } = props
+
+  const isRequired = rest.required ? rest.required : false
+
+  return (
+    <TextAreaField id={id} hasError={!!error} hasHint={!!hint}>
+      <TextAreaField.Wrapper className={className}>
+        <TextAreaField.Label size={labelSize} isRequired={isRequired}>
+          {label}
+        </TextAreaField.Label>
+        <TextAreaField.Control ref={ref} {...rest} />
+        <TextAreaField.Hint>{hint}</TextAreaField.Hint>
+        <TextAreaField.Error validationMode={validationMode}>
+          {error}
+        </TextAreaField.Error>
+      </TextAreaField.Wrapper>
+    </TextAreaField>
+  )
+})
+
+export default TextAreaFieldBlock
