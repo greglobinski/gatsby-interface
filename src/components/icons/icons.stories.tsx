@@ -47,9 +47,9 @@ function StoryCase({
   children,
   className,
 }: {
-  info: React.ReactNode;
-  children: React.ReactNode;
-  className?: string;
+  info: React.ReactNode
+  children: React.ReactNode
+  className?: string
 }) {
   return (
     <div css={baseCss} className={className}>
