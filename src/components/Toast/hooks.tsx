@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback } from "react"
 import { useToastContext } from "./ToastContext"
 import { MessageWithLink } from "./MessageWithLink"
-import { ToastTones, DEFAULT_TIMEOUT, DEFAULT_TONE } from "./constants"
+import { DEFAULT_TIMEOUT, DEFAULT_TONE } from "./constants"
+import { ToastTone } from "./types"
 
 export const useShowToast = () => {
   const { showToast } = useToastContext()
@@ -46,40 +47,35 @@ export const useShowErrorAlert = () => {
 }
 
 export interface Toast {
-  id: number
+  id: Symbol
   message: string
-  tone: ToastTones
+  tone: ToastTone
 }
-
-export type ToastInterval = {
-  [key: number]: number
-}
-
-// Side effect to generate a unique toast id and not relying on Math.random
-let TOAST_ID = 0
 
 export const useToastActions = () => {
   const [toasts, setToasts] = useState<Toast[]>([])
-  const timeoutsRef = useRef<ToastInterval>({})
+  const timeoutsRef = useRef<Map<Symbol, number>>(new Map())
 
-  const removeToast = useCallback((toastId: number) => {
+  const removeToast = useCallback((toastId: Symbol) => {
     setToasts(prevToasts => prevToasts.filter(({ id }) => id !== toastId))
 
-    window.clearTimeout(timeoutsRef.current[toastId])
+    window.clearTimeout(timeoutsRef.current.get(toastId))
 
-    delete timeoutsRef.current[toastId]
+    timeoutsRef.current.delete(toastId)
   }, [])
 
   const showToast = useCallback(
     (message, { tone = DEFAULT_TONE, timeout = DEFAULT_TIMEOUT } = {}) => {
-      const toastId = TOAST_ID++
+      const toastId = Symbol(`toast`)
 
       setToasts(prevToasts => [...prevToasts, { id: toastId, message, tone }])
 
       if (timeout > 0) {
-        timeoutsRef.current[toastId] = window.setTimeout(() => {
+        const timeOutId = window.setTimeout(() => {
           removeToast(toastId)
         }, timeout)
+
+        timeoutsRef.current.set(toastId, timeOutId)
       }
     },
     []

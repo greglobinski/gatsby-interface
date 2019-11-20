@@ -3,7 +3,6 @@ import React from "react"
 import Alert from "@reach/alert"
 import { keyframes, css, jsx } from "@emotion/core"
 import { MdDone, MdClose, MdWarning } from "react-icons/md"
-
 import {
   fontSizes,
   dimensions,
@@ -11,7 +10,7 @@ import {
   radius,
   spaces,
 } from "../../utils/presets"
-import { ToastTones } from "./constants"
+import { ToastTone } from "./types"
 
 const toastEntryAnimation = keyframes`
   100% {
@@ -79,11 +78,11 @@ const ToastIconByTone = {
 }
 
 export interface ToastProps {
-  id: number
+  id: Symbol
   message: string
-  onRemove: (id: number) => void
+  onRemove: (id: Symbol) => void
   closeButtonLabel: string
-  tone: ToastTones
+  tone: ToastTone
 }
 
 export const Toast: React.FC<ToastProps> = ({

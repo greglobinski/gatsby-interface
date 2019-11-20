@@ -8,7 +8,7 @@ const messageCss = css`
 `
 
 export interface MessageWithLinkProps {
-  linkLabel: JSX.Element
+  linkLabel: React.ReactNode
   href: string
   target: string
   to: string

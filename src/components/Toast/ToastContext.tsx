@@ -1,13 +1,13 @@
 import React from "react"
-import { ToastTones } from "./constants"
+import { ToastTone } from "./types"
 
-export interface ShowToastArg {
-  tone?: ToastTones
+export interface ToastOptions {
+  tone?: ToastTone
   timeout: number
 }
 
 export interface ToastContextDefinition {
-  showToast: (message: string, toastArg?: ShowToastArg) => void
+  showToast: (message: string, toastArg?: ToastOptions) => void
 }
 
 export const ToastContext = React.createContext<ToastContextDefinition>({

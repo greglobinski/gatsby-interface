@@ -40,9 +40,9 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
       {children}
 
       <div css={containerCss}>
-        {toasts.map(toast => (
+        {toasts.map((toast, index) => (
           <Toast
-            key={toast.id}
+            key={`toast-${index}`} // this is probably not the best, but we can't use symbol as key :(
             {...toast}
             onRemove={removeToast}
             closeButtonLabel={closeButtonLabel}
