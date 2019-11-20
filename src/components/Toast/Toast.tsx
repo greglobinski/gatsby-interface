@@ -78,19 +78,17 @@ const ToastIconByTone = {
 }
 
 export interface ToastProps {
-  id: symbol;
   message: string;
-  onRemove: (id: symbol) => void;
+  onClose: () => void;
   closeButtonLabel: string;
   tone: ToastTone;
 }
 
 export const Toast: React.FC<ToastProps> = ({
-  id,
   message,
   tone,
-  onRemove,
   closeButtonLabel,
+  onClose,
 }) => {
   const IconComponent = ToastIconByTone[tone]
 
@@ -119,7 +117,7 @@ export const Toast: React.FC<ToastProps> = ({
       <button
         css={closeButtonCss}
         type="button"
-        onClick={() => onRemove(id)}
+        onClick={onClose}
         aria-label={closeButtonLabel}
       >
         <MdClose />

@@ -4,6 +4,7 @@ import React from "react"
 import { Toast } from "./Toast"
 import { ToastContext } from "./ToastContext"
 import { useToastActions } from "./hooks"
+import { zIndices } from "../../utils/presets"
 
 export const ToastConsumer = ToastContext.Consumer
 
@@ -16,7 +17,7 @@ const containerCss = css`
   position: fixed;
   transform: translate(-50%, 0);
   width: 100%;
-  z-index: 1;
+  z-index: ${zIndices.base};
 `
 
 export interface ToastProviderProps {
@@ -44,8 +45,8 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
           <Toast
             key={`toast-${index}`} // this is probably not the best, but we can't use symbol as key :(
             {...toast}
-            onRemove={removeToast}
-            closeButtonLabel={closeButtonLabel}
+            onClose={() => removeToast(toast.id)}
+            closeButtonLabel={closeButtonLabel || "close"}
           />
         ))}
       </div>
