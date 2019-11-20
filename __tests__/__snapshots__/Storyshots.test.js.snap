@@ -1892,7 +1892,7 @@ exports[`Storyshots Toast Default 1`] = `
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
   width: 100%;
-  z-index: 100;
+  z-index: 1;
 }
 
 <div>

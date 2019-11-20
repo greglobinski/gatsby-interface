@@ -2477,6 +2477,13 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
+"@types/reach__alert@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@types/reach__alert/-/reach__alert-0.1.1.tgz#5c9fbde74c14688f8a0d5ebe7d4d7164b3a1db2f"
+  integrity sha512-BFo1BgQWacu5xHuQW5jyWSSgQpPqMTSrrPfxoB+I6eUYa49Puss57/ZIeZguFR4+Dm8BrGfnBXSX4o2sLlYALg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/reach__router@^1.2.4":
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@types/reach__router/-/reach__router-1.2.4.tgz#44a701fdf15934880f6dfdef38ca49bc30e2d372"
