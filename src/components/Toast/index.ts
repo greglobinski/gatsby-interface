@@ -1,8 +1,4 @@
-export {
-  ToastProvider,
-  ToastConsumer,
-  ToastProviderProps,
-} from "./ToastProvider"
+export { ToastProvider, ToastConsumer } from "./ToastProvider"
 export {
   useShowErrorAlert,
   useShowSuccessToast,
