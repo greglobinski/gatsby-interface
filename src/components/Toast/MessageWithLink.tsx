@@ -9,9 +9,9 @@ const messageCss = css`
 
 export interface MessageWithLinkProps {
   linkLabel: React.ReactNode;
-  href: string;
+  href?: string;
   target: string;
-  to: string;
+  to?: string;
 }
 
 export const MessageWithLink: React.FC<MessageWithLinkProps> = ({
@@ -21,6 +21,11 @@ export const MessageWithLink: React.FC<MessageWithLinkProps> = ({
 }) => (
   <React.Fragment>
     <div css={messageCss}>{children}</div>
-    <Link {...linkProps}>{linkLabel}</Link>
+    <Link
+      // we need to cast to "any" because TS claims that "href" is required for <Link /> even though it's not
+      {...(linkProps as any)}
+    >
+      {linkLabel}
+    </Link>
   </React.Fragment>
 )

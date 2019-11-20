@@ -48,7 +48,7 @@ export const useShowErrorAlert = () => {
 
 export interface Toast {
   id: symbol;
-  message: string;
+  message: React.ReactNode;
   tone: ToastTone;
 }
 

@@ -78,7 +78,7 @@ const ToastIconByTone = {
 }
 
 export interface ToastProps {
-  message: string;
+  message: React.ReactNode;
   onClose: () => void;
   closeButtonLabel: string;
   tone: ToastTone;
