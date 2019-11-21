@@ -10,15 +10,14 @@ import fontSizes from "../../../theme/fontSizes"
 import { spaces, radius } from "../../../utils/presets"
 import { showCustomCssDeprecationMessage } from "../../../utils/maintenance/deprecationMessages"
 
-function ToggleTip({ children, tip, customCss, className, ...rest }) {
+function ToggleTip({ children, tip, customCss, className }) {
   showCustomCssDeprecationMessage(customCss)
   const [visible, setVisible] = useState(false)
 
   const tipRef = createRef()
 
-  if (typeof window !== `undefined`) {
-    useEventListener(`click`, checkClick)
-    useEventListener(`keydown`, checkKeydown)
+  function hideTip() {
+    setVisible(false)
   }
 
   function checkClick(e) {
@@ -33,16 +32,17 @@ function ToggleTip({ children, tip, customCss, className, ...rest }) {
     }
   }
 
+  if (typeof window !== `undefined`) {
+    useEventListener(`click`, checkClick)
+    useEventListener(`keydown`, checkKeydown)
+  }
+
   function showTip() {
     setVisible(false)
     const reopen = setTimeout(() => {
       setVisible(true)
       clearTimeout(reopen)
     }, 100)
-  }
-
-  function hideTip() {
-    setVisible(false)
   }
 
   return (
@@ -113,7 +113,7 @@ const tipEntry = keyframes({
 })
 
 ToggleTip.Tip = forwardRef(
-  ({ tip, visible, width = `12rem`, customCss, ...rest }, ref) => {
+  ({ tip, visible, width = `12rem`, customCss }, ref) => {
     showCustomCssDeprecationMessage(customCss)
     return (
       <span

@@ -4,7 +4,7 @@ exports[`icons <BlogIcon /> renders unchanged 1`] = `
 <div>
   <svg
     aria-hidden="true"
-    data-testid="icon-blog"
+    data-testid="icon-BlogIcon"
     fill="none"
     fill-rule="evenodd"
     height="24px"
@@ -39,11 +39,47 @@ exports[`icons <BlogIcon /> renders unchanged 1`] = `
 </div>
 `;
 
+exports[`icons <CheckCircleIcon /> renders unchanged 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    data-testid="icon-CheckCircleIcon"
+    fill="currentColor"
+    fill-rule="evenodd"
+    height="24px"
+    preserveAspectRatio="xMidYMid meet"
+    stroke="none"
+    stroke-width="1"
+    style="vertical-align: middle;"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+    />
+    <path
+      d="M9.87727 15.7413L7.38952 12.3449C7.1394 11.983 7.20585 11.4901 7.54289 11.2073L7.54289 11.2073C7.87994 10.9245 8.37685 10.9446 8.6899 11.2538L11.6026 14.2935C12.0767 14.7618 12.0453 15.5364 11.5349 15.9647L11.5349 15.9647C11.0244 16.3931 10.2561 16.2895 9.87727 15.7413Z"
+      fill="white"
+    />
+    <path
+      d="M10.0811 15.9563C9.56249 15.5212 9.51156 14.7414 9.96912 14.2425L15.748 7.94176C16.0414 7.6218 16.5348 7.58958 16.8674 7.86865L16.8674 7.86865C17.2 8.14773 17.2539 8.63917 16.9898 8.98374L11.7882 15.7689C11.3764 16.3062 10.5996 16.3914 10.0811 15.9563L10.0811 15.9563Z"
+      fill="white"
+    />
+    <path
+      d="M10.2123 12.8631C10.5034 13.2125 10.7169 13.4454 11.0856 13.0378C11.4544 12.6302 10.9692 14.0664 10.9692 14.0664L9.76593 13.6782L10.2123 12.8631Z"
+      fill="white"
+    />
+  </svg>
+</div>
+`;
+
 exports[`icons <CheckIcon /> renders unchanged 1`] = `
 <div>
   <svg
     aria-hidden="true"
-    data-testid="icon-check"
+    data-testid="icon-CheckIcon"
     fill="currentColor"
     fill-rule="evenodd"
     height="24px"
@@ -67,11 +103,40 @@ exports[`icons <CheckIcon /> renders unchanged 1`] = `
 </div>
 `;
 
+exports[`icons <CloseCircleIcon /> renders unchanged 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    data-testid="icon-CloseCircleIcon"
+    fill="currentColor"
+    fill-rule="evenodd"
+    height="24px"
+    preserveAspectRatio="xMidYMid meet"
+    stroke="none"
+    stroke-width="1"
+    style="vertical-align: middle;"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      fill="currentColor"
+      r="10"
+    />
+    <path
+      d="M16.6666 8.27331L15.7266 7.33331L12 11.06L8.27331 7.33331L7.33331 8.27331L11.06 12L7.33331 15.7266L8.27331 16.6666L12 12.94L15.7266 16.6666L16.6666 15.7266L12.94 12L16.6666 8.27331Z"
+      fill="white"
+    />
+  </svg>
+</div>
+`;
+
 exports[`icons <EcommerceIcon /> renders unchanged 1`] = `
 <div>
   <svg
     aria-hidden="true"
-    data-testid="icon-ecommerce"
+    data-testid="icon-EcommerceIcon"
     fill="none"
     fill-rule="evenodd"
     height="24px"
@@ -116,11 +181,189 @@ exports[`icons <EcommerceIcon /> renders unchanged 1`] = `
 </div>
 `;
 
+exports[`icons <EllipsisIcon /> renders unchanged 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    data-testid="icon-EllipsisIcon"
+    fill="currentColor"
+    fill-rule="evenodd"
+    height="24px"
+    preserveAspectRatio="xMidYMid meet"
+    stroke="none"
+    stroke-width="1"
+    style="vertical-align: middle;"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <filter
+      height="100%"
+      id="EllipsisIcon__filter"
+      width="100%"
+      x="0"
+      y="0"
+    >
+      <fecomponenttransfer>
+        <fefunca
+          slope="0.1"
+          type="linear"
+        />
+      </fecomponenttransfer>
+    </filter>
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      style="filter: url(#EllipsisIcon__filter);"
+    />
+    <circle
+      cx="6.5"
+      cy="12"
+      r="2"
+    />
+    <circle
+      cx="12"
+      cy="12"
+      r="2"
+    />
+    <circle
+      cx="17.5"
+      cy="12"
+      r="2"
+    />
+  </svg>
+</div>
+`;
+
+exports[`icons <InProgressIcon /> renders unchanged 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    data-testid="icon-InProgressIcon"
+    fill="currentColor"
+    fill-rule="evenodd"
+    height="24px"
+    preserveAspectRatio="xMidYMid meet"
+    stroke="none"
+    stroke-width="1"
+    style="vertical-align: middle;"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <mask
+      height="20"
+      id="InProgressIcon__mask--0"
+      mask-type="alpha"
+      maskUnits="userSpaceOnUse"
+      width="20"
+      x="2"
+      y="2"
+    >
+      <mask
+        height="10"
+        id="InProgressIcon__mask--1"
+        maskUnits="userSpaceOnUse"
+        width="20"
+        x="2"
+        y="12"
+      >
+        <path
+          d="M12 22C17.5229 22 22 17.5229 22 12L2.00003 12C2.00003 17.5229 6.47718 22 12 22Z"
+          fill="#232129"
+        />
+      </mask>
+      <g
+        mask="url(#InProgressIcon__mask--1)"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M11.9996 22C17.5224 22 21.9995 17.5228 21.9995 12C21.9995 6.47714 17.5224 2 11.9996 2C6.47672 2 1.99957 6.47714 1.99957 12C1.99957 17.5228 6.47672 22 11.9996 22ZM11.9994 19.9999C16.4177 19.9999 19.9994 16.4182 19.9994 11.9999C19.9994 7.58166 16.4177 3.99994 11.9994 3.99994C7.58111 3.99994 3.99939 7.58166 3.99939 11.9999C3.99939 16.4182 7.58111 19.9999 11.9994 19.9999Z"
+          fill="#2DE3DA"
+          fill-rule="evenodd"
+        />
+      </g>
+      <mask
+        height="20"
+        id="InProgressIcon__mask--2"
+        maskUnits="userSpaceOnUse"
+        width="20"
+        x="2"
+        y="2"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 22C17.5228 22 22 17.5229 22 12C22 6.47718 17.5228 2.00003 12 2.00003C6.47714 2.00003 2 6.47718 2 12C2 17.5229 6.47714 22 12 22ZM11.9998 20C16.4181 20 19.9998 16.4182 19.9998 12C19.9998 7.58169 16.4181 3.99997 11.9998 3.99997C7.58154 3.99997 3.99982 7.58169 3.99982 12C3.99982 16.4182 7.58154 20 11.9998 20Z"
+          fill="#2DE3DA"
+          fill-rule="evenodd"
+        />
+      </mask>
+      <g
+        mask="url(#InProgressIcon__mask--2)"
+      >
+        <path
+          d="M12 2.00003C6.47714 2.00003 2 6.47718 2 12L22 12C22 6.47718 17.5228 2.00003 12 2.00003Z"
+          fill="url(#InProgressIcon__linear)"
+        />
+      </g>
+    </mask>
+    <g
+      mask="url(#InProgressIcon__mask--0)"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="9.99998"
+        style="filter: url(#InProgressIcon__filter);"
+      />
+    </g>
+    <circle
+      cx="12"
+      cy="12"
+      fill="currentColor"
+      r="4"
+    />
+    <defs>
+      <lineargradient
+        gradientUnits="userSpaceOnUse"
+        id="InProgressIcon__linear"
+        x1="5.74999"
+        x2="18.25"
+        y1="12"
+        y2="12"
+      >
+        <stop
+          stop-color="#663399"
+          stop-opacity="0"
+        />
+        <stop
+          offset="1"
+        />
+      </lineargradient>
+      <filter
+        height="100%"
+        id="InProgressIcon__filter"
+        width="100%"
+        x="0"
+        y="0"
+      >
+        <fecomponenttransfer>
+          <fefunca
+            slope="0.3"
+            type="linear"
+          />
+        </fecomponenttransfer>
+      </filter>
+    </defs>
+  </svg>
+</div>
+`;
+
 exports[`icons <PortfolioIcon /> renders unchanged 1`] = `
 <div>
   <svg
     aria-hidden="true"
-    data-testid="icon-portfolio"
+    data-testid="icon-PortfolioIcon"
     fill="none"
     fill-rule="evenodd"
     height="24px"

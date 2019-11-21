@@ -1,10 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import IconSkeleton from "./IconSkeleton"
+import { IconProps } from "./types"
 
-export default function EcommerceIcon(props) {
+export default function EcommerceIcon(props: IconProps) {
   return (
-    <IconSkeleton {...props} iconName="ecommerce">
+    <IconSkeleton {...props} iconName="EcommerceIcon">
       <path
         d="M3.75 5.25001C3.74961 4.96756 3.80495 4.6878 3.91286 4.42677C4.02076 4.16574 4.17912 3.92857 4.37884 3.72885C4.57857 3.52912 4.81574 3.37077 5.07677 3.26286C5.33779 3.15496 5.61755 3.09961 5.9 3.10001"
         strokeLinecap="round"
@@ -37,10 +37,4 @@ export default function EcommerceIcon(props) {
       />
     </IconSkeleton>
   )
-}
-
-EcommerceIcon.propTypes = {
-  size: IconSkeleton.propTypes.size,
-  width: PropTypes.string,
-  height: PropTypes.string,
 }

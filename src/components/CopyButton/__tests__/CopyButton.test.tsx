@@ -1,5 +1,5 @@
 import React from "react"
-import { render, fireEvent } from "react-testing-library"
+import { render, fireEvent } from "@testing-library/react"
 import "jest-dom/extend-expect"
 
 import { CopyButton } from "../index"
@@ -82,7 +82,7 @@ describe(`<PrimaryButton>`, () => {
 
     fireEvent.click(button)
 
-    let copiedText: string = ``
+    let copiedText = ``
     await window.navigator.clipboard
       .readText()
       .then((text: string) => (copiedText = text))

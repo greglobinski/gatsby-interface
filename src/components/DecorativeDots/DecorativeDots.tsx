@@ -7,11 +7,11 @@ import { getLikelihoodOfBeingBlank } from "./DecorativeDots.helpers"
 import Dot, { DotProps } from "./Dot"
 
 interface DecorativeDotsProps {
-  width: number
-  height: number
-  dotSize: number
-  angle?: number
-  fadeStrength?: number
+  width: number;
+  height: number;
+  dotSize: number;
+  angle?: number;
+  fadeStrength?: number;
 }
 
 // These colors were chosen somewhat haphazardly from previous assets.
