@@ -21,7 +21,7 @@ export const testSafeMathRandom = (defaultValue = 0.5) => {
   return Math.random()
 }
 
-export const testSafeSample = (arr, defaultIndex = 0) => {
+export const testSafeSample = (arr: Array<any>, defaultIndex = 0) => {
   if (process.env.NODE_ENV === "test") {
     return arr[defaultIndex]
   }
