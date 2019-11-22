@@ -275,6 +275,47 @@ html[dir="rtl"] .emotion-0 {
 </div>
 `;
 
+exports[`Storyshots DecorativeDots Default 1`] = `
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-0"
+        >
+          <svg
+            aria-hidden="true"
+            height="200"
+            style="overflow: visible;"
+            width="300"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots File Upload File Upload with Custom Components 1`] = `
 .emotion-0 {
   -webkit-align-items: center;
