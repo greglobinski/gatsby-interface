@@ -1,8 +1,7 @@
-import hex2rgba from "hex2rgba"
 import colors from "../colors"
-// import tones from "../tones"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
+import { hexToRGBA } from "../../utils/helpers/hexToRgb"
 
 import { spaces, transition } from "../../utils/presets"
 
@@ -52,7 +51,7 @@ styles.Nav = {
       left: 0,
       right: 0,
       margin: 0,
-      background: hex2rgba(colors.purple[90], 0.975),
+      background: hexToRGBA(colors.purple[90], 0.975),
       padding: `5rem 3.5rem 5rem`,
       alignItems: `center`,
       textAlign: `right`,
@@ -98,7 +97,7 @@ const DropdownOpenStyles = {
     transform: `rotate(45deg)`,
     borderRadius: `2 0 0 0`,
     background: colors.white,
-    boxShadow: `-3px -3px 10px ${hex2rgba(colors.lilac, 0.1)}`,
+    boxShadow: `-3px -3px 10px ${hexToRGBA(colors.lilac, 0.1)}`,
     willChange: `transform`,
     transitionProperty: `transform`,
     transitionDuration: transition.speed.default,
@@ -111,7 +110,7 @@ const DropdownMobileStyles = {
   position: `relative`,
   background: 0,
   padding: 0,
-  marginBottom: `calc(1.5rem / 2)`,
+  marginBottom: `0.75rem`,
   ":after": {
     content: `none`,
   },
@@ -144,7 +143,7 @@ styles.ItemLink = {
       fontWeight: `normal`,
       transition: `opacity ${transition.speed.default}`,
       WebkitFontSmoothing: `antialiased`,
-      lineHeight: `calc(2 * 5rem / 3)`,
+      lineHeight: `calc(3.33rem)`,
       position: `relative`,
       "& span": {
         position: `relative`,
@@ -219,11 +218,11 @@ styles.DropdownItem = {
       transition: `all ${transition.speed.default}`,
       "&:hover": {
         color: colors.grey[90],
-        background: hex2rgba(colors.accent, 0.1),
+        background: hexToRGBA(colors.accent, 0.1),
       },
       "&:focus-within": {
         color: colors.grey[90],
-        background: hex2rgba(colors.accent, 0.1),
+        background: hexToRGBA(colors.accent, 0.1),
       },
     },
   },

@@ -1,5 +1,3 @@
-import { isMobileSafari } from "../../../utils/helpers"
-
 import colors from "../../../theme/colors"
 
 const HamburgerIconStylesActiveShared = isInverted => {
@@ -18,7 +16,7 @@ const HamburgerIconStylesShared = isInverted => {
     background: isInverted ? colors.white : colors.black,
     content: `" "`,
     position: `absolute`,
-    transition: `all 250ms cubic-bezier(.68,-.55,.265,1.55)`,
+    transition: `transform 250ms cubic-bezier(.68,-.55,.265,1.55)`,
   }
 }
 
@@ -60,14 +58,6 @@ const baseStyles = {
       zIndex: 22,
       cursor: `pointer`,
       transition: `all 250ms cubic-bezier(0.4, 0, 0.2, 1)`,
-      // "&:hover": isMobileSafari()
-      //   ? {}
-      //   : {
-      //       div: {
-      //         "&:before": { width: 24, top: -9 },
-      //         "&:after": { width: 24, top: 9 },
-      //       },
-      //     },
     },
   },
   hamburgerIcon: isInverted => {
@@ -106,9 +96,6 @@ const baseStyles = {
       },
     }
   },
-  // hamburgerIcon: {
-
-  // },
   nav: {
     default: {},
     mobile: isMobileNavOpen => {

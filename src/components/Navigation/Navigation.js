@@ -54,6 +54,7 @@ Navigation.Nav = ({ ...rest }) => {
     mobileNavMediaQuery,
     isMobileNavOpen,
   } = BaseNavigation.useNavigationContext()
+
   return (
     <BaseNavigation.Nav
       css={{
@@ -103,6 +104,7 @@ Navigation.ItemLink = ({ ...rest }) => {
     isInverted,
     mobileNavMediaQuery,
   } = BaseNavigation.useNavigationContext()
+
   return (
     <BaseNavigation.ItemLink
       css={{
@@ -118,6 +120,7 @@ Navigation.ItemLink = ({ ...rest }) => {
 
 Navigation.Dropdown = ({ ...rest }) => {
   const { mobileNavMediaQuery } = BaseNavigation.useNavigationContext()
+
   return (
     <BaseNavigation.Dropdown
       css={{
@@ -133,6 +136,7 @@ Navigation.Dropdown = ({ ...rest }) => {
 
 Navigation.DropdownToggle = ({ ...rest }) => {
   const { mobileNavMediaQuery } = BaseNavigation.useNavigationContext()
+
   return (
     <BaseNavigation.DropdownToggle
       css={{
@@ -148,6 +152,7 @@ Navigation.DropdownToggle = ({ ...rest }) => {
 
 Navigation.DropdownItem = ({ ...rest }) => {
   const { mobileNavMediaQuery } = BaseNavigation.useNavigationContext()
+
   return (
     <BaseNavigation.DropdownItem
       css={{
@@ -163,8 +168,9 @@ Navigation.DropdownItem = ({ ...rest }) => {
 
 Navigation.Button = ({ ...rest }) => {
   const { mobileNavMediaQuery } = BaseNavigation.useNavigationContext()
+
   return (
-    <BaseNavigation.Button
+    <BaseNavigation.LinkButton
       css={{
         ...styles.Button.default,
         [mobileNavMediaQuery]: {
@@ -172,7 +178,7 @@ Navigation.Button = ({ ...rest }) => {
         },
       }}
       {...rest}
-    ></BaseNavigation.Button>
+    ></BaseNavigation.LinkButton>
   )
 }
 

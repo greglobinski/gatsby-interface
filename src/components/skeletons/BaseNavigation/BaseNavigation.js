@@ -1,35 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { useState, useRef, useEffect, Fragment } from "react"
+import React from "react"
 import { Link } from "gatsby"
-import { LinkButton } from "../../core/LinkButton"
-import { visuallyHidden } from "../../../utils/helpers"
 import { MdArrowForward } from "react-icons/md"
 
+import { LinkButton } from "../../core/LinkButton"
+import { visuallyHidden } from "../../../utils/helpers"
+import useOnClickOutside from "../../../utils/hooks/useOnClickOutside"
+
 import baseStyles from "./BaseNavigationStyles"
-
-// Used to close dropdown on an outside click
-const useOnClickOutside = (ref, handler) => {
-  useEffect(() => {
-    const listener = event => {
-      // Do nothing if clicking ref's element or descendent elements
-      if (!ref.current || ref.current.contains(event.target)) {
-        return
-      }
-
-      handler(event)
-    }
-    if (document) {
-      document.addEventListener(`mousedown`, listener)
-      document.addEventListener(`touchstart`, listener)
-
-      return () => {
-        document.removeEventListener(`mousedown`, listener)
-        document.removeEventListener(`touchstart`, listener)
-      }
-    }
-  }, [ref, handler])
-}
 
 const BaseNavigationContext = React.createContext()
 
@@ -38,8 +17,8 @@ const BaseNavigation = ({
   children,
   isInverted = false,
   mobileNavMediaQuery = `@media (max-width: 1065px)`,
-  isMobileNavOpen: defaultIsMobileNavOpen = false,
-  updateMobileNavState: defaultUpdateMobileNavState = false,
+  isMobileNavOpen: customIsMobileNavOpen,
+  setIsMobileNavOpen: customSetIsMobileNavOpen,
   // override base components
   Hamburger = BaseNavigation.Hamburger,
   HamburgerIcon = BaseNavigation.HamburgerIcon,
@@ -50,12 +29,23 @@ const BaseNavigation = ({
   Dropdown = BaseNavigation.Dropdown,
   DropdownItem = BaseNavigation.DropdownItem,
   DropdownToggle = BaseNavigation.DropdownToggle,
-  Button = BaseNavigation.Button,
+  Button = BaseNavigation.LinkButton,
   ...rest
 }) => {
-  const [isMobileNavOpen, updateMobileNavState] = defaultUpdateMobileNavState
-    ? { defaultIsMobileNavOpen, defaultUpdateMobileNavState }
-    : useState(false)
+  const [internalIsMobileNavOpen, internalSetIsMobileNavOpen] = React.useState(
+    false
+  )
+
+  const shouldManageMobileNavState =
+    typeof customIsMobileNavOpen === `undefined` &&
+    typeof customSetIsMobileNavOpen === `undefined`
+
+  const isMobileNavOpen = shouldManageMobileNavState
+    ? internalIsMobileNavOpen
+    : customIsMobileNavOpen
+  const setIsMobileNavOpen = shouldManageMobileNavState
+    ? internalSetIsMobileNavOpen
+    : customSetIsMobileNavOpen
 
   const value = {
     items,
@@ -63,7 +53,7 @@ const BaseNavigation = ({
     isInverted,
     mobileNavMediaQuery,
     isMobileNavOpen,
-    updateMobileNavState,
+    setIsMobileNavOpen,
     components: {
       Hamburger,
       HamburgerIcon,
@@ -80,12 +70,7 @@ const BaseNavigation = ({
 
   return (
     <BaseNavigationContext.Provider value={value}>
-      <div
-        css={{
-          ...baseStyles.navigation.default,
-        }}
-        {...rest}
-      >
+      <div css={baseStyles.navigation.default} {...rest}>
         <Hamburger />
         <Nav />
       </div>
@@ -97,7 +82,7 @@ BaseNavigation.Hamburger = ({ ...rest }) => {
   const {
     mobileNavMediaQuery,
     isMobileNavOpen,
-    updateMobileNavState,
+    setIsMobileNavOpen,
 
     components: { HamburgerIcon },
   } = BaseNavigation.useNavigationContext()
@@ -105,14 +90,12 @@ BaseNavigation.Hamburger = ({ ...rest }) => {
   return (
     <button
       onClick={() => {
-        updateMobileNavState(!isMobileNavOpen)
+        setIsMobileNavOpen(!isMobileNavOpen)
       }}
       aria-expanded={isMobileNavOpen ? `active` : ``}
       css={{
         ...baseStyles.hamburger.default,
-        [mobileNavMediaQuery]: {
-          ...baseStyles.hamburger.mobile,
-        },
+        [mobileNavMediaQuery]: baseStyles.hamburger.mobile,
       }}
       {...rest}
     >
@@ -127,7 +110,7 @@ BaseNavigation.HamburgerIcon = ({ ...rest }) => {
   return (
     <div
       className={isMobileNavOpen ? `active` : ``}
-      css={{ ...baseStyles.hamburgerIcon(isInverted) }}
+      css={baseStyles.hamburgerIcon(isInverted)}
       {...rest}
     ></div>
   )
@@ -143,9 +126,7 @@ BaseNavigation.Nav = ({ ...rest }) => {
   return (
     <nav
       css={{
-        [mobileNavMediaQuery]: {
-          ...baseStyles.nav.mobile(isMobileNavOpen),
-        },
+        [mobileNavMediaQuery]: baseStyles.nav.mobile(isMobileNavOpen),
       }}
       {...rest}
     >
@@ -162,32 +143,28 @@ BaseNavigation.List = ({ ...rest }) => {
   } = BaseNavigation.useNavigationContext()
 
   return (
-    <ul
-      css={{
-        ...baseStyles.list.default,
-      }}
-      {...rest}
-    >
-      {items.length > 0 && items.map((item, i) => <Item item={item} />)}
+    <ul css={baseStyles.list.default} {...rest}>
+      {items.length > 0 &&
+        items.map(item => <Item key={item.name} item={item} />)}
       {rootChildren && rootChildren}
     </ul>
   )
 }
 
 BaseNavigation.Item = ({ item, children, ...rest }) => {
-  const [isDropdownOpen, toggleDropdown] = useState(false)
+  const [isDropdownOpen, toggleDropdown] = React.useState(false)
   const dropdownItems = item.items || []
   const dropdownChildren = children || false
   const itemHasDropdown = dropdownItems.length > 0 || dropdownChildren
 
-  let ref
-  if (itemHasDropdown) {
-    ref = useRef()
-    // Call hook passing in the ref and a function to call on outside click
-    useOnClickOutside(ref, () => {
+  const ref = React.useRef()
+
+  // Call hook passing in the ref and a function to call on outside click
+  useOnClickOutside(ref, () => {
+    if (itemHasDropdown) {
       toggleDropdown(false)
-    })
-  }
+    }
+  })
 
   const {
     isInverted,
@@ -195,16 +172,10 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
   } = BaseNavigation.useNavigationContext()
 
   return (
-    <li
-      ref={ref}
-      css={{
-        ...baseStyles.item(isInverted),
-      }}
-      {...rest}
-    >
+    <li ref={ref} css={baseStyles.item(isInverted)} {...rest}>
       <ItemLink item={item} />
       {itemHasDropdown && (
-        <Fragment>
+        <>
           <DropdownToggle
             item={item}
             isDropdownOpen={isDropdownOpen}
@@ -217,7 +188,7 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
             dropdownItems={item.items}
             dropdownChildren={dropdownChildren}
           />
-        </Fragment>
+        </>
       )}
     </li>
   )
@@ -225,6 +196,9 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
 
 BaseNavigation.ItemLink = ({ item, ...rest }) => (
   <Link activeClassName="nav-item-active" to={item.linkTo} {...rest}>
+    {/* 
+      This span is needed for the styles applied in theme/styles/navigation 
+    */}
     <span>{item.name}</span>
   </Link>
 )
@@ -244,13 +218,11 @@ BaseNavigation.DropdownToggle = ({
       onClick={() => {
         toggleDropdown(!isDropdownOpen)
       }}
-      css={{
-        ...baseStyles.dropdownToggle(isInverted),
-      }}
+      css={baseStyles.dropdownToggle(isInverted)}
       {...rest}
     >
       <span aria-hidden="true">&or;</span>
-      <span css={{ ...visuallyHidden }}>{`${item.name} Menu`}</span>
+      <span css={visuallyHidden}>{`${item.name} Menu`}</span>
     </button>
   )
 }
@@ -269,9 +241,7 @@ BaseNavigation.Dropdown = ({
 
   return (
     <ul
-      css={{
-        ...baseStyles.dropdown(isDropdownOpen),
-      }}
+      css={baseStyles.dropdown(isDropdownOpen)}
       // id to associate with aria-controls on BaseNavigation.Item
       id={`${item.name}-dropdown`}
       onKeyDown={e => {
@@ -284,7 +254,9 @@ BaseNavigation.Dropdown = ({
       {...rest}
     >
       {dropdownItems.length > 0 &&
-        dropdownItems.map(item => <DropdownItem item={item} />)}
+        dropdownItems.map((item, index) => (
+          <DropdownItem key={`${index}-${item.name}`} item={item} />
+        ))}
       {dropdownChildren && dropdownChildren}
     </ul>
   )
@@ -298,7 +270,7 @@ BaseNavigation.DropdownItem = ({ item: { name, linkTo }, ...rest }) => (
   </li>
 )
 
-BaseNavigation.Button = ({
+BaseNavigation.LinkButton = ({
   linkTo,
   icon = true,
   size = `M`,
@@ -311,9 +283,7 @@ BaseNavigation.Button = ({
     <LinkButton
       to={linkTo}
       size={size}
-      css={{
-        ...baseStyles.button(isInverted),
-      }}
+      css={baseStyles.button(isInverted)}
       {...rest}
     >
       {children} {icon && <MdArrowForward />}
