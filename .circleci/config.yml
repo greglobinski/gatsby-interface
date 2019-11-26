@@ -15,7 +15,7 @@ jobs:
           command: yarn install
       - run:
           name: Build rollup
-          command: yarn build:rollup
+          command: yarn build
       - run:
           name: Type check
           command: yarn type-check
