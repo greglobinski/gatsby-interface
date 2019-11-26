@@ -54,6 +54,12 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+
+      - run:
+          name: Configure Git
+          command: |
+            git config user.email aleksei+CircleCI@gatsbyjs.com
+            git config user.name "Circle CI"
       - run:
           name: Build package
           command: yarn build
