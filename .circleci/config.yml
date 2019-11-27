@@ -52,6 +52,10 @@ jobs:
   prerelease:
     <<: *defaults
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "7a:12:8a:c3:cf:c8:fe:f0:02:76:20:de:df:89:3d:ad"
+
       - checkout
 
       - attach_workspace:
