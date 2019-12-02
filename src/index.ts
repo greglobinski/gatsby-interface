@@ -7,7 +7,7 @@ export {
   Success,
 } from "./assets"
 
-export { ContentBox } from "./components/skeletons/ContentBox"
+export { ContentBox } from "./components/ContentBox"
 
 export {
   Button,
@@ -87,6 +87,7 @@ export { default as cardStyles } from "./theme/styles/card"
 export { default as buttonStyles } from "./theme/styles/button"
 export { default as fontWeights } from "./theme/fontWeights"
 
+export * from "./components/Avatar"
 export * from "./components/icons"
 export * from "./components/form-skeletons"
 export * from "./components/DecorativeDots"
