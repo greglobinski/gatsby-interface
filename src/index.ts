@@ -74,6 +74,8 @@ export { Breadcrumb } from "./components/Breadcrumb"
 
 export { Switch } from "./components/core/Switch"
 
+export { Navigation } from "./components/Navigation"
+
 export * from "./components/CopyButton"
 
 export { colors, palette } from "./utils/presets/colors"
