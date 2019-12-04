@@ -28769,6 +28769,64 @@ exports[`Storyshots ToggleTip shortcut usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tooltip Default 1`] = `
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-0"
+        >
+          <div>
+            <button
+              data-reach-tooltip-trigger=""
+            >
+              Hover on me!
+            </button>
+             
+            <a
+              data-reach-tooltip-trigger=""
+              href="https://google.com"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              a link with a tooltip
+            </a>
+             
+            <input
+              data-reach-tooltip-trigger=""
+              placeholder="An input with a really long tooltip"
+              size="30"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots form-skeletons Default 1`] = `
 .emotion-0 {
   -webkit-align-items: center;
