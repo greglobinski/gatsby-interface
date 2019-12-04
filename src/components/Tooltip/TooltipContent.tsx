@@ -2,8 +2,7 @@
 import { jsx, css } from "@emotion/core"
 import { TooltipPopup, TooltipParams, TooltipPopupProps } from "@reach/tooltip"
 import colors from "../../theme/colors"
-import fontSizes from "../../theme/fontSizes"
-import { spaces } from "../../utils/presets"
+import { spaces, fontSizes } from "../../utils/presets"
 import { TooltipPosition } from "./types"
 import TooltipPointer from "./TooltipPointer"
 import { tooltipPosition } from "./TooltipContent.helpers"
@@ -18,7 +17,7 @@ type TooltipContentProps = Omit<TooltipPopupProps, "ref" | "position"> & {
 const baseCss = css({
   background: colors.black,
   color: colors.whiteFade[80],
-  fontSize: fontSizes[0],
+  fontSize: fontSizes["2xs"],
   border: "none",
   borderRadius: "2px",
   padding: `${spaces.s} ${spaces.m}`,
