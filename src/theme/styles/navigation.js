@@ -90,7 +90,6 @@ const DropdownOpenStyles = {
   width: 450,
   borderRadius: 2,
 
-  // color: colors.grey[50],
   ":after": {
     position: `absolute`,
     top: -6,
