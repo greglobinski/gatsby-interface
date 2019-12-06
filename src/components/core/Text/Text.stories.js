@@ -4,7 +4,6 @@ import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
-import { MdWarning } from "react-icons/md"
 import { boolean, radios } from "@storybook/addon-knobs"
 
 import { StoryUtils } from "../../../utils/storybook"
@@ -31,9 +30,7 @@ storiesOf(`core/Text`, module)
           Text variant - PRIMARY <StoryUtils.Default />
         </Text>
         <Text variant={`EMPHASIZED`}>Text variant - EMPHASIZED</Text>
-        <Text variant={`ERROR`}>
-          <MdWarning /> Text variant - ERROR
-        </Text>
+        <Text variant={`ERROR`}>Text variant - ERROR</Text>
         <Text variant={`LEDE`}>
           Text variant - LEDE: Doggo ipsum mlem snoot adorable doggo you are
           doing me the shock doge, mlem puggo boofers. Blep shoober heckin good
