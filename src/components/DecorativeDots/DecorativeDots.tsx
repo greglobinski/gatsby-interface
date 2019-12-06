@@ -1,17 +1,20 @@
 import * as React from "react"
-import sample from "lodash.sample"
 
 import { palette } from "../../utils/presets"
+import {
+  testSafeMathRandom,
+  testSafeSample,
+} from "../../utils/helpers/testSafeRandomness"
 
 import { getLikelihoodOfBeingBlank } from "./DecorativeDots.helpers"
 import Dot, { DotProps } from "./Dot"
 
 interface DecorativeDotsProps {
-  width: number
-  height: number
-  dotSize: number
-  angle?: number
-  fadeStrength?: number
+  width: number;
+  height: number;
+  dotSize: number;
+  angle?: number;
+  fadeStrength?: number;
 }
 
 // These colors were chosen somewhat haphazardly from previous assets.
@@ -62,14 +65,15 @@ const generateDotData = (
         numRows
       )
 
-      const isBlank = likelihoodOfBeingBlank * Math.random() < fadeStrength
+      const isBlank =
+        likelihoodOfBeingBlank * testSafeMathRandom() < fadeStrength
 
       if (!isBlank) {
         dots.push({
           x: colIndex * totalDotSpace,
           y: rowIndex * totalDotSpace,
-          color: sample(COLORS) as string,
-          opacity: sample(OPACITIES) as number,
+          color: testSafeSample(COLORS) as string,
+          opacity: testSafeSample(OPACITIES) as number,
           size: dotSize,
         })
       }

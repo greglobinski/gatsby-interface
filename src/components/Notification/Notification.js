@@ -8,9 +8,7 @@ import styles from "../../theme/styles/notification"
 import tones from "../../theme/tones"
 import { spaces, palette } from "../../utils/presets"
 import { Link } from "../Link"
-import { Button } from "../core/Button"
-
-const NotificationContext = React.createContext()
+import { Button } from "../Button"
 
 import {
   NOTIFICATION_TONES,
@@ -18,6 +16,8 @@ import {
   NOTIFICATION_ICONS,
 } from "../../utils/options"
 import { showCustomCssDeprecationMessage } from "../../utils/maintenance/deprecationMessages"
+
+const NotificationContext = React.createContext()
 
 const asOptions = {
   div: `div`,

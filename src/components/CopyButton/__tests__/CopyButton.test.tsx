@@ -1,10 +1,5 @@
 import React from "react"
-import {
-  render,
-  fireEvent,
-  wait,
-  waitForDomChange,
-} from "react-testing-library"
+import { render, fireEvent } from "@testing-library/react"
 import "jest-dom/extend-expect"
 
 import { CopyButton } from "../index"
@@ -38,13 +33,13 @@ afterAll(() => {
 
 describe(`<PrimaryButton>`, () => {
   it(`renders unchanged`, async () => {
-    const { container, debug } = render(<CopyButton content="test" />)
+    const { container } = render(<CopyButton content="test" />)
 
     expect(container).toMatchSnapshot()
   })
 
   it(`allows to configure button label`, async () => {
-    const { getByText, container, debug } = render(
+    const { container } = render(
       <CopyButton
         content="lorem ipsum"
         getButtonLabel={copied => (copied ? `BarCopied` : `FooCopy`)}
@@ -62,7 +57,7 @@ describe(`<PrimaryButton>`, () => {
   })
 
   it(`allows to configure button title`, async () => {
-    const { getByText, container, debug } = render(
+    const { container } = render(
       <CopyButton
         content="lorem ipsum"
         getButtonTitle={copied => (copied ? `BarCopied` : `FooCopy`)}
@@ -80,16 +75,14 @@ describe(`<PrimaryButton>`, () => {
   })
 
   it(`copies the passed content to clipboard and updates button label`, async () => {
-    const { getByText, container, debug } = render(
-      <CopyButton content="lorem ipsum" />
-    )
+    const { container } = render(<CopyButton content="lorem ipsum" />)
 
     const button = container.querySelector(`button`) as HTMLButtonElement
     expect(button).toHaveTextContent(`Copy`)
 
     fireEvent.click(button)
 
-    let copiedText: string = ``
+    let copiedText = ``
     await window.navigator.clipboard
       .readText()
       .then((text: string) => (copiedText = text))

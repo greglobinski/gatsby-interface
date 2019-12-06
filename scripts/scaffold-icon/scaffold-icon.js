@@ -18,7 +18,7 @@ function scaffold(iconName) {
   if (!iconName) {
     console.error(
       `${chalk.red(`Error:`)} No icon name specified, use ${chalk.cyan(
-        `yarn scaffold your-icon-name`
+        `yarn scaffold:icon CheckCircle`
       )}`
     )
     return
@@ -32,14 +32,14 @@ function scaffold(iconName) {
 function scaffoldIconComponent(iconName, basePath, context) {
   const componentDirPath = path.join(basePath, `components/icons`)
   const componentName = getIconComponentName(iconName)
-  const fileName = `${componentName}.js`
+  const fileName = `${componentName}.tsx`
 
   console.log(chalk.blue(`Scaffolding ${chalk.bold(componentName)} component`))
   console.log(`  generating`, chalk.bold(`${componentDirPath}/${fileName}`))
 
   const content = hydrateTemplate({
     COMPONENT_NAME: componentName,
-    ICON_NAME: iconName,
+    ICON_NAME: componentName,
     BODY_TEXT: `{/* insert inner SVG code here */}`,
     ...context,
   })
@@ -51,7 +51,7 @@ function scaffoldIconComponent(iconName, basePath, context) {
     console.error(e)
   }
 
-  const iconsFilePath = `${componentDirPath}/icons.js`
+  const iconsFilePath = `${componentDirPath}/icons.ts`
 
   console.log(`  appending export statement to`, chalk.bold(iconsFilePath))
   fs.appendFileSync(
@@ -62,6 +62,7 @@ function scaffoldIconComponent(iconName, basePath, context) {
 
 function getIconComponentName(iconName) {
   return iconName
+    .replace(/icon/i, ``)
     .split(`-`)
     .concat([`icon`])
     .map(str => str.substr(0, 1).toUpperCase() + str.substr(1))

@@ -1,89 +1,38 @@
-env:
-  browser: true
-  cypress/globals: true
-  es6: true
-  jest: true
-  node: true
-extends:
-  - eslint:recommended
-  - google
-  - plugin:jsx-a11y/recommended
-  - plugin:react/recommended
-  - prettier
-  - prettier/react
-  - plugin:@typescript-eslint/eslint-recommended
-globals:
-  graphql: true
-parser: babel-eslint
-parserOptions:
-  ecmaFeatures:
-    experimentalObjectRestSpread: true
-    jsx: true
-  ecmaVersion: 2016
-  sourceType: module
-plugins:
-  - cypress
-  - jsx-a11y
-  - react
-rules:
-  arrow-body-style:
-    - error
-    - as-needed
-    - requireReturnForObjectLiteral: true
-  comma-dangle:
-    - error
-    - arrays: always-multiline
-      exports: always-multiline
-      functions: ignore
-      imports: always-multiline
-      objects: always-multiline
-  jsx-a11y/label-has-for:
-    - 2
-    - required:
-        some:
-          - nesting
-          - id
-  jsx-quotes:
-    - error
-    - prefer-double
-  no-console: "off"
-  new-cap: "off"
-  object-curly-spacing:
-    - error
-    - always
-  prefer-destructuring:
-    - off
-    - array: false
-      object: true
-  quotes:
-    - error
-    - backtick
-    - allowTemplateLiterals: true
-  react/display-name: 0
-  no-invalid-this: 0
-  require-jsdoc: "off"
-  semi:
-    - error
-    - never
-  valid-jsdoc: "off"
-
-
-  # TODO(Nicholas) set these to error
-  consistent-return: off
-  react/prop-types:
-    - off
-    - ignore:
-        - children
-overrides:
-  - parser: "@typescript-eslint/parser"
-    files:
-      - "*.ts"
-      - "*.tsx"
-    plugins:
-      - "@typescript-eslint"
-    rules:
-      quotes: off
-      "@typescript-eslint/quotes":
-        - error
-        - backtick
-        - allowTemplateLiterals: true
+{
+  "extends": [
+    "react-app",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+    "__PATH_PREFIX__": true,
+    "__BASE_PATH__": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-unused-expressions": [
+      "warn"
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "eqeqeq": [
+      "warn"
+    ],
+    "no-octal-escape": [
+      "warn"
+    ],
+    "no-use-before-define": "off",
+    "import/no-webpack-loader-syntax": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react-hooks/rules-of-hooks": "off"
+  }
+}

@@ -1,17 +1,11 @@
 import React from 'react'
-import PropTypes from "prop-types"
 import IconSkeleton from './IconSkeleton'
+import { IconProps } from "./types"
 
-export default function <%= COMPONENT_NAME %>(props) {
+export default function <%= COMPONENT_NAME %>(props: IconProps) {
   return (
     <IconSkeleton {...props} iconName="<%= ICON_NAME %>">
       <%- BODY_TEXT %>
     </IconSkeleton>
   )
-}
-
-<%= COMPONENT_NAME %>.propTypes = {
-  size: IconSkeleton.propTypes.size,
-  width: PropTypes.string,
-  height: PropTypes.string,
 }

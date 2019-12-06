@@ -1,19 +1,19 @@
 import React from "react"
-import PropTypes from "prop-types"
+
 import styled from "@emotion/styled"
 
 import colors from "../../theme/colors"
 
 import { radius, spaces, fontFamilies, fontSizes } from "../../utils/presets"
 
-const INPUT_BORDER_WIDTH = `2px`
-const INPUT_INNER_DIA = `22px`
-const INPUT_OUTER_DIA = `calc(${INPUT_INNER_DIA} + (2 * ${INPUT_BORDER_WIDTH}))`
-
 import RadioSkeleton, {
   radioPropTypes,
   radioDefaultPropTypes,
 } from "./Radio.Skeleton"
+
+const INPUT_BORDER_WIDTH = `2px`
+const INPUT_INNER_DIA = `22px`
+const INPUT_OUTER_DIA = `calc(${INPUT_INNER_DIA} + (2 * ${INPUT_BORDER_WIDTH}))`
 
 const Label = styled(`label`)`
   align-items: center;
@@ -83,7 +83,6 @@ const RadioInput = styled(`input`)`
   opacity: 0;
   position: absolute;
   width: ${INPUT_INNER_DIA};
-  z-index: 2;
 
   &:checked + label::before {
     border-color: ${colors.purple[60]};
@@ -116,8 +115,8 @@ const ColourfulContainer = styled(StandardContainer)`
   :after {
     content: "";
     position: absolute;
-    background: #eee;
     z-index: -1;
+    background: #eee;
   }
   :before {
     border-radius: ${radius.large};

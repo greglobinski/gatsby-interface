@@ -4,8 +4,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import { Button, ButtonProps } from "../core/Button"
 import copyToClipboard from "../../utils/helpers/copyToClipboard"
+import { ButtonProps, Button } from "../Button/Button"
 
 const baseCss = css`
   html:not([dir="rtl"]) & {
@@ -22,10 +22,10 @@ const baseCss = css`
 export type GetLabelFn = (copied: boolean) => string
 
 export type CopyButtonProps = ButtonProps & {
-  content: string
-  getButtonLabel?: GetLabelFn
-  getButtonTitle?: GetLabelFn
-  delay?: number
+  content: string;
+  getButtonLabel?: GetLabelFn;
+  getButtonTitle?: GetLabelFn;
+  delay?: number;
 }
 
 function CopyButton({

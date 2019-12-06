@@ -20,7 +20,7 @@ exports[`<PrimaryButton> renders unchanged 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid #663399;
+  border: #635e69;
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -42,6 +42,7 @@ exports[`<PrimaryButton> renders unchanged 1`] = `
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
   background: #663399;
+  border: 1px solid #663399;
   color: #ffffff;
   font-weight: bold;
 }
@@ -62,14 +63,6 @@ exports[`<PrimaryButton> renders unchanged 1`] = `
   transform: scale(1);
 }
 
-.emotion-0 svg:last-child {
-  margin-right: -0.25em;
-}
-
-.emotion-0 svg:first-child {
-  margin-left: -0.30em;
-}
-
 .emotion-0:hover:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
@@ -85,9 +78,7 @@ exports[`<PrimaryButton> renders unchanged 1`] = `
     class="emotion-0"
     type="button"
   >
-    <span>
-      Click me!
-    </span>
+    Click me!
   </button>
 </div>
 `;

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import loadable from "@loadable/component"
-import { Button } from "../core/Button"
+import { Button } from "../Button"
 import UploadPreview from "./UploadPreview"
 const ReactFilestack = loadable(() => import(`filestack-react`), { ssr: false })
 
@@ -42,9 +42,7 @@ const FileUpload = ({
   }
 
   const addFiles = uploadedFiles => {
-    let filesToSet = multi
-      ? [...files, ...uploadedFiles]
-      : (filesToSet = [uploadedFiles[0]])
+    const filesToSet = multi ? [...files, ...uploadedFiles] : [uploadedFiles[0]]
     setFiles([...filesToSet])
     setFieldValue(name, filesToSet.map(file => file && file.url))
   }

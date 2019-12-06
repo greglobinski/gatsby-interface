@@ -3,7 +3,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import React from "react"
 import { FormikConsumer } from "formik"
 
 const Debug = () => (
@@ -30,7 +29,7 @@ const Debug = () => (
       Formik State
     </div>
     <FormikConsumer>
-      {({ validationSchema, validate, onSubmit, ...rest }) => (
+      {({ ...rest }) => (
         <pre
           css={{
             padding: `.25rem .5rem`,
