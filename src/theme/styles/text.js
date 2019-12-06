@@ -41,8 +41,6 @@ const sizeStyles = () => {
 }
 
 const variantStyles = () => {
-  console.log(`sizeStyles()[M]`, sizeStyles()[`M`])
-  console.log(`sizeStyles()[2XL]`, sizeStyles()[`2XL`])
   return {
     PRIMARY: {},
 
@@ -59,14 +57,7 @@ const variantStyles = () => {
       lineHeight: 1.3,
       margin: `1em 0 0`,
     },
-    ERROR: {
-      svg: {
-        marginRight: spaces.xs,
-        verticalAlign: `middle`,
-        marginTop: `-0.1rem`,
-        color: tones.DANGER.medium,
-      },
-    },
+    ERROR: {},
   }
 }
 
