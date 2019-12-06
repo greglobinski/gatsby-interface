@@ -2,8 +2,8 @@
 import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
-import { BaseText } from "../../skeletons/BaseText"
-import { styles, options } from "../../../theme/styles/text"
+import { BaseText } from "../skeletons/BaseText"
+import { styles, options } from "../../theme/styles/text"
 
 const { baseStyle, variantStyles, sizeStyles } = styles
 const { VARIANTS, TONES, SIZES } = options
