@@ -24,9 +24,7 @@ const Navigation = ({
     DropdownItem={Navigation.DropdownItem}
     DropdownToggle={Navigation.DropdownToggle}
     Button={Navigation.Button}
-    css={{
-      ...styles.Navigation.default,
-    }}
+    css={styles.Navigation.default}
     {...rest}
   />
 )
@@ -40,12 +38,10 @@ Navigation.HamburgerIcon = ({ ...rest }) => {
 
   return (
     <BaseNavigation.HamburgerIcon
-      css={{
-        ...styles.HamburgerIcon,
-      }}
+      css={styles.HamburgerIcon}
       className={isMobileNavOpen ? `active` : ``}
       {...rest}
-    ></BaseNavigation.HamburgerIcon>
+    />
   )
 }
 
@@ -66,6 +62,10 @@ Navigation.Nav = ({ ...rest }) => {
       {...rest}
     ></BaseNavigation.Nav>
   )
+}
+
+Navigation.Spacer = delegated => {
+  return <div css={{ flex: 1 }} {...delegated} />
 }
 
 Navigation.List = ({ ...rest }) => {
