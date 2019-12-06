@@ -1,12 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
 
 import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import { boolean, radios } from "@storybook/addon-knobs"
-
-import { StoryUtils } from "../../../utils/storybook"
+import { StoryUtils } from "../../utils/storybook"
 import Text from "./Text"
 
 storiesOf(`core/Text`, module)

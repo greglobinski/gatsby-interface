@@ -1,7 +1,6 @@
 import tones from "../tones"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
-import { spaces } from "../../utils/presets/spaces"
 
 const VARIANTS = [`PRIMARY`, `EMPHASIZED`, `LEDE`, `EMPHASIZED_LEDE`, `ERROR`]
 const TONES = [`BRAND`, `NEUTRAL`]
