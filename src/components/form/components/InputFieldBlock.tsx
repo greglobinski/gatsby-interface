@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
+import React, { ReactNode } from "react"
 
 import InputField, { InputFieldControlProps } from "./InputField"
 import { FormFieldLabelSize } from "./FormField.helpers"
@@ -8,10 +8,10 @@ import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSk
 
 export type InputFieldBlockProps = {
   id: string;
-  label: string;
+  label: ReactNode;
   labelSize?: FormFieldLabelSize;
-  error?: string;
-  hint?: string;
+  error?: ReactNode;
+  hint?: ReactNode;
   validationMode?: ErrorValidationMode;
 } & InputFieldControlProps
 

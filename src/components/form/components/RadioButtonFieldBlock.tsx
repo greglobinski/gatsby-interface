@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
+import React, { ReactNode } from "react"
 
 import RadioButtonField, {
   RadioButtonFieldControlProps,
@@ -10,11 +10,11 @@ import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSk
 
 export type RadioButtonFieldBlockProps = {
   id: string;
-  label: string;
+  label: ReactNode;
   labelSize?: FormFieldLabelSize;
   options: { label: string; value: any }[];
-  error?: string;
-  hint?: string;
+  error?: ReactNode;
+  hint?: ReactNode;
   validationMode?: ErrorValidationMode;
 } & RadioButtonFieldControlProps
 

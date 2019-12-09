@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
+import React, { ReactNode } from "react"
 
 import TextAreaField, { TextAreaFieldControlProps } from "./TextAreaField"
 import { FormFieldLabelSize } from "./FormField.helpers"
@@ -8,10 +8,10 @@ import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSk
 
 export type TextAreaFieldBlockProps = {
   id: string;
-  label: string;
+  label: ReactNode;
   labelSize?: FormFieldLabelSize;
-  error?: string;
-  hint?: string;
+  error?: ReactNode;
+  hint?: ReactNode;
   validationMode?: ErrorValidationMode;
 } & TextAreaFieldControlProps
 
