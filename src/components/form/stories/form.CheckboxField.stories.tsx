@@ -75,9 +75,7 @@ storiesOf(`form`, module)
             labelSize={size}
             onChange={e => action(`Change`)(e.target.value)}
             error={error}
-            hint={
-              hint ? hint : `This one is also built with 'CheckboxFieldBlock'`
-            }
+            hint={hint ? hint : `This one is built with 'CheckboxFieldBlock'`}
             required={required}
           />
 
@@ -87,8 +85,8 @@ storiesOf(`form`, module)
               <span>
                 <strong>
                   {" "}
-                  'S' label size lets us easily build good-looking 'Accept
-                  Terms' like fields. The text could be pretty long...{" "}
+                  'S' label size let us easily build good-looking 'Accept Terms'
+                  like fields. The text could be pretty long...{" "}
                 </strong>{" "}
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy

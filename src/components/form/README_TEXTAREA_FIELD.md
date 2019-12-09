@@ -15,7 +15,7 @@
 </TextAreaField>
 ```
 
-The only difference are:
+The only differences are:
 
 - `TextAreaField` has an additional subcomponent `TextAreaField.Wrapper` which role is to provide a way to style the field row as a block.
 - `TextAreaField.Label` accepts additional props
