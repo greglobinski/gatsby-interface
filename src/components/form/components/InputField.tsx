@@ -20,7 +20,7 @@ export type InputFieldControlProps = Omit<InputFieldSkeletonControlProps, "ref">
 
 const Control = React.forwardRef<HTMLInputElement, InputFieldControlProps>(
   (props, ref) => {
-    const { hasError, hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
+    const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
 
     const placeholder =
       props.placeholder && props.disabled
@@ -30,7 +30,7 @@ const Control = React.forwardRef<HTMLInputElement, InputFieldControlProps>(
     return (
       <InputFieldSkeleton.Control
         ref={ref}
-        css={[getInputStyles({ hasError, hasHint })]}
+        css={[getInputStyles(hasError)]}
         {...props}
         placeholder={placeholder}
       />

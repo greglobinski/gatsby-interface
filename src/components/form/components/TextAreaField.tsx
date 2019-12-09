@@ -26,7 +26,7 @@ const Control = React.forwardRef<
   HTMLTextAreaElement,
   TextAreaFieldControlProps
 >((props, ref) => {
-  const { hasError, hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
+  const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
 
   const placeholder =
     props.placeholder && props.disabled
@@ -37,7 +37,7 @@ const Control = React.forwardRef<
     <TextAreaFieldSkeleton.Control
       ref={ref}
       css={[
-        getInputStyles({ hasError, hasHint }),
+        getInputStyles(hasError),
         {
           display: `block`,
           minHeight: `5rem`,

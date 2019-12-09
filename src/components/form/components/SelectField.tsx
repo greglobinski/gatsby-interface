@@ -25,13 +25,13 @@ export type SelectFieldControlProps = Omit<
 
 const Control = React.forwardRef<HTMLSelectElement, SelectFieldControlProps>(
   (props, ref) => {
-    const { hasError, hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
+    const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
 
     return (
       <SelectFieldSkeleton.Control
         ref={ref}
         css={[
-          getInputStyles({ hasError, hasHint }),
+          getInputStyles(hasError),
           {
             padding: `0 ${spaces[`xs`]}`,
             backgroundImage: `url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3E%3C/path%3E%3C/svg%3E")`,

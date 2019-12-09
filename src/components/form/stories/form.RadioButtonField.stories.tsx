@@ -137,7 +137,7 @@ storiesOf(`form/RadioButtonField`, module)
       <StoryUtils.Container>
         <Wrapper>
           <RadioButtonField
-            id="checkbox-group-example-2"
+            id="example-2"
             hasError={!!error}
             hasHint={!!hint}
             variant="framed"
@@ -148,10 +148,7 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
                 <React.Fragment key={value}>
-                  <RadioButtonField.Option
-                    value={value}
-                    name="checkbox-group-3"
-                  />
+                  <RadioButtonField.Option value={value} name="categories" />
                   <RadioButtonField.OptionLabel
                     size={optionLabelSize}
                     optionValue={value}
@@ -172,7 +169,7 @@ storiesOf(`form/RadioButtonField`, module)
   .add(`Hint and Error placement`, () => {
     const hint = text(`Hint`, `This is a hint`)
     const error = text(`Error`, `And this is an error message`)
-    const options = [`A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `G`].map(
+    const options = [`A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`].map(
       name => {
         return {
           label: `option ${name}`,
@@ -194,7 +191,7 @@ storiesOf(`form/RadioButtonField`, module)
     return (
       <StoryUtils.Container>
         <Wrapper>
-          <RadioButtonField id="example-1a" hasError={!!error} hasHint={!!hint}>
+          <RadioButtonField id="example-3a" hasError={!!error} hasHint={!!hint}>
             <RadioButtonField.Label size={labelSize}>
               Category
             </RadioButtonField.Label>
@@ -203,7 +200,7 @@ storiesOf(`form/RadioButtonField`, module)
                 .filter((_, idx) => idx < 3)
                 .map(({ label, value }) => (
                   <React.Fragment key={value}>
-                    <RadioButtonField.Option value={value} name="options1a" />
+                    <RadioButtonField.Option value={value} name="options3a" />
                     <RadioButtonField.OptionLabel
                       size={optionLabelSize}
                       optionValue={value}
@@ -219,7 +216,7 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Error>{error}</RadioButtonField.Error>
           </RadioButtonField>
 
-          <RadioButtonField id="example-1b" hasError={!!error} hasHint={!!hint}>
+          <RadioButtonField id="example-3b" hasError={!!error} hasHint={!!hint}>
             <RadioButtonField.Label size={labelSize}>
               Category
             </RadioButtonField.Label>
@@ -228,7 +225,7 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Options>
               {options.map(({ label, value }) => (
                 <React.Fragment key={value}>
-                  <RadioButtonField.Option value={value} name="option1b" />
+                  <RadioButtonField.Option value={value} name="options3b" />
                   <RadioButtonField.OptionLabel
                     size={optionLabelSize}
                     optionValue={value}

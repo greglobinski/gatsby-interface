@@ -58,15 +58,7 @@ export const getFocusStyles = (hasError?: boolean) => ({
   borderColor: hasError ? colors.red[30] : colors.purple[40],
 })
 
-export type SharedTextInputStylesOptions = {
-  hasError: boolean | undefined;
-  hasHint: boolean | undefined;
-}
-
-export const getInputStyles = ({
-  hasError,
-  hasHint,
-}: SharedTextInputStylesOptions): Interpolation => ({
+export const getInputStyles = (hasError?: boolean): Interpolation => ({
   border: hasError
     ? `1px solid ${colors.red[60]}`
     : `1px solid ${colors.grey[30]}`,
@@ -76,7 +68,6 @@ export const getInputStyles = ({
   fontFamily: fonts.system.join(`,`),
   fontSize: fontSizes.s,
   height: `2.25rem`,
-  marginBottom: hasError || hasHint ? spaces.xs : 0,
   padding: `0 ${spaces.xs}`,
   width: `100%`,
   position: `relative`,

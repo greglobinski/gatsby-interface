@@ -76,13 +76,26 @@ FormField.Label = Label
 FormField.Label.displayName = `FormField.Label`
 
 const Hint: React.FC<FormFieldSkeletonHintProps> = ({ children, ...rest }) => {
+  const { hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
+
   return (
-    <FormFieldSkeleton.Hint css={getDescriptionStyles()} {...rest}>
+    <FormFieldSkeleton.Hint
+      css={[
+        getDescriptionStyles(),
+        {
+          marginTop: hasHint ? spaces[`xs`] : 0,
+        },
+      ]}
+      {...rest}
+    >
       <MdInfoOutline />
       {children}
     </FormFieldSkeleton.Hint>
   )
 }
+
+FormField.Hint = Hint
+FormField.Hint.displayName = `FormField.Hint`
 
 const errorEntry = keyframes`
   50% {
@@ -99,14 +112,11 @@ const errorIconEntry = keyframes`
   }
 `
 
-FormField.Hint = Hint
-FormField.Hint.displayName = `FormField.Hint`
-
 const Error: React.FC<FormFieldSkeletonErrorProps> = ({
   children,
   ...rest
 }) => {
-  const { hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
+  const { hasHint, hasError } = FormFieldSkeleton.useFormFieldSkeleton()
 
   return (
     <FormFieldSkeleton.Error
@@ -115,7 +125,8 @@ const Error: React.FC<FormFieldSkeletonErrorProps> = ({
         {
           animation: `${errorEntry} .25s ease forwards`,
           color: colors.red[70],
-          marginTop: hasHint ? spaces[`2xs`] : 0,
+          marginTop: hasHint && hasError ? spaces[`2xs`] : 0,
+          marginBottom: hasError ? spaces.s : 0,
           opacity: 0,
 
           svg: {
@@ -133,6 +144,6 @@ const Error: React.FC<FormFieldSkeletonErrorProps> = ({
 }
 
 FormField.Error = Error
-FormField.Error.displayName = `InputField.Error`
+FormField.Error.displayName = `FormField.Error`
 
 export default FormField
