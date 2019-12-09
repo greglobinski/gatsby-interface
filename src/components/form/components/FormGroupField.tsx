@@ -25,7 +25,7 @@ export const INPUT_VERTICAL_OFFSET_CALC = `(1em - 14px) * 0.5`
 
 export type FormGroupFieldContextValue = {
   layout?: `horizontal` | `vertical`;
-  variant?: undefined | `framed`;
+  variant?: `standard` | `framed`;
 }
 
 const FormGroupFieldContext = React.createContext<FormGroupFieldContextValue>({
@@ -35,7 +35,7 @@ const FormGroupFieldContext = React.createContext<FormGroupFieldContextValue>({
 
 export type FormGroupFieldProviderProps = {
   layout?: `horizontal` | `vertical`;
-  variant?: undefined | `framed`;
+  variant?: `standard` | `framed`;
   children: any;
 }
 
@@ -131,7 +131,7 @@ const Options: React.FC<FormGroupFieldOptionsProps> = ({ ...rest }) => {
         display: `flex`,
         flexWrap: `wrap`,
         flexDirection: isHorizontal ? `row` : `column`,
-        margin: `${spaces.xs} 0 ${spaces.s}`,
+        margin: `calc((${spaces.xs} * -1) + ${spaces.xs}) 0 calc((${spaces.xs} * -1) + ${spaces.s})`,
       }}
       {...rest}
     />
@@ -172,15 +172,12 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
           justifyContent: `flex-start`,
           lineHeight: 1.3,
           marginRight: marginRight,
-          marginBottom: spaces.m,
+          marginTop: spaces.xs,
+          marginBottom: spaces.xs,
           paddingLeft: `calc(${INPUT_WIDTH} + ${
             isHorizontal ? spaces[`2xs`] : spaces.s
           })`,
           position: `relative`,
-
-          "&:last-of-type": {
-            marginBottom: 0,
-          },
         },
       ]}
       {...rest}
