@@ -121,6 +121,7 @@ const DropdownMobileStyles = {
 
 styles.Item = {
   default: {
+    marginBottom: 0,
     padding: `0 ${spaces.s}`,
     "&:hover > ul": {
       ...DropdownOpenStyles,
