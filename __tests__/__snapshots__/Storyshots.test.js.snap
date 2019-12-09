@@ -12080,6 +12080,7 @@ exports[`Storyshots Navigation default example 1`] = `
   display: inline-flex;
   position: relative;
   color: #000000;
+  margin-bottom: 0;
   padding: 0 0.75rem;
 }
 
@@ -12821,6 +12822,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
   display: inline-flex;
   position: relative;
   color: #ffffff;
+  margin-bottom: 0;
   padding: 0 0.75rem;
 }
 
@@ -13362,6 +13364,7 @@ exports[`Storyshots Navigation with item links as children 1`] = `
   display: inline-flex;
   position: relative;
   color: #000000;
+  margin-bottom: 0;
   padding: 0 0.75rem;
 }
 
@@ -14158,6 +14161,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   display: inline-flex;
   position: relative;
   color: #000000;
+  margin-bottom: 0;
   padding: 0 0.75rem;
 }
 
@@ -14909,6 +14913,7 @@ exports[`Storyshots Navigation with item links as props and children 1`] = `
   display: inline-flex;
   position: relative;
   color: #000000;
+  margin-bottom: 0;
   padding: 0 0.75rem;
 }
 
@@ -15299,6 +15304,7 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
   display: inline-flex;
   position: relative;
   color: #000000;
+  margin-bottom: 0;
   padding: 0 0.75rem;
 }
 
