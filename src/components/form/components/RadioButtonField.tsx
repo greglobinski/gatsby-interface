@@ -80,7 +80,6 @@ const OptionLabel = props => {
         {
           "&:before": {
             backgroundColor: colors.white,
-
             border: hasError
               ? `1px solid ${colors.red[60]}`
               : `2px solid ${colors.grey[30]}`,
@@ -96,9 +95,9 @@ const OptionLabel = props => {
             width: INPUT_WIDTH,
           },
         },
-        variant === `framed` ? frameStyles : {},
         variant === `framed`
           ? {
+              ...frameStyles,
               marginBottom: 0,
               padding: `${spaces.s} ${spaces.m}`,
               paddingLeft: `calc(${INPUT_WIDTH} + ${spaces.l})`,
@@ -137,13 +136,26 @@ const OptionFrame = props => {
   )
 }
 
+const Options = props => {
+  const { variant } = FormGroupField.useFormGroupField()
+
+  return (
+    <FormGroupField.Options
+      css={{
+        margin: variant === `framed` ? `${spaces[`2xs`]} 0 0` : undefined,
+      }}
+      {...props}
+    />
+  )
+}
+
 RadioButtonField.Label = FormGroupField.Label
 RadioButtonField.Label.displayName = `RadioButtonField.Label`
 RadioButtonField.OptionFrame = OptionFrame
 RadioButtonField.OptionFrame.displayName = `RadioButtonField.OptionFrame`
 RadioButtonField.OptionLabel = OptionLabel
 RadioButtonField.OptionLabel.displayName = `RadioButtonField.OptionLabel`
-RadioButtonField.Options = FormGroupField.Options
+RadioButtonField.Options = Options
 RadioButtonField.Options.displayName = `RadioButtonField.Options`
 RadioButtonField.Hint = FormField.Hint
 RadioButtonField.Hint.displayName = `RadioButtonField.Hint`

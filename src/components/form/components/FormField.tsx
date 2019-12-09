@@ -125,7 +125,7 @@ const Error: React.FC<FormFieldSkeletonErrorProps> = ({
         {
           animation: `${errorEntry} .25s ease forwards`,
           color: colors.red[70],
-          marginTop: hasHint && hasError ? spaces[`2xs`] : 0,
+          marginTop: hasError ? (hasHint ? spaces[`2xs`] : spaces.xs) : 0,
           marginBottom: hasError ? spaces.s : 0,
           opacity: 0,
 

@@ -55,7 +55,7 @@ export const RequiredFlag = () => (
 
 export const getFocusStyles = (hasError?: boolean) => ({
   boxShadow: `0 0 0 3px ${hasError ? colors.red[10] : colors.purple[20]}`,
-  borderColor: hasError ? colors.red[30] : colors.purple[40],
+  borderColor: hasError ? colors.red[30] : colors.purple[60],
 })
 
 export const getInputStyles = (hasError?: boolean): Interpolation => ({

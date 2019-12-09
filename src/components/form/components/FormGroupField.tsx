@@ -131,7 +131,7 @@ const Options: React.FC<FormGroupFieldOptionsProps> = ({ ...rest }) => {
         display: `flex`,
         flexWrap: `wrap`,
         flexDirection: isHorizontal ? `row` : `column`,
-        margin: `${spaces.xs} 0`,
+        margin: `${spaces.xs} 0 ${spaces.s}`,
       }}
       {...rest}
     />
@@ -172,14 +172,14 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
           justifyContent: `flex-start`,
           lineHeight: 1.3,
           marginRight: marginRight,
-          marginBottom: isHorizontal ? spaces.xs : spaces.s,
+          marginBottom: spaces.m,
           paddingLeft: `calc(${INPUT_WIDTH} + ${
             isHorizontal ? spaces[`2xs`] : spaces.s
           })`,
           position: `relative`,
 
           "&:last-of-type": {
-            marginBottom: spaces[`2xs`],
+            marginBottom: 0,
           },
         },
       ]}
