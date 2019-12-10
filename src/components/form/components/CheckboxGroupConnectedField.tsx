@@ -1,10 +1,18 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { connect, getIn } from "formik"
+import React from "react"
+import { connect, getIn, FormikContext } from "formik"
 import CheckboxGroupFieldBlock from "./CheckboxGroupFieldBlock"
 import Case from "case"
+import { CheckboxFieldBlockProps } from "./CheckboxGroupFieldBlock"
 
-const CheckboxGroupConnectedField = props => {
+export type InputConnectedFieldProps = {
+  name: string;
+} & CheckboxFieldBlockProps & {
+    formik: FormikContext<{}>;
+  }
+
+const CheckboxGroupConnectedField = (props: InputConnectedFieldProps) => {
   const id = `${props.name}Field`
   const label = Case.sentence(props.name)
   const error = getIn(props.formik.errors, props.name)
@@ -19,7 +27,7 @@ const CheckboxGroupConnectedField = props => {
       label={label}
       error={touched && error && error}
       value={value}
-      onChange={e => {
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         const target = e.currentTarget
         const valueArray = [...value] || []
 

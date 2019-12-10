@@ -1,10 +1,17 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { connect, getIn } from "formik"
+import { connect, getIn, FormikContext } from "formik"
 import TextAreaFieldBlock from "./TextAreaFieldBlock"
 import Case from "case"
+import { TextAreaFieldBlockProps } from "./TextAreaFieldBlock"
 
-const TextAreaConnectedField = props => {
+export type InputConnectedFieldProps = {
+  name: string;
+} & TextAreaFieldBlockProps & {
+    formik: FormikContext<{}>;
+  }
+
+const TextAreaConnectedField = (props: InputConnectedFieldProps) => {
   const id = `${props.name}Field`
   const label = Case.sentence(props.name)
   const error = getIn(props.formik.errors, props.name)
