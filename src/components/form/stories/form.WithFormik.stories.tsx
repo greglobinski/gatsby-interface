@@ -23,7 +23,7 @@ import CheckboxGroupConnectedField from "../components/CheckboxGroupConnectedFie
 import RadioButtonField from "../components/RadioButtonField"
 import RadioButtonFieldBlock from "../components/RadioButtonFieldBlock"
 import RadioButtonConnectedField from "../components/RadioButtonConnectedField"
-import { Formik, Form } from "formik"
+import { Formik, Form, FormikProps } from "formik"
 import * as Yup from "yup"
 import Debug from "../../../utils/formik/Debug"
 import { Button } from "../../Button"
@@ -146,6 +146,24 @@ export const validationSchema = Yup.object().shape({
   ),
 })
 
+interface MyFormValues {
+  title: string;
+  description: string;
+  author: string;
+  category: string;
+  tags: string[];
+  agreement: boolean;
+}
+
+const initailValues = {
+  title: ``,
+  description: ``,
+  author: ``,
+  category: ``,
+  tags: [],
+  agreement: false,
+}
+
 storiesOf(`form/Formik usage examples`, module)
   .addParameters({
     options: {
@@ -162,14 +180,7 @@ storiesOf(`form/Formik usage examples`, module)
         <Wrapper>
           <Formik
             validationSchema={validationSchema}
-            initialValues={{
-              title: ``,
-              description: ``,
-              author: ``,
-              category: ``,
-              tags: [],
-              agreement: false,
-            }}
+            initialValues={initailValues}
             onSubmit={() => {
               setTimeout(() => {
                 alert("Form submitted")
@@ -184,7 +195,7 @@ storiesOf(`form/Formik usage examples`, module)
               handleBlur,
               isSubmitting,
               errors,
-            }) => (
+            }: FormikProps<MyFormValues>) => (
               <Form noValidate>
                 <InputField
                   id="titleField"
@@ -332,7 +343,7 @@ storiesOf(`form/Formik usage examples`, module)
                   <CheckboxField.Wrapper>
                     <CheckboxField.Control
                       name="agreement"
-                      value={values.agreement}
+                      value={+values.agreement}
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
@@ -365,14 +376,7 @@ storiesOf(`form/Formik usage examples`, module)
         <Wrapper>
           <Formik
             validationSchema={validationSchema}
-            initialValues={{
-              title: ``,
-              description: ``,
-              author: ``,
-              category: ``,
-              tags: [],
-              agreement: false,
-            }}
+            initialValues={initailValues}
             onSubmit={() => {
               setTimeout(() => {
                 alert("Form submitted")
@@ -388,7 +392,7 @@ storiesOf(`form/Formik usage examples`, module)
               setFieldTouched,
               isSubmitting,
               errors,
-            }) => (
+            }: FormikProps<MyFormValues>) => (
               <Form noValidate>
                 <InputFieldBlock
                   id="titleField"
@@ -480,7 +484,7 @@ storiesOf(`form/Formik usage examples`, module)
                   }
                   labelSize="S"
                   name="agreement"
-                  value={values.agreement}
+                  value={+values.agreement}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={
@@ -505,14 +509,7 @@ storiesOf(`form/Formik usage examples`, module)
         <Wrapper>
           <Formik
             validationSchema={validationSchema}
-            initialValues={{
-              title: ``,
-              description: ``,
-              author: ``,
-              category: ``,
-              tags: [],
-              agreement: false,
-            }}
+            initialValues={initailValues}
             onSubmit={() => {
               setTimeout(() => {
                 alert("Form submitted")

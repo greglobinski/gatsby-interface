@@ -16,7 +16,8 @@ export type CheckboxFieldBlockProps = {
   error?: ReactNode;
   hint?: ReactNode;
   validationMode?: ErrorValidationMode;
-} & FormGroupFieldOptionProps
+  value: any[];
+} & Omit<FormGroupFieldOptionProps, "value">
 
 const CheckboxGroupFieldBlock = (props: CheckboxFieldBlockProps) => {
   const {

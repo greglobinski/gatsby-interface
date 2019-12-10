@@ -3,10 +3,7 @@ import { jsx } from "@emotion/core"
 import React from "react"
 import { FormField } from "./FormField"
 import { getFocusStyles } from "./FormField.helpers"
-import {
-  FormGroupFieldSkeletonProps,
-  FormGroupFieldSkeletonOptionProps,
-} from "../../form-skeletons/components/FormGroupFieldSkeleton"
+import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/components/FormGroupFieldSkeleton"
 import { FormGroupFieldOptionsProps } from "./FormGroupField"
 import FormGroupField, {
   FormGroupFieldOptionLabelProps,
@@ -14,10 +11,11 @@ import FormGroupField, {
 import colors from "../../../theme/colors"
 import { spaces, radius } from "../../../utils/presets"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
+import { FormGroupFieldProps } from "./FormGroupField"
 
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
-function RadioButtonField(props: FormGroupFieldSkeletonProps) {
+function RadioButtonField(props: FormGroupFieldProps) {
   return <FormGroupField {...props} />
 }
 
