@@ -1,17 +1,21 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { connect, getIn, FormikContext } from "formik"
+import { connect, getIn } from "formik"
 import RadioButtonFieldBlock from "./RadioButtonFieldBlock"
 import Case from "case"
 import { RadioButtonFieldBlockProps } from "./RadioButtonFieldBlock"
 
-export type InputConnectedFieldProps = {
+export type RadioButtonConnectedFieldProps = {
   name: string;
-} & RadioButtonFieldBlockProps & {
-    formik: FormikContext<{}>;
-  }
+  formik?: any;
+  id?: string;
+  label?: React.ReactNode;
+  value?: string;
+} & Omit<RadioButtonFieldBlockProps, "id" | "label" | "value">
 
-const RadioButtonConnectedField = (props: InputConnectedFieldProps) => {
+const RadioButtonConnectedField: React.FC<
+  RadioButtonConnectedFieldProps
+> = props => {
   const id = `${props.name}Field`
   const label = Case.sentence(props.name)
   const error = getIn(props.formik.errors, props.name)

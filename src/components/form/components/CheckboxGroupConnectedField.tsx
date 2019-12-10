@@ -1,18 +1,22 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import React from "react"
-import { connect, getIn, FormikContext } from "formik"
+import { connect, getIn } from "formik"
 import CheckboxGroupFieldBlock from "./CheckboxGroupFieldBlock"
 import Case from "case"
 import { CheckboxFieldBlockProps } from "./CheckboxGroupFieldBlock"
 
-export type InputConnectedFieldProps = {
+export type CheckboxGroupConnectedFieldProps = {
   name: string;
-} & CheckboxFieldBlockProps & {
-    formik: FormikContext<{}>;
-  }
+  formik?: any;
+  id?: string;
+  label?: React.ReactNode;
+  value?: string;
+} & Omit<CheckboxFieldBlockProps, "id" | "label" | "value">
 
-const CheckboxGroupConnectedField = (props: InputConnectedFieldProps) => {
+const CheckboxGroupConnectedField: React.FC<
+  CheckboxGroupConnectedFieldProps
+> = props => {
   const id = `${props.name}Field`
   const label = Case.sentence(props.name)
   const error = getIn(props.formik.errors, props.name)

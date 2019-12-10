@@ -1,17 +1,18 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { connect, getIn, FormikContext } from "formik"
+import { connect, getIn } from "formik"
 import SelectFieldBlock from "./SelectFieldBlock"
 import Case from "case"
 import { SelectFieldBlockProps } from "./SelectFieldBlock"
 
-export type InputConnectedFieldProps = {
+export type SelectConnectedFieldProps = {
   name: string;
-} & SelectFieldBlockProps & {
-    formik: FormikContext<{}>;
-  }
+  formik?: any;
+  id?: string;
+  label?: React.ReactNode;
+} & Omit<SelectFieldBlockProps, "id" | "label">
 
-const SelectConnectedField = (props: InputConnectedFieldProps) => {
+const SelectConnectedField: React.FC<SelectConnectedFieldProps> = props => {
   const id = `${props.name}Field`
   const label = Case.sentence(props.name)
   const error = getIn(props.formik.errors, props.name)
