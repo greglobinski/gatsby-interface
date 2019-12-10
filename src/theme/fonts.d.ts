@@ -1,2 +1,9 @@
 // TODO remove this file once fonts is rewritten to TypeScript
-export const fonts: any
+const fonts: {
+  header: any
+  monospace: any
+  serif: any
+  system: any
+}
+
+export = fonts
