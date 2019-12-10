@@ -29224,7 +29224,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   }
 }
 
-.emotion-29 {
+.emotion-57 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -29242,7 +29242,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   padding: 20px;
 }
 
-.emotion-28 {
+.emotion-56 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29433,6 +29433,63 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   transform: scale(0);
 }
 
+.emotion-52 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: calc((0.5rem * -1) + 0.5rem) 0 calc((0.5rem * -1) + 0.75rem);
+}
+
+.emotion-31 {
+  font-size: 1rem;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  color: #232129;
+  cursor: pointer;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  line-height: 1.3;
+  margin-right: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: calc(20px + 0.75rem);
+  position: relative;
+}
+
+.emotion-31:before {
+  background-color: #ffffff;
+  border: 2px solid #d9d7e0;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 20px;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: border-color 0.15s ease-in-out,background 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out,background 0.15s ease-in-out;
+  -webkit-transform: translate(0,calc((1em - 14px) * 0.5));
+  -ms-transform: translate(0,calc((1em - 14px) * 0.5));
+  transform: translate(0,calc((1em - 14px) * 0.5));
+  width: 20px;
+}
+
 <div>
   <div
     class="storybook-readme-story"
@@ -29440,14 +29497,14 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
     <div>
       <div>
         <div
-          class="emotion-29"
+          class="emotion-57"
         >
           <div
-            class="emotion-28"
+            class="emotion-56"
           >
             <fieldset
               class="emotion-27"
-              id="tagsField"
+              id="example-1a"
             >
               <legend
                 class="emotion-1"
@@ -29466,165 +29523,347 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--assire-var-anahid"
+                  id="example-1a__option--assire-var-anahid"
                   name="tags"
                   type="checkbox"
                   value="assire-var-anahid"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--assire-var-anahid"
+                  for="example-1a__option--assire-var-anahid"
                 >
                   Assire var Anahid
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--francesca-findabair"
+                  id="example-1a__option--francesca-findabair"
                   name="tags"
                   type="checkbox"
                   value="francesca-findabair"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--francesca-findabair"
+                  for="example-1a__option--francesca-findabair"
                 >
                   Francesca Findabair
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--fringilla-vigo"
+                  id="example-1a__option--fringilla-vigo"
                   name="tags"
                   type="checkbox"
                   value="fringilla-vigo"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--fringilla-vigo"
+                  for="example-1a__option--fringilla-vigo"
                 >
                   Fringilla Vigo
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--ida-emean-aep-sivney"
+                  id="example-1a__option--ida-emean-aep-sivney"
                   name="tags"
                   type="checkbox"
                   value="ida-emean-aep-sivney"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--ida-emean-aep-sivney"
+                  for="example-1a__option--ida-emean-aep-sivney"
                 >
                   Ida Emean aep Sivney
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--keira-metz"
+                  id="example-1a__option--keira-metz"
                   name="tags"
                   type="checkbox"
                   value="keira-metz"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--keira-metz"
+                  for="example-1a__option--keira-metz"
                 >
                   Keira Metz
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--margarita-laux-antille"
+                  id="example-1a__option--margarita-laux-antille"
                   name="tags"
                   type="checkbox"
                   value="margarita-laux-antille"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--margarita-laux-antille"
+                  for="example-1a__option--margarita-laux-antille"
                 >
                   Margarita Laux-Antille
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--philippa-eilhart"
+                  id="example-1a__option--philippa-eilhart"
                   name="tags"
                   type="checkbox"
                   value="philippa-eilhart"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--philippa-eilhart"
+                  for="example-1a__option--philippa-eilhart"
                 >
                   Philippa Eilhart
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--sabrina-glevissig"
+                  id="example-1a__option--sabrina-glevissig"
                   name="tags"
                   type="checkbox"
                   value="sabrina-glevissig"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--sabrina-glevissig"
+                  for="example-1a__option--sabrina-glevissig"
                 >
                   Sabrina Glevissig
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--sheala-de-tancarville"
+                  id="example-1a__option--sheala-de-tancarville"
                   name="tags"
                   type="checkbox"
                   value="sheala-de-tancarville"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--sheala-de-tancarville"
+                  for="example-1a__option--sheala-de-tancarville"
                 >
                   Sheala de Tancarville
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--triss-merigold"
+                  id="example-1a__option--triss-merigold"
                   name="tags"
                   type="checkbox"
                   value="triss-merigold"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--triss-merigold"
+                  for="example-1a__option--triss-merigold"
                 >
                   Triss Merigold
                 </label>
                 <input
                   aria-invalid="false"
                   class="emotion-2"
-                  id="tagsField__option--yennefer-of-vengerberg"
+                  id="example-1a__option--yennefer-of-vengerberg"
                   name="tags"
                   type="checkbox"
                   value="yennefer-of-vengerberg"
                 />
                 <label
                   class="emotion-3"
-                  for="tagsField__option--yennefer-of-vengerberg"
+                  for="example-1a__option--yennefer-of-vengerberg"
                 >
                   Yennefer of Vengerberg
                 </label>
               </div>
               <div
                 class="emotion-25"
-                id="tagsField__hint"
+                id="example-1a__hint"
               />
               <div
                 class="emotion-26"
-                id="tagsField__error"
+                id="example-1a__error"
+              />
+            </fieldset>
+            <fieldset
+              class="emotion-27"
+              id="example-\`b"
+            >
+              <legend
+                class="emotion-1"
+              >
+                Tags
+                 
+                <span
+                  class="emotion-0"
+                >
+                  required
+                </span>
+              </legend>
+              <div
+                class="emotion-52"
+              >
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--assire-var-anahid"
+                  name="tags"
+                  type="checkbox"
+                  value="assire-var-anahid"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--assire-var-anahid"
+                >
+                  Assire var Anahid
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--francesca-findabair"
+                  name="tags"
+                  type="checkbox"
+                  value="francesca-findabair"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--francesca-findabair"
+                >
+                  Francesca Findabair
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--fringilla-vigo"
+                  name="tags"
+                  type="checkbox"
+                  value="fringilla-vigo"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--fringilla-vigo"
+                >
+                  Fringilla Vigo
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--ida-emean-aep-sivney"
+                  name="tags"
+                  type="checkbox"
+                  value="ida-emean-aep-sivney"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--ida-emean-aep-sivney"
+                >
+                  Ida Emean aep Sivney
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--keira-metz"
+                  name="tags"
+                  type="checkbox"
+                  value="keira-metz"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--keira-metz"
+                >
+                  Keira Metz
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--margarita-laux-antille"
+                  name="tags"
+                  type="checkbox"
+                  value="margarita-laux-antille"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--margarita-laux-antille"
+                >
+                  Margarita Laux-Antille
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--philippa-eilhart"
+                  name="tags"
+                  type="checkbox"
+                  value="philippa-eilhart"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--philippa-eilhart"
+                >
+                  Philippa Eilhart
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--sabrina-glevissig"
+                  name="tags"
+                  type="checkbox"
+                  value="sabrina-glevissig"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--sabrina-glevissig"
+                >
+                  Sabrina Glevissig
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--sheala-de-tancarville"
+                  name="tags"
+                  type="checkbox"
+                  value="sheala-de-tancarville"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--sheala-de-tancarville"
+                >
+                  Sheala de Tancarville
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--triss-merigold"
+                  name="tags"
+                  type="checkbox"
+                  value="triss-merigold"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--triss-merigold"
+                >
+                  Triss Merigold
+                </label>
+                <input
+                  aria-invalid="false"
+                  class="emotion-2"
+                  id="example-\`b__option--yennefer-of-vengerberg"
+                  name="tags"
+                  type="checkbox"
+                  value="yennefer-of-vengerberg"
+                />
+                <label
+                  class="emotion-31"
+                  for="example-\`b__option--yennefer-of-vengerberg"
+                >
+                  Yennefer of Vengerberg
+                </label>
+              </div>
+              <div
+                class="emotion-25"
+                id="example-\`b__hint"
+              />
+              <div
+                class="emotion-26"
+                id="example-\`b__error"
               />
             </fieldset>
           </div>
@@ -37435,7 +37674,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                   id="agreementField"
                   name="agreement"
                   type="checkbox"
-                  value="false"
+                  value="0"
                 />
                 <label
                   class="emotion-44"
@@ -39449,7 +39688,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   id="agreementField"
                   name="agreement"
                   type="checkbox"
-                  value="false"
+                  value="0"
                 />
                 <label
                   class="emotion-45"
