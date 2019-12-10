@@ -2,9 +2,8 @@
 import { jsx } from "@emotion/core"
 import React, { ReactNode } from "react"
 
-import RadioButtonField, {
-  RadioButtonFieldControlProps,
-} from "./RadioButtonField"
+import RadioButtonField from "./RadioButtonField"
+import { FormGroupFieldOptionProps } from "./FormGroupField"
 import { FormFieldLabelSize } from "./FormField.helpers"
 import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSkeleton"
 
@@ -16,12 +15,9 @@ export type RadioButtonFieldBlockProps = {
   error?: ReactNode;
   hint?: ReactNode;
   validationMode?: ErrorValidationMode;
-} & RadioButtonFieldControlProps
+} & FormGroupFieldOptionProps
 
-const RadioButtonFieldBlock = React.forwardRef<
-  HTMLTextAreaElement,
-  RadioButtonFieldBlockProps
->(props => {
+const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
   const {
     id,
     label,
@@ -67,6 +63,6 @@ const RadioButtonFieldBlock = React.forwardRef<
       </RadioButtonField.Error>
     </RadioButtonField>
   )
-})
+}
 
 export default RadioButtonFieldBlock

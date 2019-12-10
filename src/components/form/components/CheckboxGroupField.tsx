@@ -4,7 +4,10 @@ import React from "react"
 import { FormField } from "./FormField"
 import { getFocusStyles } from "./FormField.helpers"
 import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/components/FormGroupFieldSkeleton"
-import FormGroupField, { FormGroupFieldProps } from "./FormGroupField"
+import FormGroupField, {
+  FormGroupFieldProps,
+  FormGroupFieldOptionLabelProps,
+} from "./FormGroupField"
 import colors from "../../../theme/colors"
 import { spaces } from "../../../utils/presets"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
@@ -17,14 +20,9 @@ function CheckboxGroupField(props: FormGroupFieldProps) {
 CheckboxGroupField.Label = FormGroupField.Label
 CheckboxGroupField.Label.displayName = `CheckboxGroupField.Label`
 
-export type CheckboxGroupFieldOptionProps = Omit<
-  FormGroupFieldSkeletonOptionProps,
-  "type" | "ref"
->
-
 CheckboxGroupField.Option = React.forwardRef<
   HTMLInputElement,
-  CheckboxGroupFieldOptionProps
+  FormGroupFieldSkeletonOptionProps
 >((props, ref) => (
   <FormGroupField.Option
     ref={ref}
@@ -51,7 +49,7 @@ CheckboxGroupField.Option = React.forwardRef<
   />
 ))
 
-const OptionLabel = props => {
+const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
   const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
 
   return (

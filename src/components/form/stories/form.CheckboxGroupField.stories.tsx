@@ -57,10 +57,32 @@ storiesOf(`form`, module)
       <StoryUtils.Container>
         <Wrapper>
           <CheckboxGroupField
-            id="tagsField"
+            id="example-1a"
             hasError={!!error}
             hasHint={!!hint}
             layout="horizontal"
+          >
+            <CheckboxGroupField.Label isRequired={true}>
+              Tags
+            </CheckboxGroupField.Label>
+            <CheckboxGroupField.Options>
+              {options.map(({ label, value }) => (
+                <React.Fragment key={value}>
+                  <CheckboxGroupField.Option value={value} name="tags" />
+                  <CheckboxGroupField.OptionLabel optionValue={value}>
+                    {label}
+                  </CheckboxGroupField.OptionLabel>
+                </React.Fragment>
+              ))}
+            </CheckboxGroupField.Options>
+            <CheckboxGroupField.Hint>{hint}</CheckboxGroupField.Hint>
+            <CheckboxGroupField.Error>{error}</CheckboxGroupField.Error>
+          </CheckboxGroupField>
+
+          <CheckboxGroupField
+            id="example-`b"
+            hasError={!!error}
+            hasHint={!!hint}
           >
             <CheckboxGroupField.Label isRequired={true}>
               Tags

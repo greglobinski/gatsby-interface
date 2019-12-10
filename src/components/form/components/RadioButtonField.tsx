@@ -7,7 +7,10 @@ import {
   FormGroupFieldSkeletonProps,
   FormGroupFieldSkeletonOptionProps,
 } from "../../form-skeletons/components/FormGroupFieldSkeleton"
-import FormGroupField from "./FormGroupField"
+import { FormGroupFieldOptionsProps } from "./FormGroupField"
+import FormGroupField, {
+  FormGroupFieldOptionLabelProps,
+} from "./FormGroupField"
 import colors from "../../../theme/colors"
 import { spaces, radius } from "../../../utils/presets"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
@@ -18,14 +21,9 @@ function RadioButtonField(props: FormGroupFieldSkeletonProps) {
   return <FormGroupField {...props} />
 }
 
-export type RadioButtonFieldOptionProps = Omit<
-  FormGroupFieldSkeletonOptionProps,
-  "type" | "ref"
->
-
 RadioButtonField.Option = React.forwardRef<
   HTMLInputElement,
-  RadioButtonFieldOptionProps
+  FormGroupFieldSkeletonOptionProps
 >((props, ref) => (
   <FormGroupField.Option
     ref={ref}
@@ -65,12 +63,11 @@ const frameStyles = {
   border: `2px solid ${colors.white}`,
   borderRadius: radius.large,
   margin: 0,
-
   width: `100%`,
   transition: `border .15s ease-in-out`,
 }
 
-const OptionLabel = props => {
+const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
   const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
   const { variant } = FormGroupField.useFormGroupField()
 
@@ -113,7 +110,12 @@ const OptionLabel = props => {
   )
 }
 
-const OptionFrame = props => {
+export type RadioButtonFieldOptionFramProps = Pick<
+  JSX.IntrinsicElements["div"],
+  "className" | "style"
+>
+
+const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
   const { variant } = FormGroupField.useFormGroupField()
 
   return (
@@ -136,7 +138,7 @@ const OptionFrame = props => {
   )
 }
 
-const Options = props => {
+const Options: React.FC<FormGroupFieldOptionsProps> = props => {
   const { variant } = FormGroupField.useFormGroupField()
 
   return (

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import React from "react"
-import { Interpolation } from "@emotion/serialize"
 
 import FormGroupFieldSkeleton, {
   FormGroupFieldSkeletonProps,
@@ -36,11 +35,8 @@ const FormGroupFieldContext = React.createContext<FormGroupFieldContextValue>({
 export type FormGroupFieldProviderProps = {
   layout?: `horizontal` | `vertical`;
   variant?: `standard` | `framed`;
-  children: any;
+  children?: React.ReactNode;
 }
-
-export type FormGroupFieldProps = FormGroupFieldSkeletonProps &
-  FormGroupFieldProviderProps
 
 function FormGroupFieldProvider({
   layout,
@@ -60,6 +56,9 @@ function FormGroupFieldProvider({
     </FormGroupFieldContext.Provider>
   )
 }
+
+export type FormGroupFieldProps = FormGroupFieldProviderProps &
+  FormGroupFieldSkeletonProps
 
 export function FormGroupField({
   variant,
@@ -85,10 +84,10 @@ export function FormGroupField({
   )
 }
 
-export type FormGroupFieldLabelProps = FormGroupFieldSkeletonLabelProps & {
+export type FormGroupFieldLabelProps = {
   isRequired?: boolean;
   size?: FormFieldLabelSize;
-}
+} & FormGroupFieldSkeletonLabelProps
 
 const Label: React.FC<FormGroupFieldLabelProps> = ({
   children,
@@ -138,20 +137,18 @@ const Options: React.FC<FormGroupFieldOptionsProps> = ({ ...rest }) => {
   )
 }
 
-export const hiddenInputStyles: Interpolation = {}
-
 export type FormGroupFieldOptionProps = Omit<
   FormGroupFieldSkeletonOptionProps,
   "ref"
 >
 
 const Option: React.FC<FormGroupFieldOptionProps> = props => (
-  <FormGroupFieldSkeleton.Option css={hiddenInputStyles} {...props} />
+  <FormGroupFieldSkeleton.Option {...props} />
 )
 
-export type FormGroupFieldOptionLabelProps = FormGroupFieldSkeletonOptionLabelProps & {
+export type FormGroupFieldOptionLabelProps = {
   size?: FormFieldLabelSize;
-}
+} & FormGroupFieldSkeletonOptionLabelProps
 
 const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
   size = `L`,
