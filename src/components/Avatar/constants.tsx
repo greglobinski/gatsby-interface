@@ -9,6 +9,7 @@ export const avatarSizeValues: Record<AvatarSize, string> = {
   M: "32px",
   L: "48px",
   XL: "64px",
+  XXL: "128px",
 }
 
 export const borderSizeValues: Record<AvatarSize, number> = {
@@ -17,6 +18,7 @@ export const borderSizeValues: Record<AvatarSize, number> = {
   M: 2,
   L: 3,
   XL: 4,
+  XXL: 8,
 }
 
 export const placeholderFontSizes: Record<AvatarSize, string> = {
@@ -25,4 +27,5 @@ export const placeholderFontSizes: Record<AvatarSize, string> = {
   M: fontSizes["xs"],
   L: fontSizes["m"],
   XL: fontSizes["l"],
+  XXL: fontSizes["2xl"],
 }
