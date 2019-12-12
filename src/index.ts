@@ -79,7 +79,8 @@ export { BaseNavigation } from "./components/skeletons/BaseNavigation"
 
 export * from "./components/CopyButton"
 
-export { colors, palette } from "./utils/presets/colors"
+export { default as colors } from "./theme/colors"
+
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
 export { spaces } from "./utils/presets/spaces"
 export { breakpoints } from "./utils/presets/breakpoints"
