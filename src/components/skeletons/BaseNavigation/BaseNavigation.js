@@ -4,7 +4,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { MdArrowForward } from "react-icons/md"
 
-import { LinkButton } from "../../core/LinkButton"
+import { LinkButton } from "../../LinkButton"
 import { visuallyHidden } from "../../../utils/helpers"
 import useOnClickOutside from "../../../utils/hooks/useOnClickOutside"
 

@@ -1,4 +1,3 @@
-export { colors, palette } from "./colors"
 export { fontFamilies, fontSizes } from "./typography"
 export { spaces } from "./spaces"
 export { breakpoints } from "./breakpoints"

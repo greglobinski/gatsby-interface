@@ -3,14 +3,9 @@ import React from "react"
 import Alert from "@reach/alert"
 import { keyframes, css, jsx } from "@emotion/core"
 import { MdDone, MdClose, MdWarning } from "react-icons/md"
-import {
-  fontSizes,
-  dimensions,
-  palette,
-  radius,
-  spaces,
-} from "../../utils/presets"
+import { fontSizes, dimensions, radius, spaces } from "../../utils/presets"
 import { ToastTone } from "./types"
+import colors from "../../theme/colors"
 
 const toastEntryAnimation = keyframes`
   100% {
@@ -21,10 +16,10 @@ const toastEntryAnimation = keyframes`
 const toastCss = css`
   align-items: center;
   animation: ${toastEntryAnimation} 0.5s 0.25s ease forwards;
-  background: ${palette.grey[900]};
-  border-left: 8px solid ${palette.green[500]};
+  background: ${colors.grey[90]};
+  border-left: 8px solid ${colors.green[50]};
   border-radius: ${radius.default} ${radius.default} 0 0;
-  color: ${palette.green[50]};
+  color: ${colors.green[5]};
   display: flex;
   font-size: ${fontSizes.xs};
   min-height: ${dimensions.toast.minHeight};
@@ -51,7 +46,7 @@ const messageCss = css`
 
 const statusCss = css`
   align-items: center;
-  color: ${palette.green[500]};
+  color: ${colors.green[50]};
   display: flex;
 `
 
@@ -59,7 +54,7 @@ const closeButtonCss = css`
   align-items: center;
   background: none;
   border: none;
-  color: ${palette.grey[400]};
+  color: ${colors.grey[40]};
   cursor: pointer;
   display: flex;
   height: ${dimensions.toast.minHeight};
@@ -68,8 +63,8 @@ const closeButtonCss = css`
 `
 
 const toastColorByTone = {
-  SUCCESS: palette.green[500],
-  DANGER: palette.red[600],
+  SUCCESS: colors.green[50],
+  DANGER: colors.red[60],
 }
 
 const ToastIconByTone = {
@@ -78,10 +73,10 @@ const ToastIconByTone = {
 }
 
 export interface ToastProps {
-  message: React.ReactNode;
-  onClose: () => void;
-  closeButtonLabel: string;
-  tone: ToastTone;
+  message: React.ReactNode
+  onClose: () => void
+  closeButtonLabel: string
+  tone: ToastTone
 }
 
 export const Toast: React.FC<ToastProps> = ({

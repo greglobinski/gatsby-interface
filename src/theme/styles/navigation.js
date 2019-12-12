@@ -37,8 +37,10 @@ styles.HamburgerIcon = {
 
 styles.Nav = {
   default: {
-    margin: `0 0 0 auto`,
+    display: `flex`,
+    justifyContent: `space-between`,
     padding: `0 ${spaces.m}`,
+    width: "100%",
   },
   mobile: isMobileNavOpen => {
     return {
@@ -61,7 +63,10 @@ styles.Nav = {
 
 styles.List = {
   default: {
+    display: `flex`,
     listStyle: `none`,
+    width: `100%`,
+    alignItems: "center",
   },
   mobile: {
     listStyle: `none`,
@@ -79,18 +84,16 @@ styles.List = {
 const DropdownOpenStyles = {
   fontSize: fontSizes[1],
   fontFamily: fonts.system.join(`,`),
-  left: `auto`,
   right: 0,
   boxShadow: `0px 4px 16px rgba(46, 41, 51, 0.08), 0px 8px 24px rgba(71, 63, 79, 0.16)`,
   background: colors.white,
-  width: 260,
+  width: 450,
   borderRadius: 2,
-  // color: colors.grey[50],
+
   ":after": {
     position: `absolute`,
     top: -6,
-    right: 16,
-    margin: `0 0 0 -6px`,
+    left: 30,
     width: 12,
     height: 12,
     content: `" "`,
@@ -118,6 +121,7 @@ const DropdownMobileStyles = {
 
 styles.Item = {
   default: {
+    marginBottom: 0,
     padding: `0 ${spaces.s}`,
     "&:hover > ul": {
       ...DropdownOpenStyles,
