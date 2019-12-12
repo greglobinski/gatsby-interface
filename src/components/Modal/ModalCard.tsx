@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
-import { palette, radius, spaces, breakpoints } from "../../utils/presets"
+import { radius, spaces, breakpoints } from "../../utils/presets"
+import colors from "../../theme/colors"
 
 const cardIncoming = keyframes`
   100% {
@@ -9,7 +10,7 @@ const cardIncoming = keyframes`
 `
 
 export const ModalCard = styled.div`
-  background: ${palette.white};
+  background: ${colors.white};
   border-radius: ${radius.large};
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
   max-width: calc(100% - (${spaces.m} * 2));
