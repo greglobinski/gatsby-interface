@@ -104,6 +104,7 @@ storiesOf(`Navigation`, module)
   .add(`with item links as props and button as child`, () => (
     <div css={{ padding: `2rem` }}>
       <Navigation items={items}>
+        <Navigation.Spacer />
         <Navigation.Button linkTo="/get-started">
           Get started for free
         </Navigation.Button>

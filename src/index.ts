@@ -75,6 +75,7 @@ export { Breadcrumb } from "./components/Breadcrumb"
 export { Switch } from "./components/Switch"
 
 export { Navigation } from "./components/Navigation"
+export { BaseNavigation } from "./components/skeletons/BaseNavigation"
 
 export * from "./components/CopyButton"
 

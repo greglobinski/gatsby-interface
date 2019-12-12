@@ -24,7 +24,6 @@ const BaseNavigationDropdownOpenStyles = {
   display: `inline-block`,
   position: `absolute`,
   top: `95%`,
-  right: 0,
   left: 0,
   margin: 0,
   padding: `0.75rem 0`,
