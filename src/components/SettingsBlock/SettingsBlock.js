@@ -99,11 +99,11 @@ SettingsBlock.Description = ({ children, ...rest }) => (
       margin: 0,
 
       "&:first-of-type": {
-        marginTop: spaces.s,
+        marginTop: space[4],
       },
 
       "&:not(:last-child)": {
-        marginBottom: spaces.xs,
+        marginBottom: space[3],
       },
 
       [`@media(min-width: ${breakpoints.desktop}px)`]: {

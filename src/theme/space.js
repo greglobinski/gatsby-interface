@@ -1,7 +1,5 @@
 import { space as baseSpace } from "gatsby-design-tokens"
 
-console.log({ baseSpace })
-
 /* 
   Our previous 'spaces' tokens
 

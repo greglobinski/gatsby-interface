@@ -4,7 +4,7 @@ import fontSizes from "../fontSizes"
 import fonts from "../fonts"
 
 import { radius,  } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 
 const VARIANTS = [`PILL`, `STATUS`]
 const TONES = [`BRAND`, `SUCCESS`, `DANGER`, `NEUTRAL`]
@@ -34,7 +34,7 @@ const variantStyles = {
     color: colors.green[50],
     display: `inline-flex`,
     fontSize: fontSizes[2],
-    padding: `${spaces.xs} ${spaces.s}`,
+    padding: `${space[3]} ${space[4]}`,
 
     [`svg:last-child`]: {
       marginLeft: space[2],

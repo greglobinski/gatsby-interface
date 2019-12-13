@@ -9,7 +9,7 @@ const input = {
   color: colors.grey[90],
   fontSize: fontSizes.s,
   height: `2.25rem`,
-  padding: `0 ${spaces.s}`,
+  padding: `0 ${space[4]}`,
   width: `100%`,
 
   ":focus": {

@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import colors from "../../theme/colors"
 
 import {  fontSizes } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 
 const InputError = ({ children }) => (
   <p
@@ -14,7 +14,7 @@ const InputError = ({ children }) => (
       fontSize: fontSizes.xs,
       lineHeight: `1`,
       padding: `0`,
-      margin: `${spaces.xs} ${space[2]} 0`,
+      margin: `${space[3]} ${space[2]} 0`,
       svg: {
         color: `current-color`,
         marginRight: space[2],

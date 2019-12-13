@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
 import { radius,  breakpoints } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 import colors from "../../theme/colors"
 
 const cardIncoming = keyframes`
@@ -14,16 +14,16 @@ export const ModalCard = styled.div`
   background: ${colors.white};
   border-radius: ${radius.large};
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
-  max-width: calc(100% - (${spaces.m} * 2));
+  max-width: calc(100% - (${space[5]} * 2));
   outline: none;
   animation: ${cardIncoming} 0.5s 0.25s ease forwards;
   transform: translate(0, 90vh) scale(0.9) perspective(1000px) rotateX(-90deg);
   transform-origin: top center;
   margin: 0 auto;
-  padding: ${spaces.m};
+  padding: ${space[5]};
 
   @media (min-width: ${breakpoints.mobile}px) {
-    max-width: calc(100% - (${spaces.l} * 2));
+    max-width: calc(100% - (${space[7]} * 2));
   }
 
   @media (min-width: ${breakpoints.phablet}px) {

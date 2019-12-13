@@ -30,7 +30,7 @@ function SettingsCard({ children, mode = `PRESENTER`, ...rest }) {
         ...cardStyles.frame,
         ...cardStyles.space.L,
         display: `grid`,
-        gridGap: spaces.m,
+        gridGap: space[5],
         gridTemplateColumns: `1fr auto`,
         gridTemplateRows: `auto auto`,
       }}
@@ -77,7 +77,7 @@ SettingsCard.Description = ({ children, ...rest }) => (
       margin: 0,
 
       "&:not(:last-child)": {
-        marginBottom: spaces.m,
+        marginBottom: space[5],
       },
     }}
     {...rest}
@@ -110,7 +110,7 @@ SettingsCard.Actions = ({ children }) => (
     css={{
       display: `flex`,
       justifyContent: `space-between`,
-      marginTop: spaces.m,
+      marginTop: space[5],
     }}
   >
     {children}

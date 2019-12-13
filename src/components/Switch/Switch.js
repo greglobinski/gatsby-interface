@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 import fonts from "../../theme/fonts"
 import hiddenStyles from "../../theme/styles/hidden"
 import {  } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 import { Toggle } from "../Toggle"
 
 function Switch({ fieldName, fieldValue, options = {}, onChange }) {
@@ -32,7 +32,7 @@ function Switch({ fieldName, fieldValue, options = {}, onChange }) {
           letterSpacing: `0.03em`,
         }}
       >
-        <span aria-hidden css={{ marginRight: spaces.xs }}>
+        <span aria-hidden css={{ marginRight: space[3] }}>
           {options.secondary.label}
         </span>
         <Toggle.Input />

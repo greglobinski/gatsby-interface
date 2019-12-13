@@ -4,7 +4,7 @@ import fonts from "../fonts"
 import { hexToRGBA } from "../../utils/helpers/hexToRgb"
 
 import {  transition } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 
 const styles = {}
 
@@ -40,7 +40,7 @@ styles.Nav = {
   default: {
     display: `flex`,
     justifyContent: `space-between`,
-    padding: `0 ${spaces.m}`,
+    padding: `0 ${space[5]}`,
     width: "100%",
   },
   mobile: isMobileNavOpen => {
@@ -123,7 +123,7 @@ const DropdownMobileStyles = {
 styles.Item = {
   default: {
     marginBottom: 0,
-    padding: `0 ${spaces.s}`,
+    padding: `0 ${space[4]}`,
     "&:hover > ul": {
       ...DropdownOpenStyles,
     },
@@ -218,7 +218,7 @@ styles.DropdownItem = {
     a: {
       color: colors.grey[50],
       textDecoration: `none`,
-      padding: `${spaces.s} ${spaces.l}`,
+      padding: `${space[4]} ${space[7]}`,
       display: `block`,
       transition: `all ${transition.speed.default}`,
       "&:hover": {

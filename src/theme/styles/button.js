@@ -5,7 +5,7 @@ import fonts from "../fonts"
 import tones from "../tones"
 
 import { radius,  } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 
 const base = props => {
   const { loading = false, leftIcon, rightIcon } = props || {}

@@ -16,7 +16,7 @@ import fonts from "../../theme/fonts"
 import fontSizes from "../../theme/fontSizes"
 import fontWeights from "../../theme/fontWeights"
 import {  breakpoints, radius } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 import { Heading } from "../Heading"
 
 import { capitalizeString } from "../../utils/helpers/"
@@ -160,7 +160,7 @@ PricingCard.Nav = () => {
             cursor: `pointer`,
             fontFamily: fonts.header.join(`,`),
             fontSize: fontSizes[2],
-            padding: `${spaces.m} ${spaces.s} ${spaces.s}`,
+            padding: `${space[5]} ${space[4]} ${space[4]}`,
             position: `relative`,
 
             ":after": {
@@ -216,7 +216,7 @@ PricingCard.Plan = ({ children, plan, idx, ...rest }) => {
               variant === `SECONDARY` ? colors.purple[90] : colors.white
             }`,
         borderRadius: radius.large,
-        padding: `${spaces.l} ${spaces.l} 0 `,
+        padding: `${space[7]} ${space[7]} 0 `,
         display: visibleOnMobile === idx ? `flex` : `none`,
         position: `relative`,
         flexDirection: `column`,
@@ -282,7 +282,7 @@ PricingCard.Icon = ({ plan, ...rest }) => {
         display: `flex`,
         height: `50px`,
         justifyContent: `center`,
-        marginBottom: spaces.xs,
+        marginBottom: space[3],
         width: `50px`,
       }}
       {...rest}
@@ -306,7 +306,7 @@ PricingCard.Intro = ({ plan }) => {
       css={{
         textAlign: `center`,
         fontFamily: fonts.system.join(`,`),
-        marginTop: spaces.m,
+        marginTop: space[5],
         fontSize: fontSizes[1],
         color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[60],
         lineHeight: 1.4,
@@ -331,7 +331,7 @@ PricingCard.PriceTag = ({ plan }) => {
     <div
       css={{
         fontFamily: fonts.header.join(`,`),
-        marginTop: spaces.l,
+        marginTop: space[7],
         lineHeight: 1,
       }}
     >
@@ -383,7 +383,7 @@ PricingCard.Details = ({ plan }) => {
           fontSize: fontSizes[1],
           color: variant === `SECONDARY` ? colors.purple[30] : colors.grey[50],
           width: `100%`,
-          marginTop: spaces.l,
+          marginTop: space[7],
           display: `flex`,
           flexDirection: `column`,
           alignItems: `center`,
@@ -402,7 +402,7 @@ PricingCard.Details = ({ plan }) => {
               key={`detail${idx}`}
               css={{
                 display: `flex`,
-                margin: `${spaces.xs} 0`,
+                margin: `${space[3]} 0`,
                 position: `relative`,
                 lineHeight: 1.3,
               }}
@@ -415,7 +415,7 @@ PricingCard.Details = ({ plan }) => {
                     variant === `SECONDARY`
                       ? colors.purple[50]
                       : colors.grey[30],
-                  marginRight: spaces.xs,
+                  marginRight: space[3],
                   flexShrink: 0,
                   flexGrow: 0,
                   transform: `translateY(-.2em)`,
@@ -432,7 +432,7 @@ PricingCard.Details = ({ plan }) => {
                 }}
               />
               {item.tip && (
-                <ToggleTip tip={item.tip} css={{ marginLeft: spaces.xs }} />
+                <ToggleTip tip={item.tip} css={{ marginLeft: space[3] }} />
               )}
             </li>
           ))}
@@ -513,7 +513,7 @@ PricingCard.UnifiedCta = ({ children, ...rest }) => {
         display: `flex`,
         alignItems: `center`,
         justifyContent: `center`,
-        padding: `${spaces.xl} ${spaces.l} ${spaces.l}`,
+        padding: `${space[8]} ${space[7]} ${space[7]}`,
       }}
       {...rest}
     >
@@ -530,7 +530,7 @@ PricingCard.UnifiedCta = ({ children, ...rest }) => {
             color: colors.grey[50],
             fontSize: fontSizes[2],
             margin: 0,
-            marginTop: spaces.xs,
+            marginTop: space[3],
             textAlign: `center`,
           }}
         />

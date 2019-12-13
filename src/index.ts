@@ -80,9 +80,10 @@ export { BaseNavigation } from "./components/skeletons/BaseNavigation"
 export * from "./components/CopyButton"
 
 export { default as colors } from "./theme/colors"
+export { default as space } from "./theme/space"
 
 export { fontFamilies, fontSizes } from "./utils/presets/typography"
-export { spaces } from "./utils/presets/spaces"
+
 export { breakpoints } from "./utils/presets/breakpoints"
 export { dimensions, radius } from "./utils/presets/sizes"
 export { zIndices } from "./utils/presets/zIndices"

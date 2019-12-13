@@ -4,10 +4,10 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import colors from "../../theme/colors"
+import space from "../../theme/space"
 
 import {
   radius,
-  spaces,
   breakpoints,
   fontFamilies,
   fontSizes,
@@ -23,7 +23,7 @@ export const baseStyles = {
   fontWeight: `bold`,
   height: `3.5rem`,
   margin: `0 ${space[2]}`,
-  padding: `${space[1]} ${spaces.m} 0`,
+  padding: `${space[1]} ${space[5]} 0`,
   position: `relative`,
   zIndex: `0`,
   a: {
@@ -58,7 +58,7 @@ export const baseStyles = {
     },
   },
   [`@media (min-width: ${breakpoints.phablet}px)`]: {
-    padding: `${space[1]} ${spaces.l} 0`,
+    padding: `${space[1]} ${space[7]} 0`,
   },
 }
 

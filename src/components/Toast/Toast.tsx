@@ -24,8 +24,8 @@ const toastCss = css`
   display: flex;
   font-size: ${fontSizes.xs};
   min-height: ${dimensions.toast.minHeight};
-  max-width: calc(100% - (${spaces.l} * 2));
-  padding-left: ${spaces.s};
+  max-width: calc(100% - (${space[7]} * 2));
+  padding-left: ${space[4]};
   transform: perspective(1000px) rotateX(90deg);
   transform-origin: bottom center;
 
@@ -42,7 +42,7 @@ const toastCss = css`
 
 const messageCss = css`
   line-height: 1;
-  margin: 0 ${space[2]} 0 ${spaces.xs};
+  margin: 0 ${space[2]} 0 ${space[3]};
 `
 
 const statusCss = css`

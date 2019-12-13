@@ -1,6 +1,6 @@
 import colors from "../colors"
 
-import space  "../../theme/space"
+import space from  "../../theme/space"
 
 const card = {
   frame: {
@@ -10,22 +10,22 @@ const card = {
   },
   space: {
     header: {
-      padding: `${spaces.l} ${space[9]} ${spaces.xl}`,
+      padding: `${space[7]} ${space[9]} ${space[8]}`,
     },
     row: {
-      padding: `${spaces.m} ${space[9]}`,
+      padding: `${space[5]} ${space[9]}`,
     },
     activeRow: {
-      padding: `${spaces.xl} ${space[9]} ${space[9]}`,
+      padding: `${space[8]} ${space[9]} ${space[9]}`,
     },
     M: {
-      padding: `${spaces.m} ${space[9]}`,
+      padding: `${space[5]} ${space[9]}`,
     },
     L: {
-      padding: `${spaces.l} ${space[9]} ${spaces.xl}`,
+      padding: `${space[7]} ${space[9]} ${space[8]}`,
     },
     XL: {
-      padding: `${spaces.xl} ${space[9]} ${space[9]}`,
+      padding: `${space[8]} ${space[9]} ${space[9]}`,
     },
   },
 }

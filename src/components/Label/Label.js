@@ -5,13 +5,13 @@ import PropTypes from "prop-types"
 import colors from "../../theme/colors"
 
 import {  fontSizes } from "../../utils/presets"
-import space  "../../theme/space"
+import space from  "../../theme/space"
 
 const baseStyles = {
   color: colors.grey[70],
   display: `block`,
   fontSize: fontSizes[`2xs`],
-  margin: `0 0 ${spaces.xs} ${space[2]}`,
+  margin: `0 0 ${space[3]} ${space[2]}`,
 }
 
 const Label = ({ children, id, variant = `DEFAULT` }) => {
