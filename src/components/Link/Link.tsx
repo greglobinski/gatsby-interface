@@ -2,37 +2,28 @@
 import { jsx } from "@emotion/core"
 import { Link as GatsbyLink, GatsbyLinkProps } from "gatsby"
 import { getLinkStyles, LinkVariant } from "../../theme/styles/link"
-import { BaseAnchorProps } from "../BaseAnchor"
+import { BaseAnchorProps, BaseAnchor } from "../BaseAnchor"
 
-export type LinkProps = (GatsbyLinkProps<any> | BaseAnchorProps) & {
+type GatsbyLinkNoRefProps = Omit<GatsbyLinkProps<any>, "ref">
+
+export type LinkProps = (
+  | GatsbyLinkNoRefProps
+  | Omit<BaseAnchorProps, "ref">) & {
   variant?: LinkVariant;
 }
 
 function Link(props: GatsbyLinkProps<any>): JSX.Element
 function Link(props: BaseAnchorProps): JSX.Element
-function Link({ children, target, variant, ...rest }: LinkProps) {
+function Link({ variant, ...rest }: LinkProps) {
   const commonProps = {
     css: getLinkStyles(variant),
   }
 
   if (isGatsbyLink(rest)) {
-    return (
-      <GatsbyLink {...rest} ref={undefined}>
-        {children}
-      </GatsbyLink>
-    )
+    return <GatsbyLink {...rest} />
   }
 
-  return (
-    <a
-      target={target}
-      rel={target === `_blank` ? `noopener noreferrer` : ``}
-      {...commonProps}
-      {...rest}
-    >
-      {children}
-    </a>
-  )
+  return <BaseAnchor {...commonProps} {...rest} />
 }
 
 export default Link
@@ -41,6 +32,6 @@ export default Link
  * An awesome tidbit from React TypeScript Cheatsheet
  * https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/blob/master/ADVANCED.md#typing-a-component-that-accepts-different-props
  */
-function isGatsbyLink(props: LinkProps): props is GatsbyLinkProps<any> {
+function isGatsbyLink(props: LinkProps): props is GatsbyLinkNoRefProps {
   return "to" in props
 }
