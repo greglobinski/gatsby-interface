@@ -11,7 +11,7 @@ const baseStyles = {
   color: colors.grey[70],
   display: `block`,
   fontSize: fontSizes[`2xs`],
-  margin: `0 0 ${spaces.xs} ${spaces[`2xs`]}`,
+  margin: `0 0 ${spaces.xs} ${space[2]}`,
 }
 
 const Label = ({ children, id, variant = `DEFAULT` }) => {
@@ -25,7 +25,7 @@ const Label = ({ children, id, variant = `DEFAULT` }) => {
       fontSize: fontSizes.xs,
       svg: {
         color: colors.grey[40],
-        marginRight: spaces[`2xs`],
+        marginRight: space[2],
         verticalAlign: `text-top`,
       },
     },

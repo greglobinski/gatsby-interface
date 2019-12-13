@@ -8,7 +8,7 @@ import space  "../../theme/space"
 export const StyledBaseCard = styled(SkeletonStyledComponent)`
   box-shadow: 0px 1px 2px rgba(46, 41, 51, 0.08),
     0px 2px 4px rgba(71, 63, 79, 0.08);
-  border-radius: ${spaces[`2xs`]};
+  border-radius: ${space[2]};
   margin-bottom: ${spaces.m};
   padding: ${spaces.m} ${spaces.l};
 
@@ -18,7 +18,7 @@ export const StyledBaseCard = styled(SkeletonStyledComponent)`
 
   @media (min-width: ${breakpoints.desktop}px) {
     margin-bottom: ${spaces.l};
-    padding: ${spaces.l} ${spaces[`2xl`]} ${spaces.xl};
+    padding: ${spaces.l} ${space[9]} ${spaces.xl};
   }
 `
 

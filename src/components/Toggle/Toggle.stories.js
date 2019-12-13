@@ -142,7 +142,7 @@ storiesOf(`Toggle`, module)
                 </strong>
                 <p
                   css={{
-                    margin: `${spaces[`2xs`]} 0 0 0`,
+                    margin: `${space[2]} 0 0 0`,
                     fontSize: fontSizes[1],
                     color: colors.grey[50],
                   }}

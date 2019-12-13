@@ -14,10 +14,10 @@ const InputError = ({ children }) => (
       fontSize: fontSizes.xs,
       lineHeight: `1`,
       padding: `0`,
-      margin: `${spaces.xs} ${spaces[`2xs`]} 0`,
+      margin: `${spaces.xs} ${space[2]} 0`,
       svg: {
         color: `current-color`,
-        marginRight: spaces[`2xs`],
+        marginRight: space[2],
         verticalAlign: `text-top`,
       },
     }}

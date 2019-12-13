@@ -205,7 +205,7 @@ styles.Dropdown = {
 
 styles.DropdownToggle = {
   default: {
-    marginLeft: spaces[`3xs`],
+    marginLeft: space[1],
     border: `none`,
   },
   mobile: {
@@ -236,7 +236,7 @@ styles.DropdownItem = {
       color: colors.white,
       textDecoration: `none`,
       padding: 0,
-      margin: `${spaces[`xs`]} 0 0 0`,
+      margin: `${space[3]} 0 0 0`,
       fontSize: fontSizes[1],
       "&:hover, &:focus-within": {
         opacity: 1,

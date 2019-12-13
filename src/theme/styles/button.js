@@ -32,7 +32,7 @@ const base = props => {
         ? `${animations.iconLoadingAnim} 1s linear infinite`
         : ``,
       flexShrink: `0`,
-      margin: `0 ${spaces[`2xs`]}`,
+      margin: `0 ${space[2]}`,
       transform: `scale(1)`,
       marginRight: rightIcon || loading ? `-0.25em` : undefined,
       marginLeft: leftIcon ? `-0.30em` : undefined,

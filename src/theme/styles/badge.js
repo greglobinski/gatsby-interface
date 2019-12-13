@@ -37,7 +37,7 @@ const variantStyles = {
     padding: `${spaces.xs} ${spaces.s}`,
 
     [`svg:last-child`]: {
-      marginLeft: spaces[`2xs`],
+      marginLeft: space[2],
     },
   },
 }

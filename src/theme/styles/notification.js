@@ -29,7 +29,7 @@ const variants = {
       background: toneColors.superLight,
       padding: `${spaces.m} ${spaces.l}`,
       [`@media (min-width: ${breakpoints.desktop}px)`]: {
-        padding: `${spaces.l} ${spaces[`2xl`]}`,
+        padding: `${spaces.l} ${space[9]}`,
       },
     }
   },

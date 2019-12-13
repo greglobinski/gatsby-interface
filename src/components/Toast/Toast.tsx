@@ -36,13 +36,13 @@ const toastCss = css`
 
   &:not(:first-of-type) {
     border-radius: ${radius.default};
-    margin-bottom: ${spaces[`3xs`]};
+    margin-bottom: ${space[1]};
   }
 `
 
 const messageCss = css`
   line-height: 1;
-  margin: 0 ${spaces[`2xs`]} 0 ${spaces.xs};
+  margin: 0 ${space[2]} 0 ${spaces.xs};
 `
 
 const statusCss = css`

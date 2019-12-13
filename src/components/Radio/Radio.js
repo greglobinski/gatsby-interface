@@ -109,7 +109,7 @@ const StandardContainer = styled(`div`)`
 `
 
 const ColourfulContainer = styled(StandardContainer)`
-  margin: ${spaces[`2xs`]} 0;
+  margin: ${space[2]} 0;
   position: relative;
 
   :before,

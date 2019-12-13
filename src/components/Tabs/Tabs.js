@@ -20,7 +20,7 @@ const Tabs = ({ children, variant = `DEFAULT` }) => {
     DEFAULT: {},
     NUMBERED: {
       textAlign: `center`,
-      paddingTop: spaces[`2xl`],
+      paddingTop: space[9],
       ":after": {
         borderBottom: `1px solid ${colors.standardLine}`,
         bottom: `0`,

@@ -81,7 +81,7 @@ SettingsBlock.Doclink = ({ ...rest }) => (
     variant={`GHOST`}
     tone={`NEUTRAL`}
     css={{
-      marginLeft: spaces[`2xs`],
+      marginLeft: space[2],
     }}
     {...rest}
   >

@@ -186,7 +186,7 @@ function renderData(data = [], primaryStyling) {
         </Heading>
         <span
           css={{
-            marginTop: primaryStyling ? spaces[`2xs`] : `0`,
+            marginTop: primaryStyling ? space[2] : `0`,
             color: colors.grey[90],
           }}
         >

@@ -461,9 +461,9 @@ PricingCard.Cta = ({ children, plan }) => {
         display: `flex`,
         flexDirection: `column`,
         justifyContent: `flex-end`,
-        marginTop: spaces[`2xl`],
+        marginTop: space[9],
         flexGrow: 1,
-        paddingBottom: spaces[`4xl`],
+        paddingBottom: space[12],
       }}
     >
       {label && (to || onClick) && (
