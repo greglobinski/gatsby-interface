@@ -1,7 +1,6 @@
 import { Interpolation } from "@emotion/core"
 import styled from "@emotion/styled"
-import Success from "../../assets/status/Success"
-import Danger from "../../assets/status/Danger"
+import { Success, Danger } from "../../assets"
 import { MdWarning } from "react-icons/md"
 
 import colors from "../../theme/colors"
