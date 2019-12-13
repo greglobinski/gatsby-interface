@@ -58,8 +58,6 @@ export { InputError } from "./components/InputError"
 
 export { FileUpload } from "./components/FileUpload"
 
-export { Notification } from "./components/Notification"
-
 export { SidebarNav } from "./components/SidebarNav"
 
 export { PricingCard } from "./components/PricingCard"
@@ -97,3 +95,4 @@ export * from "./components/form-skeletons"
 export * from "./components/DecorativeDots"
 export * from "./components/Modal"
 export * from "./components/Toast"
+export * from "./components/Notification"

@@ -4,9 +4,11 @@
  */
 export * from "./components/AnchorButton"
 export * from "./components/Button"
+export * from "./components/Link"
 export * from "./components/LinkButton"
 export * from "./components/Avatar"
 export * from "./components/CopyButton"
 export * from "./components/form-skeletons"
 export * from "./components/DecorativeDots"
+export * from "./components/Notification"
 export * from "./components/Modal"

@@ -1,6 +1,16 @@
 import colors from "./colors"
+import { AtomTone } from "./types"
 
-const tones = {
+export type ToneColors = {
+  superLight: string;
+  light: string;
+  medium: string;
+  dark: string;
+  darker: string;
+  superDark: string;
+}
+
+const tones: Record<AtomTone, ToneColors> = {
   BRAND: {
     superLight: colors.purple[5],
     light: colors.purple[20],
@@ -39,6 +49,7 @@ const tones = {
     medium: colors.yellow[40],
     dark: colors.yellow[50],
     darker: colors.yellow[60],
+    superDark: colors.yellow[90],
   },
 }
 
