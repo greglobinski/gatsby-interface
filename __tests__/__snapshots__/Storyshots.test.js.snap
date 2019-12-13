@@ -244,7 +244,7 @@ exports[`Storyshots AnchorButton override/extend styles 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Button with custom style
@@ -612,7 +612,7 @@ exports[`Storyshots AnchorButton sizes 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -622,7 +622,7 @@ exports[`Storyshots AnchorButton sizes 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -632,7 +632,7 @@ exports[`Storyshots AnchorButton sizes 1`] = `
             </a>
             <a
               class="emotion-2"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -642,7 +642,7 @@ exports[`Storyshots AnchorButton sizes 1`] = `
             </a>
             <a
               class="emotion-3"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1055,7 +1055,7 @@ exports[`Storyshots AnchorButton tones 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1065,7 +1065,7 @@ exports[`Storyshots AnchorButton tones 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1075,7 +1075,7 @@ exports[`Storyshots AnchorButton tones 1`] = `
             </a>
             <a
               class="emotion-2"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1085,7 +1085,7 @@ exports[`Storyshots AnchorButton tones 1`] = `
             </a>
             <a
               class="emotion-3"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1354,7 +1354,7 @@ exports[`Storyshots AnchorButton variants 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1364,7 +1364,7 @@ exports[`Storyshots AnchorButton variants 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1374,7 +1374,7 @@ exports[`Storyshots AnchorButton variants 1`] = `
             </a>
             <a
               class="emotion-2"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -1715,7 +1715,7 @@ exports[`Storyshots AnchorButton with icons 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               On the right
@@ -1735,7 +1735,7 @@ exports[`Storyshots AnchorButton with icons 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <svg
@@ -2364,7 +2364,7 @@ exports[`Storyshots BaseAnchor default 1`] = `
           >
             <a
               href="https://gatsbyjs.com"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Anchor
@@ -8455,7 +8455,7 @@ exports[`Storyshots IntegrationRow shortcut usage 1`] = `
               <a
                 class="emotion-1"
                 href="/"
-                rel=" noopener noreferrer"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 Setup instructions
@@ -15631,7 +15631,7 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
 `;
 
 exports[`Storyshots Notification default 1`] = `
-.emotion-5 {
+.emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -15649,7 +15649,28 @@ exports[`Storyshots Notification default 1`] = `
   padding: 20px;
 }
 
-.emotion-4 {
+.emotion-1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #663399;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-1:focus,
+.emotion-1:hover {
+  color: #663399;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15664,11 +15685,11 @@ exports[`Storyshots Notification default 1`] = `
   width: 500px;
 }
 
-.emotion-4 > button {
+.emotion-5 > button {
   margin: 20px;
 }
 
-.emotion-1 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15693,7 +15714,7 @@ exports[`Storyshots Notification default 1`] = `
 }
 
 @media (min-width:1000px) {
-  .emotion-1 {
+  .emotion-2 {
     padding: 1rem 1.5rem 1rem 1rem;
   }
 }
@@ -15710,7 +15731,7 @@ exports[`Storyshots Notification default 1`] = `
   color: #663399;
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15729,7 +15750,7 @@ exports[`Storyshots Notification default 1`] = `
 }
 
 @media (min-width:1000px) {
-  .emotion-3 {
+  .emotion-4 {
     padding: 1.5rem 2.5rem;
   }
 }
@@ -15741,13 +15762,13 @@ exports[`Storyshots Notification default 1`] = `
     <div>
       <div>
         <div
-          class="emotion-5"
+          class="emotion-6"
         >
           <div
-            class="emotion-4"
+            class="emotion-5"
           >
             <div
-              class="emotion-1"
+              class="emotion-2"
             >
               <span
                 class="emotion-0"
@@ -15756,7 +15777,7 @@ exports[`Storyshots Notification default 1`] = `
               </span>
               <a
                 aria-current="page"
-                class=""
+                class="emotion-1"
                 href="/"
               >
                 Link
@@ -15777,7 +15798,7 @@ exports[`Storyshots Notification default 1`] = `
               </a>
             </div>
             <section
-              class="emotion-3"
+              class="emotion-4"
             >
               <span
                 class="emotion-0"

@@ -20,7 +20,8 @@ function Link({ variant, ...rest }: LinkProps) {
   }
 
   if (isGatsbyLink(rest)) {
-    return <GatsbyLink {...rest} />
+    // GatsbyLink does not support target attribute
+    return <GatsbyLink {...commonProps} {...rest} target={undefined} />
   }
 
   return <BaseAnchor {...commonProps} {...rest} />
