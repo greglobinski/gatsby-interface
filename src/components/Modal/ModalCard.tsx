@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
-import { radius, spaces, breakpoints } from "../../utils/presets"
+import { radius,  breakpoints } from "../../utils/presets"
+import space  "../../theme/space"
 import colors from "../../theme/colors"
 
 const cardIncoming = keyframes`

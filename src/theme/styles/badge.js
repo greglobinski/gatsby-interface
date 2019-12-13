@@ -3,7 +3,8 @@ import colors from "../colors"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
 
-import { radius, spaces } from "../../utils/presets"
+import { radius,  } from "../../utils/presets"
+import space  "../../theme/space"
 
 const VARIANTS = [`PILL`, `STATUS`]
 const TONES = [`BRAND`, `SUCCESS`, `DANGER`, `NEUTRAL`]

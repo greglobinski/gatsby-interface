@@ -7,7 +7,7 @@ import fonts from "../../theme/fonts"
 import colors from "../../theme/colors"
 import tones from "../../theme/tones"
 import hiddenStyles from "../../theme/styles/hidden"
-import { spaces } from "../../utils/presets"
+import space  "../../theme/space"
 import { showCustomCssDeprecationMessage } from "../../utils/maintenance/deprecationMessages"
 
 const IN_ON_POSITIONS = [`LEFT`, `RIGHT`]

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
-import { spaces } from "../../utils/presets"
+import {  } from "../../utils/presets"
+import space  "../../theme/space"
 import colors from "../../theme/colors"
 
 const buildTranslation = (position: PanelPosition) => keyframes`

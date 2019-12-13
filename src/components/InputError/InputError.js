@@ -4,7 +4,8 @@ import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
 
-import { spaces, fontSizes } from "../../utils/presets"
+import {  fontSizes } from "../../utils/presets"
+import space  "../../theme/space"
 
 const InputError = ({ children }) => (
   <p

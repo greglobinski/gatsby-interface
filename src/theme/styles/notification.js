@@ -1,7 +1,8 @@
 import colors from "../colors"
 import card from "./card"
 
-import { breakpoints, spaces } from "../../utils/presets"
+import { breakpoints } from "../../utils/presets"
+import space from "../../theme/space"
 
 const base = {
   display: `flex`,

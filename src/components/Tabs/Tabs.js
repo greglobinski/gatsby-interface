@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
 
-import { spaces } from "../../utils/presets"
+import space  "../../theme/space"
 
 const baseStyles = {
   listStyle: `none`,

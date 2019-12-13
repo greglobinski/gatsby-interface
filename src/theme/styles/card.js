@@ -1,6 +1,6 @@
 import colors from "../colors"
 
-import { spaces } from "../../utils/presets"
+import space  "../../theme/space"
 
 const card = {
   frame: {

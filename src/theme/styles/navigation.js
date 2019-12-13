@@ -3,7 +3,8 @@ import fontSizes from "../fontSizes"
 import fonts from "../fonts"
 import { hexToRGBA } from "../../utils/helpers/hexToRgb"
 
-import { spaces, transition } from "../../utils/presets"
+import {  transition } from "../../utils/presets"
+import space  "../../theme/space"
 
 const styles = {}
 
