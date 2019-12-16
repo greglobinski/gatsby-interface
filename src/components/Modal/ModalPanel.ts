@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
-import {  } from "../../utils/presets"
-import space from  "../../theme/space"
+import space from "../../theme/space"
 import colors from "../../theme/colors"
 
 const buildTranslation = (position: PanelPosition) => keyframes`
@@ -20,8 +19,8 @@ const translateRight = buildTranslation(`right`)
 export type PanelPosition = "left" | "right"
 
 export interface PanelProps {
-  position?: PanelPosition
-  maxWidth?: string
+  position?: PanelPosition;
+  maxWidth?: string;
 }
 
 export const ModalPanel = styled.div<PanelProps>`

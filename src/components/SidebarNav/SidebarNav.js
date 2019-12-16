@@ -6,8 +6,8 @@ import PropTypes from "prop-types"
 import { lineHeights } from "gatsby-design-tokens"
 
 import colors from "../../theme/colors"
-import {  fontFamilies, fontSizes } from "../../utils/presets"
-import space from  "../../theme/space"
+import { fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 
 const SidebarNav = ({ children, options, ...rest }) => (
   <nav

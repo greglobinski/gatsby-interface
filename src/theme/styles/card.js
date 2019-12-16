@@ -1,6 +1,6 @@
 import colors from "../colors"
 
-import space from  "../../theme/space"
+import space from "../../theme/space"
 
 const card = {
   frame: {

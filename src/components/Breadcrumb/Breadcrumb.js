@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
-import {  fontFamilies, fontSizes } from "../../utils/presets"
-import space from  "../../theme/space"
+import { fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 import ArrowRight from "../assets/ArrowRight"
 
 const Breadcrumb = ({ children, ...rest }) => (

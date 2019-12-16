@@ -4,8 +4,8 @@ import styled from "@emotion/styled"
 
 import colors from "../../theme/colors"
 
-import { radius,  fontFamilies, fontSizes } from "../../utils/presets"
-import space from  "../../theme/space"
+import { radius, fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 
 import RadioSkeleton, {
   radioPropTypes,
