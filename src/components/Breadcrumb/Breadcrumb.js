@@ -5,7 +5,8 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
-import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import { fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 import ArrowRight from "../assets/ArrowRight"
 
 const Breadcrumb = ({ children, ...rest }) => (
@@ -33,7 +34,7 @@ Breadcrumb.Item = ({ active, to, children, onClick, ...rest }) => (
       display: `flex`,
       fontFamily: fontFamilies.headerFontFamily,
       fontSize: fontSizes.m,
-      marginRight: spaces.s,
+      marginRight: space[4],
       "&:last-of-type": {
         marginRight: `0`,
         svg: {
@@ -42,7 +43,7 @@ Breadcrumb.Item = ({ active, to, children, onClick, ...rest }) => (
       },
       svg: {
         fill: active ? colors.grey[90] : colors.purple[50],
-        marginLeft: spaces.s,
+        marginLeft: space[4],
         verticalAlign: `middle`,
       },
     }}

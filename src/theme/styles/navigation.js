@@ -3,7 +3,8 @@ import fontSizes from "../fontSizes"
 import fonts from "../fonts"
 import { hexToRGBA } from "../../utils/helpers/hexToRgb"
 
-import { spaces, transition } from "../../utils/presets"
+import { transition } from "../../utils/presets"
+import space from "../../theme/space"
 
 const styles = {}
 
@@ -39,7 +40,7 @@ styles.Nav = {
   default: {
     display: `flex`,
     justifyContent: `space-between`,
-    padding: `0 ${spaces.m}`,
+    padding: `0 ${space[5]}`,
     width: "100%",
   },
   mobile: isMobileNavOpen => {
@@ -122,7 +123,7 @@ const DropdownMobileStyles = {
 styles.Item = {
   default: {
     marginBottom: 0,
-    padding: `0 ${spaces.s}`,
+    padding: `0 ${space[4]}`,
     "&:hover > ul": {
       ...DropdownOpenStyles,
     },
@@ -204,7 +205,7 @@ styles.Dropdown = {
 
 styles.DropdownToggle = {
   default: {
-    marginLeft: spaces[`3xs`],
+    marginLeft: space[1],
     border: `none`,
   },
   mobile: {
@@ -217,7 +218,7 @@ styles.DropdownItem = {
     a: {
       color: colors.grey[50],
       textDecoration: `none`,
-      padding: `${spaces.s} ${spaces.l}`,
+      padding: `${space[4]} ${space[7]}`,
       display: `block`,
       transition: `all ${transition.speed.default}`,
       "&:hover": {
@@ -235,7 +236,7 @@ styles.DropdownItem = {
       color: colors.white,
       textDecoration: `none`,
       padding: 0,
-      margin: `${spaces[`xs`]} 0 0 0`,
+      margin: `${space[3]} 0 0 0`,
       fontSize: fontSizes[1],
       "&:hover, &:focus-within": {
         opacity: 1,

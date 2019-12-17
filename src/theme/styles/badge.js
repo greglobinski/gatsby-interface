@@ -3,7 +3,8 @@ import colors from "../colors"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
 
-import { radius, spaces } from "../../utils/presets"
+import { radius } from "../../utils/presets"
+import space from "../../theme/space"
 
 const VARIANTS = [`PILL`, `STATUS`]
 const TONES = [`BRAND`, `SUCCESS`, `DANGER`, `NEUTRAL`]
@@ -33,10 +34,10 @@ const variantStyles = {
     color: colors.green[50],
     display: `inline-flex`,
     fontSize: fontSizes[2],
-    padding: `${spaces.xs} ${spaces.s}`,
+    padding: `${space[3]} ${space[4]}`,
 
     [`svg:last-child`]: {
-      marginLeft: spaces[`2xs`],
+      marginLeft: space[2],
     },
   },
 }

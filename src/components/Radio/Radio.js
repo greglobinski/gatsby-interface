@@ -4,7 +4,8 @@ import styled from "@emotion/styled"
 
 import colors from "../../theme/colors"
 
-import { radius, spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import { radius, fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 
 import RadioSkeleton, {
   radioPropTypes,
@@ -23,7 +24,7 @@ const Label = styled(`label`)`
   font-family: ${fontFamilies.bodyFontFamily};
   font-size: ${fontSizes.s};
   line-height: 1;
-  padding-left: calc(${INPUT_OUTER_DIA} + ${spaces.s});
+  padding-left: calc(${INPUT_OUTER_DIA} + ${space[4]});
   position: relative;
   min-height: ${INPUT_OUTER_DIA};
 
@@ -62,14 +63,14 @@ const Label = styled(`label`)`
   }
 
   &.emphasized {
-    padding: ${spaces.s} ${spaces.m} ${spaces.s}
-      calc(${INPUT_OUTER_DIA} + ${spaces.s} + ${spaces.m});
+    padding: ${space[4]} ${space[5]} ${space[4]}
+      calc(${INPUT_OUTER_DIA} + ${space[4]} + ${space[5]});
 
     :before {
-      left: ${spaces.m};
+      left: ${space[5]};
     }
     :after {
-      left: calc(${spaces.m} + 7px);
+      left: calc(${space[5]} + 7px);
     }
   }
 `
@@ -103,12 +104,12 @@ const RadioInput = styled(`input`)`
 `
 
 const StandardContainer = styled(`div`)`
-  margin-bottom: ${spaces.m};
+  margin-bottom: ${space[5]};
   position: relative;
 `
 
 const ColourfulContainer = styled(StandardContainer)`
-  margin: ${spaces[`2xs`]} 0;
+  margin: ${space[2]} 0;
   position: relative;
 
   :before,

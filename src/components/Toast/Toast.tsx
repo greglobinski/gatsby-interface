@@ -3,8 +3,9 @@ import React from "react"
 import Alert from "@reach/alert"
 import { keyframes, css, jsx } from "@emotion/core"
 import { MdDone, MdClose, MdWarning } from "react-icons/md"
-import { fontSizes, dimensions, radius, spaces } from "../../utils/presets"
+import { fontSizes, dimensions, radius } from "../../utils/presets"
 import { ToastTone } from "./types"
+import space from "../../theme/space"
 import colors from "../../theme/colors"
 
 const toastEntryAnimation = keyframes`
@@ -23,8 +24,8 @@ const toastCss = css`
   display: flex;
   font-size: ${fontSizes.xs};
   min-height: ${dimensions.toast.minHeight};
-  max-width: calc(100% - (${spaces.l} * 2));
-  padding-left: ${spaces.s};
+  max-width: calc(100% - (${space[7]} * 2));
+  padding-left: ${space[4]};
   transform: perspective(1000px) rotateX(90deg);
   transform-origin: bottom center;
 
@@ -35,13 +36,13 @@ const toastCss = css`
 
   &:not(:first-of-type) {
     border-radius: ${radius.default};
-    margin-bottom: ${spaces[`3xs`]};
+    margin-bottom: ${space[1]};
   }
 `
 
 const messageCss = css`
   line-height: 1;
-  margin: 0 ${spaces[`2xs`]} 0 ${spaces.xs};
+  margin: 0 ${space[2]} 0 ${space[3]};
 `
 
 const statusCss = css`
