@@ -12061,6 +12061,13 @@ exports[`Storyshots Navigation default example 1`] = `
 
 @media (max-width:1065px) {
   .emotion-26 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     list-style: none;
     margin: 0 auto;
     padding: 0 1rem;
@@ -12604,6 +12611,13 @@ exports[`Storyshots Navigation inverted example 1`] = `
 
 @media (max-width:1065px) {
   .emotion-26 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     list-style: none;
     margin: 0 auto;
     padding: 0 1rem;
@@ -13345,6 +13359,13 @@ exports[`Storyshots Navigation with item links as children 1`] = `
 
 @media (max-width:1065px) {
   .emotion-6 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     list-style: none;
     margin: 0 auto;
     padding: 0 1rem;
@@ -14142,6 +14163,13 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
 
 @media (max-width:1065px) {
   .emotion-28 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     list-style: none;
     margin: 0 auto;
     padding: 0 1rem;
@@ -14894,6 +14922,13 @@ exports[`Storyshots Navigation with item links as props and children 1`] = `
 
 @media (max-width:1065px) {
   .emotion-6 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     list-style: none;
     margin: 0 auto;
     padding: 0 1rem;
@@ -15285,6 +15320,13 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
 
 @media (max-width:1065px) {
   .emotion-9 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     list-style: none;
     margin: 0 auto;
     padding: 0 1rem;
