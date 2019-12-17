@@ -41,8 +41,9 @@ export type NotificationProps = Omit<PropsOf<AllowedAs>, "ref"> & {
   contentAs?: NotificationContentProps["as"];
   linkUrl?: string;
   linkText?: React.ReactNode;
-  showDismissButton?: boolean;
+  isOpened?: boolean;
   onDismissButtonClick?: () => void;
+  showDismissButton?: boolean;
 }
 
 export default function Notification({
@@ -54,10 +55,14 @@ export default function Notification({
   contentAs = `span`,
   linkUrl,
   linkText,
+  isOpened = true,
   onDismissButtonClick,
   showDismissButton = !!onDismissButtonClick,
   ...rest
 }: NotificationProps) {
+  if (!isOpened) {
+    return null
+  }
   const Icon = content && iconByTone[tone]
 
   return (

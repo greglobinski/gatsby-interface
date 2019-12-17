@@ -16911,7 +16911,7 @@ exports[`Storyshots Notification dismissable 1`] = `
   }
 }
 
-.emotion-4 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -16929,7 +16929,65 @@ exports[`Storyshots Notification dismissable 1`] = `
   padding: 20px;
 }
 
-.emotion-3 {
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: #635e69;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
+  transition: background 0.5s,border 0.5s,color 0.5s;
+  line-height: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
+  background: #663399;
+  border: 1px solid #663399;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.emotion-0[disabled],
+.emotion-0[disabled]:hover {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.emotion-0:hover:not([disabled]) svg {
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-0:hover {
+  background: #542c85;
+  border: 1px solid #542c85;
+}
+
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16944,11 +17002,11 @@ exports[`Storyshots Notification dismissable 1`] = `
   width: 500px;
 }
 
-.emotion-3 > button {
+.emotion-4 > button {
   margin: 20px;
 }
 
-.emotion-0 {
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16960,7 +17018,7 @@ exports[`Storyshots Notification dismissable 1`] = `
   color: #663399;
 }
 
-.emotion-2 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16986,12 +17044,12 @@ exports[`Storyshots Notification dismissable 1`] = `
 }
 
 @media (min-width:1000px) {
-  .emotion-2 {
+  .emotion-3 {
     padding: 1rem 1.5rem 1rem 1rem;
   }
 }
 
-.emotion-1 {
+.emotion-2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -17026,13 +17084,13 @@ exports[`Storyshots Notification dismissable 1`] = `
   width: 1rem;
 }
 
-.emotion-1[disabled],
-.emotion-1[disabled]:hover {
+.emotion-2[disabled],
+.emotion-2[disabled]:hover {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-1 svg {
+.emotion-2 svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -17042,12 +17100,12 @@ exports[`Storyshots Notification dismissable 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
 
-.emotion-1:hover {
+.emotion-2:hover {
   background: #fcfaff;
   color: #663399;
 }
@@ -17059,37 +17117,46 @@ exports[`Storyshots Notification dismissable 1`] = `
     <div>
       <div>
         <div
-          class="emotion-4"
+          class="emotion-5"
         >
           <div
-            class="emotion-3"
+            class="emotion-4"
           >
-            <div
-              class="emotion-2"
-            >
-              <span
-                class="emotion-0"
-              >
-                Notification variant 'PRIMARY' with close
-              </span>
+            <div>
               <button
-                class="emotion-1"
+                class="emotion-0"
+                disabled=""
                 type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                  />
-                </svg>
+                Show notification
               </button>
+              <div
+                class="emotion-3"
+              >
+                <span
+                  class="emotion-1"
+                >
+                  Notification variant 'PRIMARY' with close
+                </span>
+                <button
+                  class="emotion-2"
+                  type="button"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>

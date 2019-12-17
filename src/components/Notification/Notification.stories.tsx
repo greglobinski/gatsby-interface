@@ -26,14 +26,18 @@ const tonesOptions = NOTIFICATION_TONES.reduce(
 function ControlledNotification(props: NotificationProps) {
   const [isOpened, setIsOpened] = React.useState<boolean>(true)
 
-  return isOpened ? (
-    <Notification
-      {...props}
-      showDismissButton
-      onDismissButtonClick={() => setIsOpened(false)}
-    />
-  ) : (
-    <Button onClick={() => setIsOpened(true)}>Show notification</Button>
+  return (
+    <div>
+      <Button onClick={() => setIsOpened(true)} disabled={isOpened}>
+        Show notification
+      </Button>
+      <Notification
+        {...props}
+        isOpened={isOpened}
+        showDismissButton
+        onDismissButtonClick={() => setIsOpened(false)}
+      />
+    </div>
   )
 }
 
@@ -111,6 +115,7 @@ storiesOf(`Notification`, module)
                 <ReactSpringNotification
                   key={key}
                   style={style}
+                  isOpened={true}
                   onDismissButtonClick={() => setIsOpened(false)}
                   {...props}
                 />
