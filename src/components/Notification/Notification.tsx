@@ -4,7 +4,7 @@ import React, { Fragment } from "react"
 import { MdClose, MdArrowForward } from "react-icons/md"
 
 import tones from "../../theme/tones"
-import { spaces } from "../../utils/presets"
+import space from "../../theme/space"
 import colors from "../../theme/colors"
 import { Button } from "../Button"
 import { NotificationVariant, NotificationTone } from "./types"
@@ -73,7 +73,7 @@ export default function Notification({
       >
         {content && (
           <Notification.Content tone={tone} as={contentAs}>
-            {Icon && <Icon css={{ marginRight: spaces.xs }} />}
+            {Icon && <Icon css={{ marginRight: space[3] }} />}
             {content}
           </Notification.Content>
         )}
@@ -132,7 +132,7 @@ function NotificationDismissButton() {
         padding: `0`,
         minHeight: `auto`,
         color: colors.grey[40],
-        width: spaces.m,
+        width: space[5],
       }}
       type="button"
       onClick={onDismiss}
