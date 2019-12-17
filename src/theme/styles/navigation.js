@@ -69,6 +69,8 @@ styles.List = {
     alignItems: "center",
   },
   mobile: {
+    flexDirection: "column",
+    alignItems: "flex-end",
     listStyle: `none`,
     margin: `0 auto`,
     padding: `0 1rem`,
