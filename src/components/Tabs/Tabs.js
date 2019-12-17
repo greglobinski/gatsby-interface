@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
 
-import { spaces } from "../../utils/presets"
+import space from "../../theme/space"
 
 const baseStyles = {
   listStyle: `none`,
@@ -20,7 +20,7 @@ const Tabs = ({ children, variant = `DEFAULT` }) => {
     DEFAULT: {},
     NUMBERED: {
       textAlign: `center`,
-      paddingTop: spaces[`2xl`],
+      paddingTop: space[9],
       ":after": {
         borderBottom: `1px solid ${colors.standardLine}`,
         bottom: `0`,

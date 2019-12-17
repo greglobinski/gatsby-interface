@@ -3,13 +3,8 @@ import { jsx } from "@emotion/core"
 import PropTypes from "prop-types"
 
 import colors from "../../theme/colors"
-
-import {
-  fontFamilies,
-  fontSizes,
-  breakpoints,
-  spaces,
-} from "../../utils/presets"
+import space from "../../theme/space"
+import { fontFamilies, fontSizes, breakpoints } from "../../utils/presets"
 
 const TabFigure = ({ children }) => (
   <span
@@ -28,13 +23,13 @@ const TabFigure = ({ children }) => (
       width: `20px`,
       ".active &": {
         background: colors.purple[40],
-        marginRight: spaces.s,
+        marginRight: space[4],
       },
       ".done &": {
         background: colors.purple[30],
       },
       [`@media (min-width: ${breakpoints.tablet}px)`]: {
-        marginRight: spaces.s,
+        marginRight: space[4],
       },
     }}
   >

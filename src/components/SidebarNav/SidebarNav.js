@@ -6,13 +6,14 @@ import PropTypes from "prop-types"
 import { lineHeights } from "gatsby-design-tokens"
 
 import colors from "../../theme/colors"
-import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import { fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 
 const SidebarNav = ({ children, options, ...rest }) => (
   <nav
     aria-label="sidebar-nav"
     css={{
-      paddingLeft: spaces.xl,
+      paddingLeft: space[8],
     }}
     {...rest}
   >
@@ -63,7 +64,7 @@ SidebarNav.propTypes = {
 SidebarNav.List = ({ children, variant = `FULL` }) => {
   const variantStyles = {
     SUB: {
-      padding: `${spaces.xs} 0`,
+      padding: `${space[3]} 0`,
     },
     FULL: {
       maxWidth: `8rem`,
@@ -113,13 +114,13 @@ SidebarNav.Item = ({ active, onClick, to, children }) => (
   <li
     css={{
       marginBottom: `0`,
-      padding: `${spaces.xs} 0`,
+      padding: `${space[3]} 0`,
       position: `relative`,
       ...baseItemStyles(active),
       svg: {
         verticalAlign: `middle`,
         position: `absolute`,
-        left: `-${spaces.xl}`,
+        left: `-${space[8]}`,
       },
     }}
   >
@@ -149,7 +150,7 @@ SidebarNav.Item.propTypes = {
 SidebarNav.SubItem = ({ active, onClick, to, children }) => (
   <li
     css={{
-      padding: `${spaces.xs} ${spaces.m}`,
+      padding: `${space[3]} ${space[5]}`,
       marginBottom: `0`,
       borderLeft: active
         ? `1px solid ${colors.purple[50]}`

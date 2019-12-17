@@ -5,7 +5,8 @@ import { MdCheck, MdClose, MdRefresh } from "react-icons/md"
 
 import colors from "../../theme/colors"
 
-import { spaces, fontFamilies, fontSizes } from "../../utils/presets"
+import { fontFamilies, fontSizes } from "../../utils/presets"
+import space from "../../theme/space"
 
 const loading = keyframes` 
   0% {
@@ -56,14 +57,14 @@ const Indicator = ({ status, label, expanded }) => {
       background: `#D9D7E0`,
       width: `1rem`,
       height: `1rem`,
-      marginLeft: expanded ? 0 : spaces.l,
-      marginTop: expanded ? spaces.l : 0,
+      marginLeft: expanded ? 0 : space[7],
+      marginTop: expanded ? space[7] : 0,
       ":before": {
         display: `none`,
       },
       ":last-of-type": {
-        marginRight: expanded ? 0 : spaces.m,
-        marginBottom: expanded ? spaces.m : 0,
+        marginRight: expanded ? 0 : space[5],
+        marginBottom: expanded ? space[5] : 0,
       },
     },
     FAILED: {
@@ -107,14 +108,14 @@ const Indicator = ({ status, label, expanded }) => {
           zIndex: `-1`,
         },
         ":first-of-type": {
-          marginTop: expanded ? spaces.xs : 0,
-          marginLeft: expanded ? 0 : spaces.xs,
+          marginTop: expanded ? space[3] : 0,
+          marginLeft: expanded ? 0 : space[3],
           ":before": {
             display: `none`,
           },
         },
         ":last-of-type": {
-          marginRight: spaces.xs,
+          marginRight: space[3],
         },
         ...styles[status],
       }}
@@ -144,9 +145,9 @@ const Label = ({ children, expanded = false }) => (
     css={{
       fontFamily: fontFamilies.bodyFontFamily,
       fontSize: fontSizes.m,
-      paddingLeft: spaces.m,
+      paddingLeft: space[5],
       position: expanded ? `absolute` : `static`,
-      left: expanded ? spaces.xl : 0,
+      left: expanded ? space[8] : 0,
       whiteSpace: `nowrap`,
     }}
   >

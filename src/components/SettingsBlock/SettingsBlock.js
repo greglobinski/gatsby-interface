@@ -7,7 +7,8 @@ import { MdHelpOutline } from "react-icons/md"
 import { ContentBox } from "../ContentBox"
 import { LinkButton } from "../LinkButton"
 import { Heading } from "../Heading"
-import { breakpoints, fontFamilies, spaces } from "../../utils/presets"
+import { breakpoints, fontFamilies } from "../../utils/presets"
+import space from "../../theme/space"
 import cardStyles from "../../theme/styles/card"
 import fontSizes from "../../theme/fontSizes"
 import colors from "../../theme/colors"
@@ -80,7 +81,7 @@ SettingsBlock.Doclink = ({ ...rest }) => (
     variant={`GHOST`}
     tone={`NEUTRAL`}
     css={{
-      marginLeft: spaces[`2xs`],
+      marginLeft: space[2],
     }}
     {...rest}
   >
@@ -98,11 +99,11 @@ SettingsBlock.Description = ({ children, ...rest }) => (
       margin: 0,
 
       "&:first-of-type": {
-        marginTop: spaces.s,
+        marginTop: space[4],
       },
 
       "&:not(:last-child)": {
-        marginBottom: spaces.xs,
+        marginBottom: space[3],
       },
 
       [`@media(min-width: ${breakpoints.desktop}px)`]: {
