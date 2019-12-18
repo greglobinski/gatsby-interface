@@ -5,12 +5,14 @@ import styles from "../../theme/styles/navigation"
 
 const Navigation = ({
   items,
+  secondaryItems,
   isInverted = false,
   mobileNavMediaQuery = `@media (max-width: 1065px)`,
   ...delegated
 }) => (
   <BaseNavigation
     items={items}
+    secondaryItems={secondaryItems}
     isInverted={isInverted}
     mobileNavMediaQuery={mobileNavMediaQuery}
     // override base components
