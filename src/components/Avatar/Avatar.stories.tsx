@@ -30,10 +30,12 @@ storiesOf(`Avatar`, module)
             size={radios(
               "size",
               {
+                xsmall: "XS",
                 small: "S",
                 medium: "M",
                 large: "L",
                 xlarge: "XL",
+                xxlarge: "XXL",
               },
               "M"
             )}
@@ -63,10 +65,12 @@ storiesOf(`Avatar`, module)
             size={radios(
               "size",
               {
+                xsmall: "XS",
                 small: "S",
                 medium: "M",
                 large: "L",
                 xlarge: "XL",
+                xxlarge: "XXL",
               },
               "M"
             )}

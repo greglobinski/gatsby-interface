@@ -1,9 +1,5 @@
-// TODO remove this file once fonts is rewritten to TypeScript
-const fonts: {
-  header: any
-  monospace: any
-  serif: any
-  system: any
-}
+type Font = `header` | `monospace` | `serif` | `system`
+
+const fonts: Record<Font, string>
 
 export = fonts
