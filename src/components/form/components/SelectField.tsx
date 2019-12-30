@@ -12,7 +12,7 @@ import SelectFieldSkeleton, {
   SelectFieldSkeletonControlProps,
 } from "../../form-skeletons/components/SelectFieldSkeleton"
 
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 
 function SelectField(props: FormFieldSkeletonProps) {
   return <SelectFieldSkeleton {...props}></SelectFieldSkeleton>
@@ -33,10 +33,10 @@ const Control = React.forwardRef<HTMLSelectElement, SelectFieldControlProps>(
         css={[
           getInputStyles(hasError),
           {
-            padding: `0 ${spaces[`xs`]}`,
+            padding: `0 ${space[3]}`,
             backgroundImage: `url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3E%3C/path%3E%3C/svg%3E")`,
             backgroundRepeat: `no-repeat`,
-            backgroundPosition: `right ${spaces.xs} top 50%, 0 0`,
+            backgroundPosition: `right ${space[3]} top 50%, 0 0`,
           },
         ]}
         {...props}

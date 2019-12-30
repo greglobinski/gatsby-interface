@@ -28,7 +28,7 @@ import * as Yup from "yup"
 import Debug from "../../../utils/formik/Debug"
 import { Button } from "../../Button"
 import { MdArrowForward } from "react-icons/md"
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 
 const authors = [
   ``,
@@ -100,7 +100,7 @@ const Actions: React.FC<{ isSubmitting: boolean }> = ({ isSubmitting }) => {
       </div>
       <Button
         css={{
-          marginTop: spaces.xl,
+          marginTop: space[8],
           width: `100%`,
         }}
         tone="NEUTRAL"

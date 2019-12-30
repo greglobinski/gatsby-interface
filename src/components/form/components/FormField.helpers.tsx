@@ -4,22 +4,24 @@ import { Interpolation } from "@emotion/serialize"
 
 import colors from "../../../theme/colors"
 import fonts from "../../../theme/fonts"
-import { spaces, fontSizes, radius } from "../../../utils/presets"
+import fontSizes from "../../../theme/fontSizes"
+import radii from "../../../theme/radii"
+import space from "../../../theme/space"
 
 export const getWrapperSpacingStyles = (
   hasError: boolean | undefined
 ): Interpolation => ({
-  marginBottom: hasError ? spaces.xl : spaces.l,
+  marginBottom: hasError ? space[8] : space[7],
 
   "&:last-child": {
-    marginBottom: hasError ? spaces.xl : 0,
+    marginBottom: hasError ? space[8] : 0,
   },
 })
 
 const FORM_FIELD_LABEL_SIZES = {
-  L: fontSizes.s,
-  M: fontSizes.xs,
-  S: fontSizes[`2xs`],
+  L: fontSizes[2],
+  M: fontSizes[1],
+  S: fontSizes[0],
 }
 
 export type FormFieldLabelSize = "L" | "M" | "S"
@@ -38,15 +40,15 @@ export const getLabelStyles = ({
   display: isRequired ? `flex` : `block`,
   lineHeight: 1.3,
   justifyContent: `space-between`,
-  margin: `0 ${spaces[`2xs`]} ${spaces[`2xs`]}`,
+  margin: `0 ${space[2]} ${space[2]}`,
 })
 
 export const RequiredFlag = () => (
   <span
     css={{
       color: colors.purple[50],
-      fontSize: fontSizes[`2xs`],
-      marginRight: spaces[`2xs`],
+      fontSize: fontSizes[0],
+      marginRight: space[2],
     }}
   >
     required
@@ -63,12 +65,12 @@ export const getInputStyles = (hasError?: boolean): Interpolation => ({
     ? `1px solid ${colors.red[60]}`
     : `1px solid ${colors.grey[30]}`,
   background: colors.white,
-  borderRadius: radius.default,
+  borderRadius: radii[2],
   color: colors.grey[90],
-  fontFamily: fonts.system.join(`,`),
-  fontSize: fontSizes.s,
+  fontFamily: fonts.system,
+  fontSize: fontSizes[2],
   height: `2.25rem`,
-  padding: `0 ${spaces.xs}`,
+  padding: `0 ${space[3]}`,
   width: `100%`,
   position: `relative`,
   zIndex: 1,
@@ -99,15 +101,15 @@ export const getDescriptionStyles = (): Interpolation => ({
   alignItems: `flex-start`,
   color: colors.grey[50],
   display: `flex`,
-  fontSize: fontSizes[`2xs`],
+  fontSize: fontSizes[0],
   lineHeight: 1.2,
-  margin: `0 ${spaces[`2xs`]}`,
+  margin: `0 ${space[2]}`,
   position: `relative`,
   zIndex: 0,
 
   svg: {
     flexShrink: 0,
-    marginRight: spaces[`2xs`],
+    marginRight: space[2],
     marginTop: `0.1em`,
     width: `1em`,
     height: `1em`,

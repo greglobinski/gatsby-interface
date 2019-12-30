@@ -17,7 +17,7 @@ import {
   RequiredFlag,
 } from "./FormField.helpers"
 import colors from "../../../theme/colors"
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 
 export const INPUT_WIDTH = `20px`
 export const INPUT_VERTICAL_OFFSET_CALC = `(1em - 14px) * 0.5`
@@ -101,7 +101,7 @@ const Label: React.FC<FormGroupFieldLabelProps> = ({
         getLabelFontSize(size),
         getLabelStyles({ isRequired }),
         {
-          padding: `0 ${spaces[`2xs`]} `,
+          padding: `0 ${space[2]} `,
           marginRight: 0,
           marginLeft: 0,
           width: `100%`,
@@ -130,7 +130,7 @@ const Options: React.FC<FormGroupFieldOptionsProps> = ({ ...rest }) => {
         display: `flex`,
         flexWrap: `wrap`,
         flexDirection: isHorizontal ? `row` : `column`,
-        margin: `calc((${spaces.xs} * -1) + ${spaces.xs}) 0 calc((${spaces.xs} * -1) + ${spaces.s})`,
+        margin: `calc((${space[3]} * -1) + ${space[3]}) 0 calc((${space[3]} * -1) + ${space[4]})`,
       }}
       {...rest}
     />
@@ -156,7 +156,7 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
 }) => {
   const { layout } = FormGroupField.useFormGroupField()
   const isHorizontal = layout === `horizontal`
-  const marginRight = isHorizontal ? spaces.l : 0
+  const marginRight = isHorizontal ? space[7] : 0
 
   return (
     <FormGroupFieldSkeleton.OptionLabel
@@ -169,10 +169,10 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
           justifyContent: `flex-start`,
           lineHeight: 1.3,
           marginRight: marginRight,
-          marginTop: spaces.xs,
-          marginBottom: spaces.xs,
+          marginTop: space[3],
+          marginBottom: space[3],
           paddingLeft: `calc(${INPUT_WIDTH} + ${
-            isHorizontal ? spaces[`2xs`] : spaces.s
+            isHorizontal ? space[2] : space[4]
           })`,
           position: `relative`,
         },

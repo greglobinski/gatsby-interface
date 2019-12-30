@@ -19,11 +19,11 @@ import SingleCheckboxFieldSkeleton, {
   SingleCheckboxFieldSkeletonControlProps,
 } from "../../form-skeletons/components/SingleCheckboxFieldSkeleton"
 import colors from "../../../theme/colors"
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 
 const CHECKBOX_WIDTH = `20px`
 const CHECKBOX_VERTICAL_OFFSET_CALC = `(1em - 16px) * 0.5`
-const LEFT_FREE_SPACE_CALC = `(${CHECKBOX_WIDTH} + ${spaces.s})`
+const LEFT_FREE_SPACE_CALC = `(${CHECKBOX_WIDTH} + ${space[4]})`
 
 function CheckboxField(props: FormFieldSkeletonProps) {
   return <SingleCheckboxFieldSkeleton {...props}></SingleCheckboxFieldSkeleton>
@@ -76,7 +76,7 @@ const Label: React.FC<FormFieldLabelProps> = props => {
         {
           cursor: `pointer`,
           alignItems: `flex-start`,
-          marginBottom: hasError || hasHint ? spaces[`2xs`] : 0,
+          marginBottom: hasError || hasHint ? space[2] : 0,
           position: `relative`,
 
           ":before": {
@@ -88,7 +88,7 @@ const Label: React.FC<FormFieldLabelProps> = props => {
             content: `""`,
             display: `block`,
             height: CHECKBOX_WIDTH,
-            marginRight: spaces.xs,
+            marginRight: space[3],
             position: `absolute`,
             top: 0,
             left: 0,
@@ -108,7 +108,7 @@ const Wrapper: React.FC<FormFieldWrapperProps> = props => (
   <FormField.Wrapper
     css={{
       "&:not(:first-child)": {
-        marginTop: spaces.xs,
+        marginTop: space[3],
       },
     }}
     {...props}

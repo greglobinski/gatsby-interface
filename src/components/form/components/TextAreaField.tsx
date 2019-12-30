@@ -11,7 +11,7 @@ import { getInputStyles } from "./FormField.helpers"
 import TextAreaFieldSkeleton, {
   TextAreaFieldSkeletonControlProps,
 } from "../../form-skeletons/components/TextAreaFieldSkeleton"
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 
 function TextAreaField(props: FormFieldSkeletonProps) {
   return <TextAreaFieldSkeleton {...props}></TextAreaFieldSkeleton>
@@ -42,7 +42,7 @@ const Control = React.forwardRef<
           display: `block`,
           minHeight: `5rem`,
           resize: `vertical`,
-          padding: spaces.xs,
+          padding: space[3],
         },
       ]}
       {...props}

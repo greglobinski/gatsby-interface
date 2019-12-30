@@ -9,7 +9,8 @@ import FormGroupField, {
   FormGroupFieldOptionLabelProps,
 } from "./FormGroupField"
 import colors from "../../../theme/colors"
-import { spaces, radius } from "../../../utils/presets"
+import space from "../../../theme/space"
+import radii from "../../../theme/radii"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { FormGroupFieldProps } from "./FormGroupField"
 
@@ -59,7 +60,7 @@ RadioButtonField.Option = React.forwardRef<
 
 const frameStyles = {
   border: `2px solid ${colors.white}`,
-  borderRadius: radius.large,
+  borderRadius: radii[3],
   margin: 0,
   width: `100%`,
   transition: `border .15s ease-in-out`,
@@ -94,11 +95,11 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
           ? {
               ...frameStyles,
               marginBottom: 0,
-              padding: `${spaces.s} ${spaces.m}`,
-              paddingLeft: `calc(${INPUT_WIDTH} + ${spaces.l})`,
+              padding: `${space[4]} ${space[5]}`,
+              paddingLeft: `calc(${INPUT_WIDTH} + ${space[7]})`,
               "&:before": {
-                left: spaces.s,
-                top: spaces.s,
+                left: space[4],
+                top: space[4],
               },
             }
           : {},
@@ -121,7 +122,7 @@ const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
       css={[
         variant !== `framed` ? frameStyles : {},
         {
-          padding: `${spaces.s} ${spaces.m}`,
+          padding: `${space[4]} ${space[5]}`,
           label: {
             display: `block`,
             margin: 0,
@@ -142,7 +143,7 @@ const Options: React.FC<FormGroupFieldOptionsProps> = props => {
   return (
     <FormGroupField.Options
       css={{
-        margin: variant === `framed` ? `${spaces[`2xs`]} 0 0` : undefined,
+        margin: variant === `framed` ? `${space[2]} 0 0` : undefined,
       }}
       {...props}
     />

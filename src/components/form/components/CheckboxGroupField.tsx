@@ -9,7 +9,7 @@ import FormGroupField, {
   FormGroupFieldOptionLabelProps,
 } from "./FormGroupField"
 import colors from "../../../theme/colors"
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
@@ -64,7 +64,7 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
           content: `""`,
           display: `block`,
           height: INPUT_WIDTH,
-          marginRight: spaces.xs,
+          marginRight: space[3],
           position: `absolute`,
           top: 0,
           left: 0,

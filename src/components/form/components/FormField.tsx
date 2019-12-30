@@ -21,7 +21,7 @@ import {
 } from "./FormField.helpers"
 
 import colors from "../../../theme/colors"
-import { spaces } from "../../../utils/presets"
+import space from "../../../theme/space"
 
 export function FormField(props: FormFieldSkeletonProps) {
   return <FormFieldSkeleton {...props} />
@@ -62,7 +62,7 @@ const Label: React.FC<FormFieldLabelProps> = ({
           color: colors.grey[60],
           display: isRequired ? `flex` : `block`,
           justifyContent: `space-between`,
-          margin: `0 ${spaces[`2xs`]} ${spaces[`2xs`]}`,
+          margin: `0 ${space[2]} ${space[2]}`,
         },
       ]}
       {...rest}
@@ -83,7 +83,7 @@ const Hint: React.FC<FormFieldSkeletonHintProps> = ({ children, ...rest }) => {
       css={[
         getDescriptionStyles(),
         {
-          marginTop: hasHint ? spaces[`xs`] : 0,
+          marginTop: hasHint ? space[3] : 0,
         },
       ]}
       {...rest}
@@ -125,8 +125,8 @@ const Error: React.FC<FormFieldSkeletonErrorProps> = ({
         {
           animation: `${errorEntry} .25s ease forwards`,
           color: colors.red[70],
-          marginTop: hasError ? (hasHint ? spaces[`2xs`] : spaces.xs) : 0,
-          marginBottom: hasError ? spaces.s : 0,
+          marginTop: hasError ? (hasHint ? space[2] : space[3]) : 0,
+          marginBottom: hasError ? space[4] : 0,
           opacity: 0,
 
           svg: {
