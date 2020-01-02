@@ -5,12 +5,10 @@ import React from "react"
 import { storiesOf } from "@storybook/react"
 import { radios, number, text } from "@storybook/addon-knobs"
 
-import { StoryUtils } from "../../utils/storybook"
 import README from "./README.md"
-import Stack, { StackAlign } from "./Stack"
-
+import { StoryUtils } from "../../utils/storybook"
+import Stack, { StackAlign, StackGap } from "./Stack"
 import { enumToOptions } from "../../utils/helpers"
-
 const STACK_ALIGNS: StackAlign[] = [`justify`, `center`, `left`, `right`]
 const STACK_ALIGN_OPTIONS = STACK_ALIGNS.reduce(enumToOptions, {})
 
@@ -25,7 +23,7 @@ const Item: React.FC<{}> = ({ children }) => (
   </div>
 )
 
-storiesOf(`Stack`, module)
+storiesOf(`layout primitives/Stack`, module)
   .addParameters({
     options: {
       showPanel: true,
@@ -35,7 +33,7 @@ storiesOf(`Stack`, module)
     },
   })
   .add(`gap as space token`, () => {
-    const gap = number(`gap (based on 'space' token)`, 0, {
+    const gap = number(`gap (based on 'space' token)`, 5, {
       range: true,
       min: 0,
       max: 15,
@@ -44,16 +42,20 @@ storiesOf(`Stack`, module)
 
     const align: StackAlign = radios(`align`, STACK_ALIGN_OPTIONS, `justify`)
 
+    function numberAsStackGap(gap: number): StackGap {
+      return gap as StackGap
+    }
+
     return (
       <StoryUtils.Container>
         <Stack gap={5} align="center">
           <p>
-            Gap value = <strong>{gap}</strong> (based on the space design-token)
+            Gap value = <strong>{gap}</strong> (based on the 'space'
+            design-token)
           </p>
-          <Stack gap={gap} align={align}>
+          <Stack gap={numberAsStackGap(gap)} align={align}>
             <Item>What is Lorem Ipsum?</Item>
             <Item>
-              {" "}
               It has survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged.
             </Item>
