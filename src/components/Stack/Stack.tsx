@@ -19,9 +19,9 @@ export type GetStackStyleProps = {
   align?: StackAlign;
 }
 
-type AllowedAs = `div` | `span` | `ul` | `ol`
+type AllowedAs = `div` | `span`
 
-export type StacktProps = PropsOf<AllowedAs> & {
+export type StacktProps = Omit<PropsOf<AllowedAs>, "ref"> & {
   children: React.ReactNode;
   as?: AllowedAs;
 } & GetStackStyleProps
@@ -57,12 +57,13 @@ function Stack({
   as = `div`,
   gap = 0,
   align = `justify`,
+  ...props
 }: StacktProps) {
   const Component = as
   const gapVal: string = typeof gap === `string` ? gap : space[gap]
 
   return (
-    <Component css={getStackStyle({ gap: gapVal, align })}>
+    <Component css={getStackStyle({ gap: gapVal, align })} {...props}>
       {children}
     </Component>
   )
