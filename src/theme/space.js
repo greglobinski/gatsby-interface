@@ -64,20 +64,3 @@ const space = expandedSpace.map(item => `${item / 16}rem`)
 */
 
 export default space
-
-/*
-  helper (old key to the new ones)
-  
-  "3xs": [1]
-  "2xs": `[2]
-  xs: [3]
-  s: [4]
-  m: [5],
-  l: [7],
-  xl: [8]
-  "2xl": [9]
-  "3xl": [10]
-  "4xl": [12]
-  "5xl": [15]
-
-*/
