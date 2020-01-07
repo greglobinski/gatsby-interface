@@ -1,6 +1,6 @@
 ## Cluster
 
-`Cluster` is one of the layout primitives. It's only role is organize its children as inline organized elements with a defined `gap` between them.
+`Cluster` is one of the layout primitives. It's only role is to organize its children as inline organized elements with a defined `gap` between them.
 
 #### Cluster props
 

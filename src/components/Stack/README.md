@@ -1,6 +1,6 @@
 ## Stack
 
-`Stack` is one of the layout primitives. It's only role is organize its children as verticaly organized elements with a defined `gap` between them.
+`Stack` is one of the layout primitives. It's only role is to organize its children as verticaly organized elements with a defined `gap` between them.
 
 #### Stack props
 
