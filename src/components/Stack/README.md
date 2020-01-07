@@ -25,3 +25,15 @@ If we set the `gap` value as type `number` between 0 and 15, `gap` will be based
   <div>three</div>
 </Stack>
 ```
+
+#### getStackStyle
+
+`getStackStyle` is a helper which let us apply `Stack` styling to any other `tag` without using the `Stack` component.
+
+```javascript
+<div css={[getStackStyle({ gap: 2, align: `centre` })]}>
+  <div>one</div>
+  <div>two</div>
+  <div>three</div>
+</div>
+```

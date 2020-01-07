@@ -26,3 +26,15 @@ If we set the `gap` or `verticalGap` value as type `number` between 0 and 15, `g
   <div>three</div>
 </Cluster>
 ```
+
+#### getClusterStyle
+
+`getClusterStyle` is a helper which let us apply `Cluster` styling to any other `tag` without using the `Stack` component.
+
+```javascript
+<div css={[getClusterStyle({ gap: 2, verticalGap: 3, align: `centre` })]}>
+  <div>one</div>
+  <div>two</div>
+  <div>three</div>
+</div>
+```
