@@ -22,7 +22,7 @@ export const Cluster: React.FC<ClusterProps> = ({
   as = `div`,
   gap = 0,
   verticalGap = 0,
-  align = `center`,
+  align = `left`,
   ...rest
 }: ClusterProps) => {
   const Component = as

@@ -85,7 +85,7 @@ storiesOf(`layout primitives/Cluster`, module)
       <StoryUtils.Container>
         <Stack gap={10} align="center">
           <p>
-            gap = space[<strong>{gap}</strong>] <br /> vertcialGap = space[
+            gap = space[<strong>{gap}</strong>] <br /> verticalGap = space[
             <strong>{verticalGap}</strong>]
           </p>
           <Cluster
@@ -118,7 +118,7 @@ storiesOf(`layout primitives/Cluster`, module)
       <StoryUtils.Container>
         <Stack gap={10} align="center">
           <p>
-            gap = <strong>{gap}</strong> <br /> vertcialGap ={" "}
+            gap = <strong>{gap}</strong> <br /> verticalGap ={" "}
             <strong>{verticalGap}</strong>
           </p>
           <Cluster
