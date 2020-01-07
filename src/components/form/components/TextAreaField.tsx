@@ -40,9 +40,9 @@ const Control = React.forwardRef<
         getInputStyles(hasError),
         {
           display: `block`,
-          minHeight: `5rem`,
+          minHeight: `4.85em`,
           resize: `vertical`,
-          padding: space[3],
+          padding: `${space[2]} ${space[3]}`,
         },
       ]}
       {...props}
