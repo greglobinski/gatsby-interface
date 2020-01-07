@@ -23,7 +23,7 @@ import CheckboxGroupConnectedField from "../components/CheckboxGroupConnectedFie
 import RadioButtonField from "../components/RadioButtonField"
 import RadioButtonFieldBlock from "../components/RadioButtonFieldBlock"
 import RadioButtonConnectedField from "../components/RadioButtonConnectedField"
-import { Formik, Form, FormikProps } from "formik"
+import { Formik, FormikProps } from "formik"
 import { getStackStyle } from "../../Stack"
 import * as Yup from "yup"
 import Debug from "../../../utils/formik/Debug"
@@ -183,9 +183,10 @@ storiesOf(`form/Formik usage examples`, module)
               setFieldValue,
               handleBlur,
               isSubmitting,
+              handleSubmit,
               errors,
             }: FormikProps<MyFormValues>) => (
-              <Form noValidate css={[getStackStyle({ gap: 8 })]}>
+              <form onSubmit={handleSubmit} css={[getStackStyle({ gap: 8 })]}>
                 <InputField
                   id="titleField"
                   hasError={!!(touched.title && errors.title)}
@@ -351,7 +352,7 @@ storiesOf(`form/Formik usage examples`, module)
                 </CheckboxField>
 
                 <Actions isSubmitting={isSubmitting} />
-              </Form>
+              </form>
             )}
           </Formik>
         </Wrapper>
@@ -380,9 +381,14 @@ storiesOf(`form/Formik usage examples`, module)
               handleBlur,
               setFieldTouched,
               isSubmitting,
+              handleSubmit,
               errors,
             }: FormikProps<MyFormValues>) => (
-              <Form noValidate css={[getStackStyle({ gap: 8 })]}>
+              <form
+                onSubmit={handleSubmit}
+                noValidate
+                css={[getStackStyle({ gap: 8 })]}
+              >
                 <InputFieldBlock
                   id="titleField"
                   label="Title"
@@ -485,7 +491,7 @@ storiesOf(`form/Formik usage examples`, module)
                 />
 
                 <Actions isSubmitting={isSubmitting} />
-              </Form>
+              </form>
             )}
           </Formik>
         </Wrapper>
@@ -506,8 +512,12 @@ storiesOf(`form/Formik usage examples`, module)
               }, 1000)
             }}
           >
-            {({ isSubmitting }) => (
-              <Form noValidate css={[getStackStyle({ gap: 8 })]}>
+            {({ isSubmitting, handleSubmit }) => (
+              <form
+                onSubmit={handleSubmit}
+                noValidate
+                css={[getStackStyle({ gap: 8 })]}
+              >
                 <InputConnectedField
                   name="title"
                   hint={`At least ${TITLE_MIN_LENGTH} and not more than ${TITLE_MAX_LENGTH} characters`}
@@ -552,7 +562,7 @@ storiesOf(`form/Formik usage examples`, module)
                 />
 
                 <Actions isSubmitting={isSubmitting} />
-              </Form>
+              </form>
             )}
           </Formik>
         </Wrapper>
