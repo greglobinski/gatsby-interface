@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.64](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.63...v0.0.64) (2020-01-03)
+
+
+### Features
+
+* Chip component ([#179](https://github.com/gatsby-inc/gatsby-interface/issues/179)) ([fa3c544](https://github.com/gatsby-inc/gatsby-interface/commit/fa3c5443e17c16788e9d02df7c17992d76dc1108))
+
+### [0.0.63](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.62...v0.0.63) (2020-01-02)
+
 ### [0.0.62](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.61...v0.0.62) (2019-12-20)
 
 ### Bug Fixes
