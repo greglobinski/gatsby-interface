@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import React from "react"
+
 import { FormField } from "./FormField"
 import { getFocusStyles } from "./FormField.helpers"
 import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/components/FormGroupFieldSkeleton"
-import { FormGroupFieldOptionsProps } from "./FormGroupField"
 import FormGroupField, {
   FormGroupFieldOptionLabelProps,
 } from "./FormGroupField"
@@ -13,14 +13,19 @@ import space from "../../../theme/space"
 import radii from "../../../theme/radii"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { FormGroupFieldProps } from "./FormGroupField"
+import { getStackStyle } from "../../Stack"
 
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
 function RadioButtonField(props: FormGroupFieldProps) {
-  return <FormGroupField {...props} />
+  const formedVariantStyle =
+    props.variant && props.variant === `framed`
+      ? getStackStyle({ gap: 3 })
+      : null
+  return <FormGroupField css={[formedVariantStyle]} {...props} />
 }
 
-RadioButtonField.Option = React.forwardRef<
+const Option = React.forwardRef<
   HTMLInputElement,
   FormGroupFieldSkeletonOptionProps
 >((props, ref) => (
@@ -122,7 +127,6 @@ const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
       css={[
         variant !== `framed` ? frameStyles : {},
         {
-          padding: `${space[4]} ${space[5]}`,
           label: {
             display: `block`,
             margin: 0,
@@ -137,29 +141,27 @@ const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
   )
 }
 
-const Options: React.FC<FormGroupFieldOptionsProps> = props => {
-  const { variant } = FormGroupField.useFormGroupField()
-
-  return (
-    <FormGroupField.Options
-      css={{
-        margin: variant === `framed` ? `${space[2]} 0 0` : undefined,
-      }}
-      {...props}
-    />
-  )
-}
-
 RadioButtonField.Label = FormGroupField.Label
 RadioButtonField.Label.displayName = `RadioButtonField.Label`
+
 RadioButtonField.OptionFrame = OptionFrame
 RadioButtonField.OptionFrame.displayName = `RadioButtonField.OptionFrame`
+
+RadioButtonField.OptionWrapper = FormGroupField.OptionWrapper
+RadioButtonField.OptionWrapper.displayName = `RadioButtonField.OptionWrapper`
+
+RadioButtonField.Option = Option
+RadioButtonField.Option.displayName = `RadioButtonField.Option`
+
 RadioButtonField.OptionLabel = OptionLabel
 RadioButtonField.OptionLabel.displayName = `RadioButtonField.OptionLabel`
-RadioButtonField.Options = Options
+
+RadioButtonField.Options = FormGroupField.Options
 RadioButtonField.Options.displayName = `RadioButtonField.Options`
+
 RadioButtonField.Hint = FormField.Hint
 RadioButtonField.Hint.displayName = `RadioButtonField.Hint`
+
 RadioButtonField.Error = FormField.Error
 RadioButtonField.Error.displayName = `RadioButtonField.Error`
 

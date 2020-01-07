@@ -7,7 +7,8 @@ import { radios, number, text } from "@storybook/addon-knobs"
 
 import README from "./README.md"
 import { StoryUtils } from "../../utils/storybook"
-import Stack, { StackAlign, StackGap } from "./Stack"
+import { Stack } from "./Stack"
+import { StackAlign, StackGap } from "./Stack.helpers"
 import { enumToOptions } from "../../utils/helpers"
 const STACK_ALIGNS: StackAlign[] = [`justify`, `center`, `left`, `right`]
 const STACK_ALIGN_OPTIONS = STACK_ALIGNS.reduce(enumToOptions, {})
@@ -22,6 +23,17 @@ const Item: React.FC<{}> = ({ children }) => (
     {children}
   </div>
 )
+
+const Items: React.ReactNode[] = [
+  <Item>What is Lorem Ipsum?</Item>,
+  <Item>
+    It has survived not only five centuries, but also the leap into electronic
+    typesetting, remaining essentially unchanged.
+  </Item>,
+  <Item>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  </Item>,
+]
 
 storiesOf(`layout primitives/Stack`, module)
   .addParameters({
@@ -54,15 +66,7 @@ storiesOf(`layout primitives/Stack`, module)
             design-token)
           </p>
           <Stack gap={numberAsStackGap(gap)} align={align}>
-            <Item>What is Lorem Ipsum?</Item>
-            <Item>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </Item>
-            <Item>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </Item>
+            {Items}
           </Stack>
         </Stack>
       </StoryUtils.Container>
@@ -80,16 +84,7 @@ storiesOf(`layout primitives/Stack`, module)
             Gap value = <strong>{gap}</strong> (set as string value)
           </p>
           <Stack gap={gap} align={align}>
-            <Item>What is Lorem Ipsum?</Item>
-            <Item>
-              {" "}
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </Item>
-            <Item>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </Item>
+            {Items}
           </Stack>
         </Stack>
       </StoryUtils.Container>

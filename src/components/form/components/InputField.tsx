@@ -41,8 +41,8 @@ const Control = React.forwardRef<HTMLInputElement, InputFieldControlProps>(
 InputField.Control = Control
 InputField.Control.displayName = `InputField.Control`
 
-InputField.Wrapper = FormField.Wrapper
-InputField.Wrapper.displayName = `InputField.Wrapper`
+InputField.Wrapper = FormField.Stack
+InputField.Wrapper.displayName = `InputField.StackWrapper`
 
 InputField.Label = FormField.Label
 InputField.Label.displayName = `InputField.Label`

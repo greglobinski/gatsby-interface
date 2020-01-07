@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { text } from "@storybook/addon-knobs"
@@ -8,19 +7,7 @@ import { text } from "@storybook/addon-knobs"
 import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_CHECKBOX_GROUP_FIELD.md"
 import CheckboxGroupField from "../components/CheckboxGroupField"
-
-const Wrapper: React.FC<{}> = ({ children }) => (
-  <div
-    css={{
-      display: `flex`,
-      flexDirection: `column`,
-      maxWidth: `80%`,
-      width: `25rem`,
-    }}
-  >
-    {children}
-  </div>
-)
+import { Wrapper } from "./stories.utils"
 
 storiesOf(`form`, module)
   .addParameters({
@@ -57,22 +44,21 @@ storiesOf(`form`, module)
       <StoryUtils.Container>
         <Wrapper>
           <CheckboxGroupField
-            id="example-1a"
+            id="example-`b"
             hasError={!!error}
             hasHint={!!hint}
-            layout="horizontal"
           >
             <CheckboxGroupField.Label isRequired={true}>
-              Tags
+              Tags ('vertical' layout, default)
             </CheckboxGroupField.Label>
             <CheckboxGroupField.Options>
               {options.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <CheckboxGroupField.OptionWrapper key={value}>
                   <CheckboxGroupField.Option value={value} name="tags" />
                   <CheckboxGroupField.OptionLabel optionValue={value}>
                     {label}
                   </CheckboxGroupField.OptionLabel>
-                </React.Fragment>
+                </CheckboxGroupField.OptionWrapper>
               ))}
             </CheckboxGroupField.Options>
             <CheckboxGroupField.Hint>{hint}</CheckboxGroupField.Hint>
@@ -80,21 +66,22 @@ storiesOf(`form`, module)
           </CheckboxGroupField>
 
           <CheckboxGroupField
-            id="example-`b"
+            id="example-1a"
             hasError={!!error}
             hasHint={!!hint}
+            layout="horizontal"
           >
             <CheckboxGroupField.Label isRequired={true}>
-              Tags
+              Tags ('horizontal' layout)
             </CheckboxGroupField.Label>
             <CheckboxGroupField.Options>
               {options.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <CheckboxGroupField.OptionWrapper key={value}>
                   <CheckboxGroupField.Option value={value} name="tags" />
                   <CheckboxGroupField.OptionLabel optionValue={value}>
                     {label}
                   </CheckboxGroupField.OptionLabel>
-                </React.Fragment>
+                </CheckboxGroupField.OptionWrapper>
               ))}
             </CheckboxGroupField.Options>
             <CheckboxGroupField.Hint>{hint}</CheckboxGroupField.Hint>

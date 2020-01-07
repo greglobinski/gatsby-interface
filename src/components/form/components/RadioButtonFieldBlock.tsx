@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { ReactNode } from "react"
+import React from "react"
 
 import RadioButtonField from "./RadioButtonField"
 import { FormGroupFieldOptionProps } from "./FormGroupField"
@@ -9,11 +9,11 @@ import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSk
 
 export type RadioButtonFieldBlockProps = {
   id: string;
-  label: ReactNode;
+  label: React.ReactNode;
   labelSize?: FormFieldLabelSize;
   options: { label: string; value: any }[];
-  error?: ReactNode;
-  hint?: ReactNode;
+  error?: React.ReactNode;
+  hint?: React.ReactNode;
   validationMode?: ErrorValidationMode;
 } & FormGroupFieldOptionProps
 
@@ -45,7 +45,7 @@ const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
       </RadioButtonField.Label>
       <RadioButtonField.Options>
         {options.map(({ label, value }) => (
-          <React.Fragment key={value}>
+          <RadioButtonField.OptionWrapper key={value}>
             <RadioButtonField.Option
               value={value}
               checked={value === fieldValue}
@@ -54,7 +54,7 @@ const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
             <RadioButtonField.OptionLabel optionValue={value}>
               {label}
             </RadioButtonField.OptionLabel>
-          </React.Fragment>
+          </RadioButtonField.OptionWrapper>
         ))}
       </RadioButtonField.Options>
       <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>

@@ -29,7 +29,7 @@
 The **differences** between `CheckboxGroupField` and `CheckboxGroupFieldSkeleton`:
 
 - `CheckboxGroupField` accepts additional prop:
-  - `layout?: ['vertical', 'horizontal']`
+  - `layout?: ['vertical', 'horizontal']`, `vertical` is a default value
 - `CheckboxGroupField` has additional subcomponent:
   - `CheckboxGroupField.Options` which role is to provide a way to style the list of option inputs as a block.
 - `CheckboxGroupField.Label` accepts additional props

@@ -2,7 +2,8 @@
 import { jsx, keyframes } from "@emotion/core"
 import React from "react"
 
-import { MdError, MdInfoOutline } from "react-icons/md"
+import { MdError } from "react-icons/md"
+import { Stack, StackProps } from "../../Stack"
 import {
   FormFieldSkeletonProps,
   FormFieldSkeleton,
@@ -12,7 +13,6 @@ import {
 } from "../../form-skeletons/components/FormFieldSkeleton"
 
 import {
-  getWrapperSpacingStyles,
   getLabelFontSize,
   getLabelStyles,
   getDescriptionStyles,
@@ -32,14 +32,31 @@ export type FormFieldWrapperProps = Pick<
   "className" | "style"
 >
 
-const Wrapper: React.FC<FormFieldWrapperProps> = props => {
-  const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
-
-  return <div css={getWrapperSpacingStyles(hasError)} {...props} />
+export const FieldWrapper: React.FC<FormFieldWrapperProps> = props => {
+  return <div {...props} />
 }
 
-FormField.Wrapper = Wrapper
+FormField.Wrapper = FieldWrapper
 FormField.Wrapper.displayName = `FormField.Wrapper`
+
+export const FieldStack: React.FC<StackProps> = props => {
+  return (
+    <Stack
+      gap={2}
+      align={`left`}
+      // css={{
+      //   border: `1px solid blue`,
+      //   "& > *": {
+      //     border: `1px solid red`,
+      //   },
+      // }}
+      {...props}
+    />
+  )
+}
+
+FormField.Stack = FieldStack
+FormField.Stack.displayName = `FormField.FieldStack`
 
 export type FormFieldLabelProps = FormFieldSkeletonLabelProps & {
   isRequired?: boolean;
@@ -54,17 +71,7 @@ const Label: React.FC<FormFieldLabelProps> = ({
 }) => {
   return (
     <FormFieldSkeleton.Label
-      css={[
-        getLabelFontSize(size),
-        getLabelStyles({ isRequired: isRequired }),
-        {
-          alignItems: `flex-end`,
-          color: colors.grey[60],
-          display: isRequired ? `flex` : `block`,
-          justifyContent: `space-between`,
-          margin: `0 ${space[2]} ${space[2]}`,
-        },
-      ]}
+      css={[getLabelFontSize(size), getLabelStyles()]}
       {...rest}
     >
       {children} {isRequired && <RequiredFlag />}
@@ -75,7 +82,10 @@ const Label: React.FC<FormFieldLabelProps> = ({
 FormField.Label = Label
 FormField.Label.displayName = `FormField.Label`
 
-const Hint: React.FC<FormFieldSkeletonHintProps> = ({ children, ...rest }) => {
+const FormFieldHint: React.FC<FormFieldSkeletonHintProps> = ({
+  children,
+  ...rest
+}) => {
   const { hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
 
   return (
@@ -83,18 +93,17 @@ const Hint: React.FC<FormFieldSkeletonHintProps> = ({ children, ...rest }) => {
       css={[
         getDescriptionStyles(),
         {
-          marginTop: hasHint ? space[3] : 0,
+          marginTop: !hasHint ? 0 : undefined,
         },
       ]}
       {...rest}
     >
-      <MdInfoOutline />
       {children}
     </FormFieldSkeleton.Hint>
   )
 }
 
-FormField.Hint = Hint
+FormField.Hint = FormFieldHint
 FormField.Hint.displayName = `FormField.Hint`
 
 const errorEntry = keyframes`
@@ -108,15 +117,17 @@ const errorEntry = keyframes`
 
 const errorIconEntry = keyframes`
   to {
-    transform: scale(1)
+    transform: translateY(-0.1em) scale(1) 
   }
 `
 
-const Error: React.FC<FormFieldSkeletonErrorProps> = ({
+export type FormFieldErrorProps = FormFieldSkeletonErrorProps
+
+export const FormFieldError: React.FC<FormFieldErrorProps> = ({
   children,
   ...rest
 }) => {
-  const { hasHint, hasError } = FormFieldSkeleton.useFormFieldSkeleton()
+  const { hasError, hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
 
   return (
     <FormFieldSkeleton.Error
@@ -125,13 +136,19 @@ const Error: React.FC<FormFieldSkeletonErrorProps> = ({
         {
           animation: `${errorEntry} .25s ease forwards`,
           color: colors.red[70],
-          marginTop: hasError ? (hasHint ? space[2] : space[3]) : 0,
-          marginBottom: hasError ? space[4] : 0,
           opacity: 0,
+
+          "&&": {
+            marginTop: !hasError ? 0 : hasHint ? `${space[1]}` : undefined,
+          },
 
           svg: {
             animation: `${errorIconEntry} .25s ease-out forwards`,
-            transform: `scale(0)`,
+            height: `1em`,
+            marginRight: space[1],
+            transform: `translateY(-0.1em) scale(0)`,
+            verticalAlign: `middle`,
+            width: `1em`,
           },
         },
       ]}
@@ -143,7 +160,7 @@ const Error: React.FC<FormFieldSkeletonErrorProps> = ({
   )
 }
 
-FormField.Error = Error
+FormField.Error = FormFieldError
 FormField.Error.displayName = `FormField.Error`
 
 export default FormField

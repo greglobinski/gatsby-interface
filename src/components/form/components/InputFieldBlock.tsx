@@ -49,13 +49,3 @@ const InputFieldBlock = React.forwardRef<
 })
 
 export default InputFieldBlock
-
-/*
-
-import InputField from "./InputField"
-import FieldBlock from "./FieldBlock"
-
-const InputFieldBlock = FieldBlock(InputField)
-
-export default InputFieldBlock
-*/

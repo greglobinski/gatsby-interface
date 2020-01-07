@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { text, radios } from "@storybook/addon-knobs"
@@ -15,6 +14,7 @@ import CheckboxGroupField from "../components/CheckboxGroupField"
 import RadioButtonField from "../components/RadioButtonField"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
+import { Wrapper } from "./stories.utils"
 
 const LABEL_SIZES: FormFieldLabelSize[] = [`L`, `M`, `S`]
 const LABEL_SIZE_OPTIONS = LABEL_SIZES.reduce(enumToOptions, {})
@@ -52,19 +52,6 @@ const tags = [`one`, `two`, `three`, `four`, `five`].map(name => {
     value: name.toLowerCase().replace(/\s/g, `-`),
   }
 })
-
-const Wrapper: React.FC<{}> = ({ children }) => (
-  <div
-    css={{
-      display: `flex`,
-      flexDirection: `column`,
-      maxWidth: `80%`,
-      width: `25rem`,
-    }}
-  >
-    {children}
-  </div>
-)
 
 storiesOf(`form/FormField`, module)
   .addParameters({
@@ -132,7 +119,7 @@ storiesOf(`form/FormField`, module)
             </CheckboxGroupField.Label>
             <CheckboxGroupField.Options>
               {tags.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <CheckboxGroupField.OptionWrapper key={value}>
                   <CheckboxGroupField.Option
                     value={value}
                     name="checkbox-group"
@@ -143,7 +130,7 @@ storiesOf(`form/FormField`, module)
                   >
                     {label}
                   </CheckboxGroupField.OptionLabel>
-                </React.Fragment>
+                </CheckboxGroupField.OptionWrapper>
               ))}
             </CheckboxGroupField.Options>
             <CheckboxGroupField.Hint>{hint}</CheckboxGroupField.Hint>
@@ -156,7 +143,7 @@ storiesOf(`form/FormField`, module)
             </RadioButtonField.Label>
             <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <RadioButtonField.OptionWrapper key={value}>
                   <RadioButtonField.Option
                     value={value}
                     name="checkbox-group-1"
@@ -164,7 +151,7 @@ storiesOf(`form/FormField`, module)
                   <RadioButtonField.OptionLabel size={size} optionValue={value}>
                     {label}
                   </RadioButtonField.OptionLabel>
-                </React.Fragment>
+                </RadioButtonField.OptionWrapper>
               ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
@@ -246,7 +233,7 @@ storiesOf(`form/FormField`, module)
             </RadioButtonField.Label>
             <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <RadioButtonField.OptionWrapper key={value}>
                   <RadioButtonField.Option
                     value={value}
                     name="checkbox-group-1"
@@ -254,7 +241,7 @@ storiesOf(`form/FormField`, module)
                   <RadioButtonField.OptionLabel optionValue={value}>
                     {label}
                   </RadioButtonField.OptionLabel>
-                </React.Fragment>
+                </RadioButtonField.OptionWrapper>
               ))}
             </RadioButtonField.Options>
           </RadioButtonField>

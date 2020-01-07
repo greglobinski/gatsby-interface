@@ -24,11 +24,13 @@ import RadioButtonField from "../components/RadioButtonField"
 import RadioButtonFieldBlock from "../components/RadioButtonFieldBlock"
 import RadioButtonConnectedField from "../components/RadioButtonConnectedField"
 import { Formik, Form, FormikProps } from "formik"
+import { getStackStyle } from "../../Stack"
 import * as Yup from "yup"
 import Debug from "../../../utils/formik/Debug"
 import { Button } from "../../Button"
 import { MdArrowForward } from "react-icons/md"
 import space from "../../../theme/space"
+import { Wrapper } from "./stories.utils"
 
 const authors = [
   ``,
@@ -63,19 +65,6 @@ const tags = [`one`, `two`, `three`, `four`, `five`].map(name => {
     value: name.toLowerCase().replace(/\s/g, `-`),
   }
 })
-
-const Wrapper: React.FC<{}> = ({ children }) => (
-  <div
-    css={{
-      display: `flex`,
-      flexDirection: `column`,
-      maxWidth: `80%`,
-      width: `25rem`,
-    }}
-  >
-    {children}
-  </div>
-)
 
 const Actions: React.FC<{ isSubmitting: boolean }> = ({ isSubmitting }) => {
   const [showDebug, setShowDebug] = React.useState(false)
@@ -196,7 +185,7 @@ storiesOf(`form/Formik usage examples`, module)
               isSubmitting,
               errors,
             }: FormikProps<MyFormValues>) => (
-              <Form noValidate>
+              <Form noValidate css={[getStackStyle({ gap: 8 })]}>
                 <InputField
                   id="titleField"
                   hasError={!!(touched.title && errors.title)}
@@ -273,7 +262,7 @@ storiesOf(`form/Formik usage examples`, module)
                   </RadioButtonField.Label>
                   <RadioButtonField.Options>
                     {categories.map(({ label, value }) => (
-                      <React.Fragment key={value}>
+                      <RadioButtonField.OptionWrapper key={value}>
                         <RadioButtonField.Option
                           value={value}
                           name="category"
@@ -284,7 +273,7 @@ storiesOf(`form/Formik usage examples`, module)
                         <RadioButtonField.OptionLabel optionValue={value}>
                           {label}
                         </RadioButtonField.OptionLabel>
-                      </React.Fragment>
+                      </RadioButtonField.OptionWrapper>
                     ))}
                   </RadioButtonField.Options>
                   <RadioButtonField.Error>
@@ -303,7 +292,7 @@ storiesOf(`form/Formik usage examples`, module)
                   </CheckboxGroupField.Label>
                   <CheckboxGroupField.Options>
                     {tags.map(({ label, value }) => (
-                      <React.Fragment key={value}>
+                      <CheckboxGroupField.OptionWrapper key={value}>
                         <CheckboxGroupField.Option
                           value={value}
                           name="tags"
@@ -325,7 +314,7 @@ storiesOf(`form/Formik usage examples`, module)
                         <CheckboxGroupField.OptionLabel optionValue={value}>
                           {label}
                         </CheckboxGroupField.OptionLabel>
-                      </React.Fragment>
+                      </CheckboxGroupField.OptionWrapper>
                     ))}
                   </CheckboxGroupField.Options>
                   <CheckboxGroupField.Hint>
@@ -393,7 +382,7 @@ storiesOf(`form/Formik usage examples`, module)
               isSubmitting,
               errors,
             }: FormikProps<MyFormValues>) => (
-              <Form noValidate>
+              <Form noValidate css={[getStackStyle({ gap: 8 })]}>
                 <InputFieldBlock
                   id="titleField"
                   label="Title"
@@ -403,6 +392,7 @@ storiesOf(`form/Formik usage examples`, module)
                   onBlur={handleBlur}
                   error={touched.title && errors.title ? errors.title : ``}
                   hint={`At least ${TITLE_MIN_LENGTH} and not more than ${TITLE_MAX_LENGTH} characters`}
+                  required
                 />
 
                 <TextAreaFieldBlock
@@ -517,7 +507,7 @@ storiesOf(`form/Formik usage examples`, module)
             }}
           >
             {({ isSubmitting }) => (
-              <Form noValidate>
+              <Form noValidate css={[getStackStyle({ gap: 8 })]}>
                 <InputConnectedField
                   name="title"
                   hint={`At least ${TITLE_MIN_LENGTH} and not more than ${TITLE_MAX_LENGTH} characters`}

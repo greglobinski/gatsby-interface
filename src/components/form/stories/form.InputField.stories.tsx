@@ -12,23 +12,11 @@ import InputField from "../components/InputField"
 import InputFieldBlock from "../components/InputFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
+import { Wrapper } from "./stories.utils"
 import colors from "../../../theme/colors"
 
 const LABEL_SIZES: FormFieldLabelSize[] = [`L`, `M`, `S`]
 const LABEL_SIZE_OPTIONS = LABEL_SIZES.reduce(enumToOptions, {})
-
-const Wrapper: React.FC<{}> = ({ children }) => (
-  <div
-    css={{
-      display: `flex`,
-      flexDirection: `column`,
-      maxWidth: `80%`,
-      width: `25rem`,
-    }}
-  >
-    {children}
-  </div>
-)
 
 storiesOf(`form`, module)
   .addParameters({

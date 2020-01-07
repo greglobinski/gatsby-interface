@@ -7,13 +7,8 @@ import {
   FormFieldSkeleton,
   FormFieldSkeletonProps,
   FormFieldSkeletonHintProps,
-  FormFieldSkeletonErrorProps,
 } from "../../form-skeletons/components/FormFieldSkeleton"
-import {
-  FormField,
-  FormFieldLabelProps,
-  FormFieldWrapperProps,
-} from "./FormField"
+import { FormField, FormFieldLabelProps } from "./FormField"
 import { getFocusStyles } from "./FormField.helpers"
 import SingleCheckboxFieldSkeleton, {
   SingleCheckboxFieldSkeletonControlProps,
@@ -63,6 +58,7 @@ const Control = React.forwardRef<HTMLInputElement, CheckboxFieldControlProps>(
 )
 
 const sharedStyles: Interpolation = {
+  display: `block`,
   marginLeft: 0,
   paddingLeft: `calc(${LEFT_FREE_SPACE_CALC})`,
 }
@@ -76,8 +72,9 @@ const Label: React.FC<FormFieldLabelProps> = props => {
         {
           cursor: `pointer`,
           alignItems: `flex-start`,
-          marginBottom: hasError || hasHint ? space[2] : 0,
+          marginBottom: hasError || hasHint ? space[1] : 0,
           position: `relative`,
+          lineHeight: 1.3,
 
           ":before": {
             backgroundColor: colors.white,
@@ -104,29 +101,14 @@ const Label: React.FC<FormFieldLabelProps> = props => {
   )
 }
 
-const Wrapper: React.FC<FormFieldWrapperProps> = props => (
-  <FormField.Wrapper
-    css={{
-      "&:not(:first-child)": {
-        marginTop: space[3],
-      },
-    }}
-    {...props}
-  />
-)
-
 const Hint: React.FC<FormFieldSkeletonHintProps> = props => (
   <FormField.Hint css={sharedStyles} {...props} />
-)
-
-const Error: React.FC<FormFieldSkeletonErrorProps> = props => (
-  <FormField.Error css={sharedStyles} {...props} />
 )
 
 CheckboxField.Control = Control
 CheckboxField.Control.displayName = `CheckboxField.Control`
 
-CheckboxField.Wrapper = Wrapper
+CheckboxField.Wrapper = FormField.Wrapper
 CheckboxField.Wrapper.displayName = `CheckboxField.Wrapper`
 
 CheckboxField.Label = Label
@@ -135,7 +117,7 @@ CheckboxField.Label.displayName = `CheckboxField.Label`
 CheckboxField.Hint = Hint
 CheckboxField.Hint.displayName = `CheckboxField.Hint`
 
-CheckboxField.Error = Error
+CheckboxField.Error = FormField.Error
 CheckboxField.Error.displayName = `CheckboxField.Hint`
 
 export default CheckboxField

@@ -54,8 +54,8 @@ const Control = React.forwardRef<
 TextAreaField.Control = Control
 TextAreaField.Control.displayName = `TextAreaField.Control`
 
-TextAreaField.Wrapper = FormField.Wrapper
-TextAreaField.Wrapper.displayName = `TextAreaField.Wrapper`
+TextAreaField.Wrapper = FormField.Stack
+TextAreaField.Wrapper.displayName = `TextAreaField.StackWrapper`
 
 TextAreaField.Label = FormField.Label
 TextAreaField.Label.displayName = `TextAreaField.Label`

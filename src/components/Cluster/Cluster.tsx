@@ -2,7 +2,7 @@
 import { jsx } from "@emotion/core"
 import React from "react"
 
-import { getStackStyle, GetStackStyleProps } from "./Stack.helpers"
+import { getClusterStyle, GetClusterStyleProps } from "./Cluster.helpers"
 
 type PropsOf<Tag> = Tag extends keyof JSX.IntrinsicElements
   ? JSX.IntrinsicElements[Tag]
@@ -12,23 +12,25 @@ type PropsOf<Tag> = Tag extends keyof JSX.IntrinsicElements
 
 type AllowedAs = `div` | `span` | `section`
 
-export type StackProps = Omit<PropsOf<AllowedAs>, "ref"> & {
+export type ClusterProps = Omit<PropsOf<AllowedAs>, "ref"> & {
   children: React.ReactNode;
   as?: AllowedAs;
-} & GetStackStyleProps
+} & GetClusterStyleProps
 
-export const Stack: React.FC<StackProps> = ({
+export const Cluster: React.FC<ClusterProps> = ({
   children,
   as = `div`,
   gap = 0,
-  align = `justify`,
+  verticalGap = 0,
+  align = `center`,
   ...rest
-}: StackProps) => {
+}: ClusterProps) => {
   const Component = as
 
   return (
-    <Component css={getStackStyle({ gap, align })} {...rest}>
-      {children}
+    <Component css={getClusterStyle({ gap, verticalGap, align })} {...rest}>
+      {/* intermediary wrapper needed to remove outer margins*/}
+      <div>{children}</div>
     </Component>
   )
 }

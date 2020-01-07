@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React, { ReactNode } from "react"
+import React from "react"
 
 import CheckboxGroupField from "./CheckboxGroupField"
 import { FormGroupFieldOptionProps } from "./FormGroupField"
@@ -9,12 +9,12 @@ import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSk
 
 export type CheckboxFieldBlockProps = {
   id: string;
-  label: ReactNode;
+  label: React.ReactNode;
   labelSize?: FormFieldLabelSize;
   options: { label: string; value: any }[];
   layout: `horizontal` | `vertical`;
-  error?: ReactNode;
-  hint?: ReactNode;
+  error?: React.ReactNode;
+  hint?: React.ReactNode;
   validationMode?: ErrorValidationMode;
   value: any[];
 } & Omit<FormGroupFieldOptionProps, "value">
@@ -49,7 +49,7 @@ const CheckboxGroupFieldBlock = (props: CheckboxFieldBlockProps) => {
       </CheckboxGroupField.Label>
       <CheckboxGroupField.Options>
         {options.map(({ label, value }) => (
-          <React.Fragment key={value}>
+          <CheckboxGroupField.OptionWrapper key={value}>
             <CheckboxGroupField.Option
               value={value}
               checked={fieldValue.includes(value)}
@@ -58,7 +58,7 @@ const CheckboxGroupFieldBlock = (props: CheckboxFieldBlockProps) => {
             <CheckboxGroupField.OptionLabel optionValue={value}>
               {label}
             </CheckboxGroupField.OptionLabel>
-          </React.Fragment>
+          </CheckboxGroupField.OptionWrapper>
         ))}
       </CheckboxGroupField.Options>
       <CheckboxGroupField.Hint>{hint}</CheckboxGroupField.Hint>

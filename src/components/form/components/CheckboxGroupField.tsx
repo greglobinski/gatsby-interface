@@ -17,10 +17,7 @@ function CheckboxGroupField(props: FormGroupFieldProps) {
   return <FormGroupField {...props} />
 }
 
-CheckboxGroupField.Label = FormGroupField.Label
-CheckboxGroupField.Label.displayName = `CheckboxGroupField.Label`
-
-CheckboxGroupField.Option = React.forwardRef<
+const Option = React.forwardRef<
   HTMLInputElement,
   FormGroupFieldSkeletonOptionProps
 >((props, ref) => (
@@ -33,7 +30,7 @@ CheckboxGroupField.Option = React.forwardRef<
         opacity: 1,
 
         "&:focus + label::before": {
-          ...getFocusStyles,
+          ...getFocusStyles(),
         },
 
         "&:checked + label::before": {
@@ -80,12 +77,22 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
 
 CheckboxGroupField.Label = FormGroupField.Label
 CheckboxGroupField.Label.displayName = `CheckboxGroupField.Label`
+
+CheckboxGroupField.Option = Option
+CheckboxGroupField.Option.displayName = `CheckboxGroupField.Option`
+
 CheckboxGroupField.OptionLabel = OptionLabel
 CheckboxGroupField.OptionLabel.displayName = `CheckboxGroupField.OptionLabel`
+
+CheckboxGroupField.OptionWrapper = FormGroupField.OptionWrapper
+CheckboxGroupField.OptionWrapper.displayName = `RadioButtonField.OptionWrapper`
+
 CheckboxGroupField.Options = FormGroupField.Options
 CheckboxGroupField.Options.displayName = `CheckboxGroupField.Options`
+
 CheckboxGroupField.Hint = FormField.Hint
 CheckboxGroupField.Hint.displayName = `CheckboxGroupField.Hint`
+
 CheckboxGroupField.Error = FormField.Error
 CheckboxGroupField.Error.displayName = `CheckboxGroupField.Error`
 

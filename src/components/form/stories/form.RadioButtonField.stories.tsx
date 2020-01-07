@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { text, radios } from "@storybook/addon-knobs"
@@ -10,22 +9,10 @@ import README from "../README_RADIO_FIELD.md"
 import RadioButtonField from "../components/RadioButtonField"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
+import { Wrapper } from "./stories.utils"
 
 const LABEL_SIZES: FormFieldLabelSize[] = [`L`, `M`, `S`]
 const LABEL_SIZE_OPTIONS = LABEL_SIZES.reduce(enumToOptions, {})
-
-const Wrapper: React.FC<{}> = ({ children }) => (
-  <div
-    css={{
-      display: `flex`,
-      flexDirection: `column`,
-      maxWidth: `80%`,
-      width: `25rem`,
-    }}
-  >
-    {children}
-  </div>
-)
 
 storiesOf(`form/RadioButtonField`, module)
   .addParameters({
@@ -66,7 +53,7 @@ storiesOf(`form/RadioButtonField`, module)
             </RadioButtonField.Label>
             <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <RadioButtonField.OptionWrapper key={value}>
                   <RadioButtonField.Option value={value} name="options1a" />
                   <RadioButtonField.OptionLabel
                     size={optionLabelSize}
@@ -74,7 +61,7 @@ storiesOf(`form/RadioButtonField`, module)
                   >
                     {label}
                   </RadioButtonField.OptionLabel>
-                </React.Fragment>
+                </RadioButtonField.OptionWrapper>
               ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>
@@ -94,7 +81,7 @@ storiesOf(`form/RadioButtonField`, module)
             </RadioButtonField.Label>
             <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <RadioButtonField.OptionWrapper key={value}>
                   <RadioButtonField.Option value={value} name="option1b" />
                   <RadioButtonField.OptionLabel
                     size={optionLabelSize}
@@ -102,7 +89,7 @@ storiesOf(`form/RadioButtonField`, module)
                   >
                     {label}
                   </RadioButtonField.OptionLabel>
-                </React.Fragment>
+                </RadioButtonField.OptionWrapper>
               ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
@@ -145,9 +132,9 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Label size={labelSize}>
               Category
             </RadioButtonField.Label>
-            <RadioButtonField.Options>
+            <RadioButtonField.Options gap={0} align={`justify`}>
               {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <RadioButtonField.OptionFrame key={value}>
                   <RadioButtonField.Option value={value} name="categories" />
                   <RadioButtonField.OptionLabel
                     size={optionLabelSize}
@@ -155,7 +142,7 @@ storiesOf(`form/RadioButtonField`, module)
                   >
                     {label}
                   </RadioButtonField.OptionLabel>
-                </React.Fragment>
+                </RadioButtonField.OptionFrame>
               ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
@@ -199,7 +186,7 @@ storiesOf(`form/RadioButtonField`, module)
               {options
                 .filter((_, idx) => idx < 3)
                 .map(({ label, value }) => (
-                  <React.Fragment key={value}>
+                  <RadioButtonField.OptionWrapper key={value}>
                     <RadioButtonField.Option value={value} name="options3a" />
                     <RadioButtonField.OptionLabel
                       size={optionLabelSize}
@@ -207,7 +194,7 @@ storiesOf(`form/RadioButtonField`, module)
                     >
                       {label}
                     </RadioButtonField.OptionLabel>
-                  </React.Fragment>
+                  </RadioButtonField.OptionWrapper>
                 ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>
@@ -224,7 +211,7 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Error>{error}</RadioButtonField.Error>
             <RadioButtonField.Options>
               {options.map(({ label, value }) => (
-                <React.Fragment key={value}>
+                <RadioButtonField.OptionWrapper key={value}>
                   <RadioButtonField.Option value={value} name="options3b" />
                   <RadioButtonField.OptionLabel
                     size={optionLabelSize}
@@ -232,7 +219,7 @@ storiesOf(`form/RadioButtonField`, module)
                   >
                     {label}
                   </RadioButtonField.OptionLabel>
-                </React.Fragment>
+                </RadioButtonField.OptionWrapper>
               ))}
             </RadioButtonField.Options>
           </RadioButtonField>

@@ -48,8 +48,8 @@ const Control = React.forwardRef<HTMLSelectElement, SelectFieldControlProps>(
 SelectField.Control = Control
 SelectField.Control.displayName = `SelectField.Control`
 
-SelectField.Wrapper = FormField.Wrapper
-SelectField.Wrapper.displayName = `SelectField.Wrapper`
+SelectField.Wrapper = FormField.Stack
+SelectField.Wrapper.displayName = `SelectField.StackWrapper`
 
 SelectField.Label = FormField.Label
 SelectField.Label.displayName = `SelectField.Label`
