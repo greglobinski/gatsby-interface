@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.65](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.64...v0.0.65) (2020-01-07)
+
+
+### Features
+
+* ThemeProvider ([#177](https://github.com/gatsby-inc/gatsby-interface/issues/177)) ([8f2896b](https://github.com/gatsby-inc/gatsby-interface/commit/8f2896b31e349229ce33f3ee53cfc0473055de8a))
+
 ### [0.0.64](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.63...v0.0.64) (2020-01-03)
 
 
