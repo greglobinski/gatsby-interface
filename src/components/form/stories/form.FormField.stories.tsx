@@ -249,9 +249,7 @@ storiesOf(`form/FormField`, module)
           <InputField id="example-3d">
             <InputField.Wrapper>
               <InputField.Label isRequired={true}>
-                <span>
-                  Give us your <strong>name</strong>
-                </span>
+                Give us your <strong>name</strong>
               </InputField.Label>
               <InputField.Control required />
             </InputField.Wrapper>

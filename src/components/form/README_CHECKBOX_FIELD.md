@@ -46,3 +46,20 @@ The only difference are:
 - `error?: ReactNode` - instead of `hasError`
 - `hint?: ReactNode` - instead of `hasHint`
 - `labelSize?: ['L', 'M', 'S']` - default value `L`
+
+## CheckboxConnectedField
+
+`CheckboxConnectedField` is a component built on `CheckboxFieldBlock` and dedicated to use with `Formik`. The component uses Formik `useFormikContext` method to pull the necessary `state` and `callbacks` from Formik `context`. Besides that it autogenerates the `id` and `label` props based on the `name` prop if they are not set.
+
+```
+ <CheckboxConnectedField
+  name="title"
+/>
+```
+
+#### CheckboxConnectedField props
+
+`CheckboxConnectedField` accepts the same props as `CheckboxFieldBlock` besides two distinctions:
+
+- `name: string` (name is required)
+- `label?: ReactNode` (label is optional)

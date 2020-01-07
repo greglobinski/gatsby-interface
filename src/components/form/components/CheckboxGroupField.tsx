@@ -13,7 +13,7 @@ import space from "../../../theme/space"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
-function CheckboxGroupField(props: FormGroupFieldProps) {
+function CheckboxGroupField(props: Omit<FormGroupFieldProps, "variant">) {
   return <FormGroupField {...props} />
 }
 

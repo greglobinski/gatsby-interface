@@ -69,3 +69,20 @@ const options = [
 - `labelSize?: [L, M, S]` - default value `M`
 - `error?: ReactNode` - instead of `hasError`
 - `hint?: ReactNode` - instead of `hasHint`
+
+## SelectConnectedField
+
+`SelectConnectedField` is a component built on `SelectFieldBlock` and dedicated to use with `Formik`. The component uses Formik `useFormikContext` method to pull the necessary `state` and `callbacks` from Formik `context`. Besides that it autogenerates the `id` and `label` props based on the `name` prop if they are not set.
+
+```
+ <TextAreaConnectedField
+  name="title"
+/>
+```
+
+#### SelectConnectedField props
+
+`SelectConnectedField` accepts the same props as `SelectFieldBlock` besides two distinctions:
+
+- `name: string` (name is required)
+- `label?: ReactNode` (label is optional)

@@ -10,6 +10,7 @@ export type CheckboxGroupConnectedFieldProps = {
   name: string;
   id?: string;
   label?: React.ReactNode;
+  value?: any[];
 } & Omit<CheckboxFieldBlockProps, "id" | "label" | "value">
 
 const CheckboxGroupConnectedField: React.FC<

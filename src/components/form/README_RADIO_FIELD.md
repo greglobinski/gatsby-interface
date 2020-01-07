@@ -9,14 +9,14 @@
   </RadioButtonField.Label>
   <RadioButtonField.Options>
     {options.map(({ label, value }) => (
-      <React.Fragment key={value}>
+      <RadioButtonField.OptionWrapper key={value}>
         <RadioButtonField.Option value={value} name="field_name" />
         <RadioButtonField.OptionLabel
           optionValue={value}
         >
           {label}
         </RadioButtonField.OptionLabel>
-      </React.Fragment>
+      </RadioButtonField.OptionWrapper>
     ))}
   </RadioButtonField.Options>
   <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
@@ -43,3 +43,48 @@ The **differences** between `RadioButtonField` and `RadioButtonFieldSkeleton`:
 #### Long lists of options
 
 For long lists of options in `vertical` layout for better UX you can consider placing `RadioButtonField.Hint` and `RadioButtonField.Error` just under the `RadioButtonField.Label` and above the `RadioButtonField.Options`
+
+## RadioButtonFieldBlock
+
+`RadioButtonFieldBlock` is a component which role is to provide a 'shortcut' usage of `RadioButtonField`, instead of explicitly passing subcomponents as children of the root component we pass all data and callbacks as props to the parent component.
+
+```
+ <RadioButtonFieldBlock
+    id="ID"
+    label="Fieldset Legend"
+    options={options}
+    onChange={e => {...}}
+    onBlur={() => {...}}
+    error={error}
+    hint={hint}
+    required
+  />
+```
+
+#### RadioButtonFieldBlock props
+
+`RadioButtonFieldBlock` accepts all props `RadioButtonField` and its subcomponents accept altogether, besides the following distinctions:
+
+- `label: ReactNode`
+- `value: string`
+- `name: string`
+- `error?: ReactNode` - instead of `hasError`
+- `hint?: ReactNode` - instead of `hasHint`
+
+## RadioButtonConnectedField
+
+`RadioButtonConnectedField` is a component built on `RadioButtonFieldBlock` and dedicated to use with `Formik`. The component uses Formik `useFormikContext` method to pull the necessary `state` and `callbacks` from Formik `context`. Besides that it autogenerates the `id` and `label` props based on the `name` prop if they are not set.
+
+```
+<RadioButtonConnectedField
+  name="category"
+  options={categories}
+/>
+```
+
+#### RadioButtonConnectedField props
+
+`InputConnectedField` accepts the same props as `RadioButtonFieldBlock` besides two distinctions:
+
+- `label?: ReactNode` (label is optional)
+- `value?: string` (value is optional)

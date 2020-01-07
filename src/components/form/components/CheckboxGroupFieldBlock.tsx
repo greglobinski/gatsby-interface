@@ -12,7 +12,7 @@ export type CheckboxFieldBlockProps = {
   label: React.ReactNode;
   labelSize?: FormFieldLabelSize;
   options: { label: string; value: any }[];
-  layout: `horizontal` | `vertical`;
+  layout?: `horizontal` | `vertical`;
   error?: React.ReactNode;
   hint?: React.ReactNode;
   validationMode?: ErrorValidationMode;
