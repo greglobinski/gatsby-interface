@@ -7,7 +7,7 @@ import { FormGroupFieldOptionProps } from "./FormGroupField"
 import { FormFieldLabelSize } from "./FormField.helpers"
 import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSkeleton"
 
-export type CheckboxFieldBlockProps = {
+export type CheckboxGroupFieldBlockProps = {
   id: string;
   label: React.ReactNode;
   labelSize?: FormFieldLabelSize;
@@ -19,7 +19,7 @@ export type CheckboxFieldBlockProps = {
   value: any[];
 } & Omit<FormGroupFieldOptionProps, "value">
 
-const CheckboxGroupFieldBlock = (props: CheckboxFieldBlockProps) => {
+const CheckboxGroupFieldBlock = (props: CheckboxGroupFieldBlockProps) => {
   const {
     id,
     label,

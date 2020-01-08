@@ -4,14 +4,14 @@ import React from "react"
 import { useFormikContext, getIn } from "formik"
 import CheckboxGroupFieldBlock from "./CheckboxGroupFieldBlock"
 import Case from "case"
-import { CheckboxFieldBlockProps } from "./CheckboxGroupFieldBlock"
+import { CheckboxGroupFieldBlockProps } from "./CheckboxGroupFieldBlock"
 
 export type CheckboxGroupConnectedFieldProps = {
   name: string;
   id?: string;
   label?: React.ReactNode;
   value?: any[];
-} & Omit<CheckboxFieldBlockProps, "id" | "label" | "value">
+} & Omit<CheckboxGroupFieldBlockProps, "id" | "label" | "value">
 
 const CheckboxGroupConnectedField: React.FC<
   CheckboxGroupConnectedFieldProps
