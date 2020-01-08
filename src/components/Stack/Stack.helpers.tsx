@@ -1,13 +1,13 @@
 import { Interpolation } from "@emotion/serialize"
-import space, { SpaceSize } from "../../theme/space"
+import space, { SpaceToken } from "../../theme/space"
 
-export type StackGap = SpaceSize | string
+export type StackGap = SpaceToken | string
 export type StackAlign = `justify` | `center` | `left` | `right`
 export type StackAlignCSS = `justify` | `center` | `flex-start` | `flex-end`
 
 export type GetStackStyleProps = {
-  gap?: StackGap;
-  align?: StackAlign;
+  gap?: StackGap
+  align?: StackAlign
 }
 
 export function getStackStyle(props?: GetStackStyleProps): Interpolation {

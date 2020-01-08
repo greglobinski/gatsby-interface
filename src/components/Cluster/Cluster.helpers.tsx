@@ -1,14 +1,14 @@
 import { Interpolation } from "@emotion/serialize"
-import space, { SpaceSize } from "../../theme/space"
+import space, { SpaceToken } from "../../theme/space"
 
-export type ClusterGap = SpaceSize | string
+export type ClusterGap = SpaceToken | string
 export type ClusterAlign = `center` | `left` | `right`
 export type StackAlignCSS = `center` | `flex-start` | `flex-end`
 
 export type GetClusterStyleProps = {
-  gap?: ClusterGap;
-  verticalGap?: ClusterGap;
-  align?: ClusterAlign;
+  gap?: ClusterGap
+  verticalGap?: ClusterGap
+  align?: ClusterAlign
 }
 
 export function getClusterStyle(props?: GetClusterStyleProps): Interpolation {
