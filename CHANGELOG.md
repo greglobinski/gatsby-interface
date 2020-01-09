@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.67](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.66...v0.0.67) (2020-01-09)
 
-
 ### Bug Fixes
 
-* correctly transform breakpoints scale for ThemeUI ([#187](https://github.com/gatsby-inc/gatsby-interface/issues/187)) ([2ce3482](https://github.com/gatsby-inc/gatsby-interface/commit/2ce34825435e1073ac420cadeda268ab2d761a6f))
+- correctly transform breakpoints scale for ThemeUI ([#187](https://github.com/gatsby-inc/gatsby-interface/issues/187)) ([2ce3482](https://github.com/gatsby-inc/gatsby-interface/commit/2ce34825435e1073ac420cadeda268ab2d761a6f))
 
 ### [0.0.66](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.65...v0.0.66) (2020-01-09)
 
