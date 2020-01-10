@@ -1,14 +1,19 @@
 import { useEffect, useRef } from "react"
 
-function useEventListener(eventName, handler, element = window) {
+function useEventListener(eventName, handler, ref) {
   const savedHandler = useRef()
 
   useEffect(() => {
     savedHandler.current = handler
   }, [handler])
 
+  //console.log({ element })
+
   useEffect(() => {
+    const element = !ref ? window : ref.current
+
     const isSupported = element && element.addEventListener
+
     if (!isSupported) return
 
     const eventListener = event => savedHandler.current(event)
@@ -18,7 +23,7 @@ function useEventListener(eventName, handler, element = window) {
     return () => {
       element.removeEventListener(eventName, eventListener)
     }
-  }, [eventName, element])
+  }, [eventName, ref])
 }
 
 export default useEventListener

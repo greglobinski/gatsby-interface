@@ -20,18 +20,12 @@ const HamburgerIconStylesShared = isInverted => {
   }
 }
 
-const BaseNavigationDropdownOpenStyles = {
+const BaseNavigationDropdownStyles = {
   display: `inline-block`,
   position: `absolute`,
-  top: `95%`,
-  left: 0,
-  margin: 0,
-  padding: `0.75rem 0`,
-}
-
-const BaseNavigationDropdownClosedStyles = {
-  display: `none`,
   listStyle: `none`,
+  top: `100%`,
+  left: 0,
   margin: 0,
   padding: 0,
 }
@@ -132,22 +126,18 @@ const baseStyles = {
       display: `inline-flex`,
       position: `relative`,
       color: isInverted ? colors.white : colors.black,
-      // Show dropdown menu on hover, if exists
-      "&:hover > ul": {
-        ...BaseNavigationDropdownOpenStyles,
-      },
     }
   },
-  dropdown: isDropdownOpen => {
+  dropdown: () => {
     return {
-      ...BaseNavigationDropdownClosedStyles,
-      ...(isDropdownOpen && BaseNavigationDropdownOpenStyles),
+      ...BaseNavigationDropdownStyles,
     }
   },
-  dropdownToggle: isInverted => {
+  dropdownToggle: (isInverted, isDropdownOpen) => {
     return {
       color: isInverted ? colors.white : colors.black,
       background: isInverted ? 0 : `inherit`,
+      transform: `rotate(${isDropdownOpen ? `180deg` : `0`})`,
     }
   },
   button: isInverted => {

@@ -6,7 +6,8 @@ import { MdArrowForward } from "react-icons/md"
 
 import { LinkButton } from "../../LinkButton"
 import { visuallyHidden } from "../../../utils/helpers"
-import useOnClickOutside from "../../../utils/hooks/useOnClickOutside"
+import { useOnClickOutside } from "../../../utils/hooks"
+import { useEventListener } from "../../../utils/hooks"
 
 import baseStyles from "./BaseNavigationStyles"
 
@@ -167,6 +168,9 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
 
   const ref = React.useRef()
 
+  useEventListener(`mouseenter`, () => toggleDropdown(true), ref)
+  useEventListener(`mouseleave`, () => toggleDropdown(false), ref)
+
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => {
     if (itemHasDropdown) {
@@ -226,7 +230,7 @@ BaseNavigation.DropdownToggle = ({
       onClick={() => {
         toggleDropdown(!isDropdownOpen)
       }}
-      css={baseStyles.dropdownToggle(isInverted)}
+      css={baseStyles.dropdownToggle(isInverted, isDropdownOpen)}
       {...rest}
     >
       <span aria-hidden="true">&or;</span>
@@ -249,7 +253,7 @@ BaseNavigation.Dropdown = ({
 
   return (
     <ul
-      css={baseStyles.dropdown(isDropdownOpen)}
+      css={baseStyles.dropdown()}
       // id to associate with aria-controls on BaseNavigation.Item
       id={`${item.name}-dropdown`}
       onKeyDown={e => {
@@ -260,6 +264,7 @@ BaseNavigation.Dropdown = ({
         return
       }}
       {...rest}
+      style={{ display: !isDropdownOpen ? `none` : undefined }}
     >
       {dropdownItems.length > 0 &&
         dropdownItems.map((item, index) => (

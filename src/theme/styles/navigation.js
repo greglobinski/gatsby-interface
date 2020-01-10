@@ -85,22 +85,25 @@ styles.List = {
 }
 
 const DropdownOpenStyles = {
+  display: `grid`,
+  gridTemplateColumns: `max-content`,
   fontSize: fontSizes[1],
   fontFamily: fonts.system,
-  right: 0,
   boxShadow: `0px 4px 16px rgba(46, 41, 51, 0.08), 0px 8px 24px rgba(71, 63, 79, 0.16)`,
   background: colors.white,
-  width: 450,
   borderRadius: 2,
+  left: `50%`,
+  padding: `${space[4]} 0`,
+  transform: `translateX(-50%)`,
 
   ":after": {
     position: `absolute`,
     top: -6,
-    left: 30,
+    left: `50%`,
     width: 12,
     height: 12,
     content: `" "`,
-    transform: `rotate(45deg)`,
+    transform: `translateX(-50%) rotate(45deg)`,
     borderRadius: `2 0 0 0`,
     background: colors.white,
     boxShadow: `-3px -3px 10px ${hexToRGBA(colors.lilac, 0.1)}`,
