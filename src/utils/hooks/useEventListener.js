@@ -7,8 +7,6 @@ function useEventListener(eventName, handler, ref) {
     savedHandler.current = handler
   }, [handler])
 
-  //console.log({ element })
-
   useEffect(() => {
     const element = !ref ? window : ref.current
 
