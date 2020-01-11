@@ -168,8 +168,8 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
 
   const ref = React.useRef()
 
-  useEventListener(`mouseenter`, () => toggleDropdown(true), ref)
-  useEventListener(`mouseleave`, () => toggleDropdown(false), ref)
+  useEventListener(`mouseover`, () => toggleDropdown(true), ref)
+  useEventListener(`mouseout`, () => toggleDropdown(false), ref)
 
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => {
