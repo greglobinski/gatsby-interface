@@ -39,7 +39,7 @@ const BaseNavigation = ({
     false
   )
 
-  const [dropdowns, setDropdowns] = React.useState({})
+  const [dropdownOffsets, setDropdownOffsets] = React.useState({})
 
   const shouldManageMobileNavState =
     typeof customIsMobileNavOpen === `undefined` &&
@@ -60,8 +60,8 @@ const BaseNavigation = ({
     mobileNavMediaQuery,
     isMobileNavOpen,
     setIsMobileNavOpen,
-    dropdowns,
-    setDropdowns,
+    dropdownOffsets,
+    setDropdownOffsets,
     components: {
       Hamburger,
       HamburgerIcon,
@@ -268,7 +268,7 @@ BaseNavigation.Dropdown = React.memo(
     ...rest
   }) => {
     const dropdownRef = React.useRef()
-    const { setDropdowns } = BaseNavigation.useNavigationContext()
+    const { setDropdownOffsets } = BaseNavigation.useNavigationContext()
     const VIEWPORT_FIT_MARGIN = 20
 
     React.useEffect(() => {
@@ -290,7 +290,7 @@ BaseNavigation.Dropdown = React.memo(
           ? windowWidth - (right + VIEWPORT_FIT_MARGIN)
           : 0
 
-        setDropdowns(prev => ({
+        setDropdownOffsets(prev => ({
           ...prev,
           [item.name]: {
             offset: offset,
