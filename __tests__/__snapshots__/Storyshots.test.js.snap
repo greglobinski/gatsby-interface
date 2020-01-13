@@ -1047,13 +1047,19 @@ exports[`Storyshots BaseNavigation usage example 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
+  display: none;
   position: absolute;
-  list-style: none;
   top: 100%;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.emotion-4 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 <div>
@@ -1111,26 +1117,29 @@ exports[`Storyshots BaseNavigation usage example 1`] = `
                         Alpha Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-4"
-                      id="Alpha-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li>
-                        <a
-                          href="/alpha/delta"
-                        >
-                          Delta
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/alpha/echo"
-                        >
-                          Echo
-                        </a>
-                      </li>
-                    </ul>
+                      <ul
+                        id="Alpha-dropdown"
+                      >
+                        <li>
+                          <a
+                            href="/alpha/delta"
+                          >
+                            Delta
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/alpha/echo"
+                          >
+                            Echo
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li
                     class="emotion-5"
@@ -4391,11 +4400,24 @@ exports[`Storyshots Modal Panel 1`] = `
 `;
 
 exports[`Storyshots Navigation default example 1`] = `
-.emotion-31 {
+@keyframes animation-0 {
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(calc(-50% + 20px),0);
+    -ms-transform: translate(calc(-50% + 20px),0);
+    transform: translate(calc(-50% + 20px),0);
+  }
+}
+
+.emotion-36 {
   padding: 2rem;
 }
 
-.emotion-30 {
+.emotion-35 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4517,7 +4539,7 @@ exports[`Storyshots Navigation default example 1`] = `
   transform: scale(1.2);
 }
 
-.emotion-29 {
+.emotion-34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4531,13 +4553,13 @@ exports[`Storyshots Navigation default example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-29 {
+  .emotion-34 {
     display: none;
   }
 }
 
 @media (max-width:1065px) {
-  .emotion-29 {
+  .emotion-34 {
     display: none;
     position: fixed;
     overflow-y: auto;
@@ -4557,7 +4579,7 @@ exports[`Storyshots Navigation default example 1`] = `
   }
 }
 
-.emotion-28 {
+.emotion-33 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4569,7 +4591,7 @@ exports[`Storyshots Navigation default example 1`] = `
   justify-content: space-between;
 }
 
-.emotion-27 {
+.emotion-32 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4597,7 +4619,7 @@ exports[`Storyshots Navigation default example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-27 {
+  .emotion-32 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -4626,42 +4648,6 @@ exports[`Storyshots Navigation default example 1`] = `
   color: #000000;
   margin-bottom: 0;
   padding: 0 0.75rem;
-}
-
-.emotion-3:hover > ul {
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-3:hover > ul:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
 }
 
 @media (max-width:1065px) {
@@ -4773,65 +4759,6 @@ exports[`Storyshots Navigation default example 1`] = `
   white-space: nowrap;
 }
 
-.emotion-9 {
-  display: inline-block;
-  position: absolute;
-  list-style: none;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-9:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
-@media (max-width:1065px) {
-  .emotion-9 {
-    display: inline-block;
-    background: 0;
-    width: 100%;
-    color: #ffffff;
-    position: relative;
-    padding: 0;
-    margin-bottom: 0.75rem;
-  }
-
-  .emotion-9:after {
-    content: none;
-  }
-}
-
 .emotion-7 a {
   color: #78757a;
   -webkit-text-decoration: none;
@@ -4876,6 +4803,71 @@ exports[`Storyshots Navigation default example 1`] = `
   flex: 1;
 }
 
+.emotion-9 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: animation-0 .15s ease-out forwards;
+  animation: animation-0 .15s ease-out forwards;
+  opacity: 0;
+  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-transform: translate(calc(-50% + 20px),-0.5rem);
+  -ms-transform: translate(calc(-50% + 20px),-0.5rem);
+  transform: translate(calc(-50% + 20px),-0.5rem);
+  will-change: transform opacity;
+}
+
+.emotion-9 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emotion-9 ul {
+  display: grid;
+  grid-template-columns: max-content;
+}
+
+.emotion-9:after {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  content: " ";
+  border-radius: 2 0 0 0;
+  background: #ffffff;
+  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
+  -webkit-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  -ms-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+}
+
+@media (max-width:1065px) {
+  .emotion-9 {
+    display: inline-block;
+    background: 0;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .emotion-9:after {
+    content: none;
+  }
+}
+
 <div>
   <div
     class="storybook-readme-story"
@@ -4883,10 +4875,10 @@ exports[`Storyshots Navigation default example 1`] = `
     <div>
       <div>
         <div
-          class="emotion-31"
+          class="emotion-36"
         >
           <div
-            class="emotion-30"
+            class="emotion-35"
           >
             <button
               aria-expanded=""
@@ -4897,13 +4889,13 @@ exports[`Storyshots Navigation default example 1`] = `
               />
             </button>
             <nav
-              class="emotion-29"
+              class="emotion-34"
             >
               <div
-                class="emotion-28"
+                class="emotion-33"
               >
                 <ul
-                  class="emotion-27"
+                  class="emotion-32"
                 >
                   <li
                     class="emotion-3"
@@ -4944,30 +4936,33 @@ exports[`Storyshots Navigation default example 1`] = `
                         How It Works Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-9"
-                      id="How It Works-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-7"
+                      <ul
+                        id="How It Works-dropdown"
                       >
-                        <a
-                          href="/how-it-works/bring-data-from-anywhere/"
+                        <li
+                          class="emotion-7"
                         >
-                          Bring Data From Anywhere
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-7"
-                      >
-                        <a
-                          href="/write-modern-apps/"
+                          <a
+                            href="/how-it-works/bring-data-from-anywhere/"
+                          >
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
                         >
-                          Write Modern Apps
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/write-modern-apps/"
+                          >
+                            Write Modern Apps
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li
                     class="emotion-3"
@@ -5020,30 +5015,33 @@ exports[`Storyshots Navigation default example 1`] = `
                         Resources Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-9"
-                      id="Resources-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-7"
+                      <ul
+                        id="Resources-dropdown"
                       >
-                        <a
-                          href="/resources/gatsby-days/"
+                        <li
+                          class="emotion-7"
                         >
-                          Gatsby Days
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-7"
-                      >
-                        <a
-                          href="/resources/webinars/"
+                          <a
+                            href="/resources/gatsby-days/"
+                          >
+                            Gatsby Days
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
                         >
-                          Webinars
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/resources/webinars/"
+                          >
+                            Webinars
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <div
                     class="emotion-22"
@@ -5071,6 +5069,49 @@ exports[`Storyshots Navigation default example 1`] = `
                         Contact Us
                       </span>
                     </a>
+                    <button
+                      aria-controls="Contact Us-dropdown"
+                      aria-expanded="false"
+                      class="emotion-6"
+                    >
+                      <span
+                        aria-hidden="true"
+                      >
+                        ∨
+                      </span>
+                      <span
+                        class="emotion-5"
+                      >
+                        Contact Us Menu
+                      </span>
+                    </button>
+                    <div
+                      class="emotion-9"
+                      style="visibility: visible; display: none;"
+                    >
+                      <ul
+                        id="Contact Us-dropdown"
+                      >
+                        <li
+                          class="emotion-7"
+                        >
+                          <a
+                            href="/how-it-works/bring-data-from-anywhere/"
+                          >
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
+                        >
+                          <a
+                            href="/write-modern-apps/"
+                          >
+                            Write Modern Apps
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -5084,6 +5125,19 @@ exports[`Storyshots Navigation default example 1`] = `
 `;
 
 exports[`Storyshots Navigation inverted example 1`] = `
+@keyframes animation-0 {
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(calc(-50% + 20px),0);
+    -ms-transform: translate(calc(-50% + 20px),0);
+    transform: translate(calc(-50% + 20px),0);
+  }
+}
+
 .emotion-26 {
   width: 100%;
   display: -webkit-box;
@@ -5222,65 +5276,6 @@ exports[`Storyshots Navigation inverted example 1`] = `
   white-space: nowrap;
 }
 
-.emotion-9 {
-  display: inline-block;
-  position: absolute;
-  list-style: none;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-9:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
-@media (max-width:1065px) {
-  .emotion-9 {
-    display: inline-block;
-    background: 0;
-    width: 100%;
-    color: #ffffff;
-    position: relative;
-    padding: 0;
-    margin-bottom: 0.75rem;
-  }
-
-  .emotion-9:after {
-    content: none;
-  }
-}
-
 .emotion-7 a {
   color: #78757a;
   -webkit-text-decoration: none;
@@ -5323,6 +5318,71 @@ exports[`Storyshots Navigation inverted example 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.emotion-9 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: animation-0 .15s ease-out forwards;
+  animation: animation-0 .15s ease-out forwards;
+  opacity: 0;
+  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-transform: translate(calc(-50% + 20px),-0.5rem);
+  -ms-transform: translate(calc(-50% + 20px),-0.5rem);
+  transform: translate(calc(-50% + 20px),-0.5rem);
+  will-change: transform opacity;
+}
+
+.emotion-9 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emotion-9 ul {
+  display: grid;
+  grid-template-columns: max-content;
+}
+
+.emotion-9:after {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  content: " ";
+  border-radius: 2 0 0 0;
+  background: #ffffff;
+  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
+  -webkit-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  -ms-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+}
+
+@media (max-width:1065px) {
+  .emotion-9 {
+    display: inline-block;
+    background: 0;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .emotion-9:after {
+    content: none;
+  }
 }
 
 .emotion-27 {
@@ -5434,42 +5494,6 @@ exports[`Storyshots Navigation inverted example 1`] = `
   color: #ffffff;
   margin-bottom: 0;
   padding: 0 0.75rem;
-}
-
-.emotion-3:hover > ul {
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-3:hover > ul:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
 }
 
 @media (max-width:1065px) {
@@ -5639,30 +5663,33 @@ exports[`Storyshots Navigation inverted example 1`] = `
                         How It Works Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-9"
-                      id="How It Works-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-7"
+                      <ul
+                        id="How It Works-dropdown"
                       >
-                        <a
-                          href="/how-it-works/bring-data-from-anywhere/"
+                        <li
+                          class="emotion-7"
                         >
-                          Bring Data From Anywhere
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-7"
-                      >
-                        <a
-                          href="/write-modern-apps/"
+                          <a
+                            href="/how-it-works/bring-data-from-anywhere/"
+                          >
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
                         >
-                          Write Modern Apps
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/write-modern-apps/"
+                          >
+                            Write Modern Apps
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li
                     class="emotion-3"
@@ -5715,30 +5742,33 @@ exports[`Storyshots Navigation inverted example 1`] = `
                         Resources Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-9"
-                      id="Resources-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-7"
+                      <ul
+                        id="Resources-dropdown"
                       >
-                        <a
-                          href="/resources/gatsby-days/"
+                        <li
+                          class="emotion-7"
                         >
-                          Gatsby Days
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-7"
-                      >
-                        <a
-                          href="/resources/webinars/"
+                          <a
+                            href="/resources/gatsby-days/"
+                          >
+                            Gatsby Days
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
                         >
-                          Webinars
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/resources/webinars/"
+                          >
+                            Webinars
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <div
                     class="emotion-22"
@@ -5992,42 +6022,6 @@ exports[`Storyshots Navigation with item links as children 1`] = `
   padding: 0 0.75rem;
 }
 
-.emotion-4:hover > ul {
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-4:hover > ul:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
 @media (max-width:1065px) {
   .emotion-4 {
     display: block;
@@ -6186,6 +6180,19 @@ exports[`Storyshots Navigation with item links as children 1`] = `
 
 exports[`Storyshots Navigation with item links as props and button as child 1`] = `
 @keyframes animation-0 {
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(calc(-50% + 20px),0);
+    -ms-transform: translate(calc(-50% + 20px),0);
+    transform: translate(calc(-50% + 20px),0);
+  }
+}
+
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6199,7 +6206,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6213,7 +6220,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6227,7 +6234,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6241,7 +6248,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6255,7 +6262,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6269,7 +6276,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6283,7 +6290,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6297,7 +6304,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6311,7 +6318,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6325,7 +6332,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6339,7 +6346,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6353,7 +6360,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6367,7 +6374,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6381,7 +6388,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6395,7 +6402,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6409,7 +6416,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6423,7 +6430,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6437,7 +6444,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6451,7 +6458,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6465,7 +6472,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6479,7 +6486,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6493,7 +6500,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6507,7 +6514,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6521,7 +6528,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6535,7 +6542,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6549,7 +6556,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6563,7 +6570,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6577,7 +6584,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-@keyframes animation-0 {
+@keyframes animation-1 {
   33% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6828,42 +6835,6 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   padding: 0 0.75rem;
 }
 
-.emotion-3:hover > ul {
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-3:hover > ul:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
 @media (max-width:1065px) {
   .emotion-3 {
     display: block;
@@ -6973,65 +6944,6 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   white-space: nowrap;
 }
 
-.emotion-9 {
-  display: inline-block;
-  position: absolute;
-  list-style: none;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-9:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
-@media (max-width:1065px) {
-  .emotion-9 {
-    display: inline-block;
-    background: 0;
-    width: 100%;
-    color: #ffffff;
-    position: relative;
-    padding: 0;
-    margin-bottom: 0.75rem;
-  }
-
-  .emotion-9:after {
-    content: none;
-  }
-}
-
 .emotion-7 a {
   color: #78757a;
   -webkit-text-decoration: none;
@@ -7074,6 +6986,71 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.emotion-9 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: animation-0 .15s ease-out forwards;
+  animation: animation-0 .15s ease-out forwards;
+  opacity: 0;
+  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-transform: translate(calc(-50% + 20px),-0.5rem);
+  -ms-transform: translate(calc(-50% + 20px),-0.5rem);
+  transform: translate(calc(-50% + 20px),-0.5rem);
+  will-change: transform opacity;
+}
+
+.emotion-9 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emotion-9 ul {
+  display: grid;
+  grid-template-columns: max-content;
+}
+
+.emotion-9:after {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  content: " ";
+  border-radius: 2 0 0 0;
+  background: #ffffff;
+  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
+  -webkit-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  -ms-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+}
+
+@media (max-width:1065px) {
+  .emotion-9 {
+    display: inline-block;
+    background: 0;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .emotion-9:after {
+    content: none;
+  }
 }
 
 .emotion-24 {
@@ -7131,8 +7108,8 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
 }
 
 .emotion-24:hover:not([disabled]) svg {
-  -webkit-animation: animation-0 1s linear infinite;
-  animation: animation-0 1s linear infinite;
+  -webkit-animation: animation-1 1s linear infinite;
+  animation: animation-1 1s linear infinite;
 }
 
 .emotion-24:hover {
@@ -7226,30 +7203,33 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                         How It Works Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-9"
-                      id="How It Works-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-7"
+                      <ul
+                        id="How It Works-dropdown"
                       >
-                        <a
-                          href="/how-it-works/bring-data-from-anywhere/"
+                        <li
+                          class="emotion-7"
                         >
-                          Bring Data From Anywhere
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-7"
-                      >
-                        <a
-                          href="/write-modern-apps/"
+                          <a
+                            href="/how-it-works/bring-data-from-anywhere/"
+                          >
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
                         >
-                          Write Modern Apps
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/write-modern-apps/"
+                          >
+                            Write Modern Apps
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li
                     class="emotion-3"
@@ -7302,30 +7282,33 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                         Resources Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-9"
-                      id="Resources-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-7"
+                      <ul
+                        id="Resources-dropdown"
                       >
-                        <a
-                          href="/resources/gatsby-days/"
+                        <li
+                          class="emotion-7"
                         >
-                          Gatsby Days
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-7"
-                      >
-                        <a
-                          href="/resources/webinars/"
+                          <a
+                            href="/resources/gatsby-days/"
+                          >
+                            Gatsby Days
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-7"
                         >
-                          Webinars
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/resources/webinars/"
+                          >
+                            Webinars
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <div
                     class="emotion-22"
@@ -7602,42 +7585,6 @@ exports[`Storyshots Navigation with item links as props and children 1`] = `
   padding: 0 0.75rem;
 }
 
-.emotion-3:hover > ul {
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-3:hover > ul:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
 @media (max-width:1065px) {
   .emotion-3 {
     display: block;
@@ -7795,6 +7742,19 @@ exports[`Storyshots Navigation with item links as props and children 1`] = `
 `;
 
 exports[`Storyshots Navigation with nested item links as children 1`] = `
+@keyframes animation-0 {
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(calc(-50% + 20px),0);
+    -ms-transform: translate(calc(-50% + 20px),0);
+    transform: translate(calc(-50% + 20px),0);
+  }
+}
+
 .emotion-14 {
   padding: 2rem;
 }
@@ -8032,42 +7992,6 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
   padding: 0 0.75rem;
 }
 
-.emotion-9:hover > ul {
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-9:hover > ul:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
 @media (max-width:1065px) {
   .emotion-9 {
     display: block;
@@ -8177,65 +8101,6 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
   white-space: nowrap;
 }
 
-.emotion-8 {
-  display: inline-block;
-  position: absolute;
-  list-style: none;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: max-content;
-  font-size: 0.875rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
-  background: #ffffff;
-  border-radius: 2px;
-  left: 50%;
-  padding: 0.75rem 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.emotion-8:after {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 2 0 0 0;
-  background: #ffffff;
-  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
-  will-change: transform;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-}
-
-@media (max-width:1065px) {
-  .emotion-8 {
-    display: inline-block;
-    background: 0;
-    width: 100%;
-    color: #ffffff;
-    position: relative;
-    padding: 0;
-    margin-bottom: 0.75rem;
-  }
-
-  .emotion-8:after {
-    content: none;
-  }
-}
-
 .emotion-6 a {
   color: #78757a;
   -webkit-text-decoration: none;
@@ -8278,6 +8143,71 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.emotion-8 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: animation-0 .15s ease-out forwards;
+  animation: animation-0 .15s ease-out forwards;
+  opacity: 0;
+  box-shadow: 0px 4px 16px rgba(46,41,51,0.08),0px 8px 24px rgba(71,63,79,0.16);
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-transform: translate(calc(-50% + 20px),-0.5rem);
+  -ms-transform: translate(calc(-50% + 20px),-0.5rem);
+  transform: translate(calc(-50% + 20px),-0.5rem);
+  will-change: transform opacity;
+}
+
+.emotion-8 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emotion-8 ul {
+  display: grid;
+  grid-template-columns: max-content;
+}
+
+.emotion-8:after {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  content: " ";
+  border-radius: 2 0 0 0;
+  background: #ffffff;
+  box-shadow: -3px -3px 10px rgba(138,75,175,0.1);
+  -webkit-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  -ms-transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+  transform: translateX(calc(-50% + (20px * -1))) rotate(45deg);
+}
+
+@media (max-width:1065px) {
+  .emotion-8 {
+    display: inline-block;
+    background: 0;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .emotion-8:after {
+    content: none;
+  }
 }
 
 <div>
@@ -8339,30 +8269,33 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
                         About Menu
                       </span>
                     </button>
-                    <ul
+                    <div
                       class="emotion-8"
-                      id="About-dropdown"
-                      style="display: none;"
+                      style="visibility: visible; display: none;"
                     >
-                      <li
-                        class="emotion-6"
+                      <ul
+                        id="About-dropdown"
                       >
-                        <a
-                          href="/contact/"
+                        <li
+                          class="emotion-6"
                         >
-                          Contact
-                        </a>
-                      </li>
-                      <li
-                        class="emotion-6"
-                      >
-                        <a
-                          href="/faq/"
+                          <a
+                            href="/contact/"
+                          >
+                            Contact
+                          </a>
+                        </li>
+                        <li
+                          class="emotion-6"
                         >
-                          FAQ
-                        </a>
-                      </li>
-                    </ul>
+                          <a
+                            href="/faq/"
+                          >
+                            FAQ
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </div>
