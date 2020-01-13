@@ -8,6 +8,7 @@ import { LinkButton } from "../../LinkButton"
 import { visuallyHidden } from "../../../utils/helpers"
 import { useOnClickOutside } from "../../../utils/hooks"
 import { useEventListener } from "../../../utils/hooks"
+import { callIfTrueInNextLoop } from "../../../utils/helpers"
 
 import baseStyles from "./BaseNavigationStyles"
 
@@ -38,6 +39,8 @@ const BaseNavigation = ({
     false
   )
 
+  const [dropdowns, setDropdowns] = React.useState({})
+
   const shouldManageMobileNavState =
     typeof customIsMobileNavOpen === `undefined` &&
     typeof customSetIsMobileNavOpen === `undefined`
@@ -57,6 +60,8 @@ const BaseNavigation = ({
     mobileNavMediaQuery,
     isMobileNavOpen,
     setIsMobileNavOpen,
+    dropdowns,
+    setDropdowns,
     components: {
       Hamburger,
       HamburgerIcon,
@@ -166,13 +171,13 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
   const dropdownChildren = children || false
   const itemHasDropdown = dropdownItems.length > 0 || dropdownChildren
 
-  const ref = React.useRef()
+  const itemRef = React.useRef()
 
-  useEventListener(`mouseover`, () => toggleDropdown(true), ref)
-  useEventListener(`mouseout`, () => toggleDropdown(false), ref)
+  useEventListener(`mouseenter`, () => toggleDropdown(true), itemRef)
+  useEventListener(`mouseleave`, () => toggleDropdown(false), itemRef)
 
   // Call hook passing in the ref and a function to call on outside click
-  useOnClickOutside(ref, () => {
+  useOnClickOutside(itemRef, () => {
     if (itemHasDropdown) {
       toggleDropdown(false)
     }
@@ -184,7 +189,7 @@ BaseNavigation.Item = ({ item, children, ...rest }) => {
   } = BaseNavigation.useNavigationContext()
 
   return (
-    <li ref={ref} css={baseStyles.item(isInverted)} {...rest}>
+    <li ref={itemRef} css={baseStyles.item(isInverted)} {...rest}>
       <ItemLink item={item} />
       {itemHasDropdown && (
         <>
@@ -221,10 +226,24 @@ BaseNavigation.DropdownToggle = ({
   toggleDropdown,
   ...rest
 }) => {
+  const toggleRef = React.useRef()
   const { isInverted } = BaseNavigation.useNavigationContext()
+
+  useEventListener(`blur`, () => onToggleBlur(false), toggleRef)
+
+  function onToggleBlur() {
+    // close Dropdown if next activeElement is ItemLink
+    callIfTrueInNextLoop(
+      () =>
+        toggleRef.current.parentElement ===
+        document.activeElement.parentElement,
+      () => toggleDropdown(false)
+    )
+  }
 
   return (
     <button
+      ref={toggleRef}
       aria-expanded={!!isDropdownOpen}
       aria-controls={`${item.name}-dropdown`}
       onClick={() => {
@@ -239,49 +258,116 @@ BaseNavigation.DropdownToggle = ({
   )
 }
 
-BaseNavigation.Dropdown = ({
-  item,
-  isDropdownOpen,
-  toggleDropdown,
-  dropdownItems = [],
-  dropdownChildren = false,
+BaseNavigation.Dropdown = React.memo(
+  ({
+    item,
+    isDropdownOpen,
+    toggleDropdown,
+    dropdownItems = [],
+    dropdownChildren = false,
+    ...rest
+  }) => {
+    const dropdownRef = React.useRef()
+    const { setDropdowns } = BaseNavigation.useNavigationContext()
+    const VIEWPORT_FIT_MARGIN = 20
+
+    React.useEffect(() => {
+      if (dropdownRef.current) {
+        const windowWidth =
+          window.innerWidth || document.documentElement.clientWidth
+
+        dropdownRef.current.style.visibility = `hidden`
+        dropdownRef.current.style.display = `block`
+        const { left, right } = dropdownRef.current.getBoundingClientRect()
+        dropdownRef.current.style.visibility = `visible`
+        dropdownRef.current.style.display = `none`
+
+        const leftFit = left >= VIEWPORT_FIT_MARGIN
+        const rightFit = right <= windowWidth - VIEWPORT_FIT_MARGIN
+        const offset = !leftFit
+          ? (left - VIEWPORT_FIT_MARGIN) * -1
+          : !rightFit
+          ? windowWidth - (right + VIEWPORT_FIT_MARGIN)
+          : 0
+
+        setDropdowns(prev => ({
+          ...prev,
+          [item.name]: {
+            offset: offset,
+          },
+        }))
+      }
+    }, [])
+
+    React.useEffect(() => {
+      if (dropdownRef.current) {
+        dropdownRef.current.style.display = isDropdownOpen ? `block` : `none`
+      }
+    }, [isDropdownOpen])
+
+    const {
+      components: { DropdownItem },
+    } = BaseNavigation.useNavigationContext()
+
+    function onLastItemBlur() {
+      // close Dropdown if next activeElement is outside Dropdown
+      callIfTrueInNextLoop(
+        () =>
+          dropdownRef.current !==
+          document.activeElement.parentElement.parentElement.parentElement,
+        () => toggleDropdown(false)
+      )
+    }
+
+    return (
+      <div ref={dropdownRef} css={baseStyles.dropdown} {...rest}>
+        <ul
+          // id to associate with aria-controls on BaseNavigation.Item
+          id={`${item.name}-dropdown`}
+          onKeyDown={e => {
+            // handle closing dropdown on `esc`
+            if (e.keyCode === 27) {
+              toggleDropdown(false)
+            }
+            return
+          }}
+        >
+          {dropdownItems.length > 0 &&
+            dropdownItems.map((item, index) => (
+              <DropdownItem
+                key={`${index}-${item.name}`}
+                item={item}
+                isLast={index + 1 === dropdownItems.length}
+                onLastItemBlur={onLastItemBlur}
+              />
+            ))}
+          {dropdownChildren && dropdownChildren}
+        </ul>
+      </div>
+    )
+  }
+)
+
+BaseNavigation.DropdownItem = ({
+  item: { name, linkTo },
+  isLast,
+  onLastItemBlur,
   ...rest
 }) => {
-  const {
-    components: { DropdownItem },
-  } = BaseNavigation.useNavigationContext()
+  const linkRef = React.useRef()
+
+  if (isLast) {
+    useEventListener(`blur`, onLastItemBlur, linkRef)
+  }
 
   return (
-    <ul
-      css={baseStyles.dropdown()}
-      // id to associate with aria-controls on BaseNavigation.Item
-      id={`${item.name}-dropdown`}
-      onKeyDown={e => {
-        // handle closing dropdown on `esc`
-        if (e.keyCode === 27) {
-          toggleDropdown(false)
-        }
-        return
-      }}
-      {...rest}
-      style={{ display: !isDropdownOpen ? `none` : undefined }}
-    >
-      {dropdownItems.length > 0 &&
-        dropdownItems.map((item, index) => (
-          <DropdownItem key={`${index}-${item.name}`} item={item} />
-        ))}
-      {dropdownChildren && dropdownChildren}
-    </ul>
+    <li {...rest}>
+      <Link ref={linkRef} activeClassName="nav-item-active" to={linkTo}>
+        {name}
+      </Link>
+    </li>
   )
 }
-
-BaseNavigation.DropdownItem = ({ item: { name, linkTo }, ...rest }) => (
-  <li {...rest}>
-    <Link activeClassName="nav-item-active" to={linkTo}>
-      {name}
-    </Link>
-  </li>
-)
 
 BaseNavigation.LinkButton = ({
   linkTo,

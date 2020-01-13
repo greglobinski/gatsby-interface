@@ -1,3 +1,4 @@
+import { keyframes } from "@emotion/core"
 import colors from "../colors"
 import fontSizes from "../fontSizes"
 import fonts from "../fonts"
@@ -84,17 +85,32 @@ styles.List = {
   },
 }
 
-const DropdownOpenStyles = {
-  display: `grid`,
-  gridTemplateColumns: `max-content`,
-  fontSize: fontSizes[1],
-  fontFamily: fonts.system,
+const dropdownEntry = offset => keyframes`
+  25% {
+    opacity: 1;
+  }
+  100% {    
+    opacity: 1;
+    transform: translate(calc(-50% + ${offset}), 0);
+  }
+`
+
+const DropdownOpenStyles = offset => ({
+  animation: `${dropdownEntry(offset)} .15s ease-out forwards`,
+  opacity: 0,
   boxShadow: `0px 4px 16px rgba(46, 41, 51, 0.08), 0px 8px 24px rgba(71, 63, 79, 0.16)`,
   background: colors.white,
   borderRadius: 2,
-  left: `50%`,
   padding: `${space[4]} 0`,
-  transform: `translateX(-50%)`,
+  fontSize: fontSizes[1],
+  fontFamily: fonts.system,
+  transform: `translate(calc(-50% + ${offset}), -${space[3]})`,
+  willChange: `transform opacity`,
+
+  ul: {
+    display: `grid`,
+    gridTemplateColumns: `max-content`,
+  },
 
   ":after": {
     position: `absolute`,
@@ -103,15 +119,12 @@ const DropdownOpenStyles = {
     width: 12,
     height: 12,
     content: `" "`,
-    transform: `translateX(-50%) rotate(45deg)`,
     borderRadius: `2 0 0 0`,
     background: colors.white,
     boxShadow: `-3px -3px 10px ${hexToRGBA(colors.lilac, 0.1)}`,
-    willChange: `transform`,
-    transitionProperty: `transform`,
-    transitionDuration: transition.speed.default,
+    transform: `translateX(calc(-50% + (${offset} * -1))) rotate(45deg)`,
   },
-}
+})
 
 const DropdownMobileStyles = {
   width: `100%`,
@@ -129,9 +142,6 @@ styles.Item = {
   default: {
     marginBottom: 0,
     padding: `0 ${space[4]}`,
-    "&:hover > ul": {
-      ...DropdownOpenStyles,
-    },
   },
   mobile: {
     display: `block`,
@@ -198,9 +208,9 @@ styles.ItemLink = {
 }
 
 styles.Dropdown = {
-  default: {
-    ...DropdownOpenStyles,
-  },
+  default: offset => ({
+    ...DropdownOpenStyles(offset),
+  }),
   mobile: {
     display: `inline-block`,
     background: 0,

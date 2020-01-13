@@ -15,7 +15,7 @@ const items = [
     linkTo: `/how-it-works/`,
     items: [
       {
-        name: `Bring Data From Anywhere`,
+        name: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
         linkTo: `/how-it-works/bring-data-from-anywhere/`,
       },
       {
@@ -56,6 +56,16 @@ const secondaryItems = [
   {
     name: `Contact Us`,
     linkTo: `/contact-us/`,
+    items: [
+      {
+        name: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
+        linkTo: `/how-it-works/bring-data-from-anywhere/`,
+      },
+      {
+        name: `Write Modern Apps`,
+        linkTo: `/write-modern-apps/`,
+      },
+    ],
   },
 ]
 

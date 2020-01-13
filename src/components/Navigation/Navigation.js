@@ -109,14 +109,30 @@ Navigation.ItemLink = delegated => {
 }
 
 Navigation.Dropdown = delegated => {
-  const { mobileNavMediaQuery } = BaseNavigation.useNavigationContext()
+  const {
+    mobileNavMediaQuery,
+    dropdowns,
+  } = BaseNavigation.useNavigationContext()
+
+  const xOffset =
+    dropdowns[delegated.item.name] && dropdowns[delegated.item.name].offset
+      ? `${dropdowns[delegated.item.name].offset}px`
+      : `0px`
 
   return (
     <BaseNavigation.Dropdown
-      css={{
-        ...styles.Dropdown.default,
-        [mobileNavMediaQuery]: styles.Dropdown.mobile,
-      }}
+      css={[
+        {
+          ...styles.Dropdown.default(xOffset),
+          [mobileNavMediaQuery]: styles.Dropdown.mobile,
+        },
+        // {
+        //   transform: `translateX(calc(-50% + ${xOffset}))`,
+        //   ":after": {
+        //     transform: `translateX(calc(-50% + (${xOffset} * -1))) rotate(45deg)`,
+        //   },
+        // },
+      ]}
       {...delegated}
     />
   )
