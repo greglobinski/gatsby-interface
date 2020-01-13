@@ -4639,7 +4639,7 @@ exports[`Storyshots Navigation default example 1`] = `
   }
 }
 
-.emotion-3 {
+.emotion-8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -4651,12 +4651,12 @@ exports[`Storyshots Navigation default example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-3 {
+  .emotion-8 {
     display: block;
     color: #ffffff;
   }
 
-  .emotion-3:hover > ul {
+  .emotion-8:hover > ul {
     width: 100%;
     color: #ffffff;
     position: relative;
@@ -4665,7 +4665,7 @@ exports[`Storyshots Navigation default example 1`] = `
     margin-bottom: 0.75rem;
   }
 
-  .emotion-3:hover > ul:after {
+  .emotion-8:hover > ul:after {
     content: none;
   }
 }
@@ -4733,7 +4733,7 @@ exports[`Storyshots Navigation default example 1`] = `
   }
 }
 
-.emotion-6 {
+.emotion-4 {
   color: #000000;
   background: inherit;
   -webkit-transform: rotate(0);
@@ -4744,12 +4744,12 @@ exports[`Storyshots Navigation default example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-6 {
+  .emotion-4 {
     display: none;
   }
 }
 
-.emotion-5 {
+.emotion-3 {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -4759,7 +4759,7 @@ exports[`Storyshots Navigation default example 1`] = `
   white-space: nowrap;
 }
 
-.emotion-7 a {
+.emotion-5 a {
   color: #78757a;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -4769,18 +4769,18 @@ exports[`Storyshots Navigation default example 1`] = `
   transition: all 250ms;
 }
 
-.emotion-7 a:hover {
+.emotion-5 a:hover {
   color: #232129;
   background: rgba(255,178,56,0.1);
 }
 
-.emotion-7 a:focus-within {
+.emotion-5 a:focus-within {
   color: #232129;
   background: rgba(255,178,56,0.1);
 }
 
 @media (max-width:1065px) {
-  .emotion-7 a {
+  .emotion-5 a {
     color: #ffffff;
     -webkit-text-decoration: none;
     text-decoration: none;
@@ -4789,8 +4789,8 @@ exports[`Storyshots Navigation default example 1`] = `
     font-size: 0.875rem;
   }
 
-  .emotion-7 a:hover,
-  .emotion-7 a:focus-within {
+  .emotion-5 a:hover,
+  .emotion-5 a:focus-within {
     opacity: 1;
     color: #ffb238;
     background: none;
@@ -4803,7 +4803,7 @@ exports[`Storyshots Navigation default example 1`] = `
   flex: 1;
 }
 
-.emotion-9 {
+.emotion-7 {
   display: none;
   position: absolute;
   top: 100%;
@@ -4826,18 +4826,18 @@ exports[`Storyshots Navigation default example 1`] = `
   will-change: transform opacity;
 }
 
-.emotion-9 ul {
+.emotion-7 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.emotion-9 ul {
+.emotion-7 ul {
   display: grid;
   grid-template-columns: max-content;
 }
 
-.emotion-9:after {
+.emotion-7:after {
   position: absolute;
   top: -6px;
   left: 50%;
@@ -4853,7 +4853,7 @@ exports[`Storyshots Navigation default example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-9 {
+  .emotion-7 {
     display: inline-block;
     background: 0;
     width: 100%;
@@ -4863,7 +4863,7 @@ exports[`Storyshots Navigation default example 1`] = `
     margin-bottom: 0.75rem;
   }
 
-  .emotion-9:after {
+  .emotion-7:after {
     content: none;
   }
 }
@@ -4898,7 +4898,7 @@ exports[`Storyshots Navigation default example 1`] = `
                   class="emotion-32"
                 >
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -4908,22 +4908,10 @@ exports[`Storyshots Navigation default example 1`] = `
                         Why Gatsby?
                       </span>
                     </a>
-                  </li>
-                  <li
-                    class="emotion-3"
-                  >
-                    <a
-                      class="emotion-2"
-                      href="/how-it-works/"
-                    >
-                      <span>
-                        How It Works
-                      </span>
-                    </a>
                     <button
-                      aria-controls="How It Works-dropdown"
+                      aria-controls="Why Gatsby?-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -4931,29 +4919,29 @@ exports[`Storyshots Navigation default example 1`] = `
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
-                        How It Works Menu
+                        Why Gatsby? Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
-                        id="How It Works-dropdown"
+                        id="Why Gatsby?-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/how-it-works/bring-data-from-anywhere/"
                           >
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Gatsby Data From Anywhere, Gatsby Data From Anywhere
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/write-modern-apps/"
@@ -4965,7 +4953,19 @@ exports[`Storyshots Navigation default example 1`] = `
                     </div>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
+                  >
+                    <a
+                      class="emotion-2"
+                      href="/how-it-works/"
+                    >
+                      <span>
+                        How It Works
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -4977,7 +4977,7 @@ exports[`Storyshots Navigation default example 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -4989,7 +4989,7 @@ exports[`Storyshots Navigation default example 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5002,7 +5002,7 @@ exports[`Storyshots Navigation default example 1`] = `
                     <button
                       aria-controls="Resources-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -5010,20 +5010,20 @@ exports[`Storyshots Navigation default example 1`] = `
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
                         Resources Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
                         id="Resources-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/resources/gatsby-days/"
@@ -5032,7 +5032,7 @@ exports[`Storyshots Navigation default example 1`] = `
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/resources/webinars/"
@@ -5047,7 +5047,7 @@ exports[`Storyshots Navigation default example 1`] = `
                     class="emotion-22"
                   />
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5059,7 +5059,7 @@ exports[`Storyshots Navigation default example 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5072,7 +5072,7 @@ exports[`Storyshots Navigation default example 1`] = `
                     <button
                       aria-controls="Contact Us-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -5080,29 +5080,29 @@ exports[`Storyshots Navigation default example 1`] = `
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
                         Contact Us Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
                         id="Contact Us-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/how-it-works/bring-data-from-anywhere/"
                           >
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Gatsby Data From Anywhere, Gatsby Data From Anywhere
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/write-modern-apps/"
@@ -5266,7 +5266,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
   }
 }
 
-.emotion-5 {
+.emotion-3 {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -5276,7 +5276,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
   white-space: nowrap;
 }
 
-.emotion-7 a {
+.emotion-5 a {
   color: #78757a;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -5286,18 +5286,18 @@ exports[`Storyshots Navigation inverted example 1`] = `
   transition: all 250ms;
 }
 
-.emotion-7 a:hover {
+.emotion-5 a:hover {
   color: #232129;
   background: rgba(255,178,56,0.1);
 }
 
-.emotion-7 a:focus-within {
+.emotion-5 a:focus-within {
   color: #232129;
   background: rgba(255,178,56,0.1);
 }
 
 @media (max-width:1065px) {
-  .emotion-7 a {
+  .emotion-5 a {
     color: #ffffff;
     -webkit-text-decoration: none;
     text-decoration: none;
@@ -5306,8 +5306,8 @@ exports[`Storyshots Navigation inverted example 1`] = `
     font-size: 0.875rem;
   }
 
-  .emotion-7 a:hover,
-  .emotion-7 a:focus-within {
+  .emotion-5 a:hover,
+  .emotion-5 a:focus-within {
     opacity: 1;
     color: #ffb238;
     background: none;
@@ -5320,7 +5320,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
   flex: 1;
 }
 
-.emotion-9 {
+.emotion-7 {
   display: none;
   position: absolute;
   top: 100%;
@@ -5343,18 +5343,18 @@ exports[`Storyshots Navigation inverted example 1`] = `
   will-change: transform opacity;
 }
 
-.emotion-9 ul {
+.emotion-7 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.emotion-9 ul {
+.emotion-7 ul {
   display: grid;
   grid-template-columns: max-content;
 }
 
-.emotion-9:after {
+.emotion-7:after {
   position: absolute;
   top: -6px;
   left: 50%;
@@ -5370,7 +5370,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-9 {
+  .emotion-7 {
     display: inline-block;
     background: 0;
     width: 100%;
@@ -5380,7 +5380,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
     margin-bottom: 0.75rem;
   }
 
-  .emotion-9:after {
+  .emotion-7:after {
     content: none;
   }
 }
@@ -5485,7 +5485,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
   transform: scale(1.2);
 }
 
-.emotion-3 {
+.emotion-8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -5497,12 +5497,12 @@ exports[`Storyshots Navigation inverted example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-3 {
+  .emotion-8 {
     display: block;
     color: #ffffff;
   }
 
-  .emotion-3:hover > ul {
+  .emotion-8:hover > ul {
     width: 100%;
     color: #ffffff;
     position: relative;
@@ -5511,7 +5511,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
     margin-bottom: 0.75rem;
   }
 
-  .emotion-3:hover > ul:after {
+  .emotion-8:hover > ul:after {
     content: none;
   }
 }
@@ -5579,7 +5579,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
   }
 }
 
-.emotion-6 {
+.emotion-4 {
   color: #ffffff;
   background: 0;
   -webkit-transform: rotate(0);
@@ -5590,7 +5590,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
 }
 
 @media (max-width:1065px) {
-  .emotion-6 {
+  .emotion-4 {
     display: none;
   }
 }
@@ -5625,7 +5625,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
                   class="emotion-23"
                 >
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5635,22 +5635,10 @@ exports[`Storyshots Navigation inverted example 1`] = `
                         Why Gatsby?
                       </span>
                     </a>
-                  </li>
-                  <li
-                    class="emotion-3"
-                  >
-                    <a
-                      class="emotion-2"
-                      href="/how-it-works/"
-                    >
-                      <span>
-                        How It Works
-                      </span>
-                    </a>
                     <button
-                      aria-controls="How It Works-dropdown"
+                      aria-controls="Why Gatsby?-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -5658,29 +5646,29 @@ exports[`Storyshots Navigation inverted example 1`] = `
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
-                        How It Works Menu
+                        Why Gatsby? Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
-                        id="How It Works-dropdown"
+                        id="Why Gatsby?-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/how-it-works/bring-data-from-anywhere/"
                           >
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Gatsby Data From Anywhere, Gatsby Data From Anywhere
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/write-modern-apps/"
@@ -5692,7 +5680,19 @@ exports[`Storyshots Navigation inverted example 1`] = `
                     </div>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
+                  >
+                    <a
+                      class="emotion-2"
+                      href="/how-it-works/"
+                    >
+                      <span>
+                        How It Works
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5704,7 +5704,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5716,7 +5716,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -5729,7 +5729,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
                     <button
                       aria-controls="Resources-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -5737,20 +5737,20 @@ exports[`Storyshots Navigation inverted example 1`] = `
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
                         Resources Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
                         id="Resources-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/resources/gatsby-days/"
@@ -5759,7 +5759,7 @@ exports[`Storyshots Navigation inverted example 1`] = `
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/resources/webinars/"
@@ -6824,7 +6824,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-.emotion-3 {
+.emotion-8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -6836,12 +6836,12 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
 }
 
 @media (max-width:1065px) {
-  .emotion-3 {
+  .emotion-8 {
     display: block;
     color: #ffffff;
   }
 
-  .emotion-3:hover > ul {
+  .emotion-8:hover > ul {
     width: 100%;
     color: #ffffff;
     position: relative;
@@ -6850,7 +6850,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
     margin-bottom: 0.75rem;
   }
 
-  .emotion-3:hover > ul:after {
+  .emotion-8:hover > ul:after {
     content: none;
   }
 }
@@ -6918,7 +6918,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
-.emotion-6 {
+.emotion-4 {
   color: #000000;
   background: inherit;
   -webkit-transform: rotate(0);
@@ -6929,12 +6929,12 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
 }
 
 @media (max-width:1065px) {
-  .emotion-6 {
+  .emotion-4 {
     display: none;
   }
 }
 
-.emotion-5 {
+.emotion-3 {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -6944,7 +6944,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   white-space: nowrap;
 }
 
-.emotion-7 a {
+.emotion-5 a {
   color: #78757a;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -6954,18 +6954,18 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   transition: all 250ms;
 }
 
-.emotion-7 a:hover {
+.emotion-5 a:hover {
   color: #232129;
   background: rgba(255,178,56,0.1);
 }
 
-.emotion-7 a:focus-within {
+.emotion-5 a:focus-within {
   color: #232129;
   background: rgba(255,178,56,0.1);
 }
 
 @media (max-width:1065px) {
-  .emotion-7 a {
+  .emotion-5 a {
     color: #ffffff;
     -webkit-text-decoration: none;
     text-decoration: none;
@@ -6974,8 +6974,8 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
     font-size: 0.875rem;
   }
 
-  .emotion-7 a:hover,
-  .emotion-7 a:focus-within {
+  .emotion-5 a:hover,
+  .emotion-5 a:focus-within {
     opacity: 1;
     color: #ffb238;
     background: none;
@@ -6988,7 +6988,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   flex: 1;
 }
 
-.emotion-9 {
+.emotion-7 {
   display: none;
   position: absolute;
   top: 100%;
@@ -7011,18 +7011,18 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   will-change: transform opacity;
 }
 
-.emotion-9 ul {
+.emotion-7 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.emotion-9 ul {
+.emotion-7 ul {
   display: grid;
   grid-template-columns: max-content;
 }
 
-.emotion-9:after {
+.emotion-7:after {
   position: absolute;
   top: -6px;
   left: 50%;
@@ -7038,7 +7038,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
 }
 
 @media (max-width:1065px) {
-  .emotion-9 {
+  .emotion-7 {
     display: inline-block;
     background: 0;
     width: 100%;
@@ -7048,7 +7048,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
     margin-bottom: 0.75rem;
   }
 
-  .emotion-9:after {
+  .emotion-7:after {
     content: none;
   }
 }
@@ -7165,7 +7165,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                   class="emotion-25"
                 >
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -7175,22 +7175,10 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                         Why Gatsby?
                       </span>
                     </a>
-                  </li>
-                  <li
-                    class="emotion-3"
-                  >
-                    <a
-                      class="emotion-2"
-                      href="/how-it-works/"
-                    >
-                      <span>
-                        How It Works
-                      </span>
-                    </a>
                     <button
-                      aria-controls="How It Works-dropdown"
+                      aria-controls="Why Gatsby?-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -7198,29 +7186,29 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
-                        How It Works Menu
+                        Why Gatsby? Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
-                        id="How It Works-dropdown"
+                        id="Why Gatsby?-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/how-it-works/bring-data-from-anywhere/"
                           >
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Gatsby Data From Anywhere, Gatsby Data From Anywhere
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/write-modern-apps/"
@@ -7232,7 +7220,19 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                     </div>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
+                  >
+                    <a
+                      class="emotion-2"
+                      href="/how-it-works/"
+                    >
+                      <span>
+                        How It Works
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -7244,7 +7244,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -7256,7 +7256,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                     </a>
                   </li>
                   <li
-                    class="emotion-3"
+                    class="emotion-8"
                   >
                     <a
                       class="emotion-2"
@@ -7269,7 +7269,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                     <button
                       aria-controls="Resources-dropdown"
                       aria-expanded="false"
-                      class="emotion-6"
+                      class="emotion-4"
                     >
                       <span
                         aria-hidden="true"
@@ -7277,20 +7277,20 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                         ∨
                       </span>
                       <span
-                        class="emotion-5"
+                        class="emotion-3"
                       >
                         Resources Menu
                       </span>
                     </button>
                     <div
-                      class="emotion-9"
+                      class="emotion-7"
                       style="visibility: visible; display: none;"
                     >
                       <ul
                         id="Resources-dropdown"
                       >
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/resources/gatsby-days/"
@@ -7299,7 +7299,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
                           </a>
                         </li>
                         <li
-                          class="emotion-7"
+                          class="emotion-5"
                         >
                           <a
                             href="/resources/webinars/"
