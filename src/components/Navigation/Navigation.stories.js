@@ -9,13 +9,9 @@ const items = [
   {
     name: `Why Gatsby?`,
     linkTo: `/why-gatsby/`,
-  },
-  {
-    name: `How It Works`,
-    linkTo: `/how-it-works/`,
     items: [
       {
-        name: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
+        name: `Gatsby Data From Anywhere, Gatsby Data From Anywhere`,
         linkTo: `/how-it-works/bring-data-from-anywhere/`,
       },
       {
@@ -23,6 +19,10 @@ const items = [
         linkTo: `/write-modern-apps/`,
       },
     ],
+  },
+  {
+    name: `How It Works`,
+    linkTo: `/how-it-works/`,
   },
   {
     name: `Integrations`,
@@ -58,7 +58,7 @@ const secondaryItems = [
     linkTo: `/contact-us/`,
     items: [
       {
-        name: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
+        name: `Gatsby Data From Anywhere, Gatsby Data From Anywhere`,
         linkTo: `/how-it-works/bring-data-from-anywhere/`,
       },
       {

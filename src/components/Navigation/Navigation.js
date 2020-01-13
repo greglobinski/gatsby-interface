@@ -114,7 +114,7 @@ Navigation.Dropdown = delegated => {
     dropdownOffsets,
   } = BaseNavigation.useNavigationContext()
 
-  const xOffset =
+  const offset =
     dropdownOffsets[delegated.item.name] &&
     dropdownOffsets[delegated.item.name].offset
       ? `${dropdownOffsets[delegated.item.name].offset}px`
@@ -122,18 +122,10 @@ Navigation.Dropdown = delegated => {
 
   return (
     <BaseNavigation.Dropdown
-      css={[
-        {
-          ...styles.Dropdown.default(xOffset),
-          [mobileNavMediaQuery]: styles.Dropdown.mobile,
-        },
-        // {
-        //   transform: `translateX(calc(-50% + ${xOffset}))`,
-        //   ":after": {
-        //     transform: `translateX(calc(-50% + (${xOffset} * -1))) rotate(45deg)`,
-        //   },
-        // },
-      ]}
+      css={{
+        ...styles.Dropdown.default(offset),
+        [mobileNavMediaQuery]: styles.Dropdown.mobile,
+      }}
       {...delegated}
     />
   )
