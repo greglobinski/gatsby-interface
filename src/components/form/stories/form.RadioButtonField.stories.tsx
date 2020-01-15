@@ -124,7 +124,7 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Label size={labelSize}>
               Category
             </RadioButtonField.Label>
-            <RadioButtonField.Options gap={0} align={`justify`}>
+            <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
                 <RadioButtonField.OptionFrame key={value}>
                   <RadioButtonField.Option value={value} name="categories" />
