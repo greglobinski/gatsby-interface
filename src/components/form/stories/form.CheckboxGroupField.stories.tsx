@@ -47,7 +47,6 @@ storiesOf(`form`, module)
             id="example-1b"
             hasError={!!error}
             hasHint={!!hint}
-            layout="horizontal"
           >
             <CheckboxGroupField.Label isRequired={true}>
               Tags ('horizontal' layout)

@@ -47,12 +47,7 @@ storiesOf(`form/RadioButtonField`, module)
     return (
       <StoryUtils.Container>
         <Wrapper>
-          <RadioButtonField
-            id="example-1b"
-            hasError={!!error}
-            hasHint={!!hint}
-            layout="horizontal"
-          >
+          <RadioButtonField id="example-1b" hasError={!!error} hasHint={!!hint}>
             <RadioButtonField.Label size={labeSize}>
               Category
             </RadioButtonField.Label>
@@ -109,7 +104,7 @@ storiesOf(`form/RadioButtonField`, module)
             <RadioButtonField.Label size={labelSize}>
               Category
             </RadioButtonField.Label>
-            <RadioButtonField.Options gap={0} align={`justify`}>
+            <RadioButtonField.Options>
               {categories.map(({ label, value }) => (
                 <RadioButtonField.OptionFrame key={value}>
                   <RadioButtonField.Option value={value} name="categories" />
