@@ -5,6 +5,7 @@ import React from "react"
 import { MdError } from "react-icons/md"
 import { getStackStyles } from "../../stack"
 import { useTheme } from "../../ThemeProvider"
+import { Theme } from "../../../theme"
 import {
   FormFieldSkeletonProps,
   FormFieldSkeleton,
@@ -21,14 +22,11 @@ import {
   FormFieldLabelSize,
 } from "./FormField.helpers"
 
-import colors from "../../../theme/colors"
-import space from "../../../theme/space"
-
-export function getFieldStackStyles(type: `stack` | `item`) {
+export function getFieldStackStyles(type: `stack` | `item`, theme: Theme) {
   const { stackCss, stackItemCss } = getStackStyles({
     gap: 2,
     align: "left",
-    theme: useTheme(),
+    theme: theme,
   })
 
   return type === `item` ? stackItemCss : stackCss
@@ -51,7 +49,9 @@ FormField.Wrapper = FieldWrapper
 FormField.Wrapper.displayName = `FormField.Wrapper`
 
 export const FieldStack: React.FC<{}> = props => {
-  return <div css={getFieldStackStyles(`stack`)} {...props} />
+  const t = useTheme()
+
+  return <div css={getFieldStackStyles(`stack`, t)} {...props} />
 }
 
 FormField.Stack = FieldStack
@@ -68,12 +68,14 @@ const Label: React.FC<FormFieldLabelProps> = ({
   size = `M`,
   ...rest
 }) => {
+  const t = useTheme()
+
   return (
     <FormFieldSkeleton.Label
-      css={[
-        getLabelFontSize(size),
-        getLabelStyles(),
-        getFieldStackStyles(`item`),
+      css={(theme: Theme) => [
+        getLabelFontSize(size, theme),
+        getLabelStyles(theme),
+        getFieldStackStyles(`item`, t),
       ]}
       {...rest}
     >
@@ -89,12 +91,13 @@ export type FormFieldHintProps = FormFieldSkeletonHintProps
 
 const FormFieldHint: React.FC<FormFieldHintProps> = ({ children, ...rest }) => {
   const { hasHint } = FormFieldSkeleton.useFormFieldSkeleton()
+  const t = useTheme()
 
   return (
     <FormFieldSkeleton.Hint
       css={[
-        getDescriptionStyles(),
-        getFieldStackStyles(`item`),
+        getDescriptionStyles(t),
+        getFieldStackStyles(`item`, t),
         {
           "&&": {
             marginTop: !hasHint ? 0 : undefined,
@@ -136,23 +139,27 @@ export const FormFieldError: React.FC<FormFieldErrorProps> = ({
 
   return (
     <FormFieldSkeleton.Error
-      css={[
-        getDescriptionStyles(),
-        getFieldStackStyles(`item`),
+      css={(theme: Theme) => [
+        getDescriptionStyles(theme),
+        getFieldStackStyles(`item`, theme),
         {
           animation: `${errorEntry} .25s ease forwards`,
-          color: colors.red[70],
+          color: theme.colors.red[70],
           opacity: 0,
           // marginTop: !hasError ? 0 : hasHint ? `${space[1]}` : undefined,
 
           "&&": {
-            marginTop: !hasError ? 0 : hasHint ? `${space[1]}` : undefined,
+            marginTop: !hasError
+              ? 0
+              : hasHint
+              ? `${theme.space[1]}`
+              : undefined,
           },
 
           svg: {
             animation: `${errorIconEntry} .25s ease-out forwards`,
             height: `1em`,
-            marginRight: space[1],
+            marginRight: theme.space[1],
             transform: `translateY(-0.1em) scale(0)`,
             verticalAlign: `middle`,
             width: `1em`,

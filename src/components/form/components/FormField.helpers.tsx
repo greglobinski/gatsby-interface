@@ -1,58 +1,63 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import { Interpolation } from "@emotion/serialize"
+import { Theme } from "../../../theme"
 
-import colors from "../../../theme/colors"
-import fonts from "../../../theme/fonts"
-import fontSizes from "../../../theme/fontSizes"
-import radii from "../../../theme/radii"
-import space from "../../../theme/space"
-
-const FORM_FIELD_LABEL_SIZES = {
-  L: fontSizes[2],
-  M: fontSizes[1],
-  S: fontSizes[0],
+function getFormFieldLabelSizes(theme: Theme) {
+  return {
+    L: theme.fontSizes[2],
+    M: theme.fontSizes[1],
+    S: theme.fontSizes[0],
+  }
 }
 
 export type FormFieldLabelSize = "L" | "M" | "S"
 
-export const getLabelFontSize = (size: FormFieldLabelSize): Interpolation => ({
-  fontSize: FORM_FIELD_LABEL_SIZES[size],
+export const getLabelFontSize = (
+  size: FormFieldLabelSize,
+  t: Theme
+): Interpolation => ({
+  fontSize: getFormFieldLabelSizes(t)[size],
 })
 
-export const getLabelStyles = (): Interpolation => ({
-  color: colors.grey[90],
+export const getLabelStyles = (theme: Theme): Interpolation => ({
+  color: theme.colors.grey[90],
   lineHeight: 1.1,
 })
 
 export const RequiredFlag = () => (
   <span
-    css={{
-      color: colors.grey[50],
-      fontSize: fontSizes[0],
-      marginLeft: space[1],
-    }}
+    css={(theme: Theme) => ({
+      color: theme.colors.grey[50],
+      fontSize: theme.fontSizes[0],
+      marginLeft: theme.space[1],
+    })}
   >
     (required)
   </span>
 )
 
-export const getFocusStyles = (hasError?: boolean) => ({
-  boxShadow: `0 0 0 3px ${hasError ? colors.red[10] : colors.purple[20]}`,
-  borderColor: hasError ? colors.red[30] : colors.purple[60],
+export const getFocusStyles = (theme: Theme, hasError?: boolean) => ({
+  boxShadow: `0 0 0 3px ${
+    hasError ? theme.colors.red[10] : theme.colors.purple[20]
+  }`,
+  borderColor: hasError ? theme.colors.red[30] : theme.colors.purple[60],
 })
 
-export const getInputStyles = (hasError?: boolean): Interpolation => ({
+export const getInputStyles = (
+  theme: Theme,
+  hasError?: boolean
+): Interpolation => ({
   border: hasError
-    ? `1px solid ${colors.red[60]}`
-    : `1px solid ${colors.grey[30]}`,
-  background: colors.white,
-  borderRadius: radii[2],
-  color: colors.grey[90],
-  fontFamily: fonts.system,
-  fontSize: fontSizes[2],
+    ? `1px solid ${theme.colors.red[60]}`
+    : `1px solid ${theme.colors.grey[30]}`,
+  background: theme.colors.white,
+  borderRadius: theme.radii[2],
+  color: theme.colors.grey[90],
+  fontFamily: theme.fonts.system,
+  fontSize: theme.fontSizes[2],
   height: `2.25rem`,
-  padding: `0 ${space[3]}`,
+  padding: `0 ${theme.space[3]}`,
   position: `relative`,
   width: `100%`,
   zIndex: 1,
@@ -61,26 +66,26 @@ export const getInputStyles = (hasError?: boolean): Interpolation => ({
   ":focus": {
     outline: `0`,
     transition: `box-shadow 0.15s ease-in-out`,
-    ...getFocusStyles(hasError),
+    ...getFocusStyles(theme, hasError),
   },
 
   ":disabled": {
-    background: colors.grey[10],
+    background: theme.colors.grey[10],
     cursor: `not-allowed`,
   },
 
   "&:disabled::placeholder": {
-    color: colors.grey[40],
+    color: theme.colors.grey[40],
   },
 
   "&::placeholder": {
-    color: colors.grey[50],
+    color: theme.colors.grey[50],
   },
 })
 
-export const getDescriptionStyles = (): Interpolation => ({
-  color: colors.grey[50],
-  fontSize: fontSizes[0],
+export const getDescriptionStyles = (theme: Theme): Interpolation => ({
+  color: theme.colors.grey[50],
+  fontSize: theme.fontSizes[0],
   lineHeight: 1.2,
   position: `relative`,
   zIndex: 0,

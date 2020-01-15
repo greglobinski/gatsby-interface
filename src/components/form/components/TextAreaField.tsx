@@ -11,7 +11,7 @@ import { getInputStyles } from "./FormField.helpers"
 import TextAreaFieldSkeleton, {
   TextAreaFieldSkeletonControlProps,
 } from "../../form-skeletons/components/TextAreaFieldSkeleton"
-import space from "../../../theme/space"
+import { Theme } from "../../../theme"
 
 function TextAreaField(props: FormFieldSkeletonProps) {
   return <TextAreaFieldSkeleton {...props}></TextAreaFieldSkeleton>
@@ -36,14 +36,14 @@ const Control = React.forwardRef<
   return (
     <TextAreaFieldSkeleton.Control
       ref={ref}
-      css={[
-        getInputStyles(hasError),
-        getFieldStackStyles(`item`),
+      css={(theme: Theme) => [
+        getInputStyles(theme, hasError),
+        getFieldStackStyles(`item`, theme),
         {
           display: `block`,
           minHeight: `4.85em`,
           resize: `vertical`,
-          padding: `${space[2]} ${space[3]}`,
+          padding: `${theme.space[2]} ${theme.space[3]}`,
         },
       ]}
       {...props}

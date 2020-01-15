@@ -18,32 +18,34 @@ import {
 import { getStackStyles, StackGap } from "../../stack"
 import { getClusterStyles } from "../../cluster"
 import { useTheme } from "../../ThemeProvider"
+import { Theme } from "../../../theme"
 import {
   getLabelFontSize,
   getLabelStyles,
   FormFieldLabelSize,
   RequiredFlag,
 } from "./FormField.helpers"
-import colors from "../../../theme/colors"
-import space from "../../../theme/space"
 
 export const INPUT_WIDTH = `20px`
 export const INPUT_VERTICAL_OFFSET_CALC = `(1em - 14px) * 0.5`
 
-export function getGroupFieldStackStyles(type: `stack` | `item`) {
+export function getGroupFieldStackStyles(type: `stack` | `item`, theme: Theme) {
   const { stackCss, stackItemCss } = getStackStyles({
     gap: 4,
-    theme: useTheme(),
+    theme,
   })
 
   return type === `item` ? stackItemCss : stackCss
 }
 
-export function getGroupFieldClusterStyles(type: `cluster` | `item`) {
+export function getGroupFieldClusterStyles(
+  type: `cluster` | `item`,
+  theme: Theme
+) {
   const { clusterCss, clusterItemCss } = getClusterStyles({
     gap: 8,
     verticalGap: 4,
-    theme: useTheme(),
+    theme,
   })
 
   return type === `item` ? clusterItemCss : clusterCss
@@ -120,12 +122,14 @@ const Label: React.FC<FormGroupFieldLabelProps> = ({
   size = `M`,
   ...rest
 }) => {
+  const t = useTheme()
+
   return (
     <FormGroupFieldSkeleton.Label
-      css={[
-        getLabelFontSize(size),
-        getLabelStyles(),
-        getGroupFieldStackStyles(`item`),
+      css={(theme: Theme) => [
+        getLabelFontSize(size, theme),
+        getLabelStyles(theme),
+        getGroupFieldStackStyles(`item`, t),
         {
           padding: 0,
           marginRight: 0,
@@ -143,16 +147,17 @@ const Label: React.FC<FormGroupFieldLabelProps> = ({
 const Options: React.FC<{}> = props => {
   const { layout } = FormGroupField.useFormGroupField()
   const isHorizontal = layout === `horizontal`
+  const t = useTheme()
 
   return isHorizontal ? (
-    <div css={getGroupFieldStackStyles(`item`)}>
-      <div css={getGroupFieldClusterStyles(`cluster`)} {...props} />
+    <div css={getGroupFieldStackStyles(`item`, t)}>
+      <div css={getGroupFieldClusterStyles(`cluster`, t)} {...props} />
     </div>
   ) : (
     <div
       css={[
-        getGroupFieldStackStyles(`item`),
-        getGroupFieldStackStyles(`stack`),
+        getGroupFieldStackStyles(`item`, t),
+        getGroupFieldStackStyles(`stack`, t),
       ]}
       {...props}
     />
@@ -181,16 +186,15 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
 
   return (
     <FormGroupFieldSkeleton.OptionLabel
-      css={[
-        getLabelFontSize(size),
-
+      css={(theme: Theme) => [
+        getLabelFontSize(size, theme),
         {
-          color: colors.grey[90],
+          color: theme.colors.grey[90],
           cursor: `pointer`,
           justifyContent: `flex-start`,
           lineHeight: 1.3,
           paddingLeft: `calc(${INPUT_WIDTH} + ${
-            isHorizontal ? space[2] : space[4]
+            isHorizontal ? theme.space[2] : theme.space[4]
           })`,
           position: `relative`,
         },
@@ -203,26 +207,35 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = ({
 const OptionWrapper: React.FC<FormFieldWrapperProps> = props => {
   const { layout } = FormGroupField.useFormGroupField()
   const isHorizontal = layout === `horizontal`
+  const t = useTheme()
 
   return (
     <FormField.Wrapper
       css={[
         isHorizontal
-          ? getGroupFieldClusterStyles(`item`)
-          : getGroupFieldStackStyles(`item`),
+          ? getGroupFieldClusterStyles(`item`, t)
+          : getGroupFieldStackStyles(`item`, t),
       ]}
       {...props}
     />
   )
 }
 
-const FormGroupFieldHint: React.FC<FormFieldHintProps> = props => (
-  <FormField.Hint css={[getGroupFieldStackStyles(`item`)]} {...props} />
-)
+const FormGroupFieldHint: React.FC<FormFieldHintProps> = props => {
+  const t = useTheme()
 
-const FormGroupFieldError: React.FC<FormFieldErrorProps> = props => (
-  <FormField.Error css={[getGroupFieldStackStyles(`item`)]} {...props} />
-)
+  return (
+    <FormField.Hint css={[getGroupFieldStackStyles(`item`, t)]} {...props} />
+  )
+}
+
+const FormGroupFieldError: React.FC<FormFieldErrorProps> = props => {
+  const t = useTheme()
+
+  return (
+    <FormField.Error css={[getGroupFieldStackStyles(`item`, t)]} {...props} />
+  )
+}
 
 function useFormGroupField() {
   return React.useContext(FormGroupFieldContext)

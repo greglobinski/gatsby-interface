@@ -7,12 +7,13 @@ import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/componen
 import FormGroupField, {
   FormGroupFieldOptionLabelProps,
 } from "./FormGroupField"
-import colors from "../../../theme/colors"
-import space from "../../../theme/space"
-import radii from "../../../theme/radii"
+// import colors from "../../../theme/colors"
+// import space from "../../../theme/space"
+// import radii from "../../../theme/radii"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { FormGroupFieldProps } from "./FormGroupField"
 import { getStackStyles } from "../../stack"
+import { Theme } from "../../../theme"
 
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
@@ -30,29 +31,29 @@ const Option = React.forwardRef<
 >((props, ref) => (
   <FormGroupField.Option
     ref={ref}
-    css={[
+    css={(theme: Theme) => [
       {
         position: `absolute`,
         left: `-9999px`,
         opacity: 0,
 
         "&:checked + label": {
-          borderColor: colors.purple[60],
+          borderColor: theme.colors.purple[60],
         },
 
         "&:checked + label::before": {
-          borderColor: colors.purple[60],
-          backgroundColor: colors.purple[60],
+          borderColor: theme.colors.purple[60],
+          backgroundColor: theme.colors.purple[60],
           backgroundOrigin: `border-box`,
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 0H0V20H20V0ZM10 14C12.2091 14 14 12.2091 14 10C14 7.79086 12.2091 6 10 6C7.79086 6 6 7.79086 6 10C6 12.2091 7.79086 14 10 14Z' fill='white'/%3E%3C/svg%3E%0A")`,
         },
 
         "&:not(:checked):hover + label::before": {
-          borderColor: colors.purple[40],
+          borderColor: theme.colors.purple[40],
         },
 
         "&:focus + label::before": {
-          ...getFocusStyles(),
+          ...getFocusStyles(theme),
           transition: `border-color 0.15s ease-in-out, background 0.15s ease-in-out`,
         },
       },
@@ -62,13 +63,13 @@ const Option = React.forwardRef<
   />
 ))
 
-const frameStyles = {
-  border: `2px solid ${colors.white}`,
-  borderRadius: radii[3],
+const getFrameStyles = (theme: Theme) => ({
+  border: `2px solid ${theme.colors.white}`,
+  borderRadius: theme.radii[3],
   margin: 0,
   width: `100%`,
   transition: `border .15s ease-in-out`,
-}
+})
 
 const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
   const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
@@ -76,13 +77,13 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
 
   return (
     <FormGroupField.OptionLabel
-      css={[
+      css={(theme: Theme) => [
         {
           "&:before": {
-            backgroundColor: colors.white,
+            backgroundColor: theme.colors.white,
             border: hasError
-              ? `1px solid ${colors.red[60]}`
-              : `2px solid ${colors.grey[30]}`,
+              ? `1px solid ${theme.colors.red[60]}`
+              : `2px solid ${theme.colors.grey[30]}`,
             display: `block`,
             borderRadius: `50%`,
             content: `""`,
@@ -97,13 +98,13 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
         },
         variant === `framed`
           ? {
-              ...frameStyles,
+              ...getFrameStyles(theme),
               marginBottom: 0,
-              padding: `${space[4]} ${space[5]}`,
-              paddingLeft: `calc(${INPUT_WIDTH} + ${space[7]})`,
+              padding: `${theme.space[4]} ${theme.space[5]}`,
+              paddingLeft: `calc(${INPUT_WIDTH} + ${theme.space[7]})`,
               "&:before": {
-                left: space[4],
-                top: space[4],
+                left: theme.space[4],
+                top: theme.space[4],
               },
             }
           : {},
@@ -123,15 +124,15 @@ const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
 
   return (
     <div
-      css={[
-        variant !== `framed` ? frameStyles : {},
+      css={(theme: Theme) => [
+        variant !== `framed` ? getFrameStyles(theme) : {},
         {
           label: {
             display: `block`,
             margin: 0,
           },
           "&:focus-within": {
-            borderColor: colors.purple[40],
+            borderColor: theme.colors.purple[40],
           },
         },
       ]}
