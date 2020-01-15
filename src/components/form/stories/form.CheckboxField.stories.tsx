@@ -8,6 +8,7 @@ import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_CHECKBOX_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import CheckboxField from "../components/CheckboxField"
+import CheckboxFieldBlock from "../components/CheckboxFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
 import { Wrapper } from "./stories.utils"
@@ -54,6 +55,36 @@ storiesOf(`form`, module)
               <CheckboxField.Error>{error}</CheckboxField.Error>
             </CheckboxField.Wrapper>
           </CheckboxField>
+
+          <CheckboxFieldBlock
+            id="input-example-1b"
+            label="Builds enabled"
+            labelSize={size}
+            onChange={e => action(`Change`)(e.target.value)}
+            error={error}
+            hint={hint ? hint : `This one is built with 'CheckboxFieldBlock'`}
+            required={required}
+          />
+
+          <CheckboxFieldBlock
+            id="input-example-1c"
+            label={
+              <span>
+                <strong>
+                  {" "}
+                  'S' label size let us easily build good-looking 'Accept Terms'
+                  like fields. The text could be pretty long...{" "}
+                </strong>{" "}
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s,
+              </span>
+            }
+            labelSize="S"
+            onChange={e => action(`Change`)(e.target.value)}
+            error={error}
+            required={required}
+          />
         </Wrapper>
       </StoryUtils.Container>
     )

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
+import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { text, radios, boolean } from "@storybook/addon-knobs"
@@ -8,9 +9,11 @@ import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_INPUT_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import InputField from "../components/InputField"
+import InputFieldBlock from "../components/InputFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
 import { Wrapper } from "./stories.utils"
+import colors from "../../../theme/colors"
 
 const LABEL_SIZES: FormFieldLabelSize[] = [`L`, `M`, `S`]
 const LABEL_SIZE_OPTIONS = LABEL_SIZES.reduce(enumToOptions, {})
@@ -58,6 +61,35 @@ storiesOf(`form`, module)
               <InputField.Error>{error}</InputField.Error>
             </InputField.Wrapper>
           </InputField>
+
+          <InputFieldBlock
+            id="example-1b"
+            label="First name"
+            labelSize={size}
+            onChange={e => action(`Change`)(e.target.value)}
+            hint={hint ? hint : `And this one is built with 'InputFieldBlock'`}
+            error={error}
+            placeholder={placeholder}
+            disabled={disabled}
+            required={required}
+          />
+
+          <InputFieldBlock
+            id="example-1c"
+            label={
+              <React.Fragment>
+                First <strong>name</strong>{" "}
+                <em css={{ color: colors.grey[50] }}>(ReactNode label)</em>
+              </React.Fragment>
+            }
+            labelSize={size}
+            onChange={e => action(`Change`)(e.target.value)}
+            hint={hint ? hint : `This one is also built with 'InputFieldBlock'`}
+            error={error}
+            placeholder={placeholder}
+            disabled={disabled}
+            required={required}
+          />
         </Wrapper>
       </StoryUtils.Container>
     )
