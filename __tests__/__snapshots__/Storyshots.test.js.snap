@@ -30149,7 +30149,7 @@ exports[`Storyshots form CheckboxField 1`] = `
   }
 }
 
-.emotion-5 {
+.emotion-13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -30167,12 +30167,12 @@ exports[`Storyshots form CheckboxField 1`] = `
   padding: 20px;
 }
 
-.emotion-4 {
+.emotion-12 {
   max-width: 80%;
   width: 25rem;
 }
 
-.emotion-4 > * + * {
+.emotion-12 > * + * {
   margin-top: 2rem!important;
 }
 
@@ -30283,6 +30283,67 @@ exports[`Storyshots form CheckboxField 1`] = `
   width: 1em;
 }
 
+.emotion-9 {
+  font-size: 0.75rem;
+  color: var(--theme-ui-colors-grey-90,#232129);
+  line-height: 1.1;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0;
+  position: relative;
+  line-height: 1.3;
+  display: block;
+  margin-left: 0;
+  padding-left: calc((20px + 0.75rem));
+}
+
+.emotion-9:first-child {
+  margin-top: 0;
+}
+
+.emotion-9:before {
+  background-color: var(--theme-ui-colors-white,#ffffff);
+  border: 2px solid var(--theme-ui-colors-grey-30,#d9d7e0);
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 20px;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  -webkit-transform: translate(0,calc((1em - 16px) * 0.5));
+  -ms-transform: translate(0,calc((1em - 16px) * 0.5));
+  transform: translate(0,calc((1em - 16px) * 0.5));
+  width: 20px;
+}
+
+.emotion-10 {
+  color: #78757a;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 0;
+  margin-top: 0.25rem;
+  display: block;
+  margin-left: 0;
+  padding-left: calc((20px + 0.75rem));
+}
+
+.emotion-10:first-child {
+  margin-top: 0;
+}
+
+.emotion-10.emotion-10 {
+  margin-top: 0;
+}
+
 <div>
   <div
     class="storybook-readme-story"
@@ -30290,10 +30351,10 @@ exports[`Storyshots form CheckboxField 1`] = `
     <div>
       <div>
         <div
-          class="emotion-5"
+          class="emotion-13"
         >
           <div
-            class="emotion-4"
+            class="emotion-12"
           >
             <div>
               <input
@@ -30319,6 +30380,63 @@ exports[`Storyshots form CheckboxField 1`] = `
               <div
                 class="emotion-3"
                 id="input-example-1a__error"
+              />
+            </div>
+            <div>
+              <input
+                aria-describedby="input-example-1b__hint"
+                aria-invalid="false"
+                class="emotion-0"
+                id="input-example-1b"
+                type="checkbox"
+              />
+              <label
+                class="emotion-1"
+                for="input-example-1b"
+              >
+                Builds enabled
+                 
+              </label>
+              <div
+                class="emotion-2"
+                id="input-example-1b__hint"
+              >
+                This one is built with 'CheckboxFieldBlock'
+              </div>
+              <div
+                class="emotion-3"
+                id="input-example-1b__error"
+              />
+            </div>
+            <div>
+              <input
+                aria-invalid="false"
+                class="emotion-0"
+                id="input-example-1c"
+                type="checkbox"
+              />
+              <label
+                class="emotion-9"
+                for="input-example-1c"
+              >
+                <span>
+                  <strong>
+                     
+                    'S' label size let us easily build good-looking 'Accept Terms' like fields. The text could be pretty long...
+                     
+                  </strong>
+                   
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                </span>
+                 
+              </label>
+              <div
+                class="emotion-10"
+                id="input-example-1c__hint"
+              />
+              <div
+                class="emotion-3"
+                id="input-example-1c__error"
               />
             </div>
           </div>
@@ -30366,7 +30484,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   }
 }
 
-.emotion-40 {
+.emotion-80 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -30384,12 +30502,12 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   padding: 20px;
 }
 
-.emotion-39 {
+.emotion-79 {
   max-width: 80%;
   width: 25rem;
 }
 
-.emotion-39 > * + * {
+.emotion-79 > * + * {
   margin-top: 2rem!important;
 }
 
@@ -30557,6 +30675,73 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   margin-top: 0;
 }
 
+.emotion-75 {
+  margin-top: 0.75rem;
+}
+
+.emotion-75:first-child {
+  margin-top: 0;
+}
+
+.emotion-74 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: calc(2rem / 2 * -1);
+  margin-bottom: calc(0.75rem / 2 * -1);
+  margin-top: calc(0.75rem / 2 * -1);
+}
+
+.emotion-43 {
+  margin: calc(2rem / 2);
+  margin-bottom: calc(0.75rem / 2);
+  margin-top: calc(0.75rem / 2);
+}
+
+.emotion-42 {
+  font-size: 1rem;
+  color: var(--theme-ui-colors-grey-90,#232129);
+  cursor: pointer;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  line-height: 1.3;
+  padding-left: calc(20px + 0.25rem);
+  position: relative;
+}
+
+.emotion-42:before {
+  background-color: var(--theme-ui-colors-white,#ffffff);
+  border: 2px solid var(--theme-ui-colors-grey-30,#d9d7e0);
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 20px;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: border-color 0.15s ease-in-out,background 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out,background 0.15s ease-in-out;
+  -webkit-transform: translate(0,calc((1em - 14px) * 0.5));
+  -ms-transform: translate(0,calc((1em - 14px) * 0.5));
+  transform: translate(0,calc((1em - 14px) * 0.5));
+  width: 20px;
+}
+
 <div>
   <div
     class="storybook-readme-story"
@@ -30564,19 +30749,19 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
     <div>
       <div>
         <div
-          class="emotion-40"
+          class="emotion-80"
         >
           <div
-            class="emotion-39"
+            class="emotion-79"
           >
             <fieldset
               class="emotion-38"
-              id="example-1b"
+              id="example-1a"
             >
               <legend
                 class="emotion-1"
               >
-                Tags ('horizontal' layout)
+                Fieldset Legend
                  
                 <span
                   class="emotion-0"
@@ -30593,14 +30778,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--assire-var-anahid"
-                    name="tags"
+                    id="example-1a__option--assire-var-anahid"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="assire-var-anahid"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--assire-var-anahid"
+                    for="example-1a__option--assire-var-anahid"
                   >
                     Assire var Anahid
                   </label>
@@ -30611,14 +30797,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--francesca-findabair"
-                    name="tags"
+                    id="example-1a__option--francesca-findabair"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="francesca-findabair"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--francesca-findabair"
+                    for="example-1a__option--francesca-findabair"
                   >
                     Francesca Findabair
                   </label>
@@ -30629,14 +30816,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--fringilla-vigo"
-                    name="tags"
+                    id="example-1a__option--fringilla-vigo"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="fringilla-vigo"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--fringilla-vigo"
+                    for="example-1a__option--fringilla-vigo"
                   >
                     Fringilla Vigo
                   </label>
@@ -30647,14 +30835,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--ida-emean-aep-sivney"
-                    name="tags"
+                    id="example-1a__option--ida-emean-aep-sivney"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="ida-emean-aep-sivney"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--ida-emean-aep-sivney"
+                    for="example-1a__option--ida-emean-aep-sivney"
                   >
                     Ida Emean aep Sivney
                   </label>
@@ -30665,14 +30854,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--keira-metz"
-                    name="tags"
+                    id="example-1a__option--keira-metz"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="keira-metz"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--keira-metz"
+                    for="example-1a__option--keira-metz"
                   >
                     Keira Metz
                   </label>
@@ -30683,14 +30873,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--margarita-laux-antille"
-                    name="tags"
+                    id="example-1a__option--margarita-laux-antille"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="margarita-laux-antille"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--margarita-laux-antille"
+                    for="example-1a__option--margarita-laux-antille"
                   >
                     Margarita Laux-Antille
                   </label>
@@ -30701,14 +30892,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--philippa-eilhart"
-                    name="tags"
+                    id="example-1a__option--philippa-eilhart"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="philippa-eilhart"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--philippa-eilhart"
+                    for="example-1a__option--philippa-eilhart"
                   >
                     Philippa Eilhart
                   </label>
@@ -30719,14 +30911,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--sabrina-glevissig"
-                    name="tags"
+                    id="example-1a__option--sabrina-glevissig"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="sabrina-glevissig"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--sabrina-glevissig"
+                    for="example-1a__option--sabrina-glevissig"
                   >
                     Sabrina Glevissig
                   </label>
@@ -30737,14 +30930,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--sheala-de-tancarville"
-                    name="tags"
+                    id="example-1a__option--sheala-de-tancarville"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="sheala-de-tancarville"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--sheala-de-tancarville"
+                    for="example-1a__option--sheala-de-tancarville"
                   >
                     Sheala de Tancarville
                   </label>
@@ -30755,14 +30949,15 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--triss-merigold"
-                    name="tags"
+                    id="example-1a__option--triss-merigold"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="triss-merigold"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--triss-merigold"
+                    for="example-1a__option--triss-merigold"
                   >
                     Triss Merigold
                   </label>
@@ -30773,17 +30968,248 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-2"
-                    id="example-1b__option--yennefer-of-vengerberg"
-                    name="tags"
+                    id="example-1a__option--yennefer-of-vengerberg"
+                    name="field"
+                    required=""
                     type="checkbox"
                     value="yennefer-of-vengerberg"
                   />
                   <label
                     class="emotion-3"
-                    for="example-1b__option--yennefer-of-vengerberg"
+                    for="example-1a__option--yennefer-of-vengerberg"
                   >
                     Yennefer of Vengerberg
                   </label>
+                </div>
+              </div>
+              <div
+                class="emotion-36"
+                id="example-1a__hint"
+              />
+              <div
+                class="emotion-37"
+                id="example-1a__error"
+              />
+            </fieldset>
+            <fieldset
+              class="emotion-38"
+              id="example-1b"
+            >
+              <legend
+                class="emotion-1"
+              >
+                Tags ('horizontal' layout)
+                 
+                <span
+                  class="emotion-0"
+                >
+                  (required)
+                </span>
+              </legend>
+              <div
+                class="emotion-75"
+              >
+                <div
+                  class="emotion-74"
+                >
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--assire-var-anahid"
+                      name="tags"
+                      type="checkbox"
+                      value="assire-var-anahid"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--assire-var-anahid"
+                    >
+                      Assire var Anahid
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--francesca-findabair"
+                      name="tags"
+                      type="checkbox"
+                      value="francesca-findabair"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--francesca-findabair"
+                    >
+                      Francesca Findabair
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--fringilla-vigo"
+                      name="tags"
+                      type="checkbox"
+                      value="fringilla-vigo"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--fringilla-vigo"
+                    >
+                      Fringilla Vigo
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--ida-emean-aep-sivney"
+                      name="tags"
+                      type="checkbox"
+                      value="ida-emean-aep-sivney"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--ida-emean-aep-sivney"
+                    >
+                      Ida Emean aep Sivney
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--keira-metz"
+                      name="tags"
+                      type="checkbox"
+                      value="keira-metz"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--keira-metz"
+                    >
+                      Keira Metz
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--margarita-laux-antille"
+                      name="tags"
+                      type="checkbox"
+                      value="margarita-laux-antille"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--margarita-laux-antille"
+                    >
+                      Margarita Laux-Antille
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--philippa-eilhart"
+                      name="tags"
+                      type="checkbox"
+                      value="philippa-eilhart"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--philippa-eilhart"
+                    >
+                      Philippa Eilhart
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--sabrina-glevissig"
+                      name="tags"
+                      type="checkbox"
+                      value="sabrina-glevissig"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--sabrina-glevissig"
+                    >
+                      Sabrina Glevissig
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--sheala-de-tancarville"
+                      name="tags"
+                      type="checkbox"
+                      value="sheala-de-tancarville"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--sheala-de-tancarville"
+                    >
+                      Sheala de Tancarville
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--triss-merigold"
+                      name="tags"
+                      type="checkbox"
+                      value="triss-merigold"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--triss-merigold"
+                    >
+                      Triss Merigold
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-43"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-2"
+                      id="example-1b__option--yennefer-of-vengerberg"
+                      name="tags"
+                      type="checkbox"
+                      value="yennefer-of-vengerberg"
+                    />
+                    <label
+                      class="emotion-42"
+                      for="example-1b__option--yennefer-of-vengerberg"
+                    >
+                      Yennefer of Vengerberg
+                    </label>
+                  </div>
                 </div>
               </div>
               <div
@@ -30840,7 +31266,7 @@ exports[`Storyshots form InputField 1`] = `
   }
 }
 
-.emotion-6 {
+.emotion-17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -30858,12 +31284,12 @@ exports[`Storyshots form InputField 1`] = `
   padding: 20px;
 }
 
-.emotion-5 {
+.emotion-16 {
   max-width: 80%;
   width: 25rem;
 }
 
-.emotion-5 > * + * {
+.emotion-16 > * + * {
   margin-top: 2rem!important;
 }
 
@@ -31003,6 +31429,10 @@ exports[`Storyshots form InputField 1`] = `
   margin-top: 0;
 }
 
+.emotion-10 {
+  color: #78757a;
+}
+
 <div>
   <div
     class="storybook-readme-story"
@@ -31010,10 +31440,10 @@ exports[`Storyshots form InputField 1`] = `
     <div>
       <div>
         <div
-          class="emotion-6"
+          class="emotion-17"
         >
           <div
-            class="emotion-5"
+            class="emotion-16"
           >
             <div
               class="emotion-4"
@@ -31041,6 +31471,71 @@ exports[`Storyshots form InputField 1`] = `
               <div
                 class="emotion-3"
                 id="example-1a__error"
+              />
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <label
+                class="emotion-0"
+                for="example-1b"
+              >
+                First name
+                 
+              </label>
+              <input
+                aria-describedby="example-1b__hint"
+                aria-invalid="false"
+                class="emotion-1"
+                id="example-1b"
+                placeholder="This is a placeholder"
+              />
+              <div
+                class="emotion-2"
+                id="example-1b__hint"
+              >
+                And this one is built with 'InputFieldBlock'
+              </div>
+              <div
+                class="emotion-3"
+                id="example-1b__error"
+              />
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <label
+                class="emotion-0"
+                for="example-1c"
+              >
+                First 
+                <strong>
+                  name
+                </strong>
+                 
+                <em
+                  class="emotion-10"
+                >
+                  (ReactNode label)
+                </em>
+                 
+              </label>
+              <input
+                aria-describedby="example-1c__hint"
+                aria-invalid="false"
+                class="emotion-1"
+                id="example-1c"
+                placeholder="This is a placeholder"
+              />
+              <div
+                class="emotion-2"
+                id="example-1c__hint"
+              >
+                This one is also built with 'InputFieldBlock'
+              </div>
+              <div
+                class="emotion-3"
+                id="example-1c__error"
               />
             </div>
           </div>
@@ -31088,7 +31583,7 @@ exports[`Storyshots form SelectField 1`] = `
   }
 }
 
-.emotion-6 {
+.emotion-11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -31106,12 +31601,12 @@ exports[`Storyshots form SelectField 1`] = `
   padding: 20px;
 }
 
-.emotion-5 {
+.emotion-10 {
   max-width: 80%;
   width: 25rem;
 }
 
-.emotion-5 > * + * {
+.emotion-10 > * + * {
   margin-top: 2rem!important;
 }
 
@@ -31262,10 +31757,10 @@ exports[`Storyshots form SelectField 1`] = `
     <div>
       <div>
         <div
-          class="emotion-6"
+          class="emotion-11"
         >
           <div
-            class="emotion-5"
+            class="emotion-10"
           >
             <div
               class="emotion-4"
@@ -31355,6 +31850,94 @@ exports[`Storyshots form SelectField 1`] = `
                 id="example-1a__error"
               />
             </div>
+            <div
+              class="emotion-4"
+            >
+              <label
+                class="emotion-0"
+                for="example-1b"
+              >
+                Comment
+                 
+              </label>
+              <select
+                aria-describedby="example-1b__hint"
+                aria-invalid="false"
+                class="emotion-1"
+                id="example-1b"
+              >
+                <option
+                  value="---"
+                >
+                   - 
+                </option>
+                <option
+                  value="assire-var-anahid"
+                >
+                  Assire var Anahid
+                </option>
+                <option
+                  value="francesca-findabair"
+                >
+                  Francesca Findabair
+                </option>
+                <option
+                  value="fringilla-vigo"
+                >
+                  Fringilla Vigo
+                </option>
+                <option
+                  value="ida-emean-aep-sivney"
+                >
+                  Ida Emean aep Sivney
+                </option>
+                <option
+                  value="keira-metz"
+                >
+                  Keira Metz
+                </option>
+                <option
+                  value="margarita-laux-antille"
+                >
+                  Margarita Laux-Antille
+                </option>
+                <option
+                  value="philippa-eilhart"
+                >
+                  Philippa Eilhart
+                </option>
+                <option
+                  value="sabrina-glevissig"
+                >
+                  Sabrina Glevissig
+                </option>
+                <option
+                  value="sheala-de-tancarville"
+                >
+                  Sheala de Tancarville
+                </option>
+                <option
+                  value="triss-merigold"
+                >
+                  Triss Merigold
+                </option>
+                <option
+                  value="yennefer-of-vengerberg"
+                >
+                  Yennefer of Vengerberg
+                </option>
+              </select>
+              <div
+                class="emotion-2"
+                id="example-1b__hint"
+              >
+                And this one is built with 'SelectFieldBlock'
+              </div>
+              <div
+                class="emotion-3"
+                id="example-1b__error"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -31400,7 +31983,7 @@ exports[`Storyshots form TextAreaField 1`] = `
   }
 }
 
-.emotion-6 {
+.emotion-17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -31418,12 +32001,12 @@ exports[`Storyshots form TextAreaField 1`] = `
   padding: 20px;
 }
 
-.emotion-5 {
+.emotion-16 {
   max-width: 80%;
   width: 25rem;
 }
 
-.emotion-5 > * + * {
+.emotion-16 > * + * {
   margin-top: 2rem!important;
 }
 
@@ -31496,6 +32079,10 @@ exports[`Storyshots form TextAreaField 1`] = `
 
 .emotion-2:first-child {
   margin-top: 0;
+}
+
+.emotion-10 {
+  color: #78757a;
 }
 
 .emotion-1 {
@@ -31574,10 +32161,10 @@ exports[`Storyshots form TextAreaField 1`] = `
     <div>
       <div>
         <div
-          class="emotion-6"
+          class="emotion-17"
         >
           <div
-            class="emotion-5"
+            class="emotion-16"
           >
             <div
               class="emotion-4"
@@ -31605,6 +32192,73 @@ exports[`Storyshots form TextAreaField 1`] = `
               <div
                 class="emotion-3"
                 id="example-1a__error"
+              />
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <label
+                class="emotion-0"
+                for="example-1b"
+              >
+                Comment
+                 
+              </label>
+              <textarea
+                aria-describedby="example-1b__hint"
+                aria-invalid="false"
+                class="emotion-1"
+                id="example-1b"
+                placeholder="This is a placeholder"
+              />
+              <div
+                class="emotion-2"
+                id="example-1b__hint"
+              >
+                And this one is built with 'TextAreaFieldBlock'
+              </div>
+              <div
+                class="emotion-3"
+                id="example-1b__error"
+              />
+            </div>
+            <div
+              class="emotion-4"
+            >
+              <label
+                class="emotion-0"
+                for="example-1c"
+              >
+                <span>
+                  <strong>
+                    Important
+                  </strong>
+                   Comment
+                   
+                  <em
+                    class="emotion-10"
+                  >
+                    (ReactNode label)
+                  </em>
+                </span>
+                 
+              </label>
+              <textarea
+                aria-describedby="example-1c__hint"
+                aria-invalid="false"
+                class="emotion-1"
+                id="example-1c"
+                placeholder="This is a placeholder"
+              />
+              <div
+                class="emotion-2"
+                id="example-1c__hint"
+              >
+                This one is also built with 'TextAreaFieldBlock'
+              </div>
+              <div
+                class="emotion-3"
+                id="example-1c__error"
               />
             </div>
           </div>
@@ -33054,6 +33708,41 @@ exports[`Storyshots form/FormField Shared components 1`] = `
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.32505 15.1584L4.19049 10.8791C3.87533 10.423 3.95905 9.80199 4.38373 9.44564L4.38374 9.44564C4.80842 9.08929 5.43452 9.11468 5.82896 9.50424L9.49899 13.3343C10.0964 13.9243 10.0568 14.9003 9.41361 15.44L9.4136 15.44C8.7704 15.9797 7.80237 15.8492 7.32505 15.1584Z' fill='white'/%3E%3Cpath d='M7.58182 15.4296C6.92843 14.8813 6.86426 13.8988 7.44078 13.2703L14.7221 5.33129C15.0919 4.92814 15.7135 4.88754 16.1326 5.23917L16.1326 5.23917C16.5517 5.59081 16.6196 6.21003 16.2868 6.64418L9.73285 15.1935C9.21392 15.8704 8.23522 15.9779 7.58182 15.4296L7.58182 15.4296Z' fill='white'/%3E%3Cpath d='M7.747 11.5322C8.1138 11.9724 8.38279 12.2658 8.8474 11.7523C9.31202 11.2388 8.70068 13.0483 8.70068 13.0483L7.18457 12.5593L7.747 11.5322Z' fill='white'/%3E%3C/svg%3E");
 }
 
+.emotion-32 {
+  margin-top: 0.75rem;
+}
+
+.emotion-32:first-child {
+  margin-top: 0;
+}
+
+.emotion-31 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: calc(2rem / 2 * -1);
+  margin-bottom: calc(0.75rem / 2 * -1);
+  margin-top: calc(0.75rem / 2 * -1);
+}
+
+.emotion-18 {
+  margin: calc(2rem / 2);
+  margin-bottom: calc(0.75rem / 2);
+  margin-top: calc(0.75rem / 2);
+}
+
 .emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -33326,41 +34015,6 @@ exports[`Storyshots form/FormField Shared components 1`] = `
 
 .emotion-11::placeholder {
   color: var(--theme-ui-colors-grey-50,#78757a);
-}
-
-.emotion-32 {
-  margin-top: 0.75rem;
-}
-
-.emotion-32:first-child {
-  margin-top: 0;
-}
-
-.emotion-31 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: calc(2rem / 2 * -1);
-  margin-bottom: calc(0.75rem / 2 * -1);
-  margin-top: calc(0.75rem / 2 * -1);
-}
-
-.emotion-18 {
-  margin: calc(2rem / 2);
-  margin-bottom: calc(0.75rem / 2);
-  margin-top: calc(0.75rem / 2);
 }
 
 .emotion-17 {
@@ -35061,7 +35715,9 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
                  
               </legend>
               <div
+                align="justify"
                 class="emotion-10"
+                gap="0"
               >
                 <div
                   class="emotion-3"
@@ -35226,7 +35882,7 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
   }
 }
 
-.emotion-15 {
+.emotion-30 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -35244,12 +35900,12 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
   padding: 20px;
 }
 
-.emotion-14 {
+.emotion-29 {
   max-width: 80%;
   width: 25rem;
 }
 
-.emotion-14 > * + * {
+.emotion-29 > * + * {
   margin-top: 2rem!important;
 }
 
@@ -35355,6 +36011,41 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
   margin-top: 0;
 }
 
+.emotion-25 {
+  margin-top: 0.75rem;
+}
+
+.emotion-25:first-child {
+  margin-top: 0;
+}
+
+.emotion-24 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: calc(2rem / 2 * -1);
+  margin-bottom: calc(0.75rem / 2 * -1);
+  margin-top: calc(0.75rem / 2 * -1);
+}
+
+.emotion-17 {
+  margin: calc(2rem / 2);
+  margin-bottom: calc(0.75rem / 2);
+  margin-top: calc(0.75rem / 2);
+}
+
 .emotion-13 {
   padding: 0;
   margin: 0;
@@ -35420,6 +36111,37 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
   width: 20px;
 }
 
+.emotion-16 {
+  font-size: 1rem;
+  color: var(--theme-ui-colors-grey-90,#232129);
+  cursor: pointer;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  line-height: 1.3;
+  padding-left: calc(20px + 0.25rem);
+  position: relative;
+}
+
+.emotion-16:before {
+  background-color: var(--theme-ui-colors-white,#ffffff);
+  border: 2px solid var(--theme-ui-colors-grey-30,#d9d7e0);
+  display: block;
+  border-radius: 50%;
+  content: "";
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: border-color 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out;
+  -webkit-transform: translate(0,calc((1em - 14px) * 0.5));
+  -ms-transform: translate(0,calc((1em - 14px) * 0.5));
+  transform: translate(0,calc((1em - 14px) * 0.5));
+  width: 20px;
+}
+
 <div>
   <div
     class="storybook-readme-story"
@@ -35427,14 +36149,14 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
     <div>
       <div>
         <div
-          class="emotion-15"
+          class="emotion-30"
         >
           <div
-            class="emotion-14"
+            class="emotion-29"
           >
             <fieldset
               class="emotion-13"
-              id="example-1b"
+              id="example-1a"
             >
               <legend
                 class="emotion-0"
@@ -35451,14 +36173,14 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-1"
-                    id="example-1b__option--article"
-                    name="option1b"
+                    id="example-1a__option--article"
+                    name="category"
                     type="radio"
                     value="article"
                   />
                   <label
                     class="emotion-2"
-                    for="example-1b__option--article"
+                    for="example-1a__option--article"
                   >
                     article
                   </label>
@@ -35469,14 +36191,14 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-1"
-                    id="example-1b__option--essay"
-                    name="option1b"
+                    id="example-1a__option--essay"
+                    name="category"
                     type="radio"
                     value="essay"
                   />
                   <label
                     class="emotion-2"
-                    for="example-1b__option--essay"
+                    for="example-1a__option--essay"
                   >
                     essay
                   </label>
@@ -35487,17 +36209,98 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                   <input
                     aria-invalid="false"
                     class="emotion-1"
-                    id="example-1b__option--memories"
-                    name="option1b"
+                    id="example-1a__option--memories"
+                    name="category"
                     type="radio"
                     value="memories"
                   />
                   <label
                     class="emotion-2"
-                    for="example-1b__option--memories"
+                    for="example-1a__option--memories"
                   >
                     memories
                   </label>
+                </div>
+              </div>
+              <div
+                class="emotion-11"
+                id="example-1a__hint"
+              />
+              <div
+                class="emotion-12"
+                id="example-1a__error"
+              />
+            </fieldset>
+            <fieldset
+              class="emotion-13"
+              id="example-1b"
+            >
+              <legend
+                class="emotion-0"
+              >
+                Category
+                 
+              </legend>
+              <div
+                class="emotion-25"
+              >
+                <div
+                  class="emotion-24"
+                >
+                  <div
+                    class="emotion-17"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-1"
+                      id="example-1b__option--article"
+                      name="option1b"
+                      type="radio"
+                      value="article"
+                    />
+                    <label
+                      class="emotion-16"
+                      for="example-1b__option--article"
+                    >
+                      article
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-17"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-1"
+                      id="example-1b__option--essay"
+                      name="option1b"
+                      type="radio"
+                      value="essay"
+                    />
+                    <label
+                      class="emotion-16"
+                      for="example-1b__option--essay"
+                    >
+                      essay
+                    </label>
+                  </div>
+                  <div
+                    class="emotion-17"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="emotion-1"
+                      id="example-1b__option--memories"
+                      name="option1b"
+                      type="radio"
+                      value="memories"
+                    />
+                    <label
+                      class="emotion-16"
+                      for="example-1b__option--memories"
+                    >
+                      memories
+                    </label>
+                  </div>
                 </div>
               </div>
               <div
