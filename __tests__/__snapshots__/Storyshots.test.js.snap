@@ -35715,9 +35715,7 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
                  
               </legend>
               <div
-                align="justify"
                 class="emotion-10"
-                gap="0"
               >
                 <div
                   class="emotion-3"
