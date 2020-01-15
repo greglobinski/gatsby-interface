@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import React from "react"
-import { FormField } from "./FormField"
 import { getFocusStyles } from "./FormField.helpers"
 import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/components/FormGroupFieldSkeleton"
 import FormGroupField, {
@@ -90,10 +89,10 @@ CheckboxGroupField.OptionWrapper.displayName = `RadioButtonField.OptionWrapper`
 CheckboxGroupField.Options = FormGroupField.Options
 CheckboxGroupField.Options.displayName = `CheckboxGroupField.Options`
 
-CheckboxGroupField.Hint = FormField.Hint
+CheckboxGroupField.Hint = FormGroupField.Hint
 CheckboxGroupField.Hint.displayName = `CheckboxGroupField.Hint`
 
-CheckboxGroupField.Error = FormField.Error
+CheckboxGroupField.Error = FormGroupField.Error
 CheckboxGroupField.Error.displayName = `CheckboxGroupField.Error`
 
 export default CheckboxGroupField

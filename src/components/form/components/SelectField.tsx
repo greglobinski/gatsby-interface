@@ -6,7 +6,7 @@ import {
   FormFieldSkeleton,
   FormFieldSkeletonProps,
 } from "../../form-skeletons/components/FormFieldSkeleton"
-import { FormField } from "./FormField"
+import { FormField, getFieldStackStyles } from "./FormField"
 import { getInputStyles } from "./FormField.helpers"
 import SelectFieldSkeleton, {
   SelectFieldSkeletonControlProps,
@@ -31,6 +31,7 @@ const Control = React.forwardRef<HTMLSelectElement, SelectFieldControlProps>(
       <SelectFieldSkeleton.Control
         ref={ref}
         css={[
+          getFieldStackStyles(`item`),
           getInputStyles(hasError),
           {
             padding: `0 ${space[3]}`,

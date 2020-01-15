@@ -6,7 +6,7 @@ import {
   FormFieldSkeleton,
   FormFieldSkeletonProps,
 } from "../../form-skeletons/components/FormFieldSkeleton"
-import { FormField } from "./FormField"
+import { FormField, getFieldStackStyles } from "./FormField"
 import { getInputStyles } from "./FormField.helpers"
 import InputFieldSkeleton, {
   InputFieldSkeletonControlProps,
@@ -30,7 +30,7 @@ const Control = React.forwardRef<HTMLInputElement, InputFieldControlProps>(
     return (
       <InputFieldSkeleton.Control
         ref={ref}
-        css={[getInputStyles(hasError)]}
+        css={[getFieldStackStyles(`item`), getInputStyles(hasError)]}
         {...props}
         placeholder={placeholder}
       />

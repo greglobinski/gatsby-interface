@@ -2,7 +2,6 @@
 import { jsx } from "@emotion/core"
 import React from "react"
 
-import { FormField } from "./FormField"
 import { getFocusStyles } from "./FormField.helpers"
 import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/components/FormGroupFieldSkeleton"
 import FormGroupField, {
@@ -13,16 +12,16 @@ import space from "../../../theme/space"
 import radii from "../../../theme/radii"
 import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { FormGroupFieldProps } from "./FormGroupField"
-import { getStackStyle } from "../../Stack"
+import { getStackStyles } from "../../stack"
 
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
 function RadioButtonField(props: FormGroupFieldProps) {
-  const formedVariantStyle =
+  const framedVariantStyle =
     props.variant && props.variant === `framed`
-      ? getStackStyle({ gap: 3 })
+      ? getStackStyles({ gap: 3 })
       : null
-  return <FormGroupField css={[formedVariantStyle]} {...props} />
+  return <FormGroupField css={[framedVariantStyle]} {...props} />
 }
 
 const Option = React.forwardRef<
@@ -159,10 +158,10 @@ RadioButtonField.OptionLabel.displayName = `RadioButtonField.OptionLabel`
 RadioButtonField.Options = FormGroupField.Options
 RadioButtonField.Options.displayName = `RadioButtonField.Options`
 
-RadioButtonField.Hint = FormField.Hint
+RadioButtonField.Hint = FormGroupField.Hint
 RadioButtonField.Hint.displayName = `RadioButtonField.Hint`
 
-RadioButtonField.Error = FormField.Error
+RadioButtonField.Error = FormGroupField.Error
 RadioButtonField.Error.displayName = `RadioButtonField.Error`
 
 export default RadioButtonField

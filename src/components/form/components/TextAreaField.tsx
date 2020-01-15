@@ -6,7 +6,7 @@ import {
   FormFieldSkeleton,
   FormFieldSkeletonProps,
 } from "../../form-skeletons/components/FormFieldSkeleton"
-import { FormField } from "./FormField"
+import { FormField, getFieldStackStyles } from "./FormField"
 import { getInputStyles } from "./FormField.helpers"
 import TextAreaFieldSkeleton, {
   TextAreaFieldSkeletonControlProps,
@@ -38,6 +38,7 @@ const Control = React.forwardRef<
       ref={ref}
       css={[
         getInputStyles(hasError),
+        getFieldStackStyles(`item`),
         {
           display: `block`,
           minHeight: `4.85em`,
