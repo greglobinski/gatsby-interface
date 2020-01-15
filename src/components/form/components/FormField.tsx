@@ -48,7 +48,7 @@ export const FieldWrapper: React.FC<FormFieldWrapperProps> = props => {
 FormField.Wrapper = FieldWrapper
 FormField.Wrapper.displayName = `FormField.Wrapper`
 
-export const FieldStack: React.FC<{}> = props => {
+export const FieldStack: React.FC<FormFieldWrapperProps> = props => {
   const t = useTheme()
 
   return <div css={getFieldStackStyles(`stack`, t)} {...props} />
