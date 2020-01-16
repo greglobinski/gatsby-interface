@@ -19914,16 +19914,13 @@ label:focus-within > .emotion-2 {
   "isSubmitting": false,
   "isValidating": false,
   "submitCount": 0,
+  "dirty": false,
+  "isValid": false,
   "initialValues": {
     "subInterval": "MONTHLY"
   },
-  "initialErrors": {},
-  "initialTouched": {},
-  "isValid": true,
-  "dirty": false,
-  "validateOnBlur": true,
   "validateOnChange": true,
-  "validateOnMount": false
+  "validateOnBlur": true
 }
               </pre>
             </div>
@@ -21679,17 +21676,14 @@ label:focus-within > .emotion-1 {
   "isSubmitting": false,
   "isValidating": false,
   "submitCount": 0,
+  "dirty": false,
+  "isValid": false,
   "initialValues": {
     "subscriptionInterval": false,
     "automaticalRenew": false
   },
-  "initialErrors": {},
-  "initialTouched": {},
-  "isValid": true,
-  "dirty": false,
-  "validateOnBlur": true,
   "validateOnChange": true,
-  "validateOnMount": false
+  "validateOnBlur": true
 }
               </pre>
             </div>
