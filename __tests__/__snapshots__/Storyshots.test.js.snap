@@ -30429,10 +30429,10 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-35:first-child {
@@ -32473,10 +32473,10 @@ exports[`Storyshots form/FormField Required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-19:first-child {
@@ -33018,10 +33018,10 @@ exports[`Storyshots form/FormField Shared components 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-46:first-child {
@@ -34211,10 +34211,10 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-10:first-child {
@@ -34858,10 +34858,10 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-10:first-child {
@@ -34970,10 +34970,10 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-13 stackItemCss {
@@ -35277,10 +35277,10 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-10:first-child {
