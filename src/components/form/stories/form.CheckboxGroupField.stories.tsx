@@ -54,7 +54,7 @@ storiesOf(`form`, module)
             error={error}
             onChange={e => {
               const target = e.currentTarget
-              const valueArray: string[] = [...fieldValue] || []
+              const valueArray: string[] = [...fieldValue]
 
               if (target.checked) {
                 valueArray.push(target.value)
