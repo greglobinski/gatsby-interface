@@ -31,7 +31,7 @@ const RadioButtonConnectedField: React.FC<
     <RadioButtonFieldBlock
       id={id}
       label={label}
-      error={isTouched && error && error}
+      error={isTouched && error}
       value={value}
       onBlur={handleBlur}
       onChange={handleChange}

@@ -198,7 +198,7 @@ storiesOf(`form/Formik usage examples`, module)
                 handleSubmit,
                 errors,
               }: FormikProps<MyFormValues>) => (
-                <form onSubmit={handleSubmit} css={stackCss}>
+                <form onSubmit={handleSubmit} noValidate css={stackCss}>
                   <InputField
                     id="titleField"
                     hasError={!!(touched.title && errors.title)}

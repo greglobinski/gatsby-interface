@@ -33,11 +33,11 @@ const CheckboxGroupConnectedField: React.FC<
     <CheckboxGroupFieldBlock
       id={id}
       label={label}
-      error={isTouched && error && error}
+      error={isTouched && error}
       value={value}
       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         const target = e.currentTarget
-        const valueArray = [...value] || []
+        const valueArray = [...value]
 
         if (target.checked) {
           valueArray.push(target.value)

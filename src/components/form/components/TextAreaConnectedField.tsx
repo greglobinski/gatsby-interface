@@ -29,7 +29,7 @@ const TextAreaConnectedField: React.FC<TextAreaConnectedFieldProps> = props => {
     <TextAreaFieldBlock
       id={id}
       label={label}
-      error={isTouched && error && error}
+      error={isTouched && error}
       value={value}
       onBlur={handleBlur}
       onChange={handleChange}

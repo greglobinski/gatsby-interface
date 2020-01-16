@@ -29,7 +29,7 @@ const CheckboxConnectedField: React.FC<CheckboxConnectedFieldProps> = props => {
     <CheckboxFieldBlock
       id={id}
       label={label}
-      error={isTouched && error && error}
+      error={isTouched && error}
       value={value}
       onBlur={handleBlur}
       onChange={handleChange}

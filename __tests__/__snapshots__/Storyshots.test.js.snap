@@ -38243,6 +38243,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
           >
             <form
               class="emotion-60"
+              novalidate=""
             >
               <div
                 class="emotion-5"

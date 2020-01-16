@@ -29,7 +29,7 @@ const InputConnectedField: React.FC<InputConnectedFieldProps> = props => {
     <InputFieldBlock
       id={id}
       label={label}
-      error={isTouched && error && error}
+      error={isTouched && error}
       onChange={handleChange}
       onBlur={handleBlur}
       value={value}

@@ -29,7 +29,7 @@ const SelectConnectedField: React.FC<SelectConnectedFieldProps> = props => {
     <SelectFieldBlock
       id={id}
       label={label}
-      error={isTouched && error && error}
+      error={isTouched && error}
       value={value}
       onChange={handleChange}
       onBlur={handleBlur}
