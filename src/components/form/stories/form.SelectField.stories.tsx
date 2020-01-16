@@ -87,7 +87,7 @@ storiesOf(`form`, module)
             options={options}
             onChange={e => action(`Change`)(e.target.value)}
             error={error}
-            hint={hint ? hint : `And this one is built with 'SelectFieldBlock'`}
+            hint={hint || `And this one is built with 'SelectFieldBlock'`}
             disabled={disabled}
             required={required}
           />

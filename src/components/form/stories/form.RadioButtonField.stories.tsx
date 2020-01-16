@@ -190,7 +190,7 @@ storiesOf(`form/RadioButtonField`, module)
                 ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>
-              {hint ? hint : `This one is also built with 'InputFieldBlock'`}
+              {hint || `This one is also built with 'InputFieldBlock'`}
             </RadioButtonField.Hint>
             <RadioButtonField.Error>{error}</RadioButtonField.Error>
           </RadioButtonField>

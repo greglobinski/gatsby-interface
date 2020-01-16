@@ -67,9 +67,7 @@ storiesOf(`form`, module)
             labelSize={size}
             onChange={e => action(`Change`)(e.target.value)}
             error={error}
-            hint={
-              hint ? hint : `And this one is built with 'TextAreaFieldBlock'`
-            }
+            hint={hint || `And this one is built with 'TextAreaFieldBlock'`}
             placeholder={placeholder}
             disabled={disabled}
             required={required}
@@ -86,9 +84,7 @@ storiesOf(`form`, module)
             labelSize={size}
             onChange={e => action(`Change`)(e.target.value)}
             error={error}
-            hint={
-              hint ? hint : `This one is also built with 'TextAreaFieldBlock'`
-            }
+            hint={hint || `This one is also built with 'TextAreaFieldBlock'`}
             placeholder={placeholder}
             disabled={disabled}
             required={required}

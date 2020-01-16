@@ -30,12 +30,10 @@ const TextAreaFieldBlock = React.forwardRef<
     ...rest
   } = props
 
-  const isRequired = rest.required ? rest.required : false
-
   return (
     <TextAreaField id={id} hasError={!!error} hasHint={!!hint}>
       <TextAreaField.Wrapper className={className}>
-        <TextAreaField.Label size={labelSize} isRequired={isRequired}>
+        <TextAreaField.Label size={labelSize} isRequired={!!rest.required}>
           {label}
         </TextAreaField.Label>
         <TextAreaField.Control ref={ref} {...rest} />

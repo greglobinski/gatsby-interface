@@ -30,13 +30,11 @@ const CheckboxFieldBlock = React.forwardRef<
     ...rest
   } = props
 
-  const isRequired = rest.required ? rest.required : false
-
   return (
     <CheckboxField id={id} hasError={!!error} hasHint={!!hint}>
       <CheckboxField.Wrapper className={className}>
         <CheckboxField.Control ref={ref} {...rest} />
-        <CheckboxField.Label size={labelSize} isRequired={isRequired}>
+        <CheckboxField.Label size={labelSize} isRequired={!!rest.required}>
           {label}
         </CheckboxField.Label>
         <CheckboxField.Hint>{hint}</CheckboxField.Hint>

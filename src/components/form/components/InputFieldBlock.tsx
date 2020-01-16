@@ -30,12 +30,10 @@ const InputFieldBlock = React.forwardRef<
     ...rest
   } = props
 
-  const isRequired = rest.required ? rest.required : false
-
   return (
     <InputField id={id} hasError={!!error} hasHint={!!hint}>
       <InputField.Wrapper className={className}>
-        <InputField.Label size={labelSize} isRequired={isRequired}>
+        <InputField.Label size={labelSize} isRequired={!!rest.required}>
           {label}
         </InputField.Label>
         <InputField.Control ref={ref} {...rest} />

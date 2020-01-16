@@ -67,7 +67,7 @@ storiesOf(`form`, module)
             label="First name"
             labelSize={size}
             onChange={e => action(`Change`)(e.target.value)}
-            hint={hint ? hint : `And this one is built with 'InputFieldBlock'`}
+            hint={hint || `And this one is built with 'InputFieldBlock'`}
             error={error}
             placeholder={placeholder}
             disabled={disabled}
@@ -84,7 +84,7 @@ storiesOf(`form`, module)
             }
             labelSize={size}
             onChange={e => action(`Change`)(e.target.value)}
-            hint={hint ? hint : `This one is also built with 'InputFieldBlock'`}
+            hint={hint || `This one is also built with 'InputFieldBlock'`}
             error={error}
             placeholder={placeholder}
             disabled={disabled}

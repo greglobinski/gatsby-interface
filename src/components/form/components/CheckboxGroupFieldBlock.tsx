@@ -34,8 +34,6 @@ const CheckboxGroupFieldBlock = (props: CheckboxGroupFieldBlockProps) => {
     ...rest
   } = props
 
-  const isRequired = rest.required ? rest.required : false
-
   return (
     <CheckboxGroupField
       id={id}
@@ -44,7 +42,7 @@ const CheckboxGroupFieldBlock = (props: CheckboxGroupFieldBlockProps) => {
       layout={layout}
       className={className}
     >
-      <CheckboxGroupField.Label size={labelSize} isRequired={isRequired}>
+      <CheckboxGroupField.Label size={labelSize} isRequired={!!rest.required}>
         {label}
       </CheckboxGroupField.Label>
       <CheckboxGroupField.Options>

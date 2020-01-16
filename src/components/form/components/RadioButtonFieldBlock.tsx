@@ -31,8 +31,6 @@ const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
     ...rest
   } = props
 
-  const isRequired = rest.required ? rest.required : false
-
   return (
     <RadioButtonField
       id={id}
@@ -40,7 +38,7 @@ const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
       hasHint={!!hint}
       className={className}
     >
-      <RadioButtonField.Label size={labelSize} isRequired={isRequired}>
+      <RadioButtonField.Label size={labelSize} isRequired={!!rest.required}>
         {label}
       </RadioButtonField.Label>
       <RadioButtonField.Options>

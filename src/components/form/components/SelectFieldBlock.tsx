@@ -30,12 +30,10 @@ const SelectFieldBlock = React.forwardRef<
     ...rest
   } = props
 
-  const isRequired = rest.required ? rest.required : false
-
   return (
     <SelectField id={id} hasError={!!error} hasHint={!!hint}>
       <SelectField.Wrapper className={className}>
-        <SelectField.Label size={labelSize} isRequired={isRequired}>
+        <SelectField.Label size={labelSize} isRequired={!!rest.required}>
           {label}
         </SelectField.Label>
         <SelectField.Control ref={ref} {...rest} />
