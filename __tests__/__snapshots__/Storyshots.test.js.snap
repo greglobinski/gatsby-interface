@@ -35650,10 +35650,10 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-28:first-child {
@@ -36142,10 +36142,10 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-58 {
@@ -37646,10 +37646,10 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-27:first-child {
@@ -38099,10 +38099,10 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-55 {
@@ -39608,10 +39608,10 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-28:first-child {
@@ -40100,10 +40100,10 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: justify;
-  -webkit-box-align: justify;
-  -ms-flex-align: justify;
-  align-items: justify;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-58 {
