@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.68](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.67...v0.0.68) (2020-01-29)
+
+
+### Features
+
+* Notification and Link components migrated to TS ([#169](https://github.com/gatsby-inc/gatsby-interface/issues/169)) ([27cc867](https://github.com/gatsby-inc/gatsby-interface/commit/27cc86749e3a89d664407b1928f7b1ea003fe1da))
+
 ### [0.0.67](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.66...v0.0.67) (2020-01-09)
 
 ### Bug Fixes
