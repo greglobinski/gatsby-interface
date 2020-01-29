@@ -3,9 +3,3 @@ export {
   TONES as BUTTON_TONES,
   SIZES as BUTTON_SIZES,
 } from "./button"
-
-export {
-  VARIANTS as NOTIFICATION_VARIANTS,
-  TONES as NOTIFICATION_TONES,
-  ICONS as NOTIFICATION_ICONS,
-} from "./notification"

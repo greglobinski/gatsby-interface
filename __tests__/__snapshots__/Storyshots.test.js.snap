@@ -603,7 +603,7 @@ exports[`Storyshots BaseAnchor default 1`] = `
           >
             <a
               href="https://gatsbyjs.com"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Anchor
@@ -1381,7 +1381,7 @@ exports[`Storyshots Chip anchor chip example 1`] = `
             <a
               class="emotion-1"
               href="https://google.com"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <span
@@ -1392,7 +1392,7 @@ exports[`Storyshots Chip anchor chip example 1`] = `
             </a>
             <a
               href="https://yandex.com"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <span
@@ -3852,7 +3852,7 @@ exports[`Storyshots IntegrationRow shortcut usage 1`] = `
               <a
                 class="emotion-1"
                 href="/"
-                rel=" noopener noreferrer"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 Setup instructions
@@ -8350,7 +8350,7 @@ exports[`Storyshots Navigation with nested item links as children 1`] = `
 </div>
 `;
 
-exports[`Storyshots Notification default 1`] = `
+exports[`Storyshots Notification animated with react-spring 1`] = `
 @keyframes animation-0 {
   33% {
     -webkit-transform: scale(1);
@@ -8771,7 +8771,21 @@ exports[`Storyshots Notification default 1`] = `
   }
 }
 
-.emotion-8 {
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8789,103 +8803,53 @@ exports[`Storyshots Notification default 1`] = `
   padding: 20px;
 }
 
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  width: 500px;
-}
-
-.emotion-7 > button {
-  margin: 20px;
-}
-
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  background: #ffffff;
-  border-radius: 0.25rem;
-  box-shadow: 0px 1px 2px rgba(46,41,51,0.08),0px 2px 4px rgba(71,63,79,0.08);
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-left: 10px solid #663399;
-  padding: 1rem 1.5rem 1rem 1rem;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  line-height: 1.5;
+  color: #663399;
 }
 
-@media (min-width:1000px) {
-  .emotion-1 {
-    padding: 1rem 1.5rem 1rem 1rem;
-  }
-}
-
-.emotion-0 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-0 svg {
-  fill: #663399;
-  margin-right: 0.5rem;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
-  background: #ffffff;
+  font-size: 0.875rem;
+  background: var(--theme-ui-colors-primaryBackground,#ffffff);
   border-radius: 0.25rem;
   box-shadow: 0px 1px 2px rgba(46,41,51,0.08),0px 2px 4px rgba(71,63,79,0.08);
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  background: var(--theme-ui-colors-white,#ffffff);
   border-left: 10px solid #663399;
   padding: 1rem 1.5rem 1rem 1rem;
   margin-top: 1rem;
 }
 
 @media (min-width:1000px) {
-  .emotion-4 {
+  .emotion-3 {
     padding: 1rem 1.5rem 1rem 1rem;
   }
 }
 
-.emotion-3 {
+.emotion-2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8916,16 +8880,18 @@ exports[`Storyshots Notification default 1`] = `
   color: #663399;
   padding: 0;
   min-height: auto;
+  color: var(--theme-ui-colors-grey-40,#b7b5bd);
   width: 1rem;
+  margin-left: 1rem;
 }
 
-.emotion-3[disabled],
-.emotion-3[disabled]:hover {
+.emotion-2[disabled],
+.emotion-2[disabled]:hover {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-3 svg {
+.emotion-2 svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -8935,40 +8901,399 @@ exports[`Storyshots Notification default 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
 
-.emotion-3:hover {
+.emotion-2:hover {
   background: #fcfaff;
   color: #663399;
 }
 
-.emotion-3 svg {
-  fill: #b7b5bd;
+.emotion-4 {
+  max-width: 400px;
+  width: 100%;
+  min-height: 300px;
 }
 
-.emotion-6 {
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: #635e69;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
+  transition: background 0.5s,border 0.5s,color 0.5s;
+  line-height: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
+  background: #663399;
+  border: 1px solid #663399;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.emotion-0[disabled],
+.emotion-0[disabled]:hover {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.emotion-0:hover:not([disabled]) svg {
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-0:hover {
+  background: #542c85;
+  border: 1px solid #542c85;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
+          >
+            <button
+              class="emotion-0"
+              type="button"
+            >
+              Toggle notification
+            </button>
+            <div
+              class="emotion-3"
+              style="opacity: 0; transform: translate3d(0, -40px, 0);"
+            >
+              <span
+                class="emotion-1"
+              >
+                Notification variant 'PRIMARY' with close
+              </span>
+              <button
+                class="emotion-2"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification custom icon 1`] = `
+.emotion-4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 500px;
+}
+
+.emotion-3 > button {
+  margin: 20px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
+  font-size: 0.875rem;
+  background: var(--theme-ui-colors-primaryBackground,#ffffff);
+  border-radius: 0.25rem;
+  box-shadow: 0px 1px 2px rgba(46,41,51,0.08),0px 2px 4px rgba(71,63,79,0.08);
+  background: var(--theme-ui-colors-white,#ffffff);
+  border-left: 10px solid #663399;
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+
+@media (min-width:1000px) {
+  .emotion-2 {
+    padding: 1rem 1.5rem 1rem 1rem;
+  }
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  line-height: 1.5;
+  color: #663399;
+}
+
+.emotion-0 {
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  color: #663399;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-4"
+        >
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <span
+                class="emotion-1"
+              >
+                <svg
+                  class="emotion-0"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"
+                  />
+                </svg>
+                Notification with custom icon
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification default 1`] = `
+.emotion-6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.emotion-1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #663399;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-1:focus,
+.emotion-1:hover {
+  color: #663399;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 500px;
+}
+
+.emotion-5 > button {
+  margin: 20px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: 0.875rem;
+  background: var(--theme-ui-colors-primaryBackground,#ffffff);
+  border-radius: 0.25rem;
+  box-shadow: 0px 1px 2px rgba(46,41,51,0.08),0px 2px 4px rgba(71,63,79,0.08);
+  background: var(--theme-ui-colors-white,#ffffff);
+  border-left: 10px solid #663399;
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+
+@media (min-width:1000px) {
+  .emotion-2 {
+    padding: 1rem 1.5rem 1rem 1rem;
+  }
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  line-height: 1.5;
+  color: #663399;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: 0.875rem;
   background: #fcfaff;
   padding: 1rem 1.5rem;
   margin-top: 1rem;
 }
 
 @media (min-width:1000px) {
-  .emotion-6 {
+  .emotion-4 {
     padding: 1.5rem 2.5rem;
   }
 }
@@ -8980,13 +9305,13 @@ exports[`Storyshots Notification default 1`] = `
     <div>
       <div>
         <div
-          class="emotion-8"
+          class="emotion-6"
         >
           <div
-            class="emotion-7"
+            class="emotion-5"
           >
             <div
-              class="emotion-1"
+              class="emotion-2"
             >
               <span
                 class="emotion-0"
@@ -8995,7 +9320,7 @@ exports[`Storyshots Notification default 1`] = `
               </span>
               <a
                 aria-current="page"
-                class=""
+                class="emotion-1"
                 href="/"
               >
                 Link
@@ -9015,35 +9340,8 @@ exports[`Storyshots Notification default 1`] = `
                 </svg>
               </a>
             </div>
-            <div
-              class="emotion-4"
-            >
-              <span
-                class="emotion-0"
-              >
-                Notification variant 'PRIMARY' with close
-              </span>
-              <button
-                class="emotion-3"
-                type="button"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                  />
-                </svg>
-              </button>
-            </div>
             <section
-              class="emotion-6"
+              class="emotion-4"
             >
               <span
                 class="emotion-0"
@@ -9051,6 +9349,686 @@ exports[`Storyshots Notification default 1`] = `
                 Notification variant 'SECONDARY'
               </span>
             </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification dismissable 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+.emotion-5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: #635e69;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
+  transition: background 0.5s,border 0.5s,color 0.5s;
+  line-height: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
+  background: #663399;
+  border: 1px solid #663399;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.emotion-0[disabled],
+.emotion-0[disabled]:hover {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.emotion-0:hover:not([disabled]) svg {
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-0:hover {
+  background: #542c85;
+  border: 1px solid #542c85;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 500px;
+}
+
+.emotion-4 > button {
+  margin: 20px;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  line-height: 1.5;
+  color: #663399;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: 0.875rem;
+  background: var(--theme-ui-colors-primaryBackground,#ffffff);
+  border-radius: 0.25rem;
+  box-shadow: 0px 1px 2px rgba(46,41,51,0.08),0px 2px 4px rgba(71,63,79,0.08);
+  background: var(--theme-ui-colors-white,#ffffff);
+  border-left: 10px solid #663399;
+  padding: 1rem 1.5rem 1rem 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width:1000px) {
+  .emotion-3 {
+    padding: 1rem 1.5rem 1rem 1rem;
+  }
+}
+
+.emotion-2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: #635e69;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
+  transition: background 0.5s,border 0.5s,color 0.5s;
+  line-height: 1;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #663399;
+  padding: 0;
+  min-height: auto;
+  color: var(--theme-ui-colors-grey-40,#b7b5bd);
+  width: 1rem;
+  margin-left: 1rem;
+}
+
+.emotion-2[disabled],
+.emotion-2[disabled]:hover {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.emotion-2:hover:not([disabled]) svg {
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-2:hover {
+  background: #fcfaff;
+  color: #663399;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
+          >
+            <div>
+              <button
+                class="emotion-0"
+                disabled=""
+                type="button"
+              >
+                Show notification
+              </button>
+              <div
+                class="emotion-3"
+              >
+                <span
+                  class="emotion-1"
+                >
+                  Notification variant 'PRIMARY' with close
+                </span>
+                <button
+                  class="emotion-2"
+                  type="button"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -9102,6 +10080,20 @@ exports[`Storyshots Portal Same destination portal 1`] = `
 `;
 
 exports[`Storyshots PricingCard individual multiplan card 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 @keyframes animation-0 {
   33% {
     -webkit-transform: scale(1);
@@ -11044,6 +12036,20 @@ exports[`Storyshots PricingCard multiplan card 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-75 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -12127,6 +13133,20 @@ exports[`Storyshots PricingCard multiplan card 1`] = `
 `;
 
 exports[`Storyshots PricingCard variants 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 @keyframes animation-0 {
   33% {
     -webkit-transform: scale(1);
@@ -15394,6 +16414,20 @@ exports[`Storyshots SettingsBlock default usage 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-21 {
   display: grid;
   justify-items: start;
@@ -16822,6 +17856,20 @@ exports[`Storyshots SettingsCard custom EditButton 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-10 {
   display: grid;
   justify-items: start;
@@ -17047,6 +18095,20 @@ exports[`Storyshots SettingsCard custom EditButton 1`] = `
 `;
 
 exports[`Storyshots SettingsCard default usage 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 @keyframes animation-0 {
   33% {
     -webkit-transform: scale(1);
@@ -18270,6 +19332,20 @@ exports[`Storyshots SettingsCard no secondary conent 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-12 {
   display: grid;
   justify-items: start;
@@ -18524,6 +19600,20 @@ exports[`Storyshots SettingsCard no secondary conent 1`] = `
 `;
 
 exports[`Storyshots SettingsCard with custom tone 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 @keyframes animation-0 {
   33% {
     -webkit-transform: scale(1);
@@ -20631,6 +21721,20 @@ exports[`Storyshots Toast Default 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -21930,7 +23034,7 @@ exports[`Storyshots buttons/AnchorButton override/extend styles 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Button with custom style
@@ -22298,7 +23402,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22308,7 +23412,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22318,7 +23422,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
             </a>
             <a
               class="emotion-2"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22328,7 +23432,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
             </a>
             <a
               class="emotion-3"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22741,7 +23845,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22751,7 +23855,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22761,7 +23865,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
             </a>
             <a
               class="emotion-2"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -22771,7 +23875,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
             </a>
             <a
               class="emotion-3"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -23040,7 +24144,7 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -23050,7 +24154,7 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -23060,7 +24164,7 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
             </a>
             <a
               class="emotion-2"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               variant 
@@ -23401,7 +24505,7 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
           >
             <a
               class="emotion-0"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               On the right
@@ -23421,7 +24525,7 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
             </a>
             <a
               class="emotion-1"
-              rel=" noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <svg
@@ -45344,6 +46448,912 @@ exports[`Storyshots theme space 1`] = `
             />
             <div>
               6rem
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots theme tones 1`] = `
+.emotion-93 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.emotion-92 {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+}
+
+.emotion-90 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 0.75rem;
+}
+
+.emotion-0 {
+  color: var(--theme-ui-colors-grey-90,#232129);
+  background-color: var(--theme-ui-colors-grey-20,#f0f0f2);
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #663399;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-70 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #f7fdf7;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-61 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #a1da9e;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-64 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #37b635;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-55 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #2ca72c;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-58 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #1d9520;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-67 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #006500;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-52 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fbfbfb;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-43 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #f0f0f2;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-46 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #b7b5bd;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-37 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #78757a;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-40 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #635e69;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-49 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #232129;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-7 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #f1defa;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-10 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #8a4baf;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-16 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fcfaff;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-4 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #542c85;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-13 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #362066;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-34 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fffafa;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-25 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #ffbab8;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-28 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fa2915;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-19 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #da0013;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-22 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #ce0009;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-31 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #b80000;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-88 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fffdf7;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-79 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fff2a8;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-82 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #ffdf37;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-73 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fed038;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-76 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #fec21e;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+.emotion-85 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 1px solid var(--theme-ui-colors-grey-40,#b7b5bd);
+  background-color: #8a6534;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-93"
+        >
+          <div
+            class="emotion-92"
+          >
+            <h1>
+              tones
+            </h1>
+            <p>
+              Token names are sorted alphabetically
+            </p>
+            <div
+              class="emotion-90 emotion-91"
+            >
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  BRAND.dark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-1"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #663399
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  BRAND.darker
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-4"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #542c85
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  BRAND.light
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-7"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #f1defa
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  BRAND.medium
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-10"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #8a4baf
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  BRAND.superDark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-13"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #362066
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  BRAND.superLight
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-16"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fcfaff
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  DANGER.dark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-19"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #da0013
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  DANGER.darker
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-22"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #ce0009
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  DANGER.light
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-25"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #ffbab8
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  DANGER.medium
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-28"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fa2915
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  DANGER.superDark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-31"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #b80000
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  DANGER.superLight
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-34"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fffafa
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  NEUTRAL.dark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-37"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #78757a
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  NEUTRAL.darker
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-40"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #635e69
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  NEUTRAL.light
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-43"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #f0f0f2
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  NEUTRAL.medium
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-46"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #b7b5bd
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  NEUTRAL.superDark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-49"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #232129
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  NEUTRAL.superLight
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-52"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fbfbfb
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  SUCCESS.dark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-55"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #2ca72c
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  SUCCESS.darker
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-58"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #1d9520
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  SUCCESS.light
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-61"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #a1da9e
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  SUCCESS.medium
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-64"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #37b635
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  SUCCESS.superDark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-67"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #006500
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  SUCCESS.superLight
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-70"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #f7fdf7
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  WARNING.dark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-73"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fed038
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  WARNING.darker
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-76"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fec21e
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  WARNING.light
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-79"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fff2a8
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  WARNING.medium
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-82"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #ffdf37
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  WARNING.superDark
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-85"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #8a6534
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-0"
+                >
+                  WARNING.superLight
+                </span>
+              </div>
+              <div>
+                <span
+                  class="emotion-88"
+                />
+                <span
+                  class="emotion-0"
+                >
+                  #fffdf7
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function secureTargetBlankLink({
     target.includes(`_blank`) &&
     !rel.includes(NOOPENER_NOREFERRER)
   ) {
-    return `${rel} ${NOOPENER_NOREFERRER}`
+    return `${rel}${rel ? ` ` : ``}${NOOPENER_NOREFERRER}`
   }
 
   return rel
