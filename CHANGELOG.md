@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.69](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.68...v0.0.69) (2020-01-30)
+
+
+### Features
+
+* Migrate Text component to TypeScript ([#195](https://github.com/gatsby-inc/gatsby-interface/issues/195)) ([42555f2](https://github.com/gatsby-inc/gatsby-interface/commit/42555f249022f04a4da1306a773801a5d15dc86f))
+
 ### [0.0.68](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.67...v0.0.68) (2020-01-29)
 
 
