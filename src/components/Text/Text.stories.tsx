@@ -5,7 +5,7 @@ import { storiesOf } from "@storybook/react"
 import { StoryUtils } from "../../utils/storybook"
 import Text from "./Text"
 
-storiesOf(`core/Text`, module)
+storiesOf(`Text`, module)
   .addParameters({
     options: {
       showPanel: true,
@@ -14,7 +14,6 @@ storiesOf(`core/Text`, module)
   .add(`rendered 'as'`, () => (
     <StoryUtils.Container>
       <StoryUtils.Stack>
-        <Text>Text rendered by default as &lt;p&gt; tag</Text>
         <Text as={`span`}>Text rendered as &lt;span&gt; tag</Text>
       </StoryUtils.Stack>
     </StoryUtils.Container>
