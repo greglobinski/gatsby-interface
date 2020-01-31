@@ -2020,6 +2020,20 @@ exports[`Storyshots CopyButton Default 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2043,7 +2057,7 @@ exports[`Storyshots CopyButton Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -2058,15 +2072,15 @@ exports[`Storyshots CopyButton Default 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 0.875rem;
-  min-height: 1.6rem;
-  padding: 0.3rem 0.5rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 0.875rem;
+  min-height: 1.6rem;
+  padding: 0.3rem 0.5rem;
 }
 
 .emotion-0[disabled],
@@ -2085,7 +2099,8 @@ exports[`Storyshots CopyButton Default 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -2959,6 +2974,20 @@ exports[`Storyshots IntegrationRow default usage 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-15 {
   display: grid;
   justify-items: start;
@@ -3023,7 +3052,7 @@ exports[`Storyshots IntegrationRow default usage 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -3038,15 +3067,15 @@ exports[`Storyshots IntegrationRow default usage 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   justify-self: end;
@@ -3068,7 +3097,8 @@ exports[`Storyshots IntegrationRow default usage 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -3559,6 +3589,20 @@ exports[`Storyshots IntegrationRow shortcut usage 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-18 {
   display: grid;
   justify-items: start;
@@ -3623,7 +3667,7 @@ exports[`Storyshots IntegrationRow shortcut usage 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -3638,15 +3682,15 @@ exports[`Storyshots IntegrationRow shortcut usage 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   justify-self: end;
@@ -3668,7 +3712,8 @@ exports[`Storyshots IntegrationRow shortcut usage 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -4192,6 +4237,20 @@ exports[`Storyshots IntegrationRow with inline SVG as logo 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-3 {
   display: grid;
   justify-items: start;
@@ -4256,7 +4315,7 @@ exports[`Storyshots IntegrationRow with inline SVG as logo 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -4271,15 +4330,15 @@ exports[`Storyshots IntegrationRow with inline SVG as logo 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   justify-self: end;
@@ -4301,7 +4360,8 @@ exports[`Storyshots IntegrationRow with inline SVG as logo 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -6667,6 +6727,20 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-29 {
   padding: 2rem;
 }
@@ -7150,7 +7224,7 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -7165,16 +7239,16 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1rem;
   min-height: 2rem;
   padding: 0.45rem 0.75rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
   background: #663399;
   border: 0;
   color: #ffffff;
@@ -7199,7 +7273,8 @@ exports[`Storyshots Navigation with item links as props and button as child 1`] 
   transform: scale(1);
 }
 
-.emotion-24:hover:not([disabled]) svg {
+.emotion-24:hover:not([disabled]) svg,
+.emotion-24:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -8873,6 +8948,20 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -8942,7 +9031,7 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -8957,15 +9046,15 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   padding: 0;
   min-height: auto;
   color: var(--theme-ui-colors-grey-40,#b7b5bd);
@@ -8989,7 +9078,8 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -9010,7 +9100,7 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -9025,16 +9115,16 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
   margin-bottom: 1rem;
 }
 
@@ -9054,7 +9144,8 @@ exports[`Storyshots Notification animated with react-spring 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -9866,6 +9957,20 @@ exports[`Storyshots Notification dismissable 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -9889,7 +9994,7 @@ exports[`Storyshots Notification dismissable 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -9904,16 +10009,16 @@ exports[`Storyshots Notification dismissable 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -9932,7 +10037,8 @@ exports[`Storyshots Notification dismissable 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -10012,7 +10118,7 @@ exports[`Storyshots Notification dismissable 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -10027,15 +10133,15 @@ exports[`Storyshots Notification dismissable 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   padding: 0;
   min-height: auto;
   color: var(--theme-ui-colors-grey-40,#b7b5bd);
@@ -10059,7 +10165,8 @@ exports[`Storyshots Notification dismissable 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -10168,6 +10275,20 @@ exports[`Storyshots Portal Same destination portal 1`] = `
 `;
 
 exports[`Storyshots PricingCard individual multiplan card 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 @keyframes animation-0 {
   33% {
     -webkit-transform: scale(1);
@@ -10885,7 +11006,7 @@ exports[`Storyshots PricingCard individual multiplan card 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -10900,15 +11021,15 @@ exports[`Storyshots PricingCard individual multiplan card 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   font-weight: 400;
 }
 
@@ -10928,7 +11049,8 @@ exports[`Storyshots PricingCard individual multiplan card 1`] = `
   transform: scale(1);
 }
 
-.emotion-24:hover:not([disabled]) svg {
+.emotion-24:hover:not([disabled]) svg,
+.emotion-24:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -11140,7 +11262,7 @@ exports[`Storyshots PricingCard individual multiplan card 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -11155,15 +11277,15 @@ exports[`Storyshots PricingCard individual multiplan card 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   font-weight: 800;
   cursor: default;
   background: #047bd3;
@@ -11185,10 +11307,11 @@ exports[`Storyshots PricingCard individual multiplan card 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
 }
 
-.emotion-48:hover:not([disabled]) svg {
+.emotion-48:hover:not([disabled]) svg,
+.emotion-48:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -12138,6 +12261,20 @@ exports[`Storyshots PricingCard multiplan card 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-75 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -12564,7 +12701,7 @@ exports[`Storyshots PricingCard multiplan card 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -12579,16 +12716,16 @@ exports[`Storyshots PricingCard multiplan card 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #2ca72c;
+  border: 1px solid #2ca72c;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #2ca72c;
-  border: 1px solid #2ca72c;
-  color: #ffffff;
-  font-weight: bold;
   min-width: 45%;
 }
 
@@ -12608,7 +12745,8 @@ exports[`Storyshots PricingCard multiplan card 1`] = `
   transform: scale(1);
 }
 
-.emotion-71:hover:not([disabled]) svg {
+.emotion-71:hover:not([disabled]) svg,
+.emotion-71:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -13711,6 +13849,20 @@ exports[`Storyshots PricingCard variants 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-95 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -13974,7 +14126,7 @@ exports[`Storyshots PricingCard variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -13989,15 +14141,15 @@ exports[`Storyshots PricingCard variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   font-weight: 400;
 }
 
@@ -14017,7 +14169,8 @@ exports[`Storyshots PricingCard variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-19:hover:not([disabled]) svg {
+.emotion-19:hover:not([disabled]) svg,
+.emotion-19:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -14070,7 +14223,7 @@ exports[`Storyshots PricingCard variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -14085,15 +14238,15 @@ exports[`Storyshots PricingCard variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   font-weight: 800;
   cursor: default;
   background: #37b635;
@@ -14115,10 +14268,11 @@ exports[`Storyshots PricingCard variants 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
 }
 
-.emotion-43:hover:not([disabled]) svg {
+.emotion-43:hover:not([disabled]) svg,
+.emotion-43:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -14254,7 +14408,7 @@ exports[`Storyshots PricingCard variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -14269,16 +14423,16 @@ exports[`Storyshots PricingCard variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
   font-weight: 400;
 }
 
@@ -14298,7 +14452,8 @@ exports[`Storyshots PricingCard variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-66:hover:not([disabled]) svg {
+.emotion-66:hover:not([disabled]) svg,
+.emotion-66:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -14351,7 +14506,7 @@ exports[`Storyshots PricingCard variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -14366,16 +14521,16 @@ exports[`Storyshots PricingCard variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
   font-weight: 800;
   cursor: default;
   background: #8a4baf;
@@ -14397,10 +14552,11 @@ exports[`Storyshots PricingCard variants 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
 }
 
-.emotion-89:hover:not([disabled]) svg {
+.emotion-89:hover:not([disabled]) svg,
+.emotion-89:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -16516,6 +16672,20 @@ exports[`Storyshots SettingsBlock default usage 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-21 {
   display: grid;
   justify-items: start;
@@ -16581,7 +16751,7 @@ exports[`Storyshots SettingsBlock default usage 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -16596,15 +16766,15 @@ exports[`Storyshots SettingsBlock default usage 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #78757a;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
   margin-left: 0.25rem;
 }
 
@@ -16624,7 +16794,8 @@ exports[`Storyshots SettingsBlock default usage 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -17958,6 +18129,20 @@ exports[`Storyshots SettingsCard custom EditButton 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-10 {
   display: grid;
   justify-items: start;
@@ -17969,7 +18154,7 @@ exports[`Storyshots SettingsCard custom EditButton 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -17984,15 +18169,15 @@ exports[`Storyshots SettingsCard custom EditButton 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -18011,7 +18196,8 @@ exports[`Storyshots SettingsCard custom EditButton 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -18715,6 +18901,20 @@ exports[`Storyshots SettingsCard default usage 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-5 {
   display: grid;
   justify-items: start;
@@ -18726,7 +18926,7 @@ exports[`Storyshots SettingsCard default usage 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -18741,15 +18941,15 @@ exports[`Storyshots SettingsCard default usage 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -18768,7 +18968,8 @@ exports[`Storyshots SettingsCard default usage 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -19434,6 +19635,20 @@ exports[`Storyshots SettingsCard no secondary conent 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-12 {
   display: grid;
   justify-items: start;
@@ -19445,7 +19660,7 @@ exports[`Storyshots SettingsCard no secondary conent 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -19460,15 +19675,15 @@ exports[`Storyshots SettingsCard no secondary conent 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -19487,7 +19702,8 @@ exports[`Storyshots SettingsCard no secondary conent 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -20234,6 +20450,20 @@ exports[`Storyshots SettingsCard with custom tone 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-5 {
   display: grid;
   justify-items: start;
@@ -20310,7 +20540,7 @@ exports[`Storyshots SettingsCard with custom tone 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -20325,15 +20555,15 @@ exports[`Storyshots SettingsCard with custom tone 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #da0013;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -20352,7 +20582,8 @@ exports[`Storyshots SettingsCard with custom tone 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -22434,6 +22665,20 @@ exports[`Storyshots Toast Default 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -22463,7 +22708,7 @@ exports[`Storyshots Toast Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -22478,16 +22723,16 @@ exports[`Storyshots Toast Default 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -22506,7 +22751,8 @@ exports[`Storyshots Toast Default 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -23662,7 +23908,7 @@ exports[`Storyshots buttons/AnchorButton override/extend styles 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -23677,19 +23923,19 @@ exports[`Storyshots buttons/AnchorButton override/extend styles 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
-  color: #663399;
-  background: #fec21e;
-  border-color: #fec21e;
+  color: var(--theme-ui-colors-purple-60,#663399);
+  background: var(--theme-ui-colors-yellow-60,#fec21e);
+  border-color: var(--theme-ui-colors-yellow-60,#fec21e);
 }
 
 .emotion-0[disabled],
@@ -23708,7 +23954,8 @@ exports[`Storyshots buttons/AnchorButton override/extend styles 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -23719,7 +23966,7 @@ exports[`Storyshots buttons/AnchorButton override/extend styles 1`] = `
 }
 
 .emotion-0:hover:not([disabled]) {
-  color: #ffffff;
+  color: var(--theme-ui-colors-white,#ffffff);
 }
 
 <div>
@@ -23863,7 +24110,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -23878,16 +24125,16 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-2[disabled],
@@ -23906,7 +24153,8 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -23921,7 +24169,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -23936,16 +24184,16 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 0.875rem;
   min-height: 1.6rem;
   padding: 0.3rem 0.5rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -23964,7 +24212,8 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -23979,7 +24228,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -23994,16 +24243,16 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1rem;
   min-height: 2rem;
   padding: 0.45rem 0.75rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -24022,7 +24271,8 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24037,7 +24287,7 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24052,16 +24302,16 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.5rem;
   min-height: 3.25rem;
   padding: 0.65rem 1.25rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -24080,7 +24330,8 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24107,9 +24358,9 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              S
               '
             </a>
             <a
@@ -24117,9 +24368,9 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              M
               '
             </a>
             <a
@@ -24127,9 +24378,9 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              L
               '
             </a>
             <a
@@ -24137,9 +24388,9 @@ exports[`Storyshots buttons/AnchorButton sizes 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              XL
               '
             </a>
           </div>
@@ -24306,7 +24557,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24321,16 +24572,16 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -24349,7 +24600,8 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24364,7 +24616,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24379,16 +24631,16 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #78757a;
+  border: 1px solid #78757a;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #78757a;
-  border: 1px solid #78757a;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -24407,7 +24659,8 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24422,7 +24675,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24437,16 +24690,16 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #2ca72c;
+  border: 1px solid #2ca72c;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #2ca72c;
-  border: 1px solid #2ca72c;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-2[disabled],
@@ -24465,7 +24718,8 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24480,7 +24734,7 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24495,16 +24749,16 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #da0013;
+  border: 1px solid #da0013;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #da0013;
-  border: 1px solid #da0013;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -24523,7 +24777,8 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24550,9 +24805,9 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              BRAND
               '
             </a>
             <a
@@ -24560,9 +24815,9 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              NEUTRAL
               '
             </a>
             <a
@@ -24570,9 +24825,9 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              SUCCESS
               '
             </a>
             <a
@@ -24580,9 +24835,9 @@ exports[`Storyshots buttons/AnchorButton tones 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              DANGER
               '
             </a>
           </div>
@@ -24665,7 +24920,7 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24680,16 +24935,16 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -24708,7 +24963,8 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24723,7 +24979,7 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24738,15 +24994,15 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -24765,7 +25021,8 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -24780,7 +25037,7 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -24795,15 +25052,15 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-2[disabled],
@@ -24822,7 +25079,8 @@ exports[`Storyshots buttons/AnchorButton variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25080,7 +25338,7 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25095,16 +25353,16 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -25121,10 +25379,11 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25139,7 +25398,7 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25154,16 +25413,16 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -25183,7 +25442,8 @@ exports[`Storyshots buttons/AnchorButton with icons 1`] = `
   margin-left: -0.30em;
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25370,8 +25630,496 @@ exports[`Storyshots buttons/BaseButton with loading state 1`] = `
 </div>
 `;
 
+exports[`Storyshots buttons/Button custom button component 1`] = `
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+.emotion-2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.emotion-1 {
+  display: grid;
+  justify-items: start;
+  grid-gap: 2rem;
+}
+
+.emotion-0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: var(--theme-ui-colors-grey-60,#635e69);
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
+  transition: background 0.5s,border 0.5s,color 0.5s;
+  line-height: 1.25;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
+}
+
+.emotion-0[disabled],
+.emotion-0[disabled]:hover {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  margin-right: -0.25rem;
+}
+
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-0:hover {
+  background: #542c85;
+  border: 1px solid #542c85;
+}
+
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <button
+              class="emotion-0"
+              type="button"
+            >
+              Custom component
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots buttons/Button in 'loading' state 1`] = `
 @keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes animation-1 {
   0% {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
@@ -25414,7 +26162,7 @@ exports[`Storyshots buttons/Button in 'loading' state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25429,27 +26177,25 @@ exports[`Storyshots buttons/Button in 'loading' state 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
 .emotion-0[disabled]:hover {
   cursor: not-allowed;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .emotion-0 svg {
-  -webkit-animation: animation-0 1s linear infinite;
-  animation: animation-0 1s linear infinite;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -25457,7 +26203,29 @@ exports[`Storyshots buttons/Button in 'loading' state 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
+}
+
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
+}
+
+.emotion-0[disabled],
+.emotion-0[disabled]:hover {
+  opacity: 0.9;
+}
+
+.emotion-0 svg {
+  -webkit-animation: animation-1 1s linear infinite;
+  animation: animation-1 1s linear infinite;
+}
+
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
+  -webkit-animation: none;
+  animation: none;
 }
 
 .emotion-0:hover {
@@ -25728,6 +26496,20 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -25757,7 +26539,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25772,16 +26554,16 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -25800,7 +26582,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25815,7 +26598,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25830,15 +26613,15 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -25857,7 +26640,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25872,7 +26656,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25887,15 +26671,15 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-4[disabled],
@@ -25914,7 +26698,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-4:hover:not([disabled]) svg {
+.emotion-4:hover:not([disabled]) svg,
+.emotion-4:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25929,7 +26714,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -25944,16 +26729,16 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #2ca72c;
+  border: 1px solid #2ca72c;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #2ca72c;
-  border: 1px solid #2ca72c;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -25972,7 +26757,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -25987,7 +26773,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -26002,16 +26788,16 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #da0013;
+  border: 1px solid #da0013;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #da0013;
-  border: 1px solid #da0013;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-5[disabled],
@@ -26030,7 +26816,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-5:hover:not([disabled]) svg {
+.emotion-5:hover:not([disabled]) svg,
+.emotion-5:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -26045,7 +26832,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -26060,15 +26847,15 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f0f0f2;
   color: #78757a;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-2[disabled],
@@ -26087,7 +26874,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -26102,7 +26890,7 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -26117,15 +26905,15 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #ffbab8;
   color: #da0013;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-6[disabled],
@@ -26144,7 +26932,8 @@ exports[`Storyshots buttons/Button legacy Buttons 1`] = `
   transform: scale(1);
 }
 
-.emotion-6:hover:not([disabled]) svg {
+.emotion-6:hover:not([disabled]) svg,
+.emotion-6:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -26385,6 +27174,20 @@ exports[`Storyshots buttons/Button manually applied styles 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -26414,7 +27217,7 @@ exports[`Storyshots buttons/Button manually applied styles 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -26429,16 +27232,16 @@ exports[`Storyshots buttons/Button manually applied styles 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -26457,7 +27260,8 @@ exports[`Storyshots buttons/Button manually applied styles 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -26690,7 +27494,7 @@ exports[`Storyshots buttons/Button override/extend styles 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -26705,19 +27509,19 @@ exports[`Storyshots buttons/Button override/extend styles 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
-  color: #663399;
-  background: #fec21e;
-  border-color: #fec21e;
+  color: var(--theme-ui-colors-purple-60,#663399);
+  background: var(--theme-ui-colors-yellow-60,#fec21e);
+  border-color: var(--theme-ui-colors-yellow-60,#fec21e);
 }
 
 .emotion-0[disabled],
@@ -26736,7 +27540,8 @@ exports[`Storyshots buttons/Button override/extend styles 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -26747,7 +27552,7 @@ exports[`Storyshots buttons/Button override/extend styles 1`] = `
 }
 
 .emotion-0:hover:not([disabled]) {
-  color: #ffffff;
+  color: var(--theme-ui-colors-white,#ffffff);
 }
 
 <div>
@@ -26974,7 +27779,7 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -26989,16 +27794,16 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-2[disabled],
@@ -27017,7 +27822,8 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27032,7 +27838,7 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27047,16 +27853,16 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 0.875rem;
   min-height: 1.6rem;
   padding: 0.3rem 0.5rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -27075,7 +27881,8 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27090,7 +27897,7 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27105,16 +27912,16 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1rem;
   min-height: 2rem;
   padding: 0.45rem 0.75rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -27133,7 +27940,8 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27148,7 +27956,7 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27163,16 +27971,16 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.5rem;
   min-height: 3.25rem;
   padding: 0.65rem 1.25rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -27191,7 +27999,8 @@ exports[`Storyshots buttons/Button sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27217,36 +28026,36 @@ exports[`Storyshots buttons/Button sizes 1`] = `
               class="emotion-0"
               type="button"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              S
               '
             </button>
             <button
               class="emotion-1"
               type="button"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              M
               '
             </button>
             <button
               class="emotion-2"
               type="button"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              L
               '
             </button>
             <button
               class="emotion-3"
               type="button"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              XL
               '
             </button>
           </div>
@@ -27455,7 +28264,7 @@ exports[`Storyshots buttons/Button tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27470,16 +28279,16 @@ exports[`Storyshots buttons/Button tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -27498,7 +28307,8 @@ exports[`Storyshots buttons/Button tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27513,7 +28323,7 @@ exports[`Storyshots buttons/Button tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27528,16 +28338,16 @@ exports[`Storyshots buttons/Button tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #78757a;
+  border: 1px solid #78757a;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #78757a;
-  border: 1px solid #78757a;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -27556,7 +28366,8 @@ exports[`Storyshots buttons/Button tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27571,7 +28382,7 @@ exports[`Storyshots buttons/Button tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27586,16 +28397,16 @@ exports[`Storyshots buttons/Button tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #2ca72c;
+  border: 1px solid #2ca72c;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #2ca72c;
-  border: 1px solid #2ca72c;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-2[disabled],
@@ -27614,7 +28425,8 @@ exports[`Storyshots buttons/Button tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27629,7 +28441,7 @@ exports[`Storyshots buttons/Button tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27644,16 +28456,16 @@ exports[`Storyshots buttons/Button tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #da0013;
+  border: 1px solid #da0013;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #da0013;
-  border: 1px solid #da0013;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -27672,7 +28484,8 @@ exports[`Storyshots buttons/Button tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27698,36 +28511,36 @@ exports[`Storyshots buttons/Button tones 1`] = `
               class="emotion-0"
               type="button"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              BRAND
               '
             </button>
             <button
               class="emotion-1"
               type="button"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              NEUTRAL
               '
             </button>
             <button
               class="emotion-2"
               type="button"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              SUCCESS
               '
             </button>
             <button
               class="emotion-3"
               type="button"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              DANGER
               '
             </button>
           </div>
@@ -27936,7 +28749,7 @@ exports[`Storyshots buttons/Button variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -27951,16 +28764,16 @@ exports[`Storyshots buttons/Button variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -27979,7 +28792,8 @@ exports[`Storyshots buttons/Button variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -27994,7 +28808,7 @@ exports[`Storyshots buttons/Button variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -28009,15 +28823,15 @@ exports[`Storyshots buttons/Button variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -28036,7 +28850,8 @@ exports[`Storyshots buttons/Button variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -28051,7 +28866,7 @@ exports[`Storyshots buttons/Button variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -28066,15 +28881,15 @@ exports[`Storyshots buttons/Button variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-2[disabled],
@@ -28093,7 +28908,8 @@ exports[`Storyshots buttons/Button variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -28348,7 +29164,7 @@ exports[`Storyshots buttons/Button with icons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -28363,16 +29179,16 @@ exports[`Storyshots buttons/Button with icons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -28389,10 +29205,11 @@ exports[`Storyshots buttons/Button with icons 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -28407,7 +29224,7 @@ exports[`Storyshots buttons/Button with icons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -28422,16 +29239,16 @@ exports[`Storyshots buttons/Button with icons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -28451,7 +29268,8 @@ exports[`Storyshots buttons/Button with icons 1`] = `
   margin-left: -0.30em;
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -28884,6 +29702,20 @@ exports[`Storyshots buttons/LinkButton override/extend styles 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -28913,7 +29745,7 @@ exports[`Storyshots buttons/LinkButton override/extend styles 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -28928,19 +29760,19 @@ exports[`Storyshots buttons/LinkButton override/extend styles 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
-  color: #663399;
-  background: #fec21e;
-  border-color: #fec21e;
+  color: var(--theme-ui-colors-purple-60,#663399);
+  background: var(--theme-ui-colors-yellow-60,#fec21e);
+  border-color: var(--theme-ui-colors-yellow-60,#fec21e);
 }
 
 .emotion-0[disabled],
@@ -28959,7 +29791,8 @@ exports[`Storyshots buttons/LinkButton override/extend styles 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -28970,7 +29803,7 @@ exports[`Storyshots buttons/LinkButton override/extend styles 1`] = `
 }
 
 .emotion-0:hover:not([disabled]) {
-  color: #ffffff;
+  color: var(--theme-ui-colors-white,#ffffff);
 }
 
 <div>
@@ -29309,6 +30142,20 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -29338,7 +30185,7 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -29353,16 +30200,16 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-2[disabled],
@@ -29381,7 +30228,8 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -29396,7 +30244,7 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -29411,16 +30259,16 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 0.875rem;
   min-height: 1.6rem;
   padding: 0.3rem 0.5rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -29439,7 +30287,8 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -29454,7 +30303,7 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -29469,16 +30318,16 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1rem;
   min-height: 2rem;
   padding: 0.45rem 0.75rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -29497,7 +30346,8 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -29512,7 +30362,7 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -29527,16 +30377,16 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.5rem;
   min-height: 3.25rem;
   padding: 0.65rem 1.25rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -29555,7 +30405,8 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -29582,9 +30433,9 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
               class="emotion-0"
               href="/"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              S
               '
             </a>
             <a
@@ -29592,9 +30443,9 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
               class="emotion-1"
               href="/"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              M
               '
             </a>
             <a
@@ -29602,9 +30453,9 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
               class="emotion-2"
               href="/"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              L
               '
             </a>
             <a
@@ -29612,9 +30463,9 @@ exports[`Storyshots buttons/LinkButton sizes 1`] = `
               class="emotion-3"
               href="/"
             >
-              variant 
+              size 
               '
-              PRIMARY
+              XL
               '
             </a>
           </div>
@@ -29976,6 +30827,20 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -30005,7 +30870,7 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30020,16 +30885,16 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -30048,7 +30913,8 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -30063,7 +30929,7 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30078,16 +30944,16 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #78757a;
+  border: 1px solid #78757a;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #78757a;
-  border: 1px solid #78757a;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -30106,7 +30972,8 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -30121,7 +30988,7 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30136,16 +31003,16 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #2ca72c;
+  border: 1px solid #2ca72c;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #2ca72c;
-  border: 1px solid #2ca72c;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-2[disabled],
@@ -30164,7 +31031,8 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -30179,7 +31047,7 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30194,16 +31062,16 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #da0013;
+  border: 1px solid #da0013;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #da0013;
-  border: 1px solid #da0013;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-3[disabled],
@@ -30222,7 +31090,8 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
   transform: scale(1);
 }
 
-.emotion-3:hover:not([disabled]) svg {
+.emotion-3:hover:not([disabled]) svg,
+.emotion-3:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -30249,9 +31118,9 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
               class="emotion-0"
               href="/"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              BRAND
               '
             </a>
             <a
@@ -30259,9 +31128,9 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
               class="emotion-1"
               href="/"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              NEUTRAL
               '
             </a>
             <a
@@ -30269,9 +31138,9 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
               class="emotion-2"
               href="/"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              SUCCESS
               '
             </a>
             <a
@@ -30279,9 +31148,9 @@ exports[`Storyshots buttons/LinkButton tones 1`] = `
               class="emotion-3"
               href="/"
             >
-              variant 
+              tone 
               '
-              PRIMARY
+              DANGER
               '
             </a>
           </div>
@@ -30559,6 +31428,20 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -30588,7 +31471,7 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30603,16 +31486,16 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -30631,7 +31514,8 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -30646,7 +31530,7 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30661,15 +31545,15 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid #f1defa;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-1[disabled],
@@ -30688,7 +31572,8 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -30703,7 +31588,7 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -30718,15 +31603,15 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
-  min-height: 2.4rem;
-  padding: 0.55rem 1rem;
   background: transparent;
   border: 1px solid transparent;
   color: #663399;
+  font-size: 1.125rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
 }
 
 .emotion-2[disabled],
@@ -30745,7 +31630,8 @@ exports[`Storyshots buttons/LinkButton variants 1`] = `
   transform: scale(1);
 }
 
-.emotion-2:hover:not([disabled]) svg {
+.emotion-2:hover:not([disabled]) svg,
+.emotion-2:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -31198,6 +32084,20 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   }
 }
 
+@keyframes animation-0 {
+  33% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  66% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 .emotion-3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -31227,7 +32127,7 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -31242,16 +32142,16 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-0[disabled],
@@ -31268,10 +32168,11 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  margin-right: -0.25em;
+  margin-right: -0.25rem;
 }
 
-.emotion-0:hover:not([disabled]) svg {
+.emotion-0:hover:not([disabled]) svg,
+.emotion-0:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
@@ -31286,7 +32187,7 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: #635e69;
+  border: var(--theme-ui-colors-grey-60,#635e69);
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -31301,16 +32202,16 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   justify-content: center;
   -webkit-transition: background 0.5s,border 0.5s,color 0.5s;
   transition: background 0.5s,border 0.5s,color 0.5s;
-  line-height: 1;
+  line-height: 1.25;
   -webkit-text-decoration: none;
   text-decoration: none;
+  background: #663399;
+  border: 1px solid #663399;
+  color: var(--theme-ui-colors-white,#ffffff);
+  font-weight: bold;
   font-size: 1.125rem;
   min-height: 2.4rem;
   padding: 0.55rem 1rem;
-  background: #663399;
-  border: 1px solid #663399;
-  color: #ffffff;
-  font-weight: bold;
 }
 
 .emotion-1[disabled],
@@ -31330,7 +32231,8 @@ exports[`Storyshots buttons/LinkButton with icons 1`] = `
   margin-left: -0.30em;
 }
 
-.emotion-1:hover:not([disabled]) svg {
+.emotion-1:hover:not([disabled]) svg,
+.emotion-1:focus:not([disabled]) svg {
   -webkit-animation: animation-0 1s linear infinite;
   animation: animation-0 1s linear infinite;
 }
