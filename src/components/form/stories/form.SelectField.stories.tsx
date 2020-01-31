@@ -8,6 +8,7 @@ import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_SELECT_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import SelectField from "../components/SelectField"
+import SelectFieldBlock from "../components/SelectFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
 import { Wrapper } from "./stories.utils"
@@ -78,6 +79,18 @@ storiesOf(`form`, module)
               <SelectField.Error>{error}</SelectField.Error>
             </SelectField.Wrapper>
           </SelectField>
+
+          <SelectFieldBlock
+            id="example-1b"
+            label="Comment"
+            labelSize={size}
+            options={options}
+            onChange={e => action(`Change`)(e.target.value)}
+            error={error}
+            hint={hint || `And this one is built with 'SelectFieldBlock'`}
+            disabled={disabled}
+            required={required}
+          />
         </Wrapper>
       </StoryUtils.Container>
     )

@@ -82,11 +82,23 @@ export * from "./components/CopyButton"
 
 export {
   InputField,
+  InputFieldBlock,
+  InputConnectedField,
   TextAreaField,
+  TextAreaFieldBlock,
+  TextAreaConnectedField,
   SelectField,
+  SelectFieldBlock,
+  SelectConnectedField,
   CheckboxField,
+  CheckboxFieldBlock,
+  CheckboxConnectedField,
   CheckboxGroupField,
+  CheckboxGroupFieldBlock,
+  CheckboxGroupConnectedField,
   RadioButtonField,
+  RadioButtonFieldBlock,
+  RadioButtonConnectedField,
 } from "./components/form"
 
 export { getStackStyles } from "./components/stack"

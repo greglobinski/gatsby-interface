@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
+import React from "react"
 
 import { storiesOf } from "@storybook/react"
 import { text, radios } from "@storybook/addon-knobs"
@@ -7,6 +8,7 @@ import { text, radios } from "@storybook/addon-knobs"
 import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_RADIO_FIELD.md"
 import RadioButtonField from "../components/RadioButtonField"
+import RadioButtonFieldBlock from "../components/RadioButtonFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
 import { Wrapper } from "./stories.utils"
@@ -44,10 +46,28 @@ storiesOf(`form/RadioButtonField`, module)
       `L`
     )
 
+    const [fieldValue, setFieldValue] = React.useState<string>(``)
+
     return (
       <StoryUtils.Container>
         <Wrapper>
-          <RadioButtonField id="example-1b" hasError={!!error} hasHint={!!hint}>
+          <RadioButtonFieldBlock
+            id="example-1a"
+            label="Category"
+            name="category"
+            value={fieldValue}
+            options={categories}
+            onChange={e => setFieldValue(e.currentTarget.value)}
+            error={error}
+            hint={hint}
+          />
+
+          <RadioButtonField
+            id="example-1b"
+            hasError={!!error}
+            hasHint={!!hint}
+            layout="horizontal"
+          >
             <RadioButtonField.Label size={labeSize}>
               Category
             </RadioButtonField.Label>
@@ -170,7 +190,7 @@ storiesOf(`form/RadioButtonField`, module)
                 ))}
             </RadioButtonField.Options>
             <RadioButtonField.Hint>
-              {hint ? hint : `This one is also built with 'InputFieldBlock'`}
+              {hint || `This one is also built with 'InputFieldBlock'`}
             </RadioButtonField.Hint>
             <RadioButtonField.Error>{error}</RadioButtonField.Error>
           </RadioButtonField>

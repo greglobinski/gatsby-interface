@@ -8,8 +8,10 @@ import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_TEXTAREA_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import TextAreaField from "../components/TextAreaField"
+import TextAreaFieldBlock from "../components/TextAreaFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
+import colors from "../../../theme/colors"
 import { Wrapper } from "./stories.utils"
 
 const LABEL_SIZES: FormFieldLabelSize[] = [`L`, `M`, `S`]
@@ -58,6 +60,35 @@ storiesOf(`form`, module)
               <TextAreaField.Error>{error}</TextAreaField.Error>
             </TextAreaField.Wrapper>
           </TextAreaField>
+
+          <TextAreaFieldBlock
+            id="example-1b"
+            label="Comment"
+            labelSize={size}
+            onChange={e => action(`Change`)(e.target.value)}
+            error={error}
+            hint={hint || `And this one is built with 'TextAreaFieldBlock'`}
+            placeholder={placeholder}
+            disabled={disabled}
+            required={required}
+          />
+
+          <TextAreaFieldBlock
+            id="example-1c"
+            label={
+              <span>
+                <strong>Important</strong> Comment{" "}
+                <em css={{ color: colors.grey[50] }}>(ReactNode label)</em>
+              </span>
+            }
+            labelSize={size}
+            onChange={e => action(`Change`)(e.target.value)}
+            error={error}
+            hint={hint || `This one is also built with 'TextAreaFieldBlock'`}
+            placeholder={placeholder}
+            disabled={disabled}
+            required={required}
+          />
         </Wrapper>
       </StoryUtils.Container>
     )
