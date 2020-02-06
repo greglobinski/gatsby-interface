@@ -2,10 +2,9 @@
 import { jsx } from "@emotion/core"
 import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import loadable from "@loadable/component"
 import { Button } from "../Button"
 import UploadPreview from "./UploadPreview"
-const ReactFilestack = loadable(() => import(`filestack-react`), { ssr: false })
+import ReactFilestack from "filestack-react"
 
 const defaultFilestackOptions = {
   accept: [`image/jpeg`, `image/png`],

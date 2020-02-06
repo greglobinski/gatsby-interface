@@ -8,7 +8,7 @@ import cardStyles from "../../theme/styles/card"
 import fontSizes from "../../theme/fontSizes"
 import fonts from "../../theme/fonts"
 import colors from "../../theme/colors"
-import background from "./assets/background.svg"
+import background from "./assets/background"
 
 function Announcement({ children }) {
   return (
