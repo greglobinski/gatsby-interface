@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.73](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.72...v0.0.73) (2020-02-07)
+
+
+### Features
+
+* fit fallback text to Avatar size ([#199](https://github.com/gatsby-inc/gatsby-interface/issues/199)) ([15a3b5d](https://github.com/gatsby-inc/gatsby-interface/commit/15a3b5da51bb1f0669eba7c82cf25835191898d4))
+
 ### [0.0.72](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.71...v0.0.72) (2020-02-07)
 
 
