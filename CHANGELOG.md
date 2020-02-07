@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.72](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.71...v0.0.72) (2020-02-07)
+
+
+### Features
+
+* remove deprecated components ([#198](https://github.com/gatsby-inc/gatsby-interface/issues/198)) ([930f469](https://github.com/gatsby-inc/gatsby-interface/commit/930f469673e751d9f6278c4e925f3f64f992f117))
+
 ### [0.0.71](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.70...v0.0.71) (2020-01-31)
 
 
