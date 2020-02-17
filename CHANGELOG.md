@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.74](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.73...v0.0.74) (2020-02-17)
+
+
+### Features
+
+* Breadcrumb component in TypeScript ([#201](https://github.com/gatsby-inc/gatsby-interface/issues/201)) ([71b478b](https://github.com/gatsby-inc/gatsby-interface/commit/71b478b6818c4cd267e58b869496070141badb45))
+
 ### [0.0.73](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.72...v0.0.73) (2020-02-07)
 
 
