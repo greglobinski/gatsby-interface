@@ -10,6 +10,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "test": "jest",
     "test:a11y": "jest __tests__/AccessiblityStoryshots.test.js --testPathIgnorePatterns=[]",
