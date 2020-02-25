@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots - Introduction Welcome to Gatsby Inteface 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div
+        class="markdown-body"
+      >
+        <p>
+          test-file-stub
+        </p>
+        
+
+      </div>
+    </div>
+    <div>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Announcement default usage 1`] = `
 <div>
   <div
@@ -38,7 +61,7 @@ exports[`Storyshots Avatar Avatar 1`] = `
         >
           <div>
             <span
-              class="css-fp1opq-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-17p32rp-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="John Doe"
             >
               <img
@@ -67,7 +90,7 @@ exports[`Storyshots Avatar Avatar fallback text fit 1`] = `
         >
           <div>
             <span
-              class="css-127o19o-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-1xfzc0p-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="Avatar of size XS"
             >
               <span
@@ -78,7 +101,7 @@ exports[`Storyshots Avatar Avatar fallback text fit 1`] = `
               </span>
             </span>
             <span
-              class="css-zu2313-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-1axna0c-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="Avatar of size S"
             >
               <span
@@ -89,7 +112,7 @@ exports[`Storyshots Avatar Avatar fallback text fit 1`] = `
               </span>
             </span>
             <span
-              class="css-fp1opq-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-17p32rp-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="Avatar of size M"
             >
               <span
@@ -100,7 +123,7 @@ exports[`Storyshots Avatar Avatar fallback text fit 1`] = `
               </span>
             </span>
             <span
-              class="css-r9wjd9-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-1eo4s8i-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="Avatar of size L"
             >
               <span
@@ -111,7 +134,7 @@ exports[`Storyshots Avatar Avatar fallback text fit 1`] = `
               </span>
             </span>
             <span
-              class="css-lauqr9-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-i84qil-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="Avatar of size XL"
             >
               <span
@@ -122,7 +145,7 @@ exports[`Storyshots Avatar Avatar fallback text fit 1`] = `
               </span>
             </span>
             <span
-              class="css-1rpglib-baseCss-AvatarSkeleton-AvatarSkeleton"
+              class="css-g9fl1e-baseCss-AvatarSkeleton-AvatarSkeleton"
               title="Avatar of size XXL"
             >
               <span
@@ -155,7 +178,7 @@ exports[`Storyshots Avatar AvatarsGroup 1`] = `
               class="css-1v5xgn1-groupBaseCss"
             >
               <span
-                class="css-1uupwsf-baseCss-AvatarSkeleton-AvatarSkeleton"
+                class="css-uqw34t-baseCss-AvatarSkeleton-AvatarSkeleton"
                 style="z-index: 3;"
                 title="John Doe"
               >
@@ -166,7 +189,7 @@ exports[`Storyshots Avatar AvatarsGroup 1`] = `
                 />
               </span>
               <span
-                class="css-3j53hf-baseCss-AvatarSkeleton-AvatarSkeleton"
+                class="css-1ut3lue-baseCss-AvatarSkeleton-AvatarSkeleton"
                 style="z-index: 2;"
                 title="John Doe"
               >
@@ -178,7 +201,7 @@ exports[`Storyshots Avatar AvatarsGroup 1`] = `
                 </span>
               </span>
               <span
-                class="css-3j53hf-baseCss-AvatarSkeleton-AvatarSkeleton"
+                class="css-1ut3lue-baseCss-AvatarSkeleton-AvatarSkeleton"
                 style="z-index: 1;"
                 title="Jane Doe"
               >
@@ -189,7 +212,7 @@ exports[`Storyshots Avatar AvatarsGroup 1`] = `
                 />
               </span>
               <span
-                class="css-ueyf4p-baseCss-AvatarSkeleton-AvatarSkeleton-AvatarsGroup"
+                class="css-xl9xlq-baseCss-AvatarSkeleton-AvatarSkeleton-AvatarsGroup"
                 title="More users not displayed"
               >
                 <span
@@ -277,7 +300,7 @@ exports[`Storyshots Badge variants 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -657,7 +680,7 @@ exports[`Storyshots Chip w/ icon 1`] = `
               class="css-b9me5o-baseCss-iconOnlyCss"
             >
               <span
-                class="css-1c8gw8n-iconCss-Chip"
+                class="css-1irvj16-iconCss-Chip"
               >
                 <svg
                   fill="currentColor"
@@ -679,7 +702,7 @@ exports[`Storyshots Chip w/ icon 1`] = `
               class="css-k6v6ww-baseCss-Chip"
             >
               <span
-                class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                class="css-n2u77h-iconCss-iconOffsetCss-Chip"
               >
                 <svg
                   aria-hidden="true"
@@ -991,7 +1014,7 @@ exports[`Storyshots Heading redered 'as' 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -1059,7 +1082,7 @@ exports[`Storyshots Heading tones 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -1122,7 +1145,7 @@ exports[`Storyshots Heading variants 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -1154,29 +1177,6 @@ exports[`Storyshots Heading variants 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Introduction/ Welcome to Gatsby Inteface 1`] = `
-<div>
-  <div
-    class="storybook-readme-story"
-  >
-    <div>
-      <div
-        class="markdown-body"
-      >
-        <p>
-          test-file-stub
-        </p>
-        
-
-      </div>
-    </div>
-    <div>
-      <div />
     </div>
   </div>
 </div>
@@ -3539,7 +3539,7 @@ exports[`Storyshots Text sizes 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -3597,7 +3597,7 @@ exports[`Storyshots Text tones 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -3650,7 +3650,7 @@ exports[`Storyshots Text variants 1`] = `
                 class="css-drv1we-baseCss-Chip"
               >
                 <span
-                  class="css-chu8le-iconCss-iconOffsetCss-Chip"
+                  class="css-n2u77h-iconCss-iconOffsetCss-Chip"
                 >
                   <svg
                     fill="currentColor"
@@ -3837,7 +3837,7 @@ exports[`Storyshots Toast Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Toggle before or after label 1`] = `
+exports[`Storyshots ToggleCheckbox Basic 1`] = `
 <div>
   <div
     class="storybook-readme-story"
@@ -3851,44 +3851,20 @@ exports[`Storyshots Toggle before or after label 1`] = `
             class="css-gkzmg7"
           >
             <label
-              class="css-s504g7"
-              for="subInterval"
+              class="css-17isn2q-ToggleCheckbox"
+              for="toggleCheckbox"
             >
               <input
-                checked=""
-                class="css-pqd587"
-                id="subInterval"
-                name="subInterval"
+                class="css-1tn7v1n-BaseToggle"
+                id="toggleCheckbox"
                 type="checkbox"
                 value="true"
               />
               <span
                 aria-hidden="true"
-                class="css-dcvwjd"
+                class="css-1hjnr34-ToggleCheckbox"
               />
-              <span>
-                Yearly payment
-              </span>
-            </label>
-            <label
-              class="css-y4zpjb"
-              for="renew"
-            >
-              <input
-                checked=""
-                class="css-pqd587"
-                id="renew"
-                name="renew"
-                type="checkbox"
-                value="true"
-              />
-              <span
-                aria-hidden="true"
-                class="css-10z5091"
-              />
-              <span>
-                Automaticaly renew
-              </span>
+              Behaves like a checkbox
             </label>
           </div>
         </div>
@@ -3898,7 +3874,7 @@ exports[`Storyshots Toggle before or after label 1`] = `
 </div>
 `;
 
-exports[`Storyshots Toggle shortcut usage 1`] = `
+exports[`Storyshots ToggleCheckbox Controlled 1`] = `
 <div>
   <div
     class="storybook-readme-story"
@@ -3912,43 +3888,20 @@ exports[`Storyshots Toggle shortcut usage 1`] = `
             class="css-gkzmg7"
           >
             <label
-              class="css-s504g7"
-              for="subInterval"
+              class="css-17isn2q-ToggleCheckbox"
+              for="toggleCheckbox"
             >
               <input
-                checked=""
-                class="css-pqd587"
-                id="subInterval"
-                name="subInterval"
+                class="css-1tn7v1n-BaseToggle"
+                id="toggleCheckbox"
                 type="checkbox"
                 value="true"
               />
               <span
                 aria-hidden="true"
-                class="css-dcvwjd"
+                class="css-1hjnr34-ToggleCheckbox"
               />
-              <span>
-                Yearly payment
-              </span>
-            </label>
-            <label
-              class="css-s504g7"
-              for="renew"
-            >
-              <input
-                class="css-pqd587"
-                id="renew"
-                name="renew"
-                type="checkbox"
-                value="true"
-              />
-              <span
-                aria-hidden="true"
-                class="css-f19wfw"
-              />
-              <span>
-                Automaticaly renew
-              </span>
+              Controlled value: false
             </label>
           </div>
         </div>
@@ -3958,7 +3911,7 @@ exports[`Storyshots Toggle shortcut usage 1`] = `
 </div>
 `;
 
-exports[`Storyshots Toggle with Formik 1`] = `
+exports[`Storyshots ToggleCheckbox Label Positions 1`] = `
 <div>
   <div
     class="storybook-readme-story"
@@ -3968,64 +3921,230 @@ exports[`Storyshots Toggle with Formik 1`] = `
         <div
           class="css-3ga7ji"
         >
-          <form
+          <div
             class="css-gkzmg7"
           >
             <label
-              class="css-s504g7"
-              for="subscriptionInterval"
+              class="css-17isn2q-ToggleCheckbox"
+              for="labelPosition--end"
             >
               <input
-                class="css-pqd587"
-                id="subscriptionInterval"
-                name="subscriptionInterval"
+                class="css-1tn7v1n-BaseToggle"
+                id="labelPosition--end"
                 type="checkbox"
                 value="true"
               />
               <span
                 aria-hidden="true"
-                class="css-f19wfw"
+                class="css-1hjnr34-ToggleCheckbox"
               />
-              <span>
-                Yearly payment
-              </span>
+              Label position: end
             </label>
-            <div
-              class="css-1ssluw3-Debug"
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="labelPosition--start"
             >
-              <div
-                class="css-ker4io-Debug"
-              >
-                Formik State
+              <input
+                class="css-1tn7v1n-BaseToggle"
+                id="labelPosition--start"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-17uug1l-ToggleCheckbox"
+              />
+              Label position: start
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleCheckbox Sandbox 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="toggleCheckbox"
+            >
+              <input
+                class="css-1tn7v1n-BaseToggle"
+                id="toggleCheckbox"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              Subscribe
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleCheckbox Tones 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="tone--BRAND"
+            >
+              <input
+                checked=""
+                class="css-1tn7v1n-BaseToggle"
+                id="tone--BRAND"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              BRAND tone
+            </label>
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="tone--SUCCESS"
+            >
+              <input
+                checked=""
+                class="css-11w21ub-BaseToggle"
+                id="tone--SUCCESS"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              SUCCESS tone
+            </label>
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="tone--DANGER"
+            >
+              <input
+                checked=""
+                class="css-17hn1jz-BaseToggle"
+                id="tone--DANGER"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              DANGER tone
+            </label>
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="tone--WARNING"
+            >
+              <input
+                checked=""
+                class="css-baqdfn-BaseToggle"
+                id="tone--WARNING"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              WARNING tone
+            </label>
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="tone--NEUTRAL"
+            >
+              <input
+                checked=""
+                class="css-jkgd02-BaseToggle"
+                id="tone--NEUTRAL"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              NEUTRAL tone
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleCheckbox With Rich Label 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <label
+              class="css-17isn2q-ToggleCheckbox"
+              for="toggleCheckbox"
+            >
+              <input
+                class="css-1tn7v1n-BaseToggle"
+                id="toggleCheckbox"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                aria-hidden="true"
+                class="css-1hjnr34-ToggleCheckbox"
+              />
+              <div>
+                This is a rich label
+                <br />
+                <small
+                  class="css-1oy4o3t-WithRichLabel"
+                >
+                  Some styled text
+                </small>
               </div>
-              <pre
-                class="css-1afqp58-Debug"
-              >
-                {
-  "values": {
-    "subscriptionInterval": false,
-    "automaticalRenew": false
-  },
-  "errors": {},
-  "touched": {},
-  "isSubmitting": false,
-  "isValidating": false,
-  "submitCount": 0,
-  "initialValues": {
-    "subscriptionInterval": false,
-    "automaticalRenew": false
-  },
-  "initialErrors": {},
-  "initialTouched": {},
-  "isValid": true,
-  "dirty": false,
-  "validateOnBlur": true,
-  "validateOnChange": true,
-  "validateOnMount": false
-}
-              </pre>
-            </div>
-          </form>
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -4033,7 +4152,7 @@ exports[`Storyshots Toggle with Formik 1`] = `
 </div>
 `;
 
-exports[`Storyshots Toggle with a rich label 1`] = `
+exports[`Storyshots ToggleSwitch Basic 1`] = `
 <div>
   <div
     class="storybook-readme-story"
@@ -4046,36 +4165,499 @@ exports[`Storyshots Toggle with a rich label 1`] = `
           <div
             class="css-gkzmg7"
           >
-            <label
-              class="css-fa39uq"
-              for="subInterval"
+            <div
+              class="css-92jo3t-ToggleSwitch"
+              id="toggleSwitch"
             >
               <input
-                class="css-pqd587"
-                id="subInterval"
-                name="subInterval"
-                type="checkbox"
-                value="true"
+                checked=""
+                class="css-ps11po-ToggleSwitch"
+                id="toggleSwitch__off"
+                name="toggleSwitch"
+                type="radio"
+                value="off"
               />
+              <label
+                class="css-1r7wqje-ToggleSwitch"
+                for="toggleSwitch__off"
+              >
+                Yearly
+              </label>
               <span
                 aria-hidden="true"
-                class="css-f19wfw"
+                class="css-16q7frx-ToggleSwitch"
               />
-              <span
-                class="css-1f2k2gl"
+              <input
+                class="css-ps11po-ToggleSwitch"
+                id="toggleSwitch__on"
+                name="toggleSwitch"
+                type="radio"
+                value="on"
+              />
+              <label
+                class="css-1r7wqje-ToggleSwitch"
+                for="toggleSwitch__on"
               >
-                <strong
-                  class="css-jl6p1l"
+                Monthly
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleSwitch Sandbox 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <div
+              class="css-92jo3t-ToggleSwitch"
+              id="toggleSwitch"
+            >
+              <input
+                checked=""
+                class="css-ps11po-ToggleSwitch"
+                id="toggleSwitch__off"
+                name="toggleSwitch"
+                type="radio"
+                value="yearly"
+              />
+              <label
+                class="css-1r7wqje-ToggleSwitch"
+                for="toggleSwitch__off"
+              >
+                Yearly
+              </label>
+              <span
+                aria-hidden="true"
+                class="css-16q7frx-ToggleSwitch"
+              />
+              <input
+                class="css-ps11po-ToggleSwitch"
+                id="toggleSwitch__on"
+                name="toggleSwitch"
+                type="radio"
+                value="monthly"
+              />
+              <label
+                class="css-1r7wqje-ToggleSwitch"
+                for="toggleSwitch__on"
+              >
+                Monthly
+              </label>
+            </div>
+            <p
+              class="css-8fa27y-ToggleSwitchStory"
+            >
+              {"value":"yearly"}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleSwitch Tones 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <div>
+              <p
+                class="css-184aprq"
+                id="toggleSwitchLabel--BRAND"
+              >
+                BRAND
+                :
+              </p>
+              <div
+                class="css-92jo3t-ToggleSwitch"
+                id="tone--BRAND"
+              >
+                <input
+                  aria-describedby="toggleSwitchLabel--BRAND"
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--BRAND__off"
+                  name="tone--BRAND"
+                  type="radio"
+                  value="off"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--BRAND__off"
                 >
-                  Yearly payment
-                </strong>
-                <p
-                  class="css-hl9e0x"
+                  Yearly
+                </label>
+                <span
+                  aria-hidden="true"
+                  class="css-agoakz-ToggleSwitch"
+                />
+                <input
+                  aria-describedby="toggleSwitchLabel--BRAND"
+                  checked=""
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--BRAND__on"
+                  name="tone--BRAND"
+                  type="radio"
+                  value="on"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--BRAND__on"
                 >
-                  This is label with HTML
-                </p>
-              </span>
-            </label>
+                  Monthly
+                </label>
+              </div>
+            </div>
+            <div>
+              <p
+                class="css-184aprq"
+                id="toggleSwitchLabel--SUCCESS"
+              >
+                SUCCESS
+                :
+              </p>
+              <div
+                class="css-92jo3t-ToggleSwitch"
+                id="tone--SUCCESS"
+              >
+                <input
+                  aria-describedby="toggleSwitchLabel--SUCCESS"
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--SUCCESS__off"
+                  name="tone--SUCCESS"
+                  type="radio"
+                  value="off"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--SUCCESS__off"
+                >
+                  Yearly
+                </label>
+                <span
+                  aria-hidden="true"
+                  class="css-zxvz2d-ToggleSwitch"
+                />
+                <input
+                  aria-describedby="toggleSwitchLabel--SUCCESS"
+                  checked=""
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--SUCCESS__on"
+                  name="tone--SUCCESS"
+                  type="radio"
+                  value="on"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--SUCCESS__on"
+                >
+                  Monthly
+                </label>
+              </div>
+            </div>
+            <div>
+              <p
+                class="css-184aprq"
+                id="toggleSwitchLabel--DANGER"
+              >
+                DANGER
+                :
+              </p>
+              <div
+                class="css-92jo3t-ToggleSwitch"
+                id="tone--DANGER"
+              >
+                <input
+                  aria-describedby="toggleSwitchLabel--DANGER"
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--DANGER__off"
+                  name="tone--DANGER"
+                  type="radio"
+                  value="off"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--DANGER__off"
+                >
+                  Yearly
+                </label>
+                <span
+                  aria-hidden="true"
+                  class="css-1ekcdwj-ToggleSwitch"
+                />
+                <input
+                  aria-describedby="toggleSwitchLabel--DANGER"
+                  checked=""
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--DANGER__on"
+                  name="tone--DANGER"
+                  type="radio"
+                  value="on"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--DANGER__on"
+                >
+                  Monthly
+                </label>
+              </div>
+            </div>
+            <div>
+              <p
+                class="css-184aprq"
+                id="toggleSwitchLabel--WARNING"
+              >
+                WARNING
+                :
+              </p>
+              <div
+                class="css-92jo3t-ToggleSwitch"
+                id="tone--WARNING"
+              >
+                <input
+                  aria-describedby="toggleSwitchLabel--WARNING"
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--WARNING__off"
+                  name="tone--WARNING"
+                  type="radio"
+                  value="off"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--WARNING__off"
+                >
+                  Yearly
+                </label>
+                <span
+                  aria-hidden="true"
+                  class="css-cxdmht-ToggleSwitch"
+                />
+                <input
+                  aria-describedby="toggleSwitchLabel--WARNING"
+                  checked=""
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--WARNING__on"
+                  name="tone--WARNING"
+                  type="radio"
+                  value="on"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--WARNING__on"
+                >
+                  Monthly
+                </label>
+              </div>
+            </div>
+            <div>
+              <p
+                class="css-184aprq"
+                id="toggleSwitchLabel--NEUTRAL"
+              >
+                NEUTRAL
+                :
+              </p>
+              <div
+                class="css-92jo3t-ToggleSwitch"
+                id="tone--NEUTRAL"
+              >
+                <input
+                  aria-describedby="toggleSwitchLabel--NEUTRAL"
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--NEUTRAL__off"
+                  name="tone--NEUTRAL"
+                  type="radio"
+                  value="off"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--NEUTRAL__off"
+                >
+                  Yearly
+                </label>
+                <span
+                  aria-hidden="true"
+                  class="css-16385xz-ToggleSwitch"
+                />
+                <input
+                  aria-describedby="toggleSwitchLabel--NEUTRAL"
+                  checked=""
+                  class="css-ps11po-ToggleSwitch"
+                  id="tone--NEUTRAL__on"
+                  name="tone--NEUTRAL"
+                  type="radio"
+                  value="on"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="tone--NEUTRAL__on"
+                >
+                  Monthly
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleSwitch With Accessible Field Label 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <div>
+              <p
+                id="toggleSwitchLabel"
+              >
+                Billing period:
+              </p>
+              <div
+                class="css-92jo3t-ToggleSwitch"
+                id="toggleSwitch"
+              >
+                <input
+                  aria-describedby="toggleSwitchLabel"
+                  checked=""
+                  class="css-ps11po-ToggleSwitch"
+                  id="toggleSwitch__off"
+                  name="toggleSwitch"
+                  type="radio"
+                  value="off"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="toggleSwitch__off"
+                >
+                  Yearly
+                </label>
+                <span
+                  aria-hidden="true"
+                  class="css-16q7frx-ToggleSwitch"
+                />
+                <input
+                  aria-describedby="toggleSwitchLabel"
+                  class="css-ps11po-ToggleSwitch"
+                  id="toggleSwitch__on"
+                  name="toggleSwitch"
+                  type="radio"
+                  value="on"
+                />
+                <label
+                  class="css-1r7wqje-ToggleSwitch"
+                  for="toggleSwitch__on"
+                >
+                  Monthly
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ToggleSwitch With Rich Labels 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <div
+              class="css-92jo3t-ToggleSwitch"
+              id="toggleSwitch"
+            >
+              <input
+                checked=""
+                class="css-ps11po-ToggleSwitch"
+                id="toggleSwitch__off"
+                name="toggleSwitch"
+                type="radio"
+                value="off"
+              />
+              <label
+                class="css-1r7wqje-ToggleSwitch"
+                for="toggleSwitch__off"
+              >
+                <div>
+                  OFF
+                  <br />
+                  <small
+                    class="css-12nrv8i-WithRichLabels"
+                  >
+                    This is a rich label
+                  </small>
+                </div>
+              </label>
+              <span
+                aria-hidden="true"
+                class="css-16q7frx-ToggleSwitch"
+              />
+              <input
+                class="css-ps11po-ToggleSwitch"
+                id="toggleSwitch__on"
+                name="toggleSwitch"
+                type="radio"
+                value="on"
+              />
+              <label
+                class="css-1r7wqje-ToggleSwitch"
+                for="toggleSwitch__on"
+              >
+                <div>
+                  ON
+                  <br />
+                  <small
+                    class="css-12nrv8i-WithRichLabels"
+                  >
+                    This is a rich label
+                  </small>
+                </div>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -5202,7 +5784,7 @@ exports[`Storyshots form CheckboxField 1`] = `
                  
               </label>
               <div
-                class="css-1er0lr-FormFieldHint-Hint"
+                class="css-1ui557a-FormFieldHint-Hint"
                 id="input-example-1a__hint"
               >
                 This field is built with 'CheckboxField' and subcomponents placed explicitly as its children
@@ -5228,7 +5810,7 @@ exports[`Storyshots form CheckboxField 1`] = `
                  
               </label>
               <div
-                class="css-1er0lr-FormFieldHint-Hint"
+                class="css-1ui557a-FormFieldHint-Hint"
                 id="input-example-1b__hint"
               >
                 This one is built with 'CheckboxFieldBlock'
@@ -5261,7 +5843,7 @@ exports[`Storyshots form CheckboxField 1`] = `
                  
               </label>
               <div
-                class="css-1xbyg6r-FormFieldHint-Hint"
+                class="css-1fxqo81-FormFieldHint-Hint"
                 id="input-example-1c__hint"
               />
               <div
@@ -5306,10 +5888,10 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                 </span>
               </legend>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5328,7 +5910,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5347,7 +5929,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5366,7 +5948,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5385,7 +5967,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5404,7 +5986,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5423,7 +6005,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5442,7 +6024,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5461,7 +6043,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5480,7 +6062,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5499,7 +6081,7 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -5519,11 +6101,11 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                 </div>
               </div>
               <div
-                class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                 id="example-1a__hint"
               />
               <div
-                class="css-9tnfmg-FormGroupFieldError"
+                class="css-1lc37l8-FormGroupFieldError"
                 id="example-1a__error"
               />
             </fieldset>
@@ -5749,11 +6331,11 @@ exports[`Storyshots form CheckboxGroupField 1`] = `
                 </div>
               </div>
               <div
-                class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                 id="example-1b__hint"
               />
               <div
-                class="css-9tnfmg-FormGroupFieldError"
+                class="css-1lc37l8-FormGroupFieldError"
                 id="example-1b__error"
               />
             </fieldset>
@@ -5796,7 +6378,7 @@ exports[`Storyshots form InputField 1`] = `
                 placeholder="This is a placeholder"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1a__hint"
               >
                  This field is built with 'InputField' and subcomponents placed  explicitly as its children
@@ -5824,7 +6406,7 @@ exports[`Storyshots form InputField 1`] = `
                 placeholder="This is a placeholder"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1b__hint"
               >
                 And this one is built with 'InputFieldBlock'
@@ -5861,7 +6443,7 @@ exports[`Storyshots form InputField 1`] = `
                 placeholder="This is a placeholder"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1c__hint"
               >
                 This one is also built with 'InputFieldBlock'
@@ -5970,7 +6552,7 @@ exports[`Storyshots form SelectField 1`] = `
                 </option>
               </select>
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1a__hint"
               >
                 This field is built with 'SelectField' and subcomponents placed explicitly as its children
@@ -6058,7 +6640,7 @@ exports[`Storyshots form SelectField 1`] = `
                 </option>
               </select>
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1b__hint"
               >
                 And this one is built with 'SelectFieldBlock'
@@ -6107,7 +6689,7 @@ exports[`Storyshots form TextAreaField 1`] = `
                 placeholder="This is a placeholder"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1a__hint"
               >
                 This field is built with 'TextAreaField' and subcomponents placed explicitly as its children
@@ -6135,7 +6717,7 @@ exports[`Storyshots form TextAreaField 1`] = `
                 placeholder="This is a placeholder"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1b__hint"
               >
                 And this one is built with 'TextAreaFieldBlock'
@@ -6174,7 +6756,7 @@ exports[`Storyshots form TextAreaField 1`] = `
                 placeholder="This is a placeholder"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1c__hint"
               >
                 This one is also built with 'TextAreaFieldBlock'
@@ -6222,7 +6804,7 @@ exports[`Storyshots form/FormField Error & Hint 1`] = `
                 id="example-4a"
               />
               <div
-                class="css-u3fiyt-FormFieldHint"
+                class="css-1i38i36-FormFieldHint"
                 id="example-4a__hint"
               />
               <div
@@ -6262,7 +6844,7 @@ exports[`Storyshots form/FormField Error & Hint 1`] = `
                 id="example-4b"
               />
               <div
-                class="css-u3fiyt-FormFieldHint"
+                class="css-1i38i36-FormFieldHint"
                 id="example-4b__hint"
               />
               <div
@@ -6301,7 +6883,7 @@ exports[`Storyshots form/FormField Error & Hint 1`] = `
                 id="example-4c"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-4c__hint"
               >
                 Short hint.
@@ -6327,7 +6909,7 @@ exports[`Storyshots form/FormField Error & Hint 1`] = `
                 id="example-4d"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-4d__hint"
               >
                 Long hint ... excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -6354,7 +6936,7 @@ exports[`Storyshots form/FormField Error & Hint 1`] = `
                 id="example-4e"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-4e__hint"
               >
                 Long hint ... excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -6527,10 +7109,10 @@ exports[`Storyshots form/FormField Required 1`] = `
                 </span>
               </legend>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     class="css-1vlqhek"
@@ -6547,7 +7129,7 @@ exports[`Storyshots form/FormField Required 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     class="css-1vlqhek"
@@ -6564,7 +7146,7 @@ exports[`Storyshots form/FormField Required 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     class="css-1vlqhek"
@@ -6644,7 +7226,7 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                 id="example-1a"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1a__hint"
               >
                 This is a hint
@@ -6686,7 +7268,7 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                 id="example-1b"
               />
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1b__hint"
               >
                 This is a hint
@@ -6787,7 +7369,7 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                 </option>
               </select>
               <div
-                class="css-1fu151s-FormFieldHint"
+                class="css-1uumfms-FormFieldHint"
                 id="example-1c__hint"
               >
                 This is a hint
@@ -6926,13 +7508,13 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                 </div>
               </div>
               <div
-                class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                 id="example-1d__hint"
               >
                 This is a hint
               </div>
               <div
-                class="css-128yzfl-FormGroupFieldError"
+                class="css-k3sfa2-FormGroupFieldError"
                 id="example-1d__error"
               >
                 <svg
@@ -6962,10 +7544,10 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                  
               </legend>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-1e__error example-1e__hint"
@@ -6984,7 +7566,7 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-1e__error example-1e__hint"
@@ -7003,7 +7585,7 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-1e__error example-1e__hint"
@@ -7023,13 +7605,13 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                 </div>
               </div>
               <div
-                class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                 id="example-1e__hint"
               >
                 This is a hint
               </div>
               <div
-                class="css-128yzfl-FormGroupFieldError"
+                class="css-k3sfa2-FormGroupFieldError"
                 id="example-1e__error"
               >
                 <svg
@@ -7077,7 +7659,7 @@ exports[`Storyshots form/FormField Shared components 1`] = `
                  
               </label>
               <div
-                class="css-1er0lr-FormFieldHint-Hint"
+                class="css-1ui557a-FormFieldHint-Hint"
                 id="example-1f__hint"
               >
                 This is a hint
@@ -7152,7 +7734,7 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                   value=""
                 />
                 <div
-                  class="css-1fu151s-FormFieldHint"
+                  class="css-1uumfms-FormFieldHint"
                   id="titleField__hint"
                 >
                   At least 3 and not more than 15 characters
@@ -7180,7 +7762,7 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                   name="description"
                 />
                 <div
-                  class="css-1fu151s-FormFieldHint"
+                  class="css-1uumfms-FormFieldHint"
                   id="descriptionField__hint"
                 >
                   Be concise, the field can't be longer than 50 characters
@@ -7272,7 +7854,7 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                   </option>
                 </select>
                 <div
-                  class="css-u3fiyt-FormFieldHint"
+                  class="css-1i38i36-FormFieldHint"
                   id="authorField__hint"
                 />
                 <div
@@ -7296,10 +7878,10 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                   </span>
                 </legend>
                 <div
-                  class="css-ncrc78-Options"
+                  class="css-mncge-Options"
                 >
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -7318,7 +7900,7 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                     </label>
                   </div>
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -7337,7 +7919,7 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                     </label>
                   </div>
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -7357,11 +7939,11 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                  class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                   id="categoryField__hint"
                 />
                 <div
-                  class="css-9tnfmg-FormGroupFieldError"
+                  class="css-1lc37l8-FormGroupFieldError"
                   id="categoryField__error"
                 />
               </fieldset>
@@ -7489,13 +8071,13 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                  class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                   id="tagsField__hint"
                 >
                   Check at least 3 tags
                 </div>
                 <div
-                  class="css-9tnfmg-FormGroupFieldError"
+                  class="css-1lc37l8-FormGroupFieldError"
                   id="tagsField__error"
                 />
               </fieldset>
@@ -7531,7 +8113,7 @@ exports[`Storyshots form/Formik usage examples with connected fields 1`] = `
                    
                 </label>
                 <div
-                  class="css-1xbyg6r-FormFieldHint-Hint"
+                  class="css-1fxqo81-FormFieldHint-Hint"
                   id="agreementField__hint"
                 />
                 <div
@@ -7626,7 +8208,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                   value=""
                 />
                 <div
-                  class="css-1fu151s-FormFieldHint"
+                  class="css-1uumfms-FormFieldHint"
                   id="titleField__hint"
                 >
                   At least 
@@ -7659,7 +8241,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                   name="description"
                 />
                 <div
-                  class="css-1fu151s-FormFieldHint"
+                  class="css-1uumfms-FormFieldHint"
                   id="descriptionField__hint"
                 >
                   Be concise, the field can't be longer than 50 characters
@@ -7770,10 +8352,10 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                   </span>
                 </legend>
                 <div
-                  class="css-ncrc78-Options"
+                  class="css-mncge-Options"
                 >
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -7791,7 +8373,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                     </label>
                   </div>
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -7809,7 +8391,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                     </label>
                   </div>
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -7828,7 +8410,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-9tnfmg-FormGroupFieldError"
+                  class="css-1lc37l8-FormGroupFieldError"
                   id="categoryField__error"
                 />
               </fieldset>
@@ -7951,7 +8533,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                  class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                   id="tagsField__hint"
                 >
                   Check at least 
@@ -7959,7 +8541,7 @@ exports[`Storyshots form/Formik usage examples with explicit children 1`] = `
                    tags
                 </div>
                 <div
-                  class="css-9tnfmg-FormGroupFieldError"
+                  class="css-1lc37l8-FormGroupFieldError"
                   id="tagsField__error"
                 />
               </fieldset>
@@ -8086,7 +8668,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   value=""
                 />
                 <div
-                  class="css-1fu151s-FormFieldHint"
+                  class="css-1uumfms-FormFieldHint"
                   id="titleField__hint"
                 >
                   At least 3 and not more than 15 characters
@@ -8114,7 +8696,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   name="description"
                 />
                 <div
-                  class="css-1fu151s-FormFieldHint"
+                  class="css-1uumfms-FormFieldHint"
                   id="descriptionField__hint"
                 >
                   Be concise, the field can't be longer than 50 characters
@@ -8206,7 +8788,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   </option>
                 </select>
                 <div
-                  class="css-u3fiyt-FormFieldHint"
+                  class="css-1i38i36-FormFieldHint"
                   id="authorField__hint"
                 />
                 <div
@@ -8230,10 +8812,10 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   </span>
                 </legend>
                 <div
-                  class="css-ncrc78-Options"
+                  class="css-mncge-Options"
                 >
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -8252,7 +8834,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                     </label>
                   </div>
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -8271,7 +8853,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                     </label>
                   </div>
                   <div
-                    class="css-pf0p62-OptionWrapper"
+                    class="css-syl1w8-OptionWrapper"
                   >
                     <input
                       aria-invalid="false"
@@ -8291,11 +8873,11 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                  class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                   id="categoryField__hint"
                 />
                 <div
-                  class="css-9tnfmg-FormGroupFieldError"
+                  class="css-1lc37l8-FormGroupFieldError"
                   id="categoryField__error"
                 />
               </fieldset>
@@ -8423,13 +9005,13 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                  class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                   id="tagsField__hint"
                 >
                   Check at least 3 tags
                 </div>
                 <div
-                  class="css-9tnfmg-FormGroupFieldError"
+                  class="css-1lc37l8-FormGroupFieldError"
                   id="tagsField__error"
                 />
               </fieldset>
@@ -8465,7 +9047,7 @@ exports[`Storyshots form/Formik usage examples with field blocks 1`] = `
                    
                 </label>
                 <div
-                  class="css-1xbyg6r-FormFieldHint-Hint"
+                  class="css-1fxqo81-FormFieldHint-Hint"
                   id="agreementField__hint"
                 />
                 <div
@@ -8542,10 +9124,10 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                  
               </legend>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3a__error example-3a__hint"
@@ -8564,7 +9146,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3a__error example-3a__hint"
@@ -8583,7 +9165,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3a__error example-3a__hint"
@@ -8603,13 +9185,13 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                 </div>
               </div>
               <div
-                class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                 id="example-3a__hint"
               >
                 This is a hint
               </div>
               <div
-                class="css-128yzfl-FormGroupFieldError"
+                class="css-k3sfa2-FormGroupFieldError"
                 id="example-3a__error"
               >
                 <svg
@@ -8639,13 +9221,13 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                  
               </legend>
               <div
-                class="css-r9a2c0-FormFieldHint-FormGroupFieldHint"
+                class="css-xlqkll-FormFieldHint-FormGroupFieldHint"
                 id="example-3b__hint"
               >
                 This is a hint
               </div>
               <div
-                class="css-128yzfl-FormGroupFieldError"
+                class="css-k3sfa2-FormGroupFieldError"
                 id="example-3b__error"
               >
                 <svg
@@ -8664,10 +9246,10 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                 And this is an error message
               </div>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8686,7 +9268,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8705,7 +9287,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8724,7 +9306,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8743,7 +9325,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8762,7 +9344,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8781,7 +9363,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8800,7 +9382,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8819,7 +9401,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8838,7 +9420,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8857,7 +9439,7 @@ exports[`Storyshots form/RadioButtonField Hint and Error placement 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-describedby="example-3b__error example-3b__hint"
@@ -8899,7 +9481,7 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
             class="css-2lsviv-Wrapper"
           >
             <fieldset
-              class="css-nnv3ac-FormGroupField-RadioButtonField"
+              class="css-1qmecf3-FormGroupField-RadioButtonField"
               id="example-2"
             >
               <legend
@@ -8909,7 +9491,7 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
                  
               </legend>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
                   class="css-1c2e49m-OptionFrame"
@@ -8967,11 +9549,11 @@ exports[`Storyshots form/RadioButtonField framed 1`] = `
                 </div>
               </div>
               <div
-                class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                 id="example-2__hint"
               />
               <div
-                class="css-9tnfmg-FormGroupFieldError"
+                class="css-1lc37l8-FormGroupFieldError"
                 id="example-2__error"
               />
             </fieldset>
@@ -9007,10 +9589,10 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                  
               </legend>
               <div
-                class="css-ncrc78-Options"
+                class="css-mncge-Options"
               >
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -9028,7 +9610,7 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -9046,7 +9628,7 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                   </label>
                 </div>
                 <div
-                  class="css-pf0p62-OptionWrapper"
+                  class="css-syl1w8-OptionWrapper"
                 >
                   <input
                     aria-invalid="false"
@@ -9065,11 +9647,11 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                 </div>
               </div>
               <div
-                class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                 id="example-1a__hint"
               />
               <div
-                class="css-9tnfmg-FormGroupFieldError"
+                class="css-1lc37l8-FormGroupFieldError"
                 id="example-1a__error"
               />
             </fieldset>
@@ -9146,11 +9728,11 @@ exports[`Storyshots form/RadioButtonField standard 1`] = `
                 </div>
               </div>
               <div
-                class="css-1mwyvr2-FormFieldHint-FormGroupFieldHint"
+                class="css-9njspm-FormFieldHint-FormGroupFieldHint"
                 id="example-1b__hint"
               />
               <div
-                class="css-9tnfmg-FormGroupFieldError"
+                class="css-1lc37l8-FormGroupFieldError"
                 id="example-1b__error"
               />
             </fieldset>
@@ -18694,22 +19276,22 @@ exports[`Storyshots layout helpers/stack directions 1`] = `
               class="css-16i3syu-TestComponent"
             >
               <div
-                class="css-11ors26-TestComponent"
+                class="css-11helqt-TestComponent"
               >
                 One
               </div>
               <div
-                class="css-11ors26-TestComponent"
+                class="css-11helqt-TestComponent"
               >
                 Two
               </div>
               <div
-                class="css-11ors26-TestComponent"
+                class="css-11helqt-TestComponent"
               >
                 Three
               </div>
               <div
-                class="css-11ors26-TestComponent"
+                class="css-11helqt-TestComponent"
               >
                 Four
               </div>
@@ -22568,12 +23150,12 @@ exports[`Storyshots theme transitions 1`] = `
               </small>
             </h4>
             <div
-              class="css-15dpp6t-baseCss"
+              class="css-u0c5sk-baseCss"
             >
               default
             </div>
             <div
-              class="css-1i52ue3-baseCss"
+              class="css-2hzmo1-baseCss"
             >
               fastOutLinearIn
             </div>
@@ -22585,27 +23167,27 @@ exports[`Storyshots theme transitions 1`] = `
               </small>
             </h4>
             <div
-              class="css-1qzf9s1-baseCss"
+              class="css-1jbn5ke-baseCss"
             >
               blink
             </div>
             <div
-              class="css-7l9oft-baseCss"
+              class="css-10bnlfz-baseCss"
             >
               fast
             </div>
             <div
-              class="css-1kip1ju-baseCss"
+              class="css-oiu9yc-baseCss"
             >
               default
             </div>
             <div
-              class="css-gcmhhg-baseCss"
+              class="css-1rnd4f3-baseCss"
             >
               slow
             </div>
             <div
-              class="css-aymrge-baseCss"
+              class="css-1cnk157-baseCss"
             >
               snail
             </div>
