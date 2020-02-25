@@ -21,3 +21,10 @@ storiesOf(`BaseLink`, module)
       </StoryUtils.Stack>
     </StoryUtils.Container>
   ))
+  .add(`external`, () => (
+    <StoryUtils.Container>
+      <StoryUtils.Stack>
+        <BaseLink to="http://www.bing.com">Search</BaseLink>
+      </StoryUtils.Stack>
+    </StoryUtils.Container>
+  ))

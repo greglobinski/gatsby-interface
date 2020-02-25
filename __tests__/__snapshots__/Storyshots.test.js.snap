@@ -360,6 +360,32 @@ exports[`Storyshots BaseLink default 1`] = `
 </div>
 `;
 
+exports[`Storyshots BaseLink external 1`] = `
+<div>
+  <div
+    class="storybook-readme-story"
+  >
+    <div>
+      <div>
+        <div
+          class="css-3ga7ji"
+        >
+          <div
+            class="css-gkzmg7"
+          >
+            <a
+              href="http://www.bing.com"
+            >
+              Search
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots BaseNavigation BaseNavigation.Hamburger 1`] = `
 <div>
   <div
