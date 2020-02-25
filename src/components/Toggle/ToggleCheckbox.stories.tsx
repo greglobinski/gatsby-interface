@@ -18,7 +18,8 @@ const TOGGLE_TONES: ToggleCheckboxProps["tone"][] = [
 ]
 
 const TOGGLE_LABEL_POSITIONS: ToggleCheckboxProps["labelPosition"][] = [
-  `end`, `start`,
+  `end`,
+  `start`,
 ]
 
 const toggleToneOptions = radioKnobOptions(TOGGLE_TONES)
@@ -29,11 +30,11 @@ export default {
   title: `ToggleCheckbox`,
   component: ToggleCheckbox,
   decorators: [
-    (story) => (
+    story => (
       <StoryUtils.Container>
         <StoryUtils.Stack>{story()}</StoryUtils.Stack>
       </StoryUtils.Container>
-    )
+    ),
   ] as DecoratorFn[],
 }
 
@@ -44,28 +45,30 @@ export const Basic = () => (
 export const Sandbox = () => (
   <ToggleCheckbox
     id="toggleCheckbox"
-    label={text('label', 'Subscribe')}
+    label={text("label", "Subscribe")}
     tone={radios("tone", toggleToneOptions, `BRAND`)}
     labelPosition={radios("labelPosition", toggleLabelPositionOptions, `end`)}
   />
 )
 
-export const Tones = () => TOGGLE_TONES.map((tone) => (
-  <ToggleCheckbox
-    id={`tone--${tone}`}
-    label={`${tone} tone`}
-    tone={tone}
-    defaultChecked
-  />
-))
+export const Tones = () =>
+  TOGGLE_TONES.map(tone => (
+    <ToggleCheckbox
+      id={`tone--${tone}`}
+      label={`${tone} tone`}
+      tone={tone}
+      defaultChecked
+    />
+  ))
 
-export const LabelPositions = () => TOGGLE_LABEL_POSITIONS.map((labelPosition) => (
-  <ToggleCheckbox
-    id={`labelPosition--${labelPosition}`}
-    label={`Label position: ${labelPosition}`}
-    labelPosition={labelPosition}
-  />
-))
+export const LabelPositions = () =>
+  TOGGLE_LABEL_POSITIONS.map(labelPosition => (
+    <ToggleCheckbox
+      id={`labelPosition--${labelPosition}`}
+      label={`Label position: ${labelPosition}`}
+      labelPosition={labelPosition}
+    />
+  ))
 
 export const WithRichLabel = () => (
   <ToggleCheckbox
