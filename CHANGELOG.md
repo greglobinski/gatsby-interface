@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.81](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.80...v0.0.81) (2020-02-28)
+
+
+### Bug Fixes
+
+* remove static properties from ToggleGutter, fix label styling ([#217](https://github.com/gatsby-inc/gatsby-interface/issues/217)) ([7b1ea66](https://github.com/gatsby-inc/gatsby-interface/commit/7b1ea66b66d5b8513a94860183b60ab60176584e))
+
 ### [0.0.80](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.79...v0.0.80) (2020-02-27)
 
 
