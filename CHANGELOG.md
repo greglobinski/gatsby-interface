@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.82](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.81...v0.0.82) (2020-02-28)
+
+
+### Bug Fixes
+
+* remove static properties from TextArea form fields ([#214](https://github.com/gatsby-inc/gatsby-interface/issues/214)) ([1e08f2f](https://github.com/gatsby-inc/gatsby-interface/commit/1e08f2fd23d0fe3e45e8a39de2773158113203dd))
+
 ### [0.0.81](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.80...v0.0.81) (2020-02-28)
 
 
