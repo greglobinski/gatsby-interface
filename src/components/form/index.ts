@@ -10,11 +10,9 @@ export * from "./components/SelectField"
 export * from "./components/SelectFieldBlock"
 export * from "./components/SelectConnectedField"
 
-export { default as CheckboxField } from "./components/CheckboxField"
-export { default as CheckboxFieldBlock } from "./components/CheckboxFieldBlock"
-export {
-  default as CheckboxConnectedField,
-} from "./components/CheckboxConnectedField"
+export * from "./components/CheckboxField"
+export * from "./components/CheckboxFieldBlock"
+export * from "./components/CheckboxConnectedField"
 
 export { default as CheckboxGroupField } from "./components/CheckboxGroupField"
 export {
