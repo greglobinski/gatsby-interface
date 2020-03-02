@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.83](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.82...v0.0.83) (2020-03-02)
+
+
+### Bug Fixes
+
+* remove static properties from Select form fields ([#215](https://github.com/gatsby-inc/gatsby-interface/issues/215)) ([d4b7ea8](https://github.com/gatsby-inc/gatsby-interface/commit/d4b7ea803f9cc593698b106c1c6d9b512081e593))
+
 ### [0.0.82](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.81...v0.0.82) (2020-02-28)
 
 ### Bug Fixes
