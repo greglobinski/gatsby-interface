@@ -6,11 +6,9 @@ export * from "./components/TextAreaField"
 export * from "./components/TextAreaFieldBlock"
 export * from "./components/TextAreaConnectedField"
 
-export { default as SelectField } from "./components/SelectField"
-export { default as SelectFieldBlock } from "./components/SelectFieldBlock"
-export {
-  default as SelectConnectedField,
-} from "./components/SelectConnectedField"
+export * from "./components/SelectField"
+export * from "./components/SelectFieldBlock"
+export * from "./components/SelectConnectedField"
 
 export { default as CheckboxField } from "./components/CheckboxField"
 export { default as CheckboxFieldBlock } from "./components/CheckboxFieldBlock"
