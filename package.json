@@ -1,6 +1,6 @@
 {
   "name": "gatsby-interface",
-  "version": "0.0.83",
+  "version": "0.0.84",
   "description": "Component library for Gatsby projects",
   "source": "src/index.js",
   "files": [

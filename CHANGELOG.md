@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.84](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.83...v0.0.84) (2020-03-02)
+
+
+### Bug Fixes
+
+* remove static properties from Checkbox form fields ([#216](https://github.com/gatsby-inc/gatsby-interface/issues/216)) ([89c4ce2](https://github.com/gatsby-inc/gatsby-interface/commit/89c4ce23033a39387430ad3bc1897677d40bb907))
+
 ### [0.0.83](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.82...v0.0.83) (2020-03-02)
 
 
