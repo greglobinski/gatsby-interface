@@ -11,24 +11,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.85](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.84...v0.0.85) (2020-03-03)
 
-
 ### Features
 
-* SidebarNav in TypeScript ([#212](https://github.com/gatsby-inc/gatsby-interface/issues/212)) ([ba00413](https://github.com/gatsby-inc/gatsby-interface/commit/ba0041350fb54bd1b5a95b3ea6fb160f64dc7f9c))
+- SidebarNav in TypeScript ([#212](https://github.com/gatsby-inc/gatsby-interface/issues/212)) ([ba00413](https://github.com/gatsby-inc/gatsby-interface/commit/ba0041350fb54bd1b5a95b3ea6fb160f64dc7f9c))
 
 ### [0.0.84](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.83...v0.0.84) (2020-03-02)
 
-
 ### Bug Fixes
 
-* remove static properties from Checkbox form fields ([#216](https://github.com/gatsby-inc/gatsby-interface/issues/216)) ([89c4ce2](https://github.com/gatsby-inc/gatsby-interface/commit/89c4ce23033a39387430ad3bc1897677d40bb907))
+- remove static properties from Checkbox form fields ([#216](https://github.com/gatsby-inc/gatsby-interface/issues/216)) ([89c4ce2](https://github.com/gatsby-inc/gatsby-interface/commit/89c4ce23033a39387430ad3bc1897677d40bb907))
 
 ### [0.0.83](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.82...v0.0.83) (2020-03-02)
 
-
 ### Bug Fixes
 
-* remove static properties from Select form fields ([#215](https://github.com/gatsby-inc/gatsby-interface/issues/215)) ([d4b7ea8](https://github.com/gatsby-inc/gatsby-interface/commit/d4b7ea803f9cc593698b106c1c6d9b512081e593))
+- remove static properties from Select form fields ([#215](https://github.com/gatsby-inc/gatsby-interface/issues/215)) ([d4b7ea8](https://github.com/gatsby-inc/gatsby-interface/commit/d4b7ea803f9cc593698b106c1c6d9b512081e593))
 
 ### [0.0.82](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.81...v0.0.82) (2020-02-28)
 
