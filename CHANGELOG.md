@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.86](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.85...v0.0.86) (2020-03-03)
+
+
+### Bug Fixes
+
+* use 'bold' font weight for active SidebarNav link ([#220](https://github.com/gatsby-inc/gatsby-interface/issues/220)) ([ce0a8bf](https://github.com/gatsby-inc/gatsby-interface/commit/ce0a8bf39dcce45c78cae66d2c842e235aca7890))
+
 ### [0.0.85](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.84...v0.0.85) (2020-03-03)
 
 
