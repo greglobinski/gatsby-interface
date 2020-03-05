@@ -4,24 +4,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.88](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.87...v0.0.88) (2020-03-05)
 
-
 ### Features
 
-* Tooltip component ([#219](https://github.com/gatsby-inc/gatsby-interface/issues/219)) ([d4aa83a](https://github.com/gatsby-inc/gatsby-interface/commit/d4aa83a7cc98ebe4d15709cc2775cc5e779032ec))
+- Tooltip component ([#219](https://github.com/gatsby-inc/gatsby-interface/issues/219)) ([d4aa83a](https://github.com/gatsby-inc/gatsby-interface/commit/d4aa83a7cc98ebe4d15709cc2775cc5e779032ec))
 
 ### [0.0.87](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.86...v0.0.87) (2020-03-03)
 
-
 ### Bug Fixes
 
-* remove static properties from CheckboxGroup form fields ([#218](https://github.com/gatsby-inc/gatsby-interface/issues/218)) ([a5d0014](https://github.com/gatsby-inc/gatsby-interface/commit/a5d001450e5c0befb8210c0f2f64d265773eb278))
+- remove static properties from CheckboxGroup form fields ([#218](https://github.com/gatsby-inc/gatsby-interface/issues/218)) ([a5d0014](https://github.com/gatsby-inc/gatsby-interface/commit/a5d001450e5c0befb8210c0f2f64d265773eb278))
 
 ### [0.0.86](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.85...v0.0.86) (2020-03-03)
 
-
 ### Bug Fixes
 
-* use 'bold' font weight for active SidebarNav link ([#220](https://github.com/gatsby-inc/gatsby-interface/issues/220)) ([ce0a8bf](https://github.com/gatsby-inc/gatsby-interface/commit/ce0a8bf39dcce45c78cae66d2c842e235aca7890))
+- use 'bold' font weight for active SidebarNav link ([#220](https://github.com/gatsby-inc/gatsby-interface/issues/220)) ([ce0a8bf](https://github.com/gatsby-inc/gatsby-interface/commit/ce0a8bf39dcce45c78cae66d2c842e235aca7890))
 
 ### [0.0.85](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.84...v0.0.85) (2020-03-03)
 

@@ -19,6 +19,7 @@ export * from "./components/Toggle"
 export * from "./components/Breadcrumb"
 export * from "./components/Tooltip"
 export * from "./components/SidebarNav"
+export * from "./components/Combobox"
 
 export * from "./theme"
 export * from "./theme/styles/button"
