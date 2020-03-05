@@ -13,7 +13,8 @@ import {
   CheckboxGroupFieldSkeletonErrorProps,
   CheckboxGroupFieldSkeletonError,
 } from "../../form-skeletons/components/CheckboxGroupFieldSkeleton"
-import FormGroupField, {
+import {
+  FormGroupField,
   FormGroupFieldProps,
   FormGroupFieldLabelProps,
   useStyledGroupFieldLabel,
@@ -26,8 +27,8 @@ import FormGroupField, {
   useStyledGroupFieldOptionLabel,
   FormGroupFieldOptionLabelProps,
 } from "./FormGroupField"
+import { useFormFieldSkeleton } from "../../form-skeletons/components/FormFieldSkeleton"
 import { Theme } from "../../../theme"
-import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
 export type CheckboxGroupFieldProps = Omit<FormGroupFieldProps, "variant">
@@ -69,7 +70,7 @@ export type CheckboxGroupFieldOptionLabelProps = CheckboxGroupFieldSkeletonOptio
 export const CheckboxGroupFieldOptionLabel: React.FC<
   CheckboxGroupFieldOptionLabelProps
 > = ({ size, ...rest }) => {
-  const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
+  const { hasError } = useFormFieldSkeleton()
   const { css, ...styledProps } = useStyledGroupFieldOptionLabel({ size })
 
   return (

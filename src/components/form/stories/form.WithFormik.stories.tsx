@@ -55,9 +55,17 @@ import {
 } from "../components/CheckboxGroupField"
 import { CheckboxGroupFieldBlock } from "../components/CheckboxGroupFieldBlock"
 import { CheckboxGroupConnectedField } from "../components/CheckboxGroupConnectedField"
-import RadioButtonField from "../components/RadioButtonField"
-import RadioButtonFieldBlock from "../components/RadioButtonFieldBlock"
-import RadioButtonConnectedField from "../components/RadioButtonConnectedField"
+import {
+  RadioButtonField,
+  RadioButtonFieldLabel,
+  RadioButtonFieldOptions,
+  RadioButtonFieldOptionWrapper,
+  RadioButtonFieldOption,
+  RadioButtonFieldOptionLabel,
+  RadioButtonFieldError,
+} from "../components/RadioButtonField"
+import { RadioButtonFieldBlock } from "../components/RadioButtonFieldBlock"
+import { RadioButtonConnectedField } from "../components/RadioButtonConnectedField"
 import { Formik, FormikProps } from "formik"
 import { getStackStyles } from "../../stack"
 import * as Yup from "yup"
@@ -306,30 +314,30 @@ storiesOf(`form/Formik usage examples`, module)
                     hasError={!!(touched.category && errors.category)}
                     css={stackItemCss}
                   >
-                    <RadioButtonField.Label isRequired={true}>
+                    <RadioButtonFieldLabel isRequired={true}>
                       Category
-                    </RadioButtonField.Label>
-                    <RadioButtonField.Options>
+                    </RadioButtonFieldLabel>
+                    <RadioButtonFieldOptions>
                       {categories.map(({ label, value }) => (
-                        <RadioButtonField.OptionWrapper key={value}>
-                          <RadioButtonField.Option
+                        <RadioButtonFieldOptionWrapper key={value}>
+                          <RadioButtonFieldOption
                             value={value}
                             name="category"
                             onChange={handleChange}
                             onBlur={handleBlur}
                             checked={values.category === value}
                           />
-                          <RadioButtonField.OptionLabel optionValue={value}>
+                          <RadioButtonFieldOptionLabel optionValue={value}>
                             {label}
-                          </RadioButtonField.OptionLabel>
-                        </RadioButtonField.OptionWrapper>
+                          </RadioButtonFieldOptionLabel>
+                        </RadioButtonFieldOptionWrapper>
                       ))}
-                    </RadioButtonField.Options>
-                    <RadioButtonField.Error>
+                    </RadioButtonFieldOptions>
+                    <RadioButtonFieldError>
                       {touched.category && errors.category
                         ? errors.category
                         : ``}
-                    </RadioButtonField.Error>
+                    </RadioButtonFieldError>
                   </RadioButtonField>
 
                   <CheckboxGroupField

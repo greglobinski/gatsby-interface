@@ -3,67 +3,91 @@ import { jsx } from "@emotion/core"
 import React from "react"
 
 import { getFocusStyles } from "./FormField.helpers"
-import { FormGroupFieldSkeletonOptionProps } from "../../form-skeletons/components/FormGroupFieldSkeleton"
-import FormGroupField, {
+import {
+  RadioButtonFieldSkeletonOptionProps,
+  RadioButtonFieldSkeletonOptionLabelProps,
+  RadioButtonFieldSkeletonOption,
+  RadioButtonFieldSkeletonOptionLabel,
+  RadioButtonFieldSkeletonLabel,
+  RadioButtonFieldSkeletonHintProps,
+  RadioButtonFieldSkeletonHint,
+  RadioButtonFieldSkeletonErrorProps,
+  RadioButtonFieldSkeletonError,
+} from "../../form-skeletons/components/RadioButtonFieldSkeleton"
+import {
+  FormGroupField,
+  FormGroupFieldProps,
+  FormGroupFieldLabelProps,
+  useStyledGroupFieldLabel,
+  useStyledGroupFieldHint,
+  useStyledGroupFieldError,
+  FormGroupFieldOptionsProps,
+  FormGroupFieldOptions,
+  FormGroupFieldOptionWrapperProps,
+  FormGroupFieldOptionWrapper,
+  useStyledGroupFieldOptionLabel,
   FormGroupFieldOptionLabelProps,
+  useFormGroupField,
 } from "./FormGroupField"
-// import colors from "../../../theme/colors"
-// import space from "../../../theme/space"
-// import radii from "../../../theme/radii"
-import FormFieldSkeleton from "../../form-skeletons/components/FormFieldSkeleton"
-import { FormGroupFieldProps } from "./FormGroupField"
+import { useFormFieldSkeleton } from "../../form-skeletons/components/FormFieldSkeleton"
 import { getStackStyles } from "../../stack"
-import { Theme } from "../../../theme"
+import { Theme, ThemeCss } from "../../../theme"
 
 import { INPUT_WIDTH, INPUT_VERTICAL_OFFSET_CALC } from "./FormGroupField"
 
-function RadioButtonField(props: FormGroupFieldProps) {
-  const framedVariantStyle =
-    props.variant && props.variant === `framed`
-      ? getStackStyles({ gap: 3 })
-      : null
-  return <FormGroupField css={[framedVariantStyle]} {...props} />
+export type RadioButtonFieldProps = FormGroupFieldProps
+export function RadioButtonField(props: RadioButtonFieldProps) {
+  return (
+    <FormGroupField
+      css={(theme: Theme) => [
+        props.variant === `framed` && getStackStyles({ gap: 3, theme }),
+      ]}
+      {...props}
+    />
+  )
 }
 
-const Option = React.forwardRef<
+export type RadioButtonFieldOptionProps = RadioButtonFieldSkeletonOptionProps
+export const RadioButtonFieldOption = React.forwardRef<
   HTMLInputElement,
-  FormGroupFieldSkeletonOptionProps
->((props, ref) => (
-  <FormGroupField.Option
-    ref={ref}
-    css={(theme: Theme) => [
-      {
-        position: `absolute`,
-        left: `-9999px`,
-        opacity: 0,
+  RadioButtonFieldOptionProps
+>(function RadioButtonFieldOption(props, ref) {
+  return (
+    <RadioButtonFieldSkeletonOption
+      ref={ref}
+      css={(theme: Theme) => [
+        {
+          position: `absolute`,
+          left: `-9999px`,
+          opacity: 0,
 
-        "&:checked + label": {
-          borderColor: theme.colors.purple[60],
+          "&:checked + label": {
+            borderColor: theme.colors.purple[60],
+          },
+
+          "&:checked + label::before": {
+            borderColor: theme.colors.purple[60],
+            backgroundColor: theme.colors.purple[60],
+            backgroundOrigin: `border-box`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 0H0V20H20V0ZM10 14C12.2091 14 14 12.2091 14 10C14 7.79086 12.2091 6 10 6C7.79086 6 6 7.79086 6 10C6 12.2091 7.79086 14 10 14Z' fill='white'/%3E%3C/svg%3E%0A")`,
+          },
+
+          "&:not(:checked):hover + label::before": {
+            borderColor: theme.colors.purple[40],
+          },
+
+          "&:focus + label::before": {
+            ...getFocusStyles(theme),
+            transition: `border-color 0.15s ease-in-out, background 0.15s ease-in-out`,
+          },
         },
+      ]}
+      {...props}
+    />
+  )
+})
 
-        "&:checked + label::before": {
-          borderColor: theme.colors.purple[60],
-          backgroundColor: theme.colors.purple[60],
-          backgroundOrigin: `border-box`,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 0H0V20H20V0ZM10 14C12.2091 14 14 12.2091 14 10C14 7.79086 12.2091 6 10 6C7.79086 6 6 7.79086 6 10C6 12.2091 7.79086 14 10 14Z' fill='white'/%3E%3C/svg%3E%0A")`,
-        },
-
-        "&:not(:checked):hover + label::before": {
-          borderColor: theme.colors.purple[40],
-        },
-
-        "&:focus + label::before": {
-          ...getFocusStyles(theme),
-          transition: `border-color 0.15s ease-in-out, background 0.15s ease-in-out`,
-        },
-      },
-    ]}
-    type="radio"
-    {...props}
-  />
-))
-
-const getFrameStyles = (theme: Theme) => ({
+const getFrameStyles: ThemeCss = theme => ({
   border: `2px solid ${theme.colors.white}`,
   borderRadius: theme.radii[3],
   margin: 0,
@@ -71,13 +95,19 @@ const getFrameStyles = (theme: Theme) => ({
   transition: `border .15s ease-in-out`,
 })
 
-const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
-  const { hasError } = FormFieldSkeleton.useFormFieldSkeleton()
-  const { variant } = FormGroupField.useFormGroupField()
+export type RadioButtonFieldOptionLabelProps = RadioButtonFieldSkeletonOptionLabelProps &
+  FormGroupFieldOptionLabelProps
+export const RadioButtonFieldOptionLabel: React.FC<
+  RadioButtonFieldOptionLabelProps
+> = ({ size, ...rest }) => {
+  const { hasError } = useFormFieldSkeleton()
+  const { css, ...styledProps } = useStyledGroupFieldOptionLabel({ size })
+  const { variant } = useFormGroupField()
 
   return (
-    <FormGroupField.OptionLabel
+    <RadioButtonFieldSkeletonOptionLabel
       css={(theme: Theme) => [
+        css(theme),
         {
           "&:before": {
             backgroundColor: theme.colors.white,
@@ -96,31 +126,34 @@ const OptionLabel: React.FC<FormGroupFieldOptionLabelProps> = props => {
             width: INPUT_WIDTH,
           },
         },
-        variant === `framed`
-          ? {
-              ...getFrameStyles(theme),
-              marginBottom: 0,
-              padding: `${theme.space[4]} ${theme.space[5]}`,
-              paddingLeft: `calc(${INPUT_WIDTH} + ${theme.space[7]})`,
-              "&:before": {
-                left: theme.space[4],
-                top: theme.space[4],
-              },
-            }
-          : {},
+        variant === `framed` && [
+          getFrameStyles(theme),
+          {
+            marginBottom: 0,
+            padding: `${theme.space[4]} ${theme.space[5]}`,
+            paddingLeft: `calc(${INPUT_WIDTH} + ${theme.space[7]})`,
+            "&:before": {
+              left: theme.space[4],
+              top: theme.space[4],
+            },
+          },
+        ],
       ]}
-      {...props}
+      {...rest}
+      {...styledProps}
     />
   )
 }
 
-export type RadioButtonFieldOptionFramProps = Pick<
+export type RadioButtonFieldOptionFrameProps = Pick<
   JSX.IntrinsicElements["div"],
   "className" | "style"
 >
 
-const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
-  const { variant } = FormGroupField.useFormGroupField()
+export const RadioButtonFieldOptionFrame: React.FC<
+  RadioButtonFieldOptionFrameProps
+> = props => {
+  const { variant } = useFormGroupField()
 
   return (
     <div
@@ -141,28 +174,40 @@ const OptionFrame: React.FC<RadioButtonFieldOptionFramProps> = props => {
   )
 }
 
-RadioButtonField.Label = FormGroupField.Label
-RadioButtonField.Label.displayName = `RadioButtonField.Label`
+export type RadioButtonFieldLabelProps = FormGroupFieldLabelProps
+export function RadioButtonFieldLabel({
+  children,
+  size,
+  isRequired,
+  ...props
+}: RadioButtonFieldLabelProps) {
+  const styledProps = useStyledGroupFieldLabel(children, { size, isRequired })
 
-RadioButtonField.OptionFrame = OptionFrame
-RadioButtonField.OptionFrame.displayName = `RadioButtonField.OptionFrame`
+  return <RadioButtonFieldSkeletonLabel {...props} {...styledProps} />
+}
 
-RadioButtonField.OptionWrapper = FormGroupField.OptionWrapper
-RadioButtonField.OptionWrapper.displayName = `RadioButtonField.OptionWrapper`
+export type RadioButtonFieldHintProps = RadioButtonFieldSkeletonHintProps
+export function RadioButtonFieldHint(props: RadioButtonFieldHintProps) {
+  const styledProps = useStyledGroupFieldHint()
 
-RadioButtonField.Option = Option
-RadioButtonField.Option.displayName = `RadioButtonField.Option`
+  return <RadioButtonFieldSkeletonHint {...props} {...styledProps} />
+}
 
-RadioButtonField.OptionLabel = OptionLabel
-RadioButtonField.OptionLabel.displayName = `RadioButtonField.OptionLabel`
+export type RadioButtonFieldErrorProps = RadioButtonFieldSkeletonErrorProps
+export function RadioButtonFieldError(props: RadioButtonFieldErrorProps) {
+  const styledProps = useStyledGroupFieldError(props.children)
 
-RadioButtonField.Options = FormGroupField.Options
-RadioButtonField.Options.displayName = `RadioButtonField.Options`
+  return <RadioButtonFieldSkeletonError {...props} {...styledProps} />
+}
 
-RadioButtonField.Hint = FormGroupField.Hint
-RadioButtonField.Hint.displayName = `RadioButtonField.Hint`
+export type RadioButtonFieldOptionsProps = FormGroupFieldOptionsProps
+export function RadioButtonFieldOptions(props: RadioButtonFieldOptionsProps) {
+  return <FormGroupFieldOptions {...props} />
+}
 
-RadioButtonField.Error = FormGroupField.Error
-RadioButtonField.Error.displayName = `RadioButtonField.Error`
-
-export default RadioButtonField
+export type RadioButtonFieldOptionWrapperProps = FormGroupFieldOptionWrapperProps
+export function RadioButtonFieldOptionWrapper(
+  props: RadioButtonFieldOptionWrapperProps
+) {
+  return <FormGroupFieldOptionWrapper {...props} />
+}

@@ -7,8 +7,18 @@ import { text, radios } from "@storybook/addon-knobs"
 
 import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_RADIO_FIELD.md"
-import RadioButtonField from "../components/RadioButtonField"
-import RadioButtonFieldBlock from "../components/RadioButtonFieldBlock"
+import {
+  RadioButtonField,
+  RadioButtonFieldLabel,
+  RadioButtonFieldOptions,
+  RadioButtonFieldOptionWrapper,
+  RadioButtonFieldOption,
+  RadioButtonFieldOptionLabel,
+  RadioButtonFieldHint,
+  RadioButtonFieldError,
+  RadioButtonFieldOptionFrame,
+} from "../components/RadioButtonField"
+import { RadioButtonFieldBlock } from "../components/RadioButtonFieldBlock"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
 import { Wrapper } from "./stories.utils"
@@ -68,24 +78,24 @@ storiesOf(`form/RadioButtonField`, module)
             hasHint={!!hint}
             layout="horizontal"
           >
-            <RadioButtonField.Label size={labeSize}>
+            <RadioButtonFieldLabel size={labeSize}>
               Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
+            </RadioButtonFieldLabel>
+            <RadioButtonFieldOptions>
               {categories.map(({ label, value }) => (
-                <RadioButtonField.OptionWrapper key={value}>
-                  <RadioButtonField.Option value={value} name="option1b" />
-                  <RadioButtonField.OptionLabel
+                <RadioButtonFieldOptionWrapper key={value}>
+                  <RadioButtonFieldOption value={value} name="option1b" />
+                  <RadioButtonFieldOptionLabel
                     size={optionLabelSize}
                     optionValue={value}
                   >
                     {label}
-                  </RadioButtonField.OptionLabel>
-                </RadioButtonField.OptionWrapper>
+                  </RadioButtonFieldOptionLabel>
+                </RadioButtonFieldOptionWrapper>
               ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
+            </RadioButtonFieldOptions>
+            <RadioButtonFieldHint>{hint}</RadioButtonFieldHint>
+            <RadioButtonFieldError>{error}</RadioButtonFieldError>
           </RadioButtonField>
         </Wrapper>
       </StoryUtils.Container>
@@ -121,24 +131,24 @@ storiesOf(`form/RadioButtonField`, module)
             hasHint={!!hint}
             variant="framed"
           >
-            <RadioButtonField.Label size={labelSize}>
+            <RadioButtonFieldLabel size={labelSize}>
               Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
+            </RadioButtonFieldLabel>
+            <RadioButtonFieldOptions>
               {categories.map(({ label, value }) => (
-                <RadioButtonField.OptionFrame key={value}>
-                  <RadioButtonField.Option value={value} name="categories" />
-                  <RadioButtonField.OptionLabel
+                <RadioButtonFieldOptionFrame key={value}>
+                  <RadioButtonFieldOption value={value} name="categories" />
+                  <RadioButtonFieldOptionLabel
                     size={optionLabelSize}
                     optionValue={value}
                   >
                     {label}
-                  </RadioButtonField.OptionLabel>
-                </RadioButtonField.OptionFrame>
+                  </RadioButtonFieldOptionLabel>
+                </RadioButtonFieldOptionFrame>
               ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
+            </RadioButtonFieldOptions>
+            <RadioButtonFieldHint>{hint}</RadioButtonFieldHint>
+            <RadioButtonFieldError>{error}</RadioButtonFieldError>
           </RadioButtonField>
         </Wrapper>
       </StoryUtils.Container>
@@ -171,49 +181,49 @@ storiesOf(`form/RadioButtonField`, module)
       <StoryUtils.Container>
         <Wrapper>
           <RadioButtonField id="example-3a" hasError={!!error} hasHint={!!hint}>
-            <RadioButtonField.Label size={labelSize}>
+            <RadioButtonFieldLabel size={labelSize}>
               Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
+            </RadioButtonFieldLabel>
+            <RadioButtonFieldOptions>
               {options
                 .filter((_, idx) => idx < 3)
                 .map(({ label, value }) => (
-                  <RadioButtonField.OptionWrapper key={value}>
-                    <RadioButtonField.Option value={value} name="options3a" />
-                    <RadioButtonField.OptionLabel
+                  <RadioButtonFieldOptionWrapper key={value}>
+                    <RadioButtonFieldOption value={value} name="options3a" />
+                    <RadioButtonFieldOptionLabel
                       size={optionLabelSize}
                       optionValue={value}
                     >
                       {label}
-                    </RadioButtonField.OptionLabel>
-                  </RadioButtonField.OptionWrapper>
+                    </RadioButtonFieldOptionLabel>
+                  </RadioButtonFieldOptionWrapper>
                 ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>
+            </RadioButtonFieldOptions>
+            <RadioButtonFieldHint>
               {hint || `This one is also built with 'InputFieldBlock'`}
-            </RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
+            </RadioButtonFieldHint>
+            <RadioButtonFieldError>{error}</RadioButtonFieldError>
           </RadioButtonField>
 
           <RadioButtonField id="example-3b" hasError={!!error} hasHint={!!hint}>
-            <RadioButtonField.Label size={labelSize}>
+            <RadioButtonFieldLabel size={labelSize}>
               Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
-            <RadioButtonField.Options>
+            </RadioButtonFieldLabel>
+            <RadioButtonFieldHint>{hint}</RadioButtonFieldHint>
+            <RadioButtonFieldError>{error}</RadioButtonFieldError>
+            <RadioButtonFieldOptions>
               {options.map(({ label, value }) => (
-                <RadioButtonField.OptionWrapper key={value}>
-                  <RadioButtonField.Option value={value} name="options3b" />
-                  <RadioButtonField.OptionLabel
+                <RadioButtonFieldOptionWrapper key={value}>
+                  <RadioButtonFieldOption value={value} name="options3b" />
+                  <RadioButtonFieldOptionLabel
                     size={optionLabelSize}
                     optionValue={value}
                   >
                     {label}
-                  </RadioButtonField.OptionLabel>
-                </RadioButtonField.OptionWrapper>
+                  </RadioButtonFieldOptionLabel>
+                </RadioButtonFieldOptionWrapper>
               ))}
-            </RadioButtonField.Options>
+            </RadioButtonFieldOptions>
           </RadioButtonField>
         </Wrapper>
       </StoryUtils.Container>

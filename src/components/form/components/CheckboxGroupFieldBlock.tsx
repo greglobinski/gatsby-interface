@@ -8,11 +8,11 @@ import {
   CheckboxGroupFieldOptions,
   CheckboxGroupFieldOptionWrapper,
   CheckboxGroupFieldOption,
+  CheckboxGroupFieldOptionProps,
   CheckboxGroupFieldOptionLabel,
   CheckboxGroupFieldHint,
   CheckboxGroupFieldError,
 } from "./CheckboxGroupField"
-import { FormGroupFieldOptionProps } from "./FormGroupField"
 import { FormFieldLabelSize } from "./FormField.helpers"
 import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSkeleton"
 
@@ -26,7 +26,7 @@ export type CheckboxGroupFieldBlockProps = {
   hint?: React.ReactNode
   validationMode?: ErrorValidationMode
   value: any[]
-} & Omit<FormGroupFieldOptionProps, "value">
+} & Omit<CheckboxGroupFieldOptionProps, "value">
 
 export const CheckboxGroupFieldBlock = (
   props: CheckboxGroupFieldBlockProps
