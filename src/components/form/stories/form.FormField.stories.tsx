@@ -48,7 +48,16 @@ import {
   CheckboxGroupFieldHint,
   CheckboxGroupFieldError,
 } from "../components/CheckboxGroupField"
-import RadioButtonField from "../components/RadioButtonField"
+import {
+  RadioButtonField,
+  RadioButtonFieldLabel,
+  RadioButtonFieldOptions,
+  RadioButtonFieldOptionWrapper,
+  RadioButtonFieldOption,
+  RadioButtonFieldOptionLabel,
+  RadioButtonFieldHint,
+  RadioButtonFieldError,
+} from "../components/RadioButtonField"
 import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { enumToOptions } from "../../../utils/helpers"
 import { Wrapper } from "./stories.utils"
@@ -173,24 +182,22 @@ storiesOf(`form/FormField`, module)
           </CheckboxGroupField>
 
           <RadioButtonField id="example-1e" hasError={!!error} hasHint={!!hint}>
-            <RadioButtonField.Label size={size}>
-              Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
+            <RadioButtonFieldLabel size={size}>Category</RadioButtonFieldLabel>
+            <RadioButtonFieldOptions>
               {categories.map(({ label, value }) => (
-                <RadioButtonField.OptionWrapper key={value}>
-                  <RadioButtonField.Option
+                <RadioButtonFieldOptionWrapper key={value}>
+                  <RadioButtonFieldOption
                     value={value}
                     name="checkbox-group-1"
                   />
-                  <RadioButtonField.OptionLabel size={size} optionValue={value}>
+                  <RadioButtonFieldOptionLabel size={size} optionValue={value}>
                     {label}
-                  </RadioButtonField.OptionLabel>
-                </RadioButtonField.OptionWrapper>
+                  </RadioButtonFieldOptionLabel>
+                </RadioButtonFieldOptionWrapper>
               ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
+            </RadioButtonFieldOptions>
+            <RadioButtonFieldHint>{hint}</RadioButtonFieldHint>
+            <RadioButtonFieldError>{error}</RadioButtonFieldError>
           </RadioButtonField>
 
           <CheckboxField id="example-1f" hasError={!!error} hasHint={!!hint}>
@@ -263,22 +270,22 @@ storiesOf(`form/FormField`, module)
           </TextAreaField>
 
           <RadioButtonField id="example-3c">
-            <RadioButtonField.Label isRequired={true}>
+            <RadioButtonFieldLabel isRequired={true}>
               Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
+            </RadioButtonFieldLabel>
+            <RadioButtonFieldOptions>
               {categories.map(({ label, value }) => (
-                <RadioButtonField.OptionWrapper key={value}>
-                  <RadioButtonField.Option
+                <RadioButtonFieldOptionWrapper key={value}>
+                  <RadioButtonFieldOption
                     value={value}
                     name="checkbox-group-1"
                   />
-                  <RadioButtonField.OptionLabel optionValue={value}>
+                  <RadioButtonFieldOptionLabel optionValue={value}>
                     {label}
-                  </RadioButtonField.OptionLabel>
-                </RadioButtonField.OptionWrapper>
+                  </RadioButtonFieldOptionLabel>
+                </RadioButtonFieldOptionWrapper>
               ))}
-            </RadioButtonField.Options>
+            </RadioButtonFieldOptions>
           </RadioButtonField>
 
           <InputField id="example-3d">
@@ -360,85 +367,3 @@ storiesOf(`form/FormField`, module)
       </StoryUtils.Container>
     )
   })
-
-/*
-
-
-           <RadioButtonField
-            id="checkbox-group-example-3"
-            hasError={!!error}
-            hasHint={!!hint}
-            layout="horizontal"
-          >
-            <RadioButtonField.Label size={size}>
-              Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
-              {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
-                  <RadioButtonField.Option
-                    value={value}
-                    name="checkbox-group-2"
-                  />
-                  <RadioButtonField.OptionLabel size={size} optionValue={value}>
-                    {label}
-                  </RadioButtonField.OptionLabel>
-                </React.Fragment>
-              ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
-          </RadioButtonField>
-
-          <RadioButtonField
-            id="checkbox-group-example-2"
-            hasError={!!error}
-            hasHint={!!hint}
-            variant="framed"
-          >
-            <RadioButtonField.Label size={size}>
-              Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
-              {categories.map(({ label, value }) => (
-                <React.Fragment key={value}>
-                  <RadioButtonField.Option
-                    value={value}
-                    name="checkbox-group-3"
-                  />
-                  <RadioButtonField.OptionLabel size={size} optionValue={value}>
-                    {label}
-                  </RadioButtonField.OptionLabel>
-                </React.Fragment>
-              ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
-          </RadioButtonField>
-
-          <RadioButtonField
-            id="checkbox-group-example-4"
-            hasError={!!error}
-            hasHint={!!hint}
-          >
-            <RadioButtonField.Label size={size}>
-              Category
-            </RadioButtonField.Label>
-            <RadioButtonField.Options>
-              {categories.map(({ label, value }) => (
-                <RadioButtonField.OptionFrame key={value}>
-                  <RadioButtonField.Option
-                    value={value}
-                    name="checkbox-group-4"
-                  />
-                  <RadioButtonField.OptionLabel size={size} optionValue={value}>
-                    {label}
-                  </RadioButtonField.OptionLabel>
-                </RadioButtonField.OptionFrame>
-              ))}
-            </RadioButtonField.Options>
-            <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-            <RadioButtonField.Error>{error}</RadioButtonField.Error>
-          </RadioButtonField>
-
-  */

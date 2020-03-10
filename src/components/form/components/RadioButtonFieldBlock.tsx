@@ -2,8 +2,17 @@
 import { jsx } from "@emotion/core"
 import React from "react"
 
-import RadioButtonField from "./RadioButtonField"
-import { FormGroupFieldOptionProps } from "./FormGroupField"
+import {
+  RadioButtonField,
+  RadioButtonFieldLabel,
+  RadioButtonFieldOptions,
+  RadioButtonFieldOptionWrapper,
+  RadioButtonFieldOption,
+  RadioButtonFieldOptionLabel,
+  RadioButtonFieldHint,
+  RadioButtonFieldError,
+  RadioButtonFieldOptionProps,
+} from "./RadioButtonField"
 import { FormFieldLabelSize } from "./FormField.helpers"
 import { ErrorValidationMode } from "../../form-skeletons/components/FormFieldSkeleton"
 
@@ -15,9 +24,9 @@ export type RadioButtonFieldBlockProps = {
   error?: React.ReactNode
   hint?: React.ReactNode
   validationMode?: ErrorValidationMode
-} & FormGroupFieldOptionProps
+} & RadioButtonFieldOptionProps
 
-const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
+export const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
   const {
     id,
     label,
@@ -38,29 +47,27 @@ const RadioButtonFieldBlock = (props: RadioButtonFieldBlockProps) => {
       hasHint={!!hint}
       className={className}
     >
-      <RadioButtonField.Label size={labelSize} isRequired={!!rest.required}>
+      <RadioButtonFieldLabel size={labelSize} isRequired={!!rest.required}>
         {label}
-      </RadioButtonField.Label>
-      <RadioButtonField.Options>
+      </RadioButtonFieldLabel>
+      <RadioButtonFieldOptions>
         {options.map(({ label, value }) => (
-          <RadioButtonField.OptionWrapper key={value}>
-            <RadioButtonField.Option
+          <RadioButtonFieldOptionWrapper key={value}>
+            <RadioButtonFieldOption
               value={value}
               checked={value === fieldValue}
               {...rest}
             />
-            <RadioButtonField.OptionLabel optionValue={value}>
+            <RadioButtonFieldOptionLabel optionValue={value}>
               {label}
-            </RadioButtonField.OptionLabel>
-          </RadioButtonField.OptionWrapper>
+            </RadioButtonFieldOptionLabel>
+          </RadioButtonFieldOptionWrapper>
         ))}
-      </RadioButtonField.Options>
-      <RadioButtonField.Hint>{hint}</RadioButtonField.Hint>
-      <RadioButtonField.Error validationMode={validationMode}>
+      </RadioButtonFieldOptions>
+      <RadioButtonFieldHint>{hint}</RadioButtonFieldHint>
+      <RadioButtonFieldError validationMode={validationMode}>
         {error}
-      </RadioButtonField.Error>
+      </RadioButtonFieldError>
     </RadioButtonField>
   )
 }
-
-export default RadioButtonFieldBlock

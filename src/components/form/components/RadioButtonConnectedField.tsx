@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import { getIn, useFormikContext } from "formik"
-import RadioButtonFieldBlock from "./RadioButtonFieldBlock"
 import Case from "case"
-import { RadioButtonFieldBlockProps } from "./RadioButtonFieldBlock"
+import {
+  RadioButtonFieldBlock,
+  RadioButtonFieldBlockProps,
+} from "./RadioButtonFieldBlock"
 
 export type RadioButtonConnectedFieldProps = {
   name: string
@@ -11,7 +13,7 @@ export type RadioButtonConnectedFieldProps = {
   label?: React.ReactNode
 } & Omit<RadioButtonFieldBlockProps, "id" | "label" | "value">
 
-const RadioButtonConnectedField: React.FC<
+export const RadioButtonConnectedField: React.FC<
   RadioButtonConnectedFieldProps
 > = props => {
   const id = `${props.name}Field`
@@ -39,5 +41,3 @@ const RadioButtonConnectedField: React.FC<
     />
   )
 }
-
-export default RadioButtonConnectedField

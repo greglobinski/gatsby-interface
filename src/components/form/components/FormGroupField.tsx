@@ -280,7 +280,7 @@ export const FormGroupFieldOptionWrapper: React.FC<
   )
 }
 
-function useFormGroupField() {
+export function useFormGroupField() {
   return React.useContext(FormGroupFieldContext)
 }
 

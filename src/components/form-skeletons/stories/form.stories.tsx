@@ -42,7 +42,14 @@ import {
   CheckboxGroupFieldSkeletonError,
   CheckboxGroupFieldSkeletonHint,
 } from "../components/CheckboxGroupFieldSkeleton"
-import RadioButtonFieldSkeleton from "../components/RadioButtonFieldSkeleton"
+import {
+  RadioButtonFieldSkeleton,
+  RadioButtonFieldSkeletonLabel,
+  RadioButtonFieldSkeletonOption,
+  RadioButtonFieldSkeletonOptionLabel,
+  RadioButtonFieldSkeletonError,
+  RadioButtonFieldSkeletonHint,
+} from "../components/RadioButtonFieldSkeleton"
 
 storiesOf(`form-skeletons`, module)
   .addParameters({
@@ -169,26 +176,24 @@ storiesOf(`form-skeletons`, module)
             hasError={!!error}
             hasHint={!!hint}
           >
-            <RadioButtonFieldSkeleton.Label>
+            <RadioButtonFieldSkeletonLabel>
               Radio button
-            </RadioButtonFieldSkeleton.Label>
+            </RadioButtonFieldSkeletonLabel>
             {options.map(({ label, value }) => (
               <React.Fragment key={value}>
-                <RadioButtonFieldSkeleton.Option
+                <RadioButtonFieldSkeletonOption
                   value={value}
                   name="radio-button"
                 />
-                <RadioButtonFieldSkeleton.OptionLabel optionValue={value}>
+                <RadioButtonFieldSkeletonOptionLabel optionValue={value}>
                   {label}
-                </RadioButtonFieldSkeleton.OptionLabel>
+                </RadioButtonFieldSkeletonOptionLabel>
               </React.Fragment>
             ))}
-            <RadioButtonFieldSkeleton.Error>
+            <RadioButtonFieldSkeletonError>
               {error}
-            </RadioButtonFieldSkeleton.Error>
-            <RadioButtonFieldSkeleton.Hint>
-              {hint}
-            </RadioButtonFieldSkeleton.Hint>
+            </RadioButtonFieldSkeletonError>
+            <RadioButtonFieldSkeletonHint>{hint}</RadioButtonFieldSkeletonHint>
           </RadioButtonFieldSkeleton>
         </div>
       </StoryUtils.Container>
