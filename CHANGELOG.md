@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.100](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.99...v0.0.100) (2020-03-13)
+
+
+### Features
+
+* remove deprecated components ([#234](https://github.com/gatsby-inc/gatsby-interface/issues/234)) ([f2e6b8d](https://github.com/gatsby-inc/gatsby-interface/commit/f2e6b8db57bf6cec7d44c2c94d5e897afa8b08f3))
+
 ### [0.0.99](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.98...v0.0.99) (2020-03-13)
 
 
