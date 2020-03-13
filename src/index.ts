@@ -42,8 +42,6 @@ export { Tabs, Tab, TabsNav, TabFigure, TabLabel } from "./components/Tabs"
 
 export { RadioSkeleton, Radio } from "./components/Radio"
 
-export { StepsIndicator } from "./components/StepsIndicator"
-
 export { FileUpload } from "./components/FileUpload"
 
 export { SidebarNav } from "./components/SidebarNav"
@@ -51,8 +49,6 @@ export { SidebarNav } from "./components/SidebarNav"
 export { Heading } from "./components/Heading"
 
 export { Announcement } from "./components/Announcement"
-
-export { Switch } from "./components/Switch"
 
 export { Navigation } from "./components/Navigation"
 
