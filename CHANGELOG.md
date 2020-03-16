@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.102](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.101...v0.0.102) (2020-03-16)
+
+
+### Features
+
+* rewrite BaseNavigation to TypeScript ([#241](https://github.com/gatsby-inc/gatsby-interface/issues/241)) ([69a74df](https://github.com/gatsby-inc/gatsby-interface/commit/69a74dfdac20225ba2467bd6ceb90bc99b7fb33a))
+
 ### [0.0.101](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.100...v0.0.101) (2020-03-16)
 
 
