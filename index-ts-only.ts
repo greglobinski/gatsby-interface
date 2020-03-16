@@ -5,6 +5,7 @@
 export * from "./src/components/AnchorButton"
 export * from "./src/components/Announcement"
 export * from "./src/components/BaseAnchor"
+export * from "./src/components/BaseNavigation"
 export * from "./src/components/Badge"
 export * from "./src/components/Button"
 export * from "./src/components/Link"

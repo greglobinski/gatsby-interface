@@ -50,8 +50,6 @@ export { Heading } from "./components/Heading"
 
 export { Navigation } from "./components/Navigation"
 
-export { BaseNavigation } from "./components/skeletons/BaseNavigation"
-
 export * from "./components/CopyButton"
 
 export {
@@ -99,6 +97,7 @@ export * from "./components/Announcement"
 export * from "./components/Avatar"
 export * from "./components/Badge"
 export * from "./components/BaseAnchor"
+export * from "./components/BaseNavigation"
 export * from "./components/Chip"
 export * from "./components/icons"
 export * from "./components/form-skeletons"
