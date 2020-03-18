@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.105](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.104...v0.0.105) (2020-03-18)
+
+
+### Bug Fixes
+
+* do not import Reach dialog css ([#245](https://github.com/gatsby-inc/gatsby-interface/issues/245)) ([93f2a53](https://github.com/gatsby-inc/gatsby-interface/commit/93f2a5345d63512a7f6e64ecf9e8852f93c590f7))
+
 ### [0.0.104](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.103...v0.0.104) (2020-03-18)
 
 
