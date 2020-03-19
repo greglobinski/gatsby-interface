@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.107](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.106...v0.0.107) (2020-03-19)
+
+
+### Features
+
+* Cleanup form components ([#229](https://github.com/gatsby-inc/gatsby-interface/issues/229)) ([d0c6e16](https://github.com/gatsby-inc/gatsby-interface/commit/d0c6e169241060c78ede674cfccb2f08ad583b32))
+
 ### [0.0.106](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.105...v0.0.106) (2020-03-19)
 
 
