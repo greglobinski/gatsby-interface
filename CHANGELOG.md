@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.111](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.110...v0.0.111) (2020-03-25)
 
-
 ### Features
 
-* Modal style fixes and CSF stories ([#250](https://github.com/gatsby-inc/gatsby-interface/issues/250)) ([a93d5bf](https://github.com/gatsby-inc/gatsby-interface/commit/a93d5bfe33997053120a940772db1a5b7044ca6a))
+- Modal style fixes and CSF stories ([#250](https://github.com/gatsby-inc/gatsby-interface/issues/250)) ([a93d5bf](https://github.com/gatsby-inc/gatsby-interface/commit/a93d5bfe33997053120a940772db1a5b7044ca6a))
 
 ### [0.0.110](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.109...v0.0.110) (2020-03-25)
 
