@@ -29,3 +29,4 @@ export * from "./src/components/form-skeletons"
 
 export * from "./src/theme"
 export * from "./src/theme/styles/button"
+export * from "./src/components/TestComponent"
