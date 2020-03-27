@@ -156,29 +156,21 @@ Navigation.Button = ({ linkTo, ...delegated }) => {
   const isExternal = linkTo.match(/(^http|^mailto)/i)
 
   const cssStyles = {
-    ...styles.Button.default,
-    [mobileNavMediaQuery]: styles.Button.mobile,
+    ...styles.ButtonItem.default,
+    [mobileNavMediaQuery]: styles.ButtonItem.mobile,
   }
 
   if (isExternal) {
     return (
-      <li>
-        <BaseNavigation.AnchorButton
-          href={linkTo}
-          css={cssStyles}
-          {...delegated}
-        />
+      <li css={cssStyles}>
+        <BaseNavigation.AnchorButton href={linkTo} {...delegated} />
       </li>
     )
   }
 
   return (
-    <li>
-      <BaseNavigation.LinkButton
-        linkTo={linkTo}
-        css={cssStyles}
-        {...delegated}
-      />
+    <li css={cssStyles}>
+      <BaseNavigation.LinkButton linkTo={linkTo} {...delegated} />
     </li>
   )
 }
