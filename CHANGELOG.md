@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.116](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.115...v0.0.116) (2020-03-27)
+
+
+### Bug Fixes
+
+* CSS reset for Navigation list items ([#255](https://github.com/gatsby-inc/gatsby-interface/issues/255)) ([a1ddf81](https://github.com/gatsby-inc/gatsby-interface/commit/a1ddf816aefafe7d2ec60de06b59175b7fe39bf5))
+
 ### [0.0.115](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.114...v0.0.115) (2020-03-26)
 
 ### [0.0.114](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.113...v0.0.114) (2020-03-26)
