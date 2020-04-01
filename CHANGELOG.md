@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.120](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.119...v0.0.120) (2020-04-01)
+
+
+### Features
+
+* remove SettingsBlock component ([#262](https://github.com/gatsby-inc/gatsby-interface/issues/262)) ([c10e523](https://github.com/gatsby-inc/gatsby-interface/commit/c10e5235c8e89cf89ffa63f1600a964c71c06e5e))
+
 ### [0.0.119](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.118...v0.0.119) (2020-04-01)
 
 ### [0.0.118](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.117...v0.0.118) (2020-03-31)
