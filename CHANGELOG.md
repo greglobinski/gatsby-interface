@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.121](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.120...v0.0.121) (2020-04-01)
+
+
+### Features
+
+* Add ConcealedValue component ([#256](https://github.com/gatsby-inc/gatsby-interface/issues/256)) ([84f3d36](https://github.com/gatsby-inc/gatsby-interface/commit/84f3d36366d990e0d90777273b17b8fe25660a25))
+
 ### [0.0.120](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.119...v0.0.120) (2020-04-01)
 
 ### Features
