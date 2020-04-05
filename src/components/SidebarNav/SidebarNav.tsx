@@ -68,8 +68,8 @@ function SidebarNavList({ variant = `DEFAULT`, ...rest }: SidebarNavListProps) {
 }
 
 const baseNavItemCss: ThemeCss = theme => ({
-  fontFamily: theme.fonts.heading,
-  fontSize: theme.fontSizes[2],
+  fontFamily: theme.fonts.body,
+  fontSize: theme.fontSizes[1],
   fontWeight: theme.fontWeights.body,
   color: theme.colors.grey[60],
   marginBottom: `0`,
