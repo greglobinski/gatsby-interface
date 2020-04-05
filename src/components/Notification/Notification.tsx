@@ -112,6 +112,9 @@ export default function Notification({
             onClick={onLinkClick}
             css={theme => ({
               color: variant === `SOLID` ? theme.colors.white : null,
+              ":hover": {
+                color: variant === `SOLID` ? theme.colors.whiteFade[80] : null,
+              },
             })}
           >
             {linkText && (
