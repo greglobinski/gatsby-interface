@@ -126,7 +126,10 @@ export default function Notification({
         )}
 
         {showDismissButton && (
-          <NotificationDismissButton label={dismissButtonLabel} />
+          <NotificationDismissButton
+            label={dismissButtonLabel}
+            variant={variant}
+          />
         )}
         {children}
       </div>
@@ -159,7 +162,13 @@ function NotificationContent({
   )
 }
 
-function NotificationDismissButton({ label = `Close` }: { label?: string }) {
+function NotificationDismissButton({
+  label = `Close`,
+  variant,
+}: {
+  label?: string
+  variant?: NotificationVariant
+}) {
   const { onDismiss } = useNotificationContext()
 
   return (
@@ -167,10 +176,21 @@ function NotificationDismissButton({ label = `Close` }: { label?: string }) {
       css={theme => ({
         padding: `0`,
         minHeight: `auto`,
-        color: theme.colors.grey[40],
+        color:
+          variant === "SOLID"
+            ? theme.colors.whiteFade[60]
+            : theme.colors.grey[40],
         width: theme.space[5],
         marginLeft: theme.space[5],
         fontSize: theme.fontSizes[4],
+        ...(variant === "SOLID"
+          ? {
+              ":hover": {
+                background: "transparent",
+                color: theme.colors.white,
+              },
+            }
+          : null),
       })}
       type="button"
       onClick={onDismiss}
