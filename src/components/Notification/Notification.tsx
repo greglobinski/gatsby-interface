@@ -107,7 +107,13 @@ export default function Notification({
         )}
 
         {linkUrl && linkText && (
-          <Link to={linkUrl} onClick={onLinkClick}>
+          <Link
+            to={linkUrl}
+            onClick={onLinkClick}
+            css={theme => ({
+              color: variant === `SOLID` ? theme.colors.white : null,
+            })}
+          >
             {linkText && (
               <Fragment>
                 {linkText} <MdArrowForward />
