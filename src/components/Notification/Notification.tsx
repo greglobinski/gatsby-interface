@@ -94,7 +94,7 @@ export default function Notification({
                   fontSize: theme.fontSizes[4],
                   color:
                     variant === `SOLID`
-                      ? theme.colors.whiteFade[80]
+                      ? theme.colors.whiteFade[90]
                       : theme.tones[tone].medium,
                   flexShrink: 0,
                   width: "auto",
