@@ -93,6 +93,7 @@ export const Tones = () =>
       key={tone}
       tone={tone}
       content={`Notification tone "${tone}"`}
+      variant={radios("variant", variantOptions, `PRIMARY`)}
     />
   ))
 
