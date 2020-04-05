@@ -73,7 +73,7 @@ export default function Notification({
     <NotificationContext.Provider value={{ onDismiss: onDismissButtonClick }}>
       <div
         css={(theme: Theme) => [
-          { borderRadius: theme.cardStyles.frame.borderRadius },
+          { borderRadius: theme.radii[2] },
           variant === `PRIMARY` && theme.cardStyles.frame,
           baseCss(theme),
           getNotificationVariantStyles(variant, tone)(theme),
