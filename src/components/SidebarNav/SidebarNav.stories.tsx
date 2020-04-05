@@ -86,7 +86,32 @@ const SidebarNavExample = (props: Partial<SidebarNavProps>) => {
           active: subNav === `envVars`,
           to: getPath(`#envVars`),
         },
+        {
+          label: `Webhooks`,
+          onClick: () => setSubNav(`webhooks`),
+          active: subNav === `webhooks`,
+          to: getPath(`#webhooks`),
+        },
+        {
+          label: `Access Control`,
+          onClick: () => setSubNav(`accessControl`),
+          active: subNav === `accessControl`,
+          to: getPath(`#accessControl`),
+        },
       ],
+    },
+    {
+      label: `Builds`,
+      Icon: Preview,
+      onClick: () => setNav(`builds`),
+      active: activeNav === `builds`,
+      to: getPath(`#builds`),
+    },
+    {
+      label: `Reports`,
+      onClick: () => setNav(`reports`),
+      active: activeNav === `reports`,
+      to: getPath(`#reports`),
     },
     {
       label: `Integrations`,
@@ -94,13 +119,26 @@ const SidebarNavExample = (props: Partial<SidebarNavProps>) => {
       onClick: () => setNav(`integrations`),
       active: activeNav === `integrations`,
       to: getPath(`#integrations`),
-    },
-    {
-      label: `Preview`,
-      Icon: Preview,
-      onClick: () => setNav(`preview`),
-      active: activeNav === `preview`,
-      to: getPath(`#preview`),
+      subItems: [
+        {
+          label: `Automated`,
+          onClick: () => setSubNav(`automated`),
+          active: subNav === `automated`,
+          to: getPath(`#automated`),
+        },
+        {
+          label: `Manual`,
+          onClick: () => setSubNav(`manual`),
+          active: subNav === `manual`,
+          to: getPath(`#manual`),
+        },
+        {
+          label: `Hosting`,
+          onClick: () => setSubNav(`hosting`),
+          active: subNav === `hosting`,
+          to: getPath(`#hosting`),
+        },
+      ],
     },
     {
       label: `Danger Zone`,
