@@ -18,7 +18,7 @@ import isChromatic from "storybook-chromatic/isChromatic"
 import { withDesign } from "storybook-addon-designs"
 import { Text } from "../Text"
 
-const VARIANTS: NotificationVariant[] = [`PRIMARY`, `SECONDARY`]
+const VARIANTS: NotificationVariant[] = [`PRIMARY`, `SECONDARY`, `SOLID`]
 
 const TONES: NotificationTone[] = [
   `BRAND`,
@@ -92,6 +92,7 @@ export const Tones = () =>
     <Notification
       key={tone}
       tone={tone}
+      variant={radios("variant", variantOptions, `PRIMARY`)}
       content={`Notification tone "${tone}"`}
     />
   ))

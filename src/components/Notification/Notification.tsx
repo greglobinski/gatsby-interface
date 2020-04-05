@@ -73,6 +73,7 @@ export default function Notification({
     <NotificationContext.Provider value={{ onDismiss: onDismissButtonClick }}>
       <div
         css={(theme: Theme) => [
+          { borderRadius: theme.cardStyles.frame.borderRadius },
           variant === `PRIMARY` && theme.cardStyles.frame,
           baseCss(theme),
           getNotificationVariantStyles(variant, tone)(theme),
@@ -80,13 +81,21 @@ export default function Notification({
         {...rest}
       >
         {content && (
-          <NotificationContent as={contentAs}>
+          <NotificationContent
+            as={contentAs}
+            css={theme => ({
+              color: variant === `SOLID` ? theme.colors.white : null,
+            })}
+          >
             {Icon && (
               <Icon
                 css={theme => ({
                   marginRight: theme.space[4],
                   fontSize: theme.fontSizes[4],
-                  color: theme.tones[tone].medium,
+                  color:
+                    variant === `SOLID`
+                      ? theme.colors.whiteFade[80]
+                      : theme.tones[tone].medium,
                   flexShrink: 0,
                   width: "auto",
                   height: "1em",
