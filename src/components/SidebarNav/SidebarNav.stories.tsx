@@ -12,6 +12,7 @@ import {
 } from "./"
 import { radioKnobOptions } from "../../utils/storybook/knobs"
 import { radios, text } from "@storybook/addon-knobs"
+import { withDesign } from "storybook-addon-designs"
 
 const SIDEBAR_NAV_VARIANTS: SidebarNavVariant[] = [`DEFAULT`, `FULL`]
 
@@ -24,7 +25,15 @@ export default {
         <StoryUtils.Stack>{story()}</StoryUtils.Stack>
       </StoryUtils.Container>
     ),
+    withDesign,
   ] as DecoratorFn[],
+  parameters: {
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/OfhYd2rjUTCeu65VGlzH1wtv/Menus?node-id=295%3A335",
+    },
+  },
 }
 
 export const Basic = () => <SidebarNavExample />
