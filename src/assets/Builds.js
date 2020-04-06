@@ -15,7 +15,7 @@ export default props => (
       height="9.54724"
       transform="matrix(0.866044 0.499967 -0.866044 0.499967 12.8699 11.55)"
       stroke="currentColor"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <rect
       y="0.999935"
@@ -23,7 +23,7 @@ export default props => (
       height="9.54724"
       transform="matrix(0.866044 0.499967 -0.866044 0.499967 12.8664 7)"
       stroke="currentColor"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <rect
       y="0.999935"
@@ -32,8 +32,8 @@ export default props => (
       transform="matrix(0.866044 0.499967 -0.866044 0.499967 12.8699 2)"
       fill="white"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-miterlimit="11.4737"
+      strokeWidth="2"
+      strokeMiterlimit="11.4737"
     />
   </svg>
 )

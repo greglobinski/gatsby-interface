@@ -10,8 +10,8 @@ export default props => (
     {...props}
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M12 2C16.4183 2 20 5.58172 20 10V14C20 15.7416 18.8869 17.2233 17.3333 17.7724V18C17.3333 20.2091 15.5425 22 13.3333 22H10.6667C8.45753 22 6.66667 20.2091 6.66667 18V17.7724C5.11308 17.2233 4 15.7416 4 14V10C4 5.58172 7.58172 2 12 2Z"
       fill="white"
     />
@@ -23,8 +23,8 @@ export default props => (
     <line x1="14" y1="17" x2="14" y2="21" stroke="currentColor" />
     <mask id="path-9-inside-1" fill="white">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M12 2C16.4183 2 20 5.58172 20 10V14C20 15.7416 18.8869 17.2233 17.3333 17.7724V18C17.3333 20.2091 15.5425 22 13.3333 22H10.6667C8.45753 22 6.66667 20.2091 6.66667 18V17.7724C5.11308 17.2233 4 15.7416 4 14V10C4 5.58172 7.58172 2 12 2Z"
       />
     </mask>
@@ -37,7 +37,7 @@ export default props => (
       d="M12 13L13.299 15.25H10.701L12 13Z"
       fill="currentColor"
       stroke="currentColor"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
   </svg>
 )
