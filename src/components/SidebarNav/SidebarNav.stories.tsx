@@ -3,7 +3,7 @@ import { jsx } from "@emotion/core"
 import React from "react"
 import { DecoratorFn } from "@storybook/react"
 import { StoryUtils } from "../../utils/storybook"
-import { General, Integrations, Preview, Skull, Reports } from "../../assets"
+import { General, Integrations, Builds, Skull, Reports } from "../../assets"
 import {
   SidebarNav,
   SidebarNavOption,
@@ -102,7 +102,7 @@ const SidebarNavExample = (props: Partial<SidebarNavProps>) => {
     },
     {
       label: `Builds`,
-      Icon: Preview,
+      Icon: Builds,
       onClick: () => setNav(`builds`),
       active: activeNav === `builds`,
       to: getPath(`#builds`),
