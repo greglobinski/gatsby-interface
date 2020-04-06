@@ -4,7 +4,13 @@ import React from "react"
 import { DecoratorFn } from "@storybook/react"
 import { withDesign } from "storybook-addon-designs"
 import { StoryUtils } from "../../utils/storybook"
-import { General, Integrations, Builds, Skull, Reports } from "../../assets"
+import {
+  IntegrationsIcon,
+  BuildsIcon,
+  ReportsIcon,
+  SkullIcon,
+  GeneralIcon,
+} from "../icons"
 import {
   SidebarNav,
   SidebarNavOption,
@@ -72,7 +78,7 @@ const SidebarNavExample = (props: Partial<SidebarNavProps>) => {
   const options: SidebarNavOption[] = [
     {
       label: `General`,
-      Icon: General,
+      Icon: GeneralIcon,
       onClick: () => setNav(`general`),
       active: activeNav === `general`,
       to: getPath(`#general`),
@@ -111,21 +117,21 @@ const SidebarNavExample = (props: Partial<SidebarNavProps>) => {
     },
     {
       label: `Builds`,
-      Icon: Builds,
+      Icon: BuildsIcon,
       onClick: () => setNav(`builds`),
       active: activeNav === `builds`,
       to: getPath(`#builds`),
     },
     {
       label: `Reports`,
-      Icon: Reports,
+      Icon: ReportsIcon,
       onClick: () => setNav(`reports`),
       active: activeNav === `reports`,
       to: getPath(`#reports`),
     },
     {
       label: `Integrations`,
-      Icon: Integrations,
+      Icon: IntegrationsIcon,
       onClick: () => setNav(`integrations`),
       active: activeNav === `integrations`,
       to: getPath(`#integrations`),
@@ -152,7 +158,7 @@ const SidebarNavExample = (props: Partial<SidebarNavProps>) => {
     },
     {
       label: `Danger Zone`,
-      Icon: Skull,
+      Icon: SkullIcon,
       onClick: () => setNav(`danger`),
       active: activeNav === `danger`,
       to: getPath(`#danger`),
