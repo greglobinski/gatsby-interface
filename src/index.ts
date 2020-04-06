@@ -1,4 +1,4 @@
-export { General, Integrations, Preview, Skull } from "./assets"
+export { General, Integrations, Builds, Skull, Reports } from "./assets"
 
 export {
   Button,
