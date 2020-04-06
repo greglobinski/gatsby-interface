@@ -2,32 +2,44 @@ import React from "react"
 
 export default props => (
   <svg
-    width="24"
-    height="24"
+    width="1em"
+    height="1em"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle cx="20" cy="19" r="2" fill="#8954A8" />
-    <line
-      x1="20.0667"
-      y1="18.9405"
-      x2="13.0667"
-      y2="11.9405"
-      stroke="#8954A8"
-      strokeWidth="0.865368"
+    <circle
+      r="2.125"
+      transform="matrix(1 0 0 -1 5.5 5.5)"
+      stroke="currentColor"
+      stroke-width="1.75"
     />
-    <circle cx="13" cy="12" r="4" fill="#B17ACC" />
-    <circle cx="4" cy="12" r="2" fill="#B17ACC" />
-    <line
-      x1="5"
-      y1="12.0673"
-      x2="9"
-      y2="12.0673"
-      stroke="#B17ACC"
-      strokeWidth="0.865368"
+    <circle
+      r="2.125"
+      transform="matrix(1 0 0 -1 12 12)"
+      stroke="currentColor"
+      stroke-width="1.75"
     />
-    <circle cx="20" cy="5" r="2" fill="#232129" />
+    <circle
+      r="2.75"
+      transform="matrix(1 0 0 -1 18.75 18.5)"
+      fill="currentColor"
+    />
+    <path
+      d="M7.5 5.5H17.25C19.0449 5.5 20.5 6.95507 20.5 8.75V8.75C20.5 10.5449 19.0449 12 17.25 12H14"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+    <path
+      d="M14 18.5L6.75 18.5C4.95508 18.5 3.5 17.0449 3.5 15.25V15.25C3.5 13.4551 4.95507 12 6.75 12L10.5 12"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+    <path
+      d="M11.1517 15.8483L13.8033 18.5L11.1517 21.1517"
+      stroke="currentColor"
+      stroke-width="2"
+    />
   </svg>
 )
