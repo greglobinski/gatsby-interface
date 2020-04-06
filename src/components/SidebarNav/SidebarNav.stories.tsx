@@ -2,6 +2,7 @@
 import { jsx } from "@emotion/core"
 import React from "react"
 import { DecoratorFn } from "@storybook/react"
+import { withDesign } from "storybook-addon-designs"
 import { StoryUtils } from "../../utils/storybook"
 import { General, Integrations, Builds, Skull, Reports } from "../../assets"
 import {
@@ -12,7 +13,6 @@ import {
 } from "./"
 import { radioKnobOptions } from "../../utils/storybook/knobs"
 import { radios, text } from "@storybook/addon-knobs"
-import { withDesign } from "storybook-addon-designs"
 
 const SIDEBAR_NAV_VARIANTS: SidebarNavVariant[] = [`DEFAULT`, `FULL`]
 
