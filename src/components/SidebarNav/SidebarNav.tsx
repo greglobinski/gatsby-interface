@@ -87,9 +87,15 @@ const baseNavItemActiveCss: ThemeCss = theme => ({
 })
 
 const navItemIconCss: ThemeCss = theme => ({
+  color: theme.colors.grey[40],
+  fontSize: theme.fontSizes[4],
   verticalAlign: `middle`,
   position: `absolute`,
   left: `-${theme.space[8]}`,
+})
+
+const navItemActiveIconCss: ThemeCss = theme => ({
+  color: theme.colors.purple[40],
 })
 
 type SidebarNavItemProps = Omit<
@@ -117,7 +123,14 @@ function SidebarNavListItem({
       ]}
       label={
         <React.Fragment>
-          {Icon && active && <Icon css={navItemIconCss} />}
+          {Icon && (
+            <Icon
+              css={(theme: Theme) => [
+                navItemIconCss(theme),
+                active && navItemActiveIconCss(theme),
+              ]}
+            />
+          )}
           {label}
         </React.Fragment>
       }
