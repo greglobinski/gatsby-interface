@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.128](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.127...v0.0.128) (2020-04-07)
+
+
+### Features
+
+* StickyObserver, StyledPanel and StyledModalActions components ([#276](https://github.com/gatsby-inc/gatsby-interface/issues/276)) ([37cbd43](https://github.com/gatsby-inc/gatsby-interface/commit/37cbd43add10c365925f205f2f9c332bcfb98691))
+
 ### [0.0.127](https://github.com/gatsby-inc/gatsby-interface/compare/v0.0.126...v0.0.127) (2020-04-06)
 
 
