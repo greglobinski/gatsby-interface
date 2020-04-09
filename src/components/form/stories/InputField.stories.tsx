@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import { DecoratorFn } from "@storybook/react"
-
-import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_INPUT_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import {
@@ -18,15 +15,11 @@ import { getFieldBlockSandboxProps } from "./stories.utils"
 import { text } from "@storybook/addon-knobs"
 
 export default {
-  title: `Form — styled primitives/InputField`,
-  decorators: [
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
-  ] as DecoratorFn[],
+  title: `Form/Styled Primitives/InputField`,
   parameters: {
+    options: {
+      showRoots: true,
+    },
     readme: {
       sidebar: README,
     },

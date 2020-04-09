@@ -5,7 +5,10 @@ import { Global } from "@emotion/core"
 import { DecoratorFn } from "@storybook/react"
 import { text, radios } from "@storybook/addon-knobs"
 import isChromatic from "storybook-chromatic/isChromatic"
-import { StoryUtils, radioKnobOptions } from "../../utils/storybook"
+import {
+  radioKnobOptions,
+  withVariationsContainer,
+} from "../../utils/storybook"
 import {
   StyledModal,
   StyledModalHeader,
@@ -19,7 +22,12 @@ import { Button } from "../Button"
 export default {
   title: `Modal/StyledModal`,
   component: StyledModal,
-  subcomponents: [StyledModalHeader, StyledModalBody, StyledModalActions],
+  subcomponents: { StyledModalHeader, StyledModalBody, StyledModalActions },
+  parameters: {
+    options: {
+      showRoots: true,
+    },
+  },
   decorators: [
     story => (
       <React.Fragment>
@@ -41,11 +49,6 @@ export default {
       </React.Fragment>
     ),
     story => <div style={{ maxWidth: `620px` }}>{story()}</div>,
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
   ] as DecoratorFn[],
 }
 
@@ -104,7 +107,7 @@ Sandbox.story = {
 
 export const Variants = () =>
   VARIANTS.map(variant => (
-    <div css={(theme: Theme) => ({ marginBottom: theme.space[6] })}>
+    <div key={variant}>
       <StyledModal key={variant} variant={variant}>
         <StyledModalHeader>Variant: {variant}</StyledModalHeader>
         <StyledModalBody>
@@ -117,3 +120,8 @@ export const Variants = () =>
       </StyledModal>
     </div>
   ))
+
+Variants.story = {
+  parameters: { layout: `padded` },
+  decorators: [withVariationsContainer],
+}

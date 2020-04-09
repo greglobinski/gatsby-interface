@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import { DecoratorFn } from "@storybook/react"
-import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_INPUT_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import { SelectFieldBlock } from "../components/SelectFieldBlock"
@@ -10,21 +8,18 @@ import { FormFieldLabelSize } from "../components/FormField.helpers"
 import { getFieldBlockSandboxProps } from "./stories.utils"
 import { text } from "@storybook/addon-knobs"
 import { getGroupFieldStoryOptions } from "../../form-skeletons/stories/storyUtils"
+import { withVariationsContainer } from "../../../utils/storybook"
 
 const LABEL_SIZES: FormFieldLabelSize[] = [`L`, `M`, `S`]
 
 const options = getGroupFieldStoryOptions()
 
 export default {
-  title: `Form — styled blocks/SelectFieldBlock`,
-  decorators: [
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
-  ] as DecoratorFn[],
+  title: `Form/Styled Blocks/SelectFieldBlock`,
   parameters: {
+    options: {
+      showRoots: true,
+    },
     readme: {
       sidebar: README,
     },
@@ -137,3 +132,7 @@ export const LabelSizes = () =>
       options={options}
     />
   ))
+
+LabelSizes.story = {
+  decorators: [withVariationsContainer],
+}

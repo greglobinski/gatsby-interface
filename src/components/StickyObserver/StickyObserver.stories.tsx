@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 import React from "react"
-import { DecoratorFn } from "@storybook/react"
 import { text, radios } from "@storybook/addon-knobs"
-import { StoryUtils } from "../../utils/storybook"
 import { radioKnobOptions } from "../../utils/storybook/knobs"
 import {
   StickyObserver,
@@ -18,19 +16,12 @@ import { LipShadowPosition } from "./StickyObserver"
 export default {
   title: `StickyObserver`,
   component: StickyObserver,
-  subcomponents: [
+  subcomponents: {
     StickyObserverProvider,
     StickyObservedContainer,
     StickyObserverSentinel,
     StickyLipShadow,
-  ],
-  decorators: [
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
-  ] as DecoratorFn[],
+  },
 }
 
 function ScrollableContent({ blocksCount = 5 }: { blocksCount?: number }) {

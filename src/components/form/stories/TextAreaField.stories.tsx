@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import { DecoratorFn } from "@storybook/react"
-import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_TEXTAREA_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import { getFieldBlockSandboxProps } from "./stories.utils"
@@ -17,15 +15,11 @@ import {
 } from ".."
 
 export default {
-  title: `Form — styled primitives/TextAreaField`,
-  decorators: [
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
-  ] as DecoratorFn[],
+  title: `Form/Styled Primitives/TextAreaField`,
   parameters: {
+    options: {
+      showRoots: true,
+    },
     readme: {
       sidebar: README,
     },

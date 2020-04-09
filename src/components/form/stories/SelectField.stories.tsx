@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
 
-import { DecoratorFn } from "@storybook/react"
-
-import { StoryUtils } from "../../../utils/storybook"
 import README from "../README_INPUT_FIELD.md"
 import { action } from "@storybook/addon-actions"
 import {
@@ -20,15 +17,11 @@ import { getGroupFieldStoryOptions } from "../../form-skeletons/stories/storyUti
 const options = getGroupFieldStoryOptions()
 
 export default {
-  title: `Form — styled primitives/SelectField`,
-  decorators: [
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
-  ] as DecoratorFn[],
+  title: `Form/Styled Primitives/SelectField`,
   parameters: {
+    options: {
+      showRoots: true,
+    },
     readme: {
       sidebar: README,
     },
