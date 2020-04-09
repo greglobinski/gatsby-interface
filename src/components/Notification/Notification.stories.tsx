@@ -10,7 +10,10 @@ import {
   NotificationVariant,
   NotificationTone,
 } from "."
-import { StoryUtils, sandboxWithPropVariations } from "../../utils/storybook"
+import {
+  sandboxWithPropVariations,
+  withVariationsContainer,
+} from "../../utils/storybook"
 import { Button } from "../Button"
 import { radioKnobOptions } from "../../utils/storybook/knobs"
 import { MdSignalWifi1BarLock } from "react-icons/md"
@@ -34,14 +37,7 @@ const toneOptions = radioKnobOptions(TONES)
 export default {
   title: `Notification`,
   component: Notification,
-  decorators: [
-    story => (
-      <StoryUtils.Container>
-        <StoryUtils.Stack>{story()}</StoryUtils.Stack>
-      </StoryUtils.Container>
-    ),
-    withDesign,
-  ] as DecoratorFn[],
+  decorators: [withDesign] as DecoratorFn[],
   parameters: {
     design: {
       type: "figma",
@@ -95,6 +91,10 @@ export const Variants = () =>
     />
   ))
 
+Variants.story = {
+  decorators: [withVariationsContainer],
+}
+
 export const Tones = () =>
   TONES.map(tone => (
     <Notification
@@ -103,6 +103,10 @@ export const Tones = () =>
       content={`Notification tone "${tone}"`}
     />
   ))
+
+Tones.story = {
+  decorators: [withVariationsContainer],
+}
 
 function ControlledNotification(props: NotificationProps) {
   const [isOpened, setIsOpened] = React.useState<boolean>(true)
